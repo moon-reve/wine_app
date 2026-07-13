@@ -1,0 +1,3950 @@
+{
+  "wines": [
+    {
+      "id": "wine_001",
+      "nameKo": "1865 카베르네 소비뇽",
+      "nameEn": "1865 Cabernet Sauvignon",
+      "type": "red",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "카베르네 소비뇽",
+      "vintage": "2019",
+      "price": 45000,
+      "rating": 4.1,
+      "reviewCount": 391,
+      "description": "'18홀 65타' 마케팅으로 골퍼 국민와인 등극, 한국 최다 판매 레드 중 하나",
+      "imageUrl": "/images/wines/wine_001.png"
+    },
+    {
+      "id": "wine_002",
+      "nameKo": "몬테스 알파 카베르네 소비뇽",
+      "nameEn": "Montes Alpha Cabernet Sauvignon",
+      "type": "red",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "카베르네 소비뇽",
+      "vintage": "2020",
+      "price": 40000,
+      "rating": 4.0,
+      "reviewCount": 83,
+      "description": "한국인이 가장 사랑하는 칠레 와인, 선물용 스테디셀러",
+      "imageUrl": "/images/wines/wine_002.png"
+    },
+    {
+      "id": "wine_003",
+      "nameKo": "몬테스 퍼플 엔젤",
+      "nameEn": "Montes Purple Angel",
+      "type": "red",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "카르메네르",
+      "vintage": "2019",
+      "price": 100000,
+      "rating": 4.3,
+      "reviewCount": 314,
+      "description": "카르메네르 최고봉으로 꼽히는 몬테스 플래그십",
+      "imageUrl": "/images/wines/wine_003.png"
+    },
+    {
+      "id": "wine_004",
+      "nameKo": "카시예로 델 디아블로 카베르네 소비뇽",
+      "nameEn": "Casillero del Diablo Cabernet Sauvignon",
+      "type": "red",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "카베르네 소비뇽",
+      "vintage": "2019",
+      "price": 15000,
+      "rating": 4.0,
+      "reviewCount": 59,
+      "description": "'악마의 셀러' 스토리로 유명한 대형마트 베스트셀러",
+      "imageUrl": "/images/wines/wine_004.png"
+    },
+    {
+      "id": "wine_005",
+      "nameKo": "디아블로 다크레드",
+      "nameEn": "Diablo Dark Red",
+      "type": "red",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "블렌드(시라 중심)",
+      "vintage": "2019",
+      "price": 20000,
+      "rating": 3.9,
+      "reviewCount": 299,
+      "description": "편의점·마트 품절 대란을 일으킨 진한 스타일 히트작",
+      "imageUrl": "/images/wines/wine_005.png"
+    },
+    {
+      "id": "wine_006",
+      "nameKo": "도스코파스 카베르네 소비뇽",
+      "nameEn": "Dos Copas Cabernet Sauvignon",
+      "type": "red",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "카베르네 소비뇽",
+      "vintage": "2022",
+      "price": 9900,
+      "rating": 3.9,
+      "reviewCount": 124,
+      "description": "이마트24 초저가 와인 열풍의 주역, 누적 수백만 병 판매",
+      "imageUrl": "/images/wines/wine_006.png"
+    },
+    {
+      "id": "wine_007",
+      "nameKo": "옐로우테일 쉬라즈",
+      "nameEn": "Yellow Tail Shiraz",
+      "type": "red",
+      "country": "호주",
+      "region": "호주",
+      "grape": "쉬라즈",
+      "vintage": "2021",
+      "price": 12000,
+      "rating": 4.0,
+      "reviewCount": 426,
+      "description": "세계에서 가장 많이 팔리는 호주 와인 브랜드",
+      "imageUrl": "/images/wines/wine_007.png"
+    },
+    {
+      "id": "wine_008",
+      "nameKo": "맥기건 블랙라벨 레드",
+      "nameEn": "McGuigan Black Label Red",
+      "type": "red",
+      "country": "호주",
+      "region": "호주",
+      "grape": "블렌드",
+      "vintage": "2020",
+      "price": 13000,
+      "rating": 4.2,
+      "reviewCount": 369,
+      "description": "편의점 가성비 와인 열풍을 이끈 히트작",
+      "imageUrl": "/images/wines/wine_008.png"
+    },
+    {
+      "id": "wine_009",
+      "nameKo": "투핸즈 엔젤스 셰어 쉬라즈",
+      "nameEn": "Two Hands Angels' Share Shiraz",
+      "type": "red",
+      "country": "호주",
+      "region": "호주",
+      "grape": "쉬라즈",
+      "vintage": "2021",
+      "price": 65000,
+      "rating": 4.1,
+      "reviewCount": 91,
+      "description": "과실미 폭발 스타일로 한국에서 특히 인기인 호주 쉬라즈",
+      "imageUrl": "/images/wines/wine_009.png"
+    },
+    {
+      "id": "wine_010",
+      "nameKo": "케이머스 카베르네 소비뇽",
+      "nameEn": "Caymus Cabernet Sauvignon",
+      "type": "red",
+      "country": "미국",
+      "region": "미국 나파밸리",
+      "grape": "카베르네 소비뇽",
+      "vintage": "2021",
+      "price": 150000,
+      "rating": 4.1,
+      "reviewCount": 64,
+      "description": "부드럽고 진한 스타일로 한국 시장 나파 카베르네 열풍의 중심",
+      "imageUrl": "/images/wines/wine_010.png"
+    },
+    {
+      "id": "wine_011",
+      "nameKo": "덕혼 디코이 카베르네 소비뇽",
+      "nameEn": "Duckhorn Decoy Cabernet Sauvignon",
+      "type": "red",
+      "country": "미국",
+      "region": "미국 캘리포니아",
+      "grape": "카베르네 소비뇽",
+      "vintage": "2019",
+      "price": 50000,
+      "rating": 3.9,
+      "reviewCount": 195,
+      "description": "오리 라벨로 유명, 접근성 좋은 프리미엄 미국 와인",
+      "imageUrl": "/images/wines/wine_011.png"
+    },
+    {
+      "id": "wine_012",
+      "nameKo": "로버트 몬다비 나파밸리 카베르네 소비뇽",
+      "nameEn": "Robert Mondavi Napa Valley Cabernet Sauvignon",
+      "type": "red",
+      "country": "미국",
+      "region": "미국 나파밸리",
+      "grape": "카베르네 소비뇽",
+      "vintage": "2021",
+      "price": 70000,
+      "rating": 4.3,
+      "reviewCount": 425,
+      "description": "나파밸리 와인의 아버지 로버트 몬다비의 대표작",
+      "imageUrl": "/images/wines/wine_012.png"
+    },
+    {
+      "id": "wine_013",
+      "nameKo": "포스&그레이스 파소 로블스 카베르네 소비뇽",
+      "nameEn": "Force & Grace Paso Robles Cabernet Sauvignon",
+      "type": "red",
+      "country": "미국",
+      "region": "미국 파소 로블스",
+      "grape": "카베르네 소비뇽",
+      "vintage": "2022",
+      "price": 90000,
+      "rating": 3.9,
+      "reviewCount": 286,
+      "description": "롯데백화점 '더 블라인드 2026' 레드 1위로 화제가 된 이슈 와인",
+      "imageUrl": "/images/wines/wine_013.png"
+    },
+    {
+      "id": "wine_014",
+      "nameKo": "티냐넬로",
+      "nameEn": "Tignanello",
+      "type": "red",
+      "country": "이탈리아",
+      "region": "이탈리아 토스카나",
+      "grape": "산지오베제 블렌드",
+      "vintage": "2021",
+      "price": 180000,
+      "rating": 4.1,
+      "reviewCount": 205,
+      "description": "슈퍼투스칸의 시초, 국내 백화점 오픈런 대란을 일으킨 와인",
+      "imageUrl": "/images/wines/wine_014.png"
+    },
+    {
+      "id": "wine_015",
+      "nameKo": "사시카이아",
+      "nameEn": "Sassicaia",
+      "type": "red",
+      "country": "이탈리아",
+      "region": "이탈리아 토스카나",
+      "grape": "카베르네 블렌드",
+      "vintage": "2020",
+      "price": 450000,
+      "rating": 4.5,
+      "reviewCount": 162,
+      "description": "이탈리아 최고 컬트 슈퍼투스칸, 수집가들의 위시리스트 1순위",
+      "imageUrl": "/images/wines/wine_015.png"
+    },
+    {
+      "id": "wine_016",
+      "nameKo": "샤토 탈보",
+      "nameEn": "Chateau Talbot",
+      "type": "red",
+      "country": "프랑스",
+      "region": "프랑스 보르도",
+      "grape": "카베르네 블렌드",
+      "vintage": "2021",
+      "price": 120000,
+      "rating": 4.4,
+      "reviewCount": 307,
+      "description": "한국인에게 유독 사랑받는 보르도 그랑크뤼(4등급)",
+      "imageUrl": "/images/wines/wine_016.png"
+    },
+    {
+      "id": "wine_017",
+      "nameKo": "샤토 몽페라 루즈",
+      "nameEn": "Chateau Mont-Perat Rouge",
+      "type": "red",
+      "country": "프랑스",
+      "region": "프랑스 보르도",
+      "grape": "메를로 블렌드",
+      "vintage": "2019",
+      "price": 50000,
+      "rating": 3.9,
+      "reviewCount": 35,
+      "description": "만화 '신의 물방울'에 등장해 국내 품절 대란을 일으킨 와인",
+      "imageUrl": "/images/wines/wine_017.png"
+    },
+    {
+      "id": "wine_018",
+      "nameKo": "샤토 마고",
+      "nameEn": "Chateau Margaux",
+      "type": "red",
+      "country": "프랑스",
+      "region": "프랑스 보르도",
+      "grape": "카베르네 블렌드",
+      "vintage": "2018",
+      "price": 1500000,
+      "rating": 4.8,
+      "reviewCount": 407,
+      "description": "보르도 1등급 5대 샤토, '와인의 여왕'으로 불리는 명품",
+      "imageUrl": "/images/wines/wine_018.png"
+    },
+    {
+      "id": "wine_019",
+      "nameKo": "오퍼스 원",
+      "nameEn": "Opus One",
+      "type": "red",
+      "country": "미국",
+      "region": "미국 나파밸리",
+      "grape": "카베르네 블렌드",
+      "vintage": "2019",
+      "price": 700000,
+      "rating": 4.6,
+      "reviewCount": 52,
+      "description": "몬다비×로칠드 합작 프로젝트, 미국 대표 프리미엄 와인",
+      "imageUrl": "/images/wines/wine_019.png"
+    },
+    {
+      "id": "wine_020",
+      "nameKo": "에라주리스 막스 리제르바 카베르네 소비뇽",
+      "nameEn": "Errazuriz Max Reserva Cabernet Sauvignon",
+      "type": "red",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "카베르네 소비뇽",
+      "vintage": "2019",
+      "price": 35000,
+      "rating": 4.2,
+      "reviewCount": 206,
+      "description": "'베를린 테이스팅'으로 유명한 에라주리스의 인기 라인",
+      "imageUrl": "/images/wines/wine_020.png"
+    },
+    {
+      "id": "wine_021",
+      "nameKo": "클라우디 베이 소비뇽 블랑",
+      "nameEn": "Cloudy Bay Sauvignon Blanc",
+      "type": "white",
+      "country": "뉴질랜드",
+      "region": "뉴질랜드 말보로",
+      "grape": "소비뇽 블랑",
+      "vintage": "2023",
+      "price": 55000,
+      "rating": 4.0,
+      "reviewCount": 95,
+      "description": "뉴질랜드 소비뇽 블랑 신화를 만든 대표 화이트",
+      "imageUrl": "/images/wines/wine_021.png"
+    },
+    {
+      "id": "wine_022",
+      "nameKo": "킴 크로포드 소비뇽 블랑",
+      "nameEn": "Kim Crawford Sauvignon Blanc",
+      "type": "white",
+      "country": "뉴질랜드",
+      "region": "뉴질랜드 말보로",
+      "grape": "소비뇽 블랑",
+      "vintage": "2022",
+      "price": 30000,
+      "rating": 4.0,
+      "reviewCount": 355,
+      "description": "상큼한 열대과실 향으로 여름철 인기 1순위",
+      "imageUrl": "/images/wines/wine_022.png"
+    },
+    {
+      "id": "wine_023",
+      "nameKo": "오이스터 베이 소비뇽 블랑",
+      "nameEn": "Oyster Bay Sauvignon Blanc",
+      "type": "white",
+      "country": "뉴질랜드",
+      "region": "뉴질랜드 말보로",
+      "grape": "소비뇽 블랑",
+      "vintage": "2022",
+      "price": 25000,
+      "rating": 3.9,
+      "reviewCount": 323,
+      "description": "굴·해산물 페어링으로 유명한 가성비 소비뇽 블랑",
+      "imageUrl": "/images/wines/wine_023.png"
+    },
+    {
+      "id": "wine_024",
+      "nameKo": "빌라 마리아 프라이빗 빈 소비뇽 블랑",
+      "nameEn": "Villa Maria Private Bin Sauvignon Blanc",
+      "type": "white",
+      "country": "뉴질랜드",
+      "region": "뉴질랜드",
+      "grape": "소비뇽 블랑",
+      "vintage": "2022",
+      "price": 25000,
+      "rating": 4.1,
+      "reviewCount": 95,
+      "description": "뉴질랜드 국민 와이너리의 스테디셀러",
+      "imageUrl": "/images/wines/wine_024.png"
+    },
+    {
+      "id": "wine_025",
+      "nameKo": "윌리엄 페브르 샤블리",
+      "nameEn": "William Fevre Chablis",
+      "type": "white",
+      "country": "프랑스",
+      "region": "프랑스 부르고뉴",
+      "grape": "샤르도네",
+      "vintage": "2023",
+      "price": 55000,
+      "rating": 4.1,
+      "reviewCount": 339,
+      "description": "굴과 샤블리 조합의 대명사, 국내 샤블리 인기 1위권",
+      "imageUrl": "/images/wines/wine_025.png"
+    },
+    {
+      "id": "wine_026",
+      "nameKo": "루이 자도 부르고뉴 샤르도네",
+      "nameEn": "Louis Jadot Bourgogne Chardonnay",
+      "type": "white",
+      "country": "프랑스",
+      "region": "프랑스 부르고뉴",
+      "grape": "샤르도네",
+      "vintage": "2022",
+      "price": 40000,
+      "rating": 4.2,
+      "reviewCount": 362,
+      "description": "부르고뉴 화이트 입문용 정석으로 꼽히는 와인",
+      "imageUrl": "/images/wines/wine_026.png"
+    },
+    {
+      "id": "wine_027",
+      "nameKo": "파스칼 졸리베 상세르",
+      "nameEn": "Pascal Jolivet Sancerre",
+      "type": "white",
+      "country": "프랑스",
+      "region": "프랑스 루아르",
+      "grape": "소비뇽 블랑",
+      "vintage": "2022",
+      "price": 70000,
+      "rating": 4.0,
+      "reviewCount": 129,
+      "description": "미네랄리티가 뛰어난 루아르 소비뇽 블랑의 대표",
+      "imageUrl": "/images/wines/wine_027.png"
+    },
+    {
+      "id": "wine_028",
+      "nameKo": "샤토 디켐",
+      "nameEn": "Chateau d'Yquem",
+      "type": "white",
+      "country": "프랑스",
+      "region": "프랑스 소테른",
+      "grape": "세미용·소비뇽 블랑",
+      "vintage": "2017",
+      "price": 600000,
+      "rating": 4.9,
+      "reviewCount": 424,
+      "description": "세계 최고 귀부 스위트 와인, '신이 내린 와인'으로 불림",
+      "imageUrl": "/images/wines/wine_028.png"
+    },
+    {
+      "id": "wine_029",
+      "nameKo": "닥터 루젠 리슬링",
+      "nameEn": "Dr. Loosen Riesling",
+      "type": "white",
+      "country": "독일",
+      "region": "독일 모젤",
+      "grape": "리슬링",
+      "vintage": "2023",
+      "price": 30000,
+      "rating": 4.0,
+      "reviewCount": 45,
+      "description": "독일 리슬링 입문 정석, 매콤한 한식과 페어링으로 인기",
+      "imageUrl": "/images/wines/wine_029.png"
+    },
+    {
+      "id": "wine_030",
+      "nameKo": "셀바흐 리슬링 카비넷 파인헤르브 트레디션",
+      "nameEn": "Selbach Riesling Kabinett Feinherb Tradition",
+      "type": "white",
+      "country": "독일",
+      "region": "독일 모젤",
+      "grape": "리슬링",
+      "vintage": "2023",
+      "price": 50000,
+      "rating": 3.9,
+      "reviewCount": 120,
+      "description": "롯데백화점 '더 블라인드 2026' 화이트 1위 이슈 와인",
+      "imageUrl": "/images/wines/wine_030.png"
+    },
+    {
+      "id": "wine_031",
+      "nameKo": "샤토 몬텔레나 샤르도네",
+      "nameEn": "Chateau Montelena Chardonnay",
+      "type": "white",
+      "country": "미국",
+      "region": "미국 나파밸리",
+      "grape": "샤르도네",
+      "vintage": "2023",
+      "price": 120000,
+      "rating": 4.3,
+      "reviewCount": 464,
+      "description": "1976년 '파리의 심판'에서 프랑스를 꺾은 전설의 샤르도네",
+      "imageUrl": "/images/wines/wine_031.png"
+    },
+    {
+      "id": "wine_032",
+      "nameKo": "켄달잭슨 빈트너스 리저브 샤르도네",
+      "nameEn": "Kendall-Jackson Vintner's Reserve Chardonnay",
+      "type": "white",
+      "country": "미국",
+      "region": "미국 캘리포니아",
+      "grape": "샤르도네",
+      "vintage": "2023",
+      "price": 40000,
+      "rating": 4.3,
+      "reviewCount": 85,
+      "description": "미국 레스토랑 판매 1위에 빛나는 국민 샤르도네",
+      "imageUrl": "/images/wines/wine_032.png"
+    },
+    {
+      "id": "wine_033",
+      "nameKo": "파 니엔테 샤르도네",
+      "nameEn": "Far Niente Chardonnay",
+      "type": "white",
+      "country": "미국",
+      "region": "미국 나파밸리",
+      "grape": "샤르도네",
+      "vintage": "2022",
+      "price": 130000,
+      "rating": 4.1,
+      "reviewCount": 393,
+      "description": "오크 숙성 나파 샤르도네의 정점으로 꼽히는 프리미엄",
+      "imageUrl": "/images/wines/wine_033.png"
+    },
+    {
+      "id": "wine_034",
+      "nameKo": "산타 마르게리타 피노 그리지오",
+      "nameEn": "Santa Margherita Pinot Grigio",
+      "type": "white",
+      "country": "이탈리아",
+      "region": "이탈리아",
+      "grape": "피노 그리지오",
+      "vintage": "2023",
+      "price": 40000,
+      "rating": 4.1,
+      "reviewCount": 394,
+      "description": "피노 그리지오 세계화의 주역, 깔끔한 스타일",
+      "imageUrl": "/images/wines/wine_034.png"
+    },
+    {
+      "id": "wine_035",
+      "nameKo": "몬테스 알파 샤르도네",
+      "nameEn": "Montes Alpha Chardonnay",
+      "type": "white",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "샤르도네",
+      "vintage": "2023",
+      "price": 40000,
+      "rating": 4.1,
+      "reviewCount": 197,
+      "description": "몬테스 알파 인기에 힘입은 대표 칠레 샤르도네",
+      "imageUrl": "/images/wines/wine_035.png"
+    },
+    {
+      "id": "wine_036",
+      "nameKo": "트림바흐 게뷔르츠트라미너",
+      "nameEn": "Trimbach Gewurztraminer",
+      "type": "white",
+      "country": "프랑스",
+      "region": "프랑스 알자스",
+      "grape": "게뷔르츠트라미너",
+      "vintage": "2022",
+      "price": 55000,
+      "rating": 4.0,
+      "reviewCount": 272,
+      "description": "리치·장미향의 알자스 대표 품종, 한식과 잘 어울려 인기",
+      "imageUrl": "/images/wines/wine_036.png"
+    },
+    {
+      "id": "wine_037",
+      "nameKo": "토레스 비냐 솔",
+      "nameEn": "Torres Vina Sol",
+      "type": "white",
+      "country": "스페인",
+      "region": "스페인",
+      "grape": "파레야다",
+      "vintage": "2022",
+      "price": 18000,
+      "rating": 4.0,
+      "reviewCount": 452,
+      "description": "스페인 국민 화이트, 가볍게 즐기는 데일리 와인",
+      "imageUrl": "/images/wines/wine_037.png"
+    },
+    {
+      "id": "wine_038",
+      "nameKo": "제이콥스 크릭 클래식 샤르도네",
+      "nameEn": "Jacob's Creek Classic Chardonnay",
+      "type": "white",
+      "country": "호주",
+      "region": "호주",
+      "grape": "샤르도네",
+      "vintage": "2022",
+      "price": 15000,
+      "rating": 3.8,
+      "reviewCount": 417,
+      "description": "마트에서 가장 쉽게 만나는 호주 데일리 화이트",
+      "imageUrl": "/images/wines/wine_038.png"
+    },
+    {
+      "id": "wine_039",
+      "nameKo": "G7 샤르도네",
+      "nameEn": "G7 Chardonnay",
+      "type": "white",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "샤르도네",
+      "vintage": "2022",
+      "price": 9000,
+      "rating": 4.1,
+      "reviewCount": 209,
+      "description": "1만원 이하 가성비 화이트의 대표 주자",
+      "imageUrl": "/images/wines/wine_039.png"
+    },
+    {
+      "id": "wine_040",
+      "nameKo": "카시예로 델 디아블로 소비뇽 블랑",
+      "nameEn": "Casillero del Diablo Sauvignon Blanc",
+      "type": "white",
+      "country": "칠레",
+      "region": "칠레",
+      "grape": "소비뇽 블랑",
+      "vintage": "2023",
+      "price": 15000,
+      "rating": 4.0,
+      "reviewCount": 282,
+      "description": "디아블로 시리즈 인기에 힘입은 화이트 베스트셀러",
+      "imageUrl": "/images/wines/wine_040.png"
+    },
+    {
+      "id": "wine_041",
+      "nameKo": "돔 페리뇽",
+      "nameEn": "Dom Perignon",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "2013",
+      "price": 350000,
+      "rating": 4.5,
+      "reviewCount": 295,
+      "description": "럭셔리 샴페인의 대명사, 기념일 선물 1순위",
+      "imageUrl": "/images/wines/wine_041.png"
+    },
+    {
+      "id": "wine_042",
+      "nameKo": "모엣 & 샹동 임페리얼 브뤼",
+      "nameEn": "Moet & Chandon Imperial Brut",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 90000,
+      "rating": 4.3,
+      "reviewCount": 17,
+      "description": "세계 판매 1위 샴페인, 파티·축하주의 상징",
+      "imageUrl": "/images/wines/wine_042.png"
+    },
+    {
+      "id": "wine_043",
+      "nameKo": "뵈브 클리코 옐로우 라벨",
+      "nameEn": "Veuve Clicquot Yellow Label",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 95000,
+      "rating": 4.3,
+      "reviewCount": 70,
+      "description": "노란 라벨로 유명, 백화점 샴페인 매출 상위 단골",
+      "imageUrl": "/images/wines/wine_043.png"
+    },
+    {
+      "id": "wine_044",
+      "nameKo": "크루그 그랑 퀴베",
+      "nameEn": "Krug Grande Cuvee",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 380000,
+      "rating": 4.8,
+      "reviewCount": 286,
+      "description": "샴페인 애호가들의 종착지로 불리는 프레스티지",
+      "imageUrl": "/images/wines/wine_044.png"
+    },
+    {
+      "id": "wine_045",
+      "nameKo": "루이 로드레 크리스탈",
+      "nameEn": "Louis Roederer Cristal",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "2015",
+      "price": 550000,
+      "rating": 4.8,
+      "reviewCount": 405,
+      "description": "러시아 황제를 위해 탄생, 셀럽 문화의 아이콘",
+      "imageUrl": "/images/wines/wine_045.png"
+    },
+    {
+      "id": "wine_046",
+      "nameKo": "볼랭저 스페셜 퀴베",
+      "nameEn": "Bollinger Special Cuvee",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 120000,
+      "rating": 4.3,
+      "reviewCount": 69,
+      "description": "007 제임스 본드의 샴페인으로 유명",
+      "imageUrl": "/images/wines/wine_046.png"
+    },
+    {
+      "id": "wine_047",
+      "nameKo": "테탱저 브뤼 레제르브",
+      "nameEn": "Taittinger Brut Reserve",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 85000,
+      "rating": 4.0,
+      "reviewCount": 92,
+      "description": "샤르도네 비중 높은 우아한 스타일의 인기 샴페인",
+      "imageUrl": "/images/wines/wine_047.png"
+    },
+    {
+      "id": "wine_048",
+      "nameKo": "폴 로저 브뤼 리저브",
+      "nameEn": "Pol Roger Brut Reserve",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 100000,
+      "rating": 4.2,
+      "reviewCount": 381,
+      "description": "처칠이 사랑한 샴페인으로 유명",
+      "imageUrl": "/images/wines/wine_048.png"
+    },
+    {
+      "id": "wine_049",
+      "nameKo": "페리에 주에 벨 에포크",
+      "nameEn": "Perrier-Jouet Belle Epoque",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "2014",
+      "price": 300000,
+      "rating": 4.7,
+      "reviewCount": 146,
+      "description": "아네모네 꽃병 디자인으로 선물 수요 폭발",
+      "imageUrl": "/images/wines/wine_049.png"
+    },
+    {
+      "id": "wine_050",
+      "nameKo": "아르망 드 브리냑 골드",
+      "nameEn": "Armand de Brignac Gold",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 550000,
+      "rating": 4.9,
+      "reviewCount": 402,
+      "description": "제이지(Jay-Z)가 인수한 황금 병 샴페인",
+      "imageUrl": "/images/wines/wine_050.png"
+    },
+    {
+      "id": "wine_051",
+      "nameKo": "G.H. 멈 그랑 코르동",
+      "nameEn": "G.H. Mumm Grand Cordon",
+      "type": "sparkling",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 80000,
+      "rating": 4.0,
+      "reviewCount": 479,
+      "description": "F1 포디움 세리머니 샴페인으로 유명",
+      "imageUrl": "/images/wines/wine_051.png"
+    },
+    {
+      "id": "wine_052",
+      "nameKo": "샹동 브뤼",
+      "nameEn": "Chandon Brut",
+      "type": "sparkling",
+      "country": "호주/아르헨티나",
+      "region": "호주/아르헨티나",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 40000,
+      "rating": 3.9,
+      "reviewCount": 332,
+      "description": "모엣샹동이 만드는 합리적 가격의 뉴월드 스파클링",
+      "imageUrl": "/images/wines/wine_052.png"
+    },
+    {
+      "id": "wine_053",
+      "nameKo": "페라리 브뤼",
+      "nameEn": "Ferrari Brut",
+      "type": "sparkling",
+      "country": "이탈리아",
+      "region": "이탈리아 트렌토",
+      "grape": "샤르도네",
+      "vintage": "NV",
+      "price": 50000,
+      "rating": 4.0,
+      "reviewCount": 339,
+      "description": "이탈리아 최고 스푸만테, 각종 시상식 공식 스파클링",
+      "imageUrl": "/images/wines/wine_053.png"
+    },
+    {
+      "id": "wine_054",
+      "nameKo": "미오네토 프로세코",
+      "nameEn": "Mionetto Prosecco",
+      "type": "sparkling",
+      "country": "이탈리아",
+      "region": "이탈리아 베네토",
+      "grape": "글레라",
+      "vintage": "NV",
+      "price": 28000,
+      "rating": 4.1,
+      "reviewCount": 113,
+      "description": "프로세코 열풍을 이끈 대표 브랜드",
+      "imageUrl": "/images/wines/wine_054.png"
+    },
+    {
+      "id": "wine_055",
+      "nameKo": "프레시넷 코르돈 네그로",
+      "nameEn": "Freixenet Cordon Negro",
+      "type": "sparkling",
+      "country": "스페인",
+      "region": "스페인 카바",
+      "grape": "마카베오·자렐로·파레야다",
+      "vintage": "NV",
+      "price": 20000,
+      "rating": 3.9,
+      "reviewCount": 402,
+      "description": "검은 병 카바, 세계에서 가장 많이 팔린 스파클링 중 하나",
+      "imageUrl": "/images/wines/wine_055.png"
+    },
+    {
+      "id": "wine_056",
+      "nameKo": "코도르니우 클라시코",
+      "nameEn": "Codorniu Clasico",
+      "type": "sparkling",
+      "country": "스페인",
+      "region": "스페인 카바",
+      "grape": "마카베오·자렐로·파레야다",
+      "vintage": "NV",
+      "price": 18000,
+      "rating": 3.9,
+      "reviewCount": 410,
+      "description": "450년 역사의 카바 명가 대표작",
+      "imageUrl": "/images/wines/wine_056.png"
+    },
+    {
+      "id": "wine_057",
+      "nameKo": "사라코 모스카토 다스티",
+      "nameEn": "Saracco Moscato d'Asti",
+      "type": "sparkling",
+      "country": "이탈리아",
+      "region": "이탈리아 피에몬테",
+      "grape": "모스카토",
+      "vintage": "NV",
+      "price": 30000,
+      "rating": 4.3,
+      "reviewCount": 12,
+      "description": "모스카토 다스티의 교과서, 디저트 와인 인기 1위권",
+      "imageUrl": "/images/wines/wine_057.png"
+    },
+    {
+      "id": "wine_058",
+      "nameKo": "간치아 모스카토 다스티",
+      "nameEn": "Gancia Moscato d'Asti",
+      "type": "sparkling",
+      "country": "이탈리아",
+      "region": "이탈리아 피에몬테",
+      "grape": "모스카토",
+      "vintage": "NV",
+      "price": 18000,
+      "rating": 4.1,
+      "reviewCount": 262,
+      "description": "편의점·마트에서 가장 많이 팔리는 달콤 스파클링",
+      "imageUrl": "/images/wines/wine_058.png"
+    },
+    {
+      "id": "wine_059",
+      "nameKo": "마르티니 아스티",
+      "nameEn": "Martini Asti",
+      "type": "sparkling",
+      "country": "이탈리아",
+      "region": "이탈리아 피에몬테",
+      "grape": "샤르도네·피노 누아·피노 뫼니에",
+      "vintage": "NV",
+      "price": 18000,
+      "rating": 3.8,
+      "reviewCount": 197,
+      "description": "달콤한 스파클링 입문 정석",
+      "imageUrl": "/images/wines/wine_059.png"
+    },
+    {
+      "id": "wine_060",
+      "nameKo": "빌라엠 로쏘",
+      "nameEn": "Villa M Rosso",
+      "type": "sparkling",
+      "country": "이탈리아",
+      "region": "이탈리아 피에몬테",
+      "grape": "브라케토·바르베라",
+      "vintage": "NV",
+      "price": 30000,
+      "rating": 4.2,
+      "reviewCount": 437,
+      "description": "홈파티 필수템으로 SNS에서 유행한 달콤 스파클링",
+      "imageUrl": "/images/wines/wine_060.png"
+    },
+    {
+      "id": "wine_061",
+      "nameKo": "위스퍼링 엔젤",
+      "nameEn": "Whispering Angel (Chateau d'Esclans)",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 프로방스",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "2023",
+      "price": 55000,
+      "rating": 4.2,
+      "reviewCount": 134,
+      "description": "프로방스 로제 열풍의 주역, 셀럽들의 여름 와인",
+      "imageUrl": "/images/wines/wine_061.png"
+    },
+    {
+      "id": "wine_062",
+      "nameKo": "샤토 데스클랑 락 엔젤",
+      "nameEn": "Chateau d'Esclans Rock Angel",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 프로방스",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "2023",
+      "price": 80000,
+      "rating": 3.9,
+      "reviewCount": 461,
+      "description": "위스퍼링 엔젤의 상위 버전 프리미엄 로제",
+      "imageUrl": "/images/wines/wine_062.png"
+    },
+    {
+      "id": "wine_063",
+      "nameKo": "미라발 로제",
+      "nameEn": "Miraval Rose",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 프로방스",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "2023",
+      "price": 45000,
+      "rating": 4.1,
+      "reviewCount": 52,
+      "description": "브래드 피트 소유 와이너리로 화제가 된 로제",
+      "imageUrl": "/images/wines/wine_063.png"
+    },
+    {
+      "id": "wine_064",
+      "nameKo": "미누티 M 로제",
+      "nameEn": "Minuty M Rose",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 프로방스",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "2023",
+      "price": 40000,
+      "rating": 3.9,
+      "reviewCount": 260,
+      "description": "프랑스 판매 1위권 프로방스 로제",
+      "imageUrl": "/images/wines/wine_064.png"
+    },
+    {
+      "id": "wine_065",
+      "nameKo": "AIX 로제",
+      "nameEn": "AIX Rose",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 프로방스",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "2023",
+      "price": 45000,
+      "rating": 4.2,
+      "reviewCount": 401,
+      "description": "매그넘·제로보암 대용량으로 파티에서 인기",
+      "imageUrl": "/images/wines/wine_065.png"
+    },
+    {
+      "id": "wine_066",
+      "nameKo": "제라르 베르트랑 코트 데 로즈",
+      "nameEn": "Gerard Bertrand Cote des Roses",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 랑그독",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "2023",
+      "price": 30000,
+      "rating": 4.1,
+      "reviewCount": 76,
+      "description": "장미 모양 병 바닥 디자인으로 선물용 히트",
+      "imageUrl": "/images/wines/wine_066.png"
+    },
+    {
+      "id": "wine_067",
+      "nameKo": "기갈 타벨 로제",
+      "nameEn": "E. Guigal Tavel Rose",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 론",
+      "grape": "그르나슈 블렌드",
+      "vintage": "2023",
+      "price": 40000,
+      "rating": 3.9,
+      "reviewCount": 255,
+      "description": "'로제의 왕'이라 불리는 타벨 지역 대표작",
+      "imageUrl": "/images/wines/wine_067.png"
+    },
+    {
+      "id": "wine_068",
+      "nameKo": "무가 로사도",
+      "nameEn": "Muga Rosado",
+      "type": "rose",
+      "country": "스페인",
+      "region": "스페인 리오하",
+      "grape": "가르나차 블렌드",
+      "vintage": "2023",
+      "price": 30000,
+      "rating": 4.3,
+      "reviewCount": 96,
+      "description": "리오하 명가 무가의 우아한 로제",
+      "imageUrl": "/images/wines/wine_068.png"
+    },
+    {
+      "id": "wine_069",
+      "nameKo": "마테우스 로제",
+      "nameEn": "Mateus Rose",
+      "type": "rose",
+      "country": "포르투갈",
+      "region": "포르투갈",
+      "grape": "바가 블렌드",
+      "vintage": "2023",
+      "price": 15000,
+      "rating": 3.9,
+      "reviewCount": 458,
+      "description": "납작한 병으로 유명한 세계적 베스트셀러 로제",
+      "imageUrl": "/images/wines/wine_069.png"
+    },
+    {
+      "id": "wine_070",
+      "nameKo": "포르타 6 로제",
+      "nameEn": "Porta 6 Rose",
+      "type": "rose",
+      "country": "포르투갈",
+      "region": "포르투갈",
+      "grape": "포르투갈 토착 블렌드",
+      "vintage": "2023",
+      "price": 15000,
+      "rating": 4.1,
+      "reviewCount": 120,
+      "description": "재치있는 라벨로 마트에서 히트한 가성비 로제",
+      "imageUrl": "/images/wines/wine_070.png"
+    },
+    {
+      "id": "wine_071",
+      "nameKo": "베린저 화이트 진판델",
+      "nameEn": "Beringer White Zinfandel",
+      "type": "rose",
+      "country": "미국",
+      "region": "미국 캘리포니아",
+      "grape": "진판델",
+      "vintage": "2023",
+      "price": 15000,
+      "rating": 4.2,
+      "reviewCount": 398,
+      "description": "달콤한 로제 입문 국민템",
+      "imageUrl": "/images/wines/wine_071.png"
+    },
+    {
+      "id": "wine_072",
+      "nameKo": "옐로우테일 핑크 모스카토",
+      "nameEn": "Yellow Tail Pink Moscato",
+      "type": "rose",
+      "country": "호주",
+      "region": "호주",
+      "grape": "모스카토",
+      "vintage": "2023",
+      "price": 12000,
+      "rating": 4.1,
+      "reviewCount": 114,
+      "description": "저렴하고 달콤해 홈술족에게 인기",
+      "imageUrl": "/images/wines/wine_072.png"
+    },
+    {
+      "id": "wine_073",
+      "nameKo": "간치아 모스카토 로제",
+      "nameEn": "Gancia Moscato Rose",
+      "type": "rose",
+      "country": "이탈리아",
+      "region": "이탈리아",
+      "grape": "모스카토",
+      "vintage": "2023",
+      "price": 18000,
+      "rating": 4.1,
+      "reviewCount": 216,
+      "description": "달콤한 로제 스파클링 편의점 베스트셀러",
+      "imageUrl": "/images/wines/wine_073.png"
+    },
+    {
+      "id": "wine_074",
+      "nameKo": "빌라엠 로제",
+      "nameEn": "Villa M Rose",
+      "type": "rose",
+      "country": "이탈리아",
+      "region": "이탈리아 피에몬테",
+      "grape": "모스카토·브라케토",
+      "vintage": "2023",
+      "price": 30000,
+      "rating": 4.3,
+      "reviewCount": 344,
+      "description": "빌라엠 시리즈의 로제 버전, 홈파티 인기템",
+      "imageUrl": "/images/wines/wine_074.png"
+    },
+    {
+      "id": "wine_075",
+      "nameKo": "모엣 & 샹동 로제 임페리얼",
+      "nameEn": "Moet & Chandon Rose Imperial",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "NV",
+      "price": 110000,
+      "rating": 4.1,
+      "reviewCount": 472,
+      "description": "로제 샴페인 대중화의 주역",
+      "imageUrl": "/images/wines/wine_075.png"
+    },
+    {
+      "id": "wine_076",
+      "nameKo": "뵈브 클리코 로제",
+      "nameEn": "Veuve Clicquot Rose",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "NV",
+      "price": 130000,
+      "rating": 4.2,
+      "reviewCount": 73,
+      "description": "최초의 블렌디드 로제 샴페인 하우스의 대표작",
+      "imageUrl": "/images/wines/wine_076.png"
+    },
+    {
+      "id": "wine_077",
+      "nameKo": "로랑 페리에 퀴베 로제",
+      "nameEn": "Laurent-Perrier Cuvee Rose",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "NV",
+      "price": 150000,
+      "rating": 4.1,
+      "reviewCount": 44,
+      "description": "세니에 방식 로제 샴페인의 정점, 선물용 인기",
+      "imageUrl": "/images/wines/wine_077.png"
+    },
+    {
+      "id": "wine_078",
+      "nameKo": "돔 페리뇽 로제",
+      "nameEn": "Dom Perignon Rose",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "2009",
+      "price": 700000,
+      "rating": 4.6,
+      "reviewCount": 313,
+      "description": "돔 페리뇽의 희소 로제 버전, 최고급 기념주",
+      "imageUrl": "/images/wines/wine_078.png"
+    },
+    {
+      "id": "wine_079",
+      "nameKo": "파이퍼 하이직 로제 소바쥬",
+      "nameEn": "Piper-Heidsieck Rose Sauvage",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "NV",
+      "price": 90000,
+      "rating": 4.2,
+      "reviewCount": 313,
+      "description": "강렬한 스타일의 로제 샴페인",
+      "imageUrl": "/images/wines/wine_079.png"
+    },
+    {
+      "id": "wine_080",
+      "nameKo": "루이 로드레 브뤼 로제",
+      "nameEn": "Louis Roederer Brut Rose",
+      "type": "rose",
+      "country": "프랑스",
+      "region": "프랑스 샹파뉴",
+      "grape": "그르나슈·생소 블렌드",
+      "vintage": "NV",
+      "price": 120000,
+      "rating": 4.1,
+      "reviewCount": 48,
+      "description": "크리스탈 명가의 정교한 로제 샴페인",
+      "imageUrl": "/images/wines/wine_080.png"
+    },
+    {
+      "id": "wine_081",
+      "nameKo": "오미로제 결 (스파클링)",
+      "nameEn": "Omy Rose Kyul Sparkling",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경북 문경",
+      "grape": "오미자",
+      "vintage": "NV",
+      "price": 90000,
+      "rating": 4.3,
+      "reviewCount": 42,
+      "description": "세계 최초 오미자 스파클링, 정상회담 만찬주로 화제",
+      "imageUrl": "/images/wines/wine_081.png"
+    },
+    {
+      "id": "wine_082",
+      "nameKo": "오미로제 연 (스파클링)",
+      "nameEn": "Omy Rose Yeon Sparkling",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경북 문경",
+      "grape": "오미자",
+      "vintage": "NV",
+      "price": 45000,
+      "rating": 3.9,
+      "reviewCount": 475,
+      "description": "오미로제의 대중 라인, 국빈 만찬·선물용 인기",
+      "imageUrl": "/images/wines/wine_082.png"
+    },
+    {
+      "id": "wine_083",
+      "nameKo": "그랑꼬또 청수 화이트",
+      "nameEn": "Grand Coteau Cheongsu White",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경기 대부도",
+      "grape": "청수",
+      "vintage": "NV",
+      "price": 35000,
+      "rating": 3.8,
+      "reviewCount": 181,
+      "description": "청와대 만찬주로 선정된 국산 청수 품종 화이트",
+      "imageUrl": "/images/wines/wine_083.png"
+    },
+    {
+      "id": "wine_084",
+      "nameKo": "그랑꼬또 레드",
+      "nameEn": "Grand Coteau Red",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경기 대부도",
+      "grape": "캠벨얼리",
+      "vintage": "NV",
+      "price": 25000,
+      "rating": 3.8,
+      "reviewCount": 133,
+      "description": "대부도 캠벨얼리로 만든 한국 대표 레드",
+      "imageUrl": "/images/wines/wine_084.png"
+    },
+    {
+      "id": "wine_085",
+      "nameKo": "그랑꼬또 로제",
+      "nameEn": "Grand Coteau Rose",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경기 대부도",
+      "grape": "캠벨얼리",
+      "vintage": "NV",
+      "price": 22000,
+      "rating": 3.9,
+      "reviewCount": 260,
+      "description": "산뜻한 캠벨 향의 국산 로제 스테디셀러",
+      "imageUrl": "/images/wines/wine_085.png"
+    },
+    {
+      "id": "wine_086",
+      "nameKo": "그랑꼬또 M5-6",
+      "nameEn": "Grand Coteau M5-6",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경기 대부도",
+      "grape": "캠벨얼리",
+      "vintage": "NV",
+      "price": 50000,
+      "rating": 3.9,
+      "reviewCount": 79,
+      "description": "5~6년 숙성 프리미엄 라인, 품평회 다수 수상",
+      "imageUrl": "/images/wines/wine_086.png"
+    },
+    {
+      "id": "wine_087",
+      "nameKo": "샤토미소 스위트 로제",
+      "nameEn": "Chateau Miso Sweet Rose",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 충북 영동",
+      "grape": "캠벨얼리",
+      "vintage": "NV",
+      "price": 23000,
+      "rating": 4.2,
+      "reviewCount": 463,
+      "description": "'미소' 라벨로 유명한 영동 도란원의 히트작",
+      "imageUrl": "/images/wines/wine_087.png"
+    },
+    {
+      "id": "wine_088",
+      "nameKo": "여포의 꿈 화이트",
+      "nameEn": "Yeopo's Dream White",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 충북 영동",
+      "grape": "캠벨얼리",
+      "vintage": "NV",
+      "price": 33000,
+      "rating": 4.1,
+      "reviewCount": 254,
+      "description": "광명동굴 판매 1위로 유명해진 여포와인농장 대표작",
+      "imageUrl": "/images/wines/wine_088.png"
+    },
+    {
+      "id": "wine_089",
+      "nameKo": "여포의 꿈 레드",
+      "nameEn": "Yeopo's Dream Red",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 충북 영동",
+      "grape": "캠벨얼리",
+      "vintage": "NV",
+      "price": 33000,
+      "rating": 3.9,
+      "reviewCount": 254,
+      "description": "진한 과실미의 여포와인농장 레드",
+      "imageUrl": "/images/wines/wine_089.png"
+    },
+    {
+      "id": "wine_090",
+      "nameKo": "여포의 꿈 로제",
+      "nameEn": "Yeopo's Dream Rose",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 충북 영동",
+      "grape": "캠벨얼리",
+      "vintage": "NV",
+      "price": 33000,
+      "rating": 4.2,
+      "reviewCount": 109,
+      "description": "여포 시리즈의 산뜻한 로제 버전",
+      "imageUrl": "/images/wines/wine_090.png"
+    },
+    {
+      "id": "wine_091",
+      "nameKo": "시나브로 청수 화이트",
+      "nameEn": "Sinabro Cheongsu White",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 충북 영동",
+      "grape": "청수",
+      "vintage": "NV",
+      "price": 30000,
+      "rating": 3.8,
+      "reviewCount": 349,
+      "description": "청수 품종을 최초 양조한 와이너리의 대표 화이트",
+      "imageUrl": "/images/wines/wine_091.png"
+    },
+    {
+      "id": "wine_092",
+      "nameKo": "시나브로 레드",
+      "nameEn": "Sinabro Red",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 충북 영동",
+      "grape": "캠벨얼리",
+      "vintage": "NV",
+      "price": 28000,
+      "rating": 4.0,
+      "reviewCount": 228,
+      "description": "소믈리에 가족이 만드는 영동 대표 레드, 품평회 다수 수상",
+      "imageUrl": "/images/wines/wine_092.png"
+    },
+    {
+      "id": "wine_093",
+      "nameKo": "샤또무주 레드 스위트",
+      "nameEn": "Chateau Muju Red Sweet",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 전북 무주",
+      "grape": "산머루",
+      "vintage": "NV",
+      "price": 30000,
+      "rating": 4.0,
+      "reviewCount": 454,
+      "description": "무주 산머루로 만든 토종 머루와인의 대표",
+      "imageUrl": "/images/wines/wine_093.png"
+    },
+    {
+      "id": "wine_094",
+      "nameKo": "머루드서 프리미엄",
+      "nameEn": "Meoru de Seo Premium",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경기 파주",
+      "grape": "산머루",
+      "vintage": "NV",
+      "price": 35000,
+      "rating": 4.2,
+      "reviewCount": 356,
+      "description": "파주 산머루농원의 프리미엄 머루와인, 만찬주 이력",
+      "imageUrl": "/images/wines/wine_094.png"
+    },
+    {
+      "id": "wine_095",
+      "nameKo": "추사 애플와인",
+      "nameEn": "Chusa Apple Wine",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 충남 예산",
+      "grape": "사과",
+      "vintage": "NV",
+      "price": 18000,
+      "rating": 4.1,
+      "reviewCount": 342,
+      "description": "예산 사과로 만든 국내 대표 사과와인",
+      "imageUrl": "/images/wines/wine_095.png"
+    },
+    {
+      "id": "wine_096",
+      "nameKo": "감그린 스위트",
+      "nameEn": "Gamgreen Sweet",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경북 청도",
+      "grape": "감(청도 반시)",
+      "vintage": "NV",
+      "price": 15000,
+      "rating": 3.8,
+      "reviewCount": 218,
+      "description": "청도 반시(감)로 만든 세계적으로 드문 감와인",
+      "imageUrl": "/images/wines/wine_096.png"
+    },
+    {
+      "id": "wine_097",
+      "nameKo": "고도리 화이트",
+      "nameEn": "Godori White",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경북 영천",
+      "grape": "거봉",
+      "vintage": "NV",
+      "price": 20000,
+      "rating": 4.1,
+      "reviewCount": 421,
+      "description": "영천 거봉으로 만든 인기 화이트, 품평회 수상",
+      "imageUrl": "/images/wines/wine_097.png"
+    },
+    {
+      "id": "wine_098",
+      "nameKo": "뱅꼬레 레드",
+      "nameEn": "Vin Coree Red",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 경북 영천",
+      "grape": "캠벨얼리",
+      "vintage": "NV",
+      "price": 25000,
+      "rating": 4.2,
+      "reviewCount": 139,
+      "description": "한국 최대 와인산지 영천의 대표 브랜드",
+      "imageUrl": "/images/wines/wine_098.png"
+    },
+    {
+      "id": "wine_099",
+      "nameKo": "두레앙 스위트",
+      "nameEn": "Dureang Sweet",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 충남 천안",
+      "grape": "거봉",
+      "vintage": "NV",
+      "price": 15000,
+      "rating": 3.9,
+      "reviewCount": 286,
+      "description": "천안 거봉포도로 만든 달콤한 국산 와인",
+      "imageUrl": "/images/wines/wine_099.png"
+    },
+    {
+      "id": "wine_100",
+      "nameKo": "마주앙 스페셜 화이트",
+      "nameEn": "Majuang Special White",
+      "type": "korean",
+      "country": "한국",
+      "region": "한국 (롯데칠성)",
+      "grape": "화이트 블렌드",
+      "vintage": "NV",
+      "price": 9000,
+      "rating": 4.0,
+      "reviewCount": 228,
+      "description": "1977년 출시된 한국 와인의 원조, 미사주로도 유명",
+      "imageUrl": "/images/wines/wine_100.png"
+    },
+    {
+      "id": "wine_101",
+      "nameKo": "19 크라임스 레드 블렌드",
+      "nameEn": "19 Crimes Red Blend",
+      "type": "red",
+      "country": "호주",
+      "region": "호주",
+      "grape": "쉬라즈 블렌드",
+      "vintage": "2022",
+      "price": 25000,
+      "rating": 4.2,
+      "reviewCount": 215,
+      "description": "호주 유배 죄수들의 실화를 담은 라벨, AR 앱으로 라벨 속 인물이 말하는 마케팅으로 화제",
+      "imageUrl": "/images/wines/wine_101.png"
+    },
+    {
+      "id": "wine_102",
+      "nameKo": "베어풋 모스카토",
+      "nameEn": "Barefoot Moscato",
+      "type": "white",
+      "country": "미국",
+      "region": "미국 캘리포니아",
+      "grape": "모스카토",
+      "vintage": "NV",
+      "price": 12000,
+      "rating": 4.0,
+      "reviewCount": 168,
+      "description": "맨발 로고로 유명한 세계 최다 수상 와인 브랜드, 달콤한 입문용으로 인기",
+      "imageUrl": "/images/wines/wine_102.png"
+    },
+    {
+      "id": "wine_103",
+      "nameKo": "펜폴즈 빈 389",
+      "nameEn": "Penfolds Bin 389",
+      "type": "red",
+      "country": "호주",
+      "region": "호주 남호주",
+      "grape": "카베르네·쉬라즈",
+      "vintage": "2021",
+      "price": 90000,
+      "rating": 4.5,
+      "reviewCount": 142,
+      "description": "'베이비 그랜지'로 불리는 펜폴즈의 대표 라인, 과실향과 오크향의 밸런스로 유명",
+      "imageUrl": "/images/wines/wine_103.png"
+    },
+    {
+      "id": "wine_104",
+      "nameKo": "루이 자도 부르고뉴 피노 누아",
+      "nameEn": "Louis Jadot Bourgogne Pinot Noir",
+      "type": "red",
+      "country": "프랑스",
+      "region": "프랑스 부르고뉴",
+      "grape": "피노 누아",
+      "vintage": "2022",
+      "price": 45000,
+      "rating": 4.1,
+      "reviewCount": 98,
+      "description": "섬세한 향과 가벼운 바디감으로 피노 누아 입문 정석으로 꼽히는 와인",
+      "imageUrl": "/images/wines/wine_104.png"
+    },
+    {
+      "id": "wine_105",
+      "nameKo": "라 비에이 페름 루즈",
+      "nameEn": "La Vieille Ferme Rouge",
+      "type": "red",
+      "country": "프랑스",
+      "region": "프랑스 론",
+      "grape": "그르나슈·시라 블렌드",
+      "vintage": "2022",
+      "price": 15000,
+      "rating": 4.0,
+      "reviewCount": 230,
+      "description": "닭 라벨로 유명한 페랭 가문의 가성비 데일리 와인, 전 세계 베스트셀러",
+      "imageUrl": "/images/wines/wine_105.png"
+    }
+  ],
+  "users": [
+    {
+      "id": "user_001",
+      "nickname": "레브",
+      "profileImage": "/images/profiles/user_001.png",
+      "bio": "와인을 천천히 알아가는 중입니다.",
+      "favoriteWine": "wine_021",
+      "followers": 128
+    },
+    {
+      "id": "user_002",
+      "nickname": "와인한잔의여유",
+      "profileImage": "/images/profiles/user_002.png",
+      "bio": "퇴근 후 와인 한 잔이 인생의 낙",
+      "favoriteWine": "wine_001",
+      "followers": 1487
+    },
+    {
+      "id": "user_003",
+      "nickname": "소믈리에지망생",
+      "profileImage": "/images/profiles/user_003.png",
+      "bio": "WSET Lv.2 준비중 🍷 시음 노트 공유해요",
+      "favoriteWine": "wine_025",
+      "followers": 1156
+    },
+    {
+      "id": "user_004",
+      "nickname": "캠벨좋아",
+      "profileImage": "/images/profiles/user_004.png",
+      "bio": "한국와인 전도사. 영동 와이너리 투어 다녀요",
+      "favoriteWine": "wine_083",
+      "followers": 256
+    },
+    {
+      "id": "user_005",
+      "nickname": "버블홀릭",
+      "profileImage": "/images/profiles/user_005.png",
+      "bio": "스파클링만 마십니다. 기포가 없으면 섭섭해요",
+      "favoriteWine": "wine_043",
+      "followers": 513
+    },
+    {
+      "id": "user_006",
+      "nickname": "홈술마스터",
+      "profileImage": "/images/profiles/user_006.png",
+      "bio": "혼술 안주 페어링 연구소장(자칭)",
+      "favoriteWine": "wine_005",
+      "followers": 189
+    },
+    {
+      "id": "user_007",
+      "nickname": "로제로제",
+      "profileImage": "/images/profiles/user_007.png",
+      "bio": "여름엔 역시 프로방스 로제",
+      "favoriteWine": "wine_061",
+      "followers": 654
+    },
+    {
+      "id": "user_008",
+      "nickname": "나파러버",
+      "profileImage": "/images/profiles/user_008.png",
+      "bio": "나파밸리 성지순례가 꿈입니다",
+      "favoriteWine": "wine_010",
+      "followers": 721
+    },
+    {
+      "id": "user_009",
+      "nickname": "입문자준",
+      "profileImage": "/images/profiles/user_009.png",
+      "bio": "와인 마신 지 3개월차. 추천 부탁드려요!",
+      "favoriteWine": "wine_007",
+      "followers": 23
+    },
+    {
+      "id": "user_010",
+      "nickname": "문경오미자",
+      "profileImage": "/images/profiles/user_010.png",
+      "bio": "오미로제 마시고 한국와인에 빠졌어요",
+      "favoriteWine": "wine_081",
+      "followers": 95
+    },
+    {
+      "id": "user_011",
+      "nickname": "데일리와인",
+      "profileImage": "/images/profiles/user_011.png",
+      "bio": "1만원대 가성비 와인 발굴이 취미",
+      "favoriteWine": "wine_006",
+      "followers": 310
+    },
+    {
+      "id": "user_012",
+      "nickname": "샴페인언니",
+      "profileImage": "/images/profiles/user_012.png",
+      "bio": "기념일엔 무조건 샴페인 🥂",
+      "favoriteWine": "wine_042",
+      "followers": 1204
+    },
+    {
+      "id": "user_013",
+      "nickname": "와인러버",
+      "profileImage": "/images/profiles/user_013.png",
+      "bio": "하루를 마무리하는 가장 좋은 방법은 와인 한 잔.",
+      "favoriteWine": "wine_018",
+      "followers": 1248
+    },
+    {
+      "id": "user_014",
+      "nickname": "오늘도와인",
+      "profileImage": "/images/profiles/user_014.png",
+      "bio": "오늘도 새로운 와인을 기록합니다.",
+      "favoriteWine": "wine_021",
+      "followers": 892
+    },
+    {
+      "id": "user_015",
+      "nickname": "레드홀릭",
+      "profileImage": "/images/profiles/user_015.png",
+      "bio": "레드와인 없이는 못 사는 사람.",
+      "favoriteWine": "wine_103",
+      "followers": 2031
+    },
+    {
+      "id": "user_016",
+      "nickname": "빈티지노트",
+      "profileImage": "/images/profiles/user_016.png",
+      "bio": "오늘의 빈티지를 기록합니다.",
+      "favoriteWine": "wine_014",
+      "followers": 978
+    },
+    {
+      "id": "user_017",
+      "nickname": "오크향좋아",
+      "profileImage": "/images/profiles/user_017.png",
+      "bio": "오크향과 깊은 여운을 좋아합니다.",
+      "favoriteWine": "wine_104",
+      "followers": 721
+    },
+    {
+      "id": "user_018",
+      "nickname": "마시자오늘",
+      "profileImage": "/images/profiles/user_018.png",
+      "bio": "오늘도 좋은 사람들과 좋은 와인.",
+      "favoriteWine": "wine_043",
+      "followers": 836
+    },
+    {
+      "id": "user_019",
+      "nickname": "한병더",
+      "profileImage": "/images/profiles/user_019.png",
+      "bio": "새로운 와인을 발견하는 즐거움.",
+      "favoriteWine": "wine_105",
+      "followers": 593
+    }
+  ],
+  "feeds": [
+    {
+      "id": "feed_021",
+      "userId": "user_013",
+      "wineId": "wine_018",
+      "images": [
+        "/images/feeds/feed_021_1.jpg",
+        "/images/feeds/feed_021_2.jpg",
+        "/images/feeds/feed_021_3.jpg"
+      ],
+      "content": "기념일에 마셨는데 향이 정말 깊고 여운이 오래 남았어요. 채끝 스테이크와 함께 먹으니 최고의 조합이었습니다.",
+      "tags": [
+        "레드와인",
+        "기념일",
+        "스테이크",
+        "보르도"
+      ],
+      "createdAt": "2026-07-08T20:15:00",
+      "likeCount": 128,
+      "commentCount": 23
+    },
+    {
+      "id": "feed_022",
+      "userId": "user_015",
+      "wineId": "wine_103",
+      "images": [
+        "/images/feeds/feed_022_1.jpg",
+        "/images/feeds/feed_022_2.jpg",
+        "/images/feeds/feed_022_3.jpg",
+        "/images/feeds/feed_022_4.jpg"
+      ],
+      "content": "과실향과 오크향의 밸런스가 훌륭했습니다. 와인을 좋아하는 분이라면 꼭 한 번 마셔보세요.",
+      "tags": [
+        "호주와인",
+        "레드와인",
+        "오크향"
+      ],
+      "createdAt": "2026-07-06T19:40:00",
+      "likeCount": 176,
+      "commentCount": 35
+    },
+    {
+      "id": "feed_023",
+      "userId": "user_016",
+      "wineId": "wine_014",
+      "images": [
+        "/images/feeds/feed_023_1.jpg",
+        "/images/feeds/feed_023_2.jpg"
+      ],
+      "content": "탄닌은 부드럽고 과실향이 풍부해서 양갈비와 최고의 궁합이었습니다.",
+      "tags": [
+        "이탈리아와인",
+        "양갈비",
+        "레드와인"
+      ],
+      "createdAt": "2026-07-02T21:05:00",
+      "likeCount": 103,
+      "commentCount": 18
+    },
+    {
+      "id": "feed_024",
+      "userId": "user_017",
+      "wineId": "wine_104",
+      "images": [
+        "/images/feeds/feed_024_1.jpg",
+        "/images/feeds/feed_024_2.jpg",
+        "/images/feeds/feed_024_3.jpg"
+      ],
+      "content": "향이 섬세하고 가벼운 바디감이라 부담 없이 즐길 수 있었어요. 입문자에게도 추천합니다.",
+      "tags": [
+        "피노누아",
+        "입문와인",
+        "프랑스와인"
+      ],
+      "createdAt": "2026-06-30T18:22:00",
+      "likeCount": 79,
+      "commentCount": 14
+    },
+    {
+      "id": "feed_025",
+      "userId": "user_018",
+      "wineId": "wine_043",
+      "images": [
+        "/images/feeds/feed_025_1.jpg",
+        "/images/feeds/feed_025_2.jpg"
+      ],
+      "content": "여행 중 바다를 보며 마셨는데 분위기까지 완벽했어요. 산뜻한 피니시가 기억에 남습니다.",
+      "tags": [
+        "스파클링",
+        "여행",
+        "바다"
+      ],
+      "createdAt": "2026-06-25T17:48:00",
+      "likeCount": 97,
+      "commentCount": 16
+    },
+    {
+      "id": "feed_013",
+      "userId": "user_002",
+      "wineId": "wine_002",
+      "images": [
+        "/images/feeds/feed_013_1.jpg",
+        "/images/feeds/feed_013_2.jpg"
+      ],
+      "content": "부모님 선물로 사드렸다가 한 잔 얻어 마심. 역시 국민 선물 와인.",
+      "tags": [
+        "레드",
+        "선물",
+        "칠레"
+      ],
+      "createdAt": "2026-06-25T10:00:00",
+      "likeCount": 120,
+      "commentCount": 39
+    },
+    {
+      "id": "feed_026",
+      "userId": "user_019",
+      "wineId": "wine_105",
+      "images": [
+        "/images/feeds/feed_026_1.jpg",
+        "/images/feeds/feed_026_2.jpg",
+        "/images/feeds/feed_026_3.jpg"
+      ],
+      "content": "가격 부담 없이 즐길 수 있는 데일리 와인이에요. 파스타와 함께 먹으니 만족스러웠습니다.",
+      "tags": [
+        "가성비",
+        "데일리와인",
+        "파스타",
+        "프랑스와인"
+      ],
+      "createdAt": "2026-06-22T19:33:00",
+      "likeCount": 65,
+      "commentCount": 9
+    },
+    {
+      "id": "feed_017",
+      "userId": "user_004",
+      "wineId": "wine_088",
+      "images": [
+        "/images/feeds/feed_017_1.jpg",
+        "/images/feeds/feed_017_2.jpg",
+        "/images/feeds/feed_017_3.jpg"
+      ],
+      "content": "광명동굴에서 사온 여포의 꿈. 이름값 하는 맛입니다.",
+      "tags": [
+        "한국와인",
+        "영동",
+        "광명동굴"
+      ],
+      "createdAt": "2026-06-22T10:56:00",
+      "likeCount": 37,
+      "commentCount": 16
+    },
+    {
+      "id": "feed_016",
+      "userId": "user_009",
+      "wineId": "wine_004",
+      "images": [
+        "/images/feeds/feed_016_1.jpg",
+        "/images/feeds/feed_016_2.jpg"
+      ],
+      "content": "마트에서 제일 많이 보이길래 샀어요. 악마의 셀러 스토리도 재밌네요.",
+      "tags": [
+        "입문자",
+        "마트와인"
+      ],
+      "createdAt": "2026-06-20T21:41:00",
+      "likeCount": 138,
+      "commentCount": 0
+    },
+    {
+      "id": "feed_001",
+      "userId": "user_002",
+      "wineId": "wine_001",
+      "images": [
+        "/images/feeds/feed_001_1.jpg"
+      ],
+      "content": "골프 라운딩 끝나고 역시 1865. 18홀 65타는 못 쳤지만 와인은 맛있네요 😂",
+      "tags": [
+        "레드",
+        "칠레",
+        "골프와인"
+      ],
+      "createdAt": "2026-06-15T12:55:00",
+      "likeCount": 239,
+      "commentCount": 4
+    },
+    {
+      "id": "feed_005",
+      "userId": "user_007",
+      "wineId": "wine_061",
+      "images": [
+        "/images/feeds/feed_005_1.jpg",
+        "/images/feeds/feed_005_2.jpg"
+      ],
+      "content": "한강 피크닉에 로제 한 병. 여름 감성 그 자체 🌸 산뜻해서 브런치와도 잘 어울리고 사진도 예쁘게 나와요.",
+      "tags": [
+        "로제",
+        "피크닉",
+        "여름와인",
+        "브런치"
+      ],
+      "createdAt": "2026-06-14T20:46:00",
+      "likeCount": 203,
+      "commentCount": 35
+    },
+    {
+      "id": "feed_012",
+      "userId": "user_010",
+      "wineId": "wine_081",
+      "images": [
+        "/images/feeds/feed_012_1.jpg"
+      ],
+      "content": "문경 오미나라 방문 기념. 오미자로 만든 스파클링이라니, 세계 유일이래요!",
+      "tags": [
+        "한국와인",
+        "스파클링",
+        "오미자"
+      ],
+      "createdAt": "2026-06-13T11:42:00",
+      "likeCount": 168,
+      "commentCount": 19
+    },
+    {
+      "id": "feed_020",
+      "userId": "user_003",
+      "wineId": "wine_030",
+      "images": [
+        "/images/feeds/feed_020_1.jpg",
+        "/images/feeds/feed_020_2.jpg"
+      ],
+      "content": "더 블라인드 2026 화이트 1위라길래 시음. 산미와 당미 밸런스가 예술.",
+      "tags": [
+        "리슬링",
+        "이슈와인",
+        "시음노트"
+      ],
+      "createdAt": "2026-06-09T22:03:00",
+      "likeCount": 26,
+      "commentCount": 40
+    },
+    {
+      "id": "feed_011",
+      "userId": "user_006",
+      "wineId": "wine_005",
+      "images": [
+        "/images/feeds/feed_011_1.jpg",
+        "/images/feeds/feed_011_2.jpg"
+      ],
+      "content": "삼겹살에 다크레드, 이게 진리입니다.",
+      "tags": [
+        "레드",
+        "삼겹살",
+        "홈술"
+      ],
+      "createdAt": "2026-06-09T12:42:00",
+      "likeCount": 186,
+      "commentCount": 20
+    },
+    {
+      "id": "feed_006",
+      "userId": "user_001",
+      "wineId": "wine_021",
+      "images": [
+        "/images/feeds/feed_006_1.jpg",
+        "/images/feeds/feed_006_2.jpg",
+        "/images/feeds/feed_006_3.jpg"
+      ],
+      "content": "굴이랑 같이 먹었는데 미쳤습니다. 상큼한 산미와 시트러스 향이 입안을 씻어줘요. 해산물과 정말 잘 어울립니다.",
+      "tags": [
+        "화이트",
+        "페어링",
+        "해산물",
+        "소비뇽블랑",
+        "여름"
+      ],
+      "createdAt": "2026-06-05T12:18:00",
+      "likeCount": 94,
+      "commentCount": 17
+    },
+    {
+      "id": "feed_015",
+      "userId": "user_007",
+      "wineId": "wine_063",
+      "images": [
+        "/images/feeds/feed_015_1.jpg"
+      ],
+      "content": "브래드 피트 와인이라길래 궁금해서 샀는데 맛도 훌륭하네요.",
+      "tags": [
+        "로제",
+        "셀럽와인"
+      ],
+      "createdAt": "2026-06-03T12:23:00",
+      "likeCount": 75,
+      "commentCount": 10
+    },
+    {
+      "id": "feed_018",
+      "userId": "user_012",
+      "wineId": "wine_041",
+      "images": [
+        "/images/feeds/feed_018_1.jpg"
+      ],
+      "content": "10년 지기 절친 결혼 전야. 돔페리 오픈했습니다 🍾",
+      "tags": [
+        "샴페인",
+        "돔페리뇽",
+        "축하"
+      ],
+      "createdAt": "2026-05-24T17:09:00",
+      "likeCount": 72,
+      "commentCount": 18
+    },
+    {
+      "id": "feed_007",
+      "userId": "user_011",
+      "wineId": "wine_006",
+      "images": [
+        "/images/feeds/feed_007_1.jpg",
+        "/images/feeds/feed_007_2.jpg",
+        "/images/feeds/feed_007_3.jpg"
+      ],
+      "content": "9,900원의 행복. 편의점 와인 무시하면 안 됩니다.",
+      "tags": [
+        "가성비",
+        "편의점와인",
+        "데일리"
+      ],
+      "createdAt": "2026-05-24T14:03:00",
+      "likeCount": 15,
+      "commentCount": 37
+    },
+    {
+      "id": "feed_019",
+      "userId": "user_011",
+      "wineId": "wine_008",
+      "images": [
+        "/images/feeds/feed_019_1.jpg",
+        "/images/feeds/feed_019_2.jpg",
+        "/images/feeds/feed_019_3.jpg"
+      ],
+      "content": "편의점 2+1 행사로 겟. 데일리로 이만한 게 없다.",
+      "tags": [
+        "가성비",
+        "편의점와인"
+      ],
+      "createdAt": "2026-05-23T14:13:00",
+      "likeCount": 178,
+      "commentCount": 40
+    },
+    {
+      "id": "feed_009",
+      "userId": "user_012",
+      "wineId": "wine_043",
+      "images": [
+        "/images/feeds/feed_009_1.jpg"
+      ],
+      "content": "결혼기념일 축하주 🧡 노란 라벨은 언제 봐도 설레요.",
+      "tags": [
+        "샴페인",
+        "기념일"
+      ],
+      "createdAt": "2026-05-22T22:15:00",
+      "likeCount": 106,
+      "commentCount": 7
+    },
+    {
+      "id": "feed_010",
+      "userId": "user_003",
+      "wineId": "wine_025",
+      "images": [
+        "/images/feeds/feed_010_1.jpg",
+        "/images/feeds/feed_010_2.jpg",
+        "/images/feeds/feed_010_3.jpg"
+      ],
+      "content": "샤블리 + 생굴 조합 정석대로. 미네랄리티가 살아있다.",
+      "tags": [
+        "샤블리",
+        "화이트",
+        "페어링"
+      ],
+      "createdAt": "2026-05-19T18:02:00",
+      "likeCount": 161,
+      "commentCount": 5
+    },
+    {
+      "id": "feed_003",
+      "userId": "user_009",
+      "wineId": "wine_007",
+      "images": [
+        "/images/feeds/feed_003_1.jpg"
+      ],
+      "content": "인생 첫 와인. 생각보다 안 떫고 달달한 과일향이 나요. 와인 시작하길 잘했다!",
+      "tags": [
+        "입문자",
+        "레드",
+        "첫와인"
+      ],
+      "createdAt": "2026-05-06T15:31:00",
+      "likeCount": 126,
+      "commentCount": 13
+    },
+    {
+      "id": "feed_004",
+      "userId": "user_004",
+      "wineId": "wine_083",
+      "images": [
+        "/images/feeds/feed_004_1.jpg",
+        "/images/feeds/feed_004_2.jpg"
+      ],
+      "content": "대부도 와이너리 직접 다녀왔어요. 청수 품종 향이 진짜 매력적. 한국와인 무시하지 마세요!",
+      "tags": [
+        "한국와인",
+        "청수",
+        "와이너리투어"
+      ],
+      "createdAt": "2026-05-06T15:00:00",
+      "likeCount": 102,
+      "commentCount": 16
+    },
+    {
+      "id": "feed_014",
+      "userId": "user_005",
+      "wineId": "wine_057",
+      "images": [
+        "/images/feeds/feed_014_1.jpg",
+        "/images/feeds/feed_014_2.jpg",
+        "/images/feeds/feed_014_3.jpg"
+      ],
+      "content": "디저트 타임 🍰 달콤한 복숭아향 폭발. 케이크랑 최고 조합.",
+      "tags": [
+        "모스카토",
+        "디저트",
+        "달콤"
+      ],
+      "createdAt": "2026-05-03T17:13:00",
+      "likeCount": 132,
+      "commentCount": 16
+    },
+    {
+      "id": "feed_002",
+      "userId": "user_005",
+      "wineId": "wine_042",
+      "images": [
+        "/images/feeds/feed_002_1.jpg",
+        "/images/feeds/feed_002_2.jpg"
+      ],
+      "content": "금요일 밤 홈파티 개시! 첫 잔은 언제나 모엣 🥂 청량감이 분위기를 한층 더 살려줍니다.",
+      "tags": [
+        "샴페인",
+        "홈파티",
+        "불금",
+        "스파클링"
+      ],
+      "createdAt": "2026-05-02T19:34:00",
+      "likeCount": 217,
+      "commentCount": 41
+    },
+    {
+      "id": "feed_008",
+      "userId": "user_008",
+      "wineId": "wine_010",
+      "images": [
+        "/images/feeds/feed_008_1.jpg",
+        "/images/feeds/feed_008_2.jpg"
+      ],
+      "content": "드디어 영접한 케이머스. 진한 블랙베리 향과 초콜릿 향, 부드러움의 끝. 스테이크와 꼭 함께 드셔보세요.",
+      "tags": [
+        "나파밸리",
+        "레드",
+        "플렉스",
+        "카베르네소비뇽",
+        "스테이크"
+      ],
+      "createdAt": "2026-05-02T17:05:00",
+      "likeCount": 220,
+      "commentCount": 29
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review_001",
+      "wineId": "wine_007",
+      "userId": "user_007",
+      "rating": 4.5,
+      "content": "탄닌이 부드럽고 끝맛이 깔끔해서 입문자에게 딱이에요. 과일향도 풍부해서 재구매 의사 있습니다.",
+      "createdAt": "2026-05-02T08:21:00"
+    },
+    {
+      "id": "review_002",
+      "wineId": "wine_007",
+      "userId": "user_003",
+      "rating": 4.0,
+      "content": "가격 대비 훌륭. 데일리로 부담 없어요.",
+      "createdAt": "2026-06-09T13:47:00"
+    },
+    {
+      "id": "review_003",
+      "wineId": "wine_021",
+      "userId": "user_008",
+      "rating": 4.7,
+      "content": "열대과일향이 팡팡 터집니다. 여름에 차갑게 마시면 최고.",
+      "createdAt": "2026-06-23T21:35:00"
+    },
+    {
+      "id": "review_004",
+      "wineId": "wine_001",
+      "userId": "user_001",
+      "rating": 4.5,
+      "content": "선물용으로 실패 없는 선택. 묵직하고 진한데 병 디자인도 고급스러워서 받는 분 반응이 좋습니다.",
+      "createdAt": "2026-04-03T12:34:00"
+    },
+    {
+      "id": "review_005",
+      "wineId": "wine_002",
+      "userId": "user_001",
+      "rating": 4.3,
+      "content": "스테이크와 페어링했는데 완벽했어요.",
+      "createdAt": "2026-05-19T12:27:00"
+    },
+    {
+      "id": "review_006",
+      "wineId": "wine_004",
+      "userId": "user_003",
+      "rating": 4.0,
+      "content": "만원대에서 이 정도면 훌륭하죠.",
+      "createdAt": "2026-04-10T19:57:00"
+    },
+    {
+      "id": "review_007",
+      "wineId": "wine_005",
+      "userId": "user_001",
+      "rating": 4.2,
+      "content": "진하고 달큰해서 한국인 입맛에 잘 맞아요. 품절 대란 이해됨.",
+      "createdAt": "2026-05-07T15:42:00"
+    },
+    {
+      "id": "review_008",
+      "wineId": "wine_006",
+      "userId": "user_002",
+      "rating": 3.8,
+      "content": "가격 생각하면 놀라운 퀄리티. 기대치는 낮추고 드세요.",
+      "createdAt": "2026-05-25T21:39:00"
+    },
+    {
+      "id": "review_009",
+      "wineId": "wine_010",
+      "userId": "user_012",
+      "rating": 4.9,
+      "content": "벨벳 같은 질감에 향이 복합적이고 밸런스가 뛰어납니다. 특별한 날을 위한 와인이에요.",
+      "createdAt": "2026-04-08T13:51:00"
+    },
+    {
+      "id": "review_010",
+      "wineId": "wine_016",
+      "userId": "user_003",
+      "rating": 4.6,
+      "content": "한국인이 사랑하는 보르도라는 말이 괜히 나온 게 아니네요.",
+      "createdAt": "2026-05-01T13:47:00"
+    },
+    {
+      "id": "review_011",
+      "wineId": "wine_014",
+      "userId": "user_006",
+      "rating": 4.8,
+      "content": "슈퍼투스칸의 정석. 오픈런 할 만합니다.",
+      "createdAt": "2026-05-26T15:17:00"
+    },
+    {
+      "id": "review_012",
+      "wineId": "wine_025",
+      "userId": "user_003",
+      "rating": 4.5,
+      "content": "굴과의 페어링은 진리. 미네랄 폭탄입니다.",
+      "createdAt": "2026-06-04T20:55:00"
+    },
+    {
+      "id": "review_013",
+      "wineId": "wine_022",
+      "userId": "user_001",
+      "rating": 4.3,
+      "content": "상큼 그 자체. 냉장고에 항상 한 병 있어야 해요.",
+      "createdAt": "2026-05-08T14:52:00"
+    },
+    {
+      "id": "review_014",
+      "wineId": "wine_029",
+      "userId": "user_008",
+      "rating": 4.2,
+      "content": "매콤한 떡볶이랑 먹었는데 의외의 꿀조합.",
+      "createdAt": "2026-05-10T15:14:00"
+    },
+    {
+      "id": "review_015",
+      "wineId": "wine_030",
+      "userId": "user_001",
+      "rating": 4.6,
+      "content": "더 블라인드 1위 실감. 밸런스가 정말 좋아요.",
+      "createdAt": "2026-06-07T20:21:00"
+    },
+    {
+      "id": "review_016",
+      "wineId": "wine_034",
+      "userId": "user_005",
+      "rating": 4.1,
+      "content": "깔끔하고 드라이해서 식전주로 좋습니다.",
+      "createdAt": "2026-04-25T16:22:00"
+    },
+    {
+      "id": "review_017",
+      "wineId": "wine_042",
+      "userId": "user_011",
+      "rating": 4.4,
+      "content": "파티 분위기 살리는 데 이만한 게 없죠.",
+      "createdAt": "2026-06-13T18:01:00"
+    },
+    {
+      "id": "review_018",
+      "wineId": "wine_043",
+      "userId": "user_002",
+      "rating": 4.5,
+      "content": "토스티한 풍미가 매력적. 선물 받으면 기분 좋은 샴페인.",
+      "createdAt": "2026-05-06T16:02:00"
+    },
+    {
+      "id": "review_019",
+      "wineId": "wine_041",
+      "userId": "user_002",
+      "rating": 4.9,
+      "content": "인생 샴페인. 섬세한 기포가 예술입니다.",
+      "createdAt": "2026-06-14T19:46:00"
+    },
+    {
+      "id": "review_020",
+      "wineId": "wine_057",
+      "userId": "user_006",
+      "rating": 4.4,
+      "content": "달콤한 걸 좋아하면 무조건 성공. 복숭아향 가득.",
+      "createdAt": "2026-05-20T11:24:00"
+    },
+    {
+      "id": "review_021",
+      "wineId": "wine_058",
+      "userId": "user_010",
+      "rating": 4.0,
+      "content": "편의점에서 사기 좋은 달달이. 저도수라 부담 없어요.",
+      "createdAt": "2026-04-09T09:45:00"
+    },
+    {
+      "id": "review_022",
+      "wineId": "wine_060",
+      "userId": "user_007",
+      "rating": 4.2,
+      "content": "홈파티 필수템이라는 말에 공감. 비주얼도 예쁨.",
+      "createdAt": "2026-04-17T14:23:00"
+    },
+    {
+      "id": "review_023",
+      "wineId": "wine_061",
+      "userId": "user_007",
+      "rating": 4.5,
+      "content": "프로방스 로제의 정석. 드라이하고 우아합니다.",
+      "createdAt": "2026-04-22T18:39:00"
+    },
+    {
+      "id": "review_024",
+      "wineId": "wine_063",
+      "userId": "user_006",
+      "rating": 4.3,
+      "content": "셀럽 와인이라 궁금해서 샀다가 맛에 반했어요.",
+      "createdAt": "2026-06-28T11:46:00"
+    },
+    {
+      "id": "review_025",
+      "wineId": "wine_069",
+      "userId": "user_005",
+      "rating": 3.9,
+      "content": "가볍게 마시기 좋은 스위트 로제. 병 모양도 귀여움.",
+      "createdAt": "2026-06-10T21:20:00"
+    },
+    {
+      "id": "review_026",
+      "wineId": "wine_066",
+      "userId": "user_007",
+      "rating": 4.4,
+      "content": "병 바닥 장미 모양 보고 선물했는데 반응 최고였어요.",
+      "createdAt": "2026-06-10T12:12:00"
+    },
+    {
+      "id": "review_027",
+      "wineId": "wine_081",
+      "userId": "user_007",
+      "rating": 4.6,
+      "content": "오미자의 다섯 가지 맛이 정말 느껴져요. 한국의 자부심.",
+      "createdAt": "2026-06-13T13:39:00"
+    },
+    {
+      "id": "review_028",
+      "wineId": "wine_083",
+      "userId": "user_010",
+      "rating": 4.4,
+      "content": "청수 품종의 산뜻함이 매력적. 한식과 잘 어울립니다.",
+      "createdAt": "2026-05-13T08:19:00"
+    },
+    {
+      "id": "review_029",
+      "wineId": "wine_088",
+      "userId": "user_005",
+      "rating": 4.2,
+      "content": "이름만큼 임팩트 있는 맛. 광명동굴 1위가 이해됩니다.",
+      "createdAt": "2026-04-14T18:29:00"
+    },
+    {
+      "id": "review_030",
+      "wineId": "wine_093",
+      "userId": "user_008",
+      "rating": 4.1,
+      "content": "머루의 진한 풍미. 달콤해서 와인 입문자도 좋아할 맛.",
+      "createdAt": "2026-05-22T14:32:00"
+    },
+    {
+      "id": "review_031",
+      "wineId": "wine_018",
+      "userId": "user_013",
+      "rating": 5.0,
+      "content": "향이 정말 풍부하고 블랙체리와 바닐라 향이 은은하게 느껴졌어요. 스테이크와 함께 먹으니 훨씬 좋았습니다.",
+      "createdAt": "2026-07-08T21:10:00"
+    },
+    {
+      "id": "review_032",
+      "wineId": "wine_103",
+      "userId": "user_003",
+      "rating": 4.0,
+      "content": "오크향과 과실향의 밸런스가 좋았습니다. 디캔팅 후 마시면 훨씬 부드러워져요.",
+      "createdAt": "2026-07-03T14:30:00"
+    },
+    {
+      "id": "review_033",
+      "wineId": "wine_014",
+      "userId": "user_002",
+      "rating": 5.0,
+      "content": "양갈비와 함께 마셨는데 정말 잘 어울렸어요. 풍미가 깊고 여운도 길게 남습니다.",
+      "createdAt": "2026-07-02T20:05:00"
+    },
+    {
+      "id": "review_034",
+      "wineId": "wine_001",
+      "userId": "user_019",
+      "rating": 3.0,
+      "content": "기대했던 것보다는 조금 묵직한 느낌이었어요. 가벼운 스타일을 좋아하는 분께는 호불호가 있을 것 같습니다.",
+      "createdAt": "2026-06-30T19:11:00"
+    },
+    {
+      "id": "review_035",
+      "wineId": "wine_001",
+      "userId": "user_007",
+      "rating": 4.0,
+      "content": "치즈 플래터와 함께 즐겼는데 궁합이 좋았습니다. 가격대는 있지만 만족도도 높은 편이에요.",
+      "createdAt": "2026-06-26T18:44:00"
+    },
+    {
+      "id": "review_036",
+      "wineId": "wine_010",
+      "userId": "user_017",
+      "rating": 5.0,
+      "content": "첫 모금부터 깊은 향이 인상적이었어요. 과실향과 초콜릿 향이 자연스럽게 이어집니다.",
+      "createdAt": "2026-06-23T22:07:00"
+    },
+    {
+      "id": "review_037",
+      "wineId": "wine_001",
+      "userId": "user_018",
+      "rating": 4.0,
+      "content": "친구들과 홈파티에서 마셨는데 모두 만족했습니다. 가성비도 괜찮고 음식과도 잘 어울렸어요.",
+      "createdAt": "2026-06-20T20:36:00"
+    }
+  ],
+  "wineRecords": [
+    {
+      "id": "record_001",
+      "wineId": "wine_021",
+      "rating": 4.5,
+      "memo": "굴이랑 먹으니 산미가 살아난다. 재구매 확정.",
+      "date": "2026-06-27",
+      "location": "서울 성수 · 오이스터바",
+      "food": "석화, 감바스",
+      "companions": [
+        "여자친구"
+      ],
+      "photos": [
+        "/images/records/record_001_1.jpg"
+      ]
+    },
+    {
+      "id": "record_002",
+      "wineId": "wine_007",
+      "rating": 4.0,
+      "memo": "인생 첫 와인 기록. 과실향이 은은하고 탄닌이 부드러워 입문자가 마시기 좋았다.",
+      "date": "2026-05-02",
+      "location": "집",
+      "food": "치즈 플래터",
+      "companions": [
+        "혼자"
+      ],
+      "photos": [
+        "/images/records/record_002_1.jpg",
+        "/images/records/record_002_2.jpg"
+      ]
+    },
+    {
+      "id": "record_003",
+      "wineId": "wine_005",
+      "rating": 4.2,
+      "memo": "삼겹살엔 역시 다크레드. 진하고 스모키.",
+      "date": "2026-05-16",
+      "location": "집",
+      "food": "삼겹살",
+      "companions": [
+        "직장 동료 2명"
+      ],
+      "photos": [
+        "/images/records/record_003_1.jpg"
+      ]
+    },
+    {
+      "id": "record_004",
+      "wineId": "wine_002",
+      "rating": 4.3,
+      "memo": "아버지 생신상에 오픈. 어른들 반응 최고.",
+      "date": "2026-05-24",
+      "location": "본가",
+      "food": "한우 등심 구이",
+      "companions": [
+        "가족"
+      ],
+      "photos": [
+        "/images/records/record_004_1.jpg"
+      ]
+    },
+    {
+      "id": "record_005",
+      "wineId": "wine_042",
+      "rating": 4.4,
+      "memo": "승진 축하 파티! 기포가 기분까지 올려줌.",
+      "date": "2026-06-05",
+      "location": "서울 이태원 · 루프탑바",
+      "food": "카나페",
+      "companions": [
+        "대학 친구들"
+      ],
+      "photos": [
+        "/images/records/record_005_1.jpg"
+      ]
+    },
+    {
+      "id": "record_006",
+      "wineId": "wine_083",
+      "rating": 4.4,
+      "memo": "한국와인 재발견. 은은한 배향과 산뜻한 산미.",
+      "date": "2026-06-13",
+      "location": "경기 대부도 · 그랑꼬또 와이너리",
+      "food": "해물칼국수",
+      "companions": [
+        "와인 동호회"
+      ],
+      "photos": [
+        "/images/records/record_006_1.jpg"
+      ]
+    },
+    {
+      "id": "record_007",
+      "wineId": "wine_057",
+      "rating": 4.3,
+      "memo": "디저트 페어링용. 티라미수랑 잘 어울림.",
+      "date": "2026-06-20",
+      "location": "집",
+      "food": "티라미수",
+      "companions": [
+        "혼자"
+      ],
+      "photos": [
+        "/images/records/record_007_1.jpg"
+      ]
+    },
+    {
+      "id": "record_008",
+      "wineId": "wine_061",
+      "rating": 4.5,
+      "memo": "한강 피크닉. 차갑게 마시니 여름 그 자체.",
+      "date": "2026-06-21",
+      "location": "서울 반포한강공원",
+      "food": "샌드위치, 과일",
+      "companions": [
+        "여자친구"
+      ],
+      "photos": [
+        "/images/records/record_008_1.jpg"
+      ]
+    },
+    {
+      "id": "record_009",
+      "wineId": "wine_025",
+      "rating": 4.6,
+      "memo": "미네랄리티 공부가 된 한 병. 시음 노트 작성.",
+      "date": "2026-05-30",
+      "location": "서울 합정 · 와인바 손",
+      "food": "생굴, 관자구이",
+      "companions": [
+        "소믈리에지망생 모임"
+      ],
+      "photos": [
+        "/images/records/record_009_1.jpg"
+      ]
+    },
+    {
+      "id": "record_010",
+      "wineId": "wine_001",
+      "rating": 4.2,
+      "memo": "골프 모임 뒤풀이. 이름 스토리로 분위기 업.",
+      "date": "2026-06-07",
+      "location": "경기 용인 · 클럽하우스",
+      "food": "안심 스테이크",
+      "companions": [
+        "골프 멤버 3명"
+      ],
+      "photos": [
+        "/images/records/record_010_1.jpg"
+      ]
+    },
+    {
+      "id": "record_011",
+      "wineId": "wine_022",
+      "rating": 4.3,
+      "memo": "퇴근 후 혼술. 상큼함에 피로가 풀림.",
+      "date": "2026-06-24",
+      "location": "집",
+      "food": "훈제연어 샐러드",
+      "companions": [
+        "혼자"
+      ],
+      "photos": [
+        "/images/records/record_011_1.jpg"
+      ]
+    },
+    {
+      "id": "record_012",
+      "wineId": "wine_082",
+      "rating": 4.4,
+      "memo": "문경 여행 기념. 오미자 향이 신기하고 좋다.",
+      "date": "2026-06-14",
+      "location": "경북 문경 · 오미나라",
+      "food": "약과, 한과",
+      "companions": [
+        "가족"
+      ],
+      "photos": [
+        "/images/records/record_012_1.jpg"
+      ]
+    },
+    {
+      "id": "record_013",
+      "wineId": "wine_010",
+      "rating": 4.8,
+      "memo": "큰맘 먹고 오픈. 벨벳 질감이란 게 이런 거구나.",
+      "date": "2026-07-04",
+      "location": "집",
+      "food": "립아이 스테이크",
+      "companions": [
+        "아내"
+      ],
+      "photos": [
+        "/images/records/record_013_1.jpg"
+      ]
+    },
+    {
+      "id": "record_014",
+      "wineId": "wine_060",
+      "rating": 4.1,
+      "memo": "홈파티 마무리 스파클링. 청량감이 분위기를 살려주고 달콤해서 다들 좋아함.",
+      "date": "2026-06-28",
+      "location": "집",
+      "food": "과일, 마카롱",
+      "companions": [
+        "친구 4명"
+      ],
+      "photos": [
+        "/images/records/record_014_1.jpg",
+        "/images/records/record_014_2.jpg",
+        "/images/records/record_014_3.jpg",
+        "/images/records/record_014_4.jpg",
+        "/images/records/record_014_5.jpg"
+      ]
+    },
+    {
+      "id": "record_015",
+      "wineId": "wine_030",
+      "rating": 4.6,
+      "memo": "이슈 와인 시음. 산미-당미 균형이 인상적.",
+      "date": "2026-07-05",
+      "location": "서울 압구정 · 와인샵 시음회",
+      "food": "브리치즈",
+      "companions": [
+        "와인 동호회"
+      ],
+      "photos": [
+        "/images/records/record_015_1.jpg"
+      ]
+    },
+    {
+      "id": "record_016",
+      "wineId": "wine_018",
+      "rating": 5.0,
+      "memo": "블랙체리와 바닐라 향이 풍부했고 스테이크와 최고의 조합이었습니다. 다음에도 꼭 다시 마시고 싶은 와인이에요.",
+      "date": "2026-07-08",
+      "location": "서울 성수동",
+      "food": "채끝 스테이크",
+      "companions": [
+        "친구 2명"
+      ],
+      "photos": [
+        "/images/records/record_016_1.jpg",
+        "/images/records/record_016_2.jpg",
+        "/images/records/record_016_3.jpg"
+      ]
+    },
+    {
+      "id": "record_017",
+      "wineId": "wine_014",
+      "rating": 5.0,
+      "memo": "기념일에 마셨는데 향과 밸런스가 정말 좋았습니다. 분위기와도 잘 어울렸어요.",
+      "date": "2026-07-04",
+      "location": "서울 한남동",
+      "food": "양갈비",
+      "companions": [
+        "연인"
+      ],
+      "photos": [
+        "/images/records/record_017_1.jpg",
+        "/images/records/record_017_2.jpg",
+        "/images/records/record_017_3.jpg",
+        "/images/records/record_017_4.jpg"
+      ]
+    },
+    {
+      "id": "record_018",
+      "wineId": "wine_021",
+      "rating": 4.0,
+      "memo": "산뜻한 산미가 인상적이었고 해산물과 함께 먹으니 더욱 맛있었습니다.",
+      "date": "2026-07-02",
+      "location": "부산 광안리",
+      "food": "연어 스테이크",
+      "companions": [
+        "가족"
+      ],
+      "photos": [
+        "/images/records/record_018_1.jpg",
+        "/images/records/record_018_2.jpg"
+      ]
+    },
+    {
+      "id": "record_019",
+      "wineId": "wine_002",
+      "rating": 3.0,
+      "memo": "생각보다 탄닌이 강해서 제 취향과는 조금 달랐지만 음식과 함께하니 괜찮았습니다.",
+      "date": "2026-06-28",
+      "location": "서울 연남동",
+      "food": "크림 파스타",
+      "companions": [
+        "친구"
+      ],
+      "photos": [
+        "/images/records/record_019_1.jpg"
+      ]
+    },
+    {
+      "id": "record_020",
+      "wineId": "wine_010",
+      "rating": 5.0,
+      "memo": "초콜릿과 오크향이 깊게 느껴졌고 여운이 길어 만족스러웠습니다.",
+      "date": "2026-06-25",
+      "location": "서울 청담 · 와인바",
+      "food": "티본 스테이크",
+      "companions": [
+        "회사 동료"
+      ],
+      "photos": [
+        "/images/records/record_020_1.jpg",
+        "/images/records/record_020_2.jpg",
+        "/images/records/record_020_3.jpg"
+      ]
+    },
+    {
+      "id": "record_021",
+      "wineId": "wine_004",
+      "rating": 4.0,
+      "memo": "치즈와 함께 즐기기 좋았고 가격 대비 만족도가 높은 와인이었습니다.",
+      "date": "2026-06-22",
+      "location": "집",
+      "food": "브리 치즈",
+      "companions": [
+        "혼자"
+      ],
+      "photos": [
+        "/images/records/record_021_1.jpg",
+        "/images/records/record_021_2.jpg"
+      ]
+    },
+    {
+      "id": "record_022",
+      "wineId": "wine_103",
+      "rating": 5.0,
+      "memo": "과실향이 풍부하고 산미가 적당해 부담 없이 마시기 좋은 레드와인이었습니다.",
+      "date": "2026-06-20",
+      "location": "제주도",
+      "food": "흑돼지 스테이크",
+      "companions": [
+        "가족"
+      ],
+      "photos": [
+        "/images/records/record_022_1.jpg",
+        "/images/records/record_022_2.jpg",
+        "/images/records/record_022_3.jpg",
+        "/images/records/record_022_4.jpg"
+      ]
+    },
+    {
+      "id": "record_023",
+      "wineId": "wine_105",
+      "rating": 4.0,
+      "memo": "친구 추천으로 마셨는데 기대 이상이었습니다. 다음에는 다른 빈티지도 마셔보고 싶어요.",
+      "date": "2026-06-18",
+      "location": "서울 잠실",
+      "food": "페퍼로니 피자",
+      "companions": [
+        "친구 3명"
+      ],
+      "photos": [
+        "/images/records/record_023_1.jpg",
+        "/images/records/record_023_2.jpg"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "question_001",
+      "title": "입문자에게 추천하는 레드와인이 있을까요?",
+      "content": "레드와인을 처음 마셔보려고 합니다. 너무 떫지 않은 와인 추천 부탁드립니다.",
+      "tags": [
+        "입문자",
+        "레드와인"
+      ],
+      "userId": "user_009",
+      "createdAt": "2026-07-08T10:42:00",
+      "answers": [
+        {
+          "id": "answer_001",
+          "userId": "user_002",
+          "content": "Yellow Tail Shiraz 추천드립니다. 탄닌이 부드러워서 입문자에게 좋아요.",
+          "helpfulCount": 12,
+          "createdAt": "2026-07-08T17:50:00"
+        },
+        {
+          "id": "answer_002",
+          "userId": "user_006",
+          "content": "19 Crimes도 괜찮아요. 가격대도 부담 없는 편입니다.",
+          "helpfulCount": 8,
+          "createdAt": "2026-07-08T22:47:00"
+        }
+      ]
+    },
+    {
+      "id": "question_002",
+      "title": "삼겹살에 어울리는 와인 뭐가 있을까요?",
+      "content": "주말에 삼겹살 파티 예정인데 페어링할 와인 추천해주세요!",
+      "tags": [
+        "페어링",
+        "삼겹살"
+      ],
+      "userId": "user_011",
+      "createdAt": "2026-07-05T18:39:00",
+      "answers": [
+        {
+          "id": "answer_003",
+          "userId": "user_006",
+          "content": "디아블로 다크레드요. 진하고 스모키해서 구운 고기랑 찰떡입니다.",
+          "helpfulCount": 21,
+          "createdAt": "2026-07-05T11:18:00"
+        },
+        {
+          "id": "answer_004",
+          "userId": "user_004",
+          "content": "한국와인 그랑꼬또 레드도 의외로 잘 어울려요. 캠벨 향이 입안을 깔끔하게 해줍니다.",
+          "helpfulCount": 9,
+          "createdAt": "2026-07-05T18:42:00"
+        }
+      ]
+    },
+    {
+      "id": "question_003",
+      "title": "샴페인이랑 스파클링 와인 차이가 뭔가요?",
+      "content": "둘 다 기포 있는 와인 아닌가요? 가격 차이가 왜 이렇게 큰지 궁금합니다.",
+      "tags": [
+        "스파클링",
+        "샴페인",
+        "기초지식"
+      ],
+      "userId": "user_009",
+      "createdAt": "2026-07-01T11:43:00",
+      "answers": [
+        {
+          "id": "answer_005",
+          "userId": "user_012",
+          "content": "프랑스 샹파뉴 지역에서 전통 방식으로 만든 것만 샴페인이라고 부를 수 있어요. 프로세코, 카바는 다른 지역/방식의 스파클링입니다.",
+          "helpfulCount": 34,
+          "createdAt": "2026-07-01T15:05:00"
+        },
+        {
+          "id": "answer_006",
+          "userId": "user_005",
+          "content": "숙성 방식 차이로 기포의 섬세함이 달라져요. 입문은 카바나 프로세코로 시작해도 충분합니다.",
+          "helpfulCount": 15,
+          "createdAt": "2026-07-01T23:48:00"
+        }
+      ]
+    },
+    {
+      "id": "question_004",
+      "title": "와인 오픈 후 며칠까지 마셔도 되나요?",
+      "content": "혼자 마시다 보니 한 병을 다 못 비워요. 보관 팁 있을까요?",
+      "tags": [
+        "보관",
+        "혼술"
+      ],
+      "userId": "user_001",
+      "createdAt": "2026-06-28T10:01:00",
+      "answers": [
+        {
+          "id": "answer_007",
+          "userId": "user_003",
+          "content": "레드는 3일, 화이트는 3~5일 정도가 마지노선이에요. 진공 스토퍼 쓰고 냉장 보관하세요.",
+          "helpfulCount": 28,
+          "createdAt": "2026-06-28T14:14:00"
+        },
+        {
+          "id": "answer_008",
+          "userId": "user_010",
+          "content": "스파클링은 하루 이틀 안에 드시는 게 좋아요. 기포가 금방 빠집니다.",
+          "helpfulCount": 11,
+          "createdAt": "2026-06-28T22:12:00"
+        }
+      ]
+    },
+    {
+      "id": "question_005",
+      "title": "한국와인 입문으로 뭐가 좋을까요?",
+      "content": "해외 와인만 마셔봤는데 한국와인도 궁금해졌어요.",
+      "tags": [
+        "한국와인",
+        "입문자"
+      ],
+      "userId": "user_007",
+      "createdAt": "2026-06-25T09:29:00",
+      "answers": [
+        {
+          "id": "answer_009",
+          "userId": "user_004",
+          "content": "청수 품종 화이트 강추합니다. 그랑꼬또 청수나 시나브로 청수부터 시작해보세요.",
+          "helpfulCount": 19,
+          "createdAt": "2026-06-25T10:15:00"
+        },
+        {
+          "id": "answer_010",
+          "userId": "user_010",
+          "content": "스파클링 좋아하시면 오미로제 연! 오미자로 만든 세계 유일 스파클링이에요.",
+          "helpfulCount": 14,
+          "createdAt": "2026-06-25T17:39:00"
+        },
+        {
+          "id": "answer_011",
+          "userId": "user_002",
+          "content": "달콤한 게 좋으면 샤토미소 스위트 로제도 접근성 좋아요.",
+          "helpfulCount": 7,
+          "createdAt": "2026-06-25T23:49:00"
+        }
+      ]
+    },
+    {
+      "id": "question_006",
+      "title": "2026 더 블라인드 수상 와인 어디서 사나요?",
+      "content": "포스&그레이스랑 셀바흐 리슬링 구매처가 궁금합니다.",
+      "tags": [
+        "이슈와인",
+        "구매처"
+      ],
+      "userId": "user_008",
+      "createdAt": "2026-06-22T18:36:00",
+      "answers": [
+        {
+          "id": "answer_012",
+          "userId": "user_003",
+          "content": "9월에 롯데백화점 단독 판매 예정이라고 해요. 1~2회차 수상작은 전량 완판됐으니 서두르세요.",
+          "helpfulCount": 25,
+          "createdAt": "2026-06-22T16:56:00"
+        }
+      ]
+    },
+    {
+      "id": "question_007",
+      "title": "와인 평점 앱마다 다른데 뭘 믿어야 하죠?",
+      "content": "같은 와인인데 앱마다 평점이 달라서 혼란스러워요.",
+      "tags": [
+        "평점",
+        "팁"
+      ],
+      "userId": "user_009",
+      "createdAt": "2026-06-18T19:24:00",
+      "answers": [
+        {
+          "id": "answer_013",
+          "userId": "user_003",
+          "content": "평점은 참고만 하고 본인 시음 기록을 쌓는 게 제일 정확해요. 이 앱 와인 다이어리 기능 활용해보세요!",
+          "helpfulCount": 31,
+          "createdAt": "2026-06-18T13:45:00"
+        }
+      ]
+    },
+    {
+      "id": "question_008",
+      "title": "데일리 와인 예산 1만원대 추천 부탁드려요",
+      "content": "매일 마시긴 부담돼서 가성비 좋은 와인 찾고 있습니다.",
+      "tags": [
+        "가성비",
+        "데일리"
+      ],
+      "userId": "user_001",
+      "createdAt": "2026-06-15T18:44:00",
+      "answers": [
+        {
+          "id": "answer_014",
+          "userId": "user_011",
+          "content": "도스코파스 9,900원, 맥기건 블랙라벨 1만원 초반. 편의점 행사 노리면 더 저렴해요.",
+          "helpfulCount": 22,
+          "createdAt": "2026-06-15T17:25:00"
+        },
+        {
+          "id": "answer_015",
+          "userId": "user_006",
+          "content": "카시예로 델 디아블로도 1.5만원대에서 안정적입니다.",
+          "helpfulCount": 13,
+          "createdAt": "2026-06-15T13:09:00"
+        }
+      ]
+    },
+    {
+      "id": "question_009",
+      "title": "로제 와인은 어떻게 만들어지나요?",
+      "content": "레드랑 화이트 섞는 건가요? 색이 너무 예뻐서 궁금해요.",
+      "tags": [
+        "로제",
+        "기초지식"
+      ],
+      "userId": "user_005",
+      "createdAt": "2026-06-10T20:55:00",
+      "answers": [
+        {
+          "id": "answer_016",
+          "userId": "user_007",
+          "content": "섞는 게 아니라 적포도 껍질을 짧게 침용해서 연한 색만 뽑아내는 방식이 일반적이에요. 샴페인 로제만 예외적으로 블렌딩이 허용됩니다.",
+          "helpfulCount": 40,
+          "createdAt": "2026-06-10T10:57:00"
+        }
+      ]
+    },
+    {
+      "id": "question_010",
+      "title": "와인 라벨 촬영 인식 기능 정확도 어떤가요?",
+      "content": "이 앱 AI 라벨 스캔 써보신 분 후기 궁금합니다.",
+      "tags": [
+        "앱기능",
+        "AI스캔"
+      ],
+      "userId": "user_010",
+      "createdAt": "2026-06-08T09:49:00",
+      "answers": [
+        {
+          "id": "answer_017",
+          "userId": "user_003",
+          "content": "메이저 와인은 거의 다 잡아요. 한국와인 소규모 와이너리 제품은 가끔 수동 검색이 필요합니다.",
+          "helpfulCount": 17,
+          "createdAt": "2026-06-08T22:56:00"
+        }
+      ]
+    },
+    {
+      "id": "question_011",
+      "title": "스테이크랑 가장 잘 어울리는 와인은 무엇인가요?",
+      "content": "집에서 스테이크를 구워 먹을 예정인데 같이 마시면 좋은 와인을 추천해주세요.",
+      "tags": [
+        "푸드페어링",
+        "스테이크",
+        "레드와인"
+      ],
+      "userId": "user_003",
+      "createdAt": "2026-06-05T15:20:00",
+      "answers": [
+        {
+          "id": "answer_018",
+          "userId": "user_015",
+          "content": "카베르네 소비뇽이 정석입니다. 예산에 따라 1865나 케이머스 추천해요.",
+          "helpfulCount": 18,
+          "createdAt": "2026-06-05T17:37:00"
+        },
+        {
+          "id": "answer_019",
+          "userId": "user_016",
+          "content": "펜폴즈 빈 389도 좋습니다. 오크향이 구운 풍미와 잘 어울려요.",
+          "helpfulCount": 11,
+          "createdAt": "2026-06-05T23:12:00"
+        }
+      ]
+    },
+    {
+      "id": "question_012",
+      "title": "와인 보관은 냉장고에 하는 게 맞나요?",
+      "content": "개봉하지 않은 와인을 냉장고에 보관해도 되는지 궁금합니다.",
+      "tags": [
+        "보관법",
+        "와인기초"
+      ],
+      "userId": "user_014",
+      "createdAt": "2026-06-03T16:14:00",
+      "answers": [
+        {
+          "id": "answer_020",
+          "userId": "user_003",
+          "content": "단기간은 괜찮지만 장기 보관엔 냉장고가 너무 건조하고 차가워요. 서늘하고 어두운 곳(12~18도)이 이상적입니다.",
+          "helpfulCount": 26,
+          "createdAt": "2026-06-03T20:18:00"
+        }
+      ]
+    },
+    {
+      "id": "question_013",
+      "title": "디캔팅은 꼭 해야 하나요?",
+      "content": "디캔팅을 하면 어떤 차이가 있는지 궁금합니다. 모든 와인에 필요한 과정인가요?",
+      "tags": [
+        "디캔팅",
+        "와인상식"
+      ],
+      "userId": "user_013",
+      "createdAt": "2026-05-28T15:00:00",
+      "answers": [
+        {
+          "id": "answer_021",
+          "userId": "user_003",
+          "content": "탄닌이 강한 영한 레드에 효과적이에요. 가벼운 화이트나 오래된 와인은 오히려 안 하는 게 낫습니다.",
+          "helpfulCount": 23,
+          "createdAt": "2026-05-28T20:05:00"
+        },
+        {
+          "id": "answer_022",
+          "userId": "user_017",
+          "content": "디캔터 없으면 잔에 따라두고 10분만 기다려도 향이 열립니다.",
+          "helpfulCount": 9,
+          "createdAt": "2026-05-28T17:41:00"
+        }
+      ]
+    },
+    {
+      "id": "question_014",
+      "title": "5만 원 이하 선물용 와인 추천해주세요.",
+      "content": "부모님께 선물할 예정인데 가격대는 5만 원 정도 생각하고 있습니다.",
+      "tags": [
+        "선물",
+        "가성비",
+        "추천"
+      ],
+      "userId": "user_018",
+      "createdAt": "2026-05-25T12:26:00",
+      "answers": [
+        {
+          "id": "answer_023",
+          "userId": "user_002",
+          "content": "몬테스 알파 카베르네 소비뇽이 국민 선물 와인입니다. 4만원대에 포장도 고급스러워요.",
+          "helpfulCount": 29,
+          "createdAt": "2026-05-25T18:59:00"
+        },
+        {
+          "id": "answer_024",
+          "userId": "user_004",
+          "content": "한국와인도 의외의 선물이 됩니다. 그랑꼬또 청수는 청와대 만찬주 스토리까지 있어요.",
+          "helpfulCount": 12,
+          "createdAt": "2026-05-25T23:05:00"
+        }
+      ]
+    },
+    {
+      "id": "question_015",
+      "title": "달달한 화이트와인 추천 부탁드려요.",
+      "content": "드라이한 와인보다 달콤한 스타일을 좋아하는데 추천해주실 만한 제품이 있을까요?",
+      "tags": [
+        "화이트와인",
+        "스위트",
+        "추천"
+      ],
+      "userId": "user_007",
+      "createdAt": "2026-05-20T19:16:00",
+      "answers": [
+        {
+          "id": "answer_025",
+          "userId": "user_005",
+          "content": "모스카토 다스티 계열 가보세요. 사라코가 교과서고, 편의점에선 간치아도 훌륭해요.",
+          "helpfulCount": 20,
+          "createdAt": "2026-05-20T15:48:00"
+        },
+        {
+          "id": "answer_026",
+          "userId": "user_006",
+          "content": "베어풋 모스카토도 1만원 초반에 달콤하게 즐기기 좋아요.",
+          "helpfulCount": 8,
+          "createdAt": "2026-05-20T13:32:00"
+        }
+      ]
+    },
+    {
+      "id": "question_016",
+      "title": "와인 라벨에서 꼭 봐야 하는 정보가 뭔가요?",
+      "content": "품종, 빈티지, 도수 등 어떤 정보를 먼저 확인해야 하는지 알고 싶습니다.",
+      "tags": [
+        "라벨",
+        "빈티지",
+        "와인상식"
+      ],
+      "userId": "user_019",
+      "createdAt": "2026-05-16T12:01:00",
+      "answers": [
+        {
+          "id": "answer_027",
+          "userId": "user_003",
+          "content": "생산자, 품종(또는 지역), 빈티지 순서로 보세요. 신대륙은 품종이 크게 적혀 있어 직관적입니다.",
+          "helpfulCount": 16,
+          "createdAt": "2026-05-16T11:36:00"
+        }
+      ]
+    },
+    {
+      "id": "question_017",
+      "title": "홈파티에 어울리는 스파클링 와인 추천해주세요.",
+      "content": "친구들과 홈파티를 하는데 분위기 내기 좋은 스파클링 와인을 찾고 있습니다.",
+      "tags": [
+        "스파클링",
+        "홈파티",
+        "추천"
+      ],
+      "userId": "user_002",
+      "createdAt": "2026-05-12T20:06:00",
+      "answers": [
+        {
+          "id": "answer_028",
+          "userId": "user_012",
+          "content": "예산 있으면 모엣 임페리얼, 가성비면 프레시넷 카바. 달콤한 걸 원하면 빌라엠이 파티 히트템이에요.",
+          "helpfulCount": 24,
+          "createdAt": "2026-05-12T16:06:00"
+        },
+        {
+          "id": "answer_029",
+          "userId": "user_005",
+          "content": "페라리 브뤼도 5만원대에서 샴페인급 퀄리티 냅니다.",
+          "helpfulCount": 10,
+          "createdAt": "2026-05-12T23:18:00"
+        }
+      ]
+    },
+    {
+      "id": "question_018",
+      "title": "와인잔 종류에 따라 맛이 정말 달라지나요?",
+      "content": "보르도잔, 부르고뉴잔 등 종류가 많은데 실제로 차이가 있는지 궁금합니다.",
+      "tags": [
+        "와인잔",
+        "와인상식"
+      ],
+      "userId": "user_017",
+      "createdAt": "2026-05-08T14:04:00",
+      "answers": [
+        {
+          "id": "answer_030",
+          "userId": "user_003",
+          "content": "향이 모이는 방식과 혀에 닿는 위치가 달라져서 차이가 있어요. 다만 입문 단계에선 만능잔 하나로 충분합니다.",
+          "helpfulCount": 19,
+          "createdAt": "2026-05-08T10:54:00"
+        }
+      ]
+    },
+    {
+      "id": "question_019",
+      "title": "치즈 플래터와 잘 어울리는 와인 추천해주세요.",
+      "content": "치즈와 함께 마시기 좋은 와인을 찾고 있습니다. 너무 무겁지 않은 스타일이면 좋겠습니다.",
+      "tags": [
+        "치즈",
+        "푸드페어링",
+        "추천"
+      ],
+      "userId": "user_016",
+      "createdAt": "2026-05-04T18:00:00",
+      "answers": [
+        {
+          "id": "answer_031",
+          "userId": "user_017",
+          "content": "브리·까망베르엔 피노 누아나 샤르도네가 부드럽게 어울려요. 루이 자도 부르고뉴 라인 추천합니다.",
+          "helpfulCount": 14,
+          "createdAt": "2026-05-04T13:13:00"
+        },
+        {
+          "id": "answer_032",
+          "userId": "user_007",
+          "content": "블루치즈엔 달콤한 와인이 공식이에요. 소테른이 부담되면 모스카토로 대체 가능!",
+          "helpfulCount": 7,
+          "createdAt": "2026-05-04T10:30:00"
+        }
+      ]
+    }
+  ],
+  "meets": [
+    {
+      "id": "meet_001",
+      "title": "와인 입문자 시음회",
+      "description": "입문자를 위한 레드와인 시음 모임입니다. 가볍게 마시며 취향을 찾아보는 자리예요.",
+      "thumbnail": "/images/meets/meet_001.jpg",
+      "date": "2026-08-03",
+      "time": "19:00",
+      "location": "서울 성수 와인바",
+      "hostId": "user_003",
+      "participants": [
+        "user_003",
+        "user_007",
+        "user_004",
+        "user_008",
+        "user_001",
+        "user_009",
+        "user_006",
+        "user_010",
+        "user_011",
+        "user_005",
+        "user_012",
+        "user_002"
+      ],
+      "maxParticipants": 20,
+      "category": "tasting",
+      "tags": [
+        "입문자",
+        "레드와인",
+        "성수"
+      ],
+      "status": "recruiting"
+    },
+    {
+      "id": "meet_002",
+      "title": "프로방스 로제 나이트",
+      "description": "여름밤 한강뷰 루프탑에서 로제 5종을 비교 시음해요. 위스퍼링 엔젤부터 미라발까지.",
+      "thumbnail": "/images/meets/meet_002.jpg",
+      "date": "2026-07-18",
+      "time": "19:30",
+      "location": "서울 이태원 루프탑바",
+      "hostId": "user_007",
+      "participants": [
+        "user_007",
+        "user_001",
+        "user_002",
+        "user_008",
+        "user_010",
+        "user_012",
+        "user_011",
+        "user_009",
+        "user_004",
+        "user_005",
+        "user_003",
+        "user_006"
+      ],
+      "maxParticipants": 15,
+      "category": "tasting",
+      "tags": [
+        "로제",
+        "여름와인",
+        "루프탑"
+      ],
+      "status": "full"
+    },
+    {
+      "id": "meet_003",
+      "title": "한국와인 원정대 : 영동편",
+      "description": "샤토미소·여포의꿈·시나브로 와이너리를 하루에 도는 당일 투어입니다.",
+      "thumbnail": "/images/meets/meet_003.jpg",
+      "date": "2026-08-22",
+      "time": "09:00",
+      "location": "충북 영동 (서울 출발)",
+      "hostId": "user_004",
+      "participants": [
+        "user_004",
+        "user_012",
+        "user_011",
+        "user_001",
+        "user_008",
+        "user_010",
+        "user_002"
+      ],
+      "maxParticipants": 12,
+      "category": "tour",
+      "tags": [
+        "한국와인",
+        "와이너리투어",
+        "영동"
+      ],
+      "status": "recruiting"
+    },
+    {
+      "id": "meet_004",
+      "title": "샴페인 101 클래스",
+      "description": "샴페인과 스파클링의 차이부터 세이버링 시연까지! 초보 환영.",
+      "thumbnail": "/images/meets/meet_004.jpg",
+      "date": "2026-07-25",
+      "time": "19:00",
+      "location": "서울 압구정 와인아카데미",
+      "hostId": "user_012",
+      "participants": [
+        "user_012",
+        "user_009",
+        "user_003",
+        "user_005",
+        "user_007",
+        "user_002",
+        "user_011",
+        "user_001",
+        "user_010",
+        "user_004",
+        "user_006"
+      ],
+      "maxParticipants": 16,
+      "category": "class",
+      "tags": [
+        "샴페인",
+        "클래스",
+        "기초"
+      ],
+      "status": "recruiting"
+    },
+    {
+      "id": "meet_005",
+      "title": "블라인드 테이스팅 챌린지",
+      "description": "라벨 가리고 신대륙 vs 구대륙 맞히기. 파리의 심판 50주년 기념 이벤트.",
+      "thumbnail": "/images/meets/meet_005.jpg",
+      "date": "2026-08-08",
+      "time": "18:30",
+      "location": "서울 합정 와인바",
+      "hostId": "user_003",
+      "participants": [
+        "user_003",
+        "user_011",
+        "user_012",
+        "user_005",
+        "user_007",
+        "user_001",
+        "user_006",
+        "user_008",
+        "user_009"
+      ],
+      "maxParticipants": 10,
+      "category": "event",
+      "tags": [
+        "블라인드",
+        "챌린지",
+        "이벤트"
+      ],
+      "status": "recruiting"
+    },
+    {
+      "id": "meet_006",
+      "title": "가성비 와인 발굴단",
+      "description": "1만원대 편의점·마트 와인만 모아서 비교 시음합니다. 도스코파스 vs 맥기건 대결!",
+      "thumbnail": "/images/meets/meet_006.jpg",
+      "date": "2026-07-12",
+      "time": "18:00",
+      "location": "서울 홍대 파티룸",
+      "hostId": "user_011",
+      "participants": [
+        "user_011",
+        "user_004",
+        "user_008",
+        "user_009",
+        "user_007",
+        "user_010",
+        "user_003",
+        "user_012",
+        "user_005",
+        "user_002",
+        "user_006",
+        "user_001"
+      ],
+      "maxParticipants": 20,
+      "category": "tasting",
+      "tags": [
+        "가성비",
+        "편의점와인",
+        "비교시음"
+      ],
+      "status": "recruiting"
+    },
+    {
+      "id": "meet_007",
+      "title": "나파밸리 상륙작전",
+      "description": "케이머스, 덕혼, 몬다비까지. 미국 카베르네 딥다이브 프리미엄 모임.",
+      "thumbnail": "/images/meets/meet_007.jpg",
+      "date": "2026-08-29",
+      "time": "19:00",
+      "location": "서울 청담 와인라운지",
+      "hostId": "user_008",
+      "participants": [
+        "user_008",
+        "user_003",
+        "user_004",
+        "user_002",
+        "user_005",
+        "user_009"
+      ],
+      "maxParticipants": 8,
+      "category": "tasting",
+      "tags": [
+        "나파밸리",
+        "프리미엄",
+        "카베르네"
+      ],
+      "status": "recruiting"
+    },
+    {
+      "id": "meet_008",
+      "title": "모스카토 & 디저트 페어링",
+      "description": "달콤한 모스카토 3종과 디저트 페어링 클래스. 술 약한 분 환영!",
+      "thumbnail": "/images/meets/meet_008.jpg",
+      "date": "2026-07-20",
+      "time": "15:00",
+      "location": "서울 연남 브런치카페",
+      "hostId": "user_005",
+      "participants": [
+        "user_005",
+        "user_007",
+        "user_009",
+        "user_006",
+        "user_002",
+        "user_001",
+        "user_010",
+        "user_004",
+        "user_011",
+        "user_012"
+      ],
+      "maxParticipants": 12,
+      "category": "class",
+      "tags": [
+        "모스카토",
+        "디저트",
+        "페어링"
+      ],
+      "status": "recruiting"
+    },
+    {
+      "id": "meet_009",
+      "title": "6월 정기 시음회 : 뉴질랜드 특집",
+      "description": "클라우디 베이, 킴 크로포드, 오이스터 베이. 말보로 소비뇽 블랑 3파전. (종료된 모임)",
+      "thumbnail": "/images/meets/meet_009.jpg",
+      "date": "2026-06-14",
+      "time": "19:00",
+      "location": "서울 성수 와인바",
+      "hostId": "user_003",
+      "participants": [
+        "user_003",
+        "user_009",
+        "user_008",
+        "user_001",
+        "user_002",
+        "user_011",
+        "user_006",
+        "user_007",
+        "user_004",
+        "user_012",
+        "user_005",
+        "user_010"
+      ],
+      "maxParticipants": 20,
+      "category": "tasting",
+      "tags": [
+        "뉴질랜드",
+        "소비뇽블랑",
+        "정기모임"
+      ],
+      "status": "completed"
+    },
+    {
+      "id": "meet_010",
+      "title": "보르도 그랑크뤼 디너",
+      "description": "샤토 탈보와 함께하는 5코스 프렌치 디너. (종료된 모임)",
+      "thumbnail": "/images/meets/meet_010.jpg",
+      "date": "2026-05-30",
+      "time": "19:30",
+      "location": "서울 서래마을 프렌치 레스토랑",
+      "hostId": "user_008",
+      "participants": [
+        "user_008",
+        "user_011",
+        "user_009",
+        "user_002",
+        "user_010",
+        "user_003",
+        "user_004",
+        "user_001"
+      ],
+      "maxParticipants": 8,
+      "category": "event",
+      "tags": [
+        "보르도",
+        "디너",
+        "그랑크뤼"
+      ],
+      "status": "completed"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_006",
+      "userId": "user_001",
+      "type": "meet_reminder",
+      "title": "모임 리마인더",
+      "message": "'가성비 와인 발굴단' 모임이 3일 뒤 시작됩니다.",
+      "targetId": "meet_006",
+      "isRead": true,
+      "createdAt": "2026-07-09T09:00:00"
+    },
+    {
+      "id": "notif_001",
+      "userId": "user_001",
+      "type": "like",
+      "title": "좋아요",
+      "message": "와인한잔의여유님이 회원님의 피드를 좋아합니다.",
+      "targetId": "feed_006",
+      "isRead": false,
+      "createdAt": "2026-07-08T21:14:00"
+    },
+    {
+      "id": "notif_002",
+      "userId": "user_001",
+      "type": "comment",
+      "title": "새 댓글",
+      "message": "버블홀릭님이 회원님의 피드에 댓글을 남겼습니다: \"저도 이 조합 최애예요!\"",
+      "targetId": "feed_006",
+      "isRead": false,
+      "createdAt": "2026-07-08T18:40:00"
+    },
+    {
+      "id": "notif_003",
+      "userId": "user_001",
+      "type": "answer",
+      "title": "새 답변",
+      "message": "소믈리에지망생님이 회원님의 질문에 답변을 남겼습니다.",
+      "targetId": "question_004",
+      "isRead": false,
+      "createdAt": "2026-07-07T22:05:00"
+    },
+    {
+      "id": "notif_004",
+      "userId": "user_001",
+      "type": "helpful",
+      "title": "도움돼요",
+      "message": "회원님의 답변이 도움돼요 10개를 받았습니다.",
+      "targetId": "answer_003",
+      "isRead": false,
+      "createdAt": "2026-07-07T15:30:00"
+    },
+    {
+      "id": "notif_005",
+      "userId": "user_001",
+      "type": "meet_confirm",
+      "title": "모임 참여 확정",
+      "message": "'와인 입문자 시음회' 참여가 확정되었습니다.",
+      "targetId": "meet_001",
+      "isRead": true,
+      "createdAt": "2026-07-06T11:02:00"
+    },
+    {
+      "id": "notif_007",
+      "userId": "user_001",
+      "type": "follow",
+      "title": "새 팔로워",
+      "message": "나파러버님이 회원님을 팔로우하기 시작했습니다.",
+      "targetId": "user_008",
+      "isRead": true,
+      "createdAt": "2026-07-05T20:17:00"
+    },
+    {
+      "id": "notif_008",
+      "userId": "user_001",
+      "type": "like",
+      "title": "좋아요",
+      "message": "샴페인언니님이 회원님의 시음 기록을 좋아합니다.",
+      "targetId": "record_008",
+      "isRead": true,
+      "createdAt": "2026-07-04T13:48:00"
+    },
+    {
+      "id": "notif_009",
+      "userId": "user_001",
+      "type": "magazine",
+      "title": "새 매거진",
+      "message": "새 매거진이 발행되었습니다: 여름엔 로제, 프로방스 로제 완전 정복",
+      "targetId": "magazine_004",
+      "isRead": true,
+      "createdAt": "2026-07-03T10:00:00"
+    },
+    {
+      "id": "notif_010",
+      "userId": "user_001",
+      "type": "notice",
+      "title": "공지",
+      "message": "7월 시스템 점검 안내 (7/15 02:00~04:00)",
+      "targetId": "notice_001",
+      "isRead": true,
+      "createdAt": "2026-07-02T09:00:00"
+    },
+    {
+      "id": "notif_011",
+      "userId": "user_001",
+      "type": "meet_full",
+      "title": "모임 마감",
+      "message": "호스트로 등록한 '프로방스 로제 나이트'가 정원 마감되었습니다.",
+      "targetId": "meet_002",
+      "isRead": true,
+      "createdAt": "2026-07-01T17:22:00"
+    },
+    {
+      "id": "notif_012",
+      "userId": "user_001",
+      "type": "wine_restock",
+      "title": "관심 와인",
+      "message": "관심 와인 '티냐넬로'가 인기 급상승 중입니다.",
+      "targetId": "wine_014",
+      "isRead": true,
+      "createdAt": "2026-06-30T12:10:00"
+    }
+  ],
+  "magazines": [
+    {
+      "id": "magazine_001",
+      "title": "떫지 않게 시작하는 레드와인 입문 가이드",
+      "subtitle": "첫 잔부터 실패하지 않는 품종·가격대별 선택법",
+      "thumbnail": "/images/magazines/magazine_001.jpg",
+      "content": "레드와인이 어렵게 느껴지는 가장 큰 이유는 '탄닌'입니다. 입안이 조이는 떫은 느낌 때문에 첫 경험에서 돌아서는 분들이 많죠. 하지만 품종만 잘 고르면 레드와인은 얼마든지 부드럽게 시작할 수 있습니다.\n\n입문자에게 가장 자주 추천되는 품종은 호주 쉬라즈와 칠레 카베르네 소비뇽입니다. 옐로우테일 쉬라즈처럼 과실미가 풍부하고 탄닌이 둥근 와인은 첫 잔의 진입장벽을 크게 낮춰줍니다. 예산 1만원대라면 카시예로 델 디아블로, 조금 여유가 있다면 몬테스 알파가 실패 없는 선택입니다.\n\n중요한 건 '풀바디부터 시작해 점차 가벼운 바디로' 넓혀가는 순서입니다. 가벼운 와인부터 마시면 밍밍하게 느껴져 흥미를 잃기 쉽거든요. 신대륙 와인으로 시작해 프랑스, 이탈리아 구대륙으로 넘어가는 여정을 추천합니다.",
+      "category": "guide",
+      "tags": [
+        "입문자",
+        "레드와인",
+        "가이드"
+      ],
+      "author": "김보틀 에디터",
+      "publishedAt": "2026-07-06",
+      "readingTime": 6,
+      "views": 4820
+    },
+    {
+      "id": "magazine_002",
+      "title": "파리의 심판 50주년, 블라인드가 남긴 것",
+      "subtitle": "라벨을 가리자 보이기 시작한 것들",
+      "thumbnail": "/images/magazines/magazine_002.jpg",
+      "content": "1976년 파리, 프랑스 심사위원들이 블라인드로 뽑은 1위는 놀랍게도 미국 캘리포니아 와인이었습니다. 샤토 몬텔레나 샤르도네가 부르고뉴 명가들을 꺾은 이 사건은 '파리의 심판'이라 불리며 와인 역사를 바꿨습니다.\n\n50년이 지난 지금, 그 정신은 한국에서도 이어지고 있습니다. 롯데백화점 '더 블라인드 2026'에서는 미국 파소 로블스의 무명 와인 포스&그레이스가 레드 1위를, 독일 셀바흐 리슬링이 화이트 1위를 차지했습니다. 심사위원들은 '라벨을 가리면 구대륙과 신대륙의 차이를 구분할 수 없을 정도'라고 입을 모았죠.\n\n블라인드 테이스팅이 우리에게 주는 교훈은 명확합니다. 가격표와 라벨의 명성을 지우고 나면, 남는 것은 오직 잔 속의 와인뿐이라는 것.",
+      "category": "story",
+      "tags": [
+        "파리의심판",
+        "블라인드테이스팅",
+        "와인역사"
+      ],
+      "author": "박코르크 에디터",
+      "publishedAt": "2026-07-02",
+      "readingTime": 8,
+      "views": 3150
+    },
+    {
+      "id": "magazine_003",
+      "title": "한국와인의 재발견 : 영동에서 문경까지",
+      "subtitle": "캠벨과 청수, 오미자가 만드는 K-와인 로드",
+      "thumbnail": "/images/magazines/magazine_003.jpg",
+      "content": "'한국에서도 와인을 만들어?' 이 질문에 대한 가장 좋은 대답은 충북 영동행 기차표입니다. 11개 면에 40여 개 와이너리가 모인 한국 와인의 수도에서는 샤토미소, 여포의 꿈, 시나브로 같은 이름들이 저마다의 스타일을 빚고 있습니다.\n\n특히 주목할 것은 국산 청포도 품종 '청수'입니다. 상큼한 산미와 흰 꽃 향으로 '한국을 대표하는 와인 품종'이라는 평가를 받으며, 그랑꼬또와 시나브로의 청수 화이트는 청와대 만찬주에 오르기도 했습니다.\n\n문경으로 발길을 옮기면 세계 유일의 오미자 스파클링 '오미로제'가 기다립니다. 정통 샴페인 공법으로 빚은 이 와인은 단맛·신맛·쓴맛·짠맛·매운맛 다섯 가지 맛을 기포에 담아냅니다. 삼겹살에는 캠벨 레드, 해산물에는 청수 화이트. 우리 음식에는 우리 와인이 어울린다는 말, 직접 확인해보세요.",
+      "category": "korea",
+      "tags": [
+        "한국와인",
+        "와이너리투어",
+        "청수"
+      ],
+      "author": "이테루아 에디터",
+      "publishedAt": "2026-06-28",
+      "readingTime": 10,
+      "views": 5940
+    },
+    {
+      "id": "magazine_004",
+      "title": "여름엔 로제, 프로방스 로제 완전 정복",
+      "subtitle": "한강 피크닉부터 루프탑까지, 여름 와인의 정석",
+      "thumbnail": "/images/magazines/magazine_004.jpg",
+      "content": "여름 와인 시장의 주인공은 단연 로제입니다. 연한 살구빛 프로방스 로제는 SNS 피드를 물들이며 '여름 감성'의 아이콘이 됐죠. 그 중심에는 위스퍼링 엔젤이 있습니다. 셀럽들의 여름 와인으로 불리며 프로방스 로제 열풍을 이끈 주역입니다.\n\n브래드 피트의 미라발, 하트 모양 병 바닥의 제라르 베르트랑 코트 데 로즈, 대용량 매그넘으로 파티를 책임지는 AIX까지. 선택지는 어느 때보다 풍성합니다. 드라이한 프로방스 스타일이 부담스럽다면 달콤한 마테우스나 베린저 화이트 진판델로 시작해도 좋습니다.\n\n로제는 8~10도로 차갑게, 오픈 후 당일 마시는 것이 가장 맛있습니다. 얼음 버킷과 함께라면 한강 둔치가 곧 프로방스입니다.",
+      "category": "trend",
+      "tags": [
+        "로제",
+        "여름와인",
+        "프로방스"
+      ],
+      "author": "김보틀 에디터",
+      "publishedAt": "2026-06-20",
+      "readingTime": 7,
+      "views": 7210
+    },
+    {
+      "id": "magazine_005",
+      "title": "샴페인 vs 스파클링, 3분 정리",
+      "subtitle": "프로세코·카바·크레망, 기포의 세계 지도",
+      "thumbnail": "/images/magazines/magazine_005.jpg",
+      "content": "모든 샴페인은 스파클링 와인이지만, 모든 스파클링이 샴페인은 아닙니다. 프랑스 샹파뉴 지역에서 전통 방식(병내 2차 발효)으로 만든 것만 '샴페인'이라는 이름을 쓸 수 있습니다.\n\n이탈리아의 프로세코는 탱크에서 2차 발효해 가볍고 과일향이 산뜻하며, 스페인의 카바는 샴페인과 같은 전통 방식이지만 훨씬 합리적인 가격이 매력입니다. 달콤한 쪽이 좋다면 모스카토 다스티가 정답이고요.\n\n입문 순서로는 카바(2만원대) → 프로세코(3만원대) → 샴페인(8만원대~)을 추천합니다. 기포의 섬세함이 가격과 함께 어떻게 달라지는지 느껴보는 것도 재미있는 여정입니다.",
+      "category": "basic",
+      "tags": [
+        "샴페인",
+        "스파클링",
+        "기초지식"
+      ],
+      "author": "박코르크 에디터",
+      "publishedAt": "2026-06-15",
+      "readingTime": 5,
+      "views": 6480
+    },
+    {
+      "id": "magazine_006",
+      "title": "1만원의 행복, 편의점 와인 전성시대",
+      "subtitle": "도스코파스부터 맥기건까지, 초저가 와인의 실력",
+      "thumbnail": "/images/magazines/magazine_006.jpg",
+      "content": "'와인은 비싸야 맛있다'는 편견은 편의점 매대 앞에서 무너집니다. 이마트24의 도스코파스는 9,900원이라는 가격으로 누적 수백만 병이 팔리며 초저가 와인 열풍의 상징이 됐습니다.\n\nGS25의 맥기건 블랙라벨, CU의 디아블로 시리즈까지. 편의점 3사의 와인 전쟁은 소비자에게 축복입니다. 2+1 행사를 노리면 한 병당 부담은 더 낮아지죠.\n\n물론 1만원대 와인에 그랑크뤼의 복합미를 기대할 수는 없습니다. 하지만 퇴근 후 치킨과 함께하는 한 잔, 삼겹살 옆의 한 잔이라면 이만한 가성비가 없습니다. 와인의 일상화, 편의점이 앞당기고 있습니다.",
+      "category": "trend",
+      "tags": [
+        "가성비",
+        "편의점와인",
+        "데일리"
+      ],
+      "author": "최데일리 에디터",
+      "publishedAt": "2026-06-08",
+      "readingTime": 6,
+      "views": 8930
+    },
+    {
+      "id": "magazine_007",
+      "title": "와인 라벨, 이것만 읽으면 됩니다",
+      "subtitle": "생산자·품종·빈티지 3초 해독법",
+      "thumbnail": "/images/magazines/magazine_007.jpg",
+      "content": "와인 라벨이 어려운 이유는 나라마다 표기 방식이 다르기 때문입니다. 신대륙(미국·칠레·호주)은 품종을 크게 적어 직관적이지만, 프랑스는 지역명이 곧 스타일을 의미합니다.\n\n라벨에서 확인할 세 가지는 생산자, 품종(또는 지역), 빈티지입니다. 빈티지는 포도를 수확한 해로, 같은 와인이라도 그 해 날씨에 따라 맛이 달라집니다. 샴페인의 'NV'는 여러 해의 와인을 섞은 논빈티지라는 뜻이죠.\n\n요즘은 라벨을 촬영하면 AI가 와인 정보를 찾아주는 기능도 있으니, 어려운 라벨 앞에서 당황할 필요 없습니다. 카메라를 켜는 것부터 시작해보세요.",
+      "category": "basic",
+      "tags": [
+        "라벨읽기",
+        "기초지식",
+        "팁"
+      ],
+      "author": "이테루아 에디터",
+      "publishedAt": "2026-05-30",
+      "readingTime": 5,
+      "views": 4570
+    },
+    {
+      "id": "magazine_008",
+      "title": "더 블라인드 2026 수상 와인 총정리",
+      "subtitle": "9월 단독 판매 전 미리 보는 위너 리스트",
+      "thumbnail": "/images/magazines/magazine_008.jpg",
+      "content": "올해로 3회를 맞은 롯데백화점 '더 블라인드 2026'의 결과가 공개됐습니다. 레드 1위는 미국 파소 로블스의 포스&그레이스 카베르네 소비뇽 2023. 평균 88.4점으로 전체 최고점을 기록했습니다.\n\n화이트 1위는 독일 모젤의 셀바흐 리슬링 카비넷 파인헤르브 트레디션 2024가 차지했습니다. 국내 8개 수입사가 미발매 와인 50종을 출품해 경쟁한 결과입니다.\n\n수상 와인은 9월 롯데백화점에서 단독 판매되며 레드는 10만원 이하, 화이트는 5만원 이하로 책정될 예정입니다. 1~2회차 수상작이 전량 완판된 전례를 보면, 이번에도 오픈런이 예상됩니다.",
+      "category": "news",
+      "tags": [
+        "이슈와인",
+        "더블라인드",
+        "수상와인"
+      ],
+      "author": "박코르크 에디터",
+      "publishedAt": "2026-05-22",
+      "readingTime": 4,
+      "views": 5220
+    },
+    {
+      "id": "magazine_009",
+      "title": "홈파티 와인 페어링 치트시트",
+      "subtitle": "치킨부터 티라미수까지, 붙이면 끝나는 조합표",
+      "thumbnail": "/images/magazines/magazine_009.jpg",
+      "content": "페어링의 대원칙은 하나입니다. '무게를 맞춰라.' 가벼운 음식엔 가벼운 와인, 진한 음식엔 진한 와인. 여기에 몇 가지 공식만 더하면 홈파티 준비는 끝납니다.\n\n프라이드 치킨에는 기포가 기름기를 씻어주는 스파클링, 삼겹살에는 스모키한 칠레 레드, 회와 굴에는 샤블리나 뉴질랜드 소비뇽 블랑이 정석입니다. 떡볶이 같은 매운 음식엔 의외로 살짝 달콤한 리슬링이 찰떡궁합이죠.\n\n디저트 타임엔 모스카토 다스티를 준비하세요. 티라미수, 마카롱과 함께라면 파티의 마무리가 달콤해집니다. 정답은 없지만, 공식은 있습니다.",
+      "category": "lifestyle",
+      "tags": [
+        "페어링",
+        "홈파티",
+        "치트시트"
+      ],
+      "author": "최데일리 에디터",
+      "publishedAt": "2026-05-15",
+      "readingTime": 6,
+      "views": 9840
+    },
+    {
+      "id": "magazine_010",
+      "title": "내추럴 와인, 유행일까 취향일까",
+      "subtitle": "성수동을 점령한 '자연스러운 맛'의 정체",
+      "thumbnail": "/images/magazines/magazine_010.jpg",
+      "content": "성수동 와인바 메뉴판의 절반이 내추럴 와인으로 채워진 지 오래입니다. 배양 효모나 첨가물 없이, 이산화황 사용을 최소화해 만드는 내추럴 와인은 '살아있는 맛'으로 젊은 층을 사로잡았습니다.\n\n호불호는 분명합니다. 쿰쿰한 펑키함과 탁한 외관을 '자연 그대로'로 느끼는 사람이 있는가 하면, 결함으로 받아들이는 사람도 있죠. 중요한 건 내추럴 와인이 정답이 아니라 하나의 스타일이라는 점입니다.\n\n입문한다면 급진적인 펫낫보다 산뜻한 내추럴 화이트부터 시작해보세요. 유행을 따라가기보다 내 취향을 찾아가는 것, 그게 와인을 마시는 가장 좋은 방법이니까요.",
+      "category": "trend",
+      "tags": [
+        "내추럴와인",
+        "트렌드",
+        "성수"
+      ],
+      "author": "이테루아 에디터",
+      "publishedAt": "2026-05-08",
+      "readingTime": 8,
+      "views": 6720
+    }
+  ]
+}

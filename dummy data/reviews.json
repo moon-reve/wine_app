@@ -1,0 +1,298 @@
+[
+  {
+    "id": "review_001",
+    "wineId": "wine_007",
+    "userId": "user_007",
+    "rating": 4.5,
+    "content": "탄닌이 부드럽고 끝맛이 깔끔해서 입문자에게 딱이에요. 과일향도 풍부해서 재구매 의사 있습니다.",
+    "createdAt": "2026-05-02T08:21:00"
+  },
+  {
+    "id": "review_002",
+    "wineId": "wine_007",
+    "userId": "user_003",
+    "rating": 4.0,
+    "content": "가격 대비 훌륭. 데일리로 부담 없어요.",
+    "createdAt": "2026-06-09T13:47:00"
+  },
+  {
+    "id": "review_003",
+    "wineId": "wine_021",
+    "userId": "user_008",
+    "rating": 4.7,
+    "content": "열대과일향이 팡팡 터집니다. 여름에 차갑게 마시면 최고.",
+    "createdAt": "2026-06-23T21:35:00"
+  },
+  {
+    "id": "review_004",
+    "wineId": "wine_001",
+    "userId": "user_001",
+    "rating": 4.5,
+    "content": "선물용으로 실패 없는 선택. 묵직하고 진한데 병 디자인도 고급스러워서 받는 분 반응이 좋습니다.",
+    "createdAt": "2026-04-03T12:34:00"
+  },
+  {
+    "id": "review_005",
+    "wineId": "wine_002",
+    "userId": "user_001",
+    "rating": 4.3,
+    "content": "스테이크와 페어링했는데 완벽했어요.",
+    "createdAt": "2026-05-19T12:27:00"
+  },
+  {
+    "id": "review_006",
+    "wineId": "wine_004",
+    "userId": "user_003",
+    "rating": 4.0,
+    "content": "만원대에서 이 정도면 훌륭하죠.",
+    "createdAt": "2026-04-10T19:57:00"
+  },
+  {
+    "id": "review_007",
+    "wineId": "wine_005",
+    "userId": "user_001",
+    "rating": 4.2,
+    "content": "진하고 달큰해서 한국인 입맛에 잘 맞아요. 품절 대란 이해됨.",
+    "createdAt": "2026-05-07T15:42:00"
+  },
+  {
+    "id": "review_008",
+    "wineId": "wine_006",
+    "userId": "user_002",
+    "rating": 3.8,
+    "content": "가격 생각하면 놀라운 퀄리티. 기대치는 낮추고 드세요.",
+    "createdAt": "2026-05-25T21:39:00"
+  },
+  {
+    "id": "review_009",
+    "wineId": "wine_010",
+    "userId": "user_012",
+    "rating": 4.9,
+    "content": "벨벳 같은 질감에 향이 복합적이고 밸런스가 뛰어납니다. 특별한 날을 위한 와인이에요.",
+    "createdAt": "2026-04-08T13:51:00"
+  },
+  {
+    "id": "review_010",
+    "wineId": "wine_016",
+    "userId": "user_003",
+    "rating": 4.6,
+    "content": "한국인이 사랑하는 보르도라는 말이 괜히 나온 게 아니네요.",
+    "createdAt": "2026-05-01T13:47:00"
+  },
+  {
+    "id": "review_011",
+    "wineId": "wine_014",
+    "userId": "user_006",
+    "rating": 4.8,
+    "content": "슈퍼투스칸의 정석. 오픈런 할 만합니다.",
+    "createdAt": "2026-05-26T15:17:00"
+  },
+  {
+    "id": "review_012",
+    "wineId": "wine_025",
+    "userId": "user_003",
+    "rating": 4.5,
+    "content": "굴과의 페어링은 진리. 미네랄 폭탄입니다.",
+    "createdAt": "2026-06-04T20:55:00"
+  },
+  {
+    "id": "review_013",
+    "wineId": "wine_022",
+    "userId": "user_001",
+    "rating": 4.3,
+    "content": "상큼 그 자체. 냉장고에 항상 한 병 있어야 해요.",
+    "createdAt": "2026-05-08T14:52:00"
+  },
+  {
+    "id": "review_014",
+    "wineId": "wine_029",
+    "userId": "user_008",
+    "rating": 4.2,
+    "content": "매콤한 떡볶이랑 먹었는데 의외의 꿀조합.",
+    "createdAt": "2026-05-10T15:14:00"
+  },
+  {
+    "id": "review_015",
+    "wineId": "wine_030",
+    "userId": "user_001",
+    "rating": 4.6,
+    "content": "더 블라인드 1위 실감. 밸런스가 정말 좋아요.",
+    "createdAt": "2026-06-07T20:21:00"
+  },
+  {
+    "id": "review_016",
+    "wineId": "wine_034",
+    "userId": "user_005",
+    "rating": 4.1,
+    "content": "깔끔하고 드라이해서 식전주로 좋습니다.",
+    "createdAt": "2026-04-25T16:22:00"
+  },
+  {
+    "id": "review_017",
+    "wineId": "wine_042",
+    "userId": "user_011",
+    "rating": 4.4,
+    "content": "파티 분위기 살리는 데 이만한 게 없죠.",
+    "createdAt": "2026-06-13T18:01:00"
+  },
+  {
+    "id": "review_018",
+    "wineId": "wine_043",
+    "userId": "user_002",
+    "rating": 4.5,
+    "content": "토스티한 풍미가 매력적. 선물 받으면 기분 좋은 샴페인.",
+    "createdAt": "2026-05-06T16:02:00"
+  },
+  {
+    "id": "review_019",
+    "wineId": "wine_041",
+    "userId": "user_002",
+    "rating": 4.9,
+    "content": "인생 샴페인. 섬세한 기포가 예술입니다.",
+    "createdAt": "2026-06-14T19:46:00"
+  },
+  {
+    "id": "review_020",
+    "wineId": "wine_057",
+    "userId": "user_006",
+    "rating": 4.4,
+    "content": "달콤한 걸 좋아하면 무조건 성공. 복숭아향 가득.",
+    "createdAt": "2026-05-20T11:24:00"
+  },
+  {
+    "id": "review_021",
+    "wineId": "wine_058",
+    "userId": "user_010",
+    "rating": 4.0,
+    "content": "편의점에서 사기 좋은 달달이. 저도수라 부담 없어요.",
+    "createdAt": "2026-04-09T09:45:00"
+  },
+  {
+    "id": "review_022",
+    "wineId": "wine_060",
+    "userId": "user_007",
+    "rating": 4.2,
+    "content": "홈파티 필수템이라는 말에 공감. 비주얼도 예쁨.",
+    "createdAt": "2026-04-17T14:23:00"
+  },
+  {
+    "id": "review_023",
+    "wineId": "wine_061",
+    "userId": "user_007",
+    "rating": 4.5,
+    "content": "프로방스 로제의 정석. 드라이하고 우아합니다.",
+    "createdAt": "2026-04-22T18:39:00"
+  },
+  {
+    "id": "review_024",
+    "wineId": "wine_063",
+    "userId": "user_006",
+    "rating": 4.3,
+    "content": "셀럽 와인이라 궁금해서 샀다가 맛에 반했어요.",
+    "createdAt": "2026-06-28T11:46:00"
+  },
+  {
+    "id": "review_025",
+    "wineId": "wine_069",
+    "userId": "user_005",
+    "rating": 3.9,
+    "content": "가볍게 마시기 좋은 스위트 로제. 병 모양도 귀여움.",
+    "createdAt": "2026-06-10T21:20:00"
+  },
+  {
+    "id": "review_026",
+    "wineId": "wine_066",
+    "userId": "user_007",
+    "rating": 4.4,
+    "content": "병 바닥 장미 모양 보고 선물했는데 반응 최고였어요.",
+    "createdAt": "2026-06-10T12:12:00"
+  },
+  {
+    "id": "review_027",
+    "wineId": "wine_081",
+    "userId": "user_007",
+    "rating": 4.6,
+    "content": "오미자의 다섯 가지 맛이 정말 느껴져요. 한국의 자부심.",
+    "createdAt": "2026-06-13T13:39:00"
+  },
+  {
+    "id": "review_028",
+    "wineId": "wine_083",
+    "userId": "user_010",
+    "rating": 4.4,
+    "content": "청수 품종의 산뜻함이 매력적. 한식과 잘 어울립니다.",
+    "createdAt": "2026-05-13T08:19:00"
+  },
+  {
+    "id": "review_029",
+    "wineId": "wine_088",
+    "userId": "user_005",
+    "rating": 4.2,
+    "content": "이름만큼 임팩트 있는 맛. 광명동굴 1위가 이해됩니다.",
+    "createdAt": "2026-04-14T18:29:00"
+  },
+  {
+    "id": "review_030",
+    "wineId": "wine_093",
+    "userId": "user_008",
+    "rating": 4.1,
+    "content": "머루의 진한 풍미. 달콤해서 와인 입문자도 좋아할 맛.",
+    "createdAt": "2026-05-22T14:32:00"
+  },
+  {
+    "id": "review_031",
+    "wineId": "wine_018",
+    "userId": "user_013",
+    "rating": 5.0,
+    "content": "향이 정말 풍부하고 블랙체리와 바닐라 향이 은은하게 느껴졌어요. 스테이크와 함께 먹으니 훨씬 좋았습니다.",
+    "createdAt": "2026-07-08T21:10:00"
+  },
+  {
+    "id": "review_032",
+    "wineId": "wine_103",
+    "userId": "user_003",
+    "rating": 4.0,
+    "content": "오크향과 과실향의 밸런스가 좋았습니다. 디캔팅 후 마시면 훨씬 부드러워져요.",
+    "createdAt": "2026-07-03T14:30:00"
+  },
+  {
+    "id": "review_033",
+    "wineId": "wine_014",
+    "userId": "user_002",
+    "rating": 5.0,
+    "content": "양갈비와 함께 마셨는데 정말 잘 어울렸어요. 풍미가 깊고 여운도 길게 남습니다.",
+    "createdAt": "2026-07-02T20:05:00"
+  },
+  {
+    "id": "review_034",
+    "wineId": "wine_001",
+    "userId": "user_019",
+    "rating": 3.0,
+    "content": "기대했던 것보다는 조금 묵직한 느낌이었어요. 가벼운 스타일을 좋아하는 분께는 호불호가 있을 것 같습니다.",
+    "createdAt": "2026-06-30T19:11:00"
+  },
+  {
+    "id": "review_035",
+    "wineId": "wine_001",
+    "userId": "user_007",
+    "rating": 4.0,
+    "content": "치즈 플래터와 함께 즐겼는데 궁합이 좋았습니다. 가격대는 있지만 만족도도 높은 편이에요.",
+    "createdAt": "2026-06-26T18:44:00"
+  },
+  {
+    "id": "review_036",
+    "wineId": "wine_010",
+    "userId": "user_017",
+    "rating": 5.0,
+    "content": "첫 모금부터 깊은 향이 인상적이었어요. 과실향과 초콜릿 향이 자연스럽게 이어집니다.",
+    "createdAt": "2026-06-23T22:07:00"
+  },
+  {
+    "id": "review_037",
+    "wineId": "wine_001",
+    "userId": "user_018",
+    "rating": 4.0,
+    "content": "친구들과 홈파티에서 마셨는데 모두 만족했습니다. 가성비도 괜찮고 음식과도 잘 어울렸어요.",
+    "createdAt": "2026-06-20T20:36:00"
+  }
+]
