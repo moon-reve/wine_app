@@ -16,14 +16,10 @@ import iconArrowForward5 from '../assets/images/icon-arrow-forward-5.svg'
 import iconArrowForward6 from '../assets/images/icon-arrow-forward-6.svg'
 import iconChevronForward from '../assets/images/icon-chevron-forward.svg'
 import iconEllipse9 from '../assets/images/icon-ellipse-9.svg'
-import iconEllipse43 from '../assets/images/icon-ellipse-43.svg'
 import iconGroup2 from '../assets/images/icon-group-2.svg'
 import iconHeart from '../assets/images/icon-heart.svg'
 import iconShare from '../assets/images/icon-share.svg'
 import iconMusicNote2 from '../assets/images/icon-music-note-2.svg'
-import eventArrowIcon from '../../icon/Arrow.svg'
-import magazineArrowIcon from '../../icon/arrow_forward.svg'
-import magazineArrowBackground from '../../icon/Ellipse 42.svg'
 import Header from '../components/Header'
 
 const playfairOpsz = { fontVariationSettings: '"opsz" 12' }
@@ -80,10 +76,6 @@ function Home() {
           <br />
           좋아하는 맛을 발견하고, 특별한 순간을 나눠보세요.
         </p>
-        <div className="absolute top-[147.442cqw] left-1/2 flex -translate-x-1/2 items-center gap-[1.860cqw]">
-          <span className="size-[1.860cqw] rounded-full bg-[#831317]" />
-          <span className="size-[1.860cqw] rounded-full bg-white/50" />
-          <span className="size-[1.860cqw] rounded-full bg-white/50" />
         <div
           className="absolute top-[146.977cqw] left-1/2 flex h-[2.326cqw] w-[13.953cqw] -translate-x-1/2 items-center gap-[3.488cqw]"
           role="img"
