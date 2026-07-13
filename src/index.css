@@ -45,8 +45,6 @@
   --font-playfair: "Playfair", Pretendard, ui-sans-serif, system-ui, sans-serif;
   --font-playfair-display: "Playfair Display", Pretendard, ui-sans-serif, system-ui, sans-serif;
   --font-playfair-sc: "Playfair Display SC", Pretendard, ui-sans-serif, system-ui, sans-serif;
-@theme {
-  --font-playfair: "Playfair Display", serif;
 }
 
 @layer base {
