@@ -1,0 +1,154 @@
+[
+  {
+    "id": "user_001",
+    "nickname": "레브",
+    "profileImage": "/images/profiles/user_001.png",
+    "bio": "와인을 천천히 알아가는 중입니다.",
+    "favoriteWine": "wine_021",
+    "followers": 128
+  },
+  {
+    "id": "user_002",
+    "nickname": "와인한잔의여유",
+    "profileImage": "/images/profiles/user_002.png",
+    "bio": "퇴근 후 와인 한 잔이 인생의 낙",
+    "favoriteWine": "wine_001",
+    "followers": 1487
+  },
+  {
+    "id": "user_003",
+    "nickname": "소믈리에지망생",
+    "profileImage": "/images/profiles/user_003.png",
+    "bio": "WSET Lv.2 준비중 🍷 시음 노트 공유해요",
+    "favoriteWine": "wine_025",
+    "followers": 1156
+  },
+  {
+    "id": "user_004",
+    "nickname": "캠벨좋아",
+    "profileImage": "/images/profiles/user_004.png",
+    "bio": "한국와인 전도사. 영동 와이너리 투어 다녀요",
+    "favoriteWine": "wine_083",
+    "followers": 256
+  },
+  {
+    "id": "user_005",
+    "nickname": "버블홀릭",
+    "profileImage": "/images/profiles/user_005.png",
+    "bio": "스파클링만 마십니다. 기포가 없으면 섭섭해요",
+    "favoriteWine": "wine_043",
+    "followers": 513
+  },
+  {
+    "id": "user_006",
+    "nickname": "홈술마스터",
+    "profileImage": "/images/profiles/user_006.png",
+    "bio": "혼술 안주 페어링 연구소장(자칭)",
+    "favoriteWine": "wine_005",
+    "followers": 189
+  },
+  {
+    "id": "user_007",
+    "nickname": "로제로제",
+    "profileImage": "/images/profiles/user_007.png",
+    "bio": "여름엔 역시 프로방스 로제",
+    "favoriteWine": "wine_061",
+    "followers": 654
+  },
+  {
+    "id": "user_008",
+    "nickname": "나파러버",
+    "profileImage": "/images/profiles/user_008.png",
+    "bio": "나파밸리 성지순례가 꿈입니다",
+    "favoriteWine": "wine_010",
+    "followers": 721
+  },
+  {
+    "id": "user_009",
+    "nickname": "입문자준",
+    "profileImage": "/images/profiles/user_009.png",
+    "bio": "와인 마신 지 3개월차. 추천 부탁드려요!",
+    "favoriteWine": "wine_007",
+    "followers": 23
+  },
+  {
+    "id": "user_010",
+    "nickname": "문경오미자",
+    "profileImage": "/images/profiles/user_010.png",
+    "bio": "오미로제 마시고 한국와인에 빠졌어요",
+    "favoriteWine": "wine_081",
+    "followers": 95
+  },
+  {
+    "id": "user_011",
+    "nickname": "데일리와인",
+    "profileImage": "/images/profiles/user_011.png",
+    "bio": "1만원대 가성비 와인 발굴이 취미",
+    "favoriteWine": "wine_006",
+    "followers": 310
+  },
+  {
+    "id": "user_012",
+    "nickname": "샴페인언니",
+    "profileImage": "/images/profiles/user_012.png",
+    "bio": "기념일엔 무조건 샴페인 🥂",
+    "favoriteWine": "wine_042",
+    "followers": 1204
+  },
+  {
+    "id": "user_013",
+    "nickname": "와인러버",
+    "profileImage": "/images/profiles/user_013.png",
+    "bio": "하루를 마무리하는 가장 좋은 방법은 와인 한 잔.",
+    "favoriteWine": "wine_018",
+    "followers": 1248
+  },
+  {
+    "id": "user_014",
+    "nickname": "오늘도와인",
+    "profileImage": "/images/profiles/user_014.png",
+    "bio": "오늘도 새로운 와인을 기록합니다.",
+    "favoriteWine": "wine_021",
+    "followers": 892
+  },
+  {
+    "id": "user_015",
+    "nickname": "레드홀릭",
+    "profileImage": "/images/profiles/user_015.png",
+    "bio": "레드와인 없이는 못 사는 사람.",
+    "favoriteWine": "wine_103",
+    "followers": 2031
+  },
+  {
+    "id": "user_016",
+    "nickname": "빈티지노트",
+    "profileImage": "/images/profiles/user_016.png",
+    "bio": "오늘의 빈티지를 기록합니다.",
+    "favoriteWine": "wine_014",
+    "followers": 978
+  },
+  {
+    "id": "user_017",
+    "nickname": "오크향좋아",
+    "profileImage": "/images/profiles/user_017.png",
+    "bio": "오크향과 깊은 여운을 좋아합니다.",
+    "favoriteWine": "wine_104",
+    "followers": 721
+  },
+  {
+    "id": "user_018",
+    "nickname": "마시자오늘",
+    "profileImage": "/images/profiles/user_018.png",
+    "bio": "오늘도 좋은 사람들과 좋은 와인.",
+    "favoriteWine": "wine_043",
+    "followers": 836
+  },
+  {
+    "id": "user_019",
+    "nickname": "한병더",
+    "profileImage": "/images/profiles/user_019.png",
+    "bio": "새로운 와인을 발견하는 즐거움.",
+    "favoriteWine": "wine_105",
+    "followers": 593
+  }
+]
