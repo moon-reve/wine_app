@@ -5,10 +5,12 @@ import lightSearchIcon from '../assets/lounge/search.svg'
 
 type HeaderProps = {
   tone?: 'dark' | 'light'
+  titleColorClassName?: string
 }
 
-function Header({ tone = 'dark' }: HeaderProps) {
+function Header({ tone = 'dark', titleColorClassName }: HeaderProps) {
   const isLight = tone === 'light'
+  const titleColor = titleColorClassName ?? (isLight ? 'text-[#831317]' : 'text-white')
 
   return (
     <header
@@ -16,7 +18,7 @@ function Header({ tone = 'dark' }: HeaderProps) {
       data-node-id="577:105"
     >
       <p
-        className={`font-playfair shrink-0 text-xl leading-none font-normal tracking-[-0.4px] whitespace-nowrap ${isLight ? 'text-[#831317]' : 'text-white'}`}
+        className={`font-playfair shrink-0 text-xl leading-none font-normal tracking-[-0.4px] whitespace-nowrap ${titleColor}`}
         data-node-id="577:106"
       >
         Wine Sippers
