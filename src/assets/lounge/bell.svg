@@ -1,0 +1,7 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="bell">
+<path id="Vector" d="M20.25 9C20.25 7.20979 19.5388 5.4929 18.273 4.22703C17.0071 2.96116 15.2902 2.25 13.5 2.25C11.7098 2.25 9.9929 2.96116 8.72703 4.22703C7.46116 5.4929 6.75 7.20979 6.75 9C6.75 16.875 3.375 19.125 3.375 19.125H23.625C23.625 19.125 20.25 16.875 20.25 9Z" stroke="var(--stroke-0, #0D0D0D)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M15.4472 23.625C15.2494 23.966 14.9655 24.249 14.6239 24.4457C14.2824 24.6425 13.8951 24.746 13.5009 24.746C13.1068 24.746 12.7195 24.6425 12.3779 24.4457C12.0364 24.249 11.7525 23.966 11.5547 23.625" stroke="var(--stroke-0, #0D0D0D)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle id="Ellipse 43" cx="19" cy="4" r="3.25" fill="var(--fill-0, #0D0D0D)" stroke="var(--stroke-0, #0D0D0D)" stroke-width="0.5"/>
+</g>
+</svg>
