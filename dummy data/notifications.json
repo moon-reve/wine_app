@@ -1,0 +1,122 @@
+[
+  {
+    "id": "notif_006",
+    "userId": "user_001",
+    "type": "meet_reminder",
+    "title": "모임 리마인더",
+    "message": "'가성비 와인 발굴단' 모임이 3일 뒤 시작됩니다.",
+    "targetId": "meet_006",
+    "isRead": true,
+    "createdAt": "2026-07-09T09:00:00"
+  },
+  {
+    "id": "notif_001",
+    "userId": "user_001",
+    "type": "like",
+    "title": "좋아요",
+    "message": "와인한잔의여유님이 회원님의 피드를 좋아합니다.",
+    "targetId": "feed_006",
+    "isRead": false,
+    "createdAt": "2026-07-08T21:14:00"
+  },
+  {
+    "id": "notif_002",
+    "userId": "user_001",
+    "type": "comment",
+    "title": "새 댓글",
+    "message": "버블홀릭님이 회원님의 피드에 댓글을 남겼습니다: \"저도 이 조합 최애예요!\"",
+    "targetId": "feed_006",
+    "isRead": false,
+    "createdAt": "2026-07-08T18:40:00"
+  },
+  {
+    "id": "notif_003",
+    "userId": "user_001",
+    "type": "answer",
+    "title": "새 답변",
+    "message": "소믈리에지망생님이 회원님의 질문에 답변을 남겼습니다.",
+    "targetId": "question_004",
+    "isRead": false,
+    "createdAt": "2026-07-07T22:05:00"
+  },
+  {
+    "id": "notif_004",
+    "userId": "user_001",
+    "type": "helpful",
+    "title": "도움돼요",
+    "message": "회원님의 답변이 도움돼요 10개를 받았습니다.",
+    "targetId": "answer_003",
+    "isRead": false,
+    "createdAt": "2026-07-07T15:30:00"
+  },
+  {
+    "id": "notif_005",
+    "userId": "user_001",
+    "type": "meet_confirm",
+    "title": "모임 참여 확정",
+    "message": "'와인 입문자 시음회' 참여가 확정되었습니다.",
+    "targetId": "meet_001",
+    "isRead": true,
+    "createdAt": "2026-07-06T11:02:00"
+  },
+  {
+    "id": "notif_007",
+    "userId": "user_001",
+    "type": "follow",
+    "title": "새 팔로워",
+    "message": "나파러버님이 회원님을 팔로우하기 시작했습니다.",
+    "targetId": "user_008",
+    "isRead": true,
+    "createdAt": "2026-07-05T20:17:00"
+  },
+  {
+    "id": "notif_008",
+    "userId": "user_001",
+    "type": "like",
+    "title": "좋아요",
+    "message": "샴페인언니님이 회원님의 시음 기록을 좋아합니다.",
+    "targetId": "record_008",
+    "isRead": true,
+    "createdAt": "2026-07-04T13:48:00"
+  },
+  {
+    "id": "notif_009",
+    "userId": "user_001",
+    "type": "magazine",
+    "title": "새 매거진",
+    "message": "새 매거진이 발행되었습니다: 여름엔 로제, 프로방스 로제 완전 정복",
+    "targetId": "magazine_004",
+    "isRead": true,
+    "createdAt": "2026-07-03T10:00:00"
+  },
+  {
+    "id": "notif_010",
+    "userId": "user_001",
+    "type": "notice",
+    "title": "공지",
+    "message": "7월 시스템 점검 안내 (7/15 02:00~04:00)",
+    "targetId": "notice_001",
+    "isRead": true,
+    "createdAt": "2026-07-02T09:00:00"
+  },
+  {
+    "id": "notif_011",
+    "userId": "user_001",
+    "type": "meet_full",
+    "title": "모임 마감",
+    "message": "호스트로 등록한 '프로방스 로제 나이트'가 정원 마감되었습니다.",
+    "targetId": "meet_002",
+    "isRead": true,
+    "createdAt": "2026-07-01T17:22:00"
+  },
+  {
+    "id": "notif_012",
+    "userId": "user_001",
+    "type": "wine_restock",
+    "title": "관심 와인",
+    "message": "관심 와인 '티냐넬로'가 인기 급상승 중입니다.",
+    "targetId": "wine_014",
+    "isRead": true,
+    "createdAt": "2026-06-30T12:10:00"
+  }
+]

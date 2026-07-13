@@ -1,0 +1,365 @@
+[
+  {
+    "id": "record_001",
+    "wineId": "wine_021",
+    "rating": 4.5,
+    "memo": "굴이랑 먹으니 산미가 살아난다. 재구매 확정.",
+    "date": "2026-06-27",
+    "location": "서울 성수 · 오이스터바",
+    "food": "석화, 감바스",
+    "companions": [
+      "여자친구"
+    ],
+    "photos": [
+      "/images/records/record_001_1.jpg"
+    ]
+  },
+  {
+    "id": "record_002",
+    "wineId": "wine_007",
+    "rating": 4.0,
+    "memo": "인생 첫 와인 기록. 과실향이 은은하고 탄닌이 부드러워 입문자가 마시기 좋았다.",
+    "date": "2026-05-02",
+    "location": "집",
+    "food": "치즈 플래터",
+    "companions": [
+      "혼자"
+    ],
+    "photos": [
+      "/images/records/record_002_1.jpg",
+      "/images/records/record_002_2.jpg"
+    ]
+  },
+  {
+    "id": "record_003",
+    "wineId": "wine_005",
+    "rating": 4.2,
+    "memo": "삼겹살엔 역시 다크레드. 진하고 스모키.",
+    "date": "2026-05-16",
+    "location": "집",
+    "food": "삼겹살",
+    "companions": [
+      "직장 동료 2명"
+    ],
+    "photos": [
+      "/images/records/record_003_1.jpg"
+    ]
+  },
+  {
+    "id": "record_004",
+    "wineId": "wine_002",
+    "rating": 4.3,
+    "memo": "아버지 생신상에 오픈. 어른들 반응 최고.",
+    "date": "2026-05-24",
+    "location": "본가",
+    "food": "한우 등심 구이",
+    "companions": [
+      "가족"
+    ],
+    "photos": [
+      "/images/records/record_004_1.jpg"
+    ]
+  },
+  {
+    "id": "record_005",
+    "wineId": "wine_042",
+    "rating": 4.4,
+    "memo": "승진 축하 파티! 기포가 기분까지 올려줌.",
+    "date": "2026-06-05",
+    "location": "서울 이태원 · 루프탑바",
+    "food": "카나페",
+    "companions": [
+      "대학 친구들"
+    ],
+    "photos": [
+      "/images/records/record_005_1.jpg"
+    ]
+  },
+  {
+    "id": "record_006",
+    "wineId": "wine_083",
+    "rating": 4.4,
+    "memo": "한국와인 재발견. 은은한 배향과 산뜻한 산미.",
+    "date": "2026-06-13",
+    "location": "경기 대부도 · 그랑꼬또 와이너리",
+    "food": "해물칼국수",
+    "companions": [
+      "와인 동호회"
+    ],
+    "photos": [
+      "/images/records/record_006_1.jpg"
+    ]
+  },
+  {
+    "id": "record_007",
+    "wineId": "wine_057",
+    "rating": 4.3,
+    "memo": "디저트 페어링용. 티라미수랑 잘 어울림.",
+    "date": "2026-06-20",
+    "location": "집",
+    "food": "티라미수",
+    "companions": [
+      "혼자"
+    ],
+    "photos": [
+      "/images/records/record_007_1.jpg"
+    ]
+  },
+  {
+    "id": "record_008",
+    "wineId": "wine_061",
+    "rating": 4.5,
+    "memo": "한강 피크닉. 차갑게 마시니 여름 그 자체.",
+    "date": "2026-06-21",
+    "location": "서울 반포한강공원",
+    "food": "샌드위치, 과일",
+    "companions": [
+      "여자친구"
+    ],
+    "photos": [
+      "/images/records/record_008_1.jpg"
+    ]
+  },
+  {
+    "id": "record_009",
+    "wineId": "wine_025",
+    "rating": 4.6,
+    "memo": "미네랄리티 공부가 된 한 병. 시음 노트 작성.",
+    "date": "2026-05-30",
+    "location": "서울 합정 · 와인바 손",
+    "food": "생굴, 관자구이",
+    "companions": [
+      "소믈리에지망생 모임"
+    ],
+    "photos": [
+      "/images/records/record_009_1.jpg"
+    ]
+  },
+  {
+    "id": "record_010",
+    "wineId": "wine_001",
+    "rating": 4.2,
+    "memo": "골프 모임 뒤풀이. 이름 스토리로 분위기 업.",
+    "date": "2026-06-07",
+    "location": "경기 용인 · 클럽하우스",
+    "food": "안심 스테이크",
+    "companions": [
+      "골프 멤버 3명"
+    ],
+    "photos": [
+      "/images/records/record_010_1.jpg"
+    ]
+  },
+  {
+    "id": "record_011",
+    "wineId": "wine_022",
+    "rating": 4.3,
+    "memo": "퇴근 후 혼술. 상큼함에 피로가 풀림.",
+    "date": "2026-06-24",
+    "location": "집",
+    "food": "훈제연어 샐러드",
+    "companions": [
+      "혼자"
+    ],
+    "photos": [
+      "/images/records/record_011_1.jpg"
+    ]
+  },
+  {
+    "id": "record_012",
+    "wineId": "wine_082",
+    "rating": 4.4,
+    "memo": "문경 여행 기념. 오미자 향이 신기하고 좋다.",
+    "date": "2026-06-14",
+    "location": "경북 문경 · 오미나라",
+    "food": "약과, 한과",
+    "companions": [
+      "가족"
+    ],
+    "photos": [
+      "/images/records/record_012_1.jpg"
+    ]
+  },
+  {
+    "id": "record_013",
+    "wineId": "wine_010",
+    "rating": 4.8,
+    "memo": "큰맘 먹고 오픈. 벨벳 질감이란 게 이런 거구나.",
+    "date": "2026-07-04",
+    "location": "집",
+    "food": "립아이 스테이크",
+    "companions": [
+      "아내"
+    ],
+    "photos": [
+      "/images/records/record_013_1.jpg"
+    ]
+  },
+  {
+    "id": "record_014",
+    "wineId": "wine_060",
+    "rating": 4.1,
+    "memo": "홈파티 마무리 스파클링. 청량감이 분위기를 살려주고 달콤해서 다들 좋아함.",
+    "date": "2026-06-28",
+    "location": "집",
+    "food": "과일, 마카롱",
+    "companions": [
+      "친구 4명"
+    ],
+    "photos": [
+      "/images/records/record_014_1.jpg",
+      "/images/records/record_014_2.jpg",
+      "/images/records/record_014_3.jpg",
+      "/images/records/record_014_4.jpg",
+      "/images/records/record_014_5.jpg"
+    ]
+  },
+  {
+    "id": "record_015",
+    "wineId": "wine_030",
+    "rating": 4.6,
+    "memo": "이슈 와인 시음. 산미-당미 균형이 인상적.",
+    "date": "2026-07-05",
+    "location": "서울 압구정 · 와인샵 시음회",
+    "food": "브리치즈",
+    "companions": [
+      "와인 동호회"
+    ],
+    "photos": [
+      "/images/records/record_015_1.jpg"
+    ]
+  },
+  {
+    "id": "record_016",
+    "wineId": "wine_018",
+    "rating": 5.0,
+    "memo": "블랙체리와 바닐라 향이 풍부했고 스테이크와 최고의 조합이었습니다. 다음에도 꼭 다시 마시고 싶은 와인이에요.",
+    "date": "2026-07-08",
+    "location": "서울 성수동",
+    "food": "채끝 스테이크",
+    "companions": [
+      "친구 2명"
+    ],
+    "photos": [
+      "/images/records/record_016_1.jpg",
+      "/images/records/record_016_2.jpg",
+      "/images/records/record_016_3.jpg"
+    ]
+  },
+  {
+    "id": "record_017",
+    "wineId": "wine_014",
+    "rating": 5.0,
+    "memo": "기념일에 마셨는데 향과 밸런스가 정말 좋았습니다. 분위기와도 잘 어울렸어요.",
+    "date": "2026-07-04",
+    "location": "서울 한남동",
+    "food": "양갈비",
+    "companions": [
+      "연인"
+    ],
+    "photos": [
+      "/images/records/record_017_1.jpg",
+      "/images/records/record_017_2.jpg",
+      "/images/records/record_017_3.jpg",
+      "/images/records/record_017_4.jpg"
+    ]
+  },
+  {
+    "id": "record_018",
+    "wineId": "wine_021",
+    "rating": 4.0,
+    "memo": "산뜻한 산미가 인상적이었고 해산물과 함께 먹으니 더욱 맛있었습니다.",
+    "date": "2026-07-02",
+    "location": "부산 광안리",
+    "food": "연어 스테이크",
+    "companions": [
+      "가족"
+    ],
+    "photos": [
+      "/images/records/record_018_1.jpg",
+      "/images/records/record_018_2.jpg"
+    ]
+  },
+  {
+    "id": "record_019",
+    "wineId": "wine_002",
+    "rating": 3.0,
+    "memo": "생각보다 탄닌이 강해서 제 취향과는 조금 달랐지만 음식과 함께하니 괜찮았습니다.",
+    "date": "2026-06-28",
+    "location": "서울 연남동",
+    "food": "크림 파스타",
+    "companions": [
+      "친구"
+    ],
+    "photos": [
+      "/images/records/record_019_1.jpg"
+    ]
+  },
+  {
+    "id": "record_020",
+    "wineId": "wine_010",
+    "rating": 5.0,
+    "memo": "초콜릿과 오크향이 깊게 느껴졌고 여운이 길어 만족스러웠습니다.",
+    "date": "2026-06-25",
+    "location": "서울 청담 · 와인바",
+    "food": "티본 스테이크",
+    "companions": [
+      "회사 동료"
+    ],
+    "photos": [
+      "/images/records/record_020_1.jpg",
+      "/images/records/record_020_2.jpg",
+      "/images/records/record_020_3.jpg"
+    ]
+  },
+  {
+    "id": "record_021",
+    "wineId": "wine_004",
+    "rating": 4.0,
+    "memo": "치즈와 함께 즐기기 좋았고 가격 대비 만족도가 높은 와인이었습니다.",
+    "date": "2026-06-22",
+    "location": "집",
+    "food": "브리 치즈",
+    "companions": [
+      "혼자"
+    ],
+    "photos": [
+      "/images/records/record_021_1.jpg",
+      "/images/records/record_021_2.jpg"
+    ]
+  },
+  {
+    "id": "record_022",
+    "wineId": "wine_103",
+    "rating": 5.0,
+    "memo": "과실향이 풍부하고 산미가 적당해 부담 없이 마시기 좋은 레드와인이었습니다.",
+    "date": "2026-06-20",
+    "location": "제주도",
+    "food": "흑돼지 스테이크",
+    "companions": [
+      "가족"
+    ],
+    "photos": [
+      "/images/records/record_022_1.jpg",
+      "/images/records/record_022_2.jpg",
+      "/images/records/record_022_3.jpg",
+      "/images/records/record_022_4.jpg"
+    ]
+  },
+  {
+    "id": "record_023",
+    "wineId": "wine_105",
+    "rating": 4.0,
+    "memo": "친구 추천으로 마셨는데 기대 이상이었습니다. 다음에는 다른 빈티지도 마셔보고 싶어요.",
+    "date": "2026-06-18",
+    "location": "서울 잠실",
+    "food": "페퍼로니 피자",
+    "companions": [
+      "친구 3명"
+    ],
+    "photos": [
+      "/images/records/record_023_1.jpg",
+      "/images/records/record_023_2.jpg"
+    ]
+  }
+]

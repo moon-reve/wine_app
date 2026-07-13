@@ -1,0 +1,301 @@
+[
+  {
+    "id": "meet_001",
+    "title": "와인 입문자 시음회",
+    "description": "입문자를 위한 레드와인 시음 모임입니다. 가볍게 마시며 취향을 찾아보는 자리예요.",
+    "thumbnail": "/images/meets/meet_001.jpg",
+    "date": "2026-08-03",
+    "time": "19:00",
+    "location": "서울 성수 와인바",
+    "hostId": "user_003",
+    "participants": [
+      "user_003",
+      "user_007",
+      "user_004",
+      "user_008",
+      "user_001",
+      "user_009",
+      "user_006",
+      "user_010",
+      "user_011",
+      "user_005",
+      "user_012",
+      "user_002"
+    ],
+    "maxParticipants": 20,
+    "category": "tasting",
+    "tags": [
+      "입문자",
+      "레드와인",
+      "성수"
+    ],
+    "status": "recruiting"
+  },
+  {
+    "id": "meet_002",
+    "title": "프로방스 로제 나이트",
+    "description": "여름밤 한강뷰 루프탑에서 로제 5종을 비교 시음해요. 위스퍼링 엔젤부터 미라발까지.",
+    "thumbnail": "/images/meets/meet_002.jpg",
+    "date": "2026-07-18",
+    "time": "19:30",
+    "location": "서울 이태원 루프탑바",
+    "hostId": "user_007",
+    "participants": [
+      "user_007",
+      "user_001",
+      "user_002",
+      "user_008",
+      "user_010",
+      "user_012",
+      "user_011",
+      "user_009",
+      "user_004",
+      "user_005",
+      "user_003",
+      "user_006"
+    ],
+    "maxParticipants": 15,
+    "category": "tasting",
+    "tags": [
+      "로제",
+      "여름와인",
+      "루프탑"
+    ],
+    "status": "full"
+  },
+  {
+    "id": "meet_003",
+    "title": "한국와인 원정대 : 영동편",
+    "description": "샤토미소·여포의꿈·시나브로 와이너리를 하루에 도는 당일 투어입니다.",
+    "thumbnail": "/images/meets/meet_003.jpg",
+    "date": "2026-08-22",
+    "time": "09:00",
+    "location": "충북 영동 (서울 출발)",
+    "hostId": "user_004",
+    "participants": [
+      "user_004",
+      "user_012",
+      "user_011",
+      "user_001",
+      "user_008",
+      "user_010",
+      "user_002"
+    ],
+    "maxParticipants": 12,
+    "category": "tour",
+    "tags": [
+      "한국와인",
+      "와이너리투어",
+      "영동"
+    ],
+    "status": "recruiting"
+  },
+  {
+    "id": "meet_004",
+    "title": "샴페인 101 클래스",
+    "description": "샴페인과 스파클링의 차이부터 세이버링 시연까지! 초보 환영.",
+    "thumbnail": "/images/meets/meet_004.jpg",
+    "date": "2026-07-25",
+    "time": "19:00",
+    "location": "서울 압구정 와인아카데미",
+    "hostId": "user_012",
+    "participants": [
+      "user_012",
+      "user_009",
+      "user_003",
+      "user_005",
+      "user_007",
+      "user_002",
+      "user_011",
+      "user_001",
+      "user_010",
+      "user_004",
+      "user_006"
+    ],
+    "maxParticipants": 16,
+    "category": "class",
+    "tags": [
+      "샴페인",
+      "클래스",
+      "기초"
+    ],
+    "status": "recruiting"
+  },
+  {
+    "id": "meet_005",
+    "title": "블라인드 테이스팅 챌린지",
+    "description": "라벨 가리고 신대륙 vs 구대륙 맞히기. 파리의 심판 50주년 기념 이벤트.",
+    "thumbnail": "/images/meets/meet_005.jpg",
+    "date": "2026-08-08",
+    "time": "18:30",
+    "location": "서울 합정 와인바",
+    "hostId": "user_003",
+    "participants": [
+      "user_003",
+      "user_011",
+      "user_012",
+      "user_005",
+      "user_007",
+      "user_001",
+      "user_006",
+      "user_008",
+      "user_009"
+    ],
+    "maxParticipants": 10,
+    "category": "event",
+    "tags": [
+      "블라인드",
+      "챌린지",
+      "이벤트"
+    ],
+    "status": "recruiting"
+  },
+  {
+    "id": "meet_006",
+    "title": "가성비 와인 발굴단",
+    "description": "1만원대 편의점·마트 와인만 모아서 비교 시음합니다. 도스코파스 vs 맥기건 대결!",
+    "thumbnail": "/images/meets/meet_006.jpg",
+    "date": "2026-07-12",
+    "time": "18:00",
+    "location": "서울 홍대 파티룸",
+    "hostId": "user_011",
+    "participants": [
+      "user_011",
+      "user_004",
+      "user_008",
+      "user_009",
+      "user_007",
+      "user_010",
+      "user_003",
+      "user_012",
+      "user_005",
+      "user_002",
+      "user_006",
+      "user_001"
+    ],
+    "maxParticipants": 20,
+    "category": "tasting",
+    "tags": [
+      "가성비",
+      "편의점와인",
+      "비교시음"
+    ],
+    "status": "recruiting"
+  },
+  {
+    "id": "meet_007",
+    "title": "나파밸리 상륙작전",
+    "description": "케이머스, 덕혼, 몬다비까지. 미국 카베르네 딥다이브 프리미엄 모임.",
+    "thumbnail": "/images/meets/meet_007.jpg",
+    "date": "2026-08-29",
+    "time": "19:00",
+    "location": "서울 청담 와인라운지",
+    "hostId": "user_008",
+    "participants": [
+      "user_008",
+      "user_003",
+      "user_004",
+      "user_002",
+      "user_005",
+      "user_009"
+    ],
+    "maxParticipants": 8,
+    "category": "tasting",
+    "tags": [
+      "나파밸리",
+      "프리미엄",
+      "카베르네"
+    ],
+    "status": "recruiting"
+  },
+  {
+    "id": "meet_008",
+    "title": "모스카토 & 디저트 페어링",
+    "description": "달콤한 모스카토 3종과 디저트 페어링 클래스. 술 약한 분 환영!",
+    "thumbnail": "/images/meets/meet_008.jpg",
+    "date": "2026-07-20",
+    "time": "15:00",
+    "location": "서울 연남 브런치카페",
+    "hostId": "user_005",
+    "participants": [
+      "user_005",
+      "user_007",
+      "user_009",
+      "user_006",
+      "user_002",
+      "user_001",
+      "user_010",
+      "user_004",
+      "user_011",
+      "user_012"
+    ],
+    "maxParticipants": 12,
+    "category": "class",
+    "tags": [
+      "모스카토",
+      "디저트",
+      "페어링"
+    ],
+    "status": "recruiting"
+  },
+  {
+    "id": "meet_009",
+    "title": "6월 정기 시음회 : 뉴질랜드 특집",
+    "description": "클라우디 베이, 킴 크로포드, 오이스터 베이. 말보로 소비뇽 블랑 3파전. (종료된 모임)",
+    "thumbnail": "/images/meets/meet_009.jpg",
+    "date": "2026-06-14",
+    "time": "19:00",
+    "location": "서울 성수 와인바",
+    "hostId": "user_003",
+    "participants": [
+      "user_003",
+      "user_009",
+      "user_008",
+      "user_001",
+      "user_002",
+      "user_011",
+      "user_006",
+      "user_007",
+      "user_004",
+      "user_012",
+      "user_005",
+      "user_010"
+    ],
+    "maxParticipants": 20,
+    "category": "tasting",
+    "tags": [
+      "뉴질랜드",
+      "소비뇽블랑",
+      "정기모임"
+    ],
+    "status": "completed"
+  },
+  {
+    "id": "meet_010",
+    "title": "보르도 그랑크뤼 디너",
+    "description": "샤토 탈보와 함께하는 5코스 프렌치 디너. (종료된 모임)",
+    "thumbnail": "/images/meets/meet_010.jpg",
+    "date": "2026-05-30",
+    "time": "19:30",
+    "location": "서울 서래마을 프렌치 레스토랑",
+    "hostId": "user_008",
+    "participants": [
+      "user_008",
+      "user_011",
+      "user_009",
+      "user_002",
+      "user_010",
+      "user_003",
+      "user_004",
+      "user_001"
+    ],
+    "maxParticipants": 8,
+    "category": "event",
+    "tags": [
+      "보르도",
+      "디너",
+      "그랑크뤼"
+    ],
+    "status": "completed"
+  }
+]
