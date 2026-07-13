@@ -4,7 +4,7 @@ import searchIcon from '../assets/search.svg'
 function Header() {
   return (
     <header
-      className="flex w-full items-center justify-between px-5 pt-[18px] pb-3"
+      className="flex w-full items-center justify-between px-5 pt-4.5 pb-3"
       data-node-id="577:105"
     >
       <p
@@ -18,7 +18,7 @@ function Header() {
         <button
           type="button"
           aria-label="Search"
-          className="flex h-10 w-[34px] shrink-0 items-center justify-center overflow-hidden"
+          className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
           data-node-id="577:108"
         >
           <img src={searchIcon} alt="" className="size-7 shrink-0" data-node-id="577:109" />
@@ -27,10 +27,10 @@ function Header() {
         <button
           type="button"
           aria-label="Notifications"
-          className="flex h-10 w-[34px] shrink-0 items-center justify-center overflow-hidden"
+          className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
           data-node-id="577:112"
         >
-          <img src={bellIcon} alt="" className="size-[27px] shrink-0" data-node-id="577:113" />
+          <img src={bellIcon} alt="" className="size-6.75 shrink-0" data-node-id="577:113" />
         </button>
       </div>
     </header>

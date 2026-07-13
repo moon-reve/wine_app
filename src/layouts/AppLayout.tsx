@@ -4,7 +4,7 @@ import Header from '../components/Header'
 
 function AppLayout() {
   return (
-    <div className="min-h-screen bg-black pb-[68px] text-white">
+    <div className="min-h-screen bg-black pb-17 text-white">
       <Header />
       <Outlet />
       <BottomNav className="fixed inset-x-0 bottom-0" />
