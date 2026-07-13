@@ -5,15 +5,18 @@ function AppLayout() {
   const location = useLocation()
   const navigate = useNavigate()
   const isLounge = location.pathname.startsWith('/lounge')
-  const activeItem = isLounge ? '라운지' : '홈'
+  const isList = location.pathname.startsWith('/list')
+  const isLightPage = isLounge || isList
+  const activeItem = isLounge ? '라운지' : isList ? '리스트' : '홈'
 
   const handleNavItemClick = (label: string) => {
     if (label === '홈') navigate('/')
+    if (label === '리스트') navigate('/list')
     if (label === '라운지') navigate('/lounge')
   }
 
   return (
-    <div className={`mx-auto min-h-screen w-full max-w-107.5 pb-17 ${isLounge ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
+    <div className={`mx-auto min-h-screen w-full max-w-107.5 pb-17 ${isLightPage ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
       <Outlet />
       <div className="fixed inset-x-0 bottom-0 mx-auto w-full max-w-107.5">
         <BottomNav activeItem={activeItem} onItemClick={handleNavItemClick} />

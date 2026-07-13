@@ -2,6 +2,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AppLayout from './layouts/AppLayout'
 import Home from './pages/Home'
 import List from './pages/List'
+import Feed from './pages/Feed'
 import Meetings from './pages/Meetings'
 import QnA from './pages/QnA'
 import MeetingCreate from './pages/MeetingCreate'
@@ -15,7 +16,8 @@ function App() {
         <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/lounge" element={<List />} />
+          <Route path="/list" element={<List />} />
+          <Route path="/lounge" element={<Feed />} />
           <Route path="/lounge/qna" element={<QnA />} />
           <Route path="/lounge/meetings" element={<Meetings />} />
           <Route path="*" element={<Navigate to="/" replace />} />
