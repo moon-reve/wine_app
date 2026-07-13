@@ -4,10 +4,12 @@ import Header from '../components/Header'
 
 function AppLayout() {
   return (
-    <div className="min-h-screen bg-black pb-17 text-white">
+    <div className="mx-auto min-h-screen w-full max-w-107.5 bg-black pb-17 text-white">
       <Header />
       <Outlet />
-      <BottomNav className="fixed inset-x-0 bottom-0" />
+      <div className="fixed inset-x-0 bottom-0 mx-auto w-full max-w-107.5">
+        <BottomNav />
+      </div>
     </div>
   )
 }

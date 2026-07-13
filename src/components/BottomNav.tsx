@@ -47,7 +47,7 @@ export default function BottomNav({
     <nav
       aria-label="하단 메뉴"
       data-node-id="595:511"
-      className={`relative mx-auto h-[68px] w-full max-w-[390px] ${className}`}
+      className={`relative mx-auto h-[68px] w-full max-w-107.5 ${className}`}
     >
       <div className="absolute inset-x-0 bottom-0 h-14 rounded-full bg-[rgba(215,215,215,0.28)] shadow-[0_0_10px_4px_rgba(176,176,176,0.25)] backdrop-blur-[25px]" />
 
