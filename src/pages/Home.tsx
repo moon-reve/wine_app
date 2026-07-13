@@ -16,10 +16,14 @@ import iconArrowForward5 from '../assets/images/icon-arrow-forward-5.svg'
 import iconArrowForward6 from '../assets/images/icon-arrow-forward-6.svg'
 import iconChevronForward from '../assets/images/icon-chevron-forward.svg'
 import iconEllipse9 from '../assets/images/icon-ellipse-9.svg'
+import iconEllipse43 from '../assets/images/icon-ellipse-43.svg'
 import iconGroup2 from '../assets/images/icon-group-2.svg'
 import iconHeart from '../assets/images/icon-heart.svg'
 import iconShare from '../assets/images/icon-share.svg'
 import iconMusicNote2 from '../assets/images/icon-music-note-2.svg'
+import eventArrowIcon from '../../icon/Arrow.svg'
+import magazineArrowIcon from '../../icon/arrow_forward.svg'
+import magazineArrowBackground from '../../icon/Ellipse 42.svg'
 import Header from '../components/Header'
 
 const playfairOpsz = { fontVariationSettings: '"opsz" 12' }
@@ -80,6 +84,15 @@ function Home() {
           <span className="size-[1.860cqw] rounded-full bg-[#831317]" />
           <span className="size-[1.860cqw] rounded-full bg-white/50" />
           <span className="size-[1.860cqw] rounded-full bg-white/50" />
+        <div
+          className="absolute top-[146.977cqw] left-1/2 flex h-[2.326cqw] w-[13.953cqw] -translate-x-1/2 items-center gap-[3.488cqw]"
+          role="img"
+          aria-label="히어로 슬라이드 1 / 3"
+          data-node-id="610:318"
+        >
+          <span className="size-[2.326cqw] shrink-0 rounded-full bg-[#9a0707]" data-node-id="610:319" />
+          <span className="size-[2.326cqw] shrink-0 rounded-full bg-[#d9d9d9]" data-node-id="610:320" />
+          <span className="size-[2.326cqw] shrink-0 rounded-full bg-[#d9d9d9]" data-node-id="610:321" />
         </div>
       </section>
 
@@ -215,7 +228,7 @@ function Home() {
               </span>
               <button
                 type="button"
-                className="flex items-center text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline"
+                className="flex shrink-0 items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline"
               >
                 자세히보기
                 <img src={iconChevronForward} alt="" className="size-[4.186cqw]" />
@@ -234,6 +247,13 @@ function Home() {
               <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#831317] px-[2.326cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
                 #AI 소믈리에 추천
               </span>
+              <button
+                type="button"
+                className="flex shrink-0 items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline"
+              >
+                자세히보기
+                <img src={iconChevronForward} alt="" className="size-[4.186cqw]" />
+              </button>
             </div>
           </div>
         </div>
@@ -388,9 +408,7 @@ function Home() {
                   있습니다. 영동과 문경에서 우리 국산 청포도 '청수'와 세계 유일의 오미자 스파클링 '오미로제'까지,
                   한국에도 ....
                 </p>
-              ) : (
-                <p className="mt-[0.698cqw] text-right text-[2.791cqw] leading-[1.55] tracking-[-0.056cqw] text-white">전체보기</p>
-              )}
+              ) : null}
             </div>
           </div>
         ))}
@@ -443,7 +461,26 @@ function Home() {
           type="button"
           className="absolute top-[50.000cqw] left-1/2 flex h-[10.930cqw] w-[33.953cqw] -translate-x-1/2 items-center justify-center rounded-full border border-white/60 bg-white/25 text-[3.721cqw] leading-[1.2] font-semibold tracking-[-0.074cqw] text-[#831317] shadow-[0px_0px_20px_4px_rgba(176,176,176,0.25)] backdrop-blur-xl"
         >
-          코르크 하루 추가
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 rounded-full shadow-[0px_0px_20px_4px_rgba(176,176,176,0.25)]"
+          />
+          <span aria-hidden className="pointer-events-none absolute inset-0 rounded-full backdrop-blur-[25px]" />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-[0.435cqw] inset-y-[0.649cqw] rounded-full backdrop-blur-[25px]"
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-[0.870cqw] inset-y-[1.298cqw] rounded-full backdrop-blur-[25px]"
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-[1.306cqw] inset-y-[1.947cqw] rounded-full blur-[5px] backdrop-blur-[0.5px]"
+          />
+          <span className="relative z-10 whitespace-nowrap" data-node-id="576:216">
+            코르크 하루 추가
+          </span>
         </button>
 
         <div className="absolute inset-x-0 bottom-0 h-[47.209cqw] overflow-hidden">
