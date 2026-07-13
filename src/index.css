@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Playfair Display";
-  src: url("./assets/playfair-display-regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-}
-
 @theme {
   --font-playfair: "Playfair Display", serif;
 }
