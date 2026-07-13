@@ -37,7 +37,7 @@ function NavButton({
   )
 }
 
-export default function Nav({
+export default function BottomNav({
   activeItem = '홈',
   onItemClick,
   onAddClick,

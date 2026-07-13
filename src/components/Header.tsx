@@ -1,5 +1,5 @@
-import bellIcon from './assets/bell.svg'
-import searchIcon from './assets/search.svg'
+import bellIcon from '../assets/bell.svg'
+import searchIcon from '../assets/search.svg'
 
 function Header() {
   return (

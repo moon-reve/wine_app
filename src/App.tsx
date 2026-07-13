@@ -1,20 +1,13 @@
-import Header from './header'
-
-function App() {
-  return (
-    <main className="min-h-screen bg-black">
-      <Header />
-    </main>
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AppLayout from './layouts/AppLayout'
-import HomePage from './pages/HomePage'
+import Home from './pages/Home'
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Home />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
