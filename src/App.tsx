@@ -1,3 +1,10 @@
+import Header from './header'
+
+function App() {
+  return (
+    <main className="min-h-screen bg-black">
+      <Header />
+    </main>
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import AppLayout from './layouts/AppLayout'
 import HomePage from './pages/HomePage'
