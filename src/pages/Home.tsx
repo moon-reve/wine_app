@@ -10,15 +10,12 @@ import bottleCasaSmith from '../assets/images/bottle-casa-smith.png'
 import bottleKimCrawford from '../assets/images/bottle-kim-crawford.png'
 import bestFeedPhoto from '../assets/images/best-feed-photo.png'
 import iconArrowForward from '../assets/images/icon-arrow-forward.svg'
-import iconArrowForward1 from '../assets/images/icon-arrow-forward-1.svg'
 import iconArrowForward2 from '../assets/images/icon-arrow-forward-2.svg'
 import iconArrowForward4 from '../assets/images/icon-arrow-forward-4.svg'
 import iconArrowForward5 from '../assets/images/icon-arrow-forward-5.svg'
 import iconArrowForward6 from '../assets/images/icon-arrow-forward-6.svg'
 import iconChevronForward from '../assets/images/icon-chevron-forward.svg'
 import iconEllipse9 from '../assets/images/icon-ellipse-9.svg'
-import iconEllipse42 from '../assets/images/icon-ellipse-42.svg'
-import iconEllipse43 from '../assets/images/icon-ellipse-43.svg'
 import iconGroup2 from '../assets/images/icon-group-2.svg'
 import iconHeart from '../assets/images/icon-heart.svg'
 import iconShare from '../assets/images/icon-share.svg'
@@ -79,8 +76,10 @@ function Home() {
           <br />
           좋아하는 맛을 발견하고, 특별한 순간을 나눠보세요.
         </p>
-        <div className="absolute top-[147.442cqw] left-1/2 h-[1.163cqw] w-[90.698cqw] -translate-x-1/2 bg-white">
-          <div className="h-full w-[30.233cqw] bg-[#4e000e]" />
+        <div className="absolute top-[147.442cqw] left-1/2 flex -translate-x-1/2 items-center gap-[1.860cqw]">
+          <span className="size-[1.860cqw] rounded-full bg-[#831317]" />
+          <span className="size-[1.860cqw] rounded-full bg-white/50" />
+          <span className="size-[1.860cqw] rounded-full bg-white/50" />
         </div>
       </section>
 
@@ -124,10 +123,9 @@ function Home() {
             <button
               type="button"
               aria-label="다음 피드 보기"
-              className="absolute top-1/2 right-[2.791cqw] size-[6.977cqw] -translate-y-1/2"
+              className="absolute top-1/2 right-[2.791cqw] flex size-[6.977cqw] -translate-y-1/2 items-center justify-center rounded-full bg-white/20"
             >
-              <img src={iconEllipse43} alt="" className="absolute inset-0 size-full" />
-              <img src={iconArrowForward6} alt="" className="absolute inset-0 m-auto size-[3.721cqw]" />
+              <img src={iconArrowForward6} alt="" className="size-[3.721cqw]" />
             </button>
 
             <div className="absolute inset-x-[4.651cqw] bottom-[13.023cqw] flex flex-col gap-[1.860cqw]">
@@ -207,12 +205,12 @@ function Home() {
             <div className="flex h-[64.884cqw] items-center justify-center bg-[#f2f2f2]">
               <img src={bottleCasaSmith} alt="Casa Smith ViNO Rosso" className="h-[52.326cqw] w-auto object-contain" />
             </div>
-            <p className="font-playfair-sc mt-[0.698cqw] text-[3.721cqw] leading-[1.3] font-bold tracking-[-0.112cqw] text-black">
+            <p className="font-playfair-sc mt-[3.488cqw] text-[3.721cqw] leading-[1.3] font-bold tracking-[-0.112cqw] text-black">
               Casa Smith ViNO Rosso
             </p>
-            <p className="text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">포도향, 떫음</p>
-            <div className="mt-[0.465cqw] flex items-center gap-[1.860cqw]">
-              <span className="flex h-[4.651cqw] items-center rounded-full bg-[#670e10] px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
+            <p className="mt-[1.163cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">포도향, 떫음</p>
+            <div className="mt-[1.163cqw] flex items-center gap-[1.860cqw]">
+              <span className="flex h-[4.651cqw] items-center rounded-full bg-[#831317] px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
                 #오늘의 와인
               </span>
               <button
@@ -228,12 +226,12 @@ function Home() {
             <div className="flex h-[64.884cqw] items-center justify-center bg-[#f2f2f2]">
               <img src={bottleKimCrawford} alt="Kim CrawFord Pinot Noir" className="h-[50.930cqw] w-auto object-contain" />
             </div>
-            <p className="font-playfair-sc mt-[0.698cqw] text-[3.488cqw] leading-[1.3] font-bold tracking-[-0.105cqw] text-black">
+            <p className="font-playfair-sc mt-[3.488cqw] text-[3.488cqw] leading-[1.3] font-bold tracking-[-0.105cqw] text-black">
               Kim CrawFord Pinot Noir
             </p>
-            <p className="text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">꽃향, 부드러움</p>
-            <div className="mt-[0.465cqw]">
-              <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#670e10] px-[2.326cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
+            <p className="mt-[1.163cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">꽃향, 부드러움</p>
+            <div className="mt-[1.163cqw]">
+              <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#831317] px-[2.326cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
                 #AI 소믈리에 추천
               </span>
             </div>
@@ -298,25 +296,30 @@ function Home() {
         </h2>
         <div className="mt-[4.651cqw] divide-y divide-black/20">
           {eventItems.map((item) => (
-            <button key={item.label} type="button" className="flex w-full items-start justify-between py-[4.651cqw] text-left">
+            <button key={item.label} type="button" className="flex w-full items-center justify-between py-[4.651cqw] text-left">
               <div>
                 <p className="text-[2.791cqw] leading-[1.55] font-medium tracking-[-0.056cqw] text-[#831317]">{item.label}</p>
-                <p className="mt-[0.233cqw] text-[4.186cqw] leading-[1.18] font-semibold tracking-[-0.147cqw] text-black">
+                <p className="mt-[0.558cqw] text-[4.186cqw] leading-[1.18] font-semibold tracking-[-0.147cqw] text-black">
                   {item.title}
                 </p>
-                <p className="mt-[0.233cqw] text-[2.791cqw] leading-[1.55] tracking-[-0.056cqw] text-black">{item.description}</p>
+                <p className="mt-[1.572cqw] text-[2.791cqw] leading-[1.55] tracking-[-0.056cqw] text-black">{item.description}</p>
               </div>
-              <img src={iconArrowForward2} alt="" className="mt-[0.233cqw] size-[3.721cqw] shrink-0" />
+              <img src={iconArrowForward2} alt="" className="size-[3.721cqw] shrink-0" />
             </button>
           ))}
         </div>
       </section>
 
       {/* Promo banner — Figma 원본은 좌우 패딩 없이 화면 전체 폭에 꽉 채움 */}
-      <section className="pt-[0.465cqw]">
+      <section className="pt-[14.884cqw]">
         <div className="relative h-[29.767cqw] w-full overflow-hidden">
-          <img src={foodPairingImage} alt="페어링하기 좋은 음식찾기" className="absolute inset-0 size-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#831317] from-[24.525%] to-[rgba(29,4,5,0)] to-[79.087%]" />
+          <img
+            src={foodPairingImage}
+            alt="페어링하기 좋은 음식찾기"
+            className="absolute top-[-252.57%] left-0 w-full max-w-none h-[447.92%]"
+          />
+          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#831317] from-[24.525%] to-[rgba(131,19,23,0)] to-[79.087%]" />
           <div className="relative z-10 flex h-full flex-col justify-center px-[4.651cqw]">
             <p className="text-[5.581cqw] leading-[1.3] font-bold tracking-[-0.112cqw] text-white">페어링하기 좋은 음식찾기</p>
             <p className="mt-[0.233cqw] text-[3.256cqw] leading-[1.45] tracking-[-0.065cqw] text-white">
@@ -329,7 +332,7 @@ function Home() {
       {/* Wine Note — Figma Frame 274(x21,y3023,w389,h289) 좌표를 그대로 절대배치로 재현 */}
       <section className="px-[4.651cqw] pt-[11.163cqw]">
         <div className="relative h-[67.209cqw] w-full">
-          <span className="absolute top-0 left-0 flex h-[4.651cqw] items-center rounded-full bg-[#670e10] px-[1.512cqw] py-[0.930cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
+          <span className="absolute top-0 left-0 flex h-[4.651cqw] items-center rounded-full bg-[#831317] px-[1.512cqw] py-[0.930cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
             2026.07.10
           </span>
           <p className="absolute top-[7.209cqw] left-0 text-[3.721cqw] leading-[1.3] font-bold tracking-[-0.112cqw] text-black/50">
@@ -353,13 +356,15 @@ function Home() {
         </div>
       </section>
 
-      {/* Magazine — 다른 섹션과 동일하게 좌측 4.651cqw부터 시작, 스크롤바 숨김 */}
+      {/* Magazine — 다른 섹션과 동일하게 좌측 4.651cqw부터 시작, 스크롤바 숨김
+          scroll-snap 컨테이너는 scroll-padding이 없으면 시작 padding을 무시하고
+          첫 카드를 화면 맨 왼쪽에 스냅시키는 브라우저 동작이 있어 scroll-pl로 보정 */}
       <section
-        className={`mt-[11.163cqw] flex snap-x snap-mandatory gap-[1.860cqw] overflow-x-auto px-[4.651cqw] pb-[1.860cqw] ${noScrollbar}`}
+        className={`mt-[11.163cqw] flex snap-x snap-mandatory gap-[1.860cqw] overflow-x-auto px-[4.651cqw] pb-[1.860cqw] scroll-pl-[4.651cqw] ${noScrollbar}`}
       >
         {[
-          { image: magazineCard1, hasBody: true, dot: iconEllipse42 },
-          { image: magazineCard2, hasBody: false, dot: iconEllipse43 },
+          { image: magazineCard1, hasBody: true },
+          { image: magazineCard2, hasBody: false },
         ].map((card, i) => (
           <div key={i} className="relative h-[114.884cqw] w-[90.698cqw] shrink-0 snap-start overflow-hidden">
             <img src={card.image} alt="Magazine" className="absolute inset-0 size-full object-cover" />
@@ -371,14 +376,6 @@ function Home() {
             </p>
             <button type="button" aria-label="매거진 자세히 보기" className="absolute top-[36.512cqw] right-[4.651cqw] size-[5.581cqw]">
               <img src={iconArrowForward} alt="" className="size-full" />
-            </button>
-            <button
-              type="button"
-              aria-label="다음 매거진 보기"
-              className="absolute top-1/2 right-[6.279cqw] size-[6.977cqw] -translate-y-1/2"
-            >
-              <img src={card.dot} alt="" className="absolute inset-0 size-full" />
-              <img src={iconArrowForward1} alt="" className="absolute inset-0 m-auto size-[3.256cqw]" />
             </button>
             <div className="absolute inset-x-[4.651cqw] bottom-[6.977cqw]">
               <p className="text-[6.512cqw] leading-[1.18] font-bold tracking-[-0.228cqw] text-white">영동에서 문경까지</p>
@@ -405,25 +402,31 @@ function Home() {
           src={corkIcon}
           alt=""
           aria-hidden
-          className="absolute top-[-5.814cqw] left-[35.814cqw] h-[18.372cqw] w-[18.605cqw] rotate-[-43deg] opacity-10"
+          className="absolute top-[-1.970cqw] left-[37.380cqw] h-[10.698cqw] w-[15.470cqw] rotate-[-43.16deg] opacity-10"
         />
         <img
           src={corkIcon}
           alt=""
           aria-hidden
-          className="absolute top-[14.651cqw] left-[17.209cqw] h-[18.372cqw] w-[18.605cqw] -scale-y-100 rotate-[-138deg] opacity-20"
+          className="absolute top-[18.455cqw] left-[18.800cqw] h-[10.698cqw] w-[15.470cqw] -scale-y-100 rotate-[-137.94deg] opacity-20"
         />
         <img
           src={corkIcon}
           alt=""
           aria-hidden
-          className="absolute top-[45.116cqw] left-[38.605cqw] h-[17.674cqw] w-[14.186cqw] -scale-y-100 rotate-[104deg] opacity-30"
+          className="absolute top-[48.555cqw] left-[37.908cqw] h-[10.698cqw] w-[15.470cqw] -scale-y-100 rotate-[103.79deg] opacity-30"
         />
         <img
           src={corkIcon}
           alt=""
           aria-hidden
-          className="absolute top-[64.884cqw] left-[59.535cqw] h-[19.070cqw] w-[14.651cqw] -scale-y-100 rotate-[-81deg] opacity-70"
+          className="absolute top-[68.435cqw] left-[58.179cqw] z-10 h-[12.055cqw] w-[17.433cqw] -scale-y-100 rotate-[-80.67deg] opacity-70"
+        />
+        <img
+          src={corkIcon}
+          alt=""
+          aria-hidden
+          className="absolute top-[84.026cqw] left-[33.404cqw] z-10 h-[21.723cqw] w-[31.414cqw] -scale-y-100 rotate-[-52.48deg]"
         />
 
         <p
@@ -438,13 +441,17 @@ function Home() {
 
         <button
           type="button"
-          className="absolute top-[50.000cqw] left-1/2 flex h-[10.930cqw] w-[33.953cqw] -translate-x-1/2 items-center justify-center rounded-full bg-white/70 text-[3.721cqw] leading-[1.2] font-semibold tracking-[-0.074cqw] text-[#831317] shadow-[0px_0px_20px_4px_rgba(176,176,176,0.25)] backdrop-blur-xl"
+          className="absolute top-[50.000cqw] left-1/2 flex h-[10.930cqw] w-[33.953cqw] -translate-x-1/2 items-center justify-center rounded-full border border-white/60 bg-white/25 text-[3.721cqw] leading-[1.2] font-semibold tracking-[-0.074cqw] text-[#831317] shadow-[0px_0px_20px_4px_rgba(176,176,176,0.25)] backdrop-blur-xl"
         >
           코르크 하루 추가
         </button>
 
-        <div className="absolute inset-x-0 bottom-0 h-[47.209cqw]">
-          <img src={corkPile} alt="쌓여있는 와인 코르크 마개" className="absolute inset-x-0 bottom-0 h-full w-full object-cover" />
+        <div className="absolute inset-x-0 bottom-0 h-[47.209cqw] overflow-hidden">
+          <img
+            src={corkPile}
+            alt="쌓여있는 와인 코르크 마개"
+            className="absolute top-0 left-0 h-[141.26%] w-full max-w-none"
+          />
           <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-black/30 to-black" />
         </div>
       </section>
