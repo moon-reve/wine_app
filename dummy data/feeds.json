@@ -4,9 +4,9 @@
     "userId": "user_013",
     "wineId": "wine_018",
     "images": [
-      "/images/feeds/feed_021_1.jpg",
-      "/images/feeds/feed_021_2.jpg",
-      "/images/feeds/feed_021_3.jpg"
+      "src/assets/images/feeds/feed_021_1.jpg",
+      "src/assets/images/feeds/feed_021_2.jpg",
+      "src/assets/images/feeds/feed_021_3.jpg"
     ],
     "content": "기념일에 마셨는데 향이 정말 깊고 여운이 오래 남았어요. 채끝 스테이크와 함께 먹으니 최고의 조합이었습니다.",
     "tags": [
@@ -24,10 +24,10 @@
     "userId": "user_015",
     "wineId": "wine_103",
     "images": [
-      "/images/feeds/feed_022_1.jpg",
-      "/images/feeds/feed_022_2.jpg",
-      "/images/feeds/feed_022_3.jpg",
-      "/images/feeds/feed_022_4.jpg"
+      "src/assets/images/feeds/feed_022_1.jpg",
+      "src/assets/images/feeds/feed_022_2.jpg",
+      "src/assets/images/feeds/feed_022_3.jpg",
+      "src/assets/images/feeds/feed_022_4.jpg"
     ],
     "content": "과실향과 오크향의 밸런스가 훌륭했습니다. 와인을 좋아하는 분이라면 꼭 한 번 마셔보세요.",
     "tags": [
@@ -44,8 +44,8 @@
     "userId": "user_016",
     "wineId": "wine_014",
     "images": [
-      "/images/feeds/feed_023_1.jpg",
-      "/images/feeds/feed_023_2.jpg"
+      "src/assets/images/feeds/feed_023_1.jpg",
+      "src/assets/images/feeds/feed_023_2.jpg"
     ],
     "content": "탄닌은 부드럽고 과실향이 풍부해서 양갈비와 최고의 궁합이었습니다.",
     "tags": [
@@ -62,9 +62,9 @@
     "userId": "user_017",
     "wineId": "wine_104",
     "images": [
-      "/images/feeds/feed_024_1.jpg",
-      "/images/feeds/feed_024_2.jpg",
-      "/images/feeds/feed_024_3.jpg"
+      "src/assets/images/feeds/feed_024_1.jpg",
+      "src/assets/images/feeds/feed_024_2.jpg",
+      "src/assets/images/feeds/feed_024_3.jpg"
     ],
     "content": "향이 섬세하고 가벼운 바디감이라 부담 없이 즐길 수 있었어요. 입문자에게도 추천합니다.",
     "tags": [
@@ -81,8 +81,8 @@
     "userId": "user_018",
     "wineId": "wine_043",
     "images": [
-      "/images/feeds/feed_025_1.jpg",
-      "/images/feeds/feed_025_2.jpg"
+      "src/assets/images/feeds/feed_025_1.jpg",
+      "src/assets/images/feeds/feed_025_2.jpg"
     ],
     "content": "여행 중 바다를 보며 마셨는데 분위기까지 완벽했어요. 산뜻한 피니시가 기억에 남습니다.",
     "tags": [
@@ -99,8 +99,8 @@
     "userId": "user_002",
     "wineId": "wine_002",
     "images": [
-      "/images/feeds/feed_013_1.jpg",
-      "/images/feeds/feed_013_2.jpg"
+      "src/assets/images/feeds/feed_013_1.jpg",
+      "src/assets/images/feeds/feed_013_2.jpg"
     ],
     "content": "부모님 선물로 사드렸다가 한 잔 얻어 마심. 역시 국민 선물 와인.",
     "tags": [
@@ -117,9 +117,9 @@
     "userId": "user_019",
     "wineId": "wine_105",
     "images": [
-      "/images/feeds/feed_026_1.jpg",
-      "/images/feeds/feed_026_2.jpg",
-      "/images/feeds/feed_026_3.jpg"
+      "src/assets/images/feeds/feed_026_1.jpg",
+      "src/assets/images/feeds/feed_026_2.jpg",
+      "src/assets/images/feeds/feed_026_3.jpg"
     ],
     "content": "가격 부담 없이 즐길 수 있는 데일리 와인이에요. 파스타와 함께 먹으니 만족스러웠습니다.",
     "tags": [
@@ -137,9 +137,9 @@
     "userId": "user_004",
     "wineId": "wine_088",
     "images": [
-      "/images/feeds/feed_017_1.jpg",
-      "/images/feeds/feed_017_2.jpg",
-      "/images/feeds/feed_017_3.jpg"
+      "src/assets/images/feeds/feed_017_1.jpg",
+      "src/assets/images/feeds/feed_017_2.jpg",
+      "src/assets/images/feeds/feed_017_3.jpg"
     ],
     "content": "광명동굴에서 사온 여포의 꿈. 이름값 하는 맛입니다.",
     "tags": [
@@ -156,8 +156,8 @@
     "userId": "user_009",
     "wineId": "wine_004",
     "images": [
-      "/images/feeds/feed_016_1.jpg",
-      "/images/feeds/feed_016_2.jpg"
+      "src/assets/images/feeds/feed_016_1.jpg",
+      "src/assets/images/feeds/feed_016_2.jpg"
     ],
     "content": "마트에서 제일 많이 보이길래 샀어요. 악마의 셀러 스토리도 재밌네요.",
     "tags": [
@@ -173,7 +173,7 @@
     "userId": "user_002",
     "wineId": "wine_001",
     "images": [
-      "/images/feeds/feed_001_1.jpg"
+      "src/assets/images/feeds/feed_001_1.jpg"
     ],
     "content": "골프 라운딩 끝나고 역시 1865. 18홀 65타는 못 쳤지만 와인은 맛있네요 😂",
     "tags": [
@@ -190,8 +190,8 @@
     "userId": "user_007",
     "wineId": "wine_061",
     "images": [
-      "/images/feeds/feed_005_1.jpg",
-      "/images/feeds/feed_005_2.jpg"
+      "src/assets/images/feeds/feed_005_1.jpg",
+      "src/assets/images/feeds/feed_005_2.jpg"
     ],
     "content": "한강 피크닉에 로제 한 병. 여름 감성 그 자체 🌸 산뜻해서 브런치와도 잘 어울리고 사진도 예쁘게 나와요.",
     "tags": [
@@ -209,7 +209,7 @@
     "userId": "user_010",
     "wineId": "wine_081",
     "images": [
-      "/images/feeds/feed_012_1.jpg"
+      "src/assets/images/feeds/feed_012_1.jpg"
     ],
     "content": "문경 오미나라 방문 기념. 오미자로 만든 스파클링이라니, 세계 유일이래요!",
     "tags": [
@@ -226,8 +226,8 @@
     "userId": "user_003",
     "wineId": "wine_030",
     "images": [
-      "/images/feeds/feed_020_1.jpg",
-      "/images/feeds/feed_020_2.jpg"
+      "src/assets/images/feeds/feed_020_1.jpg",
+      "src/assets/images/feeds/feed_020_2.jpg"
     ],
     "content": "더 블라인드 2026 화이트 1위라길래 시음. 산미와 당미 밸런스가 예술.",
     "tags": [
@@ -244,8 +244,8 @@
     "userId": "user_006",
     "wineId": "wine_005",
     "images": [
-      "/images/feeds/feed_011_1.jpg",
-      "/images/feeds/feed_011_2.jpg"
+      "src/assets/images/feeds/feed_011_1.jpg",
+      "src/assets/images/feeds/feed_011_2.jpg"
     ],
     "content": "삼겹살에 다크레드, 이게 진리입니다.",
     "tags": [
@@ -262,9 +262,9 @@
     "userId": "user_001",
     "wineId": "wine_021",
     "images": [
-      "/images/feeds/feed_006_1.jpg",
-      "/images/feeds/feed_006_2.jpg",
-      "/images/feeds/feed_006_3.jpg"
+      "src/assets/images/feeds/feed_006_1.jpg",
+      "src/assets/images/feeds/feed_006_2.jpg",
+      "src/assets/images/feeds/feed_006_3.jpg"
     ],
     "content": "굴이랑 같이 먹었는데 미쳤습니다. 상큼한 산미와 시트러스 향이 입안을 씻어줘요. 해산물과 정말 잘 어울립니다.",
     "tags": [
@@ -283,7 +283,7 @@
     "userId": "user_007",
     "wineId": "wine_063",
     "images": [
-      "/images/feeds/feed_015_1.jpg"
+      "src/assets/images/feeds/feed_015_1.jpg"
     ],
     "content": "브래드 피트 와인이라길래 궁금해서 샀는데 맛도 훌륭하네요.",
     "tags": [
@@ -299,7 +299,7 @@
     "userId": "user_012",
     "wineId": "wine_041",
     "images": [
-      "/images/feeds/feed_018_1.jpg"
+      "src/assets/images/feeds/feed_018_1.jpg"
     ],
     "content": "10년 지기 절친 결혼 전야. 돔페리 오픈했습니다 🍾",
     "tags": [
@@ -316,9 +316,9 @@
     "userId": "user_011",
     "wineId": "wine_006",
     "images": [
-      "/images/feeds/feed_007_1.jpg",
-      "/images/feeds/feed_007_2.jpg",
-      "/images/feeds/feed_007_3.jpg"
+      "src/assets/images/feeds/feed_007_1.jpg",
+      "src/assets/images/feeds/feed_007_2.jpg",
+      "src/assets/images/feeds/feed_007_3.jpg"
     ],
     "content": "9,900원의 행복. 편의점 와인 무시하면 안 됩니다.",
     "tags": [
@@ -335,9 +335,9 @@
     "userId": "user_011",
     "wineId": "wine_008",
     "images": [
-      "/images/feeds/feed_019_1.jpg",
-      "/images/feeds/feed_019_2.jpg",
-      "/images/feeds/feed_019_3.jpg"
+      "src/assets/images/feeds/feed_019_1.jpg",
+      "src/assets/images/feeds/feed_019_2.jpg",
+      "src/assets/images/feeds/feed_019_3.jpg"
     ],
     "content": "편의점 2+1 행사로 겟. 데일리로 이만한 게 없다.",
     "tags": [
@@ -353,7 +353,7 @@
     "userId": "user_012",
     "wineId": "wine_043",
     "images": [
-      "/images/feeds/feed_009_1.jpg"
+      "src/assets/images/feeds/feed_009_1.jpg"
     ],
     "content": "결혼기념일 축하주 🧡 노란 라벨은 언제 봐도 설레요.",
     "tags": [
@@ -369,9 +369,9 @@
     "userId": "user_003",
     "wineId": "wine_025",
     "images": [
-      "/images/feeds/feed_010_1.jpg",
-      "/images/feeds/feed_010_2.jpg",
-      "/images/feeds/feed_010_3.jpg"
+      "src/assets/images/feeds/feed_010_1.jpg",
+      "src/assets/images/feeds/feed_010_2.jpg",
+      "src/assets/images/feeds/feed_010_3.jpg"
     ],
     "content": "샤블리 + 생굴 조합 정석대로. 미네랄리티가 살아있다.",
     "tags": [
@@ -388,7 +388,7 @@
     "userId": "user_009",
     "wineId": "wine_007",
     "images": [
-      "/images/feeds/feed_003_1.jpg"
+      "src/assets/images/feeds/feed_003_1.jpg"
     ],
     "content": "인생 첫 와인. 생각보다 안 떫고 달달한 과일향이 나요. 와인 시작하길 잘했다!",
     "tags": [
@@ -405,8 +405,8 @@
     "userId": "user_004",
     "wineId": "wine_083",
     "images": [
-      "/images/feeds/feed_004_1.jpg",
-      "/images/feeds/feed_004_2.jpg"
+      "src/assets/images/feeds/feed_004_1.jpg",
+      "src/assets/images/feeds/feed_004_2.jpg"
     ],
     "content": "대부도 와이너리 직접 다녀왔어요. 청수 품종 향이 진짜 매력적. 한국와인 무시하지 마세요!",
     "tags": [
@@ -423,9 +423,9 @@
     "userId": "user_005",
     "wineId": "wine_057",
     "images": [
-      "/images/feeds/feed_014_1.jpg",
-      "/images/feeds/feed_014_2.jpg",
-      "/images/feeds/feed_014_3.jpg"
+      "src/assets/images/feeds/feed_014_1.jpg",
+      "src/assets/images/feeds/feed_014_2.jpg",
+      "src/assets/images/feeds/feed_014_3.jpg"
     ],
     "content": "디저트 타임 🍰 달콤한 복숭아향 폭발. 케이크랑 최고 조합.",
     "tags": [
@@ -442,8 +442,8 @@
     "userId": "user_005",
     "wineId": "wine_042",
     "images": [
-      "/images/feeds/feed_002_1.jpg",
-      "/images/feeds/feed_002_2.jpg"
+      "src/assets/images/feeds/feed_002_1.jpg",
+      "src/assets/images/feeds/feed_002_2.jpg"
     ],
     "content": "금요일 밤 홈파티 개시! 첫 잔은 언제나 모엣 🥂 청량감이 분위기를 한층 더 살려줍니다.",
     "tags": [
@@ -461,8 +461,8 @@
     "userId": "user_008",
     "wineId": "wine_010",
     "images": [
-      "/images/feeds/feed_008_1.jpg",
-      "/images/feeds/feed_008_2.jpg"
+      "src/assets/images/feeds/feed_008_1.jpg",
+      "src/assets/images/feeds/feed_008_2.jpg"
     ],
     "content": "드디어 영접한 케이머스. 진한 블랙베리 향과 초콜릿 향, 부드러움의 끝. 스테이크와 꼭 함께 드셔보세요.",
     "tags": [
