@@ -12,7 +12,7 @@
     "rating": 4.1,
     "reviewCount": 391,
     "description": "'18홀 65타' 마케팅으로 골퍼 국민와인 등극, 한국 최다 판매 레드 중 하나",
-    "imageUrl": "/images/wines/wine_001.png"
+    "imageUrl": "src/assets/images/wines/wine_001.png"
   },
   {
     "id": "wine_002",
@@ -27,7 +27,7 @@
     "rating": 4.0,
     "reviewCount": 83,
     "description": "한국인이 가장 사랑하는 칠레 와인, 선물용 스테디셀러",
-    "imageUrl": "/images/wines/wine_002.png"
+    "imageUrl": "src/assets/images/wines/wine_002.png"
   },
   {
     "id": "wine_003",
@@ -42,7 +42,7 @@
     "rating": 4.3,
     "reviewCount": 314,
     "description": "카르메네르 최고봉으로 꼽히는 몬테스 플래그십",
-    "imageUrl": "/images/wines/wine_003.png"
+    "imageUrl": "src/assets/images/wines/wine_003.png"
   },
   {
     "id": "wine_004",
@@ -57,7 +57,7 @@
     "rating": 4.0,
     "reviewCount": 59,
     "description": "'악마의 셀러' 스토리로 유명한 대형마트 베스트셀러",
-    "imageUrl": "/images/wines/wine_004.png"
+    "imageUrl": "src/assets/images/wines/wine_004.png"
   },
   {
     "id": "wine_005",
@@ -72,7 +72,7 @@
     "rating": 3.9,
     "reviewCount": 299,
     "description": "편의점·마트 품절 대란을 일으킨 진한 스타일 히트작",
-    "imageUrl": "/images/wines/wine_005.png"
+    "imageUrl": "src/assets/images/wines/wine_005.png"
   },
   {
     "id": "wine_006",
@@ -87,7 +87,7 @@
     "rating": 3.9,
     "reviewCount": 124,
     "description": "이마트24 초저가 와인 열풍의 주역, 누적 수백만 병 판매",
-    "imageUrl": "/images/wines/wine_006.png"
+    "imageUrl": "src/assets/images/wines/wine_006.png"
   },
   {
     "id": "wine_007",
@@ -102,7 +102,7 @@
     "rating": 4.0,
     "reviewCount": 426,
     "description": "세계에서 가장 많이 팔리는 호주 와인 브랜드",
-    "imageUrl": "/images/wines/wine_007.png"
+    "imageUrl": "src/assets/images/wines/wine_007.png"
   },
   {
     "id": "wine_008",
@@ -117,7 +117,7 @@
     "rating": 4.2,
     "reviewCount": 369,
     "description": "편의점 가성비 와인 열풍을 이끈 히트작",
-    "imageUrl": "/images/wines/wine_008.png"
+    "imageUrl": "src/assets/images/wines/wine_008.png"
   },
   {
     "id": "wine_009",
@@ -132,7 +132,7 @@
     "rating": 4.1,
     "reviewCount": 91,
     "description": "과실미 폭발 스타일로 한국에서 특히 인기인 호주 쉬라즈",
-    "imageUrl": "/images/wines/wine_009.png"
+    "imageUrl": "src/assets/images/wines/wine_009.png"
   },
   {
     "id": "wine_010",
@@ -147,7 +147,7 @@
     "rating": 4.1,
     "reviewCount": 64,
     "description": "부드럽고 진한 스타일로 한국 시장 나파 카베르네 열풍의 중심",
-    "imageUrl": "/images/wines/wine_010.png"
+    "imageUrl": "src/assets/images/wines/wine_010.png"
   },
   {
     "id": "wine_011",
@@ -162,7 +162,7 @@
     "rating": 3.9,
     "reviewCount": 195,
     "description": "오리 라벨로 유명, 접근성 좋은 프리미엄 미국 와인",
-    "imageUrl": "/images/wines/wine_011.png"
+    "imageUrl": "src/assets/images/wines/wine_011.png"
   },
   {
     "id": "wine_012",
@@ -177,7 +177,7 @@
     "rating": 4.3,
     "reviewCount": 425,
     "description": "나파밸리 와인의 아버지 로버트 몬다비의 대표작",
-    "imageUrl": "/images/wines/wine_012.png"
+    "imageUrl": "src/assets/images/wines/wine_012.png"
   },
   {
     "id": "wine_013",
@@ -192,7 +192,7 @@
     "rating": 3.9,
     "reviewCount": 286,
     "description": "롯데백화점 '더 블라인드 2026' 레드 1위로 화제가 된 이슈 와인",
-    "imageUrl": "/images/wines/wine_013.png"
+    "imageUrl": "src/assets/images/wines/wine_013.png"
   },
   {
     "id": "wine_014",
@@ -207,7 +207,7 @@
     "rating": 4.1,
     "reviewCount": 205,
     "description": "슈퍼투스칸의 시초, 국내 백화점 오픈런 대란을 일으킨 와인",
-    "imageUrl": "/images/wines/wine_014.png"
+    "imageUrl": "src/assets/images/wines/wine_014.png"
   },
   {
     "id": "wine_015",
@@ -222,7 +222,7 @@
     "rating": 4.5,
     "reviewCount": 162,
     "description": "이탈리아 최고 컬트 슈퍼투스칸, 수집가들의 위시리스트 1순위",
-    "imageUrl": "/images/wines/wine_015.png"
+    "imageUrl": "src/assets/images/wines/wine_015.png"
   },
   {
     "id": "wine_016",
@@ -237,7 +237,7 @@
     "rating": 4.4,
     "reviewCount": 307,
     "description": "한국인에게 유독 사랑받는 보르도 그랑크뤼(4등급)",
-    "imageUrl": "/images/wines/wine_016.png"
+    "imageUrl": "src/assets/images/wines/wine_016.png"
   },
   {
     "id": "wine_017",
@@ -252,7 +252,7 @@
     "rating": 3.9,
     "reviewCount": 35,
     "description": "만화 '신의 물방울'에 등장해 국내 품절 대란을 일으킨 와인",
-    "imageUrl": "/images/wines/wine_017.png"
+    "imageUrl": "src/assets/images/wines/wine_017.png"
   },
   {
     "id": "wine_018",
@@ -267,7 +267,7 @@
     "rating": 4.8,
     "reviewCount": 407,
     "description": "보르도 1등급 5대 샤토, '와인의 여왕'으로 불리는 명품",
-    "imageUrl": "/images/wines/wine_018.png"
+    "imageUrl": "src/assets/images/wines/wine_018.png"
   },
   {
     "id": "wine_019",
@@ -282,7 +282,7 @@
     "rating": 4.6,
     "reviewCount": 52,
     "description": "몬다비×로칠드 합작 프로젝트, 미국 대표 프리미엄 와인",
-    "imageUrl": "/images/wines/wine_019.png"
+    "imageUrl": "src/assets/images/wines/wine_019.png"
   },
   {
     "id": "wine_020",
@@ -297,7 +297,7 @@
     "rating": 4.2,
     "reviewCount": 206,
     "description": "'베를린 테이스팅'으로 유명한 에라주리스의 인기 라인",
-    "imageUrl": "/images/wines/wine_020.png"
+    "imageUrl": "src/assets/images/wines/wine_020.png"
   },
   {
     "id": "wine_021",
@@ -312,7 +312,7 @@
     "rating": 4.0,
     "reviewCount": 95,
     "description": "뉴질랜드 소비뇽 블랑 신화를 만든 대표 화이트",
-    "imageUrl": "/images/wines/wine_021.png"
+    "imageUrl": "src/assets/images/wines/wine_021.png"
   },
   {
     "id": "wine_022",
@@ -327,7 +327,7 @@
     "rating": 4.0,
     "reviewCount": 355,
     "description": "상큼한 열대과실 향으로 여름철 인기 1순위",
-    "imageUrl": "/images/wines/wine_022.png"
+    "imageUrl": "src/assets/images/wines/wine_022.png"
   },
   {
     "id": "wine_023",
@@ -342,7 +342,7 @@
     "rating": 3.9,
     "reviewCount": 323,
     "description": "굴·해산물 페어링으로 유명한 가성비 소비뇽 블랑",
-    "imageUrl": "/images/wines/wine_023.png"
+    "imageUrl": "src/assets/images/wines/wine_023.png"
   },
   {
     "id": "wine_024",
@@ -357,7 +357,7 @@
     "rating": 4.1,
     "reviewCount": 95,
     "description": "뉴질랜드 국민 와이너리의 스테디셀러",
-    "imageUrl": "/images/wines/wine_024.png"
+    "imageUrl": "src/assets/images/wines/wine_024.png"
   },
   {
     "id": "wine_025",
@@ -372,7 +372,7 @@
     "rating": 4.1,
     "reviewCount": 339,
     "description": "굴과 샤블리 조합의 대명사, 국내 샤블리 인기 1위권",
-    "imageUrl": "/images/wines/wine_025.png"
+    "imageUrl": "src/assets/images/wines/wine_025.png"
   },
   {
     "id": "wine_026",
@@ -387,7 +387,7 @@
     "rating": 4.2,
     "reviewCount": 362,
     "description": "부르고뉴 화이트 입문용 정석으로 꼽히는 와인",
-    "imageUrl": "/images/wines/wine_026.png"
+    "imageUrl": "src/assets/images/wines/wine_026.png"
   },
   {
     "id": "wine_027",
@@ -402,7 +402,7 @@
     "rating": 4.0,
     "reviewCount": 129,
     "description": "미네랄리티가 뛰어난 루아르 소비뇽 블랑의 대표",
-    "imageUrl": "/images/wines/wine_027.png"
+    "imageUrl": "src/assets/images/wines/wine_027.png"
   },
   {
     "id": "wine_028",
@@ -417,7 +417,7 @@
     "rating": 4.9,
     "reviewCount": 424,
     "description": "세계 최고 귀부 스위트 와인, '신이 내린 와인'으로 불림",
-    "imageUrl": "/images/wines/wine_028.png"
+    "imageUrl": "src/assets/images/wines/wine_028.png"
   },
   {
     "id": "wine_029",
@@ -432,7 +432,7 @@
     "rating": 4.0,
     "reviewCount": 45,
     "description": "독일 리슬링 입문 정석, 매콤한 한식과 페어링으로 인기",
-    "imageUrl": "/images/wines/wine_029.png"
+    "imageUrl": "src/assets/images/wines/wine_029.png"
   },
   {
     "id": "wine_030",
@@ -447,7 +447,7 @@
     "rating": 3.9,
     "reviewCount": 120,
     "description": "롯데백화점 '더 블라인드 2026' 화이트 1위 이슈 와인",
-    "imageUrl": "/images/wines/wine_030.png"
+    "imageUrl": "src/assets/images/wines/wine_030.png"
   },
   {
     "id": "wine_031",
@@ -462,7 +462,7 @@
     "rating": 4.3,
     "reviewCount": 464,
     "description": "1976년 '파리의 심판'에서 프랑스를 꺾은 전설의 샤르도네",
-    "imageUrl": "/images/wines/wine_031.png"
+    "imageUrl": "src/assets/images/wines/wine_031.png"
   },
   {
     "id": "wine_032",
@@ -477,7 +477,7 @@
     "rating": 4.3,
     "reviewCount": 85,
     "description": "미국 레스토랑 판매 1위에 빛나는 국민 샤르도네",
-    "imageUrl": "/images/wines/wine_032.png"
+    "imageUrl": "src/assets/images/wines/wine_032.png"
   },
   {
     "id": "wine_033",
@@ -492,7 +492,7 @@
     "rating": 4.1,
     "reviewCount": 393,
     "description": "오크 숙성 나파 샤르도네의 정점으로 꼽히는 프리미엄",
-    "imageUrl": "/images/wines/wine_033.png"
+    "imageUrl": "src/assets/images/wines/wine_033.png"
   },
   {
     "id": "wine_034",
@@ -507,7 +507,7 @@
     "rating": 4.1,
     "reviewCount": 394,
     "description": "피노 그리지오 세계화의 주역, 깔끔한 스타일",
-    "imageUrl": "/images/wines/wine_034.png"
+    "imageUrl": "src/assets/images/wines/wine_034.png"
   },
   {
     "id": "wine_035",
@@ -522,7 +522,7 @@
     "rating": 4.1,
     "reviewCount": 197,
     "description": "몬테스 알파 인기에 힘입은 대표 칠레 샤르도네",
-    "imageUrl": "/images/wines/wine_035.png"
+    "imageUrl": "src/assets/images/wines/wine_035.png"
   },
   {
     "id": "wine_036",
@@ -537,7 +537,7 @@
     "rating": 4.0,
     "reviewCount": 272,
     "description": "리치·장미향의 알자스 대표 품종, 한식과 잘 어울려 인기",
-    "imageUrl": "/images/wines/wine_036.png"
+    "imageUrl": "src/assets/images/wines/wine_036.png"
   },
   {
     "id": "wine_037",
@@ -552,7 +552,7 @@
     "rating": 4.0,
     "reviewCount": 452,
     "description": "스페인 국민 화이트, 가볍게 즐기는 데일리 와인",
-    "imageUrl": "/images/wines/wine_037.png"
+    "imageUrl": "src/assets/images/wines/wine_037.png"
   },
   {
     "id": "wine_038",
@@ -567,7 +567,7 @@
     "rating": 3.8,
     "reviewCount": 417,
     "description": "마트에서 가장 쉽게 만나는 호주 데일리 화이트",
-    "imageUrl": "/images/wines/wine_038.png"
+    "imageUrl": "src/assets/images/wines/wine_038.png"
   },
   {
     "id": "wine_039",
@@ -582,7 +582,7 @@
     "rating": 4.1,
     "reviewCount": 209,
     "description": "1만원 이하 가성비 화이트의 대표 주자",
-    "imageUrl": "/images/wines/wine_039.png"
+    "imageUrl": "src/assets/images/wines/wine_039.png"
   },
   {
     "id": "wine_040",
@@ -597,7 +597,7 @@
     "rating": 4.0,
     "reviewCount": 282,
     "description": "디아블로 시리즈 인기에 힘입은 화이트 베스트셀러",
-    "imageUrl": "/images/wines/wine_040.png"
+    "imageUrl": "src/assets/images/wines/wine_040.png"
   },
   {
     "id": "wine_041",
@@ -612,7 +612,7 @@
     "rating": 4.5,
     "reviewCount": 295,
     "description": "럭셔리 샴페인의 대명사, 기념일 선물 1순위",
-    "imageUrl": "/images/wines/wine_041.png"
+    "imageUrl": "src/assets/images/wines/wine_041.png"
   },
   {
     "id": "wine_042",
@@ -627,7 +627,7 @@
     "rating": 4.3,
     "reviewCount": 17,
     "description": "세계 판매 1위 샴페인, 파티·축하주의 상징",
-    "imageUrl": "/images/wines/wine_042.png"
+    "imageUrl": "src/assets/images/wines/wine_042.png"
   },
   {
     "id": "wine_043",
@@ -642,7 +642,7 @@
     "rating": 4.3,
     "reviewCount": 70,
     "description": "노란 라벨로 유명, 백화점 샴페인 매출 상위 단골",
-    "imageUrl": "/images/wines/wine_043.png"
+    "imageUrl": "src/assets/images/wines/wine_043.png"
   },
   {
     "id": "wine_044",
@@ -657,7 +657,7 @@
     "rating": 4.8,
     "reviewCount": 286,
     "description": "샴페인 애호가들의 종착지로 불리는 프레스티지",
-    "imageUrl": "/images/wines/wine_044.png"
+    "imageUrl": "src/assets/images/wines/wine_044.png"
   },
   {
     "id": "wine_045",
@@ -672,7 +672,7 @@
     "rating": 4.8,
     "reviewCount": 405,
     "description": "러시아 황제를 위해 탄생, 셀럽 문화의 아이콘",
-    "imageUrl": "/images/wines/wine_045.png"
+    "imageUrl": "src/assets/images/wines/wine_045.png"
   },
   {
     "id": "wine_046",
@@ -687,7 +687,7 @@
     "rating": 4.3,
     "reviewCount": 69,
     "description": "007 제임스 본드의 샴페인으로 유명",
-    "imageUrl": "/images/wines/wine_046.png"
+    "imageUrl": "src/assets/images/wines/wine_046.png"
   },
   {
     "id": "wine_047",
@@ -702,7 +702,7 @@
     "rating": 4.0,
     "reviewCount": 92,
     "description": "샤르도네 비중 높은 우아한 스타일의 인기 샴페인",
-    "imageUrl": "/images/wines/wine_047.png"
+    "imageUrl": "src/assets/images/wines/wine_047.png"
   },
   {
     "id": "wine_048",
@@ -717,7 +717,7 @@
     "rating": 4.2,
     "reviewCount": 381,
     "description": "처칠이 사랑한 샴페인으로 유명",
-    "imageUrl": "/images/wines/wine_048.png"
+    "imageUrl": "src/assets/images/wines/wine_048.png"
   },
   {
     "id": "wine_049",
@@ -732,7 +732,7 @@
     "rating": 4.7,
     "reviewCount": 146,
     "description": "아네모네 꽃병 디자인으로 선물 수요 폭발",
-    "imageUrl": "/images/wines/wine_049.png"
+    "imageUrl": "src/assets/images/wines/wine_049.png"
   },
   {
     "id": "wine_050",
@@ -747,7 +747,7 @@
     "rating": 4.9,
     "reviewCount": 402,
     "description": "제이지(Jay-Z)가 인수한 황금 병 샴페인",
-    "imageUrl": "/images/wines/wine_050.png"
+    "imageUrl": "src/assets/images/wines/wine_050.png"
   },
   {
     "id": "wine_051",
@@ -762,7 +762,7 @@
     "rating": 4.0,
     "reviewCount": 479,
     "description": "F1 포디움 세리머니 샴페인으로 유명",
-    "imageUrl": "/images/wines/wine_051.png"
+    "imageUrl": "src/assets/images/wines/wine_051.png"
   },
   {
     "id": "wine_052",
@@ -777,7 +777,7 @@
     "rating": 3.9,
     "reviewCount": 332,
     "description": "모엣샹동이 만드는 합리적 가격의 뉴월드 스파클링",
-    "imageUrl": "/images/wines/wine_052.png"
+    "imageUrl": "src/assets/images/wines/wine_052.png"
   },
   {
     "id": "wine_053",
@@ -792,7 +792,7 @@
     "rating": 4.0,
     "reviewCount": 339,
     "description": "이탈리아 최고 스푸만테, 각종 시상식 공식 스파클링",
-    "imageUrl": "/images/wines/wine_053.png"
+    "imageUrl": "src/assets/images/wines/wine_053.png"
   },
   {
     "id": "wine_054",
@@ -807,7 +807,7 @@
     "rating": 4.1,
     "reviewCount": 113,
     "description": "프로세코 열풍을 이끈 대표 브랜드",
-    "imageUrl": "/images/wines/wine_054.png"
+    "imageUrl": "src/assets/images/wines/wine_054.png"
   },
   {
     "id": "wine_055",
@@ -822,7 +822,7 @@
     "rating": 3.9,
     "reviewCount": 402,
     "description": "검은 병 카바, 세계에서 가장 많이 팔린 스파클링 중 하나",
-    "imageUrl": "/images/wines/wine_055.png"
+    "imageUrl": "src/assets/images/wines/wine_055.png"
   },
   {
     "id": "wine_056",
@@ -837,7 +837,7 @@
     "rating": 3.9,
     "reviewCount": 410,
     "description": "450년 역사의 카바 명가 대표작",
-    "imageUrl": "/images/wines/wine_056.png"
+    "imageUrl": "src/assets/images/wines/wine_056.png"
   },
   {
     "id": "wine_057",
@@ -852,7 +852,7 @@
     "rating": 4.3,
     "reviewCount": 12,
     "description": "모스카토 다스티의 교과서, 디저트 와인 인기 1위권",
-    "imageUrl": "/images/wines/wine_057.png"
+    "imageUrl": "src/assets/images/wines/wine_057.png"
   },
   {
     "id": "wine_058",
@@ -867,7 +867,7 @@
     "rating": 4.1,
     "reviewCount": 262,
     "description": "편의점·마트에서 가장 많이 팔리는 달콤 스파클링",
-    "imageUrl": "/images/wines/wine_058.png"
+    "imageUrl": "src/assets/images/wines/wine_058.png"
   },
   {
     "id": "wine_059",
@@ -882,7 +882,7 @@
     "rating": 3.8,
     "reviewCount": 197,
     "description": "달콤한 스파클링 입문 정석",
-    "imageUrl": "/images/wines/wine_059.png"
+    "imageUrl": "src/assets/images/wines/wine_059.png"
   },
   {
     "id": "wine_060",
@@ -897,7 +897,7 @@
     "rating": 4.2,
     "reviewCount": 437,
     "description": "홈파티 필수템으로 SNS에서 유행한 달콤 스파클링",
-    "imageUrl": "/images/wines/wine_060.png"
+    "imageUrl": "src/assets/images/wines/wine_060.png"
   },
   {
     "id": "wine_061",
@@ -912,7 +912,7 @@
     "rating": 4.2,
     "reviewCount": 134,
     "description": "프로방스 로제 열풍의 주역, 셀럽들의 여름 와인",
-    "imageUrl": "/images/wines/wine_061.png"
+    "imageUrl": "src/assets/images/wines/wine_061.png"
   },
   {
     "id": "wine_062",
@@ -927,7 +927,7 @@
     "rating": 3.9,
     "reviewCount": 461,
     "description": "위스퍼링 엔젤의 상위 버전 프리미엄 로제",
-    "imageUrl": "/images/wines/wine_062.png"
+    "imageUrl": "src/assets/images/wines/wine_062.png"
   },
   {
     "id": "wine_063",
@@ -942,7 +942,7 @@
     "rating": 4.1,
     "reviewCount": 52,
     "description": "브래드 피트 소유 와이너리로 화제가 된 로제",
-    "imageUrl": "/images/wines/wine_063.png"
+    "imageUrl": "src/assets/images/wines/wine_063.png"
   },
   {
     "id": "wine_064",
@@ -957,7 +957,7 @@
     "rating": 3.9,
     "reviewCount": 260,
     "description": "프랑스 판매 1위권 프로방스 로제",
-    "imageUrl": "/images/wines/wine_064.png"
+    "imageUrl": "src/assets/images/wines/wine_064.png"
   },
   {
     "id": "wine_065",
@@ -972,7 +972,7 @@
     "rating": 4.2,
     "reviewCount": 401,
     "description": "매그넘·제로보암 대용량으로 파티에서 인기",
-    "imageUrl": "/images/wines/wine_065.png"
+    "imageUrl": "src/assets/images/wines/wine_065.png"
   },
   {
     "id": "wine_066",
@@ -987,7 +987,7 @@
     "rating": 4.1,
     "reviewCount": 76,
     "description": "장미 모양 병 바닥 디자인으로 선물용 히트",
-    "imageUrl": "/images/wines/wine_066.png"
+    "imageUrl": "src/assets/images/wines/wine_066.png"
   },
   {
     "id": "wine_067",
@@ -1002,7 +1002,7 @@
     "rating": 3.9,
     "reviewCount": 255,
     "description": "'로제의 왕'이라 불리는 타벨 지역 대표작",
-    "imageUrl": "/images/wines/wine_067.png"
+    "imageUrl": "src/assets/images/wines/wine_067.png"
   },
   {
     "id": "wine_068",
@@ -1017,7 +1017,7 @@
     "rating": 4.3,
     "reviewCount": 96,
     "description": "리오하 명가 무가의 우아한 로제",
-    "imageUrl": "/images/wines/wine_068.png"
+    "imageUrl": "src/assets/images/wines/wine_068.png"
   },
   {
     "id": "wine_069",
@@ -1032,7 +1032,7 @@
     "rating": 3.9,
     "reviewCount": 458,
     "description": "납작한 병으로 유명한 세계적 베스트셀러 로제",
-    "imageUrl": "/images/wines/wine_069.png"
+    "imageUrl": "src/assets/images/wines/wine_069.png"
   },
   {
     "id": "wine_070",
@@ -1047,7 +1047,7 @@
     "rating": 4.1,
     "reviewCount": 120,
     "description": "재치있는 라벨로 마트에서 히트한 가성비 로제",
-    "imageUrl": "/images/wines/wine_070.png"
+    "imageUrl": "src/assets/images/wines/wine_070.png"
   },
   {
     "id": "wine_071",
@@ -1062,7 +1062,7 @@
     "rating": 4.2,
     "reviewCount": 398,
     "description": "달콤한 로제 입문 국민템",
-    "imageUrl": "/images/wines/wine_071.png"
+    "imageUrl": "src/assets/images/wines/wine_071.png"
   },
   {
     "id": "wine_072",
@@ -1077,7 +1077,7 @@
     "rating": 4.1,
     "reviewCount": 114,
     "description": "저렴하고 달콤해 홈술족에게 인기",
-    "imageUrl": "/images/wines/wine_072.png"
+    "imageUrl": "src/assets/images/wines/wine_072.png"
   },
   {
     "id": "wine_073",
@@ -1092,7 +1092,7 @@
     "rating": 4.1,
     "reviewCount": 216,
     "description": "달콤한 로제 스파클링 편의점 베스트셀러",
-    "imageUrl": "/images/wines/wine_073.png"
+    "imageUrl": "src/assets/images/wines/wine_073.png"
   },
   {
     "id": "wine_074",
@@ -1107,7 +1107,7 @@
     "rating": 4.3,
     "reviewCount": 344,
     "description": "빌라엠 시리즈의 로제 버전, 홈파티 인기템",
-    "imageUrl": "/images/wines/wine_074.png"
+    "imageUrl": "src/assets/images/wines/wine_074.png"
   },
   {
     "id": "wine_075",
@@ -1122,7 +1122,7 @@
     "rating": 4.1,
     "reviewCount": 472,
     "description": "로제 샴페인 대중화의 주역",
-    "imageUrl": "/images/wines/wine_075.png"
+    "imageUrl": "src/assets/images/wines/wine_075.png"
   },
   {
     "id": "wine_076",
@@ -1137,7 +1137,7 @@
     "rating": 4.2,
     "reviewCount": 73,
     "description": "최초의 블렌디드 로제 샴페인 하우스의 대표작",
-    "imageUrl": "/images/wines/wine_076.png"
+    "imageUrl": "src/assets/images/wines/wine_076.png"
   },
   {
     "id": "wine_077",
@@ -1152,7 +1152,7 @@
     "rating": 4.1,
     "reviewCount": 44,
     "description": "세니에 방식 로제 샴페인의 정점, 선물용 인기",
-    "imageUrl": "/images/wines/wine_077.png"
+    "imageUrl": "src/assets/images/wines/wine_077.png"
   },
   {
     "id": "wine_078",
@@ -1167,7 +1167,7 @@
     "rating": 4.6,
     "reviewCount": 313,
     "description": "돔 페리뇽의 희소 로제 버전, 최고급 기념주",
-    "imageUrl": "/images/wines/wine_078.png"
+    "imageUrl": "src/assets/images/wines/wine_078.png"
   },
   {
     "id": "wine_079",
@@ -1182,7 +1182,7 @@
     "rating": 4.2,
     "reviewCount": 313,
     "description": "강렬한 스타일의 로제 샴페인",
-    "imageUrl": "/images/wines/wine_079.png"
+    "imageUrl": "src/assets/images/wines/wine_079.png"
   },
   {
     "id": "wine_080",
@@ -1197,7 +1197,7 @@
     "rating": 4.1,
     "reviewCount": 48,
     "description": "크리스탈 명가의 정교한 로제 샴페인",
-    "imageUrl": "/images/wines/wine_080.png"
+    "imageUrl": "src/assets/images/wines/wine_080.png"
   },
   {
     "id": "wine_081",
@@ -1212,7 +1212,7 @@
     "rating": 4.3,
     "reviewCount": 42,
     "description": "세계 최초 오미자 스파클링, 정상회담 만찬주로 화제",
-    "imageUrl": "/images/wines/wine_081.png"
+    "imageUrl": "src/assets/images/wines/wine_081.png"
   },
   {
     "id": "wine_082",
@@ -1227,7 +1227,7 @@
     "rating": 3.9,
     "reviewCount": 475,
     "description": "오미로제의 대중 라인, 국빈 만찬·선물용 인기",
-    "imageUrl": "/images/wines/wine_082.png"
+    "imageUrl": "src/assets/images/wines/wine_082.png"
   },
   {
     "id": "wine_083",
@@ -1242,7 +1242,7 @@
     "rating": 3.8,
     "reviewCount": 181,
     "description": "청와대 만찬주로 선정된 국산 청수 품종 화이트",
-    "imageUrl": "/images/wines/wine_083.png"
+    "imageUrl": "src/assets/images/wines/wine_083.png"
   },
   {
     "id": "wine_084",
@@ -1257,7 +1257,7 @@
     "rating": 3.8,
     "reviewCount": 133,
     "description": "대부도 캠벨얼리로 만든 한국 대표 레드",
-    "imageUrl": "/images/wines/wine_084.png"
+    "imageUrl": "src/assets/images/wines/wine_084.png"
   },
   {
     "id": "wine_085",
@@ -1272,7 +1272,7 @@
     "rating": 3.9,
     "reviewCount": 260,
     "description": "산뜻한 캠벨 향의 국산 로제 스테디셀러",
-    "imageUrl": "/images/wines/wine_085.png"
+    "imageUrl": "src/assets/images/wines/wine_085.png"
   },
   {
     "id": "wine_086",
@@ -1287,7 +1287,7 @@
     "rating": 3.9,
     "reviewCount": 79,
     "description": "5~6년 숙성 프리미엄 라인, 품평회 다수 수상",
-    "imageUrl": "/images/wines/wine_086.png"
+    "imageUrl": "src/assets/images/wines/wine_086.png"
   },
   {
     "id": "wine_087",
@@ -1302,7 +1302,7 @@
     "rating": 4.2,
     "reviewCount": 463,
     "description": "'미소' 라벨로 유명한 영동 도란원의 히트작",
-    "imageUrl": "/images/wines/wine_087.png"
+    "imageUrl": "src/assets/images/wines/wine_087.png"
   },
   {
     "id": "wine_088",
@@ -1317,7 +1317,7 @@
     "rating": 4.1,
     "reviewCount": 254,
     "description": "광명동굴 판매 1위로 유명해진 여포와인농장 대표작",
-    "imageUrl": "/images/wines/wine_088.png"
+    "imageUrl": "src/assets/images/wines/wine_088.png"
   },
   {
     "id": "wine_089",
@@ -1332,7 +1332,7 @@
     "rating": 3.9,
     "reviewCount": 254,
     "description": "진한 과실미의 여포와인농장 레드",
-    "imageUrl": "/images/wines/wine_089.png"
+    "imageUrl": "src/assets/images/wines/wine_089.png"
   },
   {
     "id": "wine_090",
@@ -1347,7 +1347,7 @@
     "rating": 4.2,
     "reviewCount": 109,
     "description": "여포 시리즈의 산뜻한 로제 버전",
-    "imageUrl": "/images/wines/wine_090.png"
+    "imageUrl": "src/assets/images/wines/wine_090.png"
   },
   {
     "id": "wine_091",
@@ -1362,7 +1362,7 @@
     "rating": 3.8,
     "reviewCount": 349,
     "description": "청수 품종을 최초 양조한 와이너리의 대표 화이트",
-    "imageUrl": "/images/wines/wine_091.png"
+    "imageUrl": "src/assets/images/wines/wine_091.png"
   },
   {
     "id": "wine_092",
@@ -1377,7 +1377,7 @@
     "rating": 4.0,
     "reviewCount": 228,
     "description": "소믈리에 가족이 만드는 영동 대표 레드, 품평회 다수 수상",
-    "imageUrl": "/images/wines/wine_092.png"
+    "imageUrl": "src/assets/images/wines/wine_092.png"
   },
   {
     "id": "wine_093",
@@ -1392,7 +1392,7 @@
     "rating": 4.0,
     "reviewCount": 454,
     "description": "무주 산머루로 만든 토종 머루와인의 대표",
-    "imageUrl": "/images/wines/wine_093.png"
+    "imageUrl": "src/assets/images/wines/wine_093.png"
   },
   {
     "id": "wine_094",
@@ -1407,7 +1407,7 @@
     "rating": 4.2,
     "reviewCount": 356,
     "description": "파주 산머루농원의 프리미엄 머루와인, 만찬주 이력",
-    "imageUrl": "/images/wines/wine_094.png"
+    "imageUrl": "src/assets/images/wines/wine_094.png"
   },
   {
     "id": "wine_095",
@@ -1422,7 +1422,7 @@
     "rating": 4.1,
     "reviewCount": 342,
     "description": "예산 사과로 만든 국내 대표 사과와인",
-    "imageUrl": "/images/wines/wine_095.png"
+    "imageUrl": "src/assets/images/wines/wine_095.png"
   },
   {
     "id": "wine_096",
@@ -1437,7 +1437,7 @@
     "rating": 3.8,
     "reviewCount": 218,
     "description": "청도 반시(감)로 만든 세계적으로 드문 감와인",
-    "imageUrl": "/images/wines/wine_096.png"
+    "imageUrl": "src/assets/images/wines/wine_096.png"
   },
   {
     "id": "wine_097",
@@ -1452,7 +1452,7 @@
     "rating": 4.1,
     "reviewCount": 421,
     "description": "영천 거봉으로 만든 인기 화이트, 품평회 수상",
-    "imageUrl": "/images/wines/wine_097.png"
+    "imageUrl": "src/assets/images/wines/wine_097.png"
   },
   {
     "id": "wine_098",
@@ -1467,7 +1467,7 @@
     "rating": 4.2,
     "reviewCount": 139,
     "description": "한국 최대 와인산지 영천의 대표 브랜드",
-    "imageUrl": "/images/wines/wine_098.png"
+    "imageUrl": "src/assets/images/wines/wine_098.png"
   },
   {
     "id": "wine_099",
@@ -1482,7 +1482,7 @@
     "rating": 3.9,
     "reviewCount": 286,
     "description": "천안 거봉포도로 만든 달콤한 국산 와인",
-    "imageUrl": "/images/wines/wine_099.png"
+    "imageUrl": "src/assets/images/wines/wine_099.png"
   },
   {
     "id": "wine_100",
@@ -1497,7 +1497,7 @@
     "rating": 4.0,
     "reviewCount": 228,
     "description": "1977년 출시된 한국 와인의 원조, 미사주로도 유명",
-    "imageUrl": "/images/wines/wine_100.png"
+    "imageUrl": "src/assets/images/wines/wine_100.png"
   },
   {
     "id": "wine_101",
@@ -1512,7 +1512,7 @@
     "rating": 4.2,
     "reviewCount": 215,
     "description": "호주 유배 죄수들의 실화를 담은 라벨, AR 앱으로 라벨 속 인물이 말하는 마케팅으로 화제",
-    "imageUrl": "/images/wines/wine_101.png"
+    "imageUrl": "src/assets/images/wines/wine_101.png"
   },
   {
     "id": "wine_102",
@@ -1527,6 +1527,6 @@
     "rating": 4.0,
     "reviewCount": 168,
     "description": "맨발 로고로 유명한 세계 최다 수상 와인 브랜드, 달콤한 입문용으로 인기",
-    "imageUrl": "/images/wines/wine_102.png"
+    "imageUrl": "src/assets/images/wines/wine_102.png"
   }
 ]
