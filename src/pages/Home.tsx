@@ -10,19 +10,19 @@ import bottleCasaSmith from '../assets/images/bottle-casa-smith.png'
 import bottleKimCrawford from '../assets/images/bottle-kim-crawford.png'
 import bestFeedPhoto from '../assets/images/best-feed-photo.png'
 import iconArrowForward from '../assets/images/icon-arrow-forward.svg'
-import iconArrowForward1 from '../assets/images/icon-arrow-forward-1.svg'
-import iconArrowForward2 from '../assets/images/icon-arrow-forward-2.svg'
 import iconArrowForward4 from '../assets/images/icon-arrow-forward-4.svg'
 import iconArrowForward5 from '../assets/images/icon-arrow-forward-5.svg'
 import iconArrowForward6 from '../assets/images/icon-arrow-forward-6.svg'
 import iconChevronForward from '../assets/images/icon-chevron-forward.svg'
 import iconEllipse9 from '../assets/images/icon-ellipse-9.svg'
-import iconEllipse42 from '../assets/images/icon-ellipse-42.svg'
 import iconEllipse43 from '../assets/images/icon-ellipse-43.svg'
 import iconGroup2 from '../assets/images/icon-group-2.svg'
 import iconHeart from '../assets/images/icon-heart.svg'
 import iconShare from '../assets/images/icon-share.svg'
 import iconMusicNote2 from '../assets/images/icon-music-note-2.svg'
+import eventArrowIcon from '../../icon/Arrow.svg'
+import magazineArrowIcon from '../../icon/arrow_forward.svg'
+import magazineArrowBackground from '../../icon/Ellipse 42.svg'
 import Header from '../components/Header'
 
 const playfairOpsz = { fontVariationSettings: '"opsz" 12' }
@@ -79,8 +79,15 @@ function Home() {
           <br />
           좋아하는 맛을 발견하고, 특별한 순간을 나눠보세요.
         </p>
-        <div className="absolute top-[147.442cqw] left-1/2 h-[1.163cqw] w-[90.698cqw] -translate-x-1/2 bg-white">
-          <div className="h-full w-[30.233cqw] bg-[#4e000e]" />
+        <div
+          className="absolute top-[146.977cqw] left-1/2 flex h-[2.326cqw] w-[13.953cqw] -translate-x-1/2 items-center gap-[3.488cqw]"
+          role="img"
+          aria-label="히어로 슬라이드 1 / 3"
+          data-node-id="610:318"
+        >
+          <span className="size-[2.326cqw] shrink-0 rounded-full bg-[#9a0707]" data-node-id="610:319" />
+          <span className="size-[2.326cqw] shrink-0 rounded-full bg-[#d9d9d9]" data-node-id="610:320" />
+          <span className="size-[2.326cqw] shrink-0 rounded-full bg-[#d9d9d9]" data-node-id="610:321" />
         </div>
       </section>
 
@@ -211,13 +218,13 @@ function Home() {
               Casa Smith ViNO Rosso
             </p>
             <p className="text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">포도향, 떫음</p>
-            <div className="mt-[0.465cqw] flex items-center gap-[1.860cqw]">
+            <div className="mt-[0.465cqw] flex w-full items-center justify-between">
               <span className="flex h-[4.651cqw] items-center rounded-full bg-[#670e10] px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
                 #오늘의 와인
               </span>
               <button
                 type="button"
-                className="flex items-center text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline"
+                className="flex shrink-0 items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline"
               >
                 자세히보기
                 <img src={iconChevronForward} alt="" className="size-[4.186cqw]" />
@@ -232,10 +239,17 @@ function Home() {
               Kim CrawFord Pinot Noir
             </p>
             <p className="text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">꽃향, 부드러움</p>
-            <div className="mt-[0.465cqw]">
+            <div className="mt-[0.465cqw] flex w-full items-center justify-between">
               <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#670e10] px-[2.326cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
                 #AI 소믈리에 추천
               </span>
+              <button
+                type="button"
+                className="flex shrink-0 items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline"
+              >
+                자세히보기
+                <img src={iconChevronForward} alt="" className="size-[4.186cqw]" />
+              </button>
             </div>
           </div>
         </div>
@@ -298,7 +312,7 @@ function Home() {
         </h2>
         <div className="mt-[4.651cqw] divide-y divide-black/20">
           {eventItems.map((item) => (
-            <button key={item.label} type="button" className="flex w-full items-start justify-between py-[4.651cqw] text-left">
+            <button key={item.label} type="button" className="flex w-full items-center justify-between py-[4.651cqw] text-left">
               <div>
                 <p className="text-[2.791cqw] leading-[1.55] font-medium tracking-[-0.056cqw] text-[#831317]">{item.label}</p>
                 <p className="mt-[0.233cqw] text-[4.186cqw] leading-[1.18] font-semibold tracking-[-0.147cqw] text-black">
@@ -306,7 +320,7 @@ function Home() {
                 </p>
                 <p className="mt-[0.233cqw] text-[2.791cqw] leading-[1.55] tracking-[-0.056cqw] text-black">{item.description}</p>
               </div>
-              <img src={iconArrowForward2} alt="" className="mt-[0.233cqw] size-[3.721cqw] shrink-0" />
+              <img src={eventArrowIcon} alt="" className="size-[3.721cqw] shrink-0" />
             </button>
           ))}
         </div>
@@ -358,8 +372,8 @@ function Home() {
         className={`mt-[11.163cqw] flex snap-x snap-mandatory gap-[1.860cqw] overflow-x-auto px-[4.651cqw] pb-[1.860cqw] ${noScrollbar}`}
       >
         {[
-          { image: magazineCard1, hasBody: true, dot: iconEllipse42 },
-          { image: magazineCard2, hasBody: false, dot: iconEllipse43 },
+          { image: magazineCard1, hasBody: true },
+          { image: magazineCard2, hasBody: false },
         ].map((card, i) => (
           <div key={i} className="relative h-[114.884cqw] w-[90.698cqw] shrink-0 snap-start overflow-hidden">
             <img src={card.image} alt="Magazine" className="absolute inset-0 size-full object-cover" />
@@ -375,10 +389,13 @@ function Home() {
             <button
               type="button"
               aria-label="다음 매거진 보기"
-              className="absolute top-1/2 right-[6.279cqw] size-[6.977cqw] -translate-y-1/2"
+              className="absolute top-1/2 right-[4.419cqw] flex w-[10.698cqw] -translate-y-1/2 flex-col items-center gap-[1.860cqw]"
             >
-              <img src={card.dot} alt="" className="absolute inset-0 size-full" />
-              <img src={iconArrowForward1} alt="" className="absolute inset-0 m-auto size-[3.256cqw]" />
+              <span className="relative block size-[6.977cqw] shrink-0">
+                <img src={magazineArrowBackground} alt="" className="absolute inset-0 size-full" />
+                <img src={magazineArrowIcon} alt="" className="absolute inset-0 m-auto size-[2.791cqw]" />
+              </span>
+              <span className="text-[2.791cqw] leading-none tracking-[-0.056cqw] whitespace-nowrap text-white">전체보기</span>
             </button>
             <div className="absolute inset-x-[4.651cqw] bottom-[6.977cqw]">
               <p className="text-[6.512cqw] leading-[1.18] font-bold tracking-[-0.228cqw] text-white">영동에서 문경까지</p>
@@ -391,9 +408,7 @@ function Home() {
                   있습니다. 영동과 문경에서 우리 국산 청포도 '청수'와 세계 유일의 오미자 스파클링 '오미로제'까지,
                   한국에도 ....
                 </p>
-              ) : (
-                <p className="mt-[0.698cqw] text-right text-[2.791cqw] leading-[1.55] tracking-[-0.056cqw] text-white">전체보기</p>
-              )}
+              ) : null}
             </div>
           </div>
         ))}
@@ -438,9 +453,29 @@ function Home() {
 
         <button
           type="button"
-          className="absolute top-[50.000cqw] left-1/2 flex h-[10.930cqw] w-[33.953cqw] -translate-x-1/2 items-center justify-center rounded-full bg-white/70 text-[3.721cqw] leading-[1.2] font-semibold tracking-[-0.074cqw] text-[#831317] shadow-[0px_0px_20px_4px_rgba(176,176,176,0.25)] backdrop-blur-xl"
+          className="absolute top-[50.000cqw] left-1/2 flex h-[11.033cqw] w-[33.953cqw] -translate-x-1/2 items-center justify-center overflow-visible rounded-full bg-transparent text-[3.721cqw] leading-[1.2] font-semibold tracking-[-0.074cqw] text-[#831317]"
+          data-node-id="576:215"
         >
-          코르크 하루 추가
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 rounded-full shadow-[0px_0px_20px_4px_rgba(176,176,176,0.25)]"
+          />
+          <span aria-hidden className="pointer-events-none absolute inset-0 rounded-full backdrop-blur-[25px]" />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-[0.435cqw] inset-y-[0.649cqw] rounded-full backdrop-blur-[25px]"
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-[0.870cqw] inset-y-[1.298cqw] rounded-full backdrop-blur-[25px]"
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-x-[1.306cqw] inset-y-[1.947cqw] rounded-full blur-[5px] backdrop-blur-[0.5px]"
+          />
+          <span className="relative z-10 whitespace-nowrap" data-node-id="576:216">
+            코르크 하루 추가
+          </span>
         </button>
 
         <div className="absolute inset-x-0 bottom-0 h-[47.209cqw]">
