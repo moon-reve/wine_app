@@ -47,7 +47,7 @@ export default function BottomNav({
     <nav
       aria-label="하단 메뉴"
       data-node-id="595:511"
-      className={`fixed left-1/2 bottom-[calc(20px+env(safe-area-inset-bottom))] z-50 h-[68px] w-[390px] max-w-[calc(100vw-40px)] -translate-x-1/2 ${className}`}
+      className={`fixed left-5 right-5 bottom-[calc(20px+env(safe-area-inset-bottom))] z-50 mx-auto h-[68px] max-w-[390px] ${className}`}
     >
       <div className="absolute inset-x-0 bottom-0 h-14 rounded-full bg-[rgba(215,215,215,0.28)] shadow-[0_0_10px_4px_rgba(176,176,176,0.25)] backdrop-blur-[25px]" />
 
