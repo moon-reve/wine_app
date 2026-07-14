@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
+import { useNavigate } from 'react-router-dom'
 import meetingCover from '../assets/images/meeting-cover.png'
 import BottomNav from '../components/BottomNav'
 import CoverImageUploader from '../components/meeting/CoverImageUploader'
@@ -10,6 +11,7 @@ const FORM_ID = 'meeting-create-form'
 const SUGGESTED_TAGS = ['보르도', '빈티지', '희귀와인'] as const
 
 function MeetingCreate() {
+  const navigate = useNavigate()
   const [coverImage, setCoverImage] = useState<File | null>(null)
   const [title, setTitle] = useState('')
   const [date, setDate] = useState('')
@@ -33,11 +35,18 @@ function MeetingCreate() {
     Number(fee) >= 0 &&
     description.trim().length > 0
 
+  useEffect(() => {
+    if (!isComplete) return
+
+    const redirectTimer = window.setTimeout(() => {
+      navigate('/lounge/meetings')
+    }, 1200)
+
+    return () => window.clearTimeout(redirectTimer)
+  }, [isComplete, navigate])
+
   const handleRegistrationComplete = () => {
     setIsComplete(true)
-
-    // TODO: 모임 페이지가 완성되면 이 위치에서 해당 경로로 이동합니다.
-    // navigate('/lounge/meetings')
   }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -202,7 +211,7 @@ function MeetingCreate() {
 
           <button
             type="submit"
-            disabled={!canSubmit}
+            disabled={!canSubmit || isComplete}
             className="mt-4 h-14 w-full rounded-[12px] bg-[#851317] text-[15px] font-bold text-white disabled:cursor-not-allowed disabled:opacity-40"
           >
             모임 등록

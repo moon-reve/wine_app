@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import feeds from '../../dummy data/feeds.json'
 import users from '../../dummy data/users.json'
 import wines from '../../dummy data/wines.json'
@@ -77,6 +78,7 @@ const feedCards = feeds.slice(0, 3).map((feed, index) => {
 type FeedCardProps = (typeof feedCards)[number]
 
 function FeedCard({
+  id,
   author,
   profileSource,
   time,
@@ -89,7 +91,12 @@ function FeedCard({
   commentCount,
 }: FeedCardProps) {
   return (
-    <article className="flex w-full flex-col gap-3.5 font-noto" data-feed-source={imageSource}>
+    <Link
+      to={`/feed/${id}`}
+      aria-label={`${title} 피드 상세 보기`}
+      className="block rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#831317]"
+    >
+      <article className="flex w-full flex-col gap-3.5 font-noto" data-feed-source={imageSource}>
       <div className="flex items-center gap-2.5">
         <img
           src={profileImage}
@@ -117,7 +124,8 @@ function FeedCard({
       <p className="text-xs leading-[1.2] tracking-[-0.24px] text-[#737373]">
         좋아요 {likeCount} · 댓글 {commentCount}
       </p>
-    </article>
+      </article>
+    </Link>
   )
 }
 

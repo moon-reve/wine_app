@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
+import { useNavigate } from 'react-router-dom'
 import ImageUploader from '../components/question/ImageUploader'
 import QuestionWriteHeader from '../components/question/QuestionWriteHeader'
 import TagSelector from '../components/question/TagSelector'
@@ -8,12 +9,23 @@ const FORM_ID = 'question-write-form'
 const TAGS = ['빈티지확인', '가격문의', '페어링', '보관법'] as const
 
 function QuestionWrite() {
+  const navigate = useNavigate()
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [selectedTags, setSelectedTags] = useState<string[]>(['빈티지확인'])
   const [isComplete, setIsComplete] = useState(false)
 
   const canSubmit = title.trim().length > 0 && content.trim().length >= 10
+
+  useEffect(() => {
+    if (!isComplete) return
+
+    const redirectTimer = window.setTimeout(() => {
+      navigate('/lounge/qna')
+    }, 1200)
+
+    return () => window.clearTimeout(redirectTimer)
+  }, [isComplete, navigate])
 
   const toggleTag = (tag: string) => {
     setSelectedTags((current) =>
@@ -24,9 +36,6 @@ function QuestionWrite() {
 
   const handleRegistrationComplete = () => {
     setIsComplete(true)
-
-    // TODO: Q&A 리스트 페이지가 완성되면 이 위치에서 해당 경로로 이동합니다.
-    // navigate('/lounge/questions')
   }
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -87,7 +96,7 @@ function QuestionWrite() {
 
         <button
           type="submit"
-          disabled={!canSubmit}
+          disabled={!canSubmit || isComplete}
           className="flex h-12.5 w-full items-center justify-center rounded-[12px] bg-[#831317] text-base font-bold text-white transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
         >
           질문 등록

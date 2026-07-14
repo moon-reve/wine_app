@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import meets from '../../dummy data/meets.json'
 import meetingImage1 from '../assets/lounge/meeting-1.png'
 import meetingImage2 from '../assets/lounge/meeting-2.png'
@@ -122,7 +123,13 @@ function Meetings() {
 
         {meetingCards.map((meeting, index) => (
           <div key={meeting.id} className="contents">
-            <MeetingCard {...meeting} />
+            <Link
+              to={`/meeting/${meeting.id}`}
+              aria-label={`${meeting.title} 미팅 상세 보기`}
+              className="block rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#831317]"
+            >
+              <MeetingCard {...meeting} />
+            </Link>
             {index < meetingCards.length - 1 ? <hr className="m-0 h-px w-full border-0 bg-black/12" /> : null}
           </div>
         ))}

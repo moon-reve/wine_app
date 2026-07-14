@@ -1,3 +1,4 @@
+import { Link, useNavigate } from 'react-router-dom'
 import questions from '../../dummy data/questions.json'
 import arrowForwardIcon from '../../icon/Arrow.svg'
 import Header from '../components/Header'
@@ -40,6 +41,8 @@ const questionCards = figmaQuestions.map((question, index) => ({
 }))
 
 function QnA() {
+  const navigate = useNavigate()
+
   return (
     <div className="min-h-screen w-full bg-white text-[#0d0d0d]" data-node-id="619:50">
       <Header tone="light" />
@@ -56,7 +59,13 @@ function QnA() {
           const isWaiting = question.status === '답변 대기'
 
           return (
-            <article key={question.id} className="flex w-full flex-col gap-4 font-noto">
+            <Link
+              key={question.id}
+              to={`/question/${question.id}`}
+              aria-label={`${question.title} 질문 상세 보기`}
+              className="block rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#831317]"
+            >
+              <article className="flex w-full flex-col gap-4 font-noto">
               <div className="flex w-full items-center gap-3">
                 <div className="flex w-[calc(100%_-_50px)] max-w-[340px] shrink-0 flex-col items-start gap-1.5">
                   <p
@@ -80,7 +89,8 @@ function QnA() {
               </div>
 
               <hr className="m-0 h-px w-full border-0 bg-black/12" />
-            </article>
+              </article>
+            </Link>
           )
         })}
       </main>
@@ -88,6 +98,7 @@ function QnA() {
       <div className="pointer-events-none fixed inset-x-0 bottom-28 z-40 mx-auto w-full max-w-107.5">
         <button
           type="button"
+          onClick={() => navigate('/lounge/questions/new')}
           className="pointer-events-auto absolute right-5 bottom-0 rounded-[28px] bg-[#831317] px-6 py-3.5 font-noto text-[15px] leading-none font-bold whitespace-nowrap text-white shadow-[0_4px_12px_rgba(0,0,0,0.25)]"
         >
           + 질문하기
