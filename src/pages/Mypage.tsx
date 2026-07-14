@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import feedImage1 from '../assets/mypage/feed-1.png'
 import feedImage2 from '../assets/mypage/feed-2.png'
 import feedImage3 from '../assets/mypage/feed-3.png'
@@ -292,6 +293,7 @@ function FeedLightbox({ selectedIndex, onClose, onPrevious, onNext }: FeedLightb
 }
 
 function Mypage() {
+  const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState<'feed' | 'wine' | 'likes'>('feed')
   const [selectedFeedIndex, setSelectedFeedIndex] = useState<number | null>(null)
 
@@ -307,7 +309,7 @@ function Mypage() {
     <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '726:315' : activeTab === 'likes' ? '741:446' : '711:285'}>
       <header className="flex h-[54px] items-start justify-between px-5 pt-4 text-[#851317]">
         <p className="font-playfair-display text-xl leading-[normal] font-normal">Wine Sippers</p>
-        <button type="button" aria-label="설정" className="flex size-6 items-center justify-center">
+        <button type="button" aria-label="설정" onClick={() => navigate('/mypage/settings')} className="flex size-6 items-center justify-center">
           <img src={settingsIcon} alt="" className="size-6" aria-hidden="true" />
         </button>
       </header>

@@ -36,3 +36,106 @@
     cursor: pointer;
   }
 }
+
+@layer components {
+  .settings-shell {
+    --settings-body-size: 14px;
+    --settings-title-size: 30px;
+    --settings-row-height: 61px;
+  }
+
+  .settings-shell[data-font-size="아주 작게"] {
+    --settings-body-size: 12px;
+    --settings-title-size: 27px;
+    --settings-row-height: 54px;
+  }
+
+  .settings-shell[data-font-size="작게"] {
+    --settings-body-size: 13px;
+    --settings-title-size: 28px;
+    --settings-row-height: 57px;
+  }
+
+  .settings-shell[data-font-size="보통"] {
+    --settings-body-size: 14px;
+    --settings-title-size: 30px;
+    --settings-row-height: 61px;
+  }
+
+  .settings-shell[data-font-size="크게"] {
+    --settings-body-size: 16px;
+    --settings-title-size: 32px;
+    --settings-row-height: 66px;
+  }
+
+  .settings-shell[data-font-size="아주 크게"] {
+    --settings-body-size: 18px;
+    --settings-title-size: 34px;
+    --settings-row-height: 72px;
+  }
+
+  .settings-shell[data-font-size="큰글씨"] {
+    --settings-body-size: 20px;
+    --settings-title-size: 36px;
+    --settings-row-height: 80px;
+  }
+
+  .settings-shell main {
+    width: 100%;
+    zoom: 1;
+  }
+
+  .settings-shell main .font-playfair-display {
+    font-size: var(--settings-title-size) !important;
+  }
+
+  .settings-shell main :is(p, label, dt, dd, li),
+  .settings-shell main .settings-panel span,
+  .settings-shell main .settings-panel button {
+    font-size: var(--settings-body-size) !important;
+  }
+
+  .settings-shell main .settings-panel > button,
+  .settings-shell main .settings-panel > div {
+    min-height: var(--settings-row-height);
+    height: auto;
+  }
+
+  .settings-dark {
+    background: #681018 !important;
+    color: #fff !important;
+  }
+
+  .settings-dark header {
+    background: rgb(104 16 24 / 95%) !important;
+  }
+
+  .settings-dark :is(h1, h2, h3, p, label, dt, dd, li) {
+    color: #fff !important;
+  }
+
+  .settings-dark .settings-panel {
+    background: #7c1b24 !important;
+  }
+
+  .settings-dark .settings-panel :is(span, button, svg) {
+    color: #fff !important;
+  }
+
+  .settings-dark .settings-panel > div,
+  .settings-dark .settings-panel > button,
+  .settings-dark .settings-panel dl > div {
+    border-color: rgb(255 255 255 / 18%) !important;
+  }
+
+  .settings-dark input,
+  .settings-dark [class*="bg-[#f7f5f5]"] {
+    border-color: rgb(255 255 255 / 28%) !important;
+    background: #7c1b24 !important;
+    color: #fff !important;
+  }
+
+  .settings-dark input::placeholder {
+    color: rgb(255 255 255 / 55%);
+  }
+}

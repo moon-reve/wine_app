@@ -15,6 +15,36 @@
     "imageUrl": "src/assets/images/wines/wine_001.png"
   },
   {
+    "id": "wine_002",
+    "nameKo": "몬테스 알파 카베르네 소비뇽",
+    "nameEn": "Montes Alpha Cabernet Sauvignon",
+    "type": "red",
+    "country": "칠레",
+    "region": "칠레",
+    "grape": "카베르네 소비뇽",
+    "vintage": "2020",
+    "price": 40000,
+    "rating": 4.0,
+    "reviewCount": 83,
+    "description": "한국인이 가장 사랑하는 칠레 와인, 선물용 스테디셀러",
+    "imageUrl": "src/assets/images/wines/wine_002.png"
+  },
+  {
+    "id": "wine_003",
+    "nameKo": "몬테스 퍼플 엔젤",
+    "nameEn": "Montes Purple Angel",
+    "type": "red",
+    "country": "칠레",
+    "region": "칠레",
+    "grape": "카르메네르",
+    "vintage": "2019",
+    "price": 100000,
+    "rating": 4.3,
+    "reviewCount": 314,
+    "description": "카르메네르 최고봉으로 꼽히는 몬테스 플래그십",
+    "imageUrl": "src/assets/images/wines/wine_003.png"
+  },
+  {
     "id": "wine_004",
     "nameKo": "카시예로 델 디아블로 카베르네 소비뇽",
     "nameEn": "Casillero del Diablo Cabernet Sauvignon",
@@ -223,6 +253,36 @@
     "reviewCount": 35,
     "description": "만화 '신의 물방울'에 등장해 국내 품절 대란을 일으킨 와인",
     "imageUrl": "src/assets/images/wines/wine_017.png"
+  },
+  {
+    "id": "wine_018",
+    "nameKo": "샤토 마고",
+    "nameEn": "Chateau Margaux",
+    "type": "red",
+    "country": "프랑스",
+    "region": "프랑스 보르도",
+    "grape": "카베르네 블렌드",
+    "vintage": "2018",
+    "price": 1500000,
+    "rating": 4.8,
+    "reviewCount": 407,
+    "description": "보르도 1등급 5대 샤토, '와인의 여왕'으로 불리는 명품",
+    "imageUrl": "src/assets/images/wines/wine_018.png"
+  },
+  {
+    "id": "wine_019",
+    "nameKo": "오퍼스 원",
+    "nameEn": "Opus One",
+    "type": "red",
+    "country": "미국",
+    "region": "미국 나파밸리",
+    "grape": "카베르네 블렌드",
+    "vintage": "2019",
+    "price": 700000,
+    "rating": 4.6,
+    "reviewCount": 52,
+    "description": "몬다비×로칠드 합작 프로젝트, 미국 대표 프리미엄 와인",
+    "imageUrl": "src/assets/images/wines/wine_019.png"
   },
   {
     "id": "wine_020",
@@ -943,6 +1003,21 @@
     "reviewCount": 255,
     "description": "'로제의 왕'이라 불리는 타벨 지역 대표작",
     "imageUrl": "src/assets/images/wines/wine_067.png"
+  },
+  {
+    "id": "wine_068",
+    "nameKo": "무가 로사도",
+    "nameEn": "Muga Rosado",
+    "type": "rose",
+    "country": "스페인",
+    "region": "스페인 리오하",
+    "grape": "가르나차 블렌드",
+    "vintage": "2023",
+    "price": 30000,
+    "rating": 4.3,
+    "reviewCount": 96,
+    "description": "리오하 명가 무가의 우아한 로제",
+    "imageUrl": "src/assets/images/wines/wine_068.png"
   },
   {
     "id": "wine_069",

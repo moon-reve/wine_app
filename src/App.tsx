@@ -10,6 +10,8 @@ import Meetings from './pages/Meetings'
 import QnA from './pages/QnA'
 import MeetingCreate from './pages/MeetingCreate'
 import QuestionWrite from './pages/QuestionWrite'
+import ProfileSettings from './components/ProfileSettings'
+import MypageSettings from './components/mypage-Settings'
 import Mypage from './pages/Mypage'
 
 function App() {
@@ -18,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/lounge/questions/new" element={<QuestionWrite />} />
         <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
+        <Route path="/profile/settings" element={<ProfileSettings />} />
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<List />} />
@@ -25,6 +28,7 @@ function App() {
           <Route path="/lounge/qna" element={<QnA />} />
           <Route path="/lounge/meetings" element={<Meetings />} />
           <Route path="/mypage" element={<Mypage />} />
+          <Route path="/mypage/settings" element={<MypageSettings />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
         <Route path="/feed/:feedId" element={<FeedDetail />} />
