@@ -7,7 +7,8 @@ function AppLayout() {
   const isLounge = location.pathname.startsWith('/lounge')
   const isList = location.pathname.startsWith('/list')
   const isMypage = location.pathname.startsWith('/mypage')
-  const isLightPage = isLounge || isList || isMypage
+  const isSearch = location.pathname.startsWith('/search')
+  const isLightPage = isLounge || isList || isMypage || isSearch
   const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList ? '리스트' : '홈'
 
   const handleNavItemClick = (label: string) => {
