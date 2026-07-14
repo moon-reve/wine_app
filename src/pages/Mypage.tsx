@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import feedImage1 from '../assets/mypage/feed-1.png'
 import feedImage2 from '../assets/mypage/feed-2.png'
 import feedImage3 from '../assets/mypage/feed-3.png'
@@ -8,6 +8,7 @@ import feedImage6 from '../assets/mypage/feed-6.png'
 import feedImage7 from '../assets/mypage/feed-7.png'
 import settingsIcon from '../assets/mypage/settings.svg'
 import summaryArrowIcon from '../assets/mypage/summary-arrow.svg'
+import badgeIcon from '../assets/mypage/badge.svg'
 import wineImage1 from '../assets/mypage/wine-1.png'
 import wineImage2 from '../assets/mypage/wine-2.png'
 import wineImage3 from '../assets/mypage/wine-3.png'
@@ -104,16 +105,6 @@ function TrophyIcon() {
   )
 }
 
-function MedalIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="size-6" fill="none" aria-hidden="true">
-      <path d="m8 3 2.1 6h3.8L16 3M9.3 3h5.4v6H9.3V3Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-      <circle cx="12" cy="14" r="4" stroke="currentColor" strokeWidth="1.8" />
-      <path d="m10.2 17.5-.7 3 2.5-1.4 2.5 1.4-.7-3" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
 function ArrowIcon({ className = 'size-4' }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
@@ -130,7 +121,7 @@ function SummaryCard({ type }: { type: 'challenge' | 'badge' }) {
       type="button"
       className="flex h-28 w-[calc(50%-6px)] flex-col items-start justify-between rounded-[14px] bg-[#f9f7f6] p-4 text-left text-[#851317]"
     >
-      {challenge ? <TrophyIcon /> : <MedalIcon />}
+      {challenge ? <TrophyIcon /> : <img src={badgeIcon} alt="" className="size-6" aria-hidden="true" />}
       <span className="flex w-full items-end justify-between">
         <span className="flex flex-col gap-[5px]">
           <span className="text-[13px] leading-4 font-medium tracking-[-0.26px] text-[#121212]">
@@ -213,8 +204,104 @@ function LikedWineCard({ wine }: { wine: (typeof likedWines)[number] }) {
   )
 }
 
+type FeedLightboxProps = {
+  selectedIndex: number
+  onClose: () => void
+  onPrevious: () => void
+  onNext: () => void
+}
+
+function FeedLightbox({ selectedIndex, onClose, onPrevious, onNext }: FeedLightboxProps) {
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose()
+      if (event.key === 'ArrowLeft') onPrevious()
+      if (event.key === 'ArrowRight') onNext()
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [onClose, onNext, onPrevious])
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`내 피드 ${selectedIndex + 1} 확대 보기`}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 px-5 py-20"
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        aria-label="확대 화면 닫기"
+        onClick={onClose}
+        className="absolute top-[calc(20px+env(safe-area-inset-top))] right-5 flex size-11 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-sm"
+      >
+        <svg viewBox="0 0 24 24" className="size-7" fill="none" aria-hidden="true">
+          <path d="M5 5 19 19M19 5 5 19" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        aria-label="이전 피드 보기"
+        onClick={(event) => {
+          event.stopPropagation()
+          onPrevious()
+        }}
+        className="absolute top-1/2 left-3 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-sm"
+      >
+        <svg viewBox="0 0 24 24" className="size-7" fill="none" aria-hidden="true">
+          <path d="m15 5-7 7 7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      <img
+        src={feedImages[selectedIndex]}
+        alt={`내 피드 ${selectedIndex + 1}`}
+        className="max-h-full max-w-full rounded-lg object-contain"
+        onClick={(event) => event.stopPropagation()}
+      />
+
+      <button
+        type="button"
+        aria-label="다음 피드 보기"
+        onClick={(event) => {
+          event.stopPropagation()
+          onNext()
+        }}
+        className="absolute top-1/2 right-3 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-sm"
+      >
+        <svg viewBox="0 0 24 24" className="size-7" fill="none" aria-hidden="true">
+          <path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+
+      <p className="absolute bottom-[calc(24px+env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 text-sm font-medium tracking-[-0.28px] text-white">
+        {selectedIndex + 1} / {feedImages.length}
+      </p>
+    </div>
+  )
+}
+
 function Mypage() {
   const [activeTab, setActiveTab] = useState<'feed' | 'wine' | 'likes'>('feed')
+  const [selectedFeedIndex, setSelectedFeedIndex] = useState<number | null>(null)
+
+  const showPreviousFeed = () => {
+    setSelectedFeedIndex((current) => current === null ? null : (current - 1 + feedImages.length) % feedImages.length)
+  }
+
+  const showNextFeed = () => {
+    setSelectedFeedIndex((current) => current === null ? null : (current + 1) % feedImages.length)
+  }
 
   return (
     <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '726:315' : activeTab === 'likes' ? '741:446' : '711:285'}>
@@ -320,7 +407,13 @@ function Mypage() {
             <>
               <div className="mt-5 grid aspect-square w-full grid-cols-3 grid-rows-3 gap-1.5">
                 {feedImages.map((image, index) => (
-                  <button key={`${image}-${index}`} type="button" className="overflow-hidden rounded-sm">
+                  <button
+                    key={`${image}-${index}`}
+                    type="button"
+                    aria-label={`내 피드 ${index + 1} 확대 보기`}
+                    onClick={() => setSelectedFeedIndex(index)}
+                    className="overflow-hidden rounded-sm"
+                  >
                     <img src={image} alt={`내 피드 ${index + 1}`} className="size-full object-cover" />
                   </button>
                 ))}
@@ -347,6 +440,15 @@ function Mypage() {
           )}
         </section>
       </main>
+
+      {selectedFeedIndex !== null && (
+        <FeedLightbox
+          selectedIndex={selectedFeedIndex}
+          onClose={() => setSelectedFeedIndex(null)}
+          onPrevious={showPreviousFeed}
+          onNext={showNextFeed}
+        />
+      )}
     </div>
   )
 }
