@@ -219,7 +219,7 @@ function List() {
               {visibleWines.map((wine) => (
                 <div key={wine.id}>
                   <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
-                  <div className="flex items-start gap-[37px] py-[24px] pl-[24px]">
+                  <div className="flex min-h-[159px] items-center gap-[37px] py-[24px] pl-[24px]">
                     <div
                       className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
                       style={{ backgroundColor: wine.bgColor }}
