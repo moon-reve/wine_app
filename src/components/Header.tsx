@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import bellIcon from '../assets/bell.svg'
 import searchIcon from '../assets/search.svg'
 import lightBellIcon from '../assets/lounge/bell.svg'
@@ -9,6 +10,7 @@ type HeaderProps = {
 }
 
 function Header({ tone = 'dark', titleColorClassName }: HeaderProps) {
+  const navigate = useNavigate()
   const isLight = tone === 'light'
   const titleColor = titleColorClassName ?? (isLight ? 'text-[#831317]' : 'text-white')
 
@@ -28,6 +30,7 @@ function Header({ tone = 'dark', titleColorClassName }: HeaderProps) {
         <button
           type="button"
           aria-label="Search"
+          onClick={() => navigate('/search')}
           className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
           data-node-id="577:108"
         >

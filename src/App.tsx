@@ -13,6 +13,7 @@ import QuestionWrite from './pages/QuestionWrite'
 import ProfileSettings from './components/ProfileSettings'
 import MypageSettings from './components/mypage-Settings'
 import Mypage from './pages/Mypage'
+import Search from './pages/Search'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/lounge/meetings" element={<Meetings />} />
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/mypage/settings" element={<MypageSettings />} />
+          <Route path="/search" element={<Search />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
         <Route path="/feed/:feedId" element={<FeedDetail />} />
