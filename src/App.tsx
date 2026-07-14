@@ -10,6 +10,7 @@ import Meetings from './pages/Meetings'
 import QnA from './pages/QnA'
 import MeetingCreate from './pages/MeetingCreate'
 import QuestionWrite from './pages/QuestionWrite'
+import ProfileSettings from './components/ProfileSettings'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/lounge/questions/new" element={<QuestionWrite />} />
         <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
+        <Route path="/profile/settings" element={<ProfileSettings />} />
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<List />} />
