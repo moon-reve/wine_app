@@ -6,13 +6,15 @@ function AppLayout() {
   const navigate = useNavigate()
   const isLounge = location.pathname.startsWith('/lounge')
   const isList = location.pathname.startsWith('/list')
-  const isLightPage = isLounge || isList
-  const activeItem = isLounge ? '라운지' : isList ? '리스트' : '홈'
+  const isMypage = location.pathname.startsWith('/mypage')
+  const isLightPage = isLounge || isList || isMypage
+  const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList ? '리스트' : '홈'
 
   const handleNavItemClick = (label: string) => {
     if (label === '홈') navigate('/')
     if (label === '리스트') navigate('/list')
     if (label === '라운지') navigate('/lounge')
+    if (label === 'MY') navigate('/mypage')
   }
 
   return (
