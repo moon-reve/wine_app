@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import heroImage from '../assets/images/hero.png'
 import foodPairingImage from '../assets/images/food-pairing.png'
 import magazineCard1 from '../assets/images/magazine-card-1.png'
@@ -206,7 +207,7 @@ function Home() {
         </div>
 
         <div className={`mt-[5.581cqw] flex gap-[1.860cqw] overflow-x-auto px-[4.651cqw] pb-[0.930cqw] ${noScrollbar}`}>
-          <div className="w-[55.814cqw] shrink-0">
+          <Link to="/product/chateau-margaux-2018" className="block w-[55.814cqw] shrink-0 text-left no-underline">
             <div className="flex h-[64.884cqw] items-center justify-center bg-[#f2f2f2]">
               <img src={bottleCasaSmith} alt="Casa Smith ViNO Rosso" className="h-[52.326cqw] w-auto object-contain" />
             </div>
@@ -218,15 +219,12 @@ function Home() {
               <span className="flex h-[4.651cqw] items-center rounded-full bg-[#831317] px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
                 #오늘의 와인
               </span>
-              <button
-                type="button"
-                className="flex shrink-0 items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline"
-              >
+              <span className="flex shrink-0 items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline">
                 자세히보기
                 <img src={iconChevronForward} alt="" className="size-[4.186cqw]" />
-              </button>
+              </span>
             </div>
-          </div>
+          </Link>
           <div className="w-[55.814cqw] shrink-0">
             <div className="flex h-[64.884cqw] items-center justify-center bg-[#f2f2f2]">
               <img src={bottleKimCrawford} alt="Kim CrawFord Pinot Noir" className="h-[50.930cqw] w-auto object-contain" />

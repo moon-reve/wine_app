@@ -1,4 +1,5 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import FeedDetail from './components/FeedDetail'
 import MeetingDetail from './components/MeetingDetail'
 import QuestionDetail from './components/QuestionDetail'
@@ -13,14 +14,27 @@ import QuestionWrite from './pages/QuestionWrite'
 import ProfileSettings from './components/ProfileSettings'
 import MypageSettings from './components/mypage-Settings'
 import Mypage from './pages/Mypage'
+import Product from './pages/Product'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/lounge/questions/new" element={<QuestionWrite />} />
         <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
         <Route path="/profile/settings" element={<ProfileSettings />} />
+        <Route path="/product/chateau-margaux-2018" element={<Product />} />
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<List />} />
