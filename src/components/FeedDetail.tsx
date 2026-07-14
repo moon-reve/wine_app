@@ -1,8 +1,10 @@
 import { useRef, useState, type FormEvent } from 'react'
+import { useParams } from 'react-router-dom'
 import backIcon from '../assets/images/icon-chevron-forward.svg'
 import feedPhoto from '../assets/images/feed-detail-photo.png'
 import authorAvatar from '../assets/images/feed-author-avatar.svg'
 import commentAvatar from '../assets/images/feed-comment-avatar.svg'
+import { getFeedById } from '../data/feedData'
 
 type Comment = {
   id: number
@@ -17,8 +19,6 @@ type FeedDetailProps = {
   onSubmitComment?: (comment: string) => void
   className?: string
 }
-
-const tags = ['#보르도', '#2018빈티지', '#테이스팅노트']
 
 const initialComments: Comment[] = [
   {
@@ -35,23 +35,22 @@ const initialComments: Comment[] = [
   },
 ]
 
-const initialCommentCount = 18
-const initialLikeCount = 124
-
-export default function FeedDetail({
+function FeedDetailContent({
+  feedId,
   onBack,
   onFollow,
   onSubmitComment,
   className = '',
-}: FeedDetailProps) {
+}: FeedDetailProps & { feedId?: string }) {
+  const feed = getFeedById(feedId)
   const [comment, setComment] = useState('')
   const [commentItems, setCommentItems] = useState<Comment[]>(initialComments)
-  const [likeCount, setLikeCount] = useState(initialLikeCount)
+  const [likeCount, setLikeCount] = useState(feed?.likeCount ?? 0)
   const [liked, setLiked] = useState(false)
   const [following, setFollowing] = useState(false)
   const commentInputRef = useRef<HTMLInputElement>(null)
 
-  const commentCount = initialCommentCount + commentItems.length - initialComments.length
+  const commentCount = (feed?.commentCount ?? 0) + commentItems.length - initialComments.length
 
   const handleBack = () => {
     if (onBack) {
@@ -91,6 +90,17 @@ export default function FeedDetail({
     onFollow?.()
   }
 
+  if (!feed) {
+    return (
+      <main className={`mx-auto flex min-h-screen w-full max-w-[430px] flex-col items-center justify-center gap-4 bg-white px-5 text-[#0d0d0d] ${className}`}>
+        <p className="text-base font-bold">피드를 찾을 수 없어요.</p>
+        <button type="button" onClick={handleBack} className="rounded-full bg-[#831317] px-4 py-2 text-sm font-medium text-white">
+          뒤로 가기
+        </button>
+      </main>
+    )
+  }
+
   return (
     <article
       data-node-id="618:50"
@@ -113,10 +123,10 @@ export default function FeedDetail({
 
       <div data-node-id="618:56" className="flex w-full flex-col gap-5 px-5 pt-3 pb-8">
         <section className="flex w-full items-center gap-2.5" aria-label="작성자 정보">
-          <img src={authorAvatar} alt="" className="size-10 shrink-0 rounded-full" />
+          <img src={authorAvatar} data-original-src={feed.profileSource} alt={`${feed.author} 프로필`} className="size-10 shrink-0 rounded-full" />
           <div className="flex min-w-0 flex-col gap-0.5 leading-[1.2]">
-            <p className="text-[15px] font-bold tracking-[-0.3px]">알렉스 소믈리에</p>
-            <p className="text-xs tracking-[-0.24px] text-[#737373]">2시간 전</p>
+            <p className="text-[15px] font-bold tracking-[-0.3px]">{feed.author}</p>
+            <p className="text-xs tracking-[-0.24px] text-[#737373]">{feed.time}</p>
           </div>
           <button
             type="button"
@@ -132,30 +142,31 @@ export default function FeedDetail({
           </button>
         </section>
 
-        <img
-          data-node-id="618:65"
-          src={feedPhoto}
-          alt="2018 생테밀리옹 와인병과 레드 와인잔"
-          className="aspect-[13/10] w-full object-cover"
-        />
+        <div className="grid grid-cols-2 gap-2" data-node-id="618:65">
+          {(feed.imageUrls.length ? feed.imageUrls : [feedPhoto]).map((imageUrl, index) => (
+            <img
+              key={`${imageUrl}-${index}`}
+              src={imageUrl}
+              alt={`${feed.title} ${index + 1}번 이미지`}
+              className={`w-full object-cover ${index === 0 ? 'col-span-2 aspect-[13/10]' : 'aspect-square'}`}
+            />
+          ))}
+        </div>
 
-        <h2 className="text-[22px] leading-[1.3] font-bold tracking-[-0.66px]">
-          2018 빈티지: 밸런스의 정수
-        </h2>
+        <div className="flex flex-col gap-1">
+          <h2 className="text-[22px] leading-[1.3] font-bold tracking-[-0.66px]">{feed.title}</h2>
+          <p className="text-xs tracking-[-0.24px] text-[#737373]">{feed.wineName}</p>
+        </div>
 
-        <p className="text-sm leading-[1.6] tracking-[-0.28px] text-[#595959]">
-          오늘 2018 보르도 수확의 미묘한 뉘앙스를 탐구합니다. 순수한 과일 향보다 산도를 우선시하는 놀라운 구조적
-          집중도가 돋보입니다. 팔레트의 정보량이 풍부하면서도 결코 무겁지 않은, 밸런스의 정수를 보여주는
-          빈티지입니다.
-        </p>
+        <p className="text-sm leading-[1.6] tracking-[-0.28px] text-[#595959]">{feed.content}</p>
 
         <div className="flex flex-wrap gap-2" aria-label="피드 태그">
-          {tags.map((tag) => (
+          {feed.tags.map((tag) => (
             <span
               key={tag}
               className="flex h-6 items-center rounded-full bg-[#831317] px-3 text-xs leading-none font-medium text-white"
             >
-              {tag}
+              #{tag}
             </span>
           ))}
         </div>
@@ -230,4 +241,9 @@ export default function FeedDetail({
       </div>
     </article>
   )
+}
+
+export default function FeedDetail(props: FeedDetailProps) {
+  const { feedId } = useParams()
+  return <FeedDetailContent key={feedId} feedId={feedId} {...props} />
 }

@@ -3,59 +3,58 @@
     "id": "feed_021",
     "userId": "user_013",
     "wineId": "wine_018",
+    "title": "발견: 2018 생테밀리옹",
     "images": [
       "src/assets/images/feeds/feed_021_1.jpg",
       "src/assets/images/feeds/feed_021_2.jpg",
       "src/assets/images/feeds/feed_021_3.jpg"
     ],
-    "content": "기념일에 마셨는데 향이 정말 깊고 여운이 오래 남았어요. 채끝 스테이크와 함께 먹으니 최고의 조합이었습니다.",
+    "content": "올해 탄닌은 놀라울 정도로 부드럽습니다. 플럼과 시더 노트가 지배적이며 피니시가 길게 이어집니다.",
     "tags": [
-      "레드와인",
-      "기념일",
-      "스테이크",
-      "보르도"
+      "보르도",
+      "리뷰"
     ],
     "createdAt": "2026-07-08T20:15:00",
-    "likeCount": 128,
-    "commentCount": 23
+    "likeCount": 124,
+    "commentCount": 18
   },
   {
     "id": "feed_022",
     "userId": "user_015",
     "wineId": "wine_103",
+    "title": "완벽한 셀러 레이아웃",
     "images": [
       "src/assets/images/feeds/feed_022_1.jpg",
       "src/assets/images/feeds/feed_022_2.jpg",
       "src/assets/images/feeds/feed_022_3.jpg",
       "src/assets/images/feeds/feed_022_4.jpg"
     ],
-    "content": "과실향과 오크향의 밸런스가 훌륭했습니다. 와인을 좋아하는 분이라면 꼭 한 번 마셔보세요.",
+    "content": "새로운 화이트 와인 섹션 정리를 막 끝냈습니다. 수직적 리듬이 셀러의 분위기를 완전히 바꿔놓았어요.",
     "tags": [
-      "호주와인",
-      "레드와인",
-      "오크향"
+      "정리",
+      "셀러"
     ],
     "createdAt": "2026-07-06T19:40:00",
-    "likeCount": 176,
-    "commentCount": 35
+    "likeCount": 89,
+    "commentCount": 4
   },
   {
     "id": "feed_023",
     "userId": "user_016",
     "wineId": "wine_014",
+    "title": "영동에서 문경까지, K-와인 로드",
     "images": [
       "src/assets/images/feeds/feed_023_1.jpg",
       "src/assets/images/feeds/feed_023_2.jpg"
     ],
-    "content": "탄닌은 부드럽고 과실향이 풍부해서 양갈비와 최고의 궁합이었습니다.",
+    "content": "국산 청포도 '청수'와 오미자 스파클링 '오미로제'까지, 한국에도 개성 있는 와인이 많았습니다.",
     "tags": [
-      "이탈리아와인",
-      "양갈비",
-      "레드와인"
+      "K와인",
+      "투어"
     ],
     "createdAt": "2026-07-02T21:05:00",
-    "likeCount": 103,
-    "commentCount": 18
+    "likeCount": 56,
+    "commentCount": 9
   },
   {
     "id": "feed_024",

@@ -97,7 +97,7 @@
   },
   {
     "id": "user_013",
-    "nickname": "와인러버",
+    "nickname": "알렉스 소믈리에",
     "profileImage": "/images/profiles/user_013.png",
     "bio": "하루를 마무리하는 가장 좋은 방법은 와인 한 잔.",
     "favoriteWine": "wine_018",
@@ -113,7 +113,7 @@
   },
   {
     "id": "user_015",
-    "nickname": "레드홀릭",
+    "nickname": "클레어 V.",
     "profileImage": "/images/profiles/user_015.png",
     "bio": "레드와인 없이는 못 사는 사람.",
     "favoriteWine": "wine_103",
@@ -121,7 +121,7 @@
   },
   {
     "id": "user_016",
-    "nickname": "빈티지노트",
+    "nickname": "와인맛 감자칩",
     "profileImage": "/images/profiles/user_016.png",
     "bio": "오늘의 빈티지를 기록합니다.",
     "favoriteWine": "wine_014",
