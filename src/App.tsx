@@ -11,6 +11,7 @@ import QnA from './pages/QnA'
 import MeetingCreate from './pages/MeetingCreate'
 import QuestionWrite from './pages/QuestionWrite'
 import ProfileSettings from './components/ProfileSettings'
+import Mypage from './pages/Mypage'
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/lounge" element={<Feed />} />
           <Route path="/lounge/qna" element={<QnA />} />
           <Route path="/lounge/meetings" element={<Meetings />} />
+          <Route path="/mypage" element={<Mypage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
         <Route path="/feed/:feedId" element={<FeedDetail />} />
