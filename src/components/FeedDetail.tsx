@@ -1,7 +1,6 @@
 import { useRef, useState, type FormEvent } from 'react'
 import { useParams } from 'react-router-dom'
 import backIcon from '../assets/images/icon-chevron-forward.svg'
-import feedPhoto from '../assets/images/feed-detail-photo.png'
 import authorAvatar from '../assets/images/feed-author-avatar.svg'
 import commentAvatar from '../assets/images/feed-comment-avatar.svg'
 import { getFeedById } from '../data/feedData'
@@ -143,7 +142,7 @@ function FeedDetailContent({
         </section>
 
         <div className="grid grid-cols-2 gap-2" data-node-id="618:65">
-          {(feed.imageUrls.length ? feed.imageUrls : [feedPhoto]).map((imageUrl, index) => (
+          {feed.imageUrls.map((imageUrl, index) => (
             <img
               key={`${imageUrl}-${index}`}
               src={imageUrl}

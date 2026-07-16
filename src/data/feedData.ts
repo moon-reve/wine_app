@@ -2,7 +2,7 @@ import feeds from '../../dummy data/feeds.json'
 import users from '../../dummy data/users.json'
 import wines from '../../dummy data/wines.json'
 
-const feedImageModules = import.meta.glob('../assets/images/feeds/*.{jpg,jpeg,png}', {
+const feedImageModules = import.meta.glob('/src/assets/images/feeds/*.{jpg,jpeg,png}', {
   eager: true,
   import: 'default',
 }) as Record<string, string>
@@ -39,8 +39,13 @@ export function formatFeedTime(createdAt: string) {
 }
 
 function resolveFeedImage(imageSource: string) {
-  const fileName = imageSource.split('/').pop()
-  return fileName ? feedImageModules[`../assets/images/feeds/${fileName}`] : undefined
+  const imageUrl = feedImageModules[`/${imageSource}`]
+
+  if (!imageUrl) {
+    throw new Error(`피드 이미지를 찾을 수 없습니다: ${imageSource}`)
+  }
+
+  return imageUrl
 }
 
 export const feedItems: FeedViewModel[] = feeds.map((feed) => {
@@ -61,10 +66,7 @@ export const feedItems: FeedViewModel[] = feeds.map((feed) => {
     createdAt: feed.createdAt,
     time: formatFeedTime(feed.createdAt),
     imageSources: feed.images,
-    imageUrls: feed.images.flatMap((imageSource) => {
-      const imageUrl = resolveFeedImage(imageSource)
-      return imageUrl ? [imageUrl] : []
-    }),
+    imageUrls: feed.images.map(resolveFeedImage),
     likeCount: feed.likeCount,
     commentCount: feed.commentCount,
   }

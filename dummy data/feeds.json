@@ -21,7 +21,7 @@
   {
     "id": "feed_022",
     "userId": "user_015",
-    "wineId": "wine_103",
+    "wineId": "wine_028",
     "title": "완벽한 셀러 레이아웃",
     "images": [
       "src/assets/images/feeds/feed_022_1.jpg",
@@ -59,7 +59,8 @@
   {
     "id": "feed_024",
     "userId": "user_017",
-    "wineId": "wine_104",
+    "wineId": "wine_064",
+    "title": "가볍게 시작하기 좋은 프랑스 로제",
     "images": [
       "src/assets/images/feeds/feed_024_1.jpg",
       "src/assets/images/feeds/feed_024_2.jpg",
@@ -67,7 +68,7 @@
     ],
     "content": "향이 섬세하고 가벼운 바디감이라 부담 없이 즐길 수 있었어요. 입문자에게도 추천합니다.",
     "tags": [
-      "피노누아",
+      "로제",
       "입문와인",
       "프랑스와인"
     ],
@@ -79,6 +80,7 @@
     "id": "feed_025",
     "userId": "user_018",
     "wineId": "wine_043",
+    "title": "바다를 닮은 산뜻한 한 잔",
     "images": [
       "src/assets/images/feeds/feed_025_1.jpg",
       "src/assets/images/feeds/feed_025_2.jpg"
@@ -97,6 +99,7 @@
     "id": "feed_013",
     "userId": "user_002",
     "wineId": "wine_002",
+    "title": "부모님 선물로 고른 국민 와인",
     "images": [
       "src/assets/images/feeds/feed_013_1.jpg",
       "src/assets/images/feeds/feed_013_2.jpg"
@@ -114,7 +117,8 @@
   {
     "id": "feed_026",
     "userId": "user_019",
-    "wineId": "wine_105",
+    "wineId": "wine_037",
+    "title": "파스타와 즐기는 가성비 데일리 와인",
     "images": [
       "src/assets/images/feeds/feed_026_1.jpg",
       "src/assets/images/feeds/feed_026_2.jpg",
@@ -125,7 +129,7 @@
       "가성비",
       "데일리와인",
       "파스타",
-      "프랑스와인"
+      "스페인와인"
     ],
     "createdAt": "2026-06-22T19:33:00",
     "likeCount": 65,
@@ -135,6 +139,7 @@
     "id": "feed_017",
     "userId": "user_004",
     "wineId": "wine_088",
+    "title": "광명동굴에서 만난 여포의 꿈",
     "images": [
       "src/assets/images/feeds/feed_017_1.jpg",
       "src/assets/images/feeds/feed_017_2.jpg",
@@ -154,6 +159,7 @@
     "id": "feed_016",
     "userId": "user_009",
     "wineId": "wine_004",
+    "title": "마트에서 만난 악마의 와인",
     "images": [
       "src/assets/images/feeds/feed_016_1.jpg",
       "src/assets/images/feeds/feed_016_2.jpg"
@@ -171,6 +177,7 @@
     "id": "feed_001",
     "userId": "user_002",
     "wineId": "wine_001",
+    "title": "라운딩 끝엔 역시 1865",
     "images": [
       "src/assets/images/feeds/feed_001_1.jpg"
     ],
@@ -188,6 +195,7 @@
     "id": "feed_005",
     "userId": "user_007",
     "wineId": "wine_061",
+    "title": "한강 피크닉을 닮은 로제",
     "images": [
       "src/assets/images/feeds/feed_005_1.jpg",
       "src/assets/images/feeds/feed_005_2.jpg"
@@ -207,6 +215,7 @@
     "id": "feed_012",
     "userId": "user_010",
     "wineId": "wine_081",
+    "title": "문경에서 만난 오미자 스파클링",
     "images": [
       "src/assets/images/feeds/feed_012_1.jpg"
     ],
@@ -224,6 +233,7 @@
     "id": "feed_020",
     "userId": "user_003",
     "wineId": "wine_030",
+    "title": "화이트 1위, 이유 있는 밸런스",
     "images": [
       "src/assets/images/feeds/feed_020_1.jpg",
       "src/assets/images/feeds/feed_020_2.jpg"
@@ -242,6 +252,7 @@
     "id": "feed_011",
     "userId": "user_006",
     "wineId": "wine_005",
+    "title": "삼겹살엔 역시 다크레드",
     "images": [
       "src/assets/images/feeds/feed_011_1.jpg",
       "src/assets/images/feeds/feed_011_2.jpg"
@@ -260,6 +271,7 @@
     "id": "feed_006",
     "userId": "user_001",
     "wineId": "wine_021",
+    "title": "굴과 소비뇽 블랑, 완벽한 조합",
     "images": [
       "src/assets/images/feeds/feed_006_1.jpg",
       "src/assets/images/feeds/feed_006_2.jpg",
@@ -281,6 +293,7 @@
     "id": "feed_015",
     "userId": "user_007",
     "wineId": "wine_063",
+    "title": "브래드 피트의 로제, 미라발",
     "images": [
       "src/assets/images/feeds/feed_015_1.jpg"
     ],
@@ -297,6 +310,7 @@
     "id": "feed_018",
     "userId": "user_012",
     "wineId": "wine_041",
+    "title": "절친의 결혼 전야를 위한 돔페리뇽",
     "images": [
       "src/assets/images/feeds/feed_018_1.jpg"
     ],
@@ -314,6 +328,7 @@
     "id": "feed_007",
     "userId": "user_011",
     "wineId": "wine_006",
+    "title": "9,900원으로 누리는 와인 한 잔",
     "images": [
       "src/assets/images/feeds/feed_007_1.jpg",
       "src/assets/images/feeds/feed_007_2.jpg",
@@ -333,6 +348,7 @@
     "id": "feed_019",
     "userId": "user_011",
     "wineId": "wine_008",
+    "title": "편의점 2+1로 찾은 데일리 와인",
     "images": [
       "src/assets/images/feeds/feed_019_1.jpg",
       "src/assets/images/feeds/feed_019_2.jpg",
@@ -351,6 +367,7 @@
     "id": "feed_009",
     "userId": "user_012",
     "wineId": "wine_043",
+    "title": "결혼기념일엔 노란 라벨 샴페인",
     "images": [
       "src/assets/images/feeds/feed_009_1.jpg"
     ],
@@ -367,6 +384,7 @@
     "id": "feed_010",
     "userId": "user_003",
     "wineId": "wine_025",
+    "title": "샤블리와 생굴, 정석의 페어링",
     "images": [
       "src/assets/images/feeds/feed_010_1.jpg",
       "src/assets/images/feeds/feed_010_2.jpg",
@@ -386,6 +404,7 @@
     "id": "feed_003",
     "userId": "user_009",
     "wineId": "wine_007",
+    "title": "떫지 않아 좋았던 나의 첫 와인",
     "images": [
       "src/assets/images/feeds/feed_003_1.jpg"
     ],
@@ -403,6 +422,7 @@
     "id": "feed_004",
     "userId": "user_004",
     "wineId": "wine_083",
+    "title": "대부도에서 만난 청수의 매력",
     "images": [
       "src/assets/images/feeds/feed_004_1.jpg",
       "src/assets/images/feeds/feed_004_2.jpg"
@@ -421,6 +441,7 @@
     "id": "feed_014",
     "userId": "user_005",
     "wineId": "wine_057",
+    "title": "케이크와 만난 달콤한 모스카토",
     "images": [
       "src/assets/images/feeds/feed_014_1.jpg",
       "src/assets/images/feeds/feed_014_2.jpg",
@@ -440,6 +461,7 @@
     "id": "feed_002",
     "userId": "user_005",
     "wineId": "wine_042",
+    "title": "금요일 홈파티의 첫 잔",
     "images": [
       "src/assets/images/feeds/feed_002_1.jpg",
       "src/assets/images/feeds/feed_002_2.jpg"
@@ -459,6 +481,7 @@
     "id": "feed_008",
     "userId": "user_008",
     "wineId": "wine_010",
+    "title": "드디어 만난 케이머스",
     "images": [
       "src/assets/images/feeds/feed_008_1.jpg",
       "src/assets/images/feeds/feed_008_2.jpg"
