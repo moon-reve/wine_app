@@ -116,7 +116,7 @@
     "nickname": "클레어 V.",
     "profileImage": "/images/profiles/user_015.png",
     "bio": "레드와인 없이는 못 사는 사람.",
-    "favoriteWine": "wine_103",
+    "favoriteWine": "wine_028",
     "followers": 2031
   },
   {
@@ -132,7 +132,7 @@
     "nickname": "오크향좋아",
     "profileImage": "/images/profiles/user_017.png",
     "bio": "오크향과 깊은 여운을 좋아합니다.",
-    "favoriteWine": "wine_104",
+    "favoriteWine": "wine_064",
     "followers": 721
   },
   {
@@ -148,7 +148,47 @@
     "nickname": "한병더",
     "profileImage": "/images/profiles/user_019.png",
     "bio": "새로운 와인을 발견하는 즐거움.",
-    "favoriteWine": "wine_105",
+    "favoriteWine": "wine_037",
     "followers": 593
+  },
+  {
+    "id": "user_020",
+    "nickname": "소믈리에_엔투지스트",
+    "profileImage": "",
+    "bio": "오래된 빈티지와 보르도 와인을 탐구합니다.",
+    "favoriteWine": "wine_018",
+    "followers": 1842
+  },
+  {
+    "id": "user_021",
+    "nickname": "와인입문자",
+    "profileImage": "",
+    "bio": "와인을 하나씩 배워가는 중입니다.",
+    "favoriteWine": "wine_007",
+    "followers": 37
+  },
+  {
+    "id": "user_022",
+    "nickname": "화이트러버",
+    "profileImage": "",
+    "bio": "샤르도네와 부르고뉴 화이트를 좋아합니다.",
+    "favoriteWine": "wine_026",
+    "followers": 426
+  },
+  {
+    "id": "user_023",
+    "nickname": "와인전문가88",
+    "profileImage": "",
+    "bio": "빈티지와 라벨 정보를 기록하고 공유합니다.",
+    "favoriteWine": "wine_017",
+    "followers": 1376
+  },
+  {
+    "id": "user_024",
+    "nickname": "마스터_셀러",
+    "profileImage": "",
+    "bio": "와인 보관과 숙성 이야기를 나눕니다.",
+    "favoriteWine": "wine_028",
+    "followers": 968
   }
 ]

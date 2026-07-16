@@ -1,17 +1,9 @@
 import { useMemo, useState, type FormEvent } from 'react'
+import { useParams } from 'react-router-dom'
 import backIcon from '../assets/images/icon-chevron-forward.svg'
 import questionAuthorAvatar from '../assets/images/feed-author-avatar.svg'
 import answerAuthorAvatar from '../assets/images/feed-comment-avatar.svg'
-
-type Answer = {
-  id: number
-  author: string
-  time: string
-  content: string
-  helpfulCount: number
-  createdAt: number
-  accepted?: boolean
-}
+import { getQuestionById, type QuestionAnswerViewModel } from '../data/questionData'
 
 type SortMode = 'latest' | 'popular'
 
@@ -19,56 +11,34 @@ type QuestionDetailProps = {
   onBack?: () => void
   onFollow?: () => void
   onSubmitAnswer?: (answer: string) => void
-  onHelpful?: (answerId: number) => void
+  onHelpful?: (answerId: string) => void
   className?: string
 }
 
-const tags = ['#1982빈티지', '#보르도', '#와인식별']
-
-const initialAnswers: Answer[] = [
-  {
-    id: 1,
-    author: '와인전문가88',
-    time: '45분 전',
-    content:
-      "이건 샤토 피작과 매우 흡사해 보입니다. 그해 '1982'의 폰트 스타일이 매우 독특했습니다. 메를로와 카베르네 프랑이 주로 섞인 훌륭한 빈티지입니다.",
-    helpfulCount: 12,
-    createdAt: 2,
-    accepted: true,
-  },
-  {
-    id: 2,
-    author: '마스터_셀러',
-    time: '1시간 전',
-    content:
-      '와인전문가님 의견에 동의합니다. 캡슐을 확인해보세요. 오리지널이라면 샤토를 확인해주는 양각 문장이 있을 겁니다.',
-    helpfulCount: 4,
-    createdAt: 1,
-  },
-]
-
-const initialAnswerCount = 3
-
-export default function QuestionDetail({
+function QuestionDetailContent({
+  questionId,
   onBack,
   onFollow,
   onSubmitAnswer,
   onHelpful,
   className = '',
-}: QuestionDetailProps) {
+}: QuestionDetailProps & { questionId?: string }) {
+  const question = getQuestionById(questionId)
   const [answer, setAnswer] = useState('')
-  const [answerItems, setAnswerItems] = useState<Answer[]>(initialAnswers)
+  const [answerItems, setAnswerItems] = useState<QuestionAnswerViewModel[]>(question?.answers ?? [])
   const [sortMode, setSortMode] = useState<SortMode>('latest')
   const [following, setFollowing] = useState(false)
 
-  const answerCount = initialAnswerCount + answerItems.length - initialAnswers.length
+  const answerCount = answerItems.length
   const sortedAnswers = useMemo(() => {
     return [...answerItems].sort((a, b) => {
+      const createdAtDifference = new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
+
       if (sortMode === 'popular') {
-        return b.helpfulCount - a.helpfulCount || b.createdAt - a.createdAt
+        return b.helpfulCount - a.helpfulCount || createdAtDifference
       }
 
-      return b.createdAt - a.createdAt
+      return createdAtDifference
     })
   }, [answerItems, sortMode])
 
@@ -89,12 +59,15 @@ export default function QuestionDetail({
 
     setAnswerItems((currentAnswers) => [
       {
-        id: Date.now(),
+        id: `answer_${Date.now()}`,
+        userId: 'current_user',
         author: '나',
+        profileSource: undefined,
         time: '방금 전',
         content: value,
         helpfulCount: 0,
-        createdAt: Date.now(),
+        createdAt: new Date().toISOString(),
+        accepted: false,
       },
       ...currentAnswers,
     ])
@@ -102,7 +75,7 @@ export default function QuestionDetail({
     setAnswer('')
   }
 
-  const handleHelpful = (answerId: number) => {
+  const handleHelpful = (answerId: string) => {
     setAnswerItems((currentAnswers) =>
       currentAnswers.map((item) =>
         item.id === answerId ? { ...item, helpfulCount: item.helpfulCount + 1 } : item,
@@ -118,6 +91,17 @@ export default function QuestionDetail({
   const handleFollow = () => {
     setFollowing(!following)
     onFollow?.()
+  }
+
+  if (!question) {
+    return (
+      <main className={`mx-auto flex min-h-screen w-full max-w-[430px] flex-col items-center justify-center gap-4 bg-white px-5 text-[#0d0d0d] ${className}`}>
+        <p className="text-base font-bold">질문을 찾을 수 없어요.</p>
+        <button type="button" onClick={handleBack} className="rounded-full bg-[#831317] px-4 py-2 text-sm font-medium text-white">
+          뒤로 가기
+        </button>
+      </main>
+    )
   }
 
   return (
@@ -146,14 +130,14 @@ export default function QuestionDetail({
         </span>
 
         <h2 className="w-full text-[22px] leading-[1.4] font-bold tracking-[-0.66px]">
-          1982년산 보르도 와인 라벨 식별을 도와주실 수 있나요?
+          {question.title}
         </h2>
 
         <section className="flex w-full items-center gap-2.5" aria-label="질문 작성자 정보">
-          <img src={questionAuthorAvatar} alt="" className="size-10 shrink-0 rounded-full" />
+          <img src={questionAuthorAvatar} data-original-src={question.profileSource} alt="" className="size-10 shrink-0 rounded-full" />
           <div className="flex min-w-0 flex-col gap-0.5 leading-[1.2]">
-            <p className="text-sm font-bold tracking-[-0.28px]">소믈리에_엔투지스트</p>
-            <p className="text-xs tracking-[-0.24px] text-[#737373]">2시간 전 · 프랑스 보르도</p>
+            <p className="text-sm font-bold tracking-[-0.28px]">{question.author}</p>
+            <p className="text-xs tracking-[-0.24px] text-[#737373]">{question.time}</p>
           </div>
           <button
             type="button"
@@ -169,18 +153,15 @@ export default function QuestionDetail({
           </button>
         </section>
 
-        <p className="text-sm leading-[1.6] tracking-[-0.28px] text-[#595959]">
-          어제 할아버지의 셀러에서 발견했습니다. 라벨이 약간 찢어졌지만 1982라고 선명하게 적혀 있고 생테밀리옹
-          지역 제품인 것 같습니다. 생산자를 찾는 데 도움을 주실 수 있을까요?
-        </p>
+        <p className="text-sm leading-[1.6] tracking-[-0.28px] text-[#595959]">{question.content}</p>
 
         <div className="flex flex-wrap gap-2" aria-label="질문 태그">
-          {tags.map((tag) => (
+          {question.tags.map((tag) => (
             <span
               key={tag}
               className="flex h-6 items-center rounded-full bg-[#831317] px-3 text-xs leading-none font-medium text-white"
             >
-              {tag}
+              #{tag}
             </span>
           ))}
         </div>
@@ -206,7 +187,7 @@ export default function QuestionDetail({
             {sortedAnswers.map((item) => (
               <article key={item.id} className="flex w-full flex-col gap-2.5 rounded-xl bg-[#f9f7f6] p-4">
                 <div className="flex min-w-0 items-center gap-2">
-                  <img src={answerAuthorAvatar} alt="" className="size-[30px] shrink-0 rounded-full" />
+                  <img src={answerAuthorAvatar} data-original-src={item.profileSource} alt="" className="size-[30px] shrink-0 rounded-full" />
                   <p className="shrink-0 text-[13px] leading-[1.2] font-bold tracking-[-0.26px]">{item.author}</p>
                   <time className="shrink-0 text-[11px] leading-[1.2] tracking-[-0.22px] text-[#737373]">
                     {item.time}
@@ -257,4 +238,9 @@ export default function QuestionDetail({
       </div>
     </article>
   )
+}
+
+export default function QuestionDetail(props: QuestionDetailProps) {
+  const { questionId } = useParams()
+  return <QuestionDetailContent key={questionId} questionId={questionId} {...props} />
 }
