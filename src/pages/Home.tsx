@@ -43,6 +43,7 @@ const eventItems = [
     label: '페어',
     title: '와인 페어',
     description: '다양한 와인과 와인 러버가 함께하는 특별한 축제를 즐겨보세요.',
+    path: '/event/summer-wine-festival',
   },
 ]
 
@@ -305,18 +306,34 @@ function Home() {
           Event
         </h2>
         <div className="mt-[4.651cqw] divide-y divide-black/20">
-          {eventItems.map((item) => (
-            <button key={item.label} type="button" className="flex w-full items-center justify-between py-[4.651cqw] text-left">
-              <div>
-                <p className="text-[2.791cqw] leading-[1.55] font-medium tracking-[-0.056cqw] text-[#831317]">{item.label}</p>
-                <p className="mt-[0.558cqw] text-[4.186cqw] leading-[1.18] font-semibold tracking-[-0.147cqw] text-black">
-                  {item.title}
-                </p>
-                <p className="mt-[1.572cqw] text-[2.791cqw] leading-[1.55] tracking-[-0.056cqw] text-black">{item.description}</p>
-              </div>
-              <img src={iconArrowForward2} alt="" className="size-[3.721cqw] shrink-0" />
-            </button>
-          ))}
+          {eventItems.map((item) => {
+            const content = (
+              <>
+                <div>
+                  <p className="text-[2.791cqw] leading-[1.55] font-medium tracking-[-0.056cqw] text-[#831317]">{item.label}</p>
+                  <p className="mt-[0.558cqw] text-[4.186cqw] leading-[1.18] font-semibold tracking-[-0.147cqw] text-black">
+                    {item.title}
+                  </p>
+                  <p className="mt-[1.572cqw] text-[2.791cqw] leading-[1.55] tracking-[-0.056cqw] text-black">{item.description}</p>
+                </div>
+                <img src={iconArrowForward2} alt="" className="size-[3.721cqw] shrink-0" />
+              </>
+            )
+
+            return item.path ? (
+              <Link
+                key={item.label}
+                to={item.path}
+                className="flex w-full items-center justify-between py-[4.651cqw] text-left no-underline"
+              >
+                {content}
+              </Link>
+            ) : (
+              <button key={item.label} type="button" className="flex w-full items-center justify-between py-[4.651cqw] text-left">
+                {content}
+              </button>
+            )
+          })}
         </div>
       </section>
 
@@ -376,7 +393,12 @@ function Home() {
           { image: magazineCard1, hasBody: true },
           { image: magazineCard2, hasBody: false },
         ].map((card, i) => (
-          <div key={i} className="relative h-[114.884cqw] w-[90.698cqw] shrink-0 snap-start overflow-hidden">
+          <Link
+            key={i}
+            to="/magazine"
+            aria-label="매거진 자세히 보기"
+            className="relative block h-[114.884cqw] w-[90.698cqw] shrink-0 snap-start overflow-hidden no-underline"
+          >
             <img src={card.image} alt="Magazine" className="absolute inset-0 size-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-l from-black/65 from-[14.07%] to-[rgba(102,102,102,0)]" />
             <div className="absolute inset-0 bg-black/[0.14]" />
@@ -384,9 +406,9 @@ function Home() {
             <p className="font-playfair-sc absolute inset-x-0 top-0 text-center text-[16.279cqw] leading-[1.3] tracking-[-0.326cqw] text-white">
               Magazine
             </p>
-            <button type="button" aria-label="매거진 자세히 보기" className="absolute top-[36.512cqw] right-[4.651cqw] size-[5.581cqw]">
+            <span aria-hidden="true" className="absolute top-[36.512cqw] right-[4.651cqw] size-[5.581cqw]">
               <img src={iconArrowForward} alt="" className="size-full" />
-            </button>
+            </span>
             <div className="absolute inset-x-[4.651cqw] bottom-[6.977cqw]">
               <p className="text-[6.512cqw] leading-[1.18] font-bold tracking-[-0.228cqw] text-white">영동에서 문경까지</p>
               <p className="mt-[0.233cqw] text-[5.581cqw] leading-[1.55] tracking-[-0.112cqw] text-white">
@@ -400,7 +422,7 @@ function Home() {
                 </p>
               ) : null}
             </div>
-          </div>
+          </Link>
         ))}
       </section>
 
