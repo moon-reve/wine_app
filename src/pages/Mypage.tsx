@@ -1,14 +1,20 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import feedImage1 from '../assets/mypage/feed-1.png'
-import feedImage2 from '../assets/mypage/feed-2.png'
-import feedImage3 from '../assets/mypage/feed-3.png'
-import feedImage4 from '../assets/mypage/feed-4.png'
-import feedImage5 from '../assets/mypage/feed-5.png'
-import feedImage6 from '../assets/mypage/feed-6.png'
-import feedImage7 from '../assets/mypage/feed-7.png'
+import avatarImage from '../assets/mypage/mypage-avatar.png'
+import challengeCircleImage from '../assets/mypage/mypage-challenge-circle.png'
+import feedThumb1 from '../assets/mypage/feed-thumb-1.png'
+import feedThumb2 from '../assets/mypage/feed-thumb-2.png'
+import feedThumb3 from '../assets/mypage/feed-thumb-3.png'
+import feedThumb4 from '../assets/mypage/feed-thumb-4.png'
+import feedThumb5 from '../assets/mypage/feed-thumb-5.png'
+import feedThumb6 from '../assets/mypage/feed-thumb-6.png'
+import feedThumb7 from '../assets/mypage/feed-thumb-7.png'
+import feedThumb8 from '../assets/mypage/feed-thumb-8.png'
+import feedThumb9 from '../assets/mypage/feed-thumb-9.png'
+import feedThumb10 from '../assets/mypage/feed-thumb-10.png'
+import feedThumb11 from '../assets/mypage/feed-thumb-11.png'
+import feedThumb12 from '../assets/mypage/feed-thumb-12.png'
 import settingsIcon from '../assets/mypage/settings.svg'
-import summaryArrowIcon from '../assets/mypage/summary-arrow.svg'
 import badgeIcon from '../assets/mypage/badge.svg'
 import wineImage1 from '../assets/mypage/wine-1.png'
 import wineImage2 from '../assets/mypage/wine-2.png'
@@ -21,15 +27,18 @@ import likedWineImage3 from '../assets/mypage/liked-wine-3.png'
 import likedWineImage4 from '../assets/mypage/liked-wine-4.png'
 
 const feedImages = [
-  feedImage1,
-  feedImage2,
-  feedImage3,
-  feedImage4,
-  feedImage5,
-  feedImage6,
-  feedImage7,
-  feedImage1,
-  feedImage2,
+  feedThumb1,
+  feedThumb2,
+  feedThumb3,
+  feedThumb4,
+  feedThumb5,
+  feedThumb6,
+  feedThumb7,
+  feedThumb8,
+  feedThumb9,
+  feedThumb10,
+  feedThumb11,
+  feedThumb12,
 ]
 
 const wineReviews = [
@@ -87,56 +96,6 @@ const likedWines = [
     wideCrop: true,
   },
 ] as const
-
-function CameraIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="size-6" fill="none" aria-hidden="true">
-      <path d="M8.5 6.5 9.6 5h4.8l1.1 1.5H19a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-10a1 1 0 0 1 1-1h3.5Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-      <circle cx="12" cy="12.5" r="3" stroke="currentColor" strokeWidth="1.8" />
-    </svg>
-  )
-}
-
-function TrophyIcon() {
-  return (
-    <svg viewBox="0 0 24 24" className="size-6" fill="none" aria-hidden="true">
-      <path d="M8 4h8v4.3a4 4 0 0 1-8 0V4Z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-      <path d="M8 6H5v1.5A3.5 3.5 0 0 0 8.5 11M16 6h3v1.5a3.5 3.5 0 0 1-3.5 3.5M12 12.3V17m-3 3h6m-5-3h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-function ArrowIcon({ className = 'size-4' }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" className={className} fill="none" aria-hidden="true">
-      <path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  )
-}
-
-function SummaryCard({ type }: { type: 'challenge' | 'badge' }) {
-  const challenge = type === 'challenge'
-
-  return (
-    <button
-      type="button"
-      className="flex h-28 w-[calc(50%-6px)] flex-col items-start justify-between rounded-[14px] bg-[#f9f7f6] p-4 text-left text-[#851317]"
-    >
-      {challenge ? <TrophyIcon /> : <img src={badgeIcon} alt="" className="size-6" aria-hidden="true" />}
-      <span className="flex w-full items-end justify-between">
-        <span className="flex flex-col gap-[5px]">
-          <span className="text-[13px] leading-4 font-medium tracking-[-0.26px] text-[#121212]">
-            {challenge ? '진행 중인 챌린지' : '획득한 배지'}
-          </span>
-          <span className="text-xs leading-[normal] font-bold tracking-[-0.24px]">
-            {challenge ? '참여 중 1개' : '총 12개'}
-          </span>
-        </span>
-        <img src={summaryArrowIcon} alt="" className="size-4" aria-hidden="true" />
-      </span>
-    </button>
-  )
-}
 
 function WineReviewCard({ review }: { review: (typeof wineReviews)[number] }) {
   return (
@@ -306,7 +265,7 @@ function Mypage() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '726:315' : activeTab === 'likes' ? '741:446' : '711:285'}>
+    <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '726:315' : activeTab === 'likes' ? '741:446' : '1036:1742'}>
       <header className="flex h-[54px] items-start justify-between px-5 pt-4 text-[#851317]">
         <p className="font-playfair-display text-xl leading-[normal] font-normal">Wine Sippers</p>
         <button type="button" aria-label="설정" onClick={() => navigate('/mypage/settings')} className="flex size-6 items-center justify-center">
@@ -317,34 +276,27 @@ function Mypage() {
       <main className="px-5 pt-7">
         <section>
           <h1 className="font-playfair-display text-[30px] leading-[normal] font-bold text-[#851317]">My Cellar</h1>
-          <p className="mt-[5px] text-sm leading-[normal] font-normal tracking-[-0.28px]">
-            나의 와인 취향과 기록을 한곳에서 만나보세요.
-          </p>
         </section>
 
-        <section className="mt-[53px]">
-          <div className="flex items-center gap-[18px]">
-            <button
-              type="button"
-              aria-label="프로필 사진 변경"
-              className="flex size-[76px] shrink-0 items-center justify-center rounded-full bg-[#f9f7f6] text-[#851317]"
-            >
-              <CameraIcon />
-            </button>
+        <section className="mt-[34px]">
+          <div className="flex items-start gap-[22px]">
+            <div className="relative size-[111px] shrink-0">
+              <div className="absolute inset-0 rounded-full border-[3.33px] border-[#841317]" aria-hidden="true" />
+              <img src={avatarImage} alt="Sora Choi" className="absolute inset-[6px] size-[99px] rounded-full object-cover" />
+            </div>
 
-            <div className="flex w-[182px] flex-col gap-2.5">
-              <div className="flex items-center gap-[21px]">
-                <strong className="text-base leading-[normal] font-bold tracking-[-0.32px] whitespace-nowrap">와인러버_김민우</strong>
-                <span className="flex h-[26px] w-[59px] shrink-0 items-center justify-center rounded-[13px] bg-[#f9f7f6] text-[11px] leading-[normal] font-bold tracking-[-0.22px] text-[#851317]">
-                  Lv. 3
-                </span>
-              </div>
-              <div className="flex w-[99px] justify-between">
-                <div className="flex w-[29px] flex-col items-center gap-[5px]">
+            <div className="mt-[21px] flex flex-col gap-[11px]">
+              <strong className="text-base leading-[normal] font-bold tracking-[-0.32px] whitespace-nowrap text-[#121212]">Sora Choi</strong>
+              <div className="flex items-center gap-[26px]">
+                <div className="flex flex-col items-center gap-[5px]">
                   <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">128</strong>
                   <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">팔로워</span>
                 </div>
-                <div className="flex w-[29px] flex-col items-center gap-[5px]">
+                <div className="flex flex-col items-center gap-[5px]">
+                  <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">12</strong>
+                  <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">포스트</span>
+                </div>
+                <div className="flex flex-col items-center gap-[5px]">
                   <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">96</strong>
                   <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">팔로잉</span>
                 </div>
@@ -352,29 +304,37 @@ function Mypage() {
             </div>
           </div>
 
-          <div className="mt-6 flex flex-col gap-[13px]">
-            <p className="text-sm leading-[normal] font-medium tracking-[-0.28px] text-[#61050b]">
-              “인생의 쓴맛보다 와인의 쓴맛을 아는 사람”
-            </p>
-            <div className="flex items-center gap-2">
-              {['#레드와인', '#바디감무겁게', '#강남비헌터'].map((tag) => (
-                <span
-                  key={tag}
-                  className="flex h-[30px] items-center justify-center rounded-full bg-[rgba(131,19,23,0.9)] px-3.5 text-[13px] leading-[normal] font-medium tracking-[-0.26px] whitespace-nowrap text-white"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
+          <div className="mt-[21px] flex flex-col gap-1">
+            <p className="text-[12px] leading-[normal] font-normal tracking-[-0.24px] whitespace-pre text-[#a8a8a8]">{`#레드와인  #소비뇽  #과일안주러버`}</p>
+            <p className="mt-[5px] text-sm leading-[normal] font-normal tracking-[-0.28px] text-[#717171]">양재역 바이너들 dm</p>
           </div>
 
-          <div className="mt-[50px] flex justify-between gap-3">
-            <SummaryCard type="challenge" />
-            <SummaryCard type="badge" />
+          <div className="mt-[25px] flex gap-[19px]">
+            <div className="flex w-[78px] flex-col items-center gap-[3px]">
+              <div className="flex size-[78px] flex-col items-center justify-center gap-1 rounded-full bg-[#f9f7f6]">
+                <img src={badgeIcon} alt="" className="size-6" aria-hidden="true" />
+                <span className="text-[12px] leading-[normal] font-normal tracking-[-0.24px] text-[#851317]">12개</span>
+              </div>
+              <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Badges</span>
+            </div>
+
+            <div className="flex w-[78px] flex-col items-center gap-[3px]">
+              <div className="relative size-[78px] shrink-0 overflow-hidden rounded-full">
+                <img src={challengeCircleImage} alt="" className="absolute inset-0 size-full object-cover" aria-hidden="true" />
+                <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+                <span className="absolute inset-0 flex items-center justify-center text-[12px] leading-[normal] font-medium tracking-[-0.24px] text-white">참여중</span>
+              </div>
+              <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Challenges</span>
+            </div>
+
+            <div className="flex w-[78px] flex-col items-center gap-[3px]">
+              <div className="size-[78px] shrink-0 rounded-full bg-[#d9d9d9]" aria-hidden="true" />
+              <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">My snaps</span>
+            </div>
           </div>
         </section>
 
-        <section className="mt-16">
+        <section className="mt-[42px]">
           <div className="grid h-[30px] grid-cols-3 border-b border-black/15">
             <button
               type="button"
@@ -382,7 +342,7 @@ function Mypage() {
               aria-selected={activeTab === 'feed'}
               className={`relative text-sm leading-[normal] tracking-[-0.28px] ${activeTab === 'feed' ? 'font-bold text-[#851317]' : 'font-normal text-[#6e6e6e]'}`}
             >
-              내가 쓴 피드&nbsp; 42
+              내가 쓴 피드&nbsp; 12
               {activeTab === 'feed' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#851317]" />}
             </button>
             <button
@@ -406,30 +366,19 @@ function Mypage() {
           </div>
 
           {activeTab === 'feed' ? (
-            <>
-              <div className="mt-5 grid aspect-square w-full grid-cols-3 grid-rows-3 gap-1.5">
-                {feedImages.map((image, index) => (
-                  <button
-                    key={`${image}-${index}`}
-                    type="button"
-                    aria-label={`내 피드 ${index + 1} 확대 보기`}
-                    onClick={() => setSelectedFeedIndex(index)}
-                    className="overflow-hidden rounded-sm"
-                  >
-                    <img src={image} alt={`내 피드 ${index + 1}`} className="size-full object-cover" />
-                  </button>
-                ))}
-              </div>
-
-              <article className="mt-[38px] h-28 rounded-[14px] bg-[#f9f7f7] px-4 pt-4 pb-[17px]">
-                <p className="text-[11px] leading-[normal] font-bold tracking-[-0.22px] text-[#851317]">이번 달의 기록</p>
-                <p className="mt-[5px] text-sm leading-[normal] font-medium tracking-[-0.28px]">7개의 피드와 12개의 테이스팅 노트를 남겼어요.</p>
-                <button type="button" className="mt-[21px] ml-auto flex items-center gap-[5px] text-sm leading-[normal] font-bold tracking-[-0.28px] text-[#851317]">
-                  나의 와인 여정 보기
-                  <ArrowIcon />
+            <div className="mt-5 grid w-full grid-cols-3 gap-px">
+              {feedImages.map((image, index) => (
+                <button
+                  key={`${image}-${index}`}
+                  type="button"
+                  aria-label={`내 피드 ${index + 1} 확대 보기`}
+                  onClick={() => setSelectedFeedIndex(index)}
+                  className="aspect-[129.333/154.333] overflow-hidden"
+                >
+                  <img src={image} alt={`내 피드 ${index + 1}`} className="size-full object-cover" />
                 </button>
-              </article>
-            </>
+              ))}
+            </div>
           ) : activeTab === 'wine' ? (
             <div className="mt-5 flex flex-col gap-3.5">
               {wineReviews.map((review) => <WineReviewCard key={review.name} review={review} />)}

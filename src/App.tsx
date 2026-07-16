@@ -16,6 +16,8 @@ import MypageSettings from './components/mypage-Settings'
 import Mypage from './pages/Mypage'
 import Search from './pages/Search'
 import Product from './pages/Product'
+import Magazine from './pages/Magazine'
+import Event from './pages/Event'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -36,6 +38,7 @@ function App() {
         <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
         <Route path="/profile/settings" element={<ProfileSettings />} />
         <Route path="/product/chateau-margaux-2018" element={<Product />} />
+        <Route path="/event/summer-wine-festival" element={<Event />} />
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<List />} />
@@ -45,6 +48,7 @@ function App() {
           <Route path="/mypage" element={<Mypage />} />
           <Route path="/mypage/settings" element={<MypageSettings />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/magazine" element={<Magazine />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
         <Route path="/feed/:feedId" element={<FeedDetail />} />

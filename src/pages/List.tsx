@@ -51,8 +51,11 @@ const WINE_TYPE_BG_COLOR: Record<WineType, string> = {
   korean: '#ece4a2',
 }
 
-// 기존 큐레이션 4종과 이름이 겹치는 더미데이터 항목(같은 와인의 다른 빈티지)은 중복 노출을 피하기 위해 제외
+// 기존 큐레이션 4종과 이름이 겹치는 더미데이터 항목(같은 와인의 다른 빈티지)은 중복 노출을 피하기 위해 제외.
+// wine_003/018/019/068은 리스트에서만 숨기는 것으로, 더미데이터 자체는 마이페이지 대표 와인 선택 등
+// 다른 화면에서도 쓰이고 있어 그대로 둔다.
 const DUPLICATE_DUMMY_IDS = new Set(['wine_023', 'wine_031', 'wine_033'])
+const HIDDEN_FROM_LIST_IDS = new Set(['wine_003', 'wine_018', 'wine_019', 'wine_068'])
 
 // 더미데이터의 type은 'korean'이 색이 아닌 원산지 구분이라, 국산 와인은 이름에 적힌
 // 레드/화이트/로제/스파클링 표기를 우선 읽어서 배경색을 정한다. 표기가 없는 경우에만 화이트로 대체.
@@ -117,7 +120,7 @@ const curatedWines: Wine[] = [
 ]
 
 const dummyWineList: Wine[] = (dummyWines as DummyWine[])
-  .filter((wine) => !DUPLICATE_DUMMY_IDS.has(wine.id))
+  .filter((wine) => !DUPLICATE_DUMMY_IDS.has(wine.id) && !HIDDEN_FROM_LIST_IDS.has(wine.id))
   .map((wine) => {
     const regionText = getRegionText(wine)
     const fileName = wine.imageUrl.split('/').pop() ?? ''
