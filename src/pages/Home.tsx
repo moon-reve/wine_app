@@ -442,7 +442,9 @@ function Home() {
               오늘의 와인을 추천합니다.
             </p>
           </div>
-          <img src={iconArrowForward5} alt="" className="size-[3.721cqw]" />
+          <Link to="/todays-pick" aria-label="오늘의 추천 전체보기">
+            <img src={iconArrowForward5} alt="" className="size-[3.721cqw]" />
+          </Link>
         </div>
 
         <div className="mt-[6.140cqw] px-[4.651cqw]">
@@ -540,9 +542,14 @@ function Home() {
 
       {/* Challenge */}
       <section className="pt-[11.163cqw]">
-        <h2 className="px-[4.651cqw] font-delmon text-[8.837cqw] leading-[1.3] font-normal tracking-[-0.177cqw] text-[#831317]">
-          Challenge
-        </h2>
+        <div className="flex items-center justify-between px-[4.651cqw]">
+          <h2 className="font-delmon text-[8.837cqw] leading-[1.3] font-normal tracking-[-0.177cqw] text-[#831317]">
+            Challenge
+          </h2>
+          <Link to="/challenge/continents" aria-label="챌린지 상세보기">
+            <img src={iconArrowForward} alt="" className="size-[3.721cqw]" />
+          </Link>
+        </div>
 
         <div
           ref={challengeScrollRef}
@@ -689,7 +696,7 @@ function Home() {
         {magazineCards.map((card) => (
           <Link
             key={card.title}
-            to="/magazine"
+            to="/magazine/k-wine-road"
             aria-label="매거진 자세히 보기"
             className="relative block h-[114.884cqw] w-[90.698cqw] shrink-0 snap-start overflow-hidden no-underline"
           >

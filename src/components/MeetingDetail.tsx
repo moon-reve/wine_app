@@ -1,6 +1,8 @@
+import { useState } from 'react'
 import backIcon from '../assets/images/icon-chevron-forward.svg'
-import hostAvatar from '../assets/images/feed-author-avatar.svg'
-import meetingPhoto from '../assets/images/meeting-detail-photo.png'
+import hostAvatar from '../assets/lounge/figma/meeting-host.svg'
+import meetingPhoto from '../assets/lounge/figma/meeting-detail.png'
+import AppBottomSheet from './AppBottomSheet'
 
 type MeetingDetailProps = {
   onBack?: () => void
@@ -18,6 +20,9 @@ const meetingDetails = [
 const tags = ['보르도', '버티컬', '희귀 와인']
 
 export default function MeetingDetail({ onBack, onApply, className = '' }: MeetingDetailProps) {
+  const [applied, setApplied] = useState(false)
+  const [dialog, setDialog] = useState<'confirm' | 'complete' | null>(null)
+
   const handleBack = () => {
     if (onBack) {
       onBack()
@@ -25,6 +30,16 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
     }
 
     window.history.back()
+  }
+
+  const handleApply = () => {
+    setDialog('confirm')
+  }
+
+  const confirmApply = () => {
+    setApplied(true)
+    onApply?.()
+    setDialog('complete')
   }
 
   return (
@@ -51,7 +66,7 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
         data-node-id="624:132"
         src={meetingPhoto}
         alt="와인 버티컬 테이스팅 모임"
-        className="aspect-[43/26] w-full object-cover"
+        className="h-[245px] w-full object-cover object-[center_63%]"
       />
 
       <div data-node-id="624:133" className="flex w-full flex-col gap-5 px-5 pt-6 pb-8">
@@ -131,12 +146,22 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
 
         <button
           type="button"
-          onClick={onApply}
+          onClick={handleApply}
+          disabled={applied}
           className="flex h-[50px] w-full items-center justify-center rounded-xl bg-[#831317] text-base leading-none font-bold text-white transition-colors hover:bg-[#670e10] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317]"
         >
-          참여 신청하기
+          {applied ? '참여 신청 완료' : '참여 신청하기'}
         </button>
       </div>
+      <AppBottomSheet
+        open={dialog !== null}
+        title={dialog === 'complete' ? '참여 신청이 완료되었습니다' : '참여 신청하시겠습니까?'}
+        message={dialog === 'confirm' ? '신청 후에는 호스트가 참여 정보를 확인할 수 있습니다.' : undefined}
+        confirmLabel={dialog === 'complete' ? '확인' : '신청'}
+        cancelLabel={dialog === 'confirm' ? '취소' : undefined}
+        onClose={() => setDialog(null)}
+        onConfirm={dialog === 'confirm' ? confirmApply : () => setDialog(null)}
+      />
     </article>
   )
 }

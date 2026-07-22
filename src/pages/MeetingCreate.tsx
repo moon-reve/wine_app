@@ -1,13 +1,23 @@
 import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import meetingCover from '../assets/images/meeting-cover.png'
+import meetingCover from '../assets/lounge/figma/meeting-create-cover.png'
 import BottomNav from '../components/BottomNav'
 import CoverImageUploader from '../components/meeting/CoverImageUploader'
 import MeetingCreateHeader from '../components/meeting/MeetingCreateHeader'
 import MeetingTagEditor from '../components/meeting/MeetingTagEditor'
+import TimeWheelPicker from '../components/meeting/TimeWheelPicker'
+import AppBottomSheet from '../components/AppBottomSheet'
 
 const FORM_ID = 'meeting-create-form'
+function formatMeetingTime(value: string) {
+  const [hourText, minute = '00'] = value.split(':')
+  const hour24 = Number(hourText)
+  const period = hour24 >= 12 ? '오후' : '오전'
+  const hour = hour24 % 12 || 12
+  return `${period} ${String(hour).padStart(2, '0')}:${minute}`
+}
+
 const SUGGESTED_TAGS = ['보르도', '빈티지', '희귀와인'] as const
 
 function MeetingCreate() {
@@ -23,6 +33,8 @@ function MeetingCreate() {
   const [description, setDescription] = useState('')
   const [tags, setTags] = useState<string[]>(['보르도'])
   const [isComplete, setIsComplete] = useState(false)
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false)
+  const [timePickerTarget, setTimePickerTarget] = useState<'start' | 'end' | null>(null)
 
   const canSubmit =
     title.trim().length > 0 &&
@@ -52,10 +64,9 @@ function MeetingCreate() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (!canSubmit) return
+    setIsConfirmOpen(true)
 
     // coverImage와 폼 상태는 향후 API 연동 시 등록 데이터로 전달합니다.
-    void coverImage
-    handleRegistrationComplete()
   }
 
   const resetCompleteState = () => setIsComplete(false)
@@ -73,8 +84,8 @@ function MeetingCreate() {
         <p className="mt-0.5 text-[13px]">취향이 통하는 와인 모임을 직접 열어보세요.</p>
 
         <form id={FORM_ID} className="mt-4 flex flex-col gap-3" noValidate onSubmit={handleSubmit}>
-          <label className="flex flex-col gap-1.5 text-xs font-bold">
-            커버 이미지
+          <section className="flex flex-col gap-1.5 text-xs font-bold">
+            <h3>커버 이미지</h3>
             <CoverImageUploader
               defaultImage={meetingCover}
               onChange={(file) => {
@@ -82,7 +93,7 @@ function MeetingCreate() {
                 resetCompleteState()
               }}
             />
-          </label>
+          </section>
 
           <label className="mt-5 flex flex-col gap-2 text-xs font-bold">
             모임 제목
@@ -115,27 +126,23 @@ function MeetingCreate() {
             <fieldset className="flex min-w-0 flex-col gap-2">
               <legend className="text-xs font-bold">시간</legend>
               <div className="mt-2 flex h-12 items-center rounded-[10px] border border-[#d6d6d6] px-2 focus-within:border-[#851317]">
-                <input
-                  type="time"
-                  value={startTime}
-                  aria-label="시작 시간"
-                  className="min-w-0 flex-1 text-[12px] outline-none"
-                  onChange={(event) => {
-                    setStartTime(event.target.value)
-                    resetCompleteState()
-                  }}
-                />
+                <button
+                  type="button"
+                  aria-label="시작 시간 선택"
+                  onClick={() => setTimePickerTarget('start')}
+                  className={`min-w-0 flex-1 truncate text-[12px] ${startTime ? 'text-[#121212]' : 'text-[#949494]'}`}
+                >
+                  {startTime ? formatMeetingTime(startTime) : '시작'}
+                </button>
                 <span className="px-1 text-[#949494]">–</span>
-                <input
-                  type="time"
-                  value={endTime}
-                  aria-label="종료 시간"
-                  className="min-w-0 flex-1 text-[12px] outline-none"
-                  onChange={(event) => {
-                    setEndTime(event.target.value)
-                    resetCompleteState()
-                  }}
-                />
+                <button
+                  type="button"
+                  aria-label="종료 시간 선택"
+                  onClick={() => setTimePickerTarget('end')}
+                  className={`min-w-0 flex-1 truncate text-[12px] ${endTime ? 'text-[#121212]' : 'text-[#949494]'}`}
+                >
+                  {endTime ? formatMeetingTime(endTime) : '종료'}
+                </button>
               </div>
             </fieldset>
           </div>
@@ -230,6 +237,30 @@ function MeetingCreate() {
       </main>
 
       <BottomNav activeItem="라운지" />
+      <TimeWheelPicker
+        open={timePickerTarget !== null}
+        title={timePickerTarget === 'end' ? '종료 시간 선택' : '시작 시간 선택'}
+        value={timePickerTarget === 'end' ? endTime : startTime}
+        onClose={() => setTimePickerTarget(null)}
+        onChange={(value) => {
+          if (timePickerTarget === 'end') setEndTime(value)
+          else setStartTime(value)
+          resetCompleteState()
+        }}
+      />
+      <AppBottomSheet
+        open={isConfirmOpen}
+        title="모임을 등록하시겠습니까?"
+        message="입력한 일정과 장소를 한 번 더 확인해 주세요."
+        confirmLabel="등록"
+        cancelLabel="취소"
+        onClose={() => setIsConfirmOpen(false)}
+        onConfirm={() => {
+          setIsConfirmOpen(false)
+          void coverImage
+          handleRegistrationComplete()
+        }}
+      />
     </div>
   )
 }

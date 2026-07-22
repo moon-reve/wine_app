@@ -8,10 +8,12 @@ type ImagePreview = {
 const MAX_IMAGES = 3
 
 function ImageUploader() {
-  const inputRef = useRef<HTMLInputElement>(null)
+  const cameraInputRef = useRef<HTMLInputElement>(null)
+  const albumInputRef = useRef<HTMLInputElement>(null)
   const imagesRef = useRef<ImagePreview[]>([])
   const [images, setImages] = useState<ImagePreview[]>([])
   const [message, setMessage] = useState('')
+  const [isSourceMenuOpen, setIsSourceMenuOpen] = useState(false)
 
   useEffect(() => {
     imagesRef.current = images
@@ -36,7 +38,9 @@ function ImageUploader() {
     ])
     setMessage(selectedFiles.length > availableCount ? '사진은 최대 3장까지 첨부할 수 있습니다.' : '')
 
-    if (inputRef.current) inputRef.current.value = ''
+    if (cameraInputRef.current) cameraInputRef.current.value = ''
+    if (albumInputRef.current) albumInputRef.current.value = ''
+    setIsSourceMenuOpen(false)
   }
 
   const removeImage = (index: number) => {
@@ -51,7 +55,15 @@ function ImageUploader() {
   return (
     <div>
       <input
-        ref={inputRef}
+        ref={cameraInputRef}
+        type="file"
+        accept="image/*"
+        capture="environment"
+        className="sr-only"
+        onChange={(event) => addImages(event.target.files)}
+      />
+      <input
+        ref={albumInputRef}
         type="file"
         accept="image/*"
         multiple
@@ -89,7 +101,7 @@ function ImageUploader() {
               aria-label="사진 첨부"
               disabled={images.length >= MAX_IMAGES}
               className="flex aspect-square w-22.5 max-w-[30%] flex-col items-center justify-center rounded-[10px] border border-dashed border-[#d9d9d9] bg-[#f7f6f5] text-[#737373] disabled:cursor-default"
-              onClick={() => inputRef.current?.click()}
+              onClick={() => setIsSourceMenuOpen(true)}
             >
               {index === images.length && (
                 <>
@@ -103,6 +115,23 @@ function ImageUploader() {
       </div>
 
       {message && <p className="mt-2 text-xs text-[#831317]">{message}</p>}
+
+      {isSourceMenuOpen ? (
+        <div className="fixed inset-0 z-60 mx-auto flex w-full max-w-[430px] items-end bg-black/35" role="dialog" aria-modal="true" aria-label="사진 첨부 방법 선택">
+          <button type="button" className="absolute inset-0" aria-label="사진 첨부 메뉴 닫기" onClick={() => setIsSourceMenuOpen(false)} />
+          <div className="relative z-10 w-full rounded-t-[20px] bg-white px-5 pt-5 pb-8 shadow-2xl">
+            <p className="mb-4 text-center text-sm font-bold text-[#0d0d0d]">사진 첨부</p>
+            <div className="grid grid-cols-2 gap-3">
+              <button type="button" className="h-12 rounded-[12px] border border-[#d9d9d9] text-sm font-medium" onClick={() => cameraInputRef.current?.click()}>
+                촬영
+              </button>
+              <button type="button" className="h-12 rounded-[12px] bg-[#831317] text-sm font-medium text-white" onClick={() => albumInputRef.current?.click()}>
+                앨범 선택
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   )
 }

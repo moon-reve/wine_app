@@ -10,12 +10,13 @@ function AppLayout() {
   const isList = location.pathname.startsWith('/list')
   const isMypage = location.pathname.startsWith('/mypage')
   const isSearch = location.pathname.startsWith('/search')
-  const isLightPage = isLounge || isList || isMypage || isSearch
+  const isMagazine = location.pathname.startsWith('/magazine')
+  const isLightPage = isLounge || isList || isMypage || isSearch || isMagazine
   const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList ? '리스트' : '홈'
 
   const handleNavItemClick = (label: string) => {
     setIsQuickMenuOpen(false)
-    if (label === '홈') navigate('/')
+    if (label === '홈') navigate('/home')
     if (label === '리스트') navigate('/list')
     if (label === '라운지') navigate('/lounge')
     if (label === 'MY') navigate('/mypage')
