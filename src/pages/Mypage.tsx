@@ -1,30 +1,35 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import avatarImage from '../assets/mypage/mypage-avatar.png'
+import avatarImage from '../assets/mypage/figma-profile-photo.png'
+import profileStoryRing from '../assets/mypage/profile-story-ring.svg'
 import challengeCircleImage from '../assets/mypage/mypage-challenge-circle.png'
-import feedThumb1 from '../assets/mypage/feed-thumb-1.png'
-import feedThumb2 from '../assets/mypage/feed-thumb-2.png'
-import feedThumb3 from '../assets/mypage/feed-thumb-3.png'
-import feedThumb4 from '../assets/mypage/feed-thumb-4.png'
-import feedThumb5 from '../assets/mypage/feed-thumb-5.png'
-import feedThumb6 from '../assets/mypage/feed-thumb-6.png'
-import feedThumb7 from '../assets/mypage/feed-thumb-7.png'
-import feedThumb8 from '../assets/mypage/feed-thumb-8.png'
-import feedThumb9 from '../assets/mypage/feed-thumb-9.png'
-import feedThumb10 from '../assets/mypage/feed-thumb-10.png'
-import feedThumb11 from '../assets/mypage/feed-thumb-11.png'
-import feedThumb12 from '../assets/mypage/feed-thumb-12.png'
+import challengeRingImage from '../assets/mypage/challenge-ring.png'
+import badgesCircleImage from '../assets/mypage/badges-circle.png'
+import highlightsCircleImage from '../assets/mypage/highlights-circle.png'
+import wineSippersLogo from '../assets/mypage/wine-sippers-logo.png'
+import feedThumb1 from '../assets/mypage/figma-feed-01.png'
+import feedThumb2 from '../assets/mypage/figma-feed-02.png'
+import feedThumb3 from '../assets/mypage/figma-feed-03.png'
+import feedThumb4 from '../assets/mypage/figma-feed-04.png'
+import feedThumb5 from '../assets/mypage/figma-feed-05.png'
+import feedThumb6 from '../assets/mypage/figma-feed-06.png'
+import feedThumb7 from '../assets/mypage/figma-feed-07.png'
+import feedThumb8 from '../assets/mypage/figma-feed-08.png'
+import feedThumb9 from '../assets/mypage/figma-feed-09.png'
+import feedThumb10 from '../assets/mypage/figma-feed-10.png'
+import feedThumb11 from '../assets/mypage/figma-feed-11.png'
+import feedThumb12 from '../assets/mypage/figma-feed-12.png'
+import multipleFeedIcon from '../assets/mypage/multiple-feed-icon.svg'
 import settingsIcon from '../assets/mypage/settings.svg'
-import badgeIcon from '../assets/mypage/badge.svg'
-import wineImage1 from '../assets/mypage/wine-1.png'
-import wineImage2 from '../assets/mypage/wine-2.png'
-import wineImage3 from '../assets/mypage/wine-3.png'
-import wineImage4Base from '../assets/mypage/wine-4-base.png'
-import wineImage4 from '../assets/mypage/wine-4.png'
-import likedWineImage1 from '../assets/mypage/liked-wine-1.png'
-import likedWineImage2 from '../assets/mypage/liked-wine-2.png'
-import likedWineImage3 from '../assets/mypage/liked-wine-3.png'
-import likedWineImage4 from '../assets/mypage/liked-wine-4.png'
+import wineImage1 from '../assets/mypage/figma-wine-review-01.png'
+import wineImage2 from '../assets/mypage/figma-wine-review-02.png'
+import wineImage3 from '../assets/mypage/figma-wine-review-03.png'
+import likedWineImage1 from '../assets/mypage/figma-liked-wine-01.png'
+import likedWineImage2 from '../assets/mypage/figma-liked-wine-02.png'
+import likedWineImage3 from '../assets/mypage/figma-liked-wine-03.png'
+import likedWineImage4 from '../assets/mypage/figma-liked-wine-04.png'
+import likedHeartIcon from '../assets/mypage/liked-heart.svg'
+import ratingStarIcon from '../assets/mypage/rating-star.svg'
 
 const feedImages = [
   feedThumb1,
@@ -41,6 +46,21 @@ const feedImages = [
   feedThumb12,
 ]
 
+const feedItems = [
+  { image: feedThumb1, crop: 'absolute top-[-21.13%] left-[-7.75%] h-[204.57%] w-[115.11%] max-w-none', multiple: true },
+  { image: feedThumb2, crop: 'absolute inset-0 size-full object-cover', multiple: false },
+  { image: feedThumb3, crop: 'absolute top-[-2.01%] left-0 h-[111.98%] w-[100.26%] max-w-none', multiple: true },
+  { image: feedThumb4, crop: 'absolute top-[-3.63%] left-[-12.22%] h-[125.47%] w-[112.1%] max-w-none', multiple: false },
+  { image: feedThumb5, crop: 'absolute top-[0.22%] left-[-0.26%] h-[144.28%] w-[100.26%] max-w-none', multiple: false },
+  { image: feedThumb6, crop: 'absolute top-0 left-[-0.34%] h-[111.69%] w-[100.16%] max-w-none', multiple: true },
+  { image: feedThumb7, crop: 'absolute top-[-3.62%] left-[-1.91%] h-[117.42%] w-[105.26%] max-w-none', multiple: false },
+  { image: feedThumb8, crop: 'absolute top-[0.17%] left-[-12.03%] h-[125.08%] w-[112.13%] max-w-none', multiple: true },
+  { image: feedThumb9, crop: 'absolute inset-0 size-full object-cover object-bottom', multiple: false },
+  { image: feedThumb10, crop: 'absolute top-[-0.09%] left-[-0.52%] h-[121.6%] w-full max-w-none', multiple: true },
+  { image: feedThumb11, crop: 'absolute top-[-0.22%] left-[-0.26%] h-[104.98%] w-[100.26%] max-w-none', multiple: false },
+  { image: feedThumb12, crop: 'absolute top-[-8.05%] left-[-0.26%] h-[111.98%] w-[100.26%] max-w-none', multiple: false },
+] as const
+
 const wineReviews = [
   {
     name: '샤토 라퐁 로셰 2015',
@@ -48,6 +68,7 @@ const wineReviews = [
     rating: '5.0',
     review: '묵직하고 가죽 향과 베리 향의 조화가 완벽합니다.',
     image: wineImage1,
+    crop: 'absolute top-[-9.47%] left-[-9.01%] h-[116.41%] w-[116.46%] max-w-none',
   },
   {
     name: '클라우디 베이 소비뇽 블랑',
@@ -55,6 +76,7 @@ const wineReviews = [
     rating: '4.0',
     review: '시트러스한 산미와 열대 과실의 여운이 매력적이에요.',
     image: wineImage2,
+    crop: 'absolute top-[-21.09%] left-[-14.79%] h-[136.83%] w-[129.44%] max-w-none',
   },
   {
     name: '투 핸즈 엔젤스 쉐어 쉬라즈',
@@ -62,45 +84,47 @@ const wineReviews = [
     rating: '4.5',
     review: '진한 자두와 블랙베리 풍미, 부드러운 탄닌이 좋아요.',
     image: wineImage3,
+    crop: 'absolute top-[-29.28%] left-[-20.38%] h-[149.77%] w-[141.59%] max-w-none',
   },
 ] as const
 
 const likedWines = [
   {
     name: '돔 페리뇽 2012',
-    detail: '프랑스 · 스파클링 와인',
+    detail: '프랑스 · 샹파뉴 · 피노누아',
+    price: '₩40,500',
     rating: '4.8',
-    reviewCount: '2,401',
     image: likedWineImage1,
   },
   {
-    name: '몬테스 알파 카베르네 소비뇽',
-    detail: '칠레 · 레드 와인',
-    rating: '4.1',
-    reviewCount: '15,230',
+    name: '샤또 몬텔레나',
+    detail: '미국 · 나파 밸리 · 카베르네 소비뇽',
+    price: '₩89,000',
+    rating: '5.0',
     image: likedWineImage2,
   },
   {
     name: '오퍼스 원 2018',
-    detail: '미국 · 레드 와인',
+    detail: '미국 · 나파밸리 · 카베르네 소비뇽',
+    price: '₩159,000',
     rating: '4.9',
-    reviewCount: '1,102',
     image: likedWineImage3,
   },
   {
-    name: '클라우디 베이 소비뇽 블랑',
-    detail: '뉴질랜드 · 화이트 와인',
-    rating: '4.5',
-    reviewCount: '3,852',
+    name: '오이스터 베이',
+    detail: '뉴질랜드 · 말보로 · 소비뇽 블랑',
+    price: '₩36,500',
+    rating: '3.0',
     image: likedWineImage4,
-    wideCrop: true,
   },
 ] as const
 
 function WineReviewCard({ review }: { review: (typeof wineReviews)[number] }) {
   return (
     <article className="flex h-[166px] w-full items-start gap-[18px] rounded-[14px] border border-[#e3dede] bg-white px-4 py-[18px]">
-      <img src={review.image} alt={review.name} className="h-[130px] w-[94px] shrink-0 rounded-lg object-cover" />
+      <div className="relative h-[130px] w-[94px] shrink-0 overflow-hidden rounded-lg">
+        <img src={review.image} alt={review.name} className={review.crop} />
+      </div>
       <div className="flex min-w-0 flex-1 flex-col gap-[18px]">
         <div className="flex w-full items-center justify-between gap-2">
           <h2 className="text-[15px] leading-[normal] font-bold tracking-[-0.3px] whitespace-nowrap">{review.name}</h2>
@@ -115,51 +139,29 @@ function WineReviewCard({ review }: { review: (typeof wineReviews)[number] }) {
   )
 }
 
-function EmptyWineReviewCard() {
-  return (
-    <article className="flex h-[166px] w-full items-start gap-[18px] rounded-[14px] border border-[#e3dede] bg-white px-4 py-[18px]">
-      <div className="relative h-[130px] w-[94px] shrink-0 overflow-hidden rounded-lg">
-        <img src={wineImage4Base} alt="" className="absolute inset-0 size-full object-cover" aria-hidden="true" />
-        <img src={wineImage4} alt="보르도 블렌드 2018" className="absolute inset-0 size-full object-cover" />
-      </div>
-      <div className="flex min-w-0 flex-1 flex-col">
-        <div className="flex w-full items-center justify-between gap-2">
-          <h2 className="text-[15px] leading-[normal] font-bold tracking-[-0.3px] whitespace-nowrap">보르도 블렌드 2018</h2>
-          <time className="shrink-0 text-[10px] leading-[normal] font-normal tracking-[-0.2px] text-[#9e9e9e]">2026.05.20</time>
-        </div>
-        <p className="mt-5 text-xs leading-[normal] font-normal tracking-[-0.24px] text-[#9e9e9e]">아직 작성된 리뷰가 없습니다.</p>
-        <button type="button" className="mt-[24px] h-[38px] w-full rounded-[9px] bg-[#851317] text-xs leading-[normal] font-bold tracking-[-0.24px] text-white">
-          리뷰 쓰기
-        </button>
-      </div>
-    </article>
-  )
-}
-
 function LikedWineCard({ wine }: { wine: (typeof likedWines)[number] }) {
-  const wideCrop = 'wideCrop' in wine && wine.wideCrop
-
   return (
-    <article className="flex h-[126px] w-full items-start gap-[18px] rounded-[14px] border border-[#e3dede] bg-white px-4 py-[18px]">
-      <div className="relative h-[90px] w-[88px] shrink-0 overflow-hidden rounded-lg">
-        <img
-          src={wine.image}
-          alt={wine.name}
-          className={wideCrop ? 'absolute top-0 left-[-37.17%] h-full w-[153.41%] max-w-none object-cover' : 'size-full object-cover'}
-        />
-      </div>
-      <div className="flex min-w-0 flex-1 items-start justify-between">
-        <div className="flex min-w-0 flex-col gap-2.5">
-          <h2 className="text-[15px] leading-[normal] font-bold tracking-[-0.3px] whitespace-nowrap">{wine.name}</h2>
-          <div className="flex flex-col gap-[13px]">
-            <p className="text-xs leading-[normal] font-normal tracking-[-0.24px] whitespace-nowrap text-[#6e6e6e]">{wine.detail}</p>
-            <p className="text-xs leading-[normal] font-bold tracking-[-0.24px] whitespace-nowrap text-[#851317]">★ {wine.rating}&nbsp; ({wine.reviewCount})</p>
+    <article className="relative h-[150px] w-full">
+      <img src={wine.image} alt={wine.name} className="absolute top-0 left-6 size-[89.26px] max-w-none" />
+      <div className="absolute top-1 left-[150px] flex w-[220px] flex-col gap-2">
+        <div className="flex w-full items-start justify-between">
+          <div className="flex min-w-0 flex-col">
+            <h2 className="text-xl leading-[25px] font-semibold whitespace-nowrap text-[#1e1b18]">{wine.name}</h2>
+            <p className="text-xs leading-[25px] font-normal whitespace-nowrap text-[#817f7e]">{wine.detail}</p>
           </div>
+          <button type="button" aria-label={`${wine.name} 좋아요 취소`} className="flex h-[17.726px] w-[19.008px] shrink-0 items-center justify-center">
+            <img src={likedHeartIcon} alt="" className="size-full" aria-hidden="true" />
+          </button>
         </div>
-        <button type="button" aria-label={`${wine.name} 좋아요 취소`} className="mt-[30px] flex w-[22px] shrink-0 items-center justify-center font-noto text-[22px] leading-[normal] font-bold text-[#851317]">
-          ♥
-        </button>
+        <div className="flex w-full items-center justify-between">
+          <strong className="text-base leading-6 font-bold whitespace-nowrap text-[#1e1b18]">{wine.price}</strong>
+          <span className="flex items-center gap-1 text-base leading-6 font-bold whitespace-nowrap text-[#831317]">
+            <img src={ratingStarIcon} alt="" className="h-[14.25px] w-[15px]" aria-hidden="true" />
+            {wine.rating}
+          </span>
+        </div>
       </div>
+      <div className="absolute top-[119.26px] right-0 left-0 h-px bg-[#e5e5e5]" aria-hidden="true" />
     </article>
   )
 }
@@ -265,9 +267,9 @@ function Mypage() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '726:315' : activeTab === 'likes' ? '741:446' : '1036:1742'}>
-      <header className="flex h-[54px] items-start justify-between px-5 pt-4 text-[#851317]">
-        <p className="font-playfair-display text-xl leading-[normal] font-normal">Wine Sippers</p>
+    <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '1546:4825' : activeTab === 'likes' ? '1546:5430' : '1546:5323'}>
+      <header className="flex h-[54px] items-start justify-between px-5 pt-[18px] text-[#851317]">
+        <img src={wineSippersLogo} alt="Wine Sippers" className="mt-0.5 h-5 w-[106.508px] object-contain object-left" />
         <button type="button" aria-label="설정" onClick={() => navigate('/mypage/settings')} className="flex size-6 items-center justify-center">
           <img src={settingsIcon} alt="" className="size-6" aria-hidden="true" />
         </button>
@@ -275,28 +277,34 @@ function Mypage() {
 
       <main className="px-5 pt-7">
         <section>
-          <h1 className="font-playfair-display text-[30px] leading-[normal] font-bold text-[#851317]">My Cellar</h1>
+          <h1 className={`font-playfair-display leading-[normal] font-normal text-[#851317] ${activeTab === 'feed' ? 'text-[30px]' : 'text-[32px]'}`}>My Cellar</h1>
         </section>
 
-        <section className="mt-[34px]">
-          <div className="flex items-start gap-[22px]">
-            <div className="relative size-[111px] shrink-0">
-              <div className="absolute inset-0 rounded-full border-[3.33px] border-[#841317]" aria-hidden="true" />
-              <img src={avatarImage} alt="Sora Choi" className="absolute inset-[6px] size-[99px] rounded-full object-cover" />
+        <section className={activeTab === 'feed' ? 'mt-[53px]' : 'mt-[51px]'}>
+          <div className="flex items-start gap-[3px]">
+            <div className="relative size-[111px] shrink-0" data-node-id="1546:5583">
+              <img src={profileStoryRing} alt="" className="absolute inset-0 size-[111px] max-w-none" aria-hidden="true" />
+              <div className="absolute top-1.5 left-[7px] h-[99px] w-[97px] overflow-hidden rounded-[50px]" data-node-id="1546:5566">
+                <img
+                  src={avatarImage}
+                  alt="Sora Choi"
+                  className="absolute top-[0.47%] left-[-6.93%] h-[146.46%] w-[119.59%] max-w-none"
+                />
+              </div>
             </div>
 
-            <div className="mt-[21px] flex flex-col gap-[11px]">
-              <strong className="text-base leading-[normal] font-bold tracking-[-0.32px] whitespace-nowrap text-[#121212]">Sora Choi</strong>
-              <div className="flex items-center gap-[26px]">
-                <div className="flex flex-col items-center gap-[5px]">
+            <div className="mt-[21px] flex flex-1 flex-col gap-[11px]">
+              <strong className="ml-[14px] text-base leading-[normal] font-bold tracking-[-0.32px] whitespace-nowrap text-[#121212]">Sora Choi</strong>
+              <div className="flex items-center justify-between">
+                <div className="flex w-[57px] flex-col items-center gap-[5px]">
+                  <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">12</strong>
+                  <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">피드</span>
+                </div>
+                <div className="flex w-[58px] flex-col items-center gap-[5px]">
                   <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">128</strong>
                   <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">팔로워</span>
                 </div>
-                <div className="flex flex-col items-center gap-[5px]">
-                  <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">12</strong>
-                  <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">포스트</span>
-                </div>
-                <div className="flex flex-col items-center gap-[5px]">
+                <div className="flex w-[57px] flex-col items-center gap-[5px]">
                   <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">96</strong>
                   <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">팔로잉</span>
                 </div>
@@ -304,37 +312,43 @@ function Mypage() {
             </div>
           </div>
 
-          <div className="mt-[21px] flex flex-col gap-1">
+          <div className="mt-[21px] flex flex-col">
             <p className="text-[12px] leading-[normal] font-normal tracking-[-0.24px] whitespace-pre text-[#a8a8a8]">{`#레드와인  #소비뇽  #과일안주러버`}</p>
-            <p className="mt-[5px] text-sm leading-[normal] font-normal tracking-[-0.28px] text-[#717171]">양재역 바이너들 dm</p>
+            <p className="mt-[4px] text-sm leading-[normal] font-normal tracking-[-0.28px] text-[#717171]">“Good wine, Good mood”</p>
           </div>
 
-          <div className="mt-[25px] flex gap-[19px]">
-            <div className="flex w-[78px] flex-col items-center gap-[3px]">
-              <div className="flex size-[78px] flex-col items-center justify-center gap-1 rounded-full bg-[#f9f7f6]">
-                <img src={badgeIcon} alt="" className="size-6" aria-hidden="true" />
-                <span className="text-[12px] leading-[normal] font-normal tracking-[-0.24px] text-[#851317]">12개</span>
-              </div>
+          <div className="mt-[19px] grid grid-cols-2 gap-[4px]">
+            <button type="button" onClick={() => navigate('/profile/settings')} className="h-[34px] rounded-lg bg-[#f9f7f6] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 편집</button>
+            <button type="button" className="h-[34px] rounded-lg bg-[#f9f7f6] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 공유</button>
+          </div>
+
+          <div className="mt-[25px] flex gap-[15px]">
+            <div className="flex w-[78px] flex-col items-center gap-[7px]">
+              <img src={badgesCircleImage} alt="" className="size-[78px] rounded-full object-cover" aria-hidden="true" />
               <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Badges</span>
             </div>
-
-            <div className="flex w-[78px] flex-col items-center gap-[3px]">
-              <div className="relative size-[78px] shrink-0 overflow-hidden rounded-full">
-                <img src={challengeCircleImage} alt="" className="absolute inset-0 size-full object-cover" aria-hidden="true" />
-                <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
-                <span className="absolute inset-0 flex items-center justify-center text-[12px] leading-[normal] font-medium tracking-[-0.24px] text-white">참여중</span>
+            <div className="flex w-[86px] flex-col items-center gap-[4px]">
+              <div className="relative -top-1 h-[85px] w-[86px] shrink-0" data-node-id="1546:5406">
+                <img src={challengeRingImage} alt="" className="absolute inset-0 h-[85px] w-[86px] max-w-none" aria-hidden="true" />
+                <div className="absolute top-1 left-1 h-[77px] w-[78px] overflow-hidden rounded-[50px]" data-node-id="1546:5407">
+                  <img
+                    src={challengeCircleImage}
+                    alt=""
+                    className="absolute top-[0.08%] left-[-16.67%] h-[168.83%] w-[134.62%] max-w-none"
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
               <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Challenges</span>
             </div>
-
-            <div className="flex w-[78px] flex-col items-center gap-[3px]">
-              <div className="size-[78px] shrink-0 rounded-full bg-[#d9d9d9]" aria-hidden="true" />
-              <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">My snaps</span>
+            <div className="flex w-[78px] flex-col items-center gap-[7px]">
+              <img src={highlightsCircleImage} alt="" className="size-[78px] rounded-full object-cover" aria-hidden="true" />
+              <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Highlights</span>
             </div>
           </div>
         </section>
 
-        <section className="mt-[42px]">
+        <section className="mt-[49px]">
           <div className="grid h-[30px] grid-cols-3 border-b border-black/15">
             <button
               type="button"
@@ -342,7 +356,7 @@ function Mypage() {
               aria-selected={activeTab === 'feed'}
               className={`relative text-sm leading-[normal] tracking-[-0.28px] ${activeTab === 'feed' ? 'font-bold text-[#851317]' : 'font-normal text-[#6e6e6e]'}`}
             >
-              내가 쓴 피드&nbsp; 12
+              내가 쓴 피드
               {activeTab === 'feed' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#851317]" />}
             </button>
             <button
@@ -351,7 +365,7 @@ function Mypage() {
               aria-selected={activeTab === 'wine'}
               className={`relative text-sm leading-[normal] tracking-[-0.28px] ${activeTab === 'wine' ? 'font-bold text-[#831317]' : 'font-normal text-[#6e6e6e]'}`}
             >
-              마신 와인&nbsp; 156
+              와인 기록
               {activeTab === 'wine' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#851317]" />}
             </button>
             <button
@@ -360,33 +374,44 @@ function Mypage() {
               aria-selected={activeTab === 'likes'}
               className={`relative text-sm leading-[normal] tracking-[-0.28px] ${activeTab === 'likes' ? 'font-bold text-[#851317]' : 'font-normal text-[#6e6e6e]'}`}
             >
-              좋아요&nbsp; 89
+              좋아요
               {activeTab === 'likes' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#851317]" />}
             </button>
           </div>
 
           {activeTab === 'feed' ? (
             <div className="mt-5 grid w-full grid-cols-3 gap-px">
-              {feedImages.map((image, index) => (
+              {feedItems.map((item, index) => (
                 <button
-                  key={`${image}-${index}`}
+                  key={`${item.image}-${index}`}
                   type="button"
                   aria-label={`내 피드 ${index + 1} 확대 보기`}
                   onClick={() => setSelectedFeedIndex(index)}
-                  className="aspect-[129.333/154.333] overflow-hidden"
+                  className="relative h-[154.333px] overflow-hidden"
                 >
-                  <img src={image} alt={`내 피드 ${index + 1}`} className="size-full object-cover" />
+                  <img src={item.image} alt={`내 피드 ${index + 1}`} className={item.crop} />
+                  {item.multiple && (
+                    <span className="absolute top-[9px] right-[7px] size-[17px]" aria-hidden="true">
+                      <span className="absolute top-0 left-0 size-[13px] rounded-[3px] bg-white" />
+                      <img src={multipleFeedIcon} alt="" className="absolute top-[5px] left-[4.5px] h-[10px] w-[10.5px] max-w-none" />
+                    </span>
+                  )}
                 </button>
               ))}
             </div>
           ) : activeTab === 'wine' ? (
             <div className="mt-5 flex flex-col gap-3.5">
               {wineReviews.map((review) => <WineReviewCard key={review.name} review={review} />)}
-              <EmptyWineReviewCard />
+              <button type="button" className="flex h-[50px] w-full items-center justify-center rounded-xl bg-[#831317] text-base leading-none font-bold text-white">
+                기록쓰기
+              </button>
             </div>
           ) : (
-            <div className="mt-5 flex flex-col gap-3.5">
-              {likedWines.map((wine) => <LikedWineCard key={wine.name} wine={wine} />)}
+            <div className="mt-[23px]">
+              <p className="h-5 text-[11px] leading-5 font-normal text-[#534343]">전체 24종</p>
+              <div className="mt-5">
+                {likedWines.map((wine) => <LikedWineCard key={wine.name} wine={wine} />)}
+              </div>
             </div>
           )}
         </section>
