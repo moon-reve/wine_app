@@ -6,6 +6,16 @@ function Splash() {
   const navigate = useNavigate()
 
   useEffect(() => {
+    if (!document.querySelector('#onboarding-video-prefetch')) {
+      const onboardingVideoPrefetch = document.createElement('link')
+      onboardingVideoPrefetch.id = 'onboarding-video-prefetch'
+      onboardingVideoPrefetch.rel = 'prefetch'
+      onboardingVideoPrefetch.as = 'video'
+      onboardingVideoPrefetch.href = '/videos/onboarding.mp4'
+      onboardingVideoPrefetch.type = 'video/mp4'
+      document.head.append(onboardingVideoPrefetch)
+    }
+
     const transitionTimer = window.setTimeout(() => {
       navigate('/onboarding', { replace: true })
     }, 2000)
