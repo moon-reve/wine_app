@@ -85,18 +85,18 @@
     zoom: 1;
   }
 
-  .settings-shell main .font-playfair-display {
+  .settings-shell:not([data-node-id="1546:5054"]) main .font-playfair-display {
     font-size: var(--settings-title-size) !important;
   }
 
-  .settings-shell main :is(p, label, dt, dd, li),
-  .settings-shell main .settings-panel span,
-  .settings-shell main .settings-panel button {
+  .settings-shell:not([data-node-id="1546:5054"]) main :is(p, label, dt, dd, li),
+  .settings-shell:not([data-node-id="1546:5054"]) main .settings-panel span,
+  .settings-shell:not([data-node-id="1546:5054"]) main .settings-panel button {
     font-size: var(--settings-body-size) !important;
   }
 
-  .settings-shell main .settings-panel > button,
-  .settings-shell main .settings-panel > div {
+  .settings-shell:not([data-node-id="1546:5054"]) main .settings-panel > button,
+  .settings-shell:not([data-node-id="1546:5054"]) main .settings-panel > div {
     min-height: var(--settings-row-height);
     height: auto;
   }

@@ -1,5 +1,23 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import settingsBackIcon from '../assets/mypage/settings-back.svg'
+import settingsChevronIcon from '../assets/mypage/settings-chevron.svg'
+import settingsAccountIcon from '../assets/mypage/settings-account.svg'
+import settingsLockIcon from '../assets/mypage/settings-lock.svg'
+import settingsMailIcon from '../assets/mypage/settings-mail.svg'
+import settingsWithdrawalIcon from '../assets/mypage/settings-withdrawal.svg'
+import settingsBellIcon from '../assets/mypage/settings-bell.svg'
+import settingsEmailReadIcon from '../assets/mypage/settings-email-read.svg'
+import settingsHeartIcon from '../assets/mypage/settings-heart.svg'
+import settingsChatIcon from '../assets/mypage/settings-chat.svg'
+import settingsFollowingIcon from '../assets/mypage/settings-following.svg'
+import settingsLanguageIcon from '../assets/mypage/settings-language.svg'
+import settingsMoonIcon from '../assets/mypage/settings-moon.svg'
+import settingsFontIcon from '../assets/mypage/settings-font.svg'
+import settingsBlockedIcon from '../assets/mypage/settings-blocked.svg'
+import settingsCallIcon from '../assets/mypage/settings-call.svg'
+import settingsContractIcon from '../assets/mypage/settings-contract.svg'
+import settingsPrivacyIcon from '../assets/mypage/settings-privacy.svg'
 
 type SettingsView = 'main' | 'account' | 'password' | 'email' | 'withdrawal' | 'push' | 'language' | 'theme' | 'font' | 'blocked' | 'support' | 'terms' | 'privacy'
 type ThemeMode = '시스템 설정 따름' | '라이트' | '다크'
@@ -14,6 +32,7 @@ type IconName =
   | 'account'
   | 'lock'
   | 'mail'
+  | 'emailRead'
   | 'withdrawal'
   | 'bell'
   | 'heart'
@@ -42,26 +61,26 @@ function Arrow({ direction = 'right' }: { direction?: 'right' | 'left' }) {
 }
 
 function SettingIcon({ name }: { name: IconName }) {
-  const common = { stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
-  const paths: Record<IconName, React.ReactNode> = {
-    account: <><circle cx="9" cy="7" r="3" {...common} /><path d="M3.8 17c.6-3 2.4-4.5 5.2-4.5 1.5 0 2.7.4 3.6 1.1M15.5 13.5l4-4 2 2-4 4-3 .9Z" {...common} /></>,
-    lock: <><rect x="4" y="10" width="15" height="10" rx="2" {...common} /><path d="M8 10V7a4 4 0 0 1 7.2-2.4" {...common} /><circle cx="11.5" cy="15" r="1" fill="currentColor" stroke="none" /></>,
-    mail: <><rect x="3" y="5" width="18" height="14" rx="1.5" {...common} /><path d="m4 7 8 6 8-6" {...common} /></>,
-    withdrawal: <><circle cx="10" cy="7" r="3" {...common} /><path d="M4 18c.5-3.1 2.6-5 6-5 1.2 0 2.2.2 3 .7M3 3l18 18" {...common} /></>,
-    bell: <><path d="M6 17h12l-1.5-2.2V10a4.5 4.5 0 0 0-9 0v4.8Z" {...common} /><path d="M10 20h4" {...common} /></>,
-    heart: <path d="M12 20S4 15.6 4 9.5A4.5 4.5 0 0 1 12 6.7a4.5 4.5 0 0 1 8 2.8C20 15.6 12 20 12 20Z" {...common} />,
-    comment: <><path d="M4 4h16v13H9l-5 3Z" {...common} /><path d="M8 8h8M8 12h6" {...common} /></>,
-    following: <><circle cx="9" cy="7" r="3" {...common} /><path d="M3.5 18c.5-3.2 2.4-5 5.5-5 1.7 0 3 .5 4 1.4" {...common} /><circle cx="17" cy="15" r="4" {...common} /><path d="m15.4 15 1.1 1.1 2.1-2.3" {...common} /></>,
-    globe: <><circle cx="12" cy="12" r="9" {...common} /><path d="M3.5 12h17M12 3c2.4 2.5 3.5 5.5 3.5 9S14.4 18.5 12 21M12 3c-2.4 2.5-3.5 5.5-3.5 9S9.6 18.5 12 21" {...common} /></>,
-    moon: <path d="M20 15.5A8 8 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z" {...common} />,
-    font: <><path d="M4 18 9 5l5 13M6 13h6M16 8h6M19 5v6" {...common} /></>,
-    blocked: <><circle cx="12" cy="12" r="8" {...common} /><path d="m6.5 6.5 11 11M10 8a3 3 0 0 1 5 2.2M7.5 17c.5-2.8 2.1-4.2 4.5-4.2" {...common} /></>,
-    phone: <path d="M7 3h3l1.2 5-2.1 1.5a15 15 0 0 0 5.4 5.4l1.5-2.1 5 1.2v3c0 2.2-1.8 4-4 4C9.3 21 3 14.7 3 7a4 4 0 0 1 4-4Z" {...common} />,
-    terms: <><rect x="5" y="3" width="14" height="18" rx="1.5" {...common} /><path d="M9 8h6M9 12h6M9 16h4" {...common} /></>,
-    privacy: <><path d="M12 3 5 6v5c0 5 2.7 8.4 7 10 4.3-1.6 7-5 7-10V6Z" {...common} /><rect x="10" y="11" width="6" height="5" rx="1" {...common} /><path d="M11.5 11V9.8a1.5 1.5 0 0 1 3 0V11" {...common} /></>,
+  const icons: Record<IconName, string> = {
+    account: settingsAccountIcon,
+    lock: settingsLockIcon,
+    mail: settingsMailIcon,
+    emailRead: settingsEmailReadIcon,
+    withdrawal: settingsWithdrawalIcon,
+    bell: settingsBellIcon,
+    heart: settingsHeartIcon,
+    comment: settingsChatIcon,
+    following: settingsFollowingIcon,
+    globe: settingsLanguageIcon,
+    moon: settingsMoonIcon,
+    font: settingsFontIcon,
+    blocked: settingsBlockedIcon,
+    phone: settingsCallIcon,
+    terms: settingsContractIcon,
+    privacy: settingsPrivacyIcon,
   }
 
-  return <svg viewBox="0 0 24 24" className="size-6" fill="none" aria-hidden="true">{paths[name]}</svg>
+  return <img src={icons[name]} alt="" className="size-6 max-w-none" aria-hidden="true" />
 }
 
 function Toggle({ checked, onChange, label }: { checked: boolean; onChange: () => void; label: string }) {
@@ -72,19 +91,19 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: () =
       aria-checked={checked}
       aria-label={label}
       onClick={onChange}
-      className={`relative h-8 w-[52px] shrink-0 rounded-full transition-colors ${checked ? 'bg-[#a1121a]' : 'bg-[#dfe3ea]'}`}
+      className={`relative h-7 w-12 shrink-0 rounded-[14px] transition-colors ${checked ? 'bg-[#a1121a]' : 'bg-[#dfe3ea]'}`}
     >
-      <span className={`absolute top-1 size-6 rounded-full bg-white shadow-sm transition-[left] ${checked ? 'left-6' : 'left-1'}`} />
+      <span className={`absolute top-[3px] size-[22px] rounded-full bg-white shadow-sm transition-[left] ${checked ? 'left-[23px]' : 'left-[3px]'}`} />
     </button>
   )
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="mb-3 text-[15px] font-bold tracking-[-0.3px] text-[#98151b]">{children}</h2>
+  return <h2 className="mb-[10px] text-sm leading-[normal] font-bold text-[#851317]">{children}</h2>
 }
 
 function SettingsPanel({ children }: { children: React.ReactNode }) {
-  return <div className="settings-panel overflow-hidden rounded-[14px] bg-[#faf8f8] px-4">{children}</div>
+  return <div className="settings-panel overflow-hidden rounded-xl bg-[#f9f7f7] px-4 pt-[15px] pb-[17px]">{children}</div>
 }
 
 type RowProps = {
@@ -99,35 +118,38 @@ type RowProps = {
 function SettingsRow({ icon, label, value, onClick, toggle, last = false }: RowProps) {
   const content = (
     <>
-      <span className="flex items-center gap-4">
-        <span className="text-[#202024]"><SettingIcon name={icon} /></span>
-        <span className="text-[15px] font-medium tracking-[-0.3px] text-[#29282b]">{label}</span>
+      <span className="flex items-center gap-[10px]">
+        <span><SettingIcon name={icon} /></span>
+        <span className="text-sm leading-[normal] font-medium text-[#121212]">{label}</span>
       </span>
       {toggle ? (
         <Toggle checked={toggle.checked} onChange={toggle.onChange} label={label} />
       ) : (
-        <span className="flex items-center gap-2 text-[#98151b]">
-          {value && <span className="text-[13px] font-medium tracking-[-0.26px]">{value}</span>}
-          <Arrow />
+        <span className="flex items-center gap-[6px] text-[#851317]">
+          {value && <span className="text-xs leading-[normal] font-normal">{value}</span>}
+          <img src={settingsChevronIcon} alt="" className="size-6 max-w-none" aria-hidden="true" />
         </span>
       )}
     </>
   )
 
   return (
-    <div className={`flex h-[61px] items-center justify-between ${last ? '' : 'border-b border-[#e5dfdf]'}`}>
-      {onClick ? <button type="button" onClick={onClick} className="flex size-full items-center justify-between text-left">{content}</button> : content}
+    <div className={last ? 'h-6' : 'flex h-[57px] flex-col gap-4'}>
+      <div className="flex h-6 w-full items-center justify-between">
+        {onClick ? <button type="button" onClick={onClick} className="flex size-full items-center justify-between text-left">{content}</button> : content}
+      </div>
+      {!last && <div className="h-px w-full shrink-0 bg-[#e5e0e0]" />}
     </div>
   )
 }
 
 function PageHeader({ title, onBack }: { title: string; onBack: () => void }) {
   return (
-    <header className="sticky top-0 z-20 flex h-[58px] items-center justify-center bg-white/95 px-5 backdrop-blur-sm">
-      <button type="button" onClick={onBack} aria-label="뒤로가기" className="absolute left-5 flex size-9 items-center justify-center text-[#98151b]">
-        <Arrow direction="left" />
+    <header className="sticky top-0 z-20 flex h-14 items-center justify-center bg-white px-5">
+      <button type="button" onClick={onBack} aria-label="뒤로가기" className="absolute left-5 flex size-6 items-center justify-center">
+        <img src={settingsBackIcon} alt="" className="size-6" aria-hidden="true" />
       </button>
-      <h1 className="text-lg font-bold tracking-[-0.36px] text-[#98151b]">{title}</h1>
+      <h1 className="text-lg leading-[normal] font-bold text-[#851317]">{title}</h1>
     </header>
   )
 }
@@ -699,13 +721,13 @@ function MainSettings({ setView, onBack, notify, notifications, setNotifications
   return (
     <>
       <PageHeader title="설정" onBack={onBack} />
-      <main className="px-5 pb-32 pt-7">
+      <main className="px-5 pb-[120px] pt-[26px]">
         <section>
-          <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Settings</h2>
-          <p className="mt-1 text-sm tracking-[-0.28px] text-[#3f3c3c]">계정과 알림, 앱 사용 환경을 관리하세요.</p>
+          <h2 className="font-playfair-display text-[32px] leading-[normal] font-normal text-[#851317]">Settings</h2>
+          <p className="mt-[5px] text-sm leading-[normal] font-normal text-[#121212]">계정과 알림, 앱 사용 환경을 관리하세요.</p>
         </section>
 
-        <section className="mt-11">
+        <section className="mt-[37px]">
           <SectionTitle>계정</SectionTitle>
           <SettingsPanel>
             <SettingsRow icon="account" label="계정 정보" onClick={() => setView('account')} />
@@ -715,27 +737,27 @@ function MainSettings({ setView, onBack, notify, notifications, setNotifications
           </SettingsPanel>
         </section>
 
-        <section className="mt-10">
+        <section className="mt-[38px]">
           <SectionTitle>알림</SectionTitle>
           <SettingsPanel>
             <SettingsRow icon="bell" label="푸시 알림" onClick={() => setView('push')} />
-            <SettingsRow icon="mail" label="이메일 알림" toggle={{ checked: notifications.email, onChange: () => toggleNotification('email') }} />
+            <SettingsRow icon="emailRead" label="이메일 알림" toggle={{ checked: notifications.email, onChange: () => toggleNotification('email') }} />
             <SettingsRow icon="heart" label="좋아요 알림" toggle={{ checked: notifications.like, onChange: () => toggleNotification('like') }} />
             <SettingsRow icon="comment" label="댓글 알림" toggle={{ checked: notifications.comment, onChange: () => toggleNotification('comment') }} />
             <SettingsRow icon="following" label="팔로잉 알림" last toggle={{ checked: notifications.following, onChange: () => toggleNotification('following') }} />
           </SettingsPanel>
         </section>
 
-        <section className="mt-10">
+        <section className="mt-[38px]">
           <SectionTitle>개인 설정</SectionTitle>
           <SettingsPanel>
             <SettingsRow icon="globe" label="언어 설정" value={language} onClick={() => setView('language')} />
-            <SettingsRow icon="moon" label="다크 모드" value={theme} onClick={() => setView('theme')} />
+            <SettingsRow icon="moon" label="다크 모드" toggle={{ checked: theme === '다크', onChange: () => setView('theme') }} />
             <SettingsRow icon="font" label="글자 크기" value={fontSize} onClick={() => setView('font')} last />
           </SettingsPanel>
         </section>
 
-        <section className="mt-10">
+        <section className="mt-[38px]">
           <SectionTitle>기타</SectionTitle>
           <SettingsPanel>
             <SettingsRow icon="blocked" label="차단한 사용자" onClick={() => setView('blocked')} />
@@ -745,7 +767,7 @@ function MainSettings({ setView, onBack, notify, notifications, setNotifications
           </SettingsPanel>
         </section>
 
-        <button type="button" onClick={() => setShowLogout(true)} className="mt-9 h-[52px] w-full rounded-xl border border-[#a1121a] text-base font-medium text-[#a1121a]">로그아웃</button>
+        <button type="button" onClick={() => setShowLogout(true)} className="mt-[25px] h-[52px] w-full text-sm leading-[normal] font-medium text-[#828282]">로그아웃</button>
       </main>
       {showLogout && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/45 px-6" role="dialog" aria-modal="true" aria-labelledby="logout-title">
@@ -775,7 +797,7 @@ export default function MypageSettings() {
     push: { '추천 와인': true, '이벤트': true, '할인': false, '공지사항': true, 'AI 추천': true, '시스템 알림': true },
   })
   const [language, setLanguage] = useState('한국어')
-  const [theme, setTheme] = useState<ThemeMode>('시스템 설정 따름')
+  const [theme, setTheme] = useState<ThemeMode>('라이트')
   const [fontSize, setFontSize] = useState('보통')
 
   const notify = (message: string) => {
@@ -789,7 +811,11 @@ export default function MypageSettings() {
   const dark = theme === '다크' || (theme === '시스템 설정 따름' && systemIsDark)
 
   return (
-    <div className={`settings-shell min-h-screen w-full bg-white text-[#202024] ${dark ? 'settings-dark' : ''}`} data-font-size={fontSize} data-node-id="770:524">
+    <div
+      className={`settings-shell min-h-screen w-full bg-white text-[#202024] ${dark ? 'settings-dark' : ''}`}
+      data-font-size={fontSize}
+      data-node-id={view === 'main' ? '1546:5054' : 'settings-detail'}
+    >
       {view === 'main' && <MainSettings setView={setView} onBack={goBack} notify={notify} notifications={notifications} setNotifications={setNotifications} language={language} theme={theme} fontSize={fontSize} onLogout={() => navigate('/')} />}
       {view === 'account' && <AccountInfo onBack={goBack} />}
       {view === 'password' && <PasswordChange onBack={goBack} notify={notify} />}
