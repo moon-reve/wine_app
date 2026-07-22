@@ -2,11 +2,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import avatar from '../assets/wine-detail-rose/avatar.png'
 import backIcon from '../assets/wine-detail-white/back.svg'
 import bookmarkIcon from '../assets/wine-detail-white/bookmark.svg'
-import grapesBerry from '../assets/wine-detail-rose/grapes-berry.png'
-import grapesLeaf from '../assets/wine-detail-rose/grapes-leaf.png'
-import grapesMain from '../assets/wine-detail-rose/grapes-main.png'
-import grapesSmall from '../assets/wine-detail-rose/grapes-small.png'
 import heartIcon from '../assets/wine-detail-white/heart.svg'
+import roseGrapes from '../assets/wine-detail-rose/rose-podo.png'
 import { formatPrice, formatStars, getWineDetailData, resolveWineImage } from '../data/wineDetailData'
 
 function Divider({ top }: { top: number }) {
@@ -75,25 +72,8 @@ export default function WineDetailRose() {
       <div className="absolute top-[152px] left-[23px] h-[579px] w-[207px]">
         <img src={heroWineImage} alt={wine.nameKo} className="size-full object-contain object-bottom" />
       </div>
-      <div className="absolute top-[548px] left-[82px] flex h-[226.34px] w-[329.157px] items-center justify-center" aria-hidden="true">
-        <div className="h-[301.253px] w-[136.407px] rotate-[71.17deg]">
-          <img src={grapesMain} alt="" className="size-full object-contain object-bottom" />
-        </div>
-      </div>
-      <div className="absolute top-[540px] left-[244.47px] flex h-[201.888px] w-[156.663px] items-center justify-center" aria-hidden="true">
-        <div className="h-[104.992px] w-[177.5px] rotate-[71.17deg]">
-          <img src={grapesLeaf} alt="" className="size-full object-contain object-bottom" />
-        </div>
-      </div>
-      <div className="absolute top-[600px] left-[273.13px] flex h-[174.209px] w-[123.219px] items-center justify-center" aria-hidden="true">
-        <div className="h-[157.731px] w-[88.081px] -rotate-[13.82deg]">
-          <img src={grapesSmall} alt="" className="size-full object-cover" />
-        </div>
-      </div>
-      <div className="absolute top-[649.44px] left-[322.51px] flex size-[110.616px] items-center justify-center" aria-hidden="true">
-        <div className="size-[95.637px] -rotate-[9.87deg]">
-          <img src={grapesBerry} alt="" className="size-full object-cover" />
-        </div>
+      <div className="absolute top-[540px] left-[82px] h-[235px] w-[348px]" aria-hidden="true">
+        <img src={roseGrapes} alt="" className="size-full object-cover" />
       </div>
 
       <main className="absolute top-[742px] left-0 h-[2571px] w-full overflow-hidden">
