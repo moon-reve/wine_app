@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import reviews from '../../dummy data/reviews.json'
 import avatar from '../assets/wine-detail-white/avatar.svg'
 import backIcon from '../assets/wine-detail-white/back.svg'
 import bookmarkIcon from '../assets/wine-detail-white/bookmark.svg'
@@ -7,6 +8,10 @@ import heartIcon from '../assets/wine-detail-white/heart.svg'
 import heroWine from '../assets/wine-detail-white/hero-wine.png'
 import recommend1 from '../assets/wine-detail-white/recommend-1.png'
 import recommend3 from '../assets/wine-detail-white/recommend-3.png'
+import { getFrequentReviewKeywords } from '../utils/reviewKeywords'
+
+const detailWineId = 'wine_025'
+const reviewKeywords = getFrequentReviewKeywords(reviews, detailWineId)
 
 const info = [
   ['국가', '프랑스'], ['생산지역', '부르고뉴'], ['와이너리', 'Vin De Rolfcgone'],
@@ -114,7 +119,11 @@ export default function WineDetailWhite() {
         <section className="absolute top-[903px] left-5 flex w-[390px] flex-col gap-3.5">
           <div className="flex items-center justify-between"><h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.32px]">리뷰</h2><strong className="text-[16px] leading-[1.2] text-[#831317]">★ 4.8</strong></div>
           <p className="text-[12px] leading-[1.2] font-medium tracking-[-0.24px] text-[#737373]">많이 언급된 키워드</p>
-          <div className="flex gap-2"><Chip active>#꽃향</Chip><Chip active>#깔끔한산미</Chip><Chip active>#홈파티</Chip><Chip active>#가성비</Chip></div>
+          {reviewKeywords.length > 0 && (
+            <div className="flex gap-2">
+              {reviewKeywords.map((keyword) => <Chip key={keyword} active>#{keyword}</Chip>)}
+            </div>
+          )}
           <Review stars="★★★★★">꽃향이 정말 풍부하고 홈파티용으로도 만족스러웠어요.</Review>
           <Review stars="★★★★☆">과일하고 정말 잘 어울렸습니다.</Review>
           <button type="button" className="flex h-10 items-center justify-center rounded-xl border border-[#831317] text-[14px] leading-none font-bold tracking-[-0.28px] text-[#831317]">리뷰 더보기</button>
