@@ -425,9 +425,10 @@ function Feed() {
     <div className="min-h-screen w-full bg-white text-[#0d0d0d]" data-node-id={isGridView ? '1546:4105' : '1546:3969'}>
       <LoungeHeader />
       <main className="w-full px-5 pt-5 pb-8">
-        <h1 className="font-playfair-display text-[32px] leading-[1.3] font-normal tracking-[-0.64px] text-[#831317]">Lounge</h1>
-
-        <div className="mt-[57px]"><LoungeTabs activeTab="피드" /></div>
+        <div className="flex w-full flex-col gap-7">
+          <h1 className="font-playfair text-[32px] leading-[1.3] tracking-[-0.64px] text-[#831317]">Lounge</h1>
+          <LoungeTabs activeTab="피드" />
+        </div>
 
         <div className="mt-5 flex justify-end">
           <button type="button" aria-label={isGridView ? '피드 목록으로 보기' : '피드 모아 보기'} aria-pressed={isGridView} onClick={() => setIsGridView((current) => !current)} className="h-[19px] w-[18px]">

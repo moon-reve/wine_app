@@ -48,7 +48,7 @@ function AppLayout() {
   }, [isQuickMenuOpen])
 
   return (
-    <div className={`mx-auto min-h-screen w-full max-w-107.5 pb-20 ${isLightPage ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
+    <div className={`mx-auto min-h-screen w-full max-w-107.5 ${isList ? '' : 'pb-20'} ${isLightPage ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
       <Outlet />
       {isQuickMenuOpen ? (
         <button
