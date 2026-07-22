@@ -19,6 +19,8 @@ import Product from './pages/Product'
 import Magazine from './pages/Magazine'
 import Event from './pages/Event'
 import Chatbot from './pages/Chatbot'
+import CameraFlow from './pages/CameraFlow'
+import WineRecord from './pages/WineRecord'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -41,6 +43,9 @@ function App() {
         <Route path="/product/chateau-margaux-2018" element={<Product />} />
         <Route path="/event/summer-wine-festival" element={<Event />} />
         <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/record" element={<WineRecord />} />
+        <Route path="/feed/create" element={<CameraFlow mode="feed" />} />
+        <Route path="/wine-search" element={<CameraFlow mode="search" />} />
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<List />} />

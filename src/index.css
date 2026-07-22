@@ -31,6 +31,12 @@
   html {
     background: #000;
     zoom: min(1, calc(100vw / 430px));
+    scrollbar-width: none;
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    display: none;
   }
 
   body {
@@ -45,6 +51,31 @@
     border: 0;
     background: transparent;
     cursor: pointer;
+  }
+
+  .wine-profile-range {
+    appearance: none;
+    border-radius: 9999px;
+    outline: none;
+  }
+
+  .wine-profile-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border: 2px solid white;
+    border-radius: 9999px;
+    background: #9b171c;
+    box-shadow: 0 0 0 1px rgb(155 23 28 / 35%);
+  }
+
+  .wine-profile-range::-moz-range-thumb {
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 9999px;
+    background: #9b171c;
+    box-shadow: 0 0 0 1px rgb(155 23 28 / 35%);
   }
 }
 

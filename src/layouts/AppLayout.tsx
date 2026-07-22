@@ -24,9 +24,9 @@ function AppLayout() {
   const handleQuickActionClick = (action: QuickAction) => {
     setIsQuickMenuOpen(false)
 
-    if (action === '기록') navigate('/mypage')
-    if (action === '피드') navigate('/lounge')
-    if (action === '찾기') navigate('/search')
+    if (action === '기록') navigate('/record')
+    if (action === '피드') navigate('/feed/create')
+    if (action === '찾기') navigate('/wine-search')
   }
 
   useEffect(() => {
