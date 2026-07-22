@@ -23,6 +23,8 @@ import TodaysPick from "./pages/Today'spick"
 import ChallengeDetails from './pages/Challenge Details'
 import MagazineDetail from './pages/magazine Detail'
 import Chatbot from './pages/Chatbot'
+import CameraFlow from './pages/CameraFlow'
+import WineRecord from './pages/WineRecord'
 import Splash from './pages/Splash'
 import Onboarding from './pages/Onboarding'
 
@@ -54,6 +56,9 @@ function App() {
         <Route path="/todays-pick" element={<TodaysPick />} />
         <Route path="/challenge/continents" element={<ChallengeDetails />} />
         <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/record" element={<WineRecord />} />
+        <Route path="/feed/create" element={<CameraFlow mode="feed" />} />
+        <Route path="/wine-search" element={<CameraFlow mode="search" />} />
         <Route element={<AppLayout />}>
           <Route path="/home" element={<Home />} />
           <Route path="/list" element={<List />} />
