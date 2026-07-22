@@ -40,6 +40,7 @@ function Header({ tone = 'dark', titleColorClassName }: HeaderProps) {
         <button
           type="button"
           aria-label="Notifications"
+          onClick={() => navigate('/notifications')}
           className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
           data-node-id="577:112"
         >

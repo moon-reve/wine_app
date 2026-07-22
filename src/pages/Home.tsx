@@ -186,7 +186,9 @@ function Home() {
               오늘의 와인을 추천합니다.
             </p>
           </div>
-          <img src={iconArrowForward5} alt="" className="size-[3.721cqw]" />
+          <Link to="/todays-pick" aria-label="오늘의 추천 전체보기">
+            <img src={iconArrowForward5} alt="" className="size-[3.721cqw]" />
+          </Link>
         </div>
 
         <div className="mt-[8.372cqw] px-[4.651cqw]">
@@ -259,7 +261,9 @@ function Home() {
           >
             Challenge
           </h2>
-          <img src={iconArrowForward4} alt="" className="size-[3.721cqw]" />
+          <Link to="/challenge/continents" aria-label="챌린지 상세보기">
+            <img src={iconArrowForward4} alt="" className="size-[3.721cqw]" />
+          </Link>
         </div>
 
         <div className={`mt-[3.721cqw] flex gap-[1.860cqw] overflow-x-auto px-[4.651cqw] pb-[0.930cqw] ${noScrollbar}`}>
@@ -395,7 +399,7 @@ function Home() {
         ].map((card, i) => (
           <Link
             key={i}
-            to="/magazine"
+            to="/magazine/k-wine-road"
             aria-label="매거진 자세히 보기"
             className="relative block h-[114.884cqw] w-[90.698cqw] shrink-0 snap-start overflow-hidden no-underline"
           >

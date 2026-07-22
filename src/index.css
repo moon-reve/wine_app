@@ -1,6 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display+SC:wght@400;700&display=swap");
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Delmon Delicate Script";
+  src: url("./assets/fonts/Delmon Delicate Script.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: Pretendard, ui-sans-serif, system-ui, sans-serif;
   /* Playfair fonts have no Hangul glyphs — fall back to Pretendard (not a
@@ -10,6 +18,7 @@
   --font-playfair-display: "Playfair Display", Pretendard, ui-sans-serif, system-ui, sans-serif;
   --font-playfair-sc: "Playfair Display SC", Pretendard, ui-sans-serif, system-ui, sans-serif;
   --font-noto: "Noto Sans KR", Pretendard, ui-sans-serif, system-ui, sans-serif;
+  --font-delmon-script: "Delmon Delicate Script", "Playfair Display", serif;
 }
 
 @layer base {
