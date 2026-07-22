@@ -315,10 +315,10 @@ function FeedPost({ feed, index }: { feed: FigmaFeed; index: number }) {
         ) : null}
       </div>
 
-      {feed.images.length > 1 ? (
-        <div className="relative h-[54px]">
+      <div className="relative h-8">
+        {feed.images.length > 1 ? (
           <div
-            className="absolute top-6 left-1/2 flex h-1.5 -translate-x-1/2 items-center justify-between"
+            className="absolute top-[13px] left-1/2 flex h-1.5 -translate-x-1/2 items-center justify-between"
             style={{ width: feed.images.length === 9 ? 63 : 26 }}
             aria-label={`현재 사진 ${activeImageIndex + 1}/${feed.images.length}`}
           >
@@ -333,11 +333,16 @@ function FeedPost({ feed, index }: { feed: FigmaFeed; index: number }) {
               />
             ))}
           </div>
-        </div>
-      ) : null}
+        ) : null}
+      </div>
 
       <div className="relative h-[30px] w-full">
-        <img src={feedActions} alt="" aria-hidden="true" className="h-[30px] w-full" />
+        <img
+          src={feedActions}
+          alt=""
+          aria-hidden="true"
+          className="absolute top-1/2 left-0 h-[25.125px] w-[391px] max-w-none -translate-y-1/2"
+        />
         <button
           type="button"
           aria-label={liked ? '좋아요 취소' : '좋아요'}
@@ -345,7 +350,7 @@ function FeedPost({ feed, index }: { feed: FigmaFeed; index: number }) {
           onClick={() => setLiked((current) => !current)}
           className="absolute top-0 left-0 flex size-[30px] items-center justify-center bg-white"
         >
-          <img src={liked ? heartFilled : heartOutline} alt="" aria-hidden="true" className="size-6 object-fill" />
+          <img src={liked ? heartFilled : heartOutline} alt="" aria-hidden="true" className="size-6 object-contain" />
         </button>
         <button type="button" aria-label="카카오톡으로 공유" onClick={() => void handleShare()} className="absolute top-0 left-[42px] h-[30px] w-[31px]" />
         <button

@@ -292,7 +292,7 @@ function Mypage() {
 
       <main className="px-5 pt-7">
         <section>
-          <h1 className={`font-playfair-display leading-[normal] font-normal text-[#851317] ${activeTab === 'feed' ? 'text-[30px]' : 'text-[32px]'}`}>My Cellar</h1>
+          <h1 className="font-playfair text-[32px] leading-[1.3] font-normal tracking-[-0.64px] text-[#851317]">My Cellar</h1>
         </section>
 
         <section className={activeTab === 'feed' ? 'mt-[53px]' : 'mt-[51px]'}>
