@@ -144,11 +144,8 @@ function List() {
 
       <main className={`px-5 pt-5 ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
         <div className="flex items-center justify-between">
-          <h1
-            className="font-playfair text-[38px] leading-[1.6] font-bold text-[#831317]"
-            style={{ fontVariationSettings: '"opsz" 12, "wdth" 100' }}
-          >
-            LIST
+          <h1 className="font-playfair text-[32px] leading-[1.3] font-normal tracking-[-0.64px] text-[#831317]">
+            List
           </h1>
           {view === 'list' && (
             <button type="button" aria-label="필터" onClick={() => setIsFilterOpen(true)}>
