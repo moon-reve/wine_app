@@ -1,12 +1,11 @@
 import { useEffect } from 'react'
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
-import FeedDetail from './components/FeedDetail'
 import MeetingDetail from './components/MeetingDetail'
 import QuestionDetail from './components/QuestionDetail'
 import AppLayout from './layouts/AppLayout'
 import Home from './pages/Home'
 import List from './pages/List'
-import Feed from './pages/Feed'
+import Feed from './pages/Lounge Feed'
 import Meetings from './pages/Meetings'
 import QnA from './pages/QnA'
 import MeetingCreate from './pages/MeetingCreate'
@@ -53,7 +52,6 @@ function App() {
           <Route path="/magazine" element={<Magazine />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
-        <Route path="/feed/:feedId" element={<FeedDetail />} />
         <Route path="/question/:questionId" element={<QuestionDetail />} />
         <Route path="/meeting/:meetingId" element={<MeetingDetail />} />
         <Route path="*" element={<Navigate to="/" replace />} />

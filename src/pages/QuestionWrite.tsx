@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import ImageUploader from '../components/question/ImageUploader'
 import QuestionWriteHeader from '../components/question/QuestionWriteHeader'
 import TagSelector from '../components/question/TagSelector'
+import AppBottomSheet from '../components/AppBottomSheet'
 
 const FORM_ID = 'question-write-form'
 const TAGS = ['빈티지확인', '가격문의', '페어링', '보관법'] as const
@@ -14,8 +15,9 @@ function QuestionWrite() {
   const [content, setContent] = useState('')
   const [selectedTags, setSelectedTags] = useState<string[]>(['빈티지확인'])
   const [isComplete, setIsComplete] = useState(false)
+  const [isConfirmOpen, setIsConfirmOpen] = useState(false)
 
-  const canSubmit = title.trim().length > 0 && content.trim().length >= 10
+  const canSubmit = title.trim().length > 0 && content.trim().length > 0
 
   useEffect(() => {
     if (!isComplete) return
@@ -41,8 +43,7 @@ function QuestionWrite() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (!canSubmit) return
-
-    handleRegistrationComplete()
+    setIsConfirmOpen(true)
   }
 
   return (
@@ -108,6 +109,18 @@ function QuestionWrite() {
           </p>
         )}
       </form>
+      <AppBottomSheet
+        open={isConfirmOpen}
+        title="질문을 등록하시겠습니까?"
+        message="등록한 질문은 Q&A 라운지에 공개됩니다."
+        confirmLabel="등록"
+        cancelLabel="취소"
+        onClose={() => setIsConfirmOpen(false)}
+        onConfirm={() => {
+          setIsConfirmOpen(false)
+          handleRegistrationComplete()
+        }}
+      />
     </div>
   )
 }
