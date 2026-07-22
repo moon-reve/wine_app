@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react'
 import type { ButtonHTMLAttributes, CSSProperties } from 'react'
 import ChatbotOrb from './ChatbotOrb'
 
@@ -131,27 +130,6 @@ export default function BottomNav({
   expanded = false,
   className = '',
 }: NavProps) {
-  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-  const didLongPress = useRef(false)
-
-  const cancelLongPress = () => {
-    if (longPressTimer.current) clearTimeout(longPressTimer.current)
-    longPressTimer.current = null
-  }
-
-  const startLongPress = () => {
-    if (!expanded) return
-
-    cancelLongPress()
-    didLongPress.current = false
-    longPressTimer.current = setTimeout(() => {
-      didLongPress.current = true
-      onChatbotOpen?.()
-    }, 600)
-  }
-
-  useEffect(() => cancelLongPress, [])
-
   return (
     <nav
       aria-label="하단 메뉴"
@@ -195,25 +173,15 @@ export default function BottomNav({
 
       <button
         type="button"
-        aria-label={expanded ? '빠른 메뉴 닫기' : '빠른 메뉴 열기'}
+        aria-label={expanded ? 'AI 챗봇 열기' : '빠른 메뉴 열기'}
         aria-expanded={expanded}
         aria-controls="bottom-nav-quick-actions"
         onClick={() => {
-          if (didLongPress.current) {
-            didLongPress.current = false
-            return
-          }
-          onAddClick?.()
-        }}
-        onPointerDown={startLongPress}
-        onPointerUp={cancelLongPress}
-        onPointerCancel={cancelLongPress}
-        onPointerLeave={cancelLongPress}
-        onContextMenu={(event) => {
-          if (expanded) event.preventDefault()
+          if (expanded) onChatbotOpen?.()
+          else onAddClick?.()
         }}
         className={`absolute left-1/2 -translate-x-1/2 select-none rounded-full transition-[transform,filter] duration-100 ease-out hover:scale-105 active:scale-[0.95] active:brightness-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317] ${
-          expanded ? '-top-3 size-[88px] touch-none' : 'top-0 size-16 touch-manipulation'
+          expanded ? '-top-3 size-[88px] touch-manipulation' : 'top-0 size-16 touch-manipulation'
         }`}
       >
         {expanded ? (

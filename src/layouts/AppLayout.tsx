@@ -67,7 +67,7 @@ function AppLayout() {
         onQuickActionClick={handleQuickActionClick}
         onChatbotOpen={() => {
           setIsQuickMenuOpen(false)
-          navigate('/chatbot')
+          navigate('/chatbot', { state: { from: location.pathname } })
         }}
       />
     </div>
