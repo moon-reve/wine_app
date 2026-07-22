@@ -23,6 +23,8 @@ import TodaysPick from "./pages/Today'spick"
 import ChallengeDetails from './pages/Challenge Details'
 import MagazineDetail from './pages/magazine Detail'
 import Chatbot from './pages/Chatbot'
+import Splash from './pages/Splash'
+import Onboarding from './pages/Onboarding'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -39,6 +41,9 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
+        <Route path="/" element={<Splash />} />
+        <Route path="/splash" element={<Splash />} />
+        <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/lounge/questions/new" element={<QuestionWrite />} />
         <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
         <Route path="/profile/settings" element={<ProfileSettings />} />
@@ -50,7 +55,7 @@ function App() {
         <Route path="/challenge/continents" element={<ChallengeDetails />} />
         <Route path="/chatbot" element={<Chatbot />} />
         <Route element={<AppLayout />}>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/list" element={<List />} />
           <Route path="/lounge" element={<Feed />} />
           <Route path="/lounge/qna" element={<QnA />} />
@@ -60,11 +65,11 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/magazine" element={<Magazine />} />
           <Route path="/magazine/k-wine-road" element={<MagazineDetail />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<Navigate to="/home" replace />} />
         </Route>
         <Route path="/question/:questionId" element={<QuestionDetail />} />
         <Route path="/meeting/:meetingId" element={<MeetingDetail />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
       </Routes>
     </BrowserRouter>
   )

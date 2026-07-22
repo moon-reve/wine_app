@@ -45,7 +45,7 @@ function ProfileSettings() {
   }
 
   const handleNavigation = (label: string) => {
-    if (label === '홈') navigate('/')
+    if (label === '홈') navigate('/home')
     if (label === '리스트') navigate('/list')
     if (label === '라운지') navigate('/lounge')
     if (label === 'MY') navigate('/mypage')

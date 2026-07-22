@@ -816,11 +816,11 @@ export default function MypageSettings() {
       data-font-size={fontSize}
       data-node-id={view === 'main' ? '1546:5054' : 'settings-detail'}
     >
-      {view === 'main' && <MainSettings setView={setView} onBack={goBack} notify={notify} notifications={notifications} setNotifications={setNotifications} language={language} theme={theme} fontSize={fontSize} onLogout={() => navigate('/')} />}
+      {view === 'main' && <MainSettings setView={setView} onBack={goBack} notify={notify} notifications={notifications} setNotifications={setNotifications} language={language} theme={theme} fontSize={fontSize} onLogout={() => navigate('/home')} />}
       {view === 'account' && <AccountInfo onBack={goBack} />}
       {view === 'password' && <PasswordChange onBack={goBack} notify={notify} />}
       {view === 'email' && <EmailChange onBack={goBack} notify={notify} />}
-      {view === 'withdrawal' && <Withdrawal onBack={goBack} notify={notify} onComplete={() => navigate('/')} />}
+      {view === 'withdrawal' && <Withdrawal onBack={goBack} notify={notify} onComplete={() => navigate('/home')} />}
       {view === 'push' && <PushSettings values={notifications.push} onChange={(push) => setNotifications((value) => ({ ...value, push }))} onBack={goBack} />}
       {view === 'language' && <ChoiceSettings title="언어 설정" englishTitle="Language" description="앱에서 사용할 언어를 선택하세요." options={['한국어', 'English', '日本語', '中文'] as const} value={language} onChange={(value) => { setLanguage(value); notify(`${value}(으)로 설정했습니다.`) }} onBack={goBack} />}
       {view === 'theme' && <ChoiceSettings title="다크 모드" englishTitle="Appearance" description="화면에 적용할 테마를 선택하세요." options={['시스템 설정 따름', '라이트', '다크'] as const} value={theme} onChange={(value) => { setTheme(value); notify('화면 테마를 변경했습니다.') }} onBack={goBack} />}
