@@ -3,6 +3,7 @@ import bellIcon from '../assets/bell.svg'
 import searchIcon from '../assets/search.svg'
 import lightBellIcon from '../assets/lounge/bell.svg'
 import lightSearchIcon from '../assets/lounge/search.svg'
+import Logo from './Logo'
 
 type HeaderProps = {
   tone?: 'dark' | 'light'
@@ -19,12 +20,7 @@ function Header({ tone = 'dark', titleColorClassName }: HeaderProps) {
       className="flex w-full items-center justify-between px-5 pt-4.5 pb-3"
       data-node-id="577:105"
     >
-      <p
-        className={`font-playfair shrink-0 text-xl leading-none font-normal tracking-[-0.4px] whitespace-nowrap ${titleColor}`}
-        data-node-id="577:106"
-      >
-        Wine Sippers
-      </p>
+      <Logo className={`h-5 w-auto shrink-0 ${titleColor}`} />
 
       <div className="flex shrink-0 items-center gap-1 overflow-hidden" data-node-id="577:107">
         <button
