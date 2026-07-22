@@ -1,10 +1,8 @@
 import { useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import filterIcon from '../assets/list/filter-icon.svg'
 import starIcon from '../assets/list/container-star.svg'
-import bottleTematata from '../assets/list/bottle-tematata.png'
-import bottleFarNiente from '../assets/list/bottle-far-niente.png'
-import bottleOysterBay from '../assets/list/bottle-oyster-bay.png'
 import dummyWines from '../../dummy data/wines.json'
 import FilterSheet, { type WineFilters } from '../components/FilterSheet'
 import WineMap from '../components/WineMap'
@@ -51,10 +49,10 @@ const WINE_TYPE_BG_COLOR: Record<WineType, string> = {
   korean: '#ece4a2',
 }
 
-// 기존 큐레이션 4종과 이름이 겹치는 더미데이터 항목(같은 와인의 다른 빈티지)은 중복 노출을 피하기 위해 제외.
-// wine_003/018/019/068은 리스트에서만 숨기는 것으로, 더미데이터 자체는 마이페이지 대표 와인 선택 등
-// 다른 화면에서도 쓰이고 있어 그대로 둔다.
-const DUPLICATE_DUMMY_IDS = new Set(['wine_023', 'wine_031', 'wine_033'])
+// 상단 큐레이션 와인은 더미데이터의 ID로 직접 연결하고, 일반 목록에서는 중복 노출하지 않는다.
+const CURATED_WINE_IDS = ['wine_106', 'wine_033', 'wine_023'] as const
+const DUPLICATE_DUMMY_IDS = new Set<string>(CURATED_WINE_IDS)
+// 아래 와인들은 리스트에서만 숨기며, 더미데이터 자체는 다른 화면에서도 사용하므로 유지한다.
 const HIDDEN_FROM_LIST_IDS = new Set(['wine_003', 'wine_018', 'wine_019', 'wine_068'])
 
 // 더미데이터의 type은 'korean'이 색이 아닌 원산지 구분이라, 국산 와인은 이름에 적힌
@@ -74,72 +72,36 @@ function getRegionText(wine: DummyWine): string {
   return subRegion ? `${wine.country} · ${subRegion} · ${wine.grape}` : `${wine.country} · ${wine.grape}`
 }
 
-const curatedWines: Wine[] = [
-  {
-    id: 'tematata',
-    name: '테마타 에스테이트',
-    region: '뉴질랜드 · 호크스 베이 · 샤도네이',
-    regionTextSize: 'text-[11px]',
-    price: '₩40,500',
-    priceValue: 40500,
-    rating: '4.2',
-    image: bottleTematata,
-    bgColor: WINE_TYPE_BG_COLOR.white,
-    type: 'white',
-    country: '뉴질랜드',
-    grape: '샤도네이',
-  },
-  {
-    id: 'far-niente',
-    name: '파 니엔테',
-    region: '미국 · 나파 밸리 · 샤도네이',
-    regionTextSize: 'text-[12px]',
-    price: '₩159,000',
-    priceValue: 159000,
-    rating: '4.6',
-    image: bottleFarNiente,
-    bgColor: WINE_TYPE_BG_COLOR.white,
-    type: 'white',
-    country: '미국',
-    grape: '샤도네이',
-  },
-  {
-    id: 'oyster-bay',
-    name: '오이스터 베이',
-    region: '뉴질랜드 · 말보로 · 소비뇽 블랑',
-    regionTextSize: 'text-[12px]',
-    price: '₩36,500',
-    priceValue: 36500,
-    rating: '3.0',
-    image: bottleOysterBay,
-    bgColor: WINE_TYPE_BG_COLOR.white,
-    type: 'white',
-    country: '뉴질랜드',
-    grape: '소비뇽 블랑',
-  },
-]
+const dummyWineData = dummyWines as DummyWine[]
 
-const dummyWineList: Wine[] = (dummyWines as DummyWine[])
+function toListWine(wine: DummyWine): Wine {
+  const regionText = getRegionText(wine)
+  const fileName = wine.imageUrl.split('/').pop() ?? ''
+
+  return {
+    id: wine.id,
+    name: wine.nameKo,
+    region: regionText,
+    regionTextSize: regionText.length > 18 ? 'text-[11px]' : 'text-[12px]',
+    price: `₩${wine.price.toLocaleString()}`,
+    priceValue: wine.price,
+    rating: wine.rating.toFixed(1),
+    image: wineImages[`../assets/images/wines/${fileName}`] ?? '',
+    bgColor: WINE_TYPE_BG_COLOR[resolveBgColorType(wine)],
+    type: wine.type,
+    country: wine.country,
+    grape: wine.grape,
+  }
+}
+
+const curatedWines: Wine[] = CURATED_WINE_IDS
+  .map((id) => dummyWineData.find((wine) => wine.id === id))
+  .filter((wine): wine is DummyWine => Boolean(wine))
+  .map(toListWine)
+
+const dummyWineList: Wine[] = dummyWineData
   .filter((wine) => !DUPLICATE_DUMMY_IDS.has(wine.id) && !HIDDEN_FROM_LIST_IDS.has(wine.id))
-  .map((wine) => {
-    const regionText = getRegionText(wine)
-    const fileName = wine.imageUrl.split('/').pop() ?? ''
-
-    return {
-      id: wine.id,
-      name: wine.nameKo,
-      region: regionText,
-      regionTextSize: regionText.length > 18 ? 'text-[11px]' : 'text-[12px]',
-      price: `₩${wine.price.toLocaleString()}`,
-      priceValue: wine.price,
-      rating: wine.rating.toFixed(1),
-      image: wineImages[`../assets/images/wines/${fileName}`] ?? '',
-      bgColor: WINE_TYPE_BG_COLOR[resolveBgColorType(wine)],
-      type: wine.type,
-      country: wine.country,
-      grape: wine.grape,
-    }
-  })
+  .map(toListWine)
 
 function shuffle<T>(items: T[]): T[] {
   const result = [...items]
@@ -163,6 +125,7 @@ function matchesFilters(wine: Wine, filters: WineFilters): boolean {
 type ListView = 'list' | 'map'
 
 function List() {
+  const navigate = useNavigate()
   const [view, setView] = useState<ListView>('list')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [appliedFilters, setAppliedFilters] = useState<WineFilters | null>(null)
@@ -225,7 +188,12 @@ function List() {
               {visibleWines.map((wine) => (
                 <div key={wine.id}>
                   <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
-                  <div className="flex min-h-[159px] items-center gap-[37px] py-[24px] pl-[24px]">
+                  <button
+                    type="button"
+                    disabled={wine.type !== 'red' && wine.type !== 'white'}
+                    onClick={() => navigate(`/product/${wine.type}/${wine.id}`)}
+                    className="flex min-h-[159px] w-full items-center gap-[37px] py-[24px] pl-[24px] text-left disabled:cursor-default"
+                  >
                     <div
                       className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
                       style={{ backgroundColor: wine.bgColor }}
@@ -245,7 +213,7 @@ function List() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </button>
                 </div>
               ))}
               <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />

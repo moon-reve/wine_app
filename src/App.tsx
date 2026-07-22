@@ -53,6 +53,8 @@ function App() {
         <Route path="/product/chateau-margaux-2018" element={<WineDetailRed />} />
         <Route path="/product/chardonnay-2019" element={<WineDetailWhite />} />
         <Route path="/product/pasqua-sweet-rose" element={<WineDetailRose />} />
+        <Route path="/product/red/:wineId" element={<WineDetailRed />} />
+        <Route path="/product/white/:wineId" element={<WineDetailWhite />} />
         <Route path="/event/summer-wine-festival" element={<EventDetails />} />
         <Route path="/notifications" element={<Notification />} />
         <Route path="/todays-pick" element={<TodaysPick />} />

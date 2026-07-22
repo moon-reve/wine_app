@@ -12,7 +12,62 @@
     "rating": 4.1,
     "reviewCount": 391,
     "description": "'18홀 65타' 마케팅으로 골퍼 국민와인 등극, 한국 최다 판매 레드 중 하나",
-    "imageUrl": "src/assets/images/wines/wine_001.png"
+    "imageUrl": "src/assets/images/wines/wine_001.png",
+    "winery": "Viña San Pedro",
+    "grapeComposition": "카베르네 소비뇽",
+    "alcohol": 14.5,
+    "volumeMl": 750,
+    "saveCount": 2380,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 1865 카베르네 소비뇽예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 45000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_002",
@@ -24,10 +79,65 @@
     "grape": "카베르네 소비뇽",
     "vintage": "2020",
     "price": 40000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 83,
     "description": "한국인이 가장 사랑하는 칠레 와인, 선물용 스테디셀러",
-    "imageUrl": "src/assets/images/wines/wine_002.png"
+    "imageUrl": "src/assets/images/wines/wine_002.png",
+    "winery": "Montes Wines",
+    "grapeComposition": "카베르네 소비뇽",
+    "alcohol": 14.5,
+    "volumeMl": 750,
+    "saveCount": 1373,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 몬테스 알파 카베르네 소비뇽예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 40000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_003",
@@ -42,7 +152,62 @@
     "rating": 4.3,
     "reviewCount": 314,
     "description": "카르메네르 최고봉으로 꼽히는 몬테스 플래그십",
-    "imageUrl": "src/assets/images/wines/wine_003.png"
+    "imageUrl": "src/assets/images/wines/wine_003.png",
+    "winery": "Montes Wines",
+    "grapeComposition": "카르메네르",
+    "alcohol": 14.5,
+    "volumeMl": 750,
+    "saveCount": 1573,
+    "tags": [
+      "선물하기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "자두",
+      "블랙베리",
+      "후추",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "자두와 블랙베리 풍미가 매력적인 몬테스 퍼플 엔젤예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 100000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_004",
@@ -54,10 +219,65 @@
     "grape": "카베르네 소비뇽",
     "vintage": "2019",
     "price": 15000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 59,
     "description": "'악마의 셀러' 스토리로 유명한 대형마트 베스트셀러",
-    "imageUrl": "src/assets/images/wines/wine_004.png"
+    "imageUrl": "src/assets/images/wines/wine_004.png",
+    "winery": "Viña Concha y Toro",
+    "grapeComposition": "카베르네 소비뇽",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 1255,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 카시예로 델 디아블로 카베르네 소비뇽예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 15000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_005",
@@ -72,7 +292,62 @@
     "rating": 3.9,
     "reviewCount": 299,
     "description": "편의점·마트 품절 대란을 일으킨 진한 스타일 히트작",
-    "imageUrl": "src/assets/images/wines/wine_005.png"
+    "imageUrl": "src/assets/images/wines/wine_005.png",
+    "winery": "Viña Concha y Toro",
+    "grapeComposition": "블렌드(시라 중심)",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 1572,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙베리",
+      "자두",
+      "후추",
+      "다크 초콜릿"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙베리와 자두 풍미가 매력적인 디아블로 다크레드예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 20000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_006",
@@ -87,7 +362,62 @@
     "rating": 3.9,
     "reviewCount": 124,
     "description": "이마트24 초저가 와인 열풍의 주역, 누적 수백만 병 판매",
-    "imageUrl": "src/assets/images/wines/wine_006.png"
+    "imageUrl": "src/assets/images/wines/wine_006.png",
+    "winery": "Dos Copas",
+    "grapeComposition": "카베르네 소비뇽",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 2294,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 도스코파스 카베르네 소비뇽예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 9900,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_007",
@@ -99,10 +429,65 @@
     "grape": "쉬라즈",
     "vintage": "2021",
     "price": 12000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 426,
     "description": "세계에서 가장 많이 팔리는 호주 와인 브랜드",
-    "imageUrl": "src/assets/images/wines/wine_007.png"
+    "imageUrl": "src/assets/images/wines/wine_007.png",
+    "winery": "Casella Family Brands",
+    "grapeComposition": "쉬라즈",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 517,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙베리",
+      "자두",
+      "후추",
+      "다크 초콜릿"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙베리와 자두 풍미가 매력적인 옐로우테일 쉬라즈예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 12000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_008",
@@ -117,7 +502,62 @@
     "rating": 4.2,
     "reviewCount": 369,
     "description": "편의점 가성비 와인 열풍을 이끈 히트작",
-    "imageUrl": "src/assets/images/wines/wine_008.png"
+    "imageUrl": "src/assets/images/wines/wine_008.png",
+    "winery": "McGuigan Wines",
+    "grapeComposition": "블렌드",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 2773,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 맥기건 블랙라벨 레드예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 13000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_009",
@@ -132,7 +572,62 @@
     "rating": 4.1,
     "reviewCount": 91,
     "description": "과실미 폭발 스타일로 한국에서 특히 인기인 호주 쉬라즈",
-    "imageUrl": "src/assets/images/wines/wine_009.png"
+    "imageUrl": "src/assets/images/wines/wine_009.png",
+    "winery": "Two Hands Wines",
+    "grapeComposition": "쉬라즈",
+    "alcohol": 14.2,
+    "volumeMl": 750,
+    "saveCount": 2156,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙베리",
+      "자두",
+      "후추",
+      "다크 초콜릿"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙베리와 자두 풍미가 매력적인 투핸즈 엔젤스 셰어 쉬라즈예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 65000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_010",
@@ -147,7 +642,62 @@
     "rating": 4.1,
     "reviewCount": 64,
     "description": "부드럽고 진한 스타일로 한국 시장 나파 카베르네 열풍의 중심",
-    "imageUrl": "src/assets/images/wines/wine_010.png"
+    "imageUrl": "src/assets/images/wines/wine_010.png",
+    "winery": "Caymus Vineyards",
+    "grapeComposition": "카베르네 소비뇽",
+    "alcohol": 14.6,
+    "volumeMl": 750,
+    "saveCount": 1902,
+    "tags": [
+      "선물하기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 케이머스 카베르네 소비뇽예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 150000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_011",
@@ -162,7 +712,62 @@
     "rating": 3.9,
     "reviewCount": 195,
     "description": "오리 라벨로 유명, 접근성 좋은 프리미엄 미국 와인",
-    "imageUrl": "src/assets/images/wines/wine_011.png"
+    "imageUrl": "src/assets/images/wines/wine_011.png",
+    "winery": "Decoy Wines",
+    "grapeComposition": "카베르네 소비뇽",
+    "alcohol": 14,
+    "volumeMl": 750,
+    "saveCount": 802,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 덕혼 디코이 카베르네 소비뇽예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 50000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_012",
@@ -177,7 +782,62 @@
     "rating": 4.3,
     "reviewCount": 425,
     "description": "나파밸리 와인의 아버지 로버트 몬다비의 대표작",
-    "imageUrl": "src/assets/images/wines/wine_012.png"
+    "imageUrl": "src/assets/images/wines/wine_012.png",
+    "winery": "Robert Mondavi Winery",
+    "grapeComposition": "카베르네 소비뇽",
+    "alcohol": 14.5,
+    "volumeMl": 750,
+    "saveCount": 989,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 로버트 몬다비 나파밸리 카베르네 소비뇽예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 70000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_013",
@@ -192,7 +852,62 @@
     "rating": 3.9,
     "reviewCount": 286,
     "description": "롯데백화점 '더 블라인드 2026' 레드 1위로 화제가 된 이슈 와인",
-    "imageUrl": "src/assets/images/wines/wine_013.png"
+    "imageUrl": "src/assets/images/wines/wine_013.png",
+    "winery": "Force & Grace",
+    "grapeComposition": "카베르네 소비뇽",
+    "alcohol": 14.5,
+    "volumeMl": 750,
+    "saveCount": 2179,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 포스&그레이스 파소 로블스 카베르네 소비뇽예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 90000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_014",
@@ -207,7 +922,62 @@
     "rating": 4.1,
     "reviewCount": 205,
     "description": "슈퍼투스칸의 시초, 국내 백화점 오픈런 대란을 일으킨 와인",
-    "imageUrl": "src/assets/images/wines/wine_014.png"
+    "imageUrl": "src/assets/images/wines/wine_014.png",
+    "winery": "Marchesi Antinori",
+    "grapeComposition": "산지오베제 블렌드",
+    "alcohol": 14,
+    "volumeMl": 750,
+    "saveCount": 1223,
+    "tags": [
+      "선물하기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "체리",
+      "자두",
+      "담배",
+      "향신료"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "체리와 자두 풍미가 매력적인 티냐넬로예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 180000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_015",
@@ -222,7 +992,62 @@
     "rating": 4.5,
     "reviewCount": 162,
     "description": "이탈리아 최고 컬트 슈퍼투스칸, 수집가들의 위시리스트 1순위",
-    "imageUrl": "src/assets/images/wines/wine_015.png"
+    "imageUrl": "src/assets/images/wines/wine_015.png",
+    "winery": "Tenuta San Guido",
+    "grapeComposition": "카베르네 블렌드",
+    "alcohol": 14,
+    "volumeMl": 750,
+    "saveCount": 761,
+    "tags": [
+      "선물하기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "30 ~ 60분",
+      "drinkingWindow": "2026 ~ 2040",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 사시카이아예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 450000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_016",
@@ -237,7 +1062,62 @@
     "rating": 4.4,
     "reviewCount": 307,
     "description": "한국인에게 유독 사랑받는 보르도 그랑크뤼(4등급)",
-    "imageUrl": "src/assets/images/wines/wine_016.png"
+    "imageUrl": "src/assets/images/wines/wine_016.png",
+    "winery": "Château Talbot",
+    "grapeComposition": "카베르네 블렌드",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 2743,
+    "tags": [
+      "선물하기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 샤토 탈보예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 120000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_017",
@@ -252,7 +1132,62 @@
     "rating": 3.9,
     "reviewCount": 35,
     "description": "만화 '신의 물방울'에 등장해 국내 품절 대란을 일으킨 와인",
-    "imageUrl": "src/assets/images/wines/wine_017.png"
+    "imageUrl": "src/assets/images/wines/wine_017.png",
+    "winery": "Château Mont-Pérat",
+    "grapeComposition": "메를로 블렌드",
+    "alcohol": 14.5,
+    "volumeMl": 750,
+    "saveCount": 2204,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 샤토 몽페라 루즈예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 50000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_018",
@@ -267,7 +1202,62 @@
     "rating": 4.8,
     "reviewCount": 407,
     "description": "보르도 1등급 5대 샤토, '와인의 여왕'으로 불리는 명품",
-    "imageUrl": "src/assets/images/wines/wine_018.png"
+    "imageUrl": "src/assets/images/wines/wine_018.png",
+    "winery": "Château Margaux",
+    "grapeComposition": "카베르네 소비뇽 90%, 메를로 4%, 카베르네 프랑 4%, 프티 베르도 2%",
+    "alcohol": 14,
+    "volumeMl": 750,
+    "saveCount": 1329,
+    "tags": [
+      "혼술",
+      "선물하기 좋은"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 5,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 5,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "바닐라",
+      "초콜릿",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2032",
+      "glass": "보르도 글라스",
+      "afterOpening": "3 ~ 5일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "다크 초콜릿"
+    ],
+    "aiRecommendation": "풍부한 과실향과 은은한 오크향이 특징인 와인이에요. 채끝 스테이크나 양갈비처럼 풍미가 진한 요리와 특히 잘 어울립니다.",
+    "purchase": {
+      "onlineFrom": 1500000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_019",
@@ -282,7 +1272,62 @@
     "rating": 4.6,
     "reviewCount": 52,
     "description": "몬다비×로칠드 합작 프로젝트, 미국 대표 프리미엄 와인",
-    "imageUrl": "src/assets/images/wines/wine_019.png"
+    "imageUrl": "src/assets/images/wines/wine_019.png",
+    "winery": "Opus One Winery",
+    "grapeComposition": "카베르네 블렌드",
+    "alcohol": 14,
+    "volumeMl": 750,
+    "saveCount": 2619,
+    "tags": [
+      "선물하기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "30 ~ 60분",
+      "drinkingWindow": "2026 ~ 2040",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 오퍼스 원예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 700000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_020",
@@ -297,7 +1342,62 @@
     "rating": 4.2,
     "reviewCount": 206,
     "description": "'베를린 테이스팅'으로 유명한 에라주리스의 인기 라인",
-    "imageUrl": "src/assets/images/wines/wine_020.png"
+    "imageUrl": "src/assets/images/wines/wine_020.png",
+    "winery": "Viña Errázuriz",
+    "grapeComposition": "카베르네 소비뇽",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 1818,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 에라주리스 막스 리제르바 카베르네 소비뇽예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 35000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_021",
@@ -309,10 +1409,65 @@
     "grape": "소비뇽 블랑",
     "vintage": "2023",
     "price": 55000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 95,
     "description": "뉴질랜드 소비뇽 블랑 신화를 만든 대표 화이트",
-    "imageUrl": "src/assets/images/wines/wine_021.png"
+    "imageUrl": "src/assets/images/wines/wine_021.png",
+    "winery": "Cloudy Bay",
+    "grapeComposition": "소비뇽 블랑",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 472,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "자몽",
+      "패션프루트",
+      "청사과",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "자몽와 패션프루트 풍미가 매력적인 클라우디 베이 소비뇽 블랑예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 55000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_022",
@@ -324,10 +1479,65 @@
     "grape": "소비뇽 블랑",
     "vintage": "2022",
     "price": 30000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 355,
     "description": "상큼한 열대과실 향으로 여름철 인기 1순위",
-    "imageUrl": "src/assets/images/wines/wine_022.png"
+    "imageUrl": "src/assets/images/wines/wine_022.png",
+    "winery": "Kim Crawford",
+    "grapeComposition": "소비뇽 블랑",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 1049,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "자몽",
+      "패션프루트",
+      "청사과",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "자몽와 패션프루트 풍미가 매력적인 킴 크로포드 소비뇽 블랑예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 30000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_023",
@@ -342,7 +1552,62 @@
     "rating": 3.9,
     "reviewCount": 323,
     "description": "굴·해산물 페어링으로 유명한 가성비 소비뇽 블랑",
-    "imageUrl": "src/assets/images/wines/wine_023.png"
+    "imageUrl": "src/assets/images/wines/wine_023.png",
+    "winery": "Oyster Bay Wines",
+    "grapeComposition": "소비뇽 블랑",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 730,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "자몽",
+      "패션프루트",
+      "청사과",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "자몽와 패션프루트 풍미가 매력적인 오이스터 베이 소비뇽 블랑예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 25000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_024",
@@ -357,7 +1622,62 @@
     "rating": 4.1,
     "reviewCount": 95,
     "description": "뉴질랜드 국민 와이너리의 스테디셀러",
-    "imageUrl": "src/assets/images/wines/wine_024.png"
+    "imageUrl": "src/assets/images/wines/wine_024.png",
+    "winery": "Villa Maria Estate",
+    "grapeComposition": "소비뇽 블랑",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 763,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "자몽",
+      "패션프루트",
+      "청사과",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "자몽와 패션프루트 풍미가 매력적인 빌라 마리아 프라이빗 빈 소비뇽 블랑예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 25000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_025",
@@ -371,8 +1691,63 @@
     "price": 55000,
     "rating": 4.1,
     "reviewCount": 339,
-    "description": "굴과 샤블리 조합의 대명사, 국내 샤블리 인기 1위권",
-    "imageUrl": "src/assets/images/wines/wine_025.png"
+    "description": "시트러스와 흰 꽃 향, 산뜻한 산미와 선명한 미네랄감이 특징인 부르고뉴 샤블리입니다.",
+    "imageUrl": "src/assets/images/wines/wine_025.png",
+    "winery": "Domaine William Fèvre",
+    "grapeComposition": "샤르도네 100%",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 1200,
+    "tags": [
+      "홈파티",
+      "해산물과 먹기 좋은"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "흰 꽃",
+      "풋사과",
+      "미네랄"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2025 ~ 2029",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "신선한 굴",
+      "해산물",
+      "구운 생선",
+      "스시"
+    ],
+    "aiRecommendation": "시트러스와 흰 꽃 향, 산뜻한 산미와 미네랄감이 돋보이는 샤블리예요. 굴과 해산물, 가벼운 생선 요리와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 55000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_026",
@@ -387,7 +1762,62 @@
     "rating": 4.2,
     "reviewCount": 362,
     "description": "부르고뉴 화이트 입문용 정석으로 꼽히는 와인",
-    "imageUrl": "src/assets/images/wines/wine_026.png"
+    "imageUrl": "src/assets/images/wines/wine_026.png",
+    "winery": "Maison Louis Jadot",
+    "grapeComposition": "샤르도네",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 1528,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 루이 자도 부르고뉴 샤르도네예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 40000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_027",
@@ -399,10 +1829,65 @@
     "grape": "소비뇽 블랑",
     "vintage": "2022",
     "price": 70000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 129,
     "description": "미네랄리티가 뛰어난 루아르 소비뇽 블랑의 대표",
-    "imageUrl": "src/assets/images/wines/wine_027.png"
+    "imageUrl": "src/assets/images/wines/wine_027.png",
+    "winery": "Pascal Jolivet",
+    "grapeComposition": "소비뇽 블랑",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 1496,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "자몽",
+      "패션프루트",
+      "청사과",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "자몽와 패션프루트 풍미가 매력적인 파스칼 졸리베 상세르예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 70000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_028",
@@ -417,7 +1902,62 @@
     "rating": 4.9,
     "reviewCount": 424,
     "description": "세계 최고 귀부 스위트 와인, '신이 내린 와인'으로 불림",
-    "imageUrl": "src/assets/images/wines/wine_028.png"
+    "imageUrl": "src/assets/images/wines/wine_028.png",
+    "winery": "Château d'Yquem",
+    "grapeComposition": "세미용·소비뇽 블랑",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 2528,
+    "tags": [
+      "선물하기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 5,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "자몽",
+      "패션프루트",
+      "청사과",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 10°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2040",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "과일 타르트",
+      "블루 치즈",
+      "가벼운 디저트",
+      "매콤한 요리"
+    ],
+    "aiRecommendation": "자몽와 패션프루트 풍미가 매력적인 샤토 디켐예요. 기분 좋은 단맛을 지녀 과일 타르트 또는 블루 치즈와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 600000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_029",
@@ -429,10 +1969,65 @@
     "grape": "리슬링",
     "vintage": "2023",
     "price": 30000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 45,
     "description": "독일 리슬링 입문 정석, 매콤한 한식과 페어링으로 인기",
-    "imageUrl": "src/assets/images/wines/wine_029.png"
+    "imageUrl": "src/assets/images/wines/wine_029.png",
+    "winery": "Dr. Loosen",
+    "grapeComposition": "리슬링",
+    "alcohol": 8.5,
+    "volumeMl": 750,
+    "saveCount": 598,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "라임",
+      "청사과",
+      "복숭아",
+      "미네랄"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "라임와 청사과 풍미가 매력적인 닥터 루젠 리슬링예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 30000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_030",
@@ -447,7 +2042,62 @@
     "rating": 3.9,
     "reviewCount": 120,
     "description": "롯데백화점 '더 블라인드 2026' 화이트 1위 이슈 와인",
-    "imageUrl": "src/assets/images/wines/wine_030.png"
+    "imageUrl": "src/assets/images/wines/wine_030.png",
+    "winery": "Selbach-Oster",
+    "grapeComposition": "리슬링",
+    "alcohol": 10.5,
+    "volumeMl": 750,
+    "saveCount": 1670,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "라임",
+      "청사과",
+      "복숭아",
+      "미네랄"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "라임와 청사과 풍미가 매력적인 셀바흐 리슬링 카비넷 파인헤르브 트레디션예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 50000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_031",
@@ -462,7 +2112,62 @@
     "rating": 4.3,
     "reviewCount": 464,
     "description": "1976년 '파리의 심판'에서 프랑스를 꺾은 전설의 샤르도네",
-    "imageUrl": "src/assets/images/wines/wine_031.png"
+    "imageUrl": "src/assets/images/wines/wine_031.png",
+    "winery": "Chateau Montelena",
+    "grapeComposition": "샤르도네",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 439,
+    "tags": [
+      "선물하기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 샤토 몬텔레나 샤르도네예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 120000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_032",
@@ -477,7 +2182,62 @@
     "rating": 4.3,
     "reviewCount": 85,
     "description": "미국 레스토랑 판매 1위에 빛나는 국민 샤르도네",
-    "imageUrl": "src/assets/images/wines/wine_032.png"
+    "imageUrl": "src/assets/images/wines/wine_032.png",
+    "winery": "Kendall-Jackson",
+    "grapeComposition": "샤르도네",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 1409,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 켄달잭슨 빈트너스 리저브 샤르도네예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 40000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_033",
@@ -492,7 +2252,62 @@
     "rating": 4.1,
     "reviewCount": 393,
     "description": "오크 숙성 나파 샤르도네의 정점으로 꼽히는 프리미엄",
-    "imageUrl": "src/assets/images/wines/wine_033.png"
+    "imageUrl": "src/assets/images/wines/wine_033.png",
+    "winery": "Far Niente",
+    "grapeComposition": "샤르도네",
+    "alcohol": 14.3,
+    "volumeMl": 750,
+    "saveCount": 2610,
+    "tags": [
+      "선물하기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 파 니엔테 샤르도네예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 130000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_034",
@@ -507,7 +2322,62 @@
     "rating": 4.1,
     "reviewCount": 394,
     "description": "피노 그리지오 세계화의 주역, 깔끔한 스타일",
-    "imageUrl": "src/assets/images/wines/wine_034.png"
+    "imageUrl": "src/assets/images/wines/wine_034.png",
+    "winery": "Santa Margherita",
+    "grapeComposition": "피노 그리지오",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 2720,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "배",
+      "흰 꽃",
+      "미네랄"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "레몬와 배 풍미가 매력적인 산타 마르게리타 피노 그리지오예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 40000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_035",
@@ -522,7 +2392,62 @@
     "rating": 4.1,
     "reviewCount": 197,
     "description": "몬테스 알파 인기에 힘입은 대표 칠레 샤르도네",
-    "imageUrl": "src/assets/images/wines/wine_035.png"
+    "imageUrl": "src/assets/images/wines/wine_035.png",
+    "winery": "Montes Wines",
+    "grapeComposition": "샤르도네",
+    "alcohol": 14,
+    "volumeMl": 750,
+    "saveCount": 256,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 몬테스 알파 샤르도네예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 40000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_036",
@@ -534,10 +2459,65 @@
     "grape": "게뷔르츠트라미너",
     "vintage": "2022",
     "price": 55000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 272,
     "description": "리치·장미향의 알자스 대표 품종, 한식과 잘 어울려 인기",
-    "imageUrl": "src/assets/images/wines/wine_036.png"
+    "imageUrl": "src/assets/images/wines/wine_036.png",
+    "winery": "Maison Trimbach",
+    "grapeComposition": "게뷔르츠트라미너",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 1328,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "리치",
+      "장미",
+      "복숭아",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "리치와 장미 풍미가 매력적인 트림바흐 게뷔르츠트라미너예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 55000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_037",
@@ -549,10 +2529,65 @@
     "grape": "파레야다",
     "vintage": "2022",
     "price": 18000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 452,
     "description": "스페인 국민 화이트, 가볍게 즐기는 데일리 와인",
-    "imageUrl": "src/assets/images/wines/wine_037.png"
+    "imageUrl": "src/assets/images/wines/wine_037.png",
+    "winery": "Familia Torres",
+    "grapeComposition": "파레야다",
+    "alcohol": 11.5,
+    "volumeMl": 750,
+    "saveCount": 865,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "시트러스",
+      "붉은 과일",
+      "흰 꽃",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "시트러스와 붉은 과일 풍미가 매력적인 토레스 비냐 솔예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 18000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_038",
@@ -567,7 +2602,62 @@
     "rating": 3.8,
     "reviewCount": 417,
     "description": "마트에서 가장 쉽게 만나는 호주 데일리 화이트",
-    "imageUrl": "src/assets/images/wines/wine_038.png"
+    "imageUrl": "src/assets/images/wines/wine_038.png",
+    "winery": "Jacob's Creek",
+    "grapeComposition": "샤르도네",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 507,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 제이콥스 크릭 클래식 샤르도네예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 15000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_039",
@@ -582,7 +2672,62 @@
     "rating": 4.1,
     "reviewCount": 209,
     "description": "1만원 이하 가성비 화이트의 대표 주자",
-    "imageUrl": "src/assets/images/wines/wine_039.png"
+    "imageUrl": "src/assets/images/wines/wine_039.png",
+    "winery": "Viña Carta Vieja",
+    "grapeComposition": "샤르도네",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 800,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 G7 샤르도네예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 9000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_040",
@@ -594,10 +2739,65 @@
     "grape": "소비뇽 블랑",
     "vintage": "2023",
     "price": 15000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 282,
     "description": "디아블로 시리즈 인기에 힘입은 화이트 베스트셀러",
-    "imageUrl": "src/assets/images/wines/wine_040.png"
+    "imageUrl": "src/assets/images/wines/wine_040.png",
+    "winery": "Viña Concha y Toro",
+    "grapeComposition": "소비뇽 블랑",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 1846,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "자몽",
+      "패션프루트",
+      "청사과",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "샐러드"
+    ],
+    "aiRecommendation": "자몽와 패션프루트 풍미가 매력적인 카시예로 델 디아블로 소비뇽 블랑예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 15000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_041",
@@ -606,13 +2806,68 @@
     "type": "sparkling",
     "country": "프랑스",
     "region": "프랑스 샹파뉴",
-    "grape": "샤르도네·피노 누아·피노 뫼니에",
+    "grape": "샤르도네·피노 누아",
     "vintage": "2013",
     "price": 350000,
     "rating": 4.5,
     "reviewCount": 295,
     "description": "럭셔리 샴페인의 대명사, 기념일 선물 1순위",
-    "imageUrl": "src/assets/images/wines/wine_041.png"
+    "imageUrl": "src/assets/images/wines/wine_041.png",
+    "winery": "Dom Pérignon",
+    "grapeComposition": "샤르도네·피노 누아",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 2112,
+    "tags": [
+      "선물하기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2040",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 돔 페리뇽예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 350000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_042",
@@ -627,7 +2882,62 @@
     "rating": 4.3,
     "reviewCount": 17,
     "description": "세계 판매 1위 샴페인, 파티·축하주의 상징",
-    "imageUrl": "src/assets/images/wines/wine_042.png"
+    "imageUrl": "src/assets/images/wines/wine_042.png",
+    "winery": "Moët & Chandon",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 1495,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 모엣 & 샹동 임페리얼 브뤼예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 90000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_043",
@@ -642,7 +2952,62 @@
     "rating": 4.3,
     "reviewCount": 70,
     "description": "노란 라벨로 유명, 백화점 샴페인 매출 상위 단골",
-    "imageUrl": "src/assets/images/wines/wine_043.png"
+    "imageUrl": "src/assets/images/wines/wine_043.png",
+    "winery": "Veuve Clicquot",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 2281,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 뵈브 클리코 옐로우 라벨예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 95000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_044",
@@ -657,7 +3022,62 @@
     "rating": 4.8,
     "reviewCount": 286,
     "description": "샴페인 애호가들의 종착지로 불리는 프레스티지",
-    "imageUrl": "src/assets/images/wines/wine_044.png"
+    "imageUrl": "src/assets/images/wines/wine_044.png",
+    "winery": "Krug",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 2286,
+    "tags": [
+      "선물하기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2040",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 크루그 그랑 퀴베예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 380000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_045",
@@ -666,13 +3086,68 @@
     "type": "sparkling",
     "country": "프랑스",
     "region": "프랑스 샹파뉴",
-    "grape": "샤르도네·피노 누아·피노 뫼니에",
+    "grape": "피노 누아·샤르도네",
     "vintage": "2015",
     "price": 550000,
     "rating": 4.8,
     "reviewCount": 405,
     "description": "러시아 황제를 위해 탄생, 셀럽 문화의 아이콘",
-    "imageUrl": "src/assets/images/wines/wine_045.png"
+    "imageUrl": "src/assets/images/wines/wine_045.png",
+    "winery": "Louis Roederer",
+    "grapeComposition": "피노 누아·샤르도네",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 1030,
+    "tags": [
+      "선물하기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2040",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 루이 로드레 크리스탈예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 550000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_046",
@@ -687,7 +3162,62 @@
     "rating": 4.3,
     "reviewCount": 69,
     "description": "007 제임스 본드의 샴페인으로 유명",
-    "imageUrl": "src/assets/images/wines/wine_046.png"
+    "imageUrl": "src/assets/images/wines/wine_046.png",
+    "winery": "Champagne Bollinger",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 2559,
+    "tags": [
+      "선물하기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 볼랭저 스페셜 퀴베예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 120000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_047",
@@ -699,10 +3229,65 @@
     "grape": "샤르도네·피노 누아·피노 뫼니에",
     "vintage": "NV",
     "price": 85000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 92,
     "description": "샤르도네 비중 높은 우아한 스타일의 인기 샴페인",
-    "imageUrl": "src/assets/images/wines/wine_047.png"
+    "imageUrl": "src/assets/images/wines/wine_047.png",
+    "winery": "Champagne Taittinger",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 2955,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 테탱저 브뤼 레제르브예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 85000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_048",
@@ -717,7 +3302,62 @@
     "rating": 4.2,
     "reviewCount": 381,
     "description": "처칠이 사랑한 샴페인으로 유명",
-    "imageUrl": "src/assets/images/wines/wine_048.png"
+    "imageUrl": "src/assets/images/wines/wine_048.png",
+    "winery": "Champagne Pol Roger",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 1009,
+    "tags": [
+      "선물하기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 폴 로저 브뤼 리저브예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 100000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_049",
@@ -732,7 +3372,62 @@
     "rating": 4.7,
     "reviewCount": 146,
     "description": "아네모네 꽃병 디자인으로 선물 수요 폭발",
-    "imageUrl": "src/assets/images/wines/wine_049.png"
+    "imageUrl": "src/assets/images/wines/wine_049.png",
+    "winery": "Perrier-Jouët",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 951,
+    "tags": [
+      "선물하기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2040",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 페리에 주에 벨 에포크예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 300000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_050",
@@ -747,7 +3442,62 @@
     "rating": 4.9,
     "reviewCount": 402,
     "description": "제이지(Jay-Z)가 인수한 황금 병 샴페인",
-    "imageUrl": "src/assets/images/wines/wine_050.png"
+    "imageUrl": "src/assets/images/wines/wine_050.png",
+    "winery": "Armand de Brignac",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 1476,
+    "tags": [
+      "선물하기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2040",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 아르망 드 브리냑 골드예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 550000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_051",
@@ -759,10 +3509,65 @@
     "grape": "샤르도네·피노 누아·피노 뫼니에",
     "vintage": "NV",
     "price": 80000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 479,
     "description": "F1 포디움 세리머니 샴페인으로 유명",
-    "imageUrl": "src/assets/images/wines/wine_051.png"
+    "imageUrl": "src/assets/images/wines/wine_051.png",
+    "winery": "G.H. Mumm",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 2574,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 G.H. 멈 그랑 코르동예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 80000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_052",
@@ -777,7 +3582,62 @@
     "rating": 3.9,
     "reviewCount": 332,
     "description": "모엣샹동이 만드는 합리적 가격의 뉴월드 스파클링",
-    "imageUrl": "src/assets/images/wines/wine_052.png"
+    "imageUrl": "src/assets/images/wines/wine_052.png",
+    "winery": "Chandon",
+    "grapeComposition": "샤르도네·피노 누아·피노 뫼니에",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 760,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 샹동 브뤼예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 40000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_053",
@@ -789,10 +3649,65 @@
     "grape": "샤르도네",
     "vintage": "NV",
     "price": 50000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 339,
     "description": "이탈리아 최고 스푸만테, 각종 시상식 공식 스파클링",
-    "imageUrl": "src/assets/images/wines/wine_053.png"
+    "imageUrl": "src/assets/images/wines/wine_053.png",
+    "winery": "Ferrari Trento",
+    "grapeComposition": "샤르도네",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 948,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 페라리 브뤼예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 50000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_054",
@@ -807,7 +3722,62 @@
     "rating": 4.1,
     "reviewCount": 113,
     "description": "프로세코 열풍을 이끈 대표 브랜드",
-    "imageUrl": "src/assets/images/wines/wine_054.png"
+    "imageUrl": "src/assets/images/wines/wine_054.png",
+    "winery": "Mionetto",
+    "grapeComposition": "글레라",
+    "alcohol": 11,
+    "volumeMl": 750,
+    "saveCount": 1007,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "시트러스",
+      "붉은 과일",
+      "흰 꽃",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "시트러스와 붉은 과일 풍미가 매력적인 미오네토 프로세코예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 28000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_055",
@@ -822,7 +3792,62 @@
     "rating": 3.9,
     "reviewCount": 402,
     "description": "검은 병 카바, 세계에서 가장 많이 팔린 스파클링 중 하나",
-    "imageUrl": "src/assets/images/wines/wine_055.png"
+    "imageUrl": "src/assets/images/wines/wine_055.png",
+    "winery": "Freixenet",
+    "grapeComposition": "마카베오·자렐로·파레야다",
+    "alcohol": 11.5,
+    "volumeMl": 750,
+    "saveCount": 1961,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "시트러스",
+      "붉은 과일",
+      "흰 꽃",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "시트러스와 붉은 과일 풍미가 매력적인 프레시넷 코르돈 네그로예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 20000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_056",
@@ -837,7 +3862,62 @@
     "rating": 3.9,
     "reviewCount": 410,
     "description": "450년 역사의 카바 명가 대표작",
-    "imageUrl": "src/assets/images/wines/wine_056.png"
+    "imageUrl": "src/assets/images/wines/wine_056.png",
+    "winery": "Codorníu",
+    "grapeComposition": "마카베오·자렐로·파레야다",
+    "alcohol": 11.5,
+    "volumeMl": 750,
+    "saveCount": 2162,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "시트러스",
+      "붉은 과일",
+      "흰 꽃",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "시트러스와 붉은 과일 풍미가 매력적인 코도르니우 클라시코예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 18000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_057",
@@ -852,7 +3932,62 @@
     "rating": 4.3,
     "reviewCount": 12,
     "description": "모스카토 다스티의 교과서, 디저트 와인 인기 1위권",
-    "imageUrl": "src/assets/images/wines/wine_057.png"
+    "imageUrl": "src/assets/images/wines/wine_057.png",
+    "winery": "Paolo Saracco",
+    "grapeComposition": "모스카토",
+    "alcohol": 6,
+    "volumeMl": 750,
+    "saveCount": 2885,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "복숭아",
+      "머스캣",
+      "흰 꽃",
+      "꿀"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "과일 디저트",
+      "케이크",
+      "브런치",
+      "매콤한 요리"
+    ],
+    "aiRecommendation": "복숭아와 머스캣 풍미가 매력적인 사라코 모스카토 다스티예요. 기분 좋은 단맛을 지녀 과일 디저트 또는 케이크와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 30000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_058",
@@ -867,7 +4002,62 @@
     "rating": 4.1,
     "reviewCount": 262,
     "description": "편의점·마트에서 가장 많이 팔리는 달콤 스파클링",
-    "imageUrl": "src/assets/images/wines/wine_058.png"
+    "imageUrl": "src/assets/images/wines/wine_058.png",
+    "winery": "Gancia",
+    "grapeComposition": "모스카토",
+    "alcohol": 5.5,
+    "volumeMl": 750,
+    "saveCount": 432,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "복숭아",
+      "머스캣",
+      "흰 꽃",
+      "꿀"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "과일 디저트",
+      "케이크",
+      "브런치",
+      "매콤한 요리"
+    ],
+    "aiRecommendation": "복숭아와 머스캣 풍미가 매력적인 간치아 모스카토 다스티예요. 기분 좋은 단맛을 지녀 과일 디저트 또는 케이크와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 18000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_059",
@@ -876,13 +4066,68 @@
     "type": "sparkling",
     "country": "이탈리아",
     "region": "이탈리아 피에몬테",
-    "grape": "샤르도네·피노 누아·피노 뫼니에",
+    "grape": "모스카토 비앙코",
     "vintage": "NV",
     "price": 18000,
     "rating": 3.8,
     "reviewCount": 197,
     "description": "달콤한 스파클링 입문 정석",
-    "imageUrl": "src/assets/images/wines/wine_059.png"
+    "imageUrl": "src/assets/images/wines/wine_059.png",
+    "winery": "Martini & Rossi",
+    "grapeComposition": "모스카토 비앙코",
+    "alcohol": 7.5,
+    "volumeMl": 750,
+    "saveCount": 2584,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "복숭아",
+      "머스캣",
+      "흰 꽃",
+      "꿀"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "과일 디저트",
+      "케이크",
+      "브런치",
+      "매콤한 요리"
+    ],
+    "aiRecommendation": "복숭아와 머스캣 풍미가 매력적인 마르티니 아스티예요. 기분 좋은 단맛을 지녀 과일 디저트 또는 케이크와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 18000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_060",
@@ -897,7 +4142,62 @@
     "rating": 4.2,
     "reviewCount": 437,
     "description": "홈파티 필수템으로 SNS에서 유행한 달콤 스파클링",
-    "imageUrl": "src/assets/images/wines/wine_060.png"
+    "imageUrl": "src/assets/images/wines/wine_060.png",
+    "winery": "Villa M",
+    "grapeComposition": "브라케토·바르베라",
+    "alcohol": 5,
+    "volumeMl": 750,
+    "saveCount": 2901,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "파티 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "시트러스",
+      "붉은 과일",
+      "흰 꽃",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 8°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "튤립형 스파클링 글라스",
+      "afterOpening": "당일 음용 권장"
+    },
+    "foodPairings": [
+      "굴",
+      "카나페",
+      "튀김 요리",
+      "가벼운 치즈"
+    ],
+    "aiRecommendation": "시트러스와 붉은 과일 풍미가 매력적인 빌라엠 로쏘예요. 굴 또는 카나페와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 30000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_061",
@@ -912,7 +4212,62 @@
     "rating": 4.2,
     "reviewCount": 134,
     "description": "프로방스 로제 열풍의 주역, 셀럽들의 여름 와인",
-    "imageUrl": "src/assets/images/wines/wine_061.png"
+    "imageUrl": "src/assets/images/wines/wine_061.png",
+    "winery": "Château d'Esclans",
+    "grapeComposition": "그르나슈·생소 블렌드",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 1959,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 위스퍼링 엔젤예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 55000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_062",
@@ -927,7 +4282,62 @@
     "rating": 3.9,
     "reviewCount": 461,
     "description": "위스퍼링 엔젤의 상위 버전 프리미엄 로제",
-    "imageUrl": "src/assets/images/wines/wine_062.png"
+    "imageUrl": "src/assets/images/wines/wine_062.png",
+    "winery": "Château d'Esclans",
+    "grapeComposition": "그르나슈·생소 블렌드",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 507,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 샤토 데스클랑 락 엔젤예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 80000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_063",
@@ -942,7 +4352,62 @@
     "rating": 4.1,
     "reviewCount": 52,
     "description": "브래드 피트 소유 와이너리로 화제가 된 로제",
-    "imageUrl": "src/assets/images/wines/wine_063.png"
+    "imageUrl": "src/assets/images/wines/wine_063.png",
+    "winery": "Château Miraval",
+    "grapeComposition": "그르나슈·생소 블렌드",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 1087,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 미라발 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 45000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_064",
@@ -957,7 +4422,62 @@
     "rating": 3.9,
     "reviewCount": 260,
     "description": "프랑스 판매 1위권 프로방스 로제",
-    "imageUrl": "src/assets/images/wines/wine_064.png"
+    "imageUrl": "src/assets/images/wines/wine_064.png",
+    "winery": "Château Minuty",
+    "grapeComposition": "그르나슈·생소 블렌드",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 988,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 미누티 M 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 40000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_065",
@@ -972,7 +4492,62 @@
     "rating": 4.2,
     "reviewCount": 401,
     "description": "매그넘·제로보암 대용량으로 파티에서 인기",
-    "imageUrl": "src/assets/images/wines/wine_065.png"
+    "imageUrl": "src/assets/images/wines/wine_065.png",
+    "winery": "Maison Saint Aix",
+    "grapeComposition": "그르나슈·생소 블렌드",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 2918,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 AIX 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 45000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_066",
@@ -987,7 +4562,62 @@
     "rating": 4.1,
     "reviewCount": 76,
     "description": "장미 모양 병 바닥 디자인으로 선물용 히트",
-    "imageUrl": "src/assets/images/wines/wine_066.png"
+    "imageUrl": "src/assets/images/wines/wine_066.png",
+    "winery": "Gérard Bertrand",
+    "grapeComposition": "그르나슈·생소 블렌드",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 1690,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 제라르 베르트랑 코트 데 로즈예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 30000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_067",
@@ -1002,7 +4632,62 @@
     "rating": 3.9,
     "reviewCount": 255,
     "description": "'로제의 왕'이라 불리는 타벨 지역 대표작",
-    "imageUrl": "src/assets/images/wines/wine_067.png"
+    "imageUrl": "src/assets/images/wines/wine_067.png",
+    "winery": "E. Guigal",
+    "grapeComposition": "그르나슈 블렌드",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 1214,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 기갈 타벨 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 40000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_068",
@@ -1017,7 +4702,62 @@
     "rating": 4.3,
     "reviewCount": 96,
     "description": "리오하 명가 무가의 우아한 로제",
-    "imageUrl": "src/assets/images/wines/wine_068.png"
+    "imageUrl": "src/assets/images/wines/wine_068.png",
+    "winery": "Bodegas Muga",
+    "grapeComposition": "가르나차 블렌드",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 2144,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 무가 로사도예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 30000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_069",
@@ -1032,7 +4772,62 @@
     "rating": 3.9,
     "reviewCount": 458,
     "description": "납작한 병으로 유명한 세계적 베스트셀러 로제",
-    "imageUrl": "src/assets/images/wines/wine_069.png"
+    "imageUrl": "src/assets/images/wines/wine_069.png",
+    "winery": "Sogrape",
+    "grapeComposition": "바가 블렌드",
+    "alcohol": 11,
+    "volumeMl": 750,
+    "saveCount": 1147,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 마테우스 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 15000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_070",
@@ -1047,7 +4842,62 @@
     "rating": 4.1,
     "reviewCount": 120,
     "description": "재치있는 라벨로 마트에서 히트한 가성비 로제",
-    "imageUrl": "src/assets/images/wines/wine_070.png"
+    "imageUrl": "src/assets/images/wines/wine_070.png",
+    "winery": "Vidigal Wines",
+    "grapeComposition": "포르투갈 토착 블렌드",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 2650,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 포르타 6 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 15000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_071",
@@ -1062,7 +4912,62 @@
     "rating": 4.2,
     "reviewCount": 398,
     "description": "달콤한 로제 입문 국민템",
-    "imageUrl": "src/assets/images/wines/wine_071.png"
+    "imageUrl": "src/assets/images/wines/wine_071.png",
+    "winery": "Beringer Vineyards",
+    "grapeComposition": "진판델",
+    "alcohol": 10,
+    "volumeMl": 750,
+    "saveCount": 561,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "라즈베리",
+      "자몽",
+      "흰 꽃"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "딸기와 라즈베리 풍미가 매력적인 베린저 화이트 진판델예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 15000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_072",
@@ -1077,7 +4982,62 @@
     "rating": 4.1,
     "reviewCount": 114,
     "description": "저렴하고 달콤해 홈술족에게 인기",
-    "imageUrl": "src/assets/images/wines/wine_072.png"
+    "imageUrl": "src/assets/images/wines/wine_072.png",
+    "winery": "Casella Family Brands",
+    "grapeComposition": "모스카토",
+    "alcohol": 8,
+    "volumeMl": 750,
+    "saveCount": 2766,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "복숭아",
+      "머스캣",
+      "흰 꽃",
+      "꿀"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 10°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "복숭아와 머스캣 풍미가 매력적인 옐로우테일 핑크 모스카토예요. 기분 좋은 단맛을 지녀 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 12000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_073",
@@ -1092,7 +5052,62 @@
     "rating": 4.1,
     "reviewCount": 216,
     "description": "달콤한 로제 스파클링 편의점 베스트셀러",
-    "imageUrl": "src/assets/images/wines/wine_073.png"
+    "imageUrl": "src/assets/images/wines/wine_073.png",
+    "winery": "Gancia",
+    "grapeComposition": "모스카토",
+    "alcohol": 7,
+    "volumeMl": 750,
+    "saveCount": 1289,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "복숭아",
+      "머스캣",
+      "흰 꽃",
+      "꿀"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 10°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "복숭아와 머스캣 풍미가 매력적인 간치아 모스카토 로제예요. 기분 좋은 단맛을 지녀 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 18000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_074",
@@ -1107,7 +5122,62 @@
     "rating": 4.3,
     "reviewCount": 344,
     "description": "빌라엠 시리즈의 로제 버전, 홈파티 인기템",
-    "imageUrl": "src/assets/images/wines/wine_074.png"
+    "imageUrl": "src/assets/images/wines/wine_074.png",
+    "winery": "Villa M",
+    "grapeComposition": "모스카토·브라케토",
+    "alcohol": 5,
+    "volumeMl": 750,
+    "saveCount": 150,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "복숭아",
+      "머스캣",
+      "흰 꽃",
+      "꿀"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "복숭아와 머스캣 풍미가 매력적인 빌라엠 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 30000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_075",
@@ -1116,13 +5186,68 @@
     "type": "rose",
     "country": "프랑스",
     "region": "프랑스 샹파뉴",
-    "grape": "그르나슈·생소 블렌드",
+    "grape": "피노 누아·샤르도네·피노 뫼니에",
     "vintage": "NV",
     "price": 110000,
     "rating": 4.1,
     "reviewCount": 472,
     "description": "로제 샴페인 대중화의 주역",
-    "imageUrl": "src/assets/images/wines/wine_075.png"
+    "imageUrl": "src/assets/images/wines/wine_075.png",
+    "winery": "Moët & Chandon",
+    "grapeComposition": "피노 누아·샤르도네·피노 뫼니에",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 1911,
+    "tags": [
+      "선물하기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 모엣 & 샹동 로제 임페리얼예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 110000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_076",
@@ -1131,13 +5256,68 @@
     "type": "rose",
     "country": "프랑스",
     "region": "프랑스 샹파뉴",
-    "grape": "그르나슈·생소 블렌드",
+    "grape": "피노 누아·샤르도네·피노 뫼니에",
     "vintage": "NV",
     "price": 130000,
     "rating": 4.2,
     "reviewCount": 73,
     "description": "최초의 블렌디드 로제 샴페인 하우스의 대표작",
-    "imageUrl": "src/assets/images/wines/wine_076.png"
+    "imageUrl": "src/assets/images/wines/wine_076.png",
+    "winery": "Veuve Clicquot",
+    "grapeComposition": "피노 누아·샤르도네·피노 뫼니에",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 2621,
+    "tags": [
+      "선물하기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 뵈브 클리코 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 130000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_077",
@@ -1146,13 +5326,68 @@
     "type": "rose",
     "country": "프랑스",
     "region": "프랑스 샹파뉴",
-    "grape": "그르나슈·생소 블렌드",
+    "grape": "피노 누아",
     "vintage": "NV",
     "price": 150000,
     "rating": 4.1,
     "reviewCount": 44,
     "description": "세니에 방식 로제 샴페인의 정점, 선물용 인기",
-    "imageUrl": "src/assets/images/wines/wine_077.png"
+    "imageUrl": "src/assets/images/wines/wine_077.png",
+    "winery": "Laurent-Perrier",
+    "grapeComposition": "피노 누아",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 2341,
+    "tags": [
+      "선물하기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "시트러스",
+      "붉은 과일",
+      "흰 꽃",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "시트러스와 붉은 과일 풍미가 매력적인 로랑 페리에 퀴베 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 150000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_078",
@@ -1161,13 +5396,68 @@
     "type": "rose",
     "country": "프랑스",
     "region": "프랑스 샹파뉴",
-    "grape": "그르나슈·생소 블렌드",
+    "grape": "피노 누아·샤르도네",
     "vintage": "2009",
     "price": 700000,
     "rating": 4.6,
     "reviewCount": 313,
     "description": "돔 페리뇽의 희소 로제 버전, 최고급 기념주",
-    "imageUrl": "src/assets/images/wines/wine_078.png"
+    "imageUrl": "src/assets/images/wines/wine_078.png",
+    "winery": "Dom Pérignon",
+    "grapeComposition": "피노 누아·샤르도네",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 135,
+    "tags": [
+      "선물하기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2040",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 돔 페리뇽 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 700000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_079",
@@ -1176,13 +5466,68 @@
     "type": "rose",
     "country": "프랑스",
     "region": "프랑스 샹파뉴",
-    "grape": "그르나슈·생소 블렌드",
+    "grape": "피노 누아·샤르도네·피노 뫼니에",
     "vintage": "NV",
     "price": 90000,
     "rating": 4.2,
     "reviewCount": 313,
     "description": "강렬한 스타일의 로제 샴페인",
-    "imageUrl": "src/assets/images/wines/wine_079.png"
+    "imageUrl": "src/assets/images/wines/wine_079.png",
+    "winery": "Piper-Heidsieck",
+    "grapeComposition": "피노 누아·샤르도네·피노 뫼니에",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 232,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 파이퍼 하이직 로제 소바쥬예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 90000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_080",
@@ -1191,13 +5536,68 @@
     "type": "rose",
     "country": "프랑스",
     "region": "프랑스 샹파뉴",
-    "grape": "그르나슈·생소 블렌드",
+    "grape": "피노 누아·샤르도네",
     "vintage": "NV",
     "price": 120000,
     "rating": 4.1,
     "reviewCount": 48,
     "description": "크리스탈 명가의 정교한 로제 샴페인",
-    "imageUrl": "src/assets/images/wines/wine_080.png"
+    "imageUrl": "src/assets/images/wines/wine_080.png",
+    "winery": "Louis Roederer",
+    "grapeComposition": "피노 누아·샤르도네",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 2684,
+    "tags": [
+      "선물하기 좋은",
+      "브런치 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 2,
+        "label": "가벼움"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬",
+      "사과",
+      "흰 꽃",
+      "브리오슈"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "연어 요리",
+      "샐러드",
+      "피자",
+      "가벼운 파스타"
+    ],
+    "aiRecommendation": "레몬와 사과 풍미가 매력적인 루이 로드레 브뤼 로제예요. 연어 요리 또는 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 120000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_081",
@@ -1212,7 +5612,62 @@
     "rating": 4.3,
     "reviewCount": 42,
     "description": "세계 최초 오미자 스파클링, 정상회담 만찬주로 화제",
-    "imageUrl": "src/assets/images/wines/wine_081.png"
+    "imageUrl": "src/assets/images/wines/wine_081.png",
+    "winery": "오미나라",
+    "grapeComposition": "오미자",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 2703,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "오미자",
+      "붉은 베리",
+      "허브",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "한식 전채",
+      "구운 생선",
+      "과일",
+      "가벼운 디저트"
+    ],
+    "aiRecommendation": "오미자와 붉은 베리 풍미가 매력적인 오미로제 결 (스파클링)예요. 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 90000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_082",
@@ -1227,7 +5682,62 @@
     "rating": 3.9,
     "reviewCount": 475,
     "description": "오미로제의 대중 라인, 국빈 만찬·선물용 인기",
-    "imageUrl": "src/assets/images/wines/wine_082.png"
+    "imageUrl": "src/assets/images/wines/wine_082.png",
+    "winery": "오미나라",
+    "grapeComposition": "오미자",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 2629,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "오미자",
+      "붉은 베리",
+      "허브",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "한식 전채",
+      "구운 생선",
+      "과일",
+      "가벼운 디저트"
+    ],
+    "aiRecommendation": "오미자와 붉은 베리 풍미가 매력적인 오미로제 연 (스파클링)예요. 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 45000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_083",
@@ -1242,7 +5752,62 @@
     "rating": 3.8,
     "reviewCount": 181,
     "description": "청와대 만찬주로 선정된 국산 청수 품종 화이트",
-    "imageUrl": "src/assets/images/wines/wine_083.png"
+    "imageUrl": "src/assets/images/wines/wine_083.png",
+    "winery": "그랑꼬또 와이너리",
+    "grapeComposition": "청수",
+    "alcohol": 13,
+    "volumeMl": 750,
+    "saveCount": 1804,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "청사과",
+      "유자",
+      "흰 꽃",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "한식 전채",
+      "구운 생선",
+      "과일",
+      "가벼운 디저트"
+    ],
+    "aiRecommendation": "청사과와 유자 풍미가 매력적인 그랑꼬또 청수 화이트예요. 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 35000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_084",
@@ -1257,7 +5822,62 @@
     "rating": 3.8,
     "reviewCount": 133,
     "description": "대부도 캠벨얼리로 만든 한국 대표 레드",
-    "imageUrl": "src/assets/images/wines/wine_084.png"
+    "imageUrl": "src/assets/images/wines/wine_084.png",
+    "winery": "그랑꼬또 와이너리",
+    "grapeComposition": "캠벨얼리",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 1277,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "포도",
+      "장미",
+      "붉은 베리"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "딸기와 포도 풍미가 매력적인 그랑꼬또 레드예요. 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 25000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_085",
@@ -1272,7 +5892,62 @@
     "rating": 3.9,
     "reviewCount": 260,
     "description": "산뜻한 캠벨 향의 국산 로제 스테디셀러",
-    "imageUrl": "src/assets/images/wines/wine_085.png"
+    "imageUrl": "src/assets/images/wines/wine_085.png",
+    "winery": "그랑꼬또 와이너리",
+    "grapeComposition": "캠벨얼리",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 125,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "포도",
+      "장미",
+      "붉은 베리"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "딸기와 포도 풍미가 매력적인 그랑꼬또 로제예요. 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 22000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_086",
@@ -1287,7 +5962,62 @@
     "rating": 3.9,
     "reviewCount": 79,
     "description": "5~6년 숙성 프리미엄 라인, 품평회 다수 수상",
-    "imageUrl": "src/assets/images/wines/wine_086.png"
+    "imageUrl": "src/assets/images/wines/wine_086.png",
+    "winery": "그랑꼬또 와이너리",
+    "grapeComposition": "캠벨얼리",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 769,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "포도",
+      "장미",
+      "붉은 베리"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "딸기와 포도 풍미가 매력적인 그랑꼬또 M5-6예요. 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 50000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_087",
@@ -1302,7 +6032,62 @@
     "rating": 4.2,
     "reviewCount": 463,
     "description": "'미소' 라벨로 유명한 영동 도란원의 히트작",
-    "imageUrl": "src/assets/images/wines/wine_087.png"
+    "imageUrl": "src/assets/images/wines/wine_087.png",
+    "winery": "도란원 샤토미소",
+    "grapeComposition": "캠벨얼리",
+    "alcohol": 12,
+    "volumeMl": 375,
+    "saveCount": 2958,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "포도",
+      "장미",
+      "붉은 베리"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 10°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "딸기와 포도 풍미가 매력적인 샤토미소 스위트 로제예요. 기분 좋은 단맛을 지녀 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 23000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_088",
@@ -1311,13 +6096,68 @@
     "type": "korean",
     "country": "한국",
     "region": "한국 충북 영동",
-    "grape": "캠벨얼리",
+    "grape": "머스캣 오브 알렉산드리아",
     "vintage": "NV",
     "price": 33000,
     "rating": 4.1,
     "reviewCount": 254,
     "description": "광명동굴 판매 1위로 유명해진 여포와인농장 대표작",
-    "imageUrl": "src/assets/images/wines/wine_088.png"
+    "imageUrl": "src/assets/images/wines/wine_088.png",
+    "winery": "여포와인농장",
+    "grapeComposition": "머스캣 오브 알렉산드리아",
+    "alcohol": 12,
+    "volumeMl": 375,
+    "saveCount": 338,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "포도",
+      "장미",
+      "붉은 베리"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "딸기와 포도 풍미가 매력적인 여포의 꿈 화이트예요. 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 33000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_089",
@@ -1332,7 +6172,62 @@
     "rating": 3.9,
     "reviewCount": 254,
     "description": "진한 과실미의 여포와인농장 레드",
-    "imageUrl": "src/assets/images/wines/wine_089.png"
+    "imageUrl": "src/assets/images/wines/wine_089.png",
+    "winery": "여포와인농장",
+    "grapeComposition": "캠벨얼리",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 435,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "포도",
+      "장미",
+      "붉은 베리"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "딸기와 포도 풍미가 매력적인 여포의 꿈 레드예요. 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 33000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_090",
@@ -1347,7 +6242,62 @@
     "rating": 4.2,
     "reviewCount": 109,
     "description": "여포 시리즈의 산뜻한 로제 버전",
-    "imageUrl": "src/assets/images/wines/wine_090.png"
+    "imageUrl": "src/assets/images/wines/wine_090.png",
+    "winery": "여포와인농장",
+    "grapeComposition": "캠벨얼리",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 1547,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "포도",
+      "장미",
+      "붉은 베리"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "딸기와 포도 풍미가 매력적인 여포의 꿈 로제예요. 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 33000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_091",
@@ -1362,7 +6312,62 @@
     "rating": 3.8,
     "reviewCount": 349,
     "description": "청수 품종을 최초 양조한 와이너리의 대표 화이트",
-    "imageUrl": "src/assets/images/wines/wine_091.png"
+    "imageUrl": "src/assets/images/wines/wine_091.png",
+    "winery": "불휘농장 시나브로",
+    "grapeComposition": "청수",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 1864,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "청사과",
+      "유자",
+      "흰 꽃",
+      "허브"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "한식 전채",
+      "구운 생선",
+      "과일",
+      "가벼운 디저트"
+    ],
+    "aiRecommendation": "청사과와 유자 풍미가 매력적인 시나브로 청수 화이트예요. 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 30000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_092",
@@ -1374,10 +6379,65 @@
     "grape": "캠벨얼리",
     "vintage": "NV",
     "price": 28000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 228,
     "description": "소믈리에 가족이 만드는 영동 대표 레드, 품평회 다수 수상",
-    "imageUrl": "src/assets/images/wines/wine_092.png"
+    "imageUrl": "src/assets/images/wines/wine_092.png",
+    "winery": "불휘농장 시나브로",
+    "grapeComposition": "캠벨얼리",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 388,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "포도",
+      "장미",
+      "붉은 베리"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "딸기와 포도 풍미가 매력적인 시나브로 레드예요. 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 28000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_093",
@@ -1389,10 +6449,65 @@
     "grape": "산머루",
     "vintage": "NV",
     "price": 30000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 454,
     "description": "무주 산머루로 만든 토종 머루와인의 대표",
-    "imageUrl": "src/assets/images/wines/wine_093.png"
+    "imageUrl": "src/assets/images/wines/wine_093.png",
+    "winery": "샤토무주",
+    "grapeComposition": "산머루",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 523,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "산머루",
+      "블랙베리",
+      "자두",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 10°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "산머루와 블랙베리 풍미가 매력적인 샤또무주 레드 스위트예요. 기분 좋은 단맛을 지녀 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 30000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_094",
@@ -1407,7 +6522,62 @@
     "rating": 4.2,
     "reviewCount": 356,
     "description": "파주 산머루농원의 프리미엄 머루와인, 만찬주 이력",
-    "imageUrl": "src/assets/images/wines/wine_094.png"
+    "imageUrl": "src/assets/images/wines/wine_094.png",
+    "winery": "서가원",
+    "grapeComposition": "산머루",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 2246,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "산머루",
+      "블랙베리",
+      "자두",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "산머루와 블랙베리 풍미가 매력적인 머루드서 프리미엄예요. 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 35000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_095",
@@ -1422,7 +6592,62 @@
     "rating": 4.1,
     "reviewCount": 342,
     "description": "예산 사과로 만든 국내 대표 사과와인",
-    "imageUrl": "src/assets/images/wines/wine_095.png"
+    "imageUrl": "src/assets/images/wines/wine_095.png",
+    "winery": "예산사과와인",
+    "grapeComposition": "사과",
+    "alcohol": 12,
+    "volumeMl": 375,
+    "saveCount": 2161,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "사과",
+      "배",
+      "꿀",
+      "은은한 꽃"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "한식 전채",
+      "구운 생선",
+      "과일",
+      "가벼운 디저트"
+    ],
+    "aiRecommendation": "사과와 배 풍미가 매력적인 추사 애플와인예요. 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 18000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_096",
@@ -1437,7 +6662,62 @@
     "rating": 3.8,
     "reviewCount": 218,
     "description": "청도 반시(감)로 만든 세계적으로 드문 감와인",
-    "imageUrl": "src/assets/images/wines/wine_096.png"
+    "imageUrl": "src/assets/images/wines/wine_096.png",
+    "winery": "청도감와인",
+    "grapeComposition": "감(청도 반시)",
+    "alcohol": 12,
+    "volumeMl": 750,
+    "saveCount": 646,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "감",
+      "살구",
+      "꿀",
+      "은은한 향신료"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 10°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "한식 전채",
+      "구운 생선",
+      "과일",
+      "가벼운 디저트"
+    ],
+    "aiRecommendation": "감와 살구 풍미가 매력적인 감그린 스위트예요. 기분 좋은 단맛을 지녀 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 15000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_097",
@@ -1452,7 +6732,62 @@
     "rating": 4.1,
     "reviewCount": 421,
     "description": "영천 거봉으로 만든 인기 화이트, 품평회 수상",
-    "imageUrl": "src/assets/images/wines/wine_097.png"
+    "imageUrl": "src/assets/images/wines/wine_097.png",
+    "winery": "고도리와이너리",
+    "grapeComposition": "거봉",
+    "alcohol": 10.5,
+    "volumeMl": 750,
+    "saveCount": 482,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "거봉",
+      "복숭아",
+      "흰 꽃",
+      "꿀"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "한식 전채",
+      "구운 생선",
+      "과일",
+      "가벼운 디저트"
+    ],
+    "aiRecommendation": "거봉와 복숭아 풍미가 매력적인 고도리 화이트예요. 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 20000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_098",
@@ -1467,7 +6802,62 @@
     "rating": 4.2,
     "reviewCount": 139,
     "description": "한국 최대 와인산지 영천의 대표 브랜드",
-    "imageUrl": "src/assets/images/wines/wine_098.png"
+    "imageUrl": "src/assets/images/wines/wine_098.png",
+    "winery": "뱅꼬레 와이너리",
+    "grapeComposition": "캠벨얼리",
+    "alcohol": 12,
+    "volumeMl": 375,
+    "saveCount": 2713,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 2,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "포도",
+      "장미",
+      "붉은 베리"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "불고기",
+      "갈비구이",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "딸기와 포도 풍미가 매력적인 뱅꼬레 레드예요. 불고기 또는 갈비구이와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 25000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_099",
@@ -1482,7 +6872,62 @@
     "rating": 3.9,
     "reviewCount": 286,
     "description": "천안 거봉포도로 만든 달콤한 국산 와인",
-    "imageUrl": "src/assets/images/wines/wine_099.png"
+    "imageUrl": "src/assets/images/wines/wine_099.png",
+    "winery": "두레양조",
+    "grapeComposition": "거봉",
+    "alcohol": 9,
+    "volumeMl": 750,
+    "saveCount": 1821,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "거봉",
+      "복숭아",
+      "흰 꽃",
+      "꿀"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 10°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "한식 전채",
+      "구운 생선",
+      "과일",
+      "가벼운 디저트"
+    ],
+    "aiRecommendation": "거봉와 복숭아 풍미가 매력적인 두레앙 스위트예요. 기분 좋은 단맛을 지녀 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 15000,
+      "offlineAvailable": true
+    }
   },
   {
     "id": "wine_100",
@@ -1494,10 +6939,65 @@
     "grape": "화이트 블렌드",
     "vintage": "NV",
     "price": 9000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 228,
     "description": "1977년 출시된 한국 와인의 원조, 미사주로도 유명",
-    "imageUrl": "src/assets/images/wines/wine_100.png"
+    "imageUrl": "src/assets/images/wines/wine_100.png",
+    "winery": "롯데칠성음료",
+    "grapeComposition": "화이트 블렌드",
+    "volumeMl": 750,
+    "saveCount": 1164,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "우리술"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 2,
+        "label": "약간 드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "블랙체리",
+      "블랙커런트",
+      "삼나무",
+      "바닐라"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "한식 전채",
+      "구운 생선",
+      "과일",
+      "가벼운 디저트"
+    ],
+    "aiRecommendation": "블랙체리와 블랙커런트 풍미가 매력적인 마주앙 스페셜 화이트예요. 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 9000,
+      "offlineAvailable": true
+    },
+    "alcohol": 12
   },
   {
     "id": "wine_101",
@@ -1512,7 +7012,62 @@
     "rating": 4.2,
     "reviewCount": 215,
     "description": "호주 유배 죄수들의 실화를 담은 라벨, AR 앱으로 라벨 속 인물이 말하는 마케팅으로 화제",
-    "imageUrl": "src/assets/images/wines/wine_101.png"
+    "imageUrl": "src/assets/images/wines/wine_101.png",
+    "winery": "19 Crimes",
+    "grapeComposition": "쉬라즈 블렌드",
+    "volumeMl": 750,
+    "saveCount": 1092,
+    "tags": [
+      "홈파티",
+      "음식과 함께"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "블랙베리",
+      "자두",
+      "후추",
+      "다크 초콜릿"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "20 ~ 30분",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "보르도 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "채끝 스테이크",
+      "양갈비",
+      "숙성 치즈",
+      "버섯 요리"
+    ],
+    "aiRecommendation": "블랙베리와 자두 풍미가 매력적인 19 크라임스 레드 블렌드예요. 채끝 스테이크 또는 양갈비와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 25000,
+      "offlineAvailable": true
+    },
+    "alcohol": 13.5
   },
   {
     "id": "wine_102",
@@ -1524,9 +7079,134 @@
     "grape": "모스카토",
     "vintage": "NV",
     "price": 12000,
-    "rating": 4.0,
+    "rating": 4,
     "reviewCount": 168,
     "description": "맨발 로고로 유명한 세계 최다 수상 와인 브랜드, 달콤한 입문용으로 인기",
-    "imageUrl": "src/assets/images/wines/wine_102.png"
+    "imageUrl": "src/assets/images/wines/wine_102.png",
+    "winery": "Barefoot Cellars",
+    "grapeComposition": "모스카토",
+    "volumeMl": 750,
+    "saveCount": 578,
+    "tags": [
+      "가볍게 즐기기 좋은",
+      "달콤한 와인"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 5,
+        "label": "달콤함"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "복숭아",
+      "머스캣",
+      "흰 꽃",
+      "꿀"
+    ],
+    "service": {
+      "servingTemperature": "6 ~ 10°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "과일 타르트",
+      "블루 치즈",
+      "가벼운 디저트",
+      "매콤한 요리"
+    ],
+    "aiRecommendation": "복숭아와 머스캣 풍미가 매력적인 베어풋 모스카토예요. 기분 좋은 단맛을 지녀 과일 타르트 또는 블루 치즈와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 12000,
+      "offlineAvailable": true
+    },
+    "alcohol": 9
+  },
+  {
+    "id": "wine_106",
+    "nameKo": "테 마타 에스테이트 샤르도네",
+    "nameEn": "Te Mata Estate Chardonnay",
+    "type": "white",
+    "country": "뉴질랜드",
+    "region": "뉴질랜드 호크스 베이",
+    "grape": "샤르도네",
+    "vintage": "2023",
+    "price": 40500,
+    "rating": 4.2,
+    "reviewCount": 76,
+    "description": "흰 복숭아와 잘 익은 시트러스 향, 풍부한 질감과 산뜻한 산미가 균형을 이루는 호크스 베이 샤르도네입니다.",
+    "imageUrl": "src/assets/images/wines/wine_106.png",
+    "tastingNotes": [
+      "흰 복숭아",
+      "시트러스",
+      "누가",
+      "은은한 향신료"
+    ],
+    "foodPairings": [
+      "해산물",
+      "구운 생선",
+      "닭고기 요리",
+      "크림 파스타"
+    ],
+    "tags": [
+      "홈파티",
+      "해산물과 먹기 좋은"
+    ],
+    "aiRecommendation": "흰 복숭아와 시트러스 풍미가 매력적인 테 마타 에스테이트 샤르도네예요. 해산물 또는 구운 생선와 함께 즐겨보세요.",
+    "winery": "Te Mata Estate",
+    "grapeComposition": "샤르도네",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 2670,
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 3,
+        "label": "중간"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "service": {
+      "servingTemperature": "8 ~ 12°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "2026 ~ 2030",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "purchase": {
+      "onlineFrom": 40500,
+      "offlineAvailable": true
+    }
   }
 ]
