@@ -17,6 +17,7 @@ import Mypage from './pages/Mypage'
 import Search from './pages/Search'
 import WineDetailRed from './pages/Wine Detail_red'
 import WineDetailWhite from './pages/Wine Detail_white'
+import WineDetailRose from './pages/Wine Detail_rose'
 import Magazine from './pages/Magazine'
 import EventDetails from './pages/Event Details'
 import Notification from './pages/Notification'
@@ -44,6 +45,7 @@ function App() {
         <Route path="/profile/settings" element={<ProfileSettings />} />
         <Route path="/product/chateau-margaux-2018" element={<WineDetailRed />} />
         <Route path="/product/chardonnay-2019" element={<WineDetailWhite />} />
+        <Route path="/product/pasqua-sweet-rose" element={<WineDetailRose />} />
         <Route path="/event/summer-wine-festival" element={<EventDetails />} />
         <Route path="/notifications" element={<Notification />} />
         <Route path="/todays-pick" element={<TodaysPick />} />
