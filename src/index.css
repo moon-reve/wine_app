@@ -38,6 +38,146 @@
 }
 
 @layer components {
+  .chatbot-orb-frame {
+    opacity: 0;
+    user-select: none;
+  }
+
+  .chatbot-orb-frame-1 {
+    opacity: 1;
+  }
+
+  .chatbot-orb-frame.is-spinning {
+    animation-duration: 3500ms;
+    animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
+    animation-iteration-count: infinite;
+    animation-fill-mode: both;
+    mix-blend-mode: plus-lighter;
+  }
+
+  .chatbot-orb-frame-1.is-spinning {
+    animation-name: chatbot-orb-frame-1;
+  }
+
+  .chatbot-orb-frame-2.is-spinning {
+    animation-name: chatbot-orb-frame-2;
+  }
+
+  .chatbot-orb-frame-3.is-spinning {
+    animation-name: chatbot-orb-frame-3;
+  }
+
+  .chatbot-orb-frame-4.is-spinning {
+    animation-name: chatbot-orb-frame-4;
+  }
+
+  .chatbot-orb-frame-5.is-spinning {
+    animation-name: chatbot-orb-frame-5;
+  }
+
+  @keyframes chatbot-orb-frame-1 {
+    0%, 48.571%, 100% { opacity: 1; }
+    9.714%, 38.857% { opacity: 0; }
+  }
+
+  @keyframes chatbot-orb-frame-2 {
+    0%, 100% { opacity: 0; }
+    9.714% { opacity: 1; }
+    19.429% { opacity: 0; }
+  }
+
+  @keyframes chatbot-orb-frame-3 {
+    0%, 9.714%, 100% { opacity: 0; }
+    19.429% { opacity: 1; }
+    29.143% { opacity: 0; }
+  }
+
+  @keyframes chatbot-orb-frame-4 {
+    0%, 19.429%, 100% { opacity: 0; }
+    29.143% { opacity: 1; }
+    38.857% { opacity: 0; }
+  }
+
+  @keyframes chatbot-orb-frame-5 {
+    0%, 29.143%, 100% { opacity: 0; }
+    38.857% { opacity: 1; }
+    48.571% { opacity: 0; }
+  }
+
+  .chatbot-edge-sweep {
+    position: absolute;
+    inset: -2px;
+    z-index: 2;
+    border-radius: 9999px;
+    pointer-events: none;
+    opacity: 0;
+    background: conic-gradient(
+      from -17deg,
+      transparent 0deg,
+      rgb(255 255 255 / 12%) 7deg,
+      rgb(255 255 255 / 100%) 16deg,
+      rgb(255 183 225 / 82%) 24deg,
+      transparent 34deg,
+      transparent 360deg
+    );
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+    mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - 4px),
+      #000 calc(100% - 3px)
+    );
+    filter: drop-shadow(0 0 4px rgb(255 219 239 / 88%));
+    transform-origin: center;
+    animation: chatbot-edge-wiper 1100ms cubic-bezier(0.45, 0.05, 0.55, 0.95) 1 both;
+  }
+
+  @keyframes chatbot-edge-wiper {
+    0% {
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+
+    10% {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+
+    32% {
+      opacity: 1;
+      transform: rotate(-30deg);
+    }
+
+    72% {
+      opacity: 1;
+      transform: rotate(30deg);
+    }
+
+    92% {
+      opacity: 1;
+      transform: rotate(0deg);
+    }
+
+    100% {
+      opacity: 0;
+      transform: rotate(0deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .chatbot-orb-frame.is-spinning {
+      animation: none;
+    }
+
+    .chatbot-edge-sweep {
+      animation: none;
+      opacity: 0;
+    }
+  }
+
   .settings-shell {
     --settings-body-size: 14px;
     --settings-title-size: 30px;

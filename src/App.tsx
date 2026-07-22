@@ -18,6 +18,7 @@ import Search from './pages/Search'
 import Product from './pages/Product'
 import Magazine from './pages/Magazine'
 import Event from './pages/Event'
+import Chatbot from './pages/Chatbot'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -39,6 +40,7 @@ function App() {
         <Route path="/profile/settings" element={<ProfileSettings />} />
         <Route path="/product/chateau-margaux-2018" element={<Product />} />
         <Route path="/event/summer-wine-festival" element={<Event />} />
+        <Route path="/chatbot" element={<Chatbot />} />
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<List />} />
