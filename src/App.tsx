@@ -23,6 +23,7 @@ import Notification from './pages/Notification'
 import TodaysPick from "./pages/Today'spick"
 import ChallengeDetails from './pages/Challenge Details'
 import MagazineDetail from './pages/magazine Detail'
+import Chatbot from './pages/Chatbot'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -48,6 +49,7 @@ function App() {
         <Route path="/notifications" element={<Notification />} />
         <Route path="/todays-pick" element={<TodaysPick />} />
         <Route path="/challenge/continents" element={<ChallengeDetails />} />
+        <Route path="/chatbot" element={<Chatbot />} />
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/list" element={<List />} />
