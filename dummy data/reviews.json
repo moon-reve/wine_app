@@ -11,7 +11,7 @@
     "id": "review_002",
     "wineId": "wine_007",
     "userId": "user_003",
-    "rating": 4.0,
+    "rating": 4,
     "content": "가격 대비 훌륭. 데일리로 부담 없어요.",
     "createdAt": "2026-06-09T13:47:00"
   },
@@ -43,7 +43,7 @@
     "id": "review_006",
     "wineId": "wine_004",
     "userId": "user_003",
-    "rating": 4.0,
+    "rating": 4,
     "content": "만원대에서 이 정도면 훌륭하죠.",
     "createdAt": "2026-04-10T19:57:00"
   },
@@ -163,7 +163,7 @@
     "id": "review_021",
     "wineId": "wine_058",
     "userId": "user_010",
-    "rating": 4.0,
+    "rating": 4,
     "content": "편의점에서 사기 좋은 달달이. 저도수라 부담 없어요.",
     "createdAt": "2026-04-09T09:45:00"
   },
@@ -243,23 +243,15 @@
     "id": "review_031",
     "wineId": "wine_018",
     "userId": "user_013",
-    "rating": 5.0,
+    "rating": 5,
     "content": "향이 정말 풍부하고 블랙체리와 바닐라 향이 은은하게 느껴졌어요. 스테이크와 함께 먹으니 훨씬 좋았습니다.",
     "createdAt": "2026-07-08T21:10:00"
-  },
-  {
-    "id": "review_032",
-    "wineId": "wine_103",
-    "userId": "user_003",
-    "rating": 4.0,
-    "content": "오크향과 과실향의 밸런스가 좋았습니다. 디캔팅 후 마시면 훨씬 부드러워져요.",
-    "createdAt": "2026-07-03T14:30:00"
   },
   {
     "id": "review_033",
     "wineId": "wine_014",
     "userId": "user_002",
-    "rating": 5.0,
+    "rating": 5,
     "content": "양갈비와 함께 마셨는데 정말 잘 어울렸어요. 풍미가 깊고 여운도 길게 남습니다.",
     "createdAt": "2026-07-02T20:05:00"
   },
@@ -267,7 +259,7 @@
     "id": "review_034",
     "wineId": "wine_001",
     "userId": "user_019",
-    "rating": 3.0,
+    "rating": 3,
     "content": "기대했던 것보다는 조금 묵직한 느낌이었어요. 가벼운 스타일을 좋아하는 분께는 호불호가 있을 것 같습니다.",
     "createdAt": "2026-06-30T19:11:00"
   },
@@ -275,7 +267,7 @@
     "id": "review_035",
     "wineId": "wine_001",
     "userId": "user_007",
-    "rating": 4.0,
+    "rating": 4,
     "content": "치즈 플래터와 함께 즐겼는데 궁합이 좋았습니다. 가격대는 있지만 만족도도 높은 편이에요.",
     "createdAt": "2026-06-26T18:44:00"
   },
@@ -283,7 +275,7 @@
     "id": "review_036",
     "wineId": "wine_010",
     "userId": "user_017",
-    "rating": 5.0,
+    "rating": 5,
     "content": "첫 모금부터 깊은 향이 인상적이었어요. 과실향과 초콜릿 향이 자연스럽게 이어집니다.",
     "createdAt": "2026-06-23T22:07:00"
   },
@@ -291,7 +283,7 @@
     "id": "review_037",
     "wineId": "wine_001",
     "userId": "user_018",
-    "rating": 4.0,
+    "rating": 4,
     "content": "친구들과 홈파티에서 마셨는데 모두 만족했습니다. 가성비도 괜찮고 음식과도 잘 어울렸어요.",
     "createdAt": "2026-06-20T20:36:00"
   },
@@ -307,7 +299,7 @@
     "id": "review_039",
     "wineId": "wine_025",
     "userId": "user_011",
-    "rating": 4.0,
+    "rating": 4,
     "content": "레몬 같은 산뜻한 산미와 미네랄 풍미가 좋았어요. 해산물 요리와 곁들이기 좋습니다.",
     "createdAt": "2026-07-15T20:10:00"
   },
@@ -331,7 +323,7 @@
     "id": "review_042",
     "wineId": "wine_018",
     "userId": "user_006",
-    "rating": 5.0,
+    "rating": 5,
     "content": "블랙체리 과실향이 풍부하고 탄닌이 부드러워요. 채끝 스테이크와 곁들이니 정말 좋았습니다.",
     "createdAt": "2026-07-19T20:25:00"
   },
@@ -347,7 +339,7 @@
     "id": "review_044",
     "wineId": "wine_018",
     "userId": "user_020",
-    "rating": 5.0,
+    "rating": 5,
     "content": "탄닌이 부드럽고 전체적인 밸런스가 우아합니다. 중요한 분께 선물하기에도 만족스러웠어요.",
     "createdAt": "2026-07-12T19:15:00"
   },
@@ -358,5 +350,3773 @@
     "rating": 4.5,
     "content": "은은한 오크향과 블랙체리 향이 자연스럽게 이어져요. 스테이크와 함께 마시니 풍미가 더 살아납니다.",
     "createdAt": "2026-07-07T20:55:00"
+  },
+  {
+    "id": "review_046",
+    "wineId": "wine_001",
+    "userId": "user_005",
+    "rating": 4.3,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-07-20T09:00:00"
+  },
+  {
+    "id": "review_047",
+    "wineId": "wine_002",
+    "userId": "user_005",
+    "rating": 4.1,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-07-13T10:11:00"
+  },
+  {
+    "id": "review_048",
+    "wineId": "wine_002",
+    "userId": "user_006",
+    "rating": 4,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-06-30T11:28:00"
+  },
+  {
+    "id": "review_049",
+    "wineId": "wine_002",
+    "userId": "user_007",
+    "rating": 3.9,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-06-17T12:45:00"
+  },
+  {
+    "id": "review_050",
+    "wineId": "wine_002",
+    "userId": "user_008",
+    "rating": 4.2,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-06-04T13:02:00"
+  },
+  {
+    "id": "review_051",
+    "wineId": "wine_003",
+    "userId": "user_007",
+    "rating": 4.1,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-07-06T11:22:00"
+  },
+  {
+    "id": "review_052",
+    "wineId": "wine_003",
+    "userId": "user_008",
+    "rating": 4.4,
+    "content": "자두와 블랙베리 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-06-23T12:39:00"
+  },
+  {
+    "id": "review_053",
+    "wineId": "wine_003",
+    "userId": "user_009",
+    "rating": 4.3,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-06-10T13:56:00"
+  },
+  {
+    "id": "review_054",
+    "wineId": "wine_003",
+    "userId": "user_010",
+    "rating": 4.2,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-05-28T14:13:00"
+  },
+  {
+    "id": "review_055",
+    "wineId": "wine_003",
+    "userId": "user_011",
+    "rating": 4.5,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-05-15T15:30:00"
+  },
+  {
+    "id": "review_056",
+    "wineId": "wine_004",
+    "userId": "user_011",
+    "rating": 4.1,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-06-29T12:33:00"
+  },
+  {
+    "id": "review_057",
+    "wineId": "wine_004",
+    "userId": "user_012",
+    "rating": 4,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-06-16T13:50:00"
+  },
+  {
+    "id": "review_058",
+    "wineId": "wine_004",
+    "userId": "user_013",
+    "rating": 3.9,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-06-03T14:07:00"
+  },
+  {
+    "id": "review_059",
+    "wineId": "wine_004",
+    "userId": "user_014",
+    "rating": 4.2,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-05-21T15:24:00"
+  },
+  {
+    "id": "review_060",
+    "wineId": "wine_005",
+    "userId": "user_014",
+    "rating": 4,
+    "content": "블랙베리와 자두 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-06-22T13:44:00"
+  },
+  {
+    "id": "review_061",
+    "wineId": "wine_005",
+    "userId": "user_015",
+    "rating": 3.9,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-06-09T14:01:00"
+  },
+  {
+    "id": "review_062",
+    "wineId": "wine_005",
+    "userId": "user_016",
+    "rating": 3.8,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-05-27T15:18:00"
+  },
+  {
+    "id": "review_063",
+    "wineId": "wine_005",
+    "userId": "user_017",
+    "rating": 4.1,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-05-14T16:35:00"
+  },
+  {
+    "id": "review_064",
+    "wineId": "wine_006",
+    "userId": "user_017",
+    "rating": 4,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-06-15T14:55:00"
+  },
+  {
+    "id": "review_065",
+    "wineId": "wine_006",
+    "userId": "user_018",
+    "rating": 3.9,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-06-02T15:12:00"
+  },
+  {
+    "id": "review_066",
+    "wineId": "wine_006",
+    "userId": "user_019",
+    "rating": 3.8,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-05-20T16:29:00"
+  },
+  {
+    "id": "review_067",
+    "wineId": "wine_006",
+    "userId": "user_020",
+    "rating": 4.1,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-05-07T17:46:00"
+  },
+  {
+    "id": "review_068",
+    "wineId": "wine_007",
+    "userId": "user_021",
+    "rating": 4,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-06-08T15:06:00"
+  },
+  {
+    "id": "review_069",
+    "wineId": "wine_007",
+    "userId": "user_022",
+    "rating": 3.9,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-05-26T16:23:00"
+  },
+  {
+    "id": "review_070",
+    "wineId": "wine_007",
+    "userId": "user_023",
+    "rating": 4.2,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-05-13T17:40:00"
+  },
+  {
+    "id": "review_071",
+    "wineId": "wine_008",
+    "userId": "user_022",
+    "rating": 4,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-06-01T16:17:00"
+  },
+  {
+    "id": "review_072",
+    "wineId": "wine_008",
+    "userId": "user_023",
+    "rating": 4.3,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-05-19T17:34:00"
+  },
+  {
+    "id": "review_073",
+    "wineId": "wine_008",
+    "userId": "user_024",
+    "rating": 4.2,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-05-06T18:51:00"
+  },
+  {
+    "id": "review_074",
+    "wineId": "wine_008",
+    "userId": "user_001",
+    "rating": 4.1,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-04-23T19:08:00"
+  },
+  {
+    "id": "review_075",
+    "wineId": "wine_008",
+    "userId": "user_002",
+    "rating": 4.4,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-04-10T20:25:00"
+  },
+  {
+    "id": "review_076",
+    "wineId": "wine_009",
+    "userId": "user_001",
+    "rating": 3.9,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-05-25T17:28:00"
+  },
+  {
+    "id": "review_077",
+    "wineId": "wine_009",
+    "userId": "user_002",
+    "rating": 4.2,
+    "content": "블랙베리와 자두 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-05-12T18:45:00"
+  },
+  {
+    "id": "review_078",
+    "wineId": "wine_009",
+    "userId": "user_003",
+    "rating": 4.1,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-04-29T19:02:00"
+  },
+  {
+    "id": "review_079",
+    "wineId": "wine_009",
+    "userId": "user_004",
+    "rating": 4,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-04-16T20:19:00"
+  },
+  {
+    "id": "review_080",
+    "wineId": "wine_009",
+    "userId": "user_005",
+    "rating": 4.3,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-07-20T09:36:00"
+  },
+  {
+    "id": "review_081",
+    "wineId": "wine_010",
+    "userId": "user_006",
+    "rating": 4.1,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-05-18T18:39:00"
+  },
+  {
+    "id": "review_082",
+    "wineId": "wine_010",
+    "userId": "user_007",
+    "rating": 4,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-05-05T19:56:00"
+  },
+  {
+    "id": "review_083",
+    "wineId": "wine_010",
+    "userId": "user_008",
+    "rating": 4.3,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-04-22T20:13:00"
+  },
+  {
+    "id": "review_084",
+    "wineId": "wine_011",
+    "userId": "user_007",
+    "rating": 3.7,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-05-11T19:50:00"
+  },
+  {
+    "id": "review_085",
+    "wineId": "wine_011",
+    "userId": "user_008",
+    "rating": 4,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-04-28T20:07:00"
+  },
+  {
+    "id": "review_086",
+    "wineId": "wine_011",
+    "userId": "user_009",
+    "rating": 3.9,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-04-15T09:24:00"
+  },
+  {
+    "id": "review_087",
+    "wineId": "wine_011",
+    "userId": "user_010",
+    "rating": 3.8,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-07-19T10:41:00"
+  },
+  {
+    "id": "review_088",
+    "wineId": "wine_011",
+    "userId": "user_011",
+    "rating": 4.1,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-07-06T11:58:00"
+  },
+  {
+    "id": "review_089",
+    "wineId": "wine_012",
+    "userId": "user_010",
+    "rating": 4.1,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-05-04T20:01:00"
+  },
+  {
+    "id": "review_090",
+    "wineId": "wine_012",
+    "userId": "user_011",
+    "rating": 4.4,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-04-21T09:18:00"
+  },
+  {
+    "id": "review_091",
+    "wineId": "wine_012",
+    "userId": "user_012",
+    "rating": 4.3,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-04-08T10:35:00"
+  },
+  {
+    "id": "review_092",
+    "wineId": "wine_012",
+    "userId": "user_013",
+    "rating": 4.2,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-07-12T11:52:00"
+  },
+  {
+    "id": "review_093",
+    "wineId": "wine_012",
+    "userId": "user_014",
+    "rating": 4.5,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-06-29T12:09:00"
+  },
+  {
+    "id": "review_094",
+    "wineId": "wine_013",
+    "userId": "user_013",
+    "rating": 3.7,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-04-27T09:12:00"
+  },
+  {
+    "id": "review_095",
+    "wineId": "wine_013",
+    "userId": "user_014",
+    "rating": 4,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-04-14T10:29:00"
+  },
+  {
+    "id": "review_096",
+    "wineId": "wine_013",
+    "userId": "user_015",
+    "rating": 3.9,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-07-18T11:46:00"
+  },
+  {
+    "id": "review_097",
+    "wineId": "wine_013",
+    "userId": "user_016",
+    "rating": 3.8,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-07-05T12:03:00"
+  },
+  {
+    "id": "review_098",
+    "wineId": "wine_013",
+    "userId": "user_017",
+    "rating": 4.1,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-06-22T13:20:00"
+  },
+  {
+    "id": "review_099",
+    "wineId": "wine_014",
+    "userId": "user_018",
+    "rating": 4.1,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-04-20T10:23:00"
+  },
+  {
+    "id": "review_100",
+    "wineId": "wine_014",
+    "userId": "user_019",
+    "rating": 4,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-04-07T11:40:00"
+  },
+  {
+    "id": "review_101",
+    "wineId": "wine_014",
+    "userId": "user_020",
+    "rating": 4.3,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-07-11T12:57:00"
+  },
+  {
+    "id": "review_102",
+    "wineId": "wine_015",
+    "userId": "user_019",
+    "rating": 4.3,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-04-13T11:34:00"
+  },
+  {
+    "id": "review_103",
+    "wineId": "wine_015",
+    "userId": "user_020",
+    "rating": 4.6,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-07-17T12:51:00"
+  },
+  {
+    "id": "review_104",
+    "wineId": "wine_015",
+    "userId": "user_021",
+    "rating": 4.5,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-07-04T13:08:00"
+  },
+  {
+    "id": "review_105",
+    "wineId": "wine_015",
+    "userId": "user_022",
+    "rating": 4.4,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-06-21T14:25:00"
+  },
+  {
+    "id": "review_106",
+    "wineId": "wine_015",
+    "userId": "user_023",
+    "rating": 4.7,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-06-08T15:42:00"
+  },
+  {
+    "id": "review_107",
+    "wineId": "wine_016",
+    "userId": "user_023",
+    "rating": 4.5,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-04-06T12:45:00"
+  },
+  {
+    "id": "review_108",
+    "wineId": "wine_016",
+    "userId": "user_024",
+    "rating": 4.4,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-07-10T13:02:00"
+  },
+  {
+    "id": "review_109",
+    "wineId": "wine_016",
+    "userId": "user_001",
+    "rating": 4.3,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-06-27T14:19:00"
+  },
+  {
+    "id": "review_110",
+    "wineId": "wine_016",
+    "userId": "user_002",
+    "rating": 4.6,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-06-14T15:36:00"
+  },
+  {
+    "id": "review_111",
+    "wineId": "wine_017",
+    "userId": "user_001",
+    "rating": 3.7,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-07-16T13:56:00"
+  },
+  {
+    "id": "review_112",
+    "wineId": "wine_017",
+    "userId": "user_002",
+    "rating": 4,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-07-03T14:13:00"
+  },
+  {
+    "id": "review_113",
+    "wineId": "wine_017",
+    "userId": "user_003",
+    "rating": 3.9,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-06-20T15:30:00"
+  },
+  {
+    "id": "review_114",
+    "wineId": "wine_017",
+    "userId": "user_004",
+    "rating": 3.8,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-06-07T16:47:00"
+  },
+  {
+    "id": "review_115",
+    "wineId": "wine_017",
+    "userId": "user_005",
+    "rating": 4.1,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-05-25T17:04:00"
+  },
+  {
+    "id": "review_116",
+    "wineId": "wine_019",
+    "userId": "user_007",
+    "rating": 4.4,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-07-02T15:18:00"
+  },
+  {
+    "id": "review_117",
+    "wineId": "wine_019",
+    "userId": "user_008",
+    "rating": 4.7,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-06-19T16:35:00"
+  },
+  {
+    "id": "review_118",
+    "wineId": "wine_019",
+    "userId": "user_009",
+    "rating": 4.6,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-06-06T17:52:00"
+  },
+  {
+    "id": "review_119",
+    "wineId": "wine_019",
+    "userId": "user_010",
+    "rating": 4.5,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-05-24T18:09:00"
+  },
+  {
+    "id": "review_120",
+    "wineId": "wine_019",
+    "userId": "user_011",
+    "rating": 4.8,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-05-11T19:26:00"
+  },
+  {
+    "id": "review_121",
+    "wineId": "wine_020",
+    "userId": "user_010",
+    "rating": 4,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-06-25T16:29:00"
+  },
+  {
+    "id": "review_122",
+    "wineId": "wine_020",
+    "userId": "user_011",
+    "rating": 4.3,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-06-12T17:46:00"
+  },
+  {
+    "id": "review_123",
+    "wineId": "wine_020",
+    "userId": "user_012",
+    "rating": 4.2,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-05-30T18:03:00"
+  },
+  {
+    "id": "review_124",
+    "wineId": "wine_020",
+    "userId": "user_013",
+    "rating": 4.1,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-05-17T19:20:00"
+  },
+  {
+    "id": "review_125",
+    "wineId": "wine_020",
+    "userId": "user_014",
+    "rating": 4.4,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-05-04T20:37:00"
+  },
+  {
+    "id": "review_126",
+    "wineId": "wine_021",
+    "userId": "user_014",
+    "rating": 4.1,
+    "content": "자몽와 패션프루트 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-18T17:40:00"
+  },
+  {
+    "id": "review_127",
+    "wineId": "wine_021",
+    "userId": "user_015",
+    "rating": 4,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-06-05T18:57:00"
+  },
+  {
+    "id": "review_128",
+    "wineId": "wine_021",
+    "userId": "user_016",
+    "rating": 3.9,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-05-23T19:14:00"
+  },
+  {
+    "id": "review_129",
+    "wineId": "wine_021",
+    "userId": "user_017",
+    "rating": 4.2,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-05-10T20:31:00"
+  },
+  {
+    "id": "review_130",
+    "wineId": "wine_022",
+    "userId": "user_017",
+    "rating": 4.1,
+    "content": "자몽와 패션프루트 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-11T18:51:00"
+  },
+  {
+    "id": "review_131",
+    "wineId": "wine_022",
+    "userId": "user_018",
+    "rating": 4,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-05-29T19:08:00"
+  },
+  {
+    "id": "review_132",
+    "wineId": "wine_022",
+    "userId": "user_019",
+    "rating": 3.9,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-05-16T20:25:00"
+  },
+  {
+    "id": "review_133",
+    "wineId": "wine_022",
+    "userId": "user_020",
+    "rating": 4.2,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-05-03T09:42:00"
+  },
+  {
+    "id": "review_134",
+    "wineId": "wine_023",
+    "userId": "user_019",
+    "rating": 3.7,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-06-04T19:02:00"
+  },
+  {
+    "id": "review_135",
+    "wineId": "wine_023",
+    "userId": "user_020",
+    "rating": 4,
+    "content": "자몽와 패션프루트 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-22T20:19:00"
+  },
+  {
+    "id": "review_136",
+    "wineId": "wine_023",
+    "userId": "user_021",
+    "rating": 3.9,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-05-09T09:36:00"
+  },
+  {
+    "id": "review_137",
+    "wineId": "wine_023",
+    "userId": "user_022",
+    "rating": 3.8,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-04-26T10:53:00"
+  },
+  {
+    "id": "review_138",
+    "wineId": "wine_023",
+    "userId": "user_023",
+    "rating": 4.1,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-04-13T11:10:00"
+  },
+  {
+    "id": "review_139",
+    "wineId": "wine_024",
+    "userId": "user_022",
+    "rating": 3.9,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-05-28T20:13:00"
+  },
+  {
+    "id": "review_140",
+    "wineId": "wine_024",
+    "userId": "user_023",
+    "rating": 4.2,
+    "content": "자몽와 패션프루트 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-15T09:30:00"
+  },
+  {
+    "id": "review_141",
+    "wineId": "wine_024",
+    "userId": "user_024",
+    "rating": 4.1,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-05-02T10:47:00"
+  },
+  {
+    "id": "review_142",
+    "wineId": "wine_024",
+    "userId": "user_001",
+    "rating": 4,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-04-19T11:04:00"
+  },
+  {
+    "id": "review_143",
+    "wineId": "wine_024",
+    "userId": "user_002",
+    "rating": 4.3,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-04-06T12:21:00"
+  },
+  {
+    "id": "review_144",
+    "wineId": "wine_026",
+    "userId": "user_004",
+    "rating": 4,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-05-14T10:35:00"
+  },
+  {
+    "id": "review_145",
+    "wineId": "wine_026",
+    "userId": "user_005",
+    "rating": 4.3,
+    "content": "레몬와 사과 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-01T11:52:00"
+  },
+  {
+    "id": "review_146",
+    "wineId": "wine_026",
+    "userId": "user_006",
+    "rating": 4.2,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-04-18T12:09:00"
+  },
+  {
+    "id": "review_147",
+    "wineId": "wine_026",
+    "userId": "user_007",
+    "rating": 4.1,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-04-05T13:26:00"
+  },
+  {
+    "id": "review_148",
+    "wineId": "wine_026",
+    "userId": "user_008",
+    "rating": 4.4,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-07-09T14:43:00"
+  },
+  {
+    "id": "review_149",
+    "wineId": "wine_027",
+    "userId": "user_007",
+    "rating": 3.8,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-05-07T11:46:00"
+  },
+  {
+    "id": "review_150",
+    "wineId": "wine_027",
+    "userId": "user_008",
+    "rating": 4.1,
+    "content": "자몽와 패션프루트 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-04-24T12:03:00"
+  },
+  {
+    "id": "review_151",
+    "wineId": "wine_027",
+    "userId": "user_009",
+    "rating": 4,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-04-11T13:20:00"
+  },
+  {
+    "id": "review_152",
+    "wineId": "wine_027",
+    "userId": "user_010",
+    "rating": 3.9,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-07-15T14:37:00"
+  },
+  {
+    "id": "review_153",
+    "wineId": "wine_027",
+    "userId": "user_011",
+    "rating": 4.2,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-07-02T15:54:00"
+  },
+  {
+    "id": "review_154",
+    "wineId": "wine_028",
+    "userId": "user_010",
+    "rating": 4.7,
+    "content": "자몽 향과 달콤함이 기분 좋게 이어져 디저트와 함께 즐기기 좋았어요.",
+    "createdAt": "2026-04-30T12:57:00"
+  },
+  {
+    "id": "review_155",
+    "wineId": "wine_028",
+    "userId": "user_011",
+    "rating": 5,
+    "content": "과일향이 풍부하고 달달하지만 산미가 받쳐줘서 생각보다 균형이 좋았습니다.",
+    "createdAt": "2026-04-17T13:14:00"
+  },
+  {
+    "id": "review_156",
+    "wineId": "wine_028",
+    "userId": "user_012",
+    "rating": 4.9,
+    "content": "과일 타르트와 페어링하니 달콤한 풍미가 더 살아나고 여운도 길게 남아요.",
+    "createdAt": "2026-04-04T14:31:00"
+  },
+  {
+    "id": "review_157",
+    "wineId": "wine_028",
+    "userId": "user_013",
+    "rating": 4.8,
+    "content": "차갑게 마시니 상큼한 향과 달콤함이 잘 어우러져 홈파티에서 인기가 좋았어요.",
+    "createdAt": "2026-07-08T15:48:00"
+  },
+  {
+    "id": "review_158",
+    "wineId": "wine_028",
+    "userId": "user_014",
+    "rating": 5,
+    "content": "향이 화사하고 부담 없이 부드러워 와인 입문자나 선물용으로 추천합니다.",
+    "createdAt": "2026-06-25T16:05:00"
+  },
+  {
+    "id": "review_159",
+    "wineId": "wine_029",
+    "userId": "user_014",
+    "rating": 4.1,
+    "content": "라임와 청사과 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-04-23T13:08:00"
+  },
+  {
+    "id": "review_160",
+    "wineId": "wine_029",
+    "userId": "user_015",
+    "rating": 4,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-04-10T14:25:00"
+  },
+  {
+    "id": "review_161",
+    "wineId": "wine_029",
+    "userId": "user_016",
+    "rating": 3.9,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-07-14T15:42:00"
+  },
+  {
+    "id": "review_162",
+    "wineId": "wine_029",
+    "userId": "user_017",
+    "rating": 4.2,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-07-01T16:59:00"
+  },
+  {
+    "id": "review_163",
+    "wineId": "wine_030",
+    "userId": "user_017",
+    "rating": 4,
+    "content": "라임와 청사과 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-04-16T14:19:00"
+  },
+  {
+    "id": "review_164",
+    "wineId": "wine_030",
+    "userId": "user_018",
+    "rating": 3.9,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-07-20T15:36:00"
+  },
+  {
+    "id": "review_165",
+    "wineId": "wine_030",
+    "userId": "user_019",
+    "rating": 3.8,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-07-07T16:53:00"
+  },
+  {
+    "id": "review_166",
+    "wineId": "wine_030",
+    "userId": "user_020",
+    "rating": 4.1,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-06-24T17:10:00"
+  },
+  {
+    "id": "review_167",
+    "wineId": "wine_031",
+    "userId": "user_019",
+    "rating": 4.1,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-04-09T15:30:00"
+  },
+  {
+    "id": "review_168",
+    "wineId": "wine_031",
+    "userId": "user_020",
+    "rating": 4.4,
+    "content": "레몬와 사과 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-07-13T16:47:00"
+  },
+  {
+    "id": "review_169",
+    "wineId": "wine_031",
+    "userId": "user_021",
+    "rating": 4.3,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-06-30T17:04:00"
+  },
+  {
+    "id": "review_170",
+    "wineId": "wine_031",
+    "userId": "user_022",
+    "rating": 4.2,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-06-17T18:21:00"
+  },
+  {
+    "id": "review_171",
+    "wineId": "wine_031",
+    "userId": "user_023",
+    "rating": 4.5,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-06-04T19:38:00"
+  },
+  {
+    "id": "review_172",
+    "wineId": "wine_032",
+    "userId": "user_022",
+    "rating": 4.1,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-07-19T16:41:00"
+  },
+  {
+    "id": "review_173",
+    "wineId": "wine_032",
+    "userId": "user_023",
+    "rating": 4.4,
+    "content": "레몬와 사과 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-07-06T17:58:00"
+  },
+  {
+    "id": "review_174",
+    "wineId": "wine_032",
+    "userId": "user_024",
+    "rating": 4.3,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-06-23T18:15:00"
+  },
+  {
+    "id": "review_175",
+    "wineId": "wine_032",
+    "userId": "user_001",
+    "rating": 4.2,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-06-10T19:32:00"
+  },
+  {
+    "id": "review_176",
+    "wineId": "wine_032",
+    "userId": "user_002",
+    "rating": 4.5,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-05-28T20:49:00"
+  },
+  {
+    "id": "review_177",
+    "wineId": "wine_033",
+    "userId": "user_001",
+    "rating": 3.9,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-07-12T17:52:00"
+  },
+  {
+    "id": "review_178",
+    "wineId": "wine_033",
+    "userId": "user_002",
+    "rating": 4.2,
+    "content": "레몬와 사과 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-29T18:09:00"
+  },
+  {
+    "id": "review_179",
+    "wineId": "wine_033",
+    "userId": "user_003",
+    "rating": 4.1,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-06-16T19:26:00"
+  },
+  {
+    "id": "review_180",
+    "wineId": "wine_033",
+    "userId": "user_004",
+    "rating": 4,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-06-03T20:43:00"
+  },
+  {
+    "id": "review_181",
+    "wineId": "wine_033",
+    "userId": "user_005",
+    "rating": 4.3,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-05-21T09:00:00"
+  },
+  {
+    "id": "review_182",
+    "wineId": "wine_034",
+    "userId": "user_005",
+    "rating": 4.2,
+    "content": "레몬와 배 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-07-05T18:03:00"
+  },
+  {
+    "id": "review_183",
+    "wineId": "wine_034",
+    "userId": "user_006",
+    "rating": 4.1,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-06-22T19:20:00"
+  },
+  {
+    "id": "review_184",
+    "wineId": "wine_034",
+    "userId": "user_007",
+    "rating": 4,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-06-09T20:37:00"
+  },
+  {
+    "id": "review_185",
+    "wineId": "wine_034",
+    "userId": "user_008",
+    "rating": 4.3,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-05-27T09:54:00"
+  },
+  {
+    "id": "review_186",
+    "wineId": "wine_035",
+    "userId": "user_007",
+    "rating": 3.9,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-06-28T19:14:00"
+  },
+  {
+    "id": "review_187",
+    "wineId": "wine_035",
+    "userId": "user_008",
+    "rating": 4.2,
+    "content": "레몬와 사과 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-15T20:31:00"
+  },
+  {
+    "id": "review_188",
+    "wineId": "wine_035",
+    "userId": "user_009",
+    "rating": 4.1,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-06-02T09:48:00"
+  },
+  {
+    "id": "review_189",
+    "wineId": "wine_035",
+    "userId": "user_010",
+    "rating": 4,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-05-20T10:05:00"
+  },
+  {
+    "id": "review_190",
+    "wineId": "wine_035",
+    "userId": "user_011",
+    "rating": 4.3,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-05-07T11:22:00"
+  },
+  {
+    "id": "review_191",
+    "wineId": "wine_036",
+    "userId": "user_010",
+    "rating": 3.8,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-06-21T20:25:00"
+  },
+  {
+    "id": "review_192",
+    "wineId": "wine_036",
+    "userId": "user_011",
+    "rating": 4.1,
+    "content": "리치와 장미 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-08T09:42:00"
+  },
+  {
+    "id": "review_193",
+    "wineId": "wine_036",
+    "userId": "user_012",
+    "rating": 4,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-05-26T10:59:00"
+  },
+  {
+    "id": "review_194",
+    "wineId": "wine_036",
+    "userId": "user_013",
+    "rating": 3.9,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-05-13T11:16:00"
+  },
+  {
+    "id": "review_195",
+    "wineId": "wine_036",
+    "userId": "user_014",
+    "rating": 4.2,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-04-30T12:33:00"
+  },
+  {
+    "id": "review_196",
+    "wineId": "wine_037",
+    "userId": "user_013",
+    "rating": 3.8,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-06-14T09:36:00"
+  },
+  {
+    "id": "review_197",
+    "wineId": "wine_037",
+    "userId": "user_014",
+    "rating": 4.1,
+    "content": "시트러스와 붉은 과일 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-01T10:53:00"
+  },
+  {
+    "id": "review_198",
+    "wineId": "wine_037",
+    "userId": "user_015",
+    "rating": 4,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-05-19T11:10:00"
+  },
+  {
+    "id": "review_199",
+    "wineId": "wine_037",
+    "userId": "user_016",
+    "rating": 3.9,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-05-06T12:27:00"
+  },
+  {
+    "id": "review_200",
+    "wineId": "wine_037",
+    "userId": "user_017",
+    "rating": 4.2,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-04-23T13:44:00"
+  },
+  {
+    "id": "review_201",
+    "wineId": "wine_038",
+    "userId": "user_016",
+    "rating": 3.6,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-06-07T10:47:00"
+  },
+  {
+    "id": "review_202",
+    "wineId": "wine_038",
+    "userId": "user_017",
+    "rating": 3.9,
+    "content": "레몬와 사과 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-25T11:04:00"
+  },
+  {
+    "id": "review_203",
+    "wineId": "wine_038",
+    "userId": "user_018",
+    "rating": 3.8,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-05-12T12:21:00"
+  },
+  {
+    "id": "review_204",
+    "wineId": "wine_038",
+    "userId": "user_019",
+    "rating": 3.7,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-04-29T13:38:00"
+  },
+  {
+    "id": "review_205",
+    "wineId": "wine_038",
+    "userId": "user_020",
+    "rating": 4,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-04-16T14:55:00"
+  },
+  {
+    "id": "review_206",
+    "wineId": "wine_039",
+    "userId": "user_019",
+    "rating": 3.9,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-05-31T11:58:00"
+  },
+  {
+    "id": "review_207",
+    "wineId": "wine_039",
+    "userId": "user_020",
+    "rating": 4.2,
+    "content": "레몬와 사과 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-18T12:15:00"
+  },
+  {
+    "id": "review_208",
+    "wineId": "wine_039",
+    "userId": "user_021",
+    "rating": 4.1,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-05-05T13:32:00"
+  },
+  {
+    "id": "review_209",
+    "wineId": "wine_039",
+    "userId": "user_022",
+    "rating": 4,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-04-22T14:49:00"
+  },
+  {
+    "id": "review_210",
+    "wineId": "wine_039",
+    "userId": "user_023",
+    "rating": 4.3,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-04-09T15:06:00"
+  },
+  {
+    "id": "review_211",
+    "wineId": "wine_040",
+    "userId": "user_022",
+    "rating": 3.8,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-05-24T12:09:00"
+  },
+  {
+    "id": "review_212",
+    "wineId": "wine_040",
+    "userId": "user_023",
+    "rating": 4.1,
+    "content": "자몽와 패션프루트 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-11T13:26:00"
+  },
+  {
+    "id": "review_213",
+    "wineId": "wine_040",
+    "userId": "user_024",
+    "rating": 4,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-04-28T14:43:00"
+  },
+  {
+    "id": "review_214",
+    "wineId": "wine_040",
+    "userId": "user_001",
+    "rating": 3.9,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-04-15T15:00:00"
+  },
+  {
+    "id": "review_215",
+    "wineId": "wine_040",
+    "userId": "user_002",
+    "rating": 4.2,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-07-19T16:17:00"
+  },
+  {
+    "id": "review_216",
+    "wineId": "wine_041",
+    "userId": "user_002",
+    "rating": 4.6,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-05-17T13:20:00"
+  },
+  {
+    "id": "review_217",
+    "wineId": "wine_041",
+    "userId": "user_003",
+    "rating": 4.5,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-05-04T14:37:00"
+  },
+  {
+    "id": "review_218",
+    "wineId": "wine_041",
+    "userId": "user_004",
+    "rating": 4.4,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-04-21T15:54:00"
+  },
+  {
+    "id": "review_219",
+    "wineId": "wine_041",
+    "userId": "user_005",
+    "rating": 4.7,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-04-08T16:11:00"
+  },
+  {
+    "id": "review_220",
+    "wineId": "wine_042",
+    "userId": "user_005",
+    "rating": 4.4,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-05-10T14:31:00"
+  },
+  {
+    "id": "review_221",
+    "wineId": "wine_042",
+    "userId": "user_006",
+    "rating": 4.3,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-04-27T15:48:00"
+  },
+  {
+    "id": "review_222",
+    "wineId": "wine_042",
+    "userId": "user_007",
+    "rating": 4.2,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-04-14T16:05:00"
+  },
+  {
+    "id": "review_223",
+    "wineId": "wine_042",
+    "userId": "user_008",
+    "rating": 4.5,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-07-18T17:22:00"
+  },
+  {
+    "id": "review_224",
+    "wineId": "wine_043",
+    "userId": "user_008",
+    "rating": 4.4,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-05-03T15:42:00"
+  },
+  {
+    "id": "review_225",
+    "wineId": "wine_043",
+    "userId": "user_009",
+    "rating": 4.3,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-04-20T16:59:00"
+  },
+  {
+    "id": "review_226",
+    "wineId": "wine_043",
+    "userId": "user_010",
+    "rating": 4.2,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-04-07T17:16:00"
+  },
+  {
+    "id": "review_227",
+    "wineId": "wine_043",
+    "userId": "user_011",
+    "rating": 4.5,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-07-11T18:33:00"
+  },
+  {
+    "id": "review_228",
+    "wineId": "wine_044",
+    "userId": "user_010",
+    "rating": 4.6,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-04-26T16:53:00"
+  },
+  {
+    "id": "review_229",
+    "wineId": "wine_044",
+    "userId": "user_011",
+    "rating": 4.9,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-04-13T17:10:00"
+  },
+  {
+    "id": "review_230",
+    "wineId": "wine_044",
+    "userId": "user_012",
+    "rating": 4.8,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-07-17T18:27:00"
+  },
+  {
+    "id": "review_231",
+    "wineId": "wine_044",
+    "userId": "user_013",
+    "rating": 4.7,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-07-04T19:44:00"
+  },
+  {
+    "id": "review_232",
+    "wineId": "wine_044",
+    "userId": "user_014",
+    "rating": 5,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-06-21T20:01:00"
+  },
+  {
+    "id": "review_233",
+    "wineId": "wine_045",
+    "userId": "user_013",
+    "rating": 4.6,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-04-19T17:04:00"
+  },
+  {
+    "id": "review_234",
+    "wineId": "wine_045",
+    "userId": "user_014",
+    "rating": 4.9,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-04-06T18:21:00"
+  },
+  {
+    "id": "review_235",
+    "wineId": "wine_045",
+    "userId": "user_015",
+    "rating": 4.8,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-07-10T19:38:00"
+  },
+  {
+    "id": "review_236",
+    "wineId": "wine_045",
+    "userId": "user_016",
+    "rating": 4.7,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-06-27T20:55:00"
+  },
+  {
+    "id": "review_237",
+    "wineId": "wine_045",
+    "userId": "user_017",
+    "rating": 5,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-06-14T09:12:00"
+  },
+  {
+    "id": "review_238",
+    "wineId": "wine_046",
+    "userId": "user_016",
+    "rating": 4.1,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-04-12T18:15:00"
+  },
+  {
+    "id": "review_239",
+    "wineId": "wine_046",
+    "userId": "user_017",
+    "rating": 4.4,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-07-16T19:32:00"
+  },
+  {
+    "id": "review_240",
+    "wineId": "wine_046",
+    "userId": "user_018",
+    "rating": 4.3,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-07-03T20:49:00"
+  },
+  {
+    "id": "review_241",
+    "wineId": "wine_046",
+    "userId": "user_019",
+    "rating": 4.2,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-06-20T09:06:00"
+  },
+  {
+    "id": "review_242",
+    "wineId": "wine_046",
+    "userId": "user_020",
+    "rating": 4.5,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-06-07T10:23:00"
+  },
+  {
+    "id": "review_243",
+    "wineId": "wine_047",
+    "userId": "user_019",
+    "rating": 3.8,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-04-05T19:26:00"
+  },
+  {
+    "id": "review_244",
+    "wineId": "wine_047",
+    "userId": "user_020",
+    "rating": 4.1,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-07-09T20:43:00"
+  },
+  {
+    "id": "review_245",
+    "wineId": "wine_047",
+    "userId": "user_021",
+    "rating": 4,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-06-26T09:00:00"
+  },
+  {
+    "id": "review_246",
+    "wineId": "wine_047",
+    "userId": "user_022",
+    "rating": 3.9,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-06-13T10:17:00"
+  },
+  {
+    "id": "review_247",
+    "wineId": "wine_047",
+    "userId": "user_023",
+    "rating": 4.2,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-05-31T11:34:00"
+  },
+  {
+    "id": "review_248",
+    "wineId": "wine_048",
+    "userId": "user_022",
+    "rating": 4,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-07-15T20:37:00"
+  },
+  {
+    "id": "review_249",
+    "wineId": "wine_048",
+    "userId": "user_023",
+    "rating": 4.3,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-07-02T09:54:00"
+  },
+  {
+    "id": "review_250",
+    "wineId": "wine_048",
+    "userId": "user_024",
+    "rating": 4.2,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-06-19T10:11:00"
+  },
+  {
+    "id": "review_251",
+    "wineId": "wine_048",
+    "userId": "user_001",
+    "rating": 4.1,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-06-06T11:28:00"
+  },
+  {
+    "id": "review_252",
+    "wineId": "wine_048",
+    "userId": "user_002",
+    "rating": 4.4,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-05-24T12:45:00"
+  },
+  {
+    "id": "review_253",
+    "wineId": "wine_049",
+    "userId": "user_001",
+    "rating": 4.5,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-07-08T09:48:00"
+  },
+  {
+    "id": "review_254",
+    "wineId": "wine_049",
+    "userId": "user_002",
+    "rating": 4.8,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-06-25T10:05:00"
+  },
+  {
+    "id": "review_255",
+    "wineId": "wine_049",
+    "userId": "user_003",
+    "rating": 4.7,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-06-12T11:22:00"
+  },
+  {
+    "id": "review_256",
+    "wineId": "wine_049",
+    "userId": "user_004",
+    "rating": 4.6,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-05-30T12:39:00"
+  },
+  {
+    "id": "review_257",
+    "wineId": "wine_049",
+    "userId": "user_005",
+    "rating": 4.9,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-05-17T13:56:00"
+  },
+  {
+    "id": "review_258",
+    "wineId": "wine_050",
+    "userId": "user_004",
+    "rating": 4.7,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-07-01T10:59:00"
+  },
+  {
+    "id": "review_259",
+    "wineId": "wine_050",
+    "userId": "user_005",
+    "rating": 5,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-06-18T11:16:00"
+  },
+  {
+    "id": "review_260",
+    "wineId": "wine_050",
+    "userId": "user_006",
+    "rating": 4.9,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-06-05T12:33:00"
+  },
+  {
+    "id": "review_261",
+    "wineId": "wine_050",
+    "userId": "user_007",
+    "rating": 4.8,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-05-23T13:50:00"
+  },
+  {
+    "id": "review_262",
+    "wineId": "wine_050",
+    "userId": "user_008",
+    "rating": 5,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-05-10T14:07:00"
+  },
+  {
+    "id": "review_263",
+    "wineId": "wine_051",
+    "userId": "user_007",
+    "rating": 3.8,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-06-24T11:10:00"
+  },
+  {
+    "id": "review_264",
+    "wineId": "wine_051",
+    "userId": "user_008",
+    "rating": 4.1,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-06-11T12:27:00"
+  },
+  {
+    "id": "review_265",
+    "wineId": "wine_051",
+    "userId": "user_009",
+    "rating": 4,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-05-29T13:44:00"
+  },
+  {
+    "id": "review_266",
+    "wineId": "wine_051",
+    "userId": "user_010",
+    "rating": 3.9,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-05-16T14:01:00"
+  },
+  {
+    "id": "review_267",
+    "wineId": "wine_051",
+    "userId": "user_011",
+    "rating": 4.2,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-05-03T15:18:00"
+  },
+  {
+    "id": "review_268",
+    "wineId": "wine_052",
+    "userId": "user_010",
+    "rating": 3.7,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-06-17T12:21:00"
+  },
+  {
+    "id": "review_269",
+    "wineId": "wine_052",
+    "userId": "user_011",
+    "rating": 4,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-06-04T13:38:00"
+  },
+  {
+    "id": "review_270",
+    "wineId": "wine_052",
+    "userId": "user_012",
+    "rating": 3.9,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-05-22T14:55:00"
+  },
+  {
+    "id": "review_271",
+    "wineId": "wine_052",
+    "userId": "user_013",
+    "rating": 3.8,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-05-09T15:12:00"
+  },
+  {
+    "id": "review_272",
+    "wineId": "wine_052",
+    "userId": "user_014",
+    "rating": 4.1,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-04-26T16:29:00"
+  },
+  {
+    "id": "review_273",
+    "wineId": "wine_053",
+    "userId": "user_013",
+    "rating": 3.8,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-06-10T13:32:00"
+  },
+  {
+    "id": "review_274",
+    "wineId": "wine_053",
+    "userId": "user_014",
+    "rating": 4.1,
+    "content": "레몬 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-05-28T14:49:00"
+  },
+  {
+    "id": "review_275",
+    "wineId": "wine_053",
+    "userId": "user_015",
+    "rating": 4,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-05-15T15:06:00"
+  },
+  {
+    "id": "review_276",
+    "wineId": "wine_053",
+    "userId": "user_016",
+    "rating": 3.9,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-05-02T16:23:00"
+  },
+  {
+    "id": "review_277",
+    "wineId": "wine_053",
+    "userId": "user_017",
+    "rating": 4.2,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-04-19T17:40:00"
+  },
+  {
+    "id": "review_278",
+    "wineId": "wine_054",
+    "userId": "user_016",
+    "rating": 3.9,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-06-03T14:43:00"
+  },
+  {
+    "id": "review_279",
+    "wineId": "wine_054",
+    "userId": "user_017",
+    "rating": 4.2,
+    "content": "시트러스 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-05-21T15:00:00"
+  },
+  {
+    "id": "review_280",
+    "wineId": "wine_054",
+    "userId": "user_018",
+    "rating": 4.1,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-05-08T16:17:00"
+  },
+  {
+    "id": "review_281",
+    "wineId": "wine_054",
+    "userId": "user_019",
+    "rating": 4,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-04-25T17:34:00"
+  },
+  {
+    "id": "review_282",
+    "wineId": "wine_054",
+    "userId": "user_020",
+    "rating": 4.3,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-04-12T18:51:00"
+  },
+  {
+    "id": "review_283",
+    "wineId": "wine_055",
+    "userId": "user_019",
+    "rating": 3.7,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-05-27T15:54:00"
+  },
+  {
+    "id": "review_284",
+    "wineId": "wine_055",
+    "userId": "user_020",
+    "rating": 4,
+    "content": "시트러스 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-05-14T16:11:00"
+  },
+  {
+    "id": "review_285",
+    "wineId": "wine_055",
+    "userId": "user_021",
+    "rating": 3.9,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-05-01T17:28:00"
+  },
+  {
+    "id": "review_286",
+    "wineId": "wine_055",
+    "userId": "user_022",
+    "rating": 3.8,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-04-18T18:45:00"
+  },
+  {
+    "id": "review_287",
+    "wineId": "wine_055",
+    "userId": "user_023",
+    "rating": 4.1,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-04-05T19:02:00"
+  },
+  {
+    "id": "review_288",
+    "wineId": "wine_056",
+    "userId": "user_022",
+    "rating": 3.7,
+    "content": "굴 페어링에서는 산뜻한 산미와 섬세한 기포가 아주 잘 어울렸어요.",
+    "createdAt": "2026-05-20T16:05:00"
+  },
+  {
+    "id": "review_289",
+    "wineId": "wine_056",
+    "userId": "user_023",
+    "rating": 4,
+    "content": "시트러스 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-05-07T17:22:00"
+  },
+  {
+    "id": "review_290",
+    "wineId": "wine_056",
+    "userId": "user_024",
+    "rating": 3.9,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-04-24T18:39:00"
+  },
+  {
+    "id": "review_291",
+    "wineId": "wine_056",
+    "userId": "user_001",
+    "rating": 3.8,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-04-11T19:56:00"
+  },
+  {
+    "id": "review_292",
+    "wineId": "wine_056",
+    "userId": "user_002",
+    "rating": 4.1,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-07-15T20:13:00"
+  },
+  {
+    "id": "review_293",
+    "wineId": "wine_057",
+    "userId": "user_002",
+    "rating": 4.4,
+    "content": "기포가 부드럽고 달달한 풍미가 있어 홈파티에서 편하게 마시기 좋았습니다.",
+    "createdAt": "2026-05-13T17:16:00"
+  },
+  {
+    "id": "review_294",
+    "wineId": "wine_057",
+    "userId": "user_003",
+    "rating": 4.3,
+    "content": "과일 디저트와 함께하니 상큼한 산미 덕분에 달콤함이 무겁지 않았어요.",
+    "createdAt": "2026-04-30T18:33:00"
+  },
+  {
+    "id": "review_295",
+    "wineId": "wine_057",
+    "userId": "user_004",
+    "rating": 4.2,
+    "content": "향이 화사하고 병 디자인도 예뻐서 선물용으로 만족스러웠습니다.",
+    "createdAt": "2026-04-17T19:50:00"
+  },
+  {
+    "id": "review_296",
+    "wineId": "wine_057",
+    "userId": "user_005",
+    "rating": 4.5,
+    "content": "가격 대비 분위기를 잘 살려주는 스위트 스파클링이라 입문자에게 추천해요.",
+    "createdAt": "2026-04-04T20:07:00"
+  },
+  {
+    "id": "review_297",
+    "wineId": "wine_058",
+    "userId": "user_005",
+    "rating": 4.2,
+    "content": "기포가 부드럽고 달달한 풍미가 있어 홈파티에서 편하게 마시기 좋았습니다.",
+    "createdAt": "2026-05-06T18:27:00"
+  },
+  {
+    "id": "review_298",
+    "wineId": "wine_058",
+    "userId": "user_006",
+    "rating": 4.1,
+    "content": "과일 디저트와 함께하니 상큼한 산미 덕분에 달콤함이 무겁지 않았어요.",
+    "createdAt": "2026-04-23T19:44:00"
+  },
+  {
+    "id": "review_299",
+    "wineId": "wine_058",
+    "userId": "user_007",
+    "rating": 4,
+    "content": "향이 화사하고 병 디자인도 예뻐서 선물용으로 만족스러웠습니다.",
+    "createdAt": "2026-04-10T20:01:00"
+  },
+  {
+    "id": "review_300",
+    "wineId": "wine_058",
+    "userId": "user_008",
+    "rating": 4.3,
+    "content": "가격 대비 분위기를 잘 살려주는 스위트 스파클링이라 입문자에게 추천해요.",
+    "createdAt": "2026-07-14T09:18:00"
+  },
+  {
+    "id": "review_301",
+    "wineId": "wine_059",
+    "userId": "user_007",
+    "rating": 3.6,
+    "content": "복숭아 중심의 과일향과 달콤함이 풍부해서 케이크와 잘 어울렸어요.",
+    "createdAt": "2026-04-29T19:38:00"
+  },
+  {
+    "id": "review_302",
+    "wineId": "wine_059",
+    "userId": "user_008",
+    "rating": 3.9,
+    "content": "기포가 부드럽고 달달한 풍미가 있어 홈파티에서 편하게 마시기 좋았습니다.",
+    "createdAt": "2026-04-16T20:55:00"
+  },
+  {
+    "id": "review_303",
+    "wineId": "wine_059",
+    "userId": "user_009",
+    "rating": 3.8,
+    "content": "과일 디저트와 함께하니 상큼한 산미 덕분에 달콤함이 무겁지 않았어요.",
+    "createdAt": "2026-07-20T09:12:00"
+  },
+  {
+    "id": "review_304",
+    "wineId": "wine_059",
+    "userId": "user_010",
+    "rating": 3.7,
+    "content": "향이 화사하고 병 디자인도 예뻐서 선물용으로 만족스러웠습니다.",
+    "createdAt": "2026-07-07T10:29:00"
+  },
+  {
+    "id": "review_305",
+    "wineId": "wine_059",
+    "userId": "user_011",
+    "rating": 4,
+    "content": "가격 대비 분위기를 잘 살려주는 스위트 스파클링이라 입문자에게 추천해요.",
+    "createdAt": "2026-06-24T11:46:00"
+  },
+  {
+    "id": "review_306",
+    "wineId": "wine_060",
+    "userId": "user_011",
+    "rating": 4.3,
+    "content": "시트러스 향이 풍부하고 드라이한 끝맛이 깔끔해서 식전주로 좋았습니다.",
+    "createdAt": "2026-04-22T20:49:00"
+  },
+  {
+    "id": "review_307",
+    "wineId": "wine_060",
+    "userId": "user_012",
+    "rating": 4.2,
+    "content": "홈파티에서 열었는데 기포가 오래가고 해산물 페어링도 훌륭했어요.",
+    "createdAt": "2026-04-09T09:06:00"
+  },
+  {
+    "id": "review_308",
+    "wineId": "wine_060",
+    "userId": "user_013",
+    "rating": 4.1,
+    "content": "상큼한 과일향과 좋은 밸런스 덕분에 한 잔씩 계속 손이 갔습니다.",
+    "createdAt": "2026-07-13T10:23:00"
+  },
+  {
+    "id": "review_309",
+    "wineId": "wine_060",
+    "userId": "user_014",
+    "rating": 4.4,
+    "content": "특별한 날 선물용으로 골랐는데 긴 여운과 고급스러운 향이 만족스러웠어요.",
+    "createdAt": "2026-06-30T11:40:00"
+  },
+  {
+    "id": "review_310",
+    "wineId": "wine_061",
+    "userId": "user_014",
+    "rating": 4.3,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-04-15T09:00:00"
+  },
+  {
+    "id": "review_311",
+    "wineId": "wine_061",
+    "userId": "user_015",
+    "rating": 4.2,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-07-19T10:17:00"
+  },
+  {
+    "id": "review_312",
+    "wineId": "wine_061",
+    "userId": "user_016",
+    "rating": 4.1,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-07-06T11:34:00"
+  },
+  {
+    "id": "review_313",
+    "wineId": "wine_061",
+    "userId": "user_017",
+    "rating": 4.4,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-06-23T12:51:00"
+  },
+  {
+    "id": "review_314",
+    "wineId": "wine_062",
+    "userId": "user_016",
+    "rating": 3.7,
+    "content": "블랙체리와 블랙커런트 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-04-08T10:11:00"
+  },
+  {
+    "id": "review_315",
+    "wineId": "wine_062",
+    "userId": "user_017",
+    "rating": 4,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-07-12T11:28:00"
+  },
+  {
+    "id": "review_316",
+    "wineId": "wine_062",
+    "userId": "user_018",
+    "rating": 3.9,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-06-29T12:45:00"
+  },
+  {
+    "id": "review_317",
+    "wineId": "wine_062",
+    "userId": "user_019",
+    "rating": 3.8,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-06-16T13:02:00"
+  },
+  {
+    "id": "review_318",
+    "wineId": "wine_062",
+    "userId": "user_020",
+    "rating": 4.1,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-06-03T14:19:00"
+  },
+  {
+    "id": "review_319",
+    "wineId": "wine_063",
+    "userId": "user_020",
+    "rating": 4.2,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-07-18T11:22:00"
+  },
+  {
+    "id": "review_320",
+    "wineId": "wine_063",
+    "userId": "user_021",
+    "rating": 4.1,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-07-05T12:39:00"
+  },
+  {
+    "id": "review_321",
+    "wineId": "wine_063",
+    "userId": "user_022",
+    "rating": 4,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-06-22T13:56:00"
+  },
+  {
+    "id": "review_322",
+    "wineId": "wine_063",
+    "userId": "user_023",
+    "rating": 4.3,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-06-09T14:13:00"
+  },
+  {
+    "id": "review_323",
+    "wineId": "wine_064",
+    "userId": "user_022",
+    "rating": 3.7,
+    "content": "블랙체리와 블랙커런트 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-07-11T12:33:00"
+  },
+  {
+    "id": "review_324",
+    "wineId": "wine_064",
+    "userId": "user_023",
+    "rating": 4,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-06-28T13:50:00"
+  },
+  {
+    "id": "review_325",
+    "wineId": "wine_064",
+    "userId": "user_024",
+    "rating": 3.9,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-06-15T14:07:00"
+  },
+  {
+    "id": "review_326",
+    "wineId": "wine_064",
+    "userId": "user_001",
+    "rating": 3.8,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-06-02T15:24:00"
+  },
+  {
+    "id": "review_327",
+    "wineId": "wine_064",
+    "userId": "user_002",
+    "rating": 4.1,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-05-20T16:41:00"
+  },
+  {
+    "id": "review_328",
+    "wineId": "wine_065",
+    "userId": "user_001",
+    "rating": 4,
+    "content": "블랙체리와 블랙커런트 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-07-04T13:44:00"
+  },
+  {
+    "id": "review_329",
+    "wineId": "wine_065",
+    "userId": "user_002",
+    "rating": 4.3,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-06-21T14:01:00"
+  },
+  {
+    "id": "review_330",
+    "wineId": "wine_065",
+    "userId": "user_003",
+    "rating": 4.2,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-06-08T15:18:00"
+  },
+  {
+    "id": "review_331",
+    "wineId": "wine_065",
+    "userId": "user_004",
+    "rating": 4.1,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-05-26T16:35:00"
+  },
+  {
+    "id": "review_332",
+    "wineId": "wine_065",
+    "userId": "user_005",
+    "rating": 4.4,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-05-13T17:52:00"
+  },
+  {
+    "id": "review_333",
+    "wineId": "wine_066",
+    "userId": "user_005",
+    "rating": 4.2,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-06-27T14:55:00"
+  },
+  {
+    "id": "review_334",
+    "wineId": "wine_066",
+    "userId": "user_006",
+    "rating": 4.1,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-06-14T15:12:00"
+  },
+  {
+    "id": "review_335",
+    "wineId": "wine_066",
+    "userId": "user_007",
+    "rating": 4,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-06-01T16:29:00"
+  },
+  {
+    "id": "review_336",
+    "wineId": "wine_066",
+    "userId": "user_008",
+    "rating": 4.3,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-05-19T17:46:00"
+  },
+  {
+    "id": "review_337",
+    "wineId": "wine_067",
+    "userId": "user_007",
+    "rating": 3.7,
+    "content": "블랙체리와 블랙커런트 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-06-20T15:06:00"
+  },
+  {
+    "id": "review_338",
+    "wineId": "wine_067",
+    "userId": "user_008",
+    "rating": 4,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-06-07T16:23:00"
+  },
+  {
+    "id": "review_339",
+    "wineId": "wine_067",
+    "userId": "user_009",
+    "rating": 3.9,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-05-25T17:40:00"
+  },
+  {
+    "id": "review_340",
+    "wineId": "wine_067",
+    "userId": "user_010",
+    "rating": 3.8,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-05-12T18:57:00"
+  },
+  {
+    "id": "review_341",
+    "wineId": "wine_067",
+    "userId": "user_011",
+    "rating": 4.1,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-04-29T19:14:00"
+  },
+  {
+    "id": "review_342",
+    "wineId": "wine_068",
+    "userId": "user_010",
+    "rating": 4.1,
+    "content": "블랙체리와 블랙커런트 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-06-13T16:17:00"
+  },
+  {
+    "id": "review_343",
+    "wineId": "wine_068",
+    "userId": "user_011",
+    "rating": 4.4,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-05-31T17:34:00"
+  },
+  {
+    "id": "review_344",
+    "wineId": "wine_068",
+    "userId": "user_012",
+    "rating": 4.3,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-05-18T18:51:00"
+  },
+  {
+    "id": "review_345",
+    "wineId": "wine_068",
+    "userId": "user_013",
+    "rating": 4.2,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-05-05T19:08:00"
+  },
+  {
+    "id": "review_346",
+    "wineId": "wine_068",
+    "userId": "user_014",
+    "rating": 4.5,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-04-22T20:25:00"
+  },
+  {
+    "id": "review_347",
+    "wineId": "wine_069",
+    "userId": "user_014",
+    "rating": 4,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-06-06T17:28:00"
+  },
+  {
+    "id": "review_348",
+    "wineId": "wine_069",
+    "userId": "user_015",
+    "rating": 3.9,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-05-24T18:45:00"
+  },
+  {
+    "id": "review_349",
+    "wineId": "wine_069",
+    "userId": "user_016",
+    "rating": 3.8,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-05-11T19:02:00"
+  },
+  {
+    "id": "review_350",
+    "wineId": "wine_069",
+    "userId": "user_017",
+    "rating": 4.1,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-04-28T20:19:00"
+  },
+  {
+    "id": "review_351",
+    "wineId": "wine_070",
+    "userId": "user_016",
+    "rating": 3.9,
+    "content": "블랙체리와 블랙커런트 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-05-30T18:39:00"
+  },
+  {
+    "id": "review_352",
+    "wineId": "wine_070",
+    "userId": "user_017",
+    "rating": 4.2,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-05-17T19:56:00"
+  },
+  {
+    "id": "review_353",
+    "wineId": "wine_070",
+    "userId": "user_018",
+    "rating": 4.1,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-05-04T20:13:00"
+  },
+  {
+    "id": "review_354",
+    "wineId": "wine_070",
+    "userId": "user_019",
+    "rating": 4,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-04-21T09:30:00"
+  },
+  {
+    "id": "review_355",
+    "wineId": "wine_070",
+    "userId": "user_020",
+    "rating": 4.3,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-04-08T10:47:00"
+  },
+  {
+    "id": "review_356",
+    "wineId": "wine_071",
+    "userId": "user_019",
+    "rating": 4,
+    "content": "딸기와 라즈베리 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-05-23T19:50:00"
+  },
+  {
+    "id": "review_357",
+    "wineId": "wine_071",
+    "userId": "user_020",
+    "rating": 4.3,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-05-10T20:07:00"
+  },
+  {
+    "id": "review_358",
+    "wineId": "wine_071",
+    "userId": "user_021",
+    "rating": 4.2,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-04-27T09:24:00"
+  },
+  {
+    "id": "review_359",
+    "wineId": "wine_071",
+    "userId": "user_022",
+    "rating": 4.1,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-04-14T10:41:00"
+  },
+  {
+    "id": "review_360",
+    "wineId": "wine_071",
+    "userId": "user_023",
+    "rating": 4.4,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-07-18T11:58:00"
+  },
+  {
+    "id": "review_361",
+    "wineId": "wine_072",
+    "userId": "user_022",
+    "rating": 3.9,
+    "content": "복숭아와 머스캣 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-05-16T20:01:00"
+  },
+  {
+    "id": "review_362",
+    "wineId": "wine_072",
+    "userId": "user_023",
+    "rating": 4.2,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-05-03T09:18:00"
+  },
+  {
+    "id": "review_363",
+    "wineId": "wine_072",
+    "userId": "user_024",
+    "rating": 4.1,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-04-20T10:35:00"
+  },
+  {
+    "id": "review_364",
+    "wineId": "wine_072",
+    "userId": "user_001",
+    "rating": 4,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-04-07T11:52:00"
+  },
+  {
+    "id": "review_365",
+    "wineId": "wine_072",
+    "userId": "user_002",
+    "rating": 4.3,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-07-11T12:09:00"
+  },
+  {
+    "id": "review_366",
+    "wineId": "wine_073",
+    "userId": "user_001",
+    "rating": 3.9,
+    "content": "복숭아와 머스캣 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-05-09T09:12:00"
+  },
+  {
+    "id": "review_367",
+    "wineId": "wine_073",
+    "userId": "user_002",
+    "rating": 4.2,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-04-26T10:29:00"
+  },
+  {
+    "id": "review_368",
+    "wineId": "wine_073",
+    "userId": "user_003",
+    "rating": 4.1,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-04-13T11:46:00"
+  },
+  {
+    "id": "review_369",
+    "wineId": "wine_073",
+    "userId": "user_004",
+    "rating": 4,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-07-17T12:03:00"
+  },
+  {
+    "id": "review_370",
+    "wineId": "wine_073",
+    "userId": "user_005",
+    "rating": 4.3,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-07-04T13:20:00"
+  },
+  {
+    "id": "review_371",
+    "wineId": "wine_074",
+    "userId": "user_004",
+    "rating": 4.1,
+    "content": "복숭아와 머스캣 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-05-02T10:23:00"
+  },
+  {
+    "id": "review_372",
+    "wineId": "wine_074",
+    "userId": "user_005",
+    "rating": 4.4,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-04-19T11:40:00"
+  },
+  {
+    "id": "review_373",
+    "wineId": "wine_074",
+    "userId": "user_006",
+    "rating": 4.3,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-04-06T12:57:00"
+  },
+  {
+    "id": "review_374",
+    "wineId": "wine_074",
+    "userId": "user_007",
+    "rating": 4.2,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-07-10T13:14:00"
+  },
+  {
+    "id": "review_375",
+    "wineId": "wine_074",
+    "userId": "user_008",
+    "rating": 4.5,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-06-27T14:31:00"
+  },
+  {
+    "id": "review_376",
+    "wineId": "wine_075",
+    "userId": "user_007",
+    "rating": 3.9,
+    "content": "레몬와 사과 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-04-25T11:34:00"
+  },
+  {
+    "id": "review_377",
+    "wineId": "wine_075",
+    "userId": "user_008",
+    "rating": 4.2,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-04-12T12:51:00"
+  },
+  {
+    "id": "review_378",
+    "wineId": "wine_075",
+    "userId": "user_009",
+    "rating": 4.1,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-07-16T13:08:00"
+  },
+  {
+    "id": "review_379",
+    "wineId": "wine_075",
+    "userId": "user_010",
+    "rating": 4,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-07-03T14:25:00"
+  },
+  {
+    "id": "review_380",
+    "wineId": "wine_075",
+    "userId": "user_011",
+    "rating": 4.3,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-06-20T15:42:00"
+  },
+  {
+    "id": "review_381",
+    "wineId": "wine_076",
+    "userId": "user_010",
+    "rating": 4,
+    "content": "레몬와 사과 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-04-18T12:45:00"
+  },
+  {
+    "id": "review_382",
+    "wineId": "wine_076",
+    "userId": "user_011",
+    "rating": 4.3,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-04-05T13:02:00"
+  },
+  {
+    "id": "review_383",
+    "wineId": "wine_076",
+    "userId": "user_012",
+    "rating": 4.2,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-07-09T14:19:00"
+  },
+  {
+    "id": "review_384",
+    "wineId": "wine_076",
+    "userId": "user_013",
+    "rating": 4.1,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-06-26T15:36:00"
+  },
+  {
+    "id": "review_385",
+    "wineId": "wine_076",
+    "userId": "user_014",
+    "rating": 4.4,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-06-13T16:53:00"
+  },
+  {
+    "id": "review_386",
+    "wineId": "wine_077",
+    "userId": "user_013",
+    "rating": 3.9,
+    "content": "시트러스와 붉은 과일 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-04-11T13:56:00"
+  },
+  {
+    "id": "review_387",
+    "wineId": "wine_077",
+    "userId": "user_014",
+    "rating": 4.2,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-07-15T14:13:00"
+  },
+  {
+    "id": "review_388",
+    "wineId": "wine_077",
+    "userId": "user_015",
+    "rating": 4.1,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-07-02T15:30:00"
+  },
+  {
+    "id": "review_389",
+    "wineId": "wine_077",
+    "userId": "user_016",
+    "rating": 4,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-06-19T16:47:00"
+  },
+  {
+    "id": "review_390",
+    "wineId": "wine_077",
+    "userId": "user_017",
+    "rating": 4.3,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-06-06T17:04:00"
+  },
+  {
+    "id": "review_391",
+    "wineId": "wine_078",
+    "userId": "user_016",
+    "rating": 4.4,
+    "content": "레몬와 사과 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-04-04T14:07:00"
+  },
+  {
+    "id": "review_392",
+    "wineId": "wine_078",
+    "userId": "user_017",
+    "rating": 4.7,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-07-08T15:24:00"
+  },
+  {
+    "id": "review_393",
+    "wineId": "wine_078",
+    "userId": "user_018",
+    "rating": 4.6,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-06-25T16:41:00"
+  },
+  {
+    "id": "review_394",
+    "wineId": "wine_078",
+    "userId": "user_019",
+    "rating": 4.5,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-06-12T17:58:00"
+  },
+  {
+    "id": "review_395",
+    "wineId": "wine_078",
+    "userId": "user_020",
+    "rating": 4.8,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-05-30T18:15:00"
+  },
+  {
+    "id": "review_396",
+    "wineId": "wine_079",
+    "userId": "user_019",
+    "rating": 4,
+    "content": "레몬와 사과 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-07-14T15:18:00"
+  },
+  {
+    "id": "review_397",
+    "wineId": "wine_079",
+    "userId": "user_020",
+    "rating": 4.3,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-07-01T16:35:00"
+  },
+  {
+    "id": "review_398",
+    "wineId": "wine_079",
+    "userId": "user_021",
+    "rating": 4.2,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-06-18T17:52:00"
+  },
+  {
+    "id": "review_399",
+    "wineId": "wine_079",
+    "userId": "user_022",
+    "rating": 4.1,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-06-05T18:09:00"
+  },
+  {
+    "id": "review_400",
+    "wineId": "wine_079",
+    "userId": "user_023",
+    "rating": 4.4,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-05-23T19:26:00"
+  },
+  {
+    "id": "review_401",
+    "wineId": "wine_080",
+    "userId": "user_022",
+    "rating": 3.9,
+    "content": "레몬와 사과 과일향이 화사하고 산뜻한 산미가 매력적이었어요.",
+    "createdAt": "2026-07-07T16:29:00"
+  },
+  {
+    "id": "review_402",
+    "wineId": "wine_080",
+    "userId": "user_023",
+    "rating": 4.2,
+    "content": "연어 요리와 함께 마시니 드라이하고 깔끔한 끝맛이 음식과 잘 어울렸습니다.",
+    "createdAt": "2026-06-24T17:46:00"
+  },
+  {
+    "id": "review_403",
+    "wineId": "wine_080",
+    "userId": "user_024",
+    "rating": 4.1,
+    "content": "차갑게 마시면 과일향이 풍부하게 살아나서 브런치나 홈파티에 딱이에요.",
+    "createdAt": "2026-06-11T18:03:00"
+  },
+  {
+    "id": "review_404",
+    "wineId": "wine_080",
+    "userId": "user_001",
+    "rating": 4,
+    "content": "색도 예쁘고 부드러운 질감에 밸런스가 좋아 선물용으로도 추천합니다.",
+    "createdAt": "2026-05-29T19:20:00"
+  },
+  {
+    "id": "review_405",
+    "wineId": "wine_080",
+    "userId": "user_002",
+    "rating": 4.3,
+    "content": "상큼한 산미와 긴 여운이 인상적이라 로제 와인 입문자도 편하게 즐길 수 있어요.",
+    "createdAt": "2026-05-16T20:37:00"
+  },
+  {
+    "id": "review_406",
+    "wineId": "wine_081",
+    "userId": "user_002",
+    "rating": 4.4,
+    "content": "오미자와 붉은 베리 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-30T17:40:00"
+  },
+  {
+    "id": "review_407",
+    "wineId": "wine_081",
+    "userId": "user_003",
+    "rating": 4.3,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-06-17T18:57:00"
+  },
+  {
+    "id": "review_408",
+    "wineId": "wine_081",
+    "userId": "user_004",
+    "rating": 4.2,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-06-04T19:14:00"
+  },
+  {
+    "id": "review_409",
+    "wineId": "wine_081",
+    "userId": "user_005",
+    "rating": 4.5,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-05-22T20:31:00"
+  },
+  {
+    "id": "review_410",
+    "wineId": "wine_082",
+    "userId": "user_004",
+    "rating": 3.7,
+    "content": "한식 전채와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-06-23T18:51:00"
+  },
+  {
+    "id": "review_411",
+    "wineId": "wine_082",
+    "userId": "user_005",
+    "rating": 4,
+    "content": "오미자와 붉은 베리 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-10T19:08:00"
+  },
+  {
+    "id": "review_412",
+    "wineId": "wine_082",
+    "userId": "user_006",
+    "rating": 3.9,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-05-28T20:25:00"
+  },
+  {
+    "id": "review_413",
+    "wineId": "wine_082",
+    "userId": "user_007",
+    "rating": 3.8,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-05-15T09:42:00"
+  },
+  {
+    "id": "review_414",
+    "wineId": "wine_082",
+    "userId": "user_008",
+    "rating": 4.1,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-05-02T10:59:00"
+  },
+  {
+    "id": "review_415",
+    "wineId": "wine_083",
+    "userId": "user_008",
+    "rating": 3.9,
+    "content": "청사과와 유자 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-16T19:02:00"
+  },
+  {
+    "id": "review_416",
+    "wineId": "wine_083",
+    "userId": "user_009",
+    "rating": 3.8,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-06-03T20:19:00"
+  },
+  {
+    "id": "review_417",
+    "wineId": "wine_083",
+    "userId": "user_010",
+    "rating": 3.7,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-05-21T09:36:00"
+  },
+  {
+    "id": "review_418",
+    "wineId": "wine_083",
+    "userId": "user_011",
+    "rating": 4,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-05-08T10:53:00"
+  },
+  {
+    "id": "review_419",
+    "wineId": "wine_084",
+    "userId": "user_010",
+    "rating": 3.6,
+    "content": "불고기와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-06-09T20:13:00"
+  },
+  {
+    "id": "review_420",
+    "wineId": "wine_084",
+    "userId": "user_011",
+    "rating": 3.9,
+    "content": "딸기와 포도 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-27T09:30:00"
+  },
+  {
+    "id": "review_421",
+    "wineId": "wine_084",
+    "userId": "user_012",
+    "rating": 3.8,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-05-14T10:47:00"
+  },
+  {
+    "id": "review_422",
+    "wineId": "wine_084",
+    "userId": "user_013",
+    "rating": 3.7,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-05-01T11:04:00"
+  },
+  {
+    "id": "review_423",
+    "wineId": "wine_084",
+    "userId": "user_014",
+    "rating": 4,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-04-18T12:21:00"
+  },
+  {
+    "id": "review_424",
+    "wineId": "wine_085",
+    "userId": "user_013",
+    "rating": 3.7,
+    "content": "불고기와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-06-02T09:24:00"
+  },
+  {
+    "id": "review_425",
+    "wineId": "wine_085",
+    "userId": "user_014",
+    "rating": 4,
+    "content": "딸기와 포도 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-20T10:41:00"
+  },
+  {
+    "id": "review_426",
+    "wineId": "wine_085",
+    "userId": "user_015",
+    "rating": 3.9,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-05-07T11:58:00"
+  },
+  {
+    "id": "review_427",
+    "wineId": "wine_085",
+    "userId": "user_016",
+    "rating": 3.8,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-04-24T12:15:00"
+  },
+  {
+    "id": "review_428",
+    "wineId": "wine_085",
+    "userId": "user_017",
+    "rating": 4.1,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-04-11T13:32:00"
+  },
+  {
+    "id": "review_429",
+    "wineId": "wine_086",
+    "userId": "user_016",
+    "rating": 3.7,
+    "content": "불고기와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-05-26T10:35:00"
+  },
+  {
+    "id": "review_430",
+    "wineId": "wine_086",
+    "userId": "user_017",
+    "rating": 4,
+    "content": "딸기와 포도 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-13T11:52:00"
+  },
+  {
+    "id": "review_431",
+    "wineId": "wine_086",
+    "userId": "user_018",
+    "rating": 3.9,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-04-30T12:09:00"
+  },
+  {
+    "id": "review_432",
+    "wineId": "wine_086",
+    "userId": "user_019",
+    "rating": 3.8,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-04-17T13:26:00"
+  },
+  {
+    "id": "review_433",
+    "wineId": "wine_086",
+    "userId": "user_020",
+    "rating": 4.1,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-04-04T14:43:00"
+  },
+  {
+    "id": "review_434",
+    "wineId": "wine_087",
+    "userId": "user_019",
+    "rating": 4,
+    "content": "딸기의 개성 있는 과일향과 달콤함이 조화로워 한국 와인의 매력을 느꼈어요.",
+    "createdAt": "2026-05-19T11:46:00"
+  },
+  {
+    "id": "review_435",
+    "wineId": "wine_087",
+    "userId": "user_020",
+    "rating": 4.3,
+    "content": "불고기와 함께하니 달달한 풍미와 산뜻한 산미가 잘 어울렸습니다.",
+    "createdAt": "2026-05-06T12:03:00"
+  },
+  {
+    "id": "review_436",
+    "wineId": "wine_087",
+    "userId": "user_021",
+    "rating": 4.2,
+    "content": "향이 풍부하고 부드러워 홈파티에서 누구나 편하게 마시기 좋았어요.",
+    "createdAt": "2026-04-23T13:20:00"
+  },
+  {
+    "id": "review_437",
+    "wineId": "wine_087",
+    "userId": "user_022",
+    "rating": 4.1,
+    "content": "지역 특산물의 풍미가 선명하고 병도 근사해서 선물용으로 추천합니다.",
+    "createdAt": "2026-04-10T14:37:00"
+  },
+  {
+    "id": "review_438",
+    "wineId": "wine_087",
+    "userId": "user_023",
+    "rating": 4.4,
+    "content": "가격 대비 개성이 확실하고 끝맛이 깔끔해서 한국 와인 입문용으로 좋았어요.",
+    "createdAt": "2026-07-14T15:54:00"
+  },
+  {
+    "id": "review_439",
+    "wineId": "wine_088",
+    "userId": "user_023",
+    "rating": 4.2,
+    "content": "딸기와 포도 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-12T12:57:00"
+  },
+  {
+    "id": "review_440",
+    "wineId": "wine_088",
+    "userId": "user_024",
+    "rating": 4.1,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-04-29T13:14:00"
+  },
+  {
+    "id": "review_441",
+    "wineId": "wine_088",
+    "userId": "user_001",
+    "rating": 4,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-04-16T14:31:00"
+  },
+  {
+    "id": "review_442",
+    "wineId": "wine_088",
+    "userId": "user_002",
+    "rating": 4.3,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-07-20T15:48:00"
+  },
+  {
+    "id": "review_443",
+    "wineId": "wine_089",
+    "userId": "user_001",
+    "rating": 3.7,
+    "content": "불고기와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-05-05T13:08:00"
+  },
+  {
+    "id": "review_444",
+    "wineId": "wine_089",
+    "userId": "user_002",
+    "rating": 4,
+    "content": "딸기와 포도 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-04-22T14:25:00"
+  },
+  {
+    "id": "review_445",
+    "wineId": "wine_089",
+    "userId": "user_003",
+    "rating": 3.9,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-04-09T15:42:00"
+  },
+  {
+    "id": "review_446",
+    "wineId": "wine_089",
+    "userId": "user_004",
+    "rating": 3.8,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-07-13T16:59:00"
+  },
+  {
+    "id": "review_447",
+    "wineId": "wine_089",
+    "userId": "user_005",
+    "rating": 4.1,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-06-30T17:16:00"
+  },
+  {
+    "id": "review_448",
+    "wineId": "wine_090",
+    "userId": "user_004",
+    "rating": 4,
+    "content": "불고기와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-04-28T14:19:00"
+  },
+  {
+    "id": "review_449",
+    "wineId": "wine_090",
+    "userId": "user_005",
+    "rating": 4.3,
+    "content": "딸기와 포도 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-04-15T15:36:00"
+  },
+  {
+    "id": "review_450",
+    "wineId": "wine_090",
+    "userId": "user_006",
+    "rating": 4.2,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-07-19T16:53:00"
+  },
+  {
+    "id": "review_451",
+    "wineId": "wine_090",
+    "userId": "user_007",
+    "rating": 4.1,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-07-06T17:10:00"
+  },
+  {
+    "id": "review_452",
+    "wineId": "wine_090",
+    "userId": "user_008",
+    "rating": 4.4,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-06-23T18:27:00"
+  },
+  {
+    "id": "review_453",
+    "wineId": "wine_091",
+    "userId": "user_007",
+    "rating": 3.6,
+    "content": "한식 전채와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-04-21T15:30:00"
+  },
+  {
+    "id": "review_454",
+    "wineId": "wine_091",
+    "userId": "user_008",
+    "rating": 3.9,
+    "content": "청사과와 유자 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-04-08T16:47:00"
+  },
+  {
+    "id": "review_455",
+    "wineId": "wine_091",
+    "userId": "user_009",
+    "rating": 3.8,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-07-12T17:04:00"
+  },
+  {
+    "id": "review_456",
+    "wineId": "wine_091",
+    "userId": "user_010",
+    "rating": 3.7,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-06-29T18:21:00"
+  },
+  {
+    "id": "review_457",
+    "wineId": "wine_091",
+    "userId": "user_011",
+    "rating": 4,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-06-16T19:38:00"
+  },
+  {
+    "id": "review_458",
+    "wineId": "wine_092",
+    "userId": "user_010",
+    "rating": 3.8,
+    "content": "불고기와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-04-14T16:41:00"
+  },
+  {
+    "id": "review_459",
+    "wineId": "wine_092",
+    "userId": "user_011",
+    "rating": 4.1,
+    "content": "딸기와 포도 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-07-18T17:58:00"
+  },
+  {
+    "id": "review_460",
+    "wineId": "wine_092",
+    "userId": "user_012",
+    "rating": 4,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-07-05T18:15:00"
+  },
+  {
+    "id": "review_461",
+    "wineId": "wine_092",
+    "userId": "user_013",
+    "rating": 3.9,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-06-22T19:32:00"
+  },
+  {
+    "id": "review_462",
+    "wineId": "wine_092",
+    "userId": "user_014",
+    "rating": 4.2,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-06-09T20:49:00"
+  },
+  {
+    "id": "review_463",
+    "wineId": "wine_093",
+    "userId": "user_014",
+    "rating": 4.1,
+    "content": "불고기와 함께하니 달달한 풍미와 산뜻한 산미가 잘 어울렸습니다.",
+    "createdAt": "2026-04-07T17:52:00"
+  },
+  {
+    "id": "review_464",
+    "wineId": "wine_093",
+    "userId": "user_015",
+    "rating": 4,
+    "content": "향이 풍부하고 부드러워 홈파티에서 누구나 편하게 마시기 좋았어요.",
+    "createdAt": "2026-07-11T18:09:00"
+  },
+  {
+    "id": "review_465",
+    "wineId": "wine_093",
+    "userId": "user_016",
+    "rating": 3.9,
+    "content": "지역 특산물의 풍미가 선명하고 병도 근사해서 선물용으로 추천합니다.",
+    "createdAt": "2026-06-28T19:26:00"
+  },
+  {
+    "id": "review_466",
+    "wineId": "wine_093",
+    "userId": "user_017",
+    "rating": 4.2,
+    "content": "가격 대비 개성이 확실하고 끝맛이 깔끔해서 한국 와인 입문용으로 좋았어요.",
+    "createdAt": "2026-06-15T20:43:00"
+  },
+  {
+    "id": "review_467",
+    "wineId": "wine_094",
+    "userId": "user_016",
+    "rating": 4,
+    "content": "불고기와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-07-17T18:03:00"
+  },
+  {
+    "id": "review_468",
+    "wineId": "wine_094",
+    "userId": "user_017",
+    "rating": 4.3,
+    "content": "산머루와 블랙베리 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-07-04T19:20:00"
+  },
+  {
+    "id": "review_469",
+    "wineId": "wine_094",
+    "userId": "user_018",
+    "rating": 4.2,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-06-21T20:37:00"
+  },
+  {
+    "id": "review_470",
+    "wineId": "wine_094",
+    "userId": "user_019",
+    "rating": 4.1,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-06-08T09:54:00"
+  },
+  {
+    "id": "review_471",
+    "wineId": "wine_094",
+    "userId": "user_020",
+    "rating": 4.4,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-05-26T10:11:00"
+  },
+  {
+    "id": "review_472",
+    "wineId": "wine_095",
+    "userId": "user_019",
+    "rating": 3.9,
+    "content": "한식 전채와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-07-10T19:14:00"
+  },
+  {
+    "id": "review_473",
+    "wineId": "wine_095",
+    "userId": "user_020",
+    "rating": 4.2,
+    "content": "사과와 배 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-27T20:31:00"
+  },
+  {
+    "id": "review_474",
+    "wineId": "wine_095",
+    "userId": "user_021",
+    "rating": 4.1,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-06-14T09:48:00"
+  },
+  {
+    "id": "review_475",
+    "wineId": "wine_095",
+    "userId": "user_022",
+    "rating": 4,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-06-01T10:05:00"
+  },
+  {
+    "id": "review_476",
+    "wineId": "wine_095",
+    "userId": "user_023",
+    "rating": 4.3,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-05-19T11:22:00"
+  },
+  {
+    "id": "review_477",
+    "wineId": "wine_096",
+    "userId": "user_022",
+    "rating": 3.6,
+    "content": "감의 개성 있는 과일향과 달콤함이 조화로워 한국 와인의 매력을 느꼈어요.",
+    "createdAt": "2026-07-03T20:25:00"
+  },
+  {
+    "id": "review_478",
+    "wineId": "wine_096",
+    "userId": "user_023",
+    "rating": 3.9,
+    "content": "한식 전채와 함께하니 달달한 풍미와 산뜻한 산미가 잘 어울렸습니다.",
+    "createdAt": "2026-06-20T09:42:00"
+  },
+  {
+    "id": "review_479",
+    "wineId": "wine_096",
+    "userId": "user_024",
+    "rating": 3.8,
+    "content": "향이 풍부하고 부드러워 홈파티에서 누구나 편하게 마시기 좋았어요.",
+    "createdAt": "2026-06-07T10:59:00"
+  },
+  {
+    "id": "review_480",
+    "wineId": "wine_096",
+    "userId": "user_001",
+    "rating": 3.7,
+    "content": "지역 특산물의 풍미가 선명하고 병도 근사해서 선물용으로 추천합니다.",
+    "createdAt": "2026-05-25T11:16:00"
+  },
+  {
+    "id": "review_481",
+    "wineId": "wine_096",
+    "userId": "user_002",
+    "rating": 4,
+    "content": "가격 대비 개성이 확실하고 끝맛이 깔끔해서 한국 와인 입문용으로 좋았어요.",
+    "createdAt": "2026-05-12T12:33:00"
+  },
+  {
+    "id": "review_482",
+    "wineId": "wine_097",
+    "userId": "user_001",
+    "rating": 3.9,
+    "content": "한식 전채와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-06-26T09:36:00"
+  },
+  {
+    "id": "review_483",
+    "wineId": "wine_097",
+    "userId": "user_002",
+    "rating": 4.2,
+    "content": "거봉와 복숭아 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-13T10:53:00"
+  },
+  {
+    "id": "review_484",
+    "wineId": "wine_097",
+    "userId": "user_003",
+    "rating": 4.1,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-05-31T11:10:00"
+  },
+  {
+    "id": "review_485",
+    "wineId": "wine_097",
+    "userId": "user_004",
+    "rating": 4,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-05-18T12:27:00"
+  },
+  {
+    "id": "review_486",
+    "wineId": "wine_097",
+    "userId": "user_005",
+    "rating": 4.3,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-05-05T13:44:00"
+  },
+  {
+    "id": "review_487",
+    "wineId": "wine_098",
+    "userId": "user_004",
+    "rating": 4,
+    "content": "불고기와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-06-19T10:47:00"
+  },
+  {
+    "id": "review_488",
+    "wineId": "wine_098",
+    "userId": "user_005",
+    "rating": 4.3,
+    "content": "딸기와 포도 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-06-06T11:04:00"
+  },
+  {
+    "id": "review_489",
+    "wineId": "wine_098",
+    "userId": "user_006",
+    "rating": 4.2,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-05-24T12:21:00"
+  },
+  {
+    "id": "review_490",
+    "wineId": "wine_098",
+    "userId": "user_007",
+    "rating": 4.1,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-05-11T13:38:00"
+  },
+  {
+    "id": "review_491",
+    "wineId": "wine_098",
+    "userId": "user_008",
+    "rating": 4.4,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-04-28T14:55:00"
+  },
+  {
+    "id": "review_492",
+    "wineId": "wine_099",
+    "userId": "user_007",
+    "rating": 3.7,
+    "content": "거봉의 개성 있는 과일향과 달콤함이 조화로워 한국 와인의 매력을 느꼈어요.",
+    "createdAt": "2026-06-12T11:58:00"
+  },
+  {
+    "id": "review_493",
+    "wineId": "wine_099",
+    "userId": "user_008",
+    "rating": 4,
+    "content": "한식 전채와 함께하니 달달한 풍미와 산뜻한 산미가 잘 어울렸습니다.",
+    "createdAt": "2026-05-30T12:15:00"
+  },
+  {
+    "id": "review_494",
+    "wineId": "wine_099",
+    "userId": "user_009",
+    "rating": 3.9,
+    "content": "향이 풍부하고 부드러워 홈파티에서 누구나 편하게 마시기 좋았어요.",
+    "createdAt": "2026-05-17T13:32:00"
+  },
+  {
+    "id": "review_495",
+    "wineId": "wine_099",
+    "userId": "user_010",
+    "rating": 3.8,
+    "content": "지역 특산물의 풍미가 선명하고 병도 근사해서 선물용으로 추천합니다.",
+    "createdAt": "2026-05-04T14:49:00"
+  },
+  {
+    "id": "review_496",
+    "wineId": "wine_099",
+    "userId": "user_011",
+    "rating": 4.1,
+    "content": "가격 대비 개성이 확실하고 끝맛이 깔끔해서 한국 와인 입문용으로 좋았어요.",
+    "createdAt": "2026-04-21T15:06:00"
+  },
+  {
+    "id": "review_497",
+    "wineId": "wine_100",
+    "userId": "user_010",
+    "rating": 3.8,
+    "content": "한식 전채와 함께 마시니 산뜻한 산미와 지역 특유의 과일향이 잘 어울렸어요.",
+    "createdAt": "2026-06-05T12:09:00"
+  },
+  {
+    "id": "review_498",
+    "wineId": "wine_100",
+    "userId": "user_011",
+    "rating": 4.1,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-23T13:26:00"
+  },
+  {
+    "id": "review_499",
+    "wineId": "wine_100",
+    "userId": "user_012",
+    "rating": 4,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-05-10T14:43:00"
+  },
+  {
+    "id": "review_500",
+    "wineId": "wine_100",
+    "userId": "user_013",
+    "rating": 3.9,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-04-27T15:00:00"
+  },
+  {
+    "id": "review_501",
+    "wineId": "wine_100",
+    "userId": "user_014",
+    "rating": 4.2,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 한국 와인 입문자에게 좋아요.",
+    "createdAt": "2026-04-14T16:17:00"
+  },
+  {
+    "id": "review_502",
+    "wineId": "wine_101",
+    "userId": "user_013",
+    "rating": 4,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-05-29T13:20:00"
+  },
+  {
+    "id": "review_503",
+    "wineId": "wine_101",
+    "userId": "user_014",
+    "rating": 4.3,
+    "content": "블랙베리와 자두 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-05-16T14:37:00"
+  },
+  {
+    "id": "review_504",
+    "wineId": "wine_101",
+    "userId": "user_015",
+    "rating": 4.2,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-05-03T15:54:00"
+  },
+  {
+    "id": "review_505",
+    "wineId": "wine_101",
+    "userId": "user_016",
+    "rating": 4.1,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-04-20T16:11:00"
+  },
+  {
+    "id": "review_506",
+    "wineId": "wine_101",
+    "userId": "user_017",
+    "rating": 4.4,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-04-07T17:28:00"
+  },
+  {
+    "id": "review_507",
+    "wineId": "wine_102",
+    "userId": "user_016",
+    "rating": 3.8,
+    "content": "복숭아 향과 달콤함이 기분 좋게 이어져 디저트와 함께 즐기기 좋았어요.",
+    "createdAt": "2026-05-22T14:31:00"
+  },
+  {
+    "id": "review_508",
+    "wineId": "wine_102",
+    "userId": "user_017",
+    "rating": 4.1,
+    "content": "과일향이 풍부하고 달달하지만 산미가 받쳐줘서 생각보다 균형이 좋았습니다.",
+    "createdAt": "2026-05-09T15:48:00"
+  },
+  {
+    "id": "review_509",
+    "wineId": "wine_102",
+    "userId": "user_018",
+    "rating": 4,
+    "content": "과일 타르트와 페어링하니 달콤한 풍미가 더 살아나고 여운도 길게 남아요.",
+    "createdAt": "2026-04-26T16:05:00"
+  },
+  {
+    "id": "review_510",
+    "wineId": "wine_102",
+    "userId": "user_019",
+    "rating": 3.9,
+    "content": "차갑게 마시니 상큼한 향과 달콤함이 잘 어우러져 홈파티에서 인기가 좋았어요.",
+    "createdAt": "2026-04-13T17:22:00"
+  },
+  {
+    "id": "review_511",
+    "wineId": "wine_102",
+    "userId": "user_020",
+    "rating": 4.2,
+    "content": "향이 화사하고 부담 없이 부드러워 와인 입문자나 선물용으로 추천합니다.",
+    "createdAt": "2026-07-17T18:39:00"
+  },
+  {
+    "id": "review_512",
+    "wineId": "wine_106",
+    "userId": "user_019",
+    "rating": 4,
+    "content": "해산물 페어링에서는 산뜻한 산미와 미네랄감이 또렷해서 정말 잘 어울렸어요.",
+    "createdAt": "2026-05-15T15:42:00"
+  },
+  {
+    "id": "review_513",
+    "wineId": "wine_106",
+    "userId": "user_020",
+    "rating": 4.3,
+    "content": "흰 복숭아와 시트러스 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-05-02T16:59:00"
+  },
+  {
+    "id": "review_514",
+    "wineId": "wine_106",
+    "userId": "user_021",
+    "rating": 4.2,
+    "content": "해산물 페어링으로 선택했는데 상큼한 산미가 입안을 산뜻하게 정리해줘요.",
+    "createdAt": "2026-04-19T17:16:00"
+  },
+  {
+    "id": "review_515",
+    "wineId": "wine_106",
+    "userId": "user_022",
+    "rating": 4.1,
+    "content": "차갑게 마셨을 때 미네랄감과 과일향이 선명하고 밸런스도 좋았습니다.",
+    "createdAt": "2026-04-06T18:33:00"
+  },
+  {
+    "id": "review_516",
+    "wineId": "wine_106",
+    "userId": "user_023",
+    "rating": 4.4,
+    "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
+    "createdAt": "2026-07-10T19:50:00"
   }
 ]
