@@ -6,7 +6,7 @@ import challengeCircleImage from '../assets/mypage/mypage-challenge-circle.png'
 import challengeRingImage from '../assets/mypage/challenge-ring.png'
 import badgesCircleImage from '../assets/mypage/badges-circle.png'
 import highlightsCircleImage from '../assets/mypage/highlights-circle.png'
-import wineSippersLogo from '../assets/mypage/wine-sippers-logo.png'
+import lightSearchIcon from '../assets/lounge/search.svg'
 import feedThumb1 from '../assets/mypage/figma-feed-01.png'
 import feedThumb2 from '../assets/mypage/figma-feed-02.png'
 import feedThumb3 from '../assets/mypage/figma-feed-03.png'
@@ -20,7 +20,7 @@ import feedThumb10 from '../assets/mypage/figma-feed-10.png'
 import feedThumb11 from '../assets/mypage/figma-feed-11.png'
 import feedThumb12 from '../assets/mypage/figma-feed-12.png'
 import multipleFeedIcon from '../assets/mypage/multiple-feed-icon.svg'
-import settingsIcon from '../assets/mypage/settings.svg'
+import settingsIcon from '../assets/mypage/settings-outline.svg'
 import wineImage1 from '../assets/mypage/figma-wine-review-01.png'
 import wineImage2 from '../assets/mypage/figma-wine-review-02.png'
 import wineImage3 from '../assets/mypage/figma-wine-review-03.png'
@@ -30,6 +30,7 @@ import likedWineImage3 from '../assets/mypage/figma-liked-wine-03.png'
 import likedWineImage4 from '../assets/mypage/figma-liked-wine-04.png'
 import likedHeartIcon from '../assets/mypage/liked-heart.svg'
 import ratingStarIcon from '../assets/mypage/rating-star.svg'
+import Logo from '../components/Logo'
 
 const feedImages = [
   feedThumb1,
@@ -266,11 +267,27 @@ function Mypage() {
 
   return (
     <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '1546:4825' : activeTab === 'likes' ? '1546:5430' : '1546:5323'}>
-      <header className="flex h-[54px] items-start justify-between px-5 pt-[18px] text-[#851317]">
-        <img src={wineSippersLogo} alt="Wine Sippers" className="mt-0.5 h-5 w-[106.508px] object-contain object-left" />
-        <button type="button" aria-label="설정" onClick={() => navigate('/mypage/settings')} className="flex size-6 items-center justify-center">
-          <img src={settingsIcon} alt="" className="size-6" aria-hidden="true" />
-        </button>
+      <header className="flex w-full items-center justify-between px-5 pt-4.5 pb-3 text-[#851317]" data-node-id="577:105">
+        <Logo className="h-5 w-auto shrink-0 text-[#851317]" />
+
+        <div className="flex shrink-0 items-center gap-1 overflow-hidden" data-node-id="577:107">
+          <button
+            type="button"
+            aria-label="Search"
+            onClick={() => navigate('/search')}
+            className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
+          >
+            <img src={lightSearchIcon} alt="" className="size-7 shrink-0" />
+          </button>
+          <button
+            type="button"
+            aria-label="설정"
+            onClick={() => navigate('/mypage/settings')}
+            className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
+          >
+            <img src={settingsIcon} alt="" className="size-8 max-w-none shrink-0" aria-hidden="true" />
+          </button>
+        </div>
       </header>
 
       <main className="px-5 pt-7">
