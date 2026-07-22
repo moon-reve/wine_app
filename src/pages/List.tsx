@@ -173,10 +173,13 @@ function List() {
   )
 
   return (
-    <div className="min-h-screen w-full bg-white text-[#0d0d0d]" data-node-id="690:403">
+    <div
+      className={`${view === 'map' ? 'flex h-dvh min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
+      data-node-id="690:403"
+    >
       <Header tone="light" titleColorClassName="text-black" />
 
-      <main className="px-5 pt-5">
+      <main className={`px-5 pt-5 ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
         <div className="flex items-center justify-between">
           <h1
             className="font-playfair text-[38px] leading-[1.6] font-bold text-[#831317]"
@@ -249,7 +252,9 @@ function List() {
             </div>
           </>
         ) : (
-          <WineMap />
+          <div className="min-h-0 flex-1">
+            <WineMap />
+          </div>
         )}
       </main>
 

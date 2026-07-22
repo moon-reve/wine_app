@@ -66,7 +66,7 @@ const wineReviews = [
     name: '샤토 라퐁 로셰 2015',
     date: '2026.07.01',
     rating: '5.0',
-    review: '묵직하고 가죽 향과 베리 향의 조화가 완벽합니다.',
+    review: '친구들과 저녁을 먹으며 천천히 마셨다. 묵직한 가죽 향 뒤로 잘 익은 베리 향이 올라와 마지막 잔까지 편안하게 즐겼다.',
     image: wineImage1,
     crop: 'absolute top-[-9.47%] left-[-9.01%] h-[116.41%] w-[116.46%] max-w-none',
   },
@@ -74,7 +74,7 @@ const wineReviews = [
     name: '클라우디 베이 소비뇽 블랑',
     date: '2026.06.25',
     rating: '4.0',
-    review: '시트러스한 산미와 열대 과실의 여운이 매력적이에요.',
+    review: '더운 날 차갑게 식혀 마시니 시트러스한 산미가 무척 상쾌했다. 은은한 열대 과실 향이 오래 남아 해산물 요리와 잘 어울렸다.',
     image: wineImage2,
     crop: 'absolute top-[-21.09%] left-[-14.79%] h-[136.83%] w-[129.44%] max-w-none',
   },
@@ -82,7 +82,7 @@ const wineReviews = [
     name: '투 핸즈 엔젤스 쉐어 쉬라즈',
     date: '2026.06.10',
     rating: '4.5',
-    review: '진한 자두와 블랙베리 풍미, 부드러운 탄닌이 좋아요.',
+    review: '집에서 음악을 들으며 마셨다. 진한 자두와 블랙베리 풍미가 풍성했고 탄닌도 부드러웠다. 다음에는 스테이크와 다시 마시고 싶다.',
     image: wineImage3,
     crop: 'absolute top-[-29.28%] left-[-20.38%] h-[149.77%] w-[141.59%] max-w-none',
   },
@@ -125,15 +125,13 @@ function WineReviewCard({ review }: { review: (typeof wineReviews)[number] }) {
       <div className="relative h-[130px] w-[94px] shrink-0 overflow-hidden rounded-lg">
         <img src={review.image} alt={review.name} className={review.crop} />
       </div>
-      <div className="flex min-w-0 flex-1 flex-col gap-[18px]">
+      <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex w-full items-center justify-between gap-2">
-          <h2 className="text-[15px] leading-[normal] font-bold tracking-[-0.3px] whitespace-nowrap">{review.name}</h2>
-          <time className="shrink-0 text-[10px] leading-[normal] font-normal tracking-[-0.2px] text-[#9e9e9e]">{review.date}</time>
+          <h2 className="min-w-0 truncate text-xl leading-[25px] font-semibold whitespace-nowrap text-[#1e1b18]">{review.name}</h2>
+          <p className="shrink-0 text-base leading-6 font-bold whitespace-nowrap text-[#831317]">★ {review.rating}</p>
         </div>
-        <div className="flex flex-col gap-3">
-          <p className="text-[13px] leading-[normal] font-bold tracking-[-0.26px] text-[#831317]">★ {review.rating}</p>
-          <p className="text-xs leading-[normal] font-normal tracking-[-0.24px] whitespace-nowrap text-[#6e6e6e]">{review.review}</p>
-        </div>
+        <time className="mt-1 text-[10px] leading-[normal] font-normal tracking-[-0.2px] text-[#9e9e9e]">{review.date}</time>
+        <p className="mt-4 line-clamp-3 text-xs leading-[1.5] font-normal tracking-[-0.24px] text-[#8a8a8a]">{review.review}</p>
       </div>
     </article>
   )
@@ -402,7 +400,7 @@ function Mypage() {
           ) : activeTab === 'wine' ? (
             <div className="mt-5 flex flex-col gap-3.5">
               {wineReviews.map((review) => <WineReviewCard key={review.name} review={review} />)}
-              <button type="button" className="flex h-[50px] w-full items-center justify-center rounded-xl bg-[#831317] text-base leading-none font-bold text-white">
+              <button type="button" onClick={() => navigate('/record')} className="flex h-[50px] w-full items-center justify-center rounded-xl bg-[#831317] text-base leading-none font-bold text-white">
                 기록쓰기
               </button>
             </div>
