@@ -190,7 +190,7 @@ function List() {
                   <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
                   <button
                     type="button"
-                    disabled={wine.type !== 'red' && wine.type !== 'white'}
+                    disabled={wine.type !== 'red' && wine.type !== 'white' && wine.type !== 'rose'}
                     onClick={() => navigate(`/product/${wine.type}/${wine.id}`)}
                     className="flex min-h-[159px] w-full items-center gap-[37px] py-[24px] pl-[24px] text-left disabled:cursor-default"
                   >
