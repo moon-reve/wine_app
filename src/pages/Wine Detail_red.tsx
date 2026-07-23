@@ -1,5 +1,4 @@
 import { useNavigate, useParams } from 'react-router-dom'
-import avatar from '../assets/wine-detail-red/avatar.svg'
 import backIcon from '../assets/wine-detail-red/back.svg'
 import bookmarkIcon from '../assets/wine-detail-red/bookmark.svg'
 import grapes from '../assets/wine-detail-red/grapes.png'
@@ -14,10 +13,25 @@ function Chip({ children, active = false }: { children: React.ReactNode; active?
   return <span className={`flex h-6 items-center rounded-[25px] px-3 text-[12px] leading-none font-medium tracking-[-0.24px] whitespace-nowrap ${active ? 'bg-[#851317] text-white' : 'border border-[#d9d9d9] text-[#595959]'}`}>{children}</span>
 }
 
-function Review({ rating, children }: { rating: number; children: React.ReactNode }) {
+function ReviewAvatar({ src }: { src?: string }) {
+  return (
+    <span className="block size-8 shrink-0 overflow-hidden rounded-full bg-[#ebe3e0]">
+      {src && (
+        <img
+          src={src}
+          alt=""
+          className="size-full object-cover"
+          onError={(event) => { event.currentTarget.hidden = true }}
+        />
+      )}
+    </span>
+  )
+}
+
+function Review({ rating, children, avatarSrc }: { rating: number; children: React.ReactNode; avatarSrc?: string }) {
   return (
     <div className="flex gap-2.5">
-      <img src={avatar} alt="" className="size-8 shrink-0" />
+      <ReviewAvatar src={avatarSrc} />
       <div className="flex flex-col gap-1">
         <p className="font-noto text-[12px] leading-[1.2] font-medium text-[#831317]">{formatStars(rating)}</p>
         <p className="w-[348px] text-[14px] leading-[1.5] tracking-[-0.28px] text-[#595959]">{children}</p>
