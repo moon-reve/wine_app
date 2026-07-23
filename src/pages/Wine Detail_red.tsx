@@ -3,6 +3,7 @@ import backIcon from '../assets/wine-detail-red/back.svg'
 import bookmarkIcon from '../assets/wine-detail-red/bookmark.svg'
 import grapes from '../assets/wine-detail-red/grapes.png'
 import heartIcon from '../assets/wine-detail-red/heart.svg'
+import chateauMargauxHero from '../assets/wine-detail-red/hero-wine-upright.png'
 import { formatPrice, formatStars, getWineDetailData, resolveWineImage } from '../data/wineDetailData'
 
 function Divider({ top }: { top: number }) {
@@ -54,7 +55,7 @@ export default function WineDetailRed() {
   const navigate = useNavigate()
   const { wineId } = useParams()
   const { wine, wineReviews, similarWines, reviewKeywords, typeLabel } = getWineDetailData(wineId ?? 'wine_018')
-  const heroWineImage = resolveWineImage(wine)
+  const heroWineImage = wineId ? resolveWineImage(wine) : chateauMargauxHero
   const info = [
     ['국가', wine.country], ['생산지역', wine.region], ['와이너리', wine.winery],
     ['품종', wine.grapeComposition], ['빈티지', wine.vintage], ['도수', `${wine.alcohol.toFixed(1)}%`], ['용량', `${wine.volumeMl}ml`],
@@ -126,7 +127,7 @@ export default function WineDetailRed() {
             </div>
           )}
           {wineReviews.slice(0, 2).map((review) => <Review key={review.id} rating={review.rating}>{review.content}</Review>)}
-          <button type="button" className="flex h-10 items-center justify-center rounded-xl border border-[#831317] text-[14px] leading-none font-bold tracking-[-0.28px] text-[#831317]">리뷰 더보기</button>
+          <button type="button" className="relative z-10 flex h-10 appearance-none items-center justify-center rounded-xl border border-[#831317] bg-white text-[14px] leading-none font-bold tracking-[-0.28px] text-[#831317] outline-none focus:outline-none">리뷰 더보기</button>
         </section>
 
         <Divider top={1186} />

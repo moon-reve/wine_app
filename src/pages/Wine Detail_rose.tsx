@@ -83,7 +83,7 @@ export default function WineDetailRose() {
       <p className="absolute top-[351px] right-5 text-[22px] leading-[1.2] font-bold whitespace-nowrap text-[#831317]">{formatPrice(wine.price)}</p>
       <div className="absolute top-[398px] right-5 flex gap-2">{wine.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}</div>
 
-      <div className="absolute top-[152px] left-[23px] h-[579px] w-[207px]">
+      <div className="absolute top-[152px] left-0 h-[579px] w-[207px]">
         <img src={heroWineImage} alt={wine.nameKo} className="size-full object-contain object-bottom" />
       </div>
       <div className="absolute top-[540px] left-[82px] h-[235px] w-[348px]" aria-hidden="true">
@@ -120,7 +120,7 @@ export default function WineDetailRose() {
           <p className="text-[12px] leading-[1.2] font-medium tracking-[-0.24px] text-[#737373]">많이 언급된 키워드</p>
           {reviewKeywords.length > 0 && <div className="flex gap-2">{reviewKeywords.map((keyword) => <Chip key={keyword} active>#{keyword}</Chip>)}</div>}
           {wineReviews.slice(0, 2).map((review) => <Review key={review.id} rating={review.rating}>{review.content}</Review>)}
-          <button type="button" className="flex h-10 items-center justify-center rounded-xl border border-[#831317] text-[14px] leading-none font-bold tracking-[-0.28px] text-[#831317]">리뷰 더보기</button>
+          <button type="button" className="relative z-10 flex h-10 appearance-none items-center justify-center rounded-xl border border-[#831317] bg-white text-[14px] leading-none font-bold tracking-[-0.28px] text-[#831317] outline-none focus:outline-none">리뷰 더보기</button>
         </section>
 
         <Divider top={1207} />
