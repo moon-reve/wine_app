@@ -1,3 +1,4 @@
+import { useRef, type PointerEvent as ReactPointerEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import backIcon from '../assets/magazine-detail/back.svg'
 import berriesLeft from '../assets/magazine-detail/berries-left.png'
@@ -37,8 +38,8 @@ function WineryInfo({ top, left, name, address, description }: { top: number; le
 
 function WineCard({ wine }: { wine: (typeof wines)[number] }) {
   return (
-    <article className="relative h-[175px] w-44 shrink-0 overflow-hidden rounded-xl">
-      <img src={wine.image} alt={wine.name} className={`absolute max-w-none ${wine.imageClassName}`} />
+    <article className="relative h-[175px] w-44 shrink-0 snap-start overflow-hidden rounded-xl">
+      <img src={wine.image} alt={wine.name} draggable={false} className={`absolute max-w-none ${wine.imageClassName}`} />
       <div className="absolute inset-x-0 bottom-0 h-[88px] rounded-xl bg-gradient-to-b from-transparent to-black/50" />
       <span className="absolute top-3.5 left-3.5 flex h-[22px] w-[69px] items-center justify-center rounded-full bg-white/50 text-center text-[12px] leading-4 font-medium text-black backdrop-blur-[2px]">Korea</span>
       <div className="absolute top-[133px] left-3.5 flex w-[145px] flex-col items-start gap-[3px] leading-normal whitespace-nowrap text-white">
@@ -51,6 +52,43 @@ function WineCard({ wine }: { wine: (typeof wines)[number] }) {
 
 function MagazineDetail() {
   const navigate = useNavigate()
+  const wineCarouselRef = useRef<HTMLDivElement>(null)
+  const wineCarouselDragRef = useRef<{ pointerId: number; clientX: number; scrollLeft: number } | null>(null)
+
+  const handleCarouselPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return
+    wineCarouselDragRef.current = {
+      pointerId: event.pointerId,
+      clientX: event.clientX,
+      scrollLeft: event.currentTarget.scrollLeft,
+    }
+    event.currentTarget.setPointerCapture(event.pointerId)
+    event.currentTarget.style.cursor = 'grabbing'
+  }
+
+  const handleCarouselPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const drag = wineCarouselDragRef.current
+    if (!drag || drag.pointerId !== event.pointerId) return
+    event.preventDefault()
+    event.currentTarget.scrollLeft = drag.scrollLeft - (event.clientX - drag.clientX)
+  }
+
+  const handleCarouselPointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const drag = wineCarouselDragRef.current
+    if (!drag || drag.pointerId !== event.pointerId) return
+    wineCarouselDragRef.current = null
+    event.currentTarget.style.cursor = 'grab'
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
+
+    const card = event.currentTarget.querySelector<HTMLElement>('article')
+    if (!card) return
+    const gap = Number.parseFloat(window.getComputedStyle(event.currentTarget).columnGap) || 0
+    const cardStep = card.offsetWidth + gap
+    const targetIndex = Math.round(event.currentTarget.scrollLeft / cardStep)
+    event.currentTarget.scrollTo({ left: targetIndex * cardStep, behavior: 'smooth' })
+  }
 
   return (
     <div className="relative mx-auto min-h-[3139px] w-full max-w-107.5 overflow-hidden bg-white text-black" data-node-id="1546:7825">
@@ -123,7 +161,16 @@ function MagazineDetail() {
       </div>
 
       <p className="absolute top-[2873px] left-[104px] font-['Delmon_Delicate','Playfair_Display',serif] text-[26px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">Wine in <span className="text-[#841317]">Magazines</span></p>
-      <div className="absolute top-[2931px] right-0 left-5 flex gap-1.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div
+        ref={wineCarouselRef}
+        role="region"
+        aria-label="매거진 와인 가로 목록"
+        onPointerDown={handleCarouselPointerDown}
+        onPointerMove={handleCarouselPointerMove}
+        onPointerUp={handleCarouselPointerEnd}
+        onPointerCancel={handleCarouselPointerEnd}
+        className="absolute top-[2931px] right-0 left-5 flex cursor-grab touch-pan-x snap-x snap-proximity scroll-smooth gap-1.5 overflow-x-auto overscroll-x-contain pr-5 select-none [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      >
         {wines.map((wine) => <WineCard key={wine.name} wine={wine} />)}
       </div>
     </div>

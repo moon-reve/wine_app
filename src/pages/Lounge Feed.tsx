@@ -1,4 +1,5 @@
-import { useRef, useState, type FormEvent, type PointerEvent as ReactPointerEvent, type UIEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent, type PointerEvent as ReactPointerEvent, type UIEvent } from 'react'
+import { createPortal } from 'react-dom'
 import feedActions from '../assets/lounge/figma/feed-actions.svg'
 import heartOutline from '../../icon/Heart.svg'
 import heartFilled from '../../icon/Activated_Heart.svg'
@@ -52,6 +53,12 @@ type FigmaFeed = {
   content: string
   tags: string[]
   wine?: WinePin
+}
+
+type ImagePreview = {
+  images: string[]
+  index: number
+  label: string
 }
 
 const figmaFeeds: FigmaFeed[] = [
@@ -143,7 +150,97 @@ async function loadKakaoSdk() {
   return kakaoWindow.Kakao
 }
 
-function FeedPost({ feed, index }: { feed: FigmaFeed; index: number }) {
+function ImageLightbox({
+  preview,
+  onClose,
+  onIndexChange,
+}: {
+  preview: ImagePreview
+  onClose: () => void
+  onIndexChange: (index: number) => void
+}) {
+  const hasMultipleImages = preview.images.length > 1
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose()
+      if (event.key === 'ArrowLeft' && hasMultipleImages) {
+        onIndexChange((preview.index - 1 + preview.images.length) % preview.images.length)
+      }
+      if (event.key === 'ArrowRight' && hasMultipleImages) {
+        onIndexChange((preview.index + 1) % preview.images.length)
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.body.style.overflow = previousOverflow
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [hasMultipleImages, onClose, onIndexChange, preview.images.length, preview.index])
+
+  return createPortal(
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${preview.label} 크게 보기`}
+      onClick={onClose}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 px-4 py-16"
+    >
+      <button
+        type="button"
+        aria-label="사진 크게 보기 닫기"
+        onClick={onClose}
+        className="absolute top-[max(20px,env(safe-area-inset-top))] right-5 z-10 flex size-11 items-center justify-center rounded-full bg-white/10 text-[34px] leading-none text-white backdrop-blur-sm"
+      >
+        ×
+      </button>
+
+      <img
+        src={preview.images[preview.index]}
+        alt={`${preview.label} ${preview.index + 1}번 사진`}
+        onClick={(event) => event.stopPropagation()}
+        className="max-h-full max-w-full select-none object-contain"
+      />
+
+      {hasMultipleImages ? (
+        <>
+          <button
+            type="button"
+            aria-label="이전 사진"
+            onClick={(event) => {
+              event.stopPropagation()
+              onIndexChange((preview.index - 1 + preview.images.length) % preview.images.length)
+            }}
+            className="absolute left-3 flex size-11 items-center justify-center rounded-full bg-black/35 text-4xl leading-none text-white"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            aria-label="다음 사진"
+            onClick={(event) => {
+              event.stopPropagation()
+              onIndexChange((preview.index + 1) % preview.images.length)
+            }}
+            className="absolute right-3 flex size-11 items-center justify-center rounded-full bg-black/35 text-4xl leading-none text-white"
+          >
+            ›
+          </button>
+          <span className="absolute bottom-[max(24px,env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 rounded-full bg-black/45 px-3 py-1.5 text-sm text-white">
+            {preview.index + 1} / {preview.images.length}
+          </span>
+        </>
+      ) : null}
+    </div>,
+    document.body,
+  )
+}
+
+function FeedPost({ feed, index, onOpenImage }: { feed: FigmaFeed; index: number; onOpenImage: (preview: ImagePreview) => void }) {
   const [isWineOpen, setIsWineOpen] = useState(false)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const [liked, setLiked] = useState(index === 0)
@@ -156,6 +253,7 @@ function FeedPost({ feed, index }: { feed: FigmaFeed; index: number }) {
   const isDraggingRef = useRef(false)
   const dragStartXRef = useRef(0)
   const dragStartScrollLeftRef = useRef(0)
+  const didDragRef = useRef(false)
 
   const handleCarouselScroll = (event: UIEvent<HTMLDivElement>) => {
     const carousel = event.currentTarget
@@ -172,6 +270,8 @@ function FeedPost({ feed, index }: { feed: FigmaFeed; index: number }) {
   }
 
   const handlePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    dragStartXRef.current = event.clientX
+    didDragRef.current = false
     if (event.pointerType !== 'mouse' || event.button !== 0) return
     const carousel = event.currentTarget
     isDraggingRef.current = true
@@ -182,6 +282,7 @@ function FeedPost({ feed, index }: { feed: FigmaFeed; index: number }) {
   }
 
   const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (Math.abs(event.clientX - dragStartXRef.current) > 6) didDragRef.current = true
     if (!isDraggingRef.current || event.pointerType !== 'mouse') return
     event.preventDefault()
     event.currentTarget.scrollLeft = dragStartScrollLeftRef.current - (event.clientX - dragStartXRef.current)
@@ -259,14 +360,27 @@ function FeedPost({ feed, index }: { feed: FigmaFeed; index: number }) {
           aria-label={`${feed.author}의 사진 ${feed.images.length}장`}
         >
           {feed.images.map((image, imageIndex) => (
-            <img
+            <button
               key={`${feed.author}-${imageIndex}`}
-              src={image}
-              alt={`${feed.author}의 피드 사진 ${imageIndex + 1}`}
-              draggable={false}
-              className="size-full shrink-0 snap-center object-cover"
-              style={{ objectPosition: imageIndex === 0 ? feed.imagePosition : 'center' }}
-            />
+              type="button"
+              aria-label={`${feed.author}의 피드 사진 ${imageIndex + 1} 크게 보기`}
+              onClick={() => {
+                if (didDragRef.current) {
+                  didDragRef.current = false
+                  return
+                }
+                onOpenImage({ images: feed.images, index: imageIndex, label: `${feed.author}의 피드` })
+              }}
+              className="size-full shrink-0 snap-center overflow-hidden"
+            >
+              <img
+                src={image}
+                alt={`${feed.author}의 피드 사진 ${imageIndex + 1}`}
+                draggable={false}
+                className="size-full object-cover"
+                style={{ objectPosition: imageIndex === 0 ? feed.imagePosition : 'center' }}
+              />
+            </button>
           ))}
         </div>
 
@@ -425,6 +539,7 @@ function FeedPost({ feed, index }: { feed: FigmaFeed; index: number }) {
 
 function Feed() {
   const [isGridView, setIsGridView] = useState(false)
+  const [imagePreview, setImagePreview] = useState<ImagePreview | null>(null)
 
   return (
     <div className="min-h-screen w-full bg-white text-[#0d0d0d]" data-node-id={isGridView ? '1546:4105' : '1546:3969'}>
@@ -443,14 +558,31 @@ function Feed() {
 
         {isGridView ? (
           <div className="mt-7 grid grid-cols-2 gap-[3px]">
-            {feedGridImages.map((image, index) => <img key={image} src={image} alt={`피드 모아보기 ${index + 1}`} className="h-[268px] w-full object-cover" />)}
+            {feedGridImages.map((image, index) => (
+              <button
+                key={image}
+                type="button"
+                aria-label={`피드 모아보기 ${index + 1} 크게 보기`}
+                onClick={() => setImagePreview({ images: feedGridImages, index, label: '피드 모아보기' })}
+                className="h-[268px] w-full overflow-hidden"
+              >
+                <img src={image} alt={`피드 모아보기 ${index + 1}`} className="size-full object-cover" />
+              </button>
+            ))}
           </div>
         ) : (
           <div className="mt-7">
-            {figmaFeeds.map((feed, index) => <FeedPost key={feed.author} feed={feed} index={index} />)}
+            {figmaFeeds.map((feed, index) => <FeedPost key={feed.author} feed={feed} index={index} onOpenImage={setImagePreview} />)}
           </div>
         )}
       </main>
+      {imagePreview ? (
+        <ImageLightbox
+          preview={imagePreview}
+          onClose={() => setImagePreview(null)}
+          onIndexChange={(index) => setImagePreview((current) => current ? { ...current, index } : current)}
+        />
+      ) : null}
     </div>
   )
 }
