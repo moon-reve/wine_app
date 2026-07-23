@@ -86,7 +86,7 @@ export default function WineDetailWhite() {
       <div className="absolute top-[169px] left-[26px] h-[556px] w-[136px] overflow-hidden">
         <img src={heroWineImage} alt={wine.nameKo} className="size-full object-contain" />
       </div>
-      <div className="absolute top-[496px] left-[31px] flex h-[305.537px] w-[412.388px] items-center justify-center">
+      <div className="absolute top-[474px] left-[31px] flex h-[305.537px] w-[412.388px] items-center justify-center">
         <div className="h-[252.518px] w-[379.394px] -rotate-[8.45deg]">
           <img src={grapes} alt="" className="size-full max-w-none object-cover" />
         </div>
@@ -126,7 +126,7 @@ export default function WineDetailWhite() {
             </div>
           )}
           {wineReviews.slice(0, 2).map((review) => <Review key={review.id} rating={review.rating}>{review.content}</Review>)}
-          <button type="button" className="flex h-10 items-center justify-center rounded-xl border border-[#831317] text-[14px] leading-none font-bold tracking-[-0.28px] text-[#831317]">리뷰 더보기</button>
+          <button type="button" className="relative z-10 flex h-10 appearance-none items-center justify-center rounded-xl border border-[#831317] bg-white text-[14px] leading-none font-bold tracking-[-0.28px] text-[#831317] outline-none focus:outline-none">리뷰 더보기</button>
         </section>
 
         <Divider top={1186} />
