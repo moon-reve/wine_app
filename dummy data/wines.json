@@ -1196,15 +1196,15 @@
     "type": "red",
     "country": "프랑스",
     "region": "프랑스 보르도",
-    "grape": "카베르네 블렌드",
-    "vintage": "2018",
+    "grape": "카베르네 소비뇽 중심 보르도 블렌드",
+    "vintage": "2019",
     "price": 1500000,
     "rating": 4.8,
     "reviewCount": 407,
-    "description": "보르도 1등급 5대 샤토, '와인의 여왕'으로 불리는 명품",
+    "description": "샤토 마고가 2015·2016·2018과 함께 2010년대의 위대한 빈티지로 꼽은 2019 그랑 뱅입니다. 선별된 전체 수확량의 37%만 사용했으며, 카베르네 소비뇽의 정교한 구조와 메를로의 풍성함, 신선한 산도가 조화를 이룹니다.",
     "imageUrl": "src/assets/images/wines/wine_018.png",
     "winery": "Château Margaux",
-    "grapeComposition": "카베르네 소비뇽 90%, 메를로 4%, 카베르네 프랑 4%, 프티 베르도 2%",
+    "grapeComposition": "카베르네 소비뇽 90%, 메를로 7%, 카베르네 프랑 2%, 프티 베르도 1%",
     "alcohol": 14,
     "volumeMl": 750,
     "saveCount": 1329,
@@ -1235,15 +1235,15 @@
       }
     },
     "tastingNotes": [
+      "카시스",
       "블랙체리",
-      "바닐라",
-      "초콜릿",
-      "허브"
+      "제비꽃",
+      "삼나무"
     ],
     "service": {
       "servingTemperature": "16 ~ 18°C",
-      "decanting": "20 ~ 30분",
-      "drinkingWindow": "2026 ~ 2032",
+      "decanting": "1 ~ 2시간 권장",
+      "drinkingWindow": "장기 숙성 권장",
       "glass": "보르도 글라스",
       "afterOpening": "3 ~ 5일"
     },
@@ -1253,7 +1253,7 @@
       "숙성 치즈",
       "다크 초콜릿"
     ],
-    "aiRecommendation": "풍부한 과실향과 은은한 오크향이 특징인 와인이에요. 채끝 스테이크나 양갈비처럼 풍미가 진한 요리와 특히 잘 어울립니다.",
+    "aiRecommendation": "2019 빈티지는 카베르네 소비뇽의 정교한 구조와 신선한 산도, 검은 과실과 꽃 향이 우아하게 이어지는 장기 숙성형 와인이에요. 충분히 브리딩한 뒤 채끝 스테이크나 양갈비와 천천히 즐겨보세요.",
     "purchase": {
       "onlineFrom": 1500000,
       "offlineAvailable": true
@@ -3574,8 +3574,8 @@
     "nameKo": "샹동 브뤼",
     "nameEn": "Chandon Brut",
     "type": "sparkling",
-    "country": "호주/아르헨티나",
-    "region": "호주/아르헨티나",
+    "country": "미국",
+    "region": "미국 캘리포니아",
     "grape": "샤르도네·피노 누아·피노 뫼니에",
     "vintage": "NV",
     "price": 40000,
@@ -4202,7 +4202,7 @@
   {
     "id": "wine_061",
     "nameKo": "위스퍼링 엔젤",
-    "nameEn": "Whispering Angel (Chateau d'Esclans)",
+    "nameEn": "Whispering Angel",
     "type": "rose",
     "country": "프랑스",
     "region": "프랑스 프로방스",
@@ -5601,9 +5601,9 @@
   },
   {
     "id": "wine_081",
-    "nameKo": "오미로제 결 (스파클링)",
+    "nameKo": "오미로제 결",
     "nameEn": "Omy Rose Kyul Sparkling",
-    "type": "korean",
+    "type": "sparkling",
     "country": "한국",
     "region": "한국 경북 문경",
     "grape": "오미자",
@@ -5663,7 +5663,7 @@
       "과일",
       "가벼운 디저트"
     ],
-    "aiRecommendation": "오미자와 붉은 베리 풍미가 매력적인 오미로제 결 (스파클링)예요. 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "aiRecommendation": "오미자와 붉은 베리 풍미가 매력적인 오미로제 결이에요. 한식 전채 또는 구운 생선과 함께 즐겨보세요.",
     "purchase": {
       "onlineFrom": 90000,
       "offlineAvailable": true
@@ -5671,9 +5671,9 @@
   },
   {
     "id": "wine_082",
-    "nameKo": "오미로제 연 (스파클링)",
+    "nameKo": "오미로제 연",
     "nameEn": "Omy Rose Yeon Sparkling",
-    "type": "korean",
+    "type": "sparkling",
     "country": "한국",
     "region": "한국 경북 문경",
     "grape": "오미자",
@@ -5733,7 +5733,7 @@
       "과일",
       "가벼운 디저트"
     ],
-    "aiRecommendation": "오미자와 붉은 베리 풍미가 매력적인 오미로제 연 (스파클링)예요. 한식 전채 또는 구운 생선와 함께 즐겨보세요.",
+    "aiRecommendation": "오미자와 붉은 베리 풍미가 매력적인 오미로제 연이에요. 한식 전채 또는 구운 생선과 함께 즐겨보세요.",
     "purchase": {
       "onlineFrom": 45000,
       "offlineAvailable": true
@@ -5743,7 +5743,7 @@
     "id": "wine_083",
     "nameKo": "그랑꼬또 청수 화이트",
     "nameEn": "Grand Coteau Cheongsu White",
-    "type": "korean",
+    "type": "white",
     "country": "한국",
     "region": "한국 경기 대부도",
     "grape": "청수",
@@ -5813,7 +5813,7 @@
     "id": "wine_084",
     "nameKo": "그랑꼬또 레드",
     "nameEn": "Grand Coteau Red",
-    "type": "korean",
+    "type": "red",
     "country": "한국",
     "region": "한국 경기 대부도",
     "grape": "캠벨얼리",
@@ -5883,7 +5883,7 @@
     "id": "wine_085",
     "nameKo": "그랑꼬또 로제",
     "nameEn": "Grand Coteau Rose",
-    "type": "korean",
+    "type": "rose",
     "country": "한국",
     "region": "한국 경기 대부도",
     "grape": "캠벨얼리",
@@ -5953,7 +5953,7 @@
     "id": "wine_086",
     "nameKo": "그랑꼬또 M5-6",
     "nameEn": "Grand Coteau M5-6",
-    "type": "korean",
+    "type": "rose",
     "country": "한국",
     "region": "한국 경기 대부도",
     "grape": "캠벨얼리",
@@ -6023,7 +6023,7 @@
     "id": "wine_087",
     "nameKo": "샤토미소 스위트 로제",
     "nameEn": "Chateau Miso Sweet Rose",
-    "type": "korean",
+    "type": "rose",
     "country": "한국",
     "region": "한국 충북 영동",
     "grape": "캠벨얼리",
@@ -6093,7 +6093,7 @@
     "id": "wine_088",
     "nameKo": "여포의 꿈 화이트",
     "nameEn": "Yeopo's Dream White",
-    "type": "korean",
+    "type": "white",
     "country": "한국",
     "region": "한국 충북 영동",
     "grape": "머스캣 오브 알렉산드리아",
@@ -6163,7 +6163,7 @@
     "id": "wine_089",
     "nameKo": "여포의 꿈 레드",
     "nameEn": "Yeopo's Dream Red",
-    "type": "korean",
+    "type": "red",
     "country": "한국",
     "region": "한국 충북 영동",
     "grape": "캠벨얼리",
@@ -6233,7 +6233,7 @@
     "id": "wine_090",
     "nameKo": "여포의 꿈 로제",
     "nameEn": "Yeopo's Dream Rose",
-    "type": "korean",
+    "type": "rose",
     "country": "한국",
     "region": "한국 충북 영동",
     "grape": "캠벨얼리",
@@ -6303,7 +6303,7 @@
     "id": "wine_091",
     "nameKo": "시나브로 청수 화이트",
     "nameEn": "Sinabro Cheongsu White",
-    "type": "korean",
+    "type": "white",
     "country": "한국",
     "region": "한국 충북 영동",
     "grape": "청수",
@@ -6373,7 +6373,7 @@
     "id": "wine_092",
     "nameKo": "시나브로 레드",
     "nameEn": "Sinabro Red",
-    "type": "korean",
+    "type": "red",
     "country": "한국",
     "region": "한국 충북 영동",
     "grape": "캠벨얼리",
@@ -6443,7 +6443,7 @@
     "id": "wine_093",
     "nameKo": "샤또무주 레드 스위트",
     "nameEn": "Chateau Muju Red Sweet",
-    "type": "korean",
+    "type": "red",
     "country": "한국",
     "region": "한국 전북 무주",
     "grape": "산머루",
@@ -6513,7 +6513,7 @@
     "id": "wine_094",
     "nameKo": "머루드서 프리미엄",
     "nameEn": "Meoru de Seo Premium",
-    "type": "korean",
+    "type": "red",
     "country": "한국",
     "region": "한국 경기 파주",
     "grape": "산머루",
@@ -6583,7 +6583,7 @@
     "id": "wine_095",
     "nameKo": "추사 애플와인",
     "nameEn": "Chusa Apple Wine",
-    "type": "korean",
+    "type": "white",
     "country": "한국",
     "region": "한국 충남 예산",
     "grape": "사과",
@@ -6653,7 +6653,7 @@
     "id": "wine_096",
     "nameKo": "감그린 스위트",
     "nameEn": "Gamgreen Sweet",
-    "type": "korean",
+    "type": "white",
     "country": "한국",
     "region": "한국 경북 청도",
     "grape": "감(청도 반시)",
@@ -6723,7 +6723,7 @@
     "id": "wine_097",
     "nameKo": "고도리 화이트",
     "nameEn": "Godori White",
-    "type": "korean",
+    "type": "white",
     "country": "한국",
     "region": "한국 경북 영천",
     "grape": "거봉",
@@ -6793,7 +6793,7 @@
     "id": "wine_098",
     "nameKo": "뱅꼬레 레드",
     "nameEn": "Vin Coree Red",
-    "type": "korean",
+    "type": "red",
     "country": "한국",
     "region": "한국 경북 영천",
     "grape": "캠벨얼리",
@@ -6863,7 +6863,7 @@
     "id": "wine_099",
     "nameKo": "두레앙 스위트",
     "nameEn": "Dureang Sweet",
-    "type": "korean",
+    "type": "white",
     "country": "한국",
     "region": "한국 충남 천안",
     "grape": "거봉",
@@ -6933,7 +6933,7 @@
     "id": "wine_100",
     "nameKo": "마주앙 스페셜 화이트",
     "nameEn": "Majuang Special White",
-    "type": "korean",
+    "type": "white",
     "country": "한국",
     "region": "한국 (롯데칠성)",
     "grape": "화이트 블렌드",
@@ -7206,6 +7206,289 @@
     },
     "purchase": {
       "onlineFrom": 40500,
+      "offlineAvailable": true
+    }
+  },
+  {
+    "id": "wine_107",
+    "nameKo": "벤볼리오 피노 그리지오",
+    "nameEn": "Benvolio Pinot Grigio",
+    "type": "white",
+    "country": "이탈리아",
+    "region": "이탈리아 프리울리",
+    "grape": "피노 그리지오",
+    "vintage": "2024",
+    "price": 16000,
+    "rating": 3.6,
+    "reviewCount": 2274,
+    "description": "프리울리의 지속가능 인증 포도밭에서 재배한 피노 그리지오로 만든 드라이 화이트 와인입니다. 레몬 제스트와 핑크 자몽, 인동꽃 향에 청사과·멜론·흰 복숭아·라임 풍미가 이어지며, 산뜻한 산미와 깔끔한 마무리가 돋보입니다.",
+    "imageUrl": "src/assets/images/wines/wine_107.png",
+    "winery": "Benvolio",
+    "grapeComposition": "피노 그리지오 100%",
+    "alcohol": 12.5,
+    "volumeMl": 750,
+    "saveCount": 1837,
+    "tags": [
+      "지속가능 인증",
+      "산뜻한 데일리 와인",
+      "해산물과 먹기 좋은"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 4,
+        "label": "높음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "레몬 제스트",
+      "핑크 자몽",
+      "청사과",
+      "흰 복숭아"
+    ],
+    "service": {
+      "servingTemperature": "8 ~ 10°C",
+      "decanting": "디캔팅 불필요",
+      "drinkingWindow": "구매 후 1 ~ 3년",
+      "glass": "화이트 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "신선한 생선",
+      "흰살 육류",
+      "복숭아를 곁들인 샐러드",
+      "아페리티프"
+    ],
+    "aiRecommendation": "레몬 제스트와 청사과의 산뜻함, 흰 복숭아의 부드러운 과실미가 이어지는 프리울리 피노 그리지오예요. 차갑게 식혀 신선한 생선이나 가벼운 샐러드와 함께 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 16000,
+      "offlineAvailable": false
+    }
+  },
+  {
+    "id": "wine_108",
+    "nameKo": "카사스미스 비노 로쏘",
+    "nameEn": "CasaSmith ViNO Rosso",
+    "type": "red",
+    "country": "미국",
+    "region": "미국 워싱턴주",
+    "grape": "카베르네 소비뇽·산지오베제",
+    "vintage": "2015",
+    "price": 25000,
+    "rating": 3.9,
+    "reviewCount": 83,
+    "description": "이탈리아 와인에서 영감을 받아 워싱턴주에서 만든 레드 블렌드입니다. 말린 체리와 자두, 블랙베리의 과실 풍미에 이국적인 향신료가 더해져 진하면서도 편안하게 즐길 수 있습니다.",
+    "imageUrl": "src/assets/images/wines/wine_108.png",
+    "winery": "CasaSmith (House of Smith)",
+    "grapeComposition": "카베르네 소비뇽 약 70%, 산지오베제 약 30%",
+    "alcohol": 13.5,
+    "volumeMl": 750,
+    "saveCount": 746,
+    "tags": [
+      "과실향이 풍부한",
+      "피자와 먹기 좋은",
+      "데일리 레드"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 3,
+        "label": "중간"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "말린 체리",
+      "자두",
+      "블랙베리",
+      "이국적인 향신료"
+    ],
+    "service": {
+      "servingTemperature": "15 ~ 18°C",
+      "decanting": "마시기 20분 전 오픈",
+      "drinkingWindow": "지금 마시기 권장",
+      "glass": "레드 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "토마토 파스타",
+      "피자",
+      "구운 돼지고기",
+      "숙성 치즈"
+    ],
+    "aiRecommendation": "말린 체리와 블랙베리의 진한 과실미에 산지오베제의 산뜻함이 더해진 워싱턴 레드 블렌드예요. 토마토 파스타나 피자와 함께 편안하게 즐겨보세요.",
+    "purchase": {
+      "onlineFrom": 25000,
+      "offlineAvailable": true
+    }
+  },
+  {
+    "id": "wine_109",
+    "nameKo": "E. 기갈 코트 뒤 론 루즈",
+    "nameEn": "E. Guigal Côtes du Rhône Rouge",
+    "type": "red",
+    "country": "프랑스",
+    "region": "프랑스 론",
+    "grape": "시라·그르나슈·무르베드르",
+    "vintage": "2021",
+    "price": 25000,
+    "rating": 3.8,
+    "reviewCount": 412,
+    "description": "시라를 중심으로 그르나슈와 무르베드르를 블렌딩한 클래식한 코트 뒤 론 레드입니다. 붉은 베리와 향신료 향, 둥글고 매끄러운 탄닌, 풍부한 바디와 긴 여운이 조화를 이룹니다.",
+    "imageUrl": "src/assets/images/wines/wine_109.png",
+    "winery": "E. Guigal",
+    "grapeComposition": "시라 50%, 그르나슈 40%, 무르베드르 10%",
+    "alcohol": 14.5,
+    "volumeMl": 750,
+    "saveCount": 1032,
+    "tags": [
+      "매끄러운 탄닌",
+      "육류와 먹기 좋은",
+      "론 밸리 클래식"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 1,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 3,
+        "label": "중간"
+      },
+      "tannin": {
+        "score": 4,
+        "label": "높음"
+      },
+      "body": {
+        "score": 4,
+        "label": "풍부함"
+      },
+      "aroma": {
+        "score": 4,
+        "label": "풍부함"
+      }
+    },
+    "tastingNotes": [
+      "붉은 베리",
+      "블랙 체리",
+      "향신료",
+      "감초"
+    ],
+    "service": {
+      "servingTemperature": "16 ~ 18°C",
+      "decanting": "마시기 30분 전 오픈",
+      "drinkingWindow": "2026 ~ 2029",
+      "glass": "레드 와인 글라스",
+      "afterOpening": "2 ~ 3일"
+    },
+    "foodPairings": [
+      "샤퀴테리",
+      "붉은 육류",
+      "구운 가금류",
+      "숙성 치즈"
+    ],
+    "aiRecommendation": "붉은 베리와 향신료 향, 매끄러운 탄닌이 균형을 이루는 클래식한 론 레드예요. 구운 고기나 숙성 치즈와 곁들이면 풍부한 과실미가 더욱 살아납니다.",
+    "purchase": {
+      "onlineFrom": 25000,
+      "offlineAvailable": true
+    }
+  },
+  {
+    "id": "wine_110",
+    "nameKo": "프렌치 블룸 르 로제",
+    "nameEn": "French Bloom Le Rosé",
+    "type": "sparkling",
+    "country": "프랑스",
+    "region": "프랑스 남부 리무",
+    "grape": "샤르도네·피노 누아",
+    "vintage": "2021",
+    "price": 45000,
+    "rating": 4.9,
+    "reviewCount": 548,
+    "description": "풍부한 과일 향과 섬세한 기포, 깔끔한 피니시가 특징이며, 축하 자리나 브런치, 홈파티 등 다양한 순간에 부담 없이 즐길 수 있습니다.",
+    "imageUrl": "src/assets/images/wines/wine_110.png",
+    "winery": "French Bloom",
+    "grapeComposition": "유기농 샤르도네·피노 누아 기반 무알코올 블렌드",
+    "alcohol": 0,
+    "volumeMl": 750,
+    "saveCount": 1428,
+    "tags": [
+      "브런치",
+      "홈파티"
+    ],
+    "tasting": {
+      "sweetness": {
+        "score": 4,
+        "label": "드라이"
+      },
+      "acidity": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "tannin": {
+        "score": 1,
+        "label": "낮음"
+      },
+      "body": {
+        "score": 1,
+        "label": "적음"
+      },
+      "aroma": {
+        "score": 5,
+        "label": "강함"
+      }
+    },
+    "tastingNotes": [
+      "딸기",
+      "체리",
+      "복숭아",
+      "플로럴"
+    ],
+    "service": {
+      "servingTemperature": "2 ~ 4°C",
+      "decanting": "불필요",
+      "drinkingWindow": "출시 후 1 ~ 2년 내",
+      "glass": "플루트 글라스",
+      "afterOpening": "스파클링 스토퍼 사용 시 1 ~ 2일"
+    },
+    "foodPairings": [
+      "훈제 연어",
+      "새우·관자",
+      "부라타 치즈",
+      "해산물"
+    ],
+    "aiRecommendation": "이 와인은 풍부한 과실향과 은은한 레몬향이 특징입니다. 훈제 연어와 특히 잘 어울립니다.",
+    "purchase": {
+      "onlineFrom": 45000,
       "offlineAvailable": true
     }
   }

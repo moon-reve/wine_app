@@ -1,50 +1,13 @@
-import { useRef, useState, type CSSProperties, type PointerEvent, type WheelEvent } from 'react'
+import { useRef, useState, type PointerEvent, type WheelEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import backIcon from '../assets/todayspick/back.svg'
 import chevronIcon from '../assets/todayspick/chevron.svg'
 import mainWine from '../assets/todayspick/main-wine.png'
-import circleBg1 from '../assets/todayspick/circle-bg-1.svg'
-import circleBg2 from '../assets/todayspick/circle-bg-2.svg'
-import circleBg3 from '../assets/todayspick/circle-bg-3.svg'
-import circleBg4 from '../assets/todayspick/circle-bg-4.svg'
-import circleMask1 from '../assets/todayspick/circle-mask-1.svg'
-import circleMask2 from '../assets/todayspick/circle-mask-2.svg'
-import circleMask4 from '../assets/todayspick/circle-mask-4.svg'
-import wineSource1 from '../assets/todayspick/wine-source-1.png'
-import wineSource2 from '../assets/todayspick/wine-source-2.png'
-import wineSource3 from '../assets/todayspick/wine-source-3.png'
-import wineSource4 from '../assets/todayspick/wine-source-4.png'
+import { formatPrice, formatStars, getWineDetailData, resolveWineImage, type WineDetail } from '../data/wineDetailData'
+import { TODAY_PICK_WINE_IDS, WINE_TYPE_BG_COLOR } from '../data/todayPickData'
 
-const recommendations = [
-  {
-    name: '테마타',
-    wine: wineSource1,
-    background: circleBg1,
-    mask: circleMask1,
-    wineStyle: { left: -94.0, top: -26, width: 283, height: 562.5 },
-  },
-  {
-    name: '샤또 몬텔레나',
-    wine: wineSource2,
-    background: circleBg2,
-    mask: circleMask2,
-    wineStyle: { left: -101.6, top: -29.2, width: 286.8, height: 566.4 },
-  },
-  {
-    name: '파 니엔테',
-    wine: wineSource3,
-    background: circleBg3,
-    mask: circleMask2,
-    wineStyle: { left: -86.7, top: -26.8, width: 253.2, height: 521.4 },
-  },
-  {
-    name: '오이스터 베이',
-    wine: wineSource4,
-    background: circleBg4,
-    mask: circleMask4,
-    wineStyle: { left: -88.1, top: -24, width: 259.2, height: 543.1 },
-  },
-] as const
+const todayPickWineId = 'wine_018'
+const recommendationTypes = ['red', 'white', 'sparkling'] as const
 
 const filters = [
   { title: '음식', options: ['스테이크', '파스타', '해산물', '치즈'], selected: '스테이크' },
@@ -52,24 +15,17 @@ const filters = [
   { title: '가격대', options: ['2만원 이하', '2~5만원', '5~10만원', '10만원 이상'], selected: '2~5만원' },
 ] as const
 
-function RecommendationItem({ item }: { item: (typeof recommendations)[number] }) {
-  const maskStyle: CSSProperties = {
-    WebkitMaskImage: `url(${item.mask})`,
-    WebkitMaskSize: '89.26px 89.26px',
-    WebkitMaskRepeat: 'no-repeat',
-    maskImage: `url(${item.mask})`,
-    maskSize: '89.26px 89.26px',
-    maskRepeat: 'no-repeat',
-  }
-
+function RecommendationItem({ wine, onClick }: { wine: WineDetail; onClick: () => void }) {
   return (
-    <div className="flex w-[132px] shrink-0 flex-col items-center gap-3">
-      <div className="relative size-[89.26px] shrink-0 overflow-hidden" style={maskStyle}>
-        <img src={item.background} alt="" className="absolute inset-0 size-full max-w-none" />
-        <img src={item.wine} alt="" className="absolute max-w-none" style={item.wineStyle} />
+    <button type="button" onClick={onClick} className="flex w-[132px] shrink-0 flex-col items-center gap-3">
+      <div
+        className="flex size-[89.26px] shrink-0 items-center justify-center overflow-hidden rounded-full"
+        style={{ backgroundColor: WINE_TYPE_BG_COLOR[wine.type] }}
+      >
+        <img src={resolveWineImage(wine)} alt={wine.nameKo} className="h-[85%] w-auto max-w-[75%] object-contain" />
       </div>
-      <p className="text-center text-[16px] leading-[18px] font-medium tracking-[-0.5px] whitespace-nowrap text-[#6b6b6b]">{item.name}</p>
-    </div>
+      <p className="line-clamp-2 w-[89.26px] text-center text-[14px] leading-[18px] font-medium tracking-[-0.5px] text-[#6b6b6b]">{wine.nameKo}</p>
+    </button>
   )
 }
 
@@ -107,8 +63,14 @@ function FilterGroup({
 
 function TodaysPick() {
   const navigate = useNavigate()
+  const { wine } = getWineDetailData(todayPickWineId)
+  const recommendations = recommendationTypes.map((type) => {
+    const recommendationId = TODAY_PICK_WINE_IDS[type][0]
+    return getWineDetailData(recommendationId).wine
+  })
   const recommendationScroller = useRef<HTMLDivElement>(null)
   const dragState = useRef({ active: false, startX: 0, scrollLeft: 0 })
+  const recommendationDidDrag = useRef(false)
   const [selectedFilters, setSelectedFilters] = useState<Record<string, string>>(() =>
     Object.fromEntries(filters.map((group) => [group.title, group.selected])),
   )
@@ -117,6 +79,7 @@ function TodaysPick() {
     if (event.pointerType !== 'mouse') return
     const scroller = recommendationScroller.current
     if (!scroller) return
+    recommendationDidDrag.current = false
     dragState.current = { active: true, startX: event.clientX, scrollLeft: scroller.scrollLeft }
     scroller.setPointerCapture(event.pointerId)
   }
@@ -125,6 +88,7 @@ function TodaysPick() {
     if (!dragState.current.active) return
     const scroller = recommendationScroller.current
     if (!scroller) return
+    if (Math.abs(event.clientX - dragState.current.startX) > 8) recommendationDidDrag.current = true
     scroller.scrollLeft = dragState.current.scrollLeft - (event.clientX - dragState.current.startX)
   }
 
@@ -151,26 +115,26 @@ function TodaysPick() {
 
       <section className="absolute top-[103px] left-0 h-[395px] w-full" aria-label="오늘의 추천 와인">
         <p className="absolute top-0 left-[217px] text-[12px] leading-[1.2] font-medium tracking-[-0.24px] whitespace-nowrap text-[#737373]">
-          <span className="text-[#831317]">★★★★☆ 4.8</span> · 리뷰 248 · 저장 1,329
+          <span className="text-[#831317]">{formatStars(wine.rating)} {wine.rating.toFixed(1)}</span> · 리뷰 {wine.reviewCount.toLocaleString()} · 저장 {wine.saveCount.toLocaleString()}
         </p>
         <p className="absolute top-[19px] right-[25px] w-[255px] text-right font-['Delmon_Delicate','Playfair_Display',serif] text-[42px] leading-[1.3] font-normal tracking-[-1.26px] text-black">
-          Château Margaux
+          {wine.nameEn}
         </p>
         <p className="font-delmon-script absolute top-[104px] left-5 w-[255px] text-right text-[100px] leading-[0.87] font-normal tracking-[-3px] text-black/5" data-node-id="1546:6469">
           Chateau<br />Marg<br />aux
         </p>
         <div className="absolute top-0 left-8 h-[395px] w-[92px] overflow-hidden">
-          <img src={mainWine} alt="Château Margaux 2018" className="absolute top-[-49.6px] left-[-112.4px] h-[485.5px] w-[316.9px] max-w-none" />
+          <img src={mainWine} alt={`${wine.nameKo} ${wine.vintage}`} className="absolute top-[-49.6px] left-[-112.4px] h-[485.5px] w-[316.9px] max-w-none" />
         </div>
-        <p className="absolute top-[150px] left-[237px] text-[24px] leading-[1.2] font-bold tracking-[-0.48px] whitespace-nowrap">샤토 마르고 2018</p>
-        <p className="absolute top-[182px] left-[255px] text-[22px] leading-[1.2] font-bold whitespace-nowrap text-[#831317]">KRW 320,000</p>
+        <p className="absolute top-[150px] right-[25px] text-right text-[24px] leading-[1.2] font-bold tracking-[-0.48px] whitespace-nowrap">{wine.nameKo} {wine.vintage}</p>
+        <p className="absolute top-[182px] right-[25px] text-right text-[22px] leading-[1.2] font-bold whitespace-nowrap text-[#831317]">{formatPrice(wine.price)}</p>
         <div className="absolute top-[229px] left-[259px] flex items-start gap-2 overflow-hidden">
-          {['혼술', '선물하기 좋은'].map((tag) => (
+          {wine.tags.map((tag) => (
             <span key={tag} className="rounded-[25px] border border-[#d9d9d9] px-3 py-1.5 text-[12px] leading-none font-medium tracking-[-0.24px] whitespace-nowrap text-[#595959]">{tag}</span>
           ))}
         </div>
         <p className="font-playfair-sc absolute top-[241px] left-[154px] -translate-x-1/2 text-center text-[150px] leading-[1.08] font-bold tracking-[-3px] whitespace-nowrap text-[#831317]">01</p>
-        <button type="button" onClick={() => navigate('/product/chateau-margaux-2018')} className="absolute top-[371px] left-[316px] flex items-center text-[14px] leading-none font-bold whitespace-nowrap text-[#831317]">
+        <button type="button" onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)} className="absolute top-[371px] left-[316px] flex items-center text-[14px] leading-none font-bold whitespace-nowrap text-[#831317]">
           와인 상세 보기
           <img src={chevronIcon} alt="" className="ml-1 h-3 w-[7px]" />
         </button>
@@ -196,9 +160,18 @@ function TodaysPick() {
           onWheel={scrollRecommendationsWithWheel}
           className="absolute top-[79px] right-0 left-[-1px] flex cursor-grab touch-pan-x items-start overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {recommendations.map((item, index) => (
-            <div key={item.name} className={index === 0 ? '' : '-ml-4'}>
-              <RecommendationItem item={item} />
+          {recommendations.map((recommendationWine, index) => (
+            <div key={recommendationWine.id} className={index === 0 ? '' : '-ml-4'}>
+              <RecommendationItem
+                wine={recommendationWine}
+                onClick={() => {
+                  if (recommendationDidDrag.current) {
+                    recommendationDidDrag.current = false
+                    return
+                  }
+                  navigate(`/wine_detail/${recommendationWine.type}/${recommendationWine.id}`)
+                }}
+              />
             </div>
           ))}
         </div>

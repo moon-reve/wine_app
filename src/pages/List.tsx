@@ -6,13 +6,12 @@ import starIcon from '../assets/list/container-star.svg'
 import dummyWines from '../../dummy data/wines.json'
 import FilterSheet, { type WineFilters } from '../components/FilterSheet'
 import WineMap from '../components/WineMap'
+import { WINE_TYPE_BG_COLOR, type WineType } from '../data/todayPickData'
 
 const wineImages = import.meta.glob('../assets/images/wines/*.png', {
   eager: true,
   import: 'default',
 }) as Record<string, string>
-
-type WineType = 'red' | 'white' | 'sparkling' | 'rose' | 'korean'
 
 type DummyWine = {
   id: string
@@ -41,29 +40,11 @@ type Wine = {
   grape: string
 }
 
-const WINE_TYPE_BG_COLOR: Record<WineType, string> = {
-  white: '#ece4a2',
-  red: '#831317',
-  sparkling: '#F2E9C9',
-  rose: '#E8A9A0',
-  korean: '#ece4a2',
-}
-
 // 상단 큐레이션 와인은 더미데이터의 ID로 직접 연결하고, 일반 목록에서는 중복 노출하지 않는다.
 const CURATED_WINE_IDS = ['wine_106', 'wine_033', 'wine_023'] as const
 const DUPLICATE_DUMMY_IDS = new Set<string>(CURATED_WINE_IDS)
 // 아래 와인들은 리스트에서만 숨기며, 더미데이터 자체는 다른 화면에서도 사용하므로 유지한다.
 const HIDDEN_FROM_LIST_IDS = new Set(['wine_003', 'wine_018', 'wine_019', 'wine_068'])
-
-// 더미데이터의 type은 'korean'이 색이 아닌 원산지 구분이라, 국산 와인은 이름에 적힌
-// 레드/화이트/로제/스파클링 표기를 우선 읽어서 배경색을 정한다. 표기가 없는 경우에만 화이트로 대체.
-function resolveBgColorType(wine: DummyWine): Exclude<WineType, 'korean'> {
-  if (wine.type !== 'korean') return wine.type
-  if (wine.nameKo.includes('스파클링')) return 'sparkling'
-  if (wine.nameKo.includes('로제')) return 'rose'
-  if (wine.nameKo.includes('레드')) return 'red'
-  return 'white'
-}
 
 function getRegionText(wine: DummyWine): string {
   const subRegion = wine.region.startsWith(wine.country)
@@ -87,7 +68,7 @@ function toListWine(wine: DummyWine): Wine {
     priceValue: wine.price,
     rating: wine.rating.toFixed(1),
     image: wineImages[`../assets/images/wines/${fileName}`] ?? '',
-    bgColor: WINE_TYPE_BG_COLOR[resolveBgColorType(wine)],
+    bgColor: WINE_TYPE_BG_COLOR[wine.type],
     type: wine.type,
     country: wine.country,
     grape: wine.grape,
@@ -187,9 +168,8 @@ function List() {
                   <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
                   <button
                     type="button"
-                    disabled={wine.type !== 'red' && wine.type !== 'white' && wine.type !== 'rose'}
-                    onClick={() => navigate(`/product/${wine.type}/${wine.id}`)}
-                    className="flex min-h-[159px] w-full items-center gap-[37px] py-[24px] pl-[24px] text-left disabled:cursor-default"
+                    onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
+                    className="flex min-h-[159px] w-full items-center gap-[37px] py-[24px] pl-[24px] text-left"
                   >
                     <div
                       className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"

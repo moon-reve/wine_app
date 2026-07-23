@@ -111,6 +111,24 @@
 }
 
 @layer components {
+  .wine-detail-name-en {
+    min-height: 131px;
+    font-family: "Delmon Delicate", "Playfair Display", serif;
+    font-size: 38px;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    padding-bottom: 20px;
+    text-align: right;
+  }
+
+  .wine-detail-name-ko {
+    font-size: 22px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.48px;
+    text-align: right;
+  }
+
   .chatbot-orb-frame {
     opacity: 0;
     user-select: none;

@@ -4118,5 +4118,61 @@
     "rating": 4.4,
     "content": "깔끔한 산미와 긴 여운이 매력적이라 화이트 와인 입문자에게 추천하고 싶어요.",
     "createdAt": "2026-07-10T19:50:00"
+  },
+  {
+    "id": "review_517",
+    "wineId": "wine_107",
+    "userId": "user_024",
+    "rating": 3.8,
+    "content": "레몬과 청사과 향이 산뜻하고 드라이한 마무리가 깔끔해서 가볍게 마시기 좋았어요.",
+    "createdAt": "2026-07-20T18:20:00"
+  },
+  {
+    "id": "review_518",
+    "wineId": "wine_107",
+    "userId": "user_025",
+    "rating": 3.7,
+    "content": "차갑게 마시니 자몽 향과 산뜻한 산미가 또렷하고 흰살생선과도 잘 어울렸습니다.",
+    "createdAt": "2026-07-12T19:35:00"
+  },
+  {
+    "id": "review_519",
+    "wineId": "wine_107",
+    "userId": "user_026",
+    "rating": 3.6,
+    "content": "흰 복숭아와 멜론 풍미가 은은하고 깔끔한 끝맛이라 데일리 와인으로 부담 없어요.",
+    "createdAt": "2026-06-28T17:10:00"
+  },
+  {
+    "id": "review_520",
+    "wineId": "wine_107",
+    "userId": "user_027",
+    "rating": 3.5,
+    "content": "산뜻한 산미와 가벼운 시트러스 향이 샐러드와 잘 맞고 마무리도 깔끔했습니다.",
+    "createdAt": "2026-06-14T20:05:00"
+  },
+  {
+    "id": "review_521",
+    "wineId": "wine_107",
+    "userId": "user_028",
+    "rating": 3.9,
+    "content": "청사과와 라임 향이 선명하고 산뜻해서 아페리티프로 즐기기 좋은 화이트 와인이에요.",
+    "createdAt": "2026-05-31T16:45:00"
+  },
+  {
+    "id": "review_522",
+    "wineId": "wine_110",
+    "userId": "user_001",
+    "rating": 5,
+    "content": "가볍게 마시기 너무 좋아요! 과실향이 풍부하고 브런치 자리에도 잘 어울렸어요.",
+    "createdAt": "2026-07-22T12:30:00"
+  },
+  {
+    "id": "review_523",
+    "wineId": "wine_110",
+    "userId": "user_002",
+    "rating": 4,
+    "content": "훈제 연어와 너무 잘 어울려요! 부담 없이 마실 수 있고 부드러운 기포와 과일향도 좋았습니다.",
+    "createdAt": "2026-07-18T19:10:00"
   }
 ]

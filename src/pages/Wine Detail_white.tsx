@@ -77,16 +77,17 @@ export default function WineDetailWhite() {
         <h1 className="absolute top-[26px] left-1/2 -translate-x-1/2 text-[18px] leading-none font-bold tracking-[-0.54px] text-[#831317]">와인 정보</h1>
       </header>
 
-      <p className="absolute top-[169px] right-5 text-[12px] leading-[1.2] font-medium tracking-[-0.24px] whitespace-nowrap text-[#737373]"><span className="text-[#831317]">{formatStars(wine.rating)} {wine.rating.toFixed(1)}</span> · 리뷰 {wine.reviewCount.toLocaleString()} · 저장 {wine.saveCount.toLocaleString()}</p>
-      <div className="absolute top-[188px] right-5 w-[293px] text-right font-['Delmon_Delicate','Playfair_Display',serif] text-[38px] leading-[1.12] tracking-[-0.42px]">{wine.nameEn}</div>
-      <h2 className="absolute top-[313px] right-5 max-w-[270px] text-right text-[22px] leading-[1.2] font-bold tracking-[-0.48px]">{wine.nameKo}</h2>
-      <p className="absolute top-[345px] right-5 text-[22px] leading-[1.2] font-bold whitespace-nowrap text-[#831317]">{formatPrice(wine.price)}</p>
-      <div className="absolute top-[392px] right-5 flex gap-2">{wine.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}</div>
-
-      <div className="absolute top-[169px] left-[26px] h-[556px] w-[136px] overflow-hidden">
-        <img src={heroWineImage} alt={wine.nameKo} className="size-full object-contain" />
+      <div className="absolute top-[169px] right-5 z-[2] flex w-[293px] flex-col items-end">
+        <p className="text-[12px] leading-[1.2] font-medium tracking-[-0.24px] whitespace-nowrap text-[#737373]"><span className="text-[#831317]">{formatStars(wine.rating)} {wine.rating.toFixed(1)}</span> · 리뷰 {wine.reviewCount.toLocaleString()} · 저장 {wine.saveCount.toLocaleString()}</p>
+        <div className="wine-detail-name-en mt-[5px] w-full">{wine.nameEn}</div>
+        <h2 className="wine-detail-name-ko max-w-[270px]">{wine.nameKo}</h2>
+        <p className="mt-1.5 text-[22px] leading-[1.2] font-bold whitespace-nowrap text-[#831317]">{formatPrice(wine.price)}</p>
+        <div className="mt-5 flex w-[230px] flex-wrap justify-end gap-2">{wine.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}</div>
       </div>
-      <div className="absolute top-[474px] left-[31px] flex h-[305.537px] w-[412.388px] items-center justify-center">
+      <div className="absolute top-[169px] left-[6px] z-0 h-[556px] w-[136px] overflow-visible">
+        <img src={heroWineImage} alt={wine.nameKo} className="absolute top-0 left-1/2 h-full w-auto max-w-none -translate-x-1/2 object-contain" />
+      </div>
+      <div className="absolute top-[474px] left-[31px] z-[1] flex h-[305.537px] w-[412.388px] items-center justify-center">
         <div className="h-[252.518px] w-[379.394px] -rotate-[8.45deg]">
           <img src={grapes} alt="" className="size-full max-w-none object-cover" />
         </div>
@@ -150,7 +151,20 @@ export default function WineDetailWhite() {
         <section className="absolute top-[2173px] left-5 flex w-[390px] flex-col gap-3.5 overflow-visible">
           <div className="flex flex-col gap-1"><h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">비슷한 와인 추천</h2><p className="text-[14px] leading-[1.3] tracking-[-0.28px] text-[#737373]">이 와인과 비슷한 스타일의 와인을 추천해드려요.</p></div>
           <div className="flex gap-3.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {similarWines.map((item) => <article key={item.id} className="flex w-[188px] shrink-0 flex-col gap-2"><div className="flex h-[170px] w-[188px] items-center justify-center overflow-hidden rounded-xl bg-[#f8f6f4]"><img src={resolveWineImage(item)} alt={item.nameKo} className="h-[150px] max-w-[80px] object-contain" /></div><h3 className="w-[188px] text-[14px] leading-[1.25] font-semibold tracking-[-0.14px]">{item.nameKo}</h3><p className="text-[12px] leading-[1.2] font-medium whitespace-nowrap text-[#737373]">★ {item.rating.toFixed(1)} · {formatPrice(item.price)}</p></article>)}
+            {similarWines.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => navigate(`/wine_detail/${item.type}/${item.id}`)}
+                className="flex w-[188px] shrink-0 flex-col gap-2 text-left"
+              >
+                <div className="flex h-[170px] w-[188px] items-center justify-center overflow-hidden rounded-xl bg-[#f8f6f4]">
+                  <img src={resolveWineImage(item)} alt={item.nameKo} className="h-[150px] max-w-[80px] object-contain" />
+                </div>
+                <h3 className="w-[188px] text-[14px] leading-[1.25] font-semibold tracking-[-0.14px]">{item.nameKo}</h3>
+                <p className="text-[12px] leading-[1.2] font-medium whitespace-nowrap text-[#737373]">★ {item.rating.toFixed(1)} · {formatPrice(item.price)}</p>
+              </button>
+            ))}
           </div>
         </section>
       </main>

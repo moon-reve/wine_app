@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import heroImage from '../assets/images/hero.png'
 import heroTasteImage from '../assets/images/hero-taste.png'
 import heroShareImage from '../assets/images/hero-share.png'
-import heroWineDetailImage from '../assets/images/hero-wine-detail.png'
-import sheetCloseIcon from '../assets/images/icon-sheet-close.svg'
 import foodPairingImage from '../assets/images/food-pairing.png'
 import magazineCard1 from '../assets/images/magazine-card-1.png'
 import magazineCard2 from '../assets/images/magazine-card-2.png'
@@ -13,8 +11,6 @@ import corkIcon from '../assets/images/cork-icon.png'
 import corkPile from '../assets/images/cork-pile.png'
 import wineNoteImage from '../assets/images/wine-note.png'
 import aiSommelierImage from '../assets/images/ai-sommelier-bg.png'
-import bottleCasaSmith from '../assets/images/bottle-casa-smith.png'
-import bottleKimCrawford from '../assets/images/bottle-kim-crawford.png'
 import bestFeedPhoto from '../assets/images/best-feed-photo.png'
 import bestFeedPhoto2 from '../assets/images/best-feed-photo-2.png'
 import bestFeedPhoto3 from '../assets/images/best-feed-photo-3.png'
@@ -25,16 +21,41 @@ import iconArrowForward2 from '../assets/images/icon-arrow-forward-2.svg'
 import iconArrowForward5 from '../assets/images/icon-arrow-forward-5.svg'
 import iconChevronForward from '../assets/images/icon-chevron-forward.svg'
 import iconEllipse9 from '../assets/images/icon-ellipse-9.svg'
-import iconGroup2 from '../assets/images/icon-group-2.svg'
 import iconHeart from '../assets/images/icon-heart.svg'
 import iconShare from '../assets/images/icon-share.svg'
 import iconMusicNote2 from '../assets/images/icon-music-note-2.svg'
 import Header from '../components/Header'
+import WineHotspot from '../components/WineHotspot'
+import winesData from '../../dummy data/wines.json'
+import { TODAY_PICK_WINE_IDS, type WineType as TodayPickType } from '../data/todayPickData'
 
 const playfairOpsz = { fontVariationSettings: '"opsz" 12' }
 
-// Figma 디자인 기준 폭 430px = 100cqw. 모든 치수는 이 기준으로 환산.
-const tabs = ['레드', '화이트', '로제', '스파클링'] as const
+type TodayPickWine = {
+  id: string
+  nameEn: string
+  type: TodayPickType
+  imageUrl: string
+  tastingNotes: string[]
+}
+
+const tabs: { label: string; type: TodayPickType }[] = [
+  { label: '레드', type: 'red' },
+  { label: '화이트', type: 'white' },
+  { label: '로제', type: 'rose' },
+  { label: '스파클링', type: 'sparkling' },
+]
+
+const todayPickWineData = winesData as TodayPickWine[]
+const todayPickWineImages = import.meta.glob('../assets/images/wines/*.png', {
+  eager: true,
+  import: 'default',
+}) as Record<string, string>
+
+function resolveTodayPickWineImage(wine: TodayPickWine) {
+  const fileName = wine.imageUrl.split('/').pop() ?? ''
+  return todayPickWineImages[`../assets/images/wines/${fileName}`] ?? ''
+}
 
 const eventItems = [
   {
@@ -99,14 +120,26 @@ const bestFeeds = [
 
 const noScrollbar = '[scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
 
+const heroWineHotspots = [
+  {
+    name: '벤볼리오 피노 그리지오 2024',
+    detailPath: '/wine_detail/white/wine_107',
+    top: 'calc(71.163cqw + 25px)',
+    left: '67.209cqw',
+    calloutSide: 'left',
+  },
+] as const
+
 function Home() {
+  const navigate = useNavigate()
   const [heroIndex, setHeroIndex] = useState(0)
   const [bestFeedIndex, setBestFeedIndex] = useState(0)
   const [magazineIndex, setMagazineIndex] = useState(0)
-  const [isWineSheetOpen, setIsWineSheetOpen] = useState(false)
+  const [todayPickType, setTodayPickType] = useState<TodayPickType>('red')
+  const [openHeroWineIndex, setOpenHeroWineIndex] = useState<number | null>(null)
   const heroPointerStart = useRef<number | null>(null)
   const bestFeedScrollRef = useRef<HTMLDivElement>(null)
-  const bestFeedDrag = useRef<{ pointerId: number; x: number; scrollLeft: number } | null>(null)
+  const bestFeedDrag = useRef<{ pointerId: number; x: number; scrollLeft: number; startedAt: number } | null>(null)
   const todayPickScrollRef = useRef<HTMLDivElement>(null)
   const todayPickDrag = useRef<{ pointerId: number; x: number; scrollLeft: number; moved: boolean } | null>(null)
   const todayPickDidDrag = useRef(false)
@@ -115,22 +148,9 @@ function Home() {
   const magazineScrollRef = useRef<HTMLElement>(null)
   const magazineDrag = useRef<{ pointerId: number; x: number; scrollLeft: number; moved: boolean } | null>(null)
   const magazineDidDrag = useRef(false)
-
-  useEffect(() => {
-    if (!isWineSheetOpen) return
-
-    const previousOverflow = document.body.style.overflow
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setIsWineSheetOpen(false)
-    }
-
-    document.body.style.overflow = 'hidden'
-    window.addEventListener('keydown', closeOnEscape)
-    return () => {
-      document.body.style.overflow = previousOverflow
-      window.removeEventListener('keydown', closeOnEscape)
-    }
-  }, [isWineSheetOpen])
+  const todayPickWines = TODAY_PICK_WINE_IDS[todayPickType]
+    .map((id) => todayPickWineData.find((wine) => wine.id === id))
+    .filter((wine): wine is TodayPickWine => Boolean(wine))
 
   const finishHeroSwipe = (clientX: number) => {
     if (heroPointerStart.current === null) return
@@ -142,17 +162,46 @@ function Home() {
     setHeroIndex((current) => Math.max(0, Math.min(2, current + (distance < 0 ? 1 : -1))))
   }
 
+  const finishBestFeedDrag = (event: ReactPointerEvent<HTMLDivElement>, cancelled = false) => {
+    const drag = bestFeedDrag.current
+    const carousel = bestFeedScrollRef.current
+    if (!drag || drag.pointerId !== event.pointerId || !carousel) return
+
+    bestFeedDrag.current = null
+    if (carousel.hasPointerCapture(event.pointerId)) carousel.releasePointerCapture(event.pointerId)
+    carousel.style.scrollSnapType = ''
+    carousel.style.scrollBehavior = ''
+
+    const width = carousel.clientWidth
+    if (!width) return
+
+    const startIndex = Math.round(drag.scrollLeft / width)
+    const distance = event.clientX - drag.x
+    const elapsed = Math.max(performance.now() - drag.startedAt, 1)
+    const isFlick = Math.abs(distance) / elapsed >= 0.45
+    const shouldMove = !cancelled && (Math.abs(distance) >= 45 || isFlick)
+    const targetIndex = shouldMove
+      ? Math.max(0, Math.min(bestFeeds.length - 1, startIndex + (distance < 0 ? 1 : -1)))
+      : startIndex
+
+    carousel.scrollTo({ left: width * targetIndex, behavior: 'smooth' })
+  }
+
   return (
     <div className="@container mx-auto w-full overflow-hidden bg-white">
       {/* Hero */}
       <section
-        className="relative h-[159.767cqw] w-full touch-pan-y overflow-hidden"
+        className="relative h-[159.767cqw] w-full touch-pan-y overflow-hidden select-none"
         aria-roledescription="carousel"
         aria-label="홈 히어로"
         onPointerDown={(event) => {
+          if (event.target instanceof Element && event.target.closest('button, a')) return
+          event.preventDefault()
           heroPointerStart.current = event.clientX
           event.currentTarget.setPointerCapture(event.pointerId)
         }}
+        onDragStart={(event) => event.preventDefault()}
+        style={{ userSelect: 'none', WebkitUserSelect: 'none' }}
         onPointerUp={(event) => finishHeroSwipe(event.clientX)}
         onPointerCancel={() => {
           heroPointerStart.current = null
@@ -163,26 +212,21 @@ function Home() {
           style={{ transform: `translateX(-${heroIndex * 100}%)` }}
         >
           <div className="relative h-full w-full shrink-0" aria-hidden={heroIndex !== 0}>
-            <img src={heroImage} alt="와인을 잔에 따르는 모습" className="absolute inset-0 size-full object-cover" />
+            <img src={heroImage} alt="와인을 잔에 따르는 모습" draggable={false} className="absolute inset-0 size-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-b from-[rgba(255,255,255,0)] from-[9.896%] via-[rgba(160,160,160,0)] via-[33.807%] to-[rgba(0,0,0,0.62)] to-[75.606%]" />
             <div className="absolute inset-x-0 top-[31.163cqw] h-[128.605cqw] bg-gradient-to-b from-[rgba(102,102,102,0)] from-[40.145%] to-black to-[115.01%]" />
 
-            <button
-              type="button"
-              aria-label="추천 와인 정보 보기"
-              onClick={() => setIsWineSheetOpen(true)}
-              className="absolute top-[44.419cqw] left-[68.605cqw] size-[5.116cqw]"
-            >
-              <img src={iconGroup2} alt="" aria-hidden className="size-full" />
-            </button>
-            <button
-              type="button"
-              aria-label="추천 와인 정보 보기"
-              onClick={() => setIsWineSheetOpen(true)}
-              className="absolute top-[49.070cqw] left-[25.349cqw] size-[5.116cqw]"
-            >
-              <img src={iconGroup2} alt="" aria-hidden className="size-full" />
-            </button>
+            {heroWineHotspots.map((wine, index) => (
+              <WineHotspot
+                key={wine.name}
+                name={wine.name}
+                position={{ left: wine.left, top: wine.top }}
+                calloutSide={wine.calloutSide}
+                isOpen={openHeroWineIndex === index}
+                onToggle={() => setOpenHeroWineIndex((current) => current === index ? null : index)}
+                detailPath={wine.detailPath}
+              />
+            ))}
 
             <p className="absolute top-[88.837cqw] left-[calc(50%-6.163cqw)] -translate-x-1/2 whitespace-nowrap font-delmon text-[13.023cqw] leading-[1.1] font-normal tracking-[-0.260cqw] text-white">
               Every Bottle
@@ -198,7 +242,7 @@ function Home() {
           </div>
 
           <div className="relative h-full w-full shrink-0" aria-hidden={heroIndex !== 1}>
-            <img src={heroTasteImage} alt="와인의 향과 맛을 기록하는 모습" className="absolute top-0 left-0 h-[111.21%] w-full max-w-none" />
+            <img src={heroTasteImage} alt="와인의 향과 맛을 기록하는 모습" draggable={false} className="absolute top-0 left-0 h-[111.21%] w-full max-w-none" />
             <div className="absolute inset-x-0 top-[31.163cqw] h-[128.605cqw] bg-gradient-to-b from-[rgba(102,102,102,0)] from-[40.145%] to-black to-[115.01%]" />
             <div className="absolute inset-x-0 top-[88.837cqw] text-center font-delmon text-[11.628cqw] leading-[1.1] font-normal tracking-[-0.233cqw] text-white">
               <p className="relative -left-[6.279cqw]">Taste What</p>
@@ -212,7 +256,7 @@ function Home() {
           </div>
 
           <div className="relative h-full w-full shrink-0" aria-hidden={heroIndex !== 2}>
-            <img src={heroShareImage} alt="와인 러버들과 특별한 순간을 나누는 모습" className="absolute inset-0 size-full object-cover" />
+            <img src={heroShareImage} alt="와인 러버들과 특별한 순간을 나누는 모습" draggable={false} className="absolute inset-0 size-full object-cover" />
             <div className="absolute inset-x-0 top-[31.163cqw] h-[128.605cqw] bg-gradient-to-b from-[rgba(102,102,102,0)] from-[40.145%] to-black to-[115.01%]" />
             <div className="absolute inset-x-0 top-[88.837cqw] text-center font-delmon text-[11.628cqw] leading-[1.1] font-normal tracking-[-0.233cqw] text-white">
               <p className="relative -left-[5.465cqw]">Share the</p>
@@ -250,78 +294,6 @@ function Home() {
         </div>
       </section>
 
-      <div
-        className={`fixed inset-0 z-[100] flex items-end justify-center transition-[visibility] duration-300 ${isWineSheetOpen ? 'visible' : 'invisible'}`}
-        aria-hidden={!isWineSheetOpen}
-      >
-        <button
-          type="button"
-          aria-label="와인 정보 닫기"
-          tabIndex={isWineSheetOpen ? 0 : -1}
-          onClick={() => setIsWineSheetOpen(false)}
-          className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${isWineSheetOpen ? 'opacity-100' : 'opacity-0'}`}
-        />
-        <section
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="hero-wine-title"
-          className={`@container relative h-[92.558cqw] max-h-[398px] w-full max-w-107.5 overflow-hidden rounded-t-[4.651cqw] bg-[#2b2b33] text-white shadow-[0_-10px_30px_rgba(0,0,0,0.18)] transition-transform duration-300 ease-out ${isWineSheetOpen ? 'translate-y-0' : 'translate-y-full'}`}
-        >
-          <div aria-hidden className="absolute top-[3.721cqw] left-1/2 h-[1.395cqw] w-[12.791cqw] -translate-x-1/2 rounded-full bg-[#d9d9d9]/50" />
-
-          <button
-            type="button"
-            aria-label="닫기"
-            onClick={() => setIsWineSheetOpen(false)}
-            className="absolute top-[4.884cqw] right-[5.581cqw] z-20 size-[3.488cqw]"
-          >
-            <img src={sheetCloseIcon} alt="" aria-hidden className="size-full" />
-          </button>
-
-          <div aria-hidden className="absolute top-[30.233cqw] left-[7.674cqw] size-[36.047cqw] overflow-hidden rounded-full bg-[#831317]">
-            <div className="absolute top-[-24.419cqw] left-[8.605cqw] h-[78.372cqw] w-[19.070cqw] overflow-hidden">
-              <img
-                src={heroWineDetailImage}
-                alt=""
-                className="absolute top-0 left-[-17.070cqw] h-[78.372cqw] w-[53.721cqw] max-w-none"
-              />
-            </div>
-          </div>
-          <div className="absolute top-[5.814cqw] left-[16.279cqw] h-[46.047cqw] w-[19.070cqw] overflow-hidden">
-            <img
-              src={heroWineDetailImage}
-              alt="Benvolo 1963 와인 병"
-              className="absolute top-0 left-[-17.070cqw] h-[78.372cqw] w-[53.721cqw] max-w-none"
-            />
-          </div>
-
-          <h2 id="hero-wine-title" className="absolute top-[37.907cqw] left-[48.140cqw] font-delmon text-[5.814cqw] leading-[0.91] font-normal whitespace-nowrap">
-            BENVOLO 1963
-          </h2>
-          <p className="absolute top-[45.581cqw] left-[48.140cqw] text-[2.791cqw] leading-[1.5] font-light whitespace-nowrap">
-            이 와인은 이탈리아 북부에서
-            <br />
-            만들어진 산뜻한 화이트 와인입니다.
-            <br />
-            뭔가 설명이 더 있으면 좋긴 하겠음
-          </p>
-          <div className="absolute top-[60.698cqw] left-[48.140cqw] flex gap-[0.930cqw]">
-            {['# Moscato', '# Cheese', '# Aperitif'].map((tag) => (
-              <span key={tag} className="flex h-[4.186cqw] items-center rounded-full border-[0.5px] border-white/50 px-[1.395cqw] text-[2.326cqw] leading-none font-light">
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          <button
-            type="button"
-            className="absolute top-[74.419cqw] left-[11.628cqw] flex h-[12.326cqw] w-[76.512cqw] items-center justify-center rounded-[2.326cqw] bg-[#670e10] text-[3.488cqw] leading-[1.5] font-medium"
-          >
-            자세히 보러가기
-          </button>
-        </section>
-      </div>
-
       {/* BEST Feed — 어두운 배경은 섹션 전체가 아니라 위쪽 391px(90.930cqw)까지만 */}
       <section className="relative">
         <div className="absolute inset-x-0 top-0 h-[90.930cqw] bg-[#151515]" />
@@ -335,16 +307,21 @@ function Home() {
 
           <div
             ref={bestFeedScrollRef}
-            className={`relative mt-[5.581cqw] flex h-[113.023cqw] w-full touch-pan-y snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth select-none ${noScrollbar}`}
+            className={`relative mt-[5.581cqw] flex h-[113.023cqw] w-full cursor-grab touch-pan-y snap-x snap-mandatory overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing ${noScrollbar}`}
             aria-roledescription="carousel"
             aria-label="베스트 피드"
             onDragStart={(event) => event.preventDefault()}
             onPointerDown={(event) => {
-              if (!bestFeedScrollRef.current) return
+              if (!bestFeedScrollRef.current || (event.pointerType === 'mouse' && event.button !== 0)) return
+              if (event.target instanceof Element && event.target.closest('button, a')) return
+
+              event.currentTarget.style.scrollSnapType = 'none'
+              event.currentTarget.style.scrollBehavior = 'auto'
               bestFeedDrag.current = {
                 pointerId: event.pointerId,
                 x: event.clientX,
                 scrollLeft: bestFeedScrollRef.current.scrollLeft,
+                startedAt: performance.now(),
               }
               event.currentTarget.setPointerCapture(event.pointerId)
             }}
@@ -353,16 +330,8 @@ function Home() {
               if (!drag || drag.pointerId !== event.pointerId || !bestFeedScrollRef.current) return
               bestFeedScrollRef.current.scrollLeft = drag.scrollLeft - (event.clientX - drag.x)
             }}
-            onPointerUp={(event) => {
-              if (bestFeedDrag.current?.pointerId !== event.pointerId || !bestFeedScrollRef.current) return
-              bestFeedDrag.current = null
-              const width = bestFeedScrollRef.current.clientWidth
-              const nextIndex = Math.round(bestFeedScrollRef.current.scrollLeft / width)
-              bestFeedScrollRef.current.scrollTo({ left: width * nextIndex, behavior: 'smooth' })
-            }}
-            onPointerCancel={() => {
-              bestFeedDrag.current = null
-            }}
+            onPointerUp={(event) => finishBestFeedDrag(event)}
+            onPointerCancel={(event) => finishBestFeedDrag(event, true)}
             onScroll={(event) => {
               const width = event.currentTarget.clientWidth
               if (!width) return
@@ -453,19 +422,29 @@ function Home() {
 
         <div className="mt-[6.140cqw] px-[4.651cqw]">
           <div className="grid grid-cols-4 border-b border-[#7b7b7b]">
-            {tabs.map((tab, i) => (
+            {tabs.map((tab) => {
+              const isActive = todayPickType === tab.type
+
+              return (
               <button
-                key={tab}
+                key={tab.type}
                 type="button"
+                aria-pressed={isActive}
+                onClick={() => {
+                  setTodayPickType(tab.type)
+                  todayPickDidDrag.current = false
+                  todayPickScrollRef.current?.scrollTo({ left: 0, behavior: 'smooth' })
+                }}
                 className={`relative pb-[2.791cqw] text-center font-playfair text-[3.721cqw] leading-[1.3] tracking-[-0.074cqw] ${
-                  i === 0 ? 'font-bold text-[#831317]' : 'font-normal text-[#7b7b7b]'
+                  isActive ? 'font-bold text-[#831317]' : 'font-normal text-[#7b7b7b]'
                 }`}
                 style={playfairOpsz}
               >
-                {tab}
-                {i === 0 && <span className="absolute inset-x-0 -bottom-px h-[0.698cqw] w-full bg-[#831317]" />}
+                {tab.label}
+                {isActive && <span className="absolute inset-x-0 -bottom-px h-[0.698cqw] w-full bg-[#831317]" />}
               </button>
-            ))}
+              )
+            })}
           </div>
         </div>
 
@@ -474,6 +453,7 @@ function Home() {
           className={`mt-[8.372cqw] flex snap-x snap-mandatory gap-[1.860cqw] overflow-x-auto overscroll-x-contain px-[4.651cqw] pb-[0.930cqw] scroll-pl-[4.651cqw] scroll-pr-[4.651cqw] scroll-smooth select-none md:cursor-grab md:active:cursor-grabbing ${noScrollbar}`}
           onDragStart={(event) => event.preventDefault()}
           onPointerDown={(event) => {
+            todayPickDidDrag.current = false
             if (event.pointerType !== 'mouse' || !todayPickScrollRef.current) return
             todayPickDrag.current = {
               pointerId: event.pointerId,
@@ -481,66 +461,82 @@ function Home() {
               scrollLeft: todayPickScrollRef.current.scrollLeft,
               moved: false,
             }
-            todayPickDidDrag.current = false
-            event.currentTarget.setPointerCapture(event.pointerId)
           }}
           onPointerMove={(event) => {
             const drag = todayPickDrag.current
             if (!drag || drag.pointerId !== event.pointerId || !todayPickScrollRef.current) return
-            if (Math.abs(event.clientX - drag.x) > 5) {
+
+            const distance = event.clientX - drag.x
+            if (!drag.moved) {
+              if (Math.abs(distance) <= 10) return
               drag.moved = true
               todayPickDidDrag.current = true
+              event.currentTarget.setPointerCapture(event.pointerId)
             }
-            todayPickScrollRef.current.scrollLeft = drag.scrollLeft - (event.clientX - drag.x)
+
+            event.preventDefault()
+            todayPickScrollRef.current.scrollLeft = drag.scrollLeft - distance
           }}
           onPointerUp={(event) => {
-            if (todayPickDrag.current?.pointerId === event.pointerId) todayPickDrag.current = null
+            if (todayPickDrag.current?.pointerId !== event.pointerId) return
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+              event.currentTarget.releasePointerCapture(event.pointerId)
+            }
+            todayPickDrag.current = null
           }}
-          onPointerCancel={() => {
+          onPointerCancel={(event) => {
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+              event.currentTarget.releasePointerCapture(event.pointerId)
+            }
             todayPickDrag.current = null
           }}
         >
-          <Link
-            to="/product/chateau-margaux-2018"
-            onClick={(event) => {
-              if (todayPickDidDrag.current) {
-                event.preventDefault()
-                todayPickDidDrag.current = false
-              }
-            }}
-            className="block w-[55.814cqw] shrink-0 snap-start text-left no-underline"
-          >
-            <div className="flex h-[64.884cqw] items-center justify-center bg-[#f2f2f2]">
-              <img src={bottleCasaSmith} alt="Casa Smith ViNO Rosso" className="h-[52.326cqw] w-auto object-contain" />
-            </div>
-            <p className="font-delmon mt-[3.488cqw] text-[3.721cqw] leading-[1.3] font-normal tracking-[-0.112cqw] text-black">
-              Casa Smith ViNO Rosso
-            </p>
-            <p className="mt-[1.163cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">포도향, 떫음</p>
-            <div className="mt-[1.163cqw] flex items-center justify-between">
-              <span className="flex h-[4.651cqw] items-center rounded-full bg-[#831317] px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-normal text-white">
-                #오늘의 와인
-              </span>
-              <span className="flex items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline">
-                자세히보기
-                <img src={iconChevronForward} alt="" className="size-[4.186cqw]" />
-              </span>
-            </div>
-          </Link>
-          <div className="w-[55.814cqw] shrink-0 snap-start">
-            <div className="flex h-[64.884cqw] items-center justify-center bg-[#f2f2f2]">
-              <img src={bottleKimCrawford} alt="Kim CrawFord Pinot Noir" className="h-[50.930cqw] w-auto object-contain" />
-            </div>
-            <p className="font-delmon mt-[3.488cqw] text-[3.488cqw] leading-[1.3] font-normal tracking-[-0.105cqw] text-black">
-              Kim CrawFord Pinot Noir
-            </p>
-            <p className="mt-[1.163cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">꽃향, 부드러움</p>
-            <div className="mt-[1.163cqw]">
-              <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#831317] px-[2.326cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
-                #AI 소믈리에 추천
-              </span>
-            </div>
-          </div>
+          {todayPickWines.map((wine, index) => {
+            const cardContent = (
+              <>
+                <div className="flex h-[64.884cqw] items-center justify-center bg-[#f2f2f2]">
+                  <img
+                    src={resolveTodayPickWineImage(wine)}
+                    alt={wine.nameEn}
+                    draggable={false}
+                    className="h-[52.326cqw] max-w-[80%] object-contain"
+                  />
+                </div>
+                <p className="font-delmon mt-[3.488cqw] text-[3.488cqw] leading-[1.3] font-normal tracking-[-0.105cqw] text-black">
+                  {wine.nameEn}
+                </p>
+                <p className="mt-[1.163cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">
+                  {wine.tastingNotes.slice(0, 2).join(', ')}
+                </p>
+                <div className="mt-[1.163cqw] flex items-center justify-between">
+                  <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#831317] px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
+                    {index === 0 ? '#오늘의 와인' : '#AI 소믈리에 추천'}
+                  </span>
+                  <span className="flex items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline">
+                    자세히보기
+                    <img src={iconChevronForward} alt="" className="size-[4.186cqw]" />
+                  </span>
+                </div>
+              </>
+            )
+
+            return (
+              <button
+                key={wine.id}
+                type="button"
+                onClick={() => {
+                  if (todayPickDidDrag.current) {
+                    todayPickDidDrag.current = false
+                    return
+                  }
+                  navigate(`/wine_detail/${wine.type}/${wine.id}`)
+                }}
+                className="block w-[55.814cqw] shrink-0 snap-start text-left"
+              >
+                {cardContent}
+              </button>
+            )
+          })}
         </div>
       </section>
 

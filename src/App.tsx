@@ -17,6 +17,7 @@ import Search from './pages/Search'
 import WineDetailRed from './pages/Wine Detail_red'
 import WineDetailWhite from './pages/Wine Detail_white'
 import WineDetailRose from './pages/Wine Detail_rose'
+import WineDetailSparkling from './pages/Wine Detail_sparkling'
 import Magazine from './pages/Magazine'
 import EventDetails from './pages/Event Details'
 import Notification from './pages/Notification'
@@ -56,6 +57,10 @@ function App() {
         <Route path="/product/red/:wineId" element={<WineDetailRed />} />
         <Route path="/product/white/:wineId" element={<WineDetailWhite />} />
         <Route path="/product/rose/:wineId" element={<WineDetailRose />} />
+        <Route path="/wine_detail/red/:wineId" element={<WineDetailRed />} />
+        <Route path="/wine_detail/white/:wineId" element={<WineDetailWhite />} />
+        <Route path="/wine_detail/rose/:wineId" element={<WineDetailRose />} />
+        <Route path="/wine_detail/sparkling/:wineId" element={<WineDetailSparkling />} />
         <Route path="/event/summer-wine-festival" element={<EventDetails />} />
         <Route path="/notifications" element={<Notification />} />
         <Route path="/todays-pick" element={<TodaysPick />} />

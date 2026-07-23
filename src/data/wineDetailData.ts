@@ -11,7 +11,7 @@ export type WineDetail = {
   id: string
   nameKo: string
   nameEn: string
-  type: 'red' | 'white' | 'sparkling' | 'rose' | 'korean'
+  type: 'red' | 'white' | 'sparkling' | 'rose'
   country: string
   region: string
   grape: string
@@ -71,7 +71,6 @@ const typeLabels: Record<WineDetail['type'], string> = {
   white: '화이트와인',
   sparkling: '스파클링와인',
   rose: '로제와인',
-  korean: '한국와인',
 }
 
 export function formatPrice(price: number) {

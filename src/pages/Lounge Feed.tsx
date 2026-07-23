@@ -19,13 +19,11 @@ import feedList1 from '../assets/lounge/figma/feed-list-1.png'
 import feedList2 from '../assets/lounge/figma/feed-list-2.png'
 import feedList3 from '../assets/lounge/figma/feed-list-3.png'
 import feedList4 from '../assets/lounge/figma/feed-list-4.png'
-import wineConnector from '../assets/lounge/figma/wine-connector.svg'
-import winePinInner from '../assets/lounge/figma/wine-pin-inner.svg'
-import winePinOuter from '../assets/lounge/figma/wine-pin-outer.svg'
 import feedViewToggleIcon from '../assets/lounge/feed-view-toggle.svg'
 import LoungeTabs from '../components/LoungeTabs'
 import LoungeHeader from '../components/LoungeHeader'
 import AppBottomSheet from '../components/AppBottomSheet'
+import WineHotspot from '../components/WineHotspot'
 import carouselPhoto01 from '../assets/images/feeds/feed_021_1.jpg'
 import carouselPhoto02 from '../assets/images/feeds/feed_021_2.jpg'
 import carouselPhoto03 from '../assets/images/feeds/feed_021_3.jpg'
@@ -391,41 +389,13 @@ function FeedPost({ feed, index, onOpenImage }: { feed: FigmaFeed; index: number
         ) : null}
 
         {feed.wine && activeImageIndex === 0 ? (
-          <>
-            <button
-              type="button"
-              aria-label={`${feed.wine.name} 정보 ${isWineOpen ? '닫기' : '열기'}`}
-              aria-expanded={isWineOpen}
-              onClick={() => setIsWineOpen((open) => !open)}
-              className="absolute z-20 size-[14px] overflow-hidden rounded-full"
-              style={{ left: feed.wine.left, top: feed.wine.top }}
-            >
-              <img src={winePinOuter} alt="" aria-hidden="true" className="absolute inset-0 block size-[14px] max-h-[14px] max-w-[14px]" />
-              <img src={winePinInner} alt="" aria-hidden="true" className="absolute top-[5px] left-[5px] block size-1 max-h-1 max-w-1" />
-            </button>
-
-            {isWineOpen ? (
-              <div className="absolute inset-0 z-10">
-                {feed.wine.calloutSide === 'right' ? (
-                  <>
-                    <img src={wineConnector} alt="" className="absolute h-[14px] w-[49px]" style={{ left: feed.wine.left + 11, top: feed.wine.top + 12 }} />
-                    <div className="absolute rounded-[22px] border border-white/55 bg-black/65 px-3 py-2 text-white backdrop-blur-[2px]" style={{ left: feed.wine.left + 60, top: feed.wine.top + 11 }}>
-                      <p className="text-xs font-medium whitespace-nowrap">#{feed.wine.name}</p>
-                      <button type="button" className="mt-1 text-xs text-white underline underline-offset-2">와인 상세보기</button>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <img src={wineConnector} alt="" className="absolute h-[14px] w-[49px] scale-x-[-1]" style={{ left: feed.wine.left - 46, top: feed.wine.top + 12 }} />
-                    <div className="absolute rounded-[22px] border border-white/55 bg-black/65 px-3 py-2 text-white backdrop-blur-[2px]" style={{ right: 80, top: feed.wine.top + 11 }}>
-                      <p className="text-xs font-medium whitespace-nowrap">#{feed.wine.name}</p>
-                      <button type="button" className="mt-1 text-xs text-white underline underline-offset-2">와인 상세보기</button>
-                    </div>
-                  </>
-                )}
-              </div>
-            ) : null}
-          </>
+          <WineHotspot
+            name={feed.wine.name}
+            position={{ left: feed.wine.left, top: feed.wine.top }}
+            calloutSide={feed.wine.calloutSide}
+            isOpen={isWineOpen}
+            onToggle={() => setIsWineOpen((open) => !open)}
+          />
         ) : null}
       </div>
 
