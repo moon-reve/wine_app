@@ -144,7 +144,8 @@ function Home() {
   const todayPickDrag = useRef<{ pointerId: number; x: number; scrollLeft: number; moved: boolean } | null>(null)
   const todayPickDidDrag = useRef(false)
   const challengeScrollRef = useRef<HTMLDivElement>(null)
-  const challengeDrag = useRef<{ pointerId: number; x: number; scrollLeft: number } | null>(null)
+  const challengeDrag = useRef<{ pointerId: number; x: number; scrollLeft: number; moved: boolean } | null>(null)
+  const challengeDidDrag = useRef(false)
   const magazineScrollRef = useRef<HTMLElement>(null)
   const magazineDrag = useRef<{ pointerId: number; x: number; scrollLeft: number; moved: boolean } | null>(null)
   const magazineDidDrag = useRef(false)
@@ -557,26 +558,52 @@ function Home() {
           onDragStart={(event) => event.preventDefault()}
           onPointerDown={(event) => {
             if (event.pointerType !== 'mouse' || !challengeScrollRef.current) return
+            challengeDidDrag.current = false
             challengeDrag.current = {
               pointerId: event.pointerId,
               x: event.clientX,
               scrollLeft: challengeScrollRef.current.scrollLeft,
+              moved: false,
             }
-            event.currentTarget.setPointerCapture(event.pointerId)
           }}
           onPointerMove={(event) => {
             const drag = challengeDrag.current
             if (!drag || drag.pointerId !== event.pointerId || !challengeScrollRef.current) return
-            challengeScrollRef.current.scrollLeft = drag.scrollLeft - (event.clientX - drag.x)
+            const distance = event.clientX - drag.x
+            if (Math.abs(distance) > 8) {
+              drag.moved = true
+              challengeDidDrag.current = true
+              if (!event.currentTarget.hasPointerCapture(event.pointerId)) {
+                event.currentTarget.setPointerCapture(event.pointerId)
+              }
+            }
+            if (drag.moved) challengeScrollRef.current.scrollLeft = drag.scrollLeft - distance
           }}
           onPointerUp={(event) => {
-            if (challengeDrag.current?.pointerId === event.pointerId) challengeDrag.current = null
-          }}
-          onPointerCancel={() => {
+            if (challengeDrag.current?.pointerId !== event.pointerId) return
             challengeDrag.current = null
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+              event.currentTarget.releasePointerCapture(event.pointerId)
+            }
+          }}
+          onPointerCancel={(event) => {
+            challengeDrag.current = null
+            if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+              event.currentTarget.releasePointerCapture(event.pointerId)
+            }
           }}
         >
-          <div className="relative h-[73.953cqw] w-[72.791cqw] shrink-0 snap-start overflow-hidden">
+          <button
+            type="button"
+            onClick={() => {
+              if (challengeDidDrag.current) {
+                challengeDidDrag.current = false
+                return
+              }
+              navigate('/challenge/continents')
+            }}
+            className="relative h-[73.953cqw] w-[72.791cqw] shrink-0 snap-start overflow-hidden text-left"
+          >
             <img src={wineContinentsImage} alt="오대륙 와인 마셔보기" className="absolute inset-0 size-full object-cover" />
             <p className="absolute top-[7.442cqw] left-[5.581cqw] text-[5.581cqw] leading-[1.3] font-medium tracking-[-0.112cqw] text-white">
               오대륙 와인 마셔보기
@@ -593,7 +620,7 @@ function Home() {
               </span>
               <span>45%</span>
             </div>
-          </div>
+          </button>
 
           <div className="relative h-[73.953cqw] w-[71.860cqw] shrink-0 snap-start overflow-hidden">
             <img src={aiSommelierImage} alt="AI 소믈리에랑 대결하기" className="absolute inset-0 size-full object-cover" />

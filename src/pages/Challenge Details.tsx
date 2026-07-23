@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import backIcon from '../assets/challenge/back.svg'
 import bottlesImage from '../assets/challenge/bottles.png'
@@ -23,11 +24,13 @@ const medals = [
   { image: medal5, left: 352.19, top: 709, width: 50.728, height: 52.71, imageLeft: -8.323, imageTop: -6.141, imageSize: 67.571 },
 ] as const
 
-const countdown = [
-  { value: '08', unit: '일', center: 126.68 },
-  { value: '14', unit: '시간', center: 207.07 },
-  { value: '12', unit: '분', center: 295.85 },
-  { value: '02', unit: '초', center: 376.68 },
+const initialCountdownSeconds = 8 * 24 * 60 * 60 + 14 * 60 * 60 + 12 * 60 + 2
+
+const countdownLayout = [
+  { unit: '일', center: 126.68 },
+  { unit: '시간', center: 207.07 },
+  { unit: '분', center: 295.85 },
+  { unit: '초', center: 376.68 },
 ] as const
 
 function Medal({ item }: { item: (typeof medals)[number] }) {
@@ -60,9 +63,25 @@ function StepCard({ index, title, description }: { index: number; title: string;
 
 function ChallengeDetails() {
   const navigate = useNavigate()
+  const [remainingSeconds, setRemainingSeconds] = useState(initialCountdownSeconds)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setRemainingSeconds((current) => Math.max(0, current - 1))
+    }, 1000)
+
+    return () => window.clearInterval(timer)
+  }, [])
+
+  const countdownValues = [
+    Math.floor(remainingSeconds / (24 * 60 * 60)),
+    Math.floor((remainingSeconds % (24 * 60 * 60)) / (60 * 60)),
+    Math.floor((remainingSeconds % (60 * 60)) / 60),
+    remainingSeconds % 60,
+  ].map((value) => value.toString().padStart(2, '0'))
 
   return (
-    <div className="relative mx-auto min-h-[1642px] w-full max-w-107.5 overflow-hidden bg-white text-[#0d0d0d]" data-node-id="1542:1678">
+    <div className="relative mx-auto h-[100vh] w-full max-w-107.5 overflow-x-hidden overflow-y-auto bg-white text-[#0d0d0d]" data-node-id="1542:1678">
       <header className="absolute top-0 left-0 z-10 h-17.5 w-full overflow-hidden bg-white">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
           <img src={backIcon} alt="" className="size-6 rotate-180" />
@@ -133,9 +152,9 @@ function ChallengeDetails() {
       </aside>
 
       <section className="absolute top-[1498px] left-[91px] h-17.5 w-[319px] rounded-xl border border-[#831317] bg-[#f9f7f6]" aria-label="챌린지 종료 카운트다운">
-        {countdown.map((item) => (
+        {countdownLayout.map((item, index) => (
           <div key={item.unit} className="absolute top-2.5 -translate-x-1/2 text-center text-[#831317]" style={{ left: item.center - 91 }}>
-            <p className="text-[25px] leading-none font-normal tracking-[-0.5px]">{item.value}</p>
+            <p className="text-[25px] leading-none font-normal tracking-[-0.5px]">{countdownValues[index]}</p>
             <p className="mt-2.5 text-[12px] leading-none font-normal tracking-[-0.24px]">{item.unit}</p>
           </div>
         ))}
@@ -146,6 +165,7 @@ function ChallengeDetails() {
       <button type="button" disabled className="absolute top-[1592px] right-5 left-5 flex items-center justify-center overflow-hidden rounded-xl bg-black/20 py-[17px] text-[16px] leading-none font-bold text-white disabled:cursor-default">
         챌린지 완료
       </button>
+      <div aria-hidden="true" className="pointer-events-none absolute top-[1642px] left-0 h-[30px] w-px" />
     </div>
   )
 }
