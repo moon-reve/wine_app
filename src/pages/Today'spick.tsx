@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import backIcon from '../assets/todayspick/back.svg'
 import chevronIcon from '../assets/todayspick/chevron.svg'
 import mainWine from '../assets/todayspick/main-wine.png'
+import type { ChatbotLocationState } from '../data/chatbotRecommendation'
 import { formatPrice, formatStars, getWineDetailData, resolveWineImage, type WineDetail } from '../data/wineDetailData'
 import { TODAY_PICK_WINE_IDS, WINE_TYPE_BG_COLOR } from '../data/todayPickData'
 
@@ -201,7 +202,22 @@ function TodaysPick() {
           />
         ))}
       </section>
-      <button type="button" className="absolute top-[1227px] left-[19px] flex w-[390px] items-center justify-center overflow-hidden rounded-xl bg-[#831317] py-[17px] text-[16px] leading-none font-bold text-white">
+      <button
+        type="button"
+        onClick={() =>
+          navigate('/chatbot', {
+            state: {
+              from: '/todays-pick',
+              recommendationRequest: {
+                food: selectedFilters['음식'],
+                mood: selectedFilters['분위기'],
+                priceRange: selectedFilters['가격대'],
+              },
+            } satisfies ChatbotLocationState,
+          })
+        }
+        className="absolute top-[1227px] left-[19px] flex w-[390px] items-center justify-center overflow-hidden rounded-xl bg-[#831317] py-[17px] text-[16px] leading-none font-bold text-white"
+      >
         AI 추천받기
       </button>
     </div>

@@ -3,8 +3,13 @@ import type { FormEvent } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { chatbotBack, chatbotSend } from '../assets/chatbotAssets'
 import ChatbotOrb from '../components/ChatbotOrb'
+import {
+  buildRecommendationAnswer,
+  buildRecommendationQuestion,
+  type ChatbotLocationState,
+} from '../data/chatbotRecommendation'
 
-type ConversationKind = 'winebar' | 'party' | 'white'
+type ConversationKind = 'winebar' | 'party' | 'white' | 'recommendation'
 type ChatTurn = { id: number; question: string; kind: ConversationKind; answer: string; mapPlace?: string }
 
 const suggestions = [
@@ -18,6 +23,7 @@ const conversationQuestions: Record<ConversationKind, string> = {
   winebar: '근처 와인바가 어디인지 알려줘',
   party: '홈파티에 가져가기에 좋은 와인은 뭐야?',
   white: '화이트 와인에 페어링하기 좋은 음식이 뭐가 있어?',
+  recommendation: '선택한 조건에 맞는 와인을 추천해줘',
 }
 
 const answers: Record<ConversationKind, string> = {
@@ -63,6 +69,7 @@ const answers: Record<ConversationKind, string> = {
 부드럽고 크리미한 치즈는 화이트 와인의 산미를 한층 더 부드럽게 만들어 줍니다.
 
 지금 바로 한 가지를 추천한다면 새우 오일 파스타와의 조합을 가장 추천드려요. 처음 즐기는 분들도 부담 없이 만족도가 높은 페어링입니다.`,
+  recommendation: '원하는 음식, 분위기, 가격대를 알려주시면 조건에 잘 맞는 와인을 추천해드릴게요.',
 }
 
 const shrimpOilPastaRecipe = `좋아요. 화이트 와인과 잘 어울리는 새우 오일 파스타 레시피를 알려드릴게요.
@@ -189,6 +196,7 @@ const followUpSuggestions: Record<ConversationKind, string[]> = {
     '시저 샐러드로\n선택할게',
     '브리 치즈 플래터로\n선택할게',
   ],
+  recommendation: ['첫 번째 와인을\n자세히 알려줘', '세 와인의 차이를\n비교해줘', '다른 와인도\n추천해줘'],
 }
 
 const recipeFollowUps = ['레몬 풍미를 더해서\n만들게', '살짝 매콤하게\n만들게', '소비뇽 블랑과\n곁들일게']
@@ -196,6 +204,7 @@ const recipeFollowUps = ['레몬 풍미를 더해서\n만들게', '살짝 매콤
 function matchConversation(value: string): ConversationKind {
   if (value.includes('화이트') || value.includes('새우') || value.includes('연어') || value.includes('브리')) return 'white'
   if (value.includes('홈파티') || value.includes('Cabernet') || value.includes('Chardonnay') || value.includes('Cava')) return 'party'
+  if (value.includes('추천') || value.includes('가격대') || value.includes('조건')) return 'recommendation'
   return 'winebar'
 }
 
@@ -235,7 +244,25 @@ export default function Chatbot() {
   const [visibleAnswer, setVisibleAnswer] = useState('')
   const [responseId, setResponseId] = useState(0)
   const conversationScrollRef = useRef<HTMLDivElement>(null)
+  const initialRecommendationHandledRef = useRef(false)
   const latestTurn = turns.at(-1)
+  const locationState = location.state as ChatbotLocationState | null
+
+  useEffect(() => {
+    const request = locationState?.recommendationRequest
+    if (!request || initialRecommendationHandledRef.current) return
+
+    initialRecommendationHandledRef.current = true
+    setTurns([
+      {
+        id: 1,
+        question: buildRecommendationQuestion(request),
+        kind: 'recommendation',
+        answer: buildRecommendationAnswer(request),
+      },
+    ])
+    setResponseId(1)
+  }, [locationState?.recommendationRequest])
 
   useEffect(() => {
     if (!latestTurn) {
@@ -273,7 +300,7 @@ export default function Chatbot() {
   }
 
   const handleBack = () => {
-    const from = (location.state as { from?: string } | null)?.from
+    const from = locationState?.from
     navigate(from && from !== '/chatbot' ? from : '/home', { replace: true })
   }
 
