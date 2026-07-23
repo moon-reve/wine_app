@@ -62,6 +62,7 @@ const eventItems = [
     label: '시음회',
     title: '와인 시음회',
     description: '다양한 와인을 직접 시음하며 나만의 취향을 발견해 보세요.',
+    path: '/event/summer-wine-festival',
   },
   {
     label: '팝업',
@@ -72,7 +73,6 @@ const eventItems = [
     label: '페어',
     title: '와인 페어',
     description: '다양한 와인과 와인 러버가 함께하는 특별한 축제를 즐겨보세요.',
-    path: '/event/summer-wine-festival',
   },
 ]
 
@@ -738,22 +738,32 @@ function Home() {
             moved: false,
           }
           magazineDidDrag.current = false
-          event.currentTarget.setPointerCapture(event.pointerId)
         }}
         onPointerMove={(event) => {
           const drag = magazineDrag.current
           if (!drag || drag.pointerId !== event.pointerId || !magazineScrollRef.current) return
-          if (Math.abs(event.clientX - drag.x) > 5) {
+          const distance = event.clientX - drag.x
+          if (!drag.moved && Math.abs(distance) > 8) {
             drag.moved = true
             magazineDidDrag.current = true
+            event.currentTarget.setPointerCapture(event.pointerId)
           }
-          magazineScrollRef.current.scrollLeft = drag.scrollLeft - (event.clientX - drag.x)
+          if (!drag.moved) return
+          event.preventDefault()
+          magazineScrollRef.current.scrollLeft = drag.scrollLeft - distance
         }}
         onPointerUp={(event) => {
-          if (magazineDrag.current?.pointerId === event.pointerId) magazineDrag.current = null
-        }}
-        onPointerCancel={() => {
+          if (magazineDrag.current?.pointerId !== event.pointerId) return
           magazineDrag.current = null
+          if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+            event.currentTarget.releasePointerCapture(event.pointerId)
+          }
+        }}
+        onPointerCancel={(event) => {
+          magazineDrag.current = null
+          if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+            event.currentTarget.releasePointerCapture(event.pointerId)
+          }
         }}
       >
         {magazineCards.map((card) => (

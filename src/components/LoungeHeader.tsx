@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
-import feedBell from '../assets/lounge/figma/feed-bell.svg'
 import feedLogo from '../assets/lounge/figma/feed-logo.svg'
 import feedSearch from '../assets/lounge/figma/feed-search.svg'
+import NotificationBellIcon from './NotificationBellIcon'
 
 export default function LoungeHeader() {
   const navigate = useNavigate()
@@ -20,9 +20,9 @@ export default function LoungeHeader() {
             <img src={feedSearch} alt="" aria-hidden="true" className="absolute inset-0 block size-7 max-h-7 max-w-7" />
           </span>
         </button>
-        <button type="button" aria-label="알림" className="flex h-10 w-[34px] items-center justify-center overflow-hidden">
+        <button type="button" aria-label="알림" onClick={() => navigate('/notifications')} className="flex h-10 w-[34px] items-center justify-center overflow-hidden">
           <span className="relative block size-[27px] shrink-0 overflow-hidden">
-            <img src={feedBell} alt="" aria-hidden="true" className="absolute inset-0 block size-[27px] max-h-[27px] max-w-[27px]" />
+            <NotificationBellIcon tone="wine" className="absolute inset-0 block size-[27px] max-h-[27px] max-w-[27px]" />
           </span>
         </button>
       </div>

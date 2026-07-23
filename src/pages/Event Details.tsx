@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import backIcon from '../assets/event/detail-back.svg'
 import heroImage from '../assets/event/detail-hero.png'
@@ -32,7 +32,7 @@ function InfoCard({ label, value }: { label: string; value: string }) {
 
 function RelatedWineCard({ category, name, image }: { category: string; name: string; image: string }) {
   return (
-    <article className="flex shrink-0 flex-col gap-2.5 overflow-hidden">
+    <article className="flex shrink-0 snap-start flex-col gap-2.5 overflow-hidden">
       <div className="relative h-[170px] w-[188px] shrink-0 overflow-hidden rounded-xl bg-[#f8f6f4]">
         <img src={image} alt={name} className="absolute top-2.5 left-19 h-[150px] w-9 object-cover" />
       </div>
@@ -44,7 +44,7 @@ function RelatedWineCard({ category, name, image }: { category: string; name: st
 
 function RuffinoCard() {
   return (
-    <article className="flex shrink-0 flex-col gap-2.5 overflow-hidden">
+    <article className="flex shrink-0 snap-start flex-col gap-2.5 overflow-hidden">
       <div className="relative h-[170px] w-[188px] shrink-0 overflow-hidden rounded-xl bg-[#f8f6f4]">
         <img src={wine3} alt="Ruffino Chianti" className="absolute top-2.5 left-19 h-[150px] w-9 object-cover" />
       </div>
@@ -57,9 +57,19 @@ function RuffinoCard() {
 function EventDetails() {
   const navigate = useNavigate()
   const [applicationComplete, setApplicationComplete] = useState(false)
+  const relatedWineScrollRef = useRef<HTMLDivElement>(null)
+  const relatedWineDrag = useRef<{ pointerId: number; startX: number; scrollLeft: number; moved: boolean } | null>(null)
 
   const applyForEvent = () => {
     setApplicationComplete(true)
+  }
+
+  const stopRelatedWineDrag = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (relatedWineDrag.current?.pointerId !== event.pointerId) return
+    relatedWineDrag.current = null
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
   }
 
   return (
@@ -103,13 +113,41 @@ function EventDetails() {
 
         <Divider />
 
-        <section className="flex w-full flex-col gap-3.5 overflow-hidden">
+        <section className="flex w-full flex-col gap-3.5">
           <div className="flex w-full items-center overflow-hidden">
             <h2 className="shrink-0 text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">관련 와인</h2>
             <span className="flex-1" />
             <button type="button" className="shrink-0 text-[12px] leading-none font-normal tracking-[-0.36px] text-[#831317]">전체보기</button>
           </div>
-          <div className="flex shrink-0 gap-3.5 overflow-hidden">
+          <div
+            ref={relatedWineScrollRef}
+            onDragStart={(event) => event.preventDefault()}
+            onPointerDown={(event) => {
+              if (event.pointerType !== 'mouse' || !relatedWineScrollRef.current) return
+              relatedWineDrag.current = {
+                pointerId: event.pointerId,
+                startX: event.clientX,
+                scrollLeft: relatedWineScrollRef.current.scrollLeft,
+                moved: false,
+              }
+            }}
+            onPointerMove={(event) => {
+              const drag = relatedWineDrag.current
+              const scroller = relatedWineScrollRef.current
+              if (!drag || drag.pointerId !== event.pointerId || !scroller) return
+              const distance = event.clientX - drag.startX
+              if (!drag.moved && Math.abs(distance) > 8) {
+                drag.moved = true
+                event.currentTarget.setPointerCapture(event.pointerId)
+              }
+              if (!drag.moved) return
+              event.preventDefault()
+              scroller.scrollLeft = drag.scrollLeft - distance
+            }}
+            onPointerUp={stopRelatedWineDrag}
+            onPointerCancel={stopRelatedWineDrag}
+            className="-mx-5 flex w-[calc(100%+40px)] shrink-0 snap-x snap-mandatory cursor-grab gap-3.5 overflow-x-auto overscroll-x-contain px-5 pb-1 select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
             {relatedWines.map((wine) => <RelatedWineCard key={wine.name} {...wine} />)}
             <RuffinoCard />
           </div>
