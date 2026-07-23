@@ -69,7 +69,7 @@ function TodaysPick() {
     return getWineDetailData(recommendationId).wine
   })
   const recommendationScroller = useRef<HTMLDivElement>(null)
-  const dragState = useRef({ active: false, startX: 0, scrollLeft: 0 })
+  const dragState = useRef({ active: false, pointerId: -1, startX: 0, scrollLeft: 0 })
   const recommendationDidDrag = useRef(false)
   const [selectedFilters, setSelectedFilters] = useState<Record<string, string>>(() =>
     Object.fromEntries(filters.map((group) => [group.title, group.selected])),
@@ -80,20 +80,31 @@ function TodaysPick() {
     const scroller = recommendationScroller.current
     if (!scroller) return
     recommendationDidDrag.current = false
-    dragState.current = { active: true, startX: event.clientX, scrollLeft: scroller.scrollLeft }
-    scroller.setPointerCapture(event.pointerId)
+    dragState.current = {
+      active: true,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      scrollLeft: scroller.scrollLeft,
+    }
   }
 
   const moveRecommendationDrag = (event: PointerEvent<HTMLDivElement>) => {
-    if (!dragState.current.active) return
+    if (!dragState.current.active || dragState.current.pointerId !== event.pointerId) return
     const scroller = recommendationScroller.current
     if (!scroller) return
-    if (Math.abs(event.clientX - dragState.current.startX) > 8) recommendationDidDrag.current = true
-    scroller.scrollLeft = dragState.current.scrollLeft - (event.clientX - dragState.current.startX)
+    const distance = event.clientX - dragState.current.startX
+    if (!recommendationDidDrag.current) {
+      if (Math.abs(distance) <= 8) return
+      recommendationDidDrag.current = true
+      scroller.setPointerCapture(event.pointerId)
+    }
+    event.preventDefault()
+    scroller.scrollLeft = dragState.current.scrollLeft - distance
   }
 
   const stopRecommendationDrag = (event: PointerEvent<HTMLDivElement>) => {
     const scroller = recommendationScroller.current
+    if (dragState.current.pointerId !== event.pointerId) return
     dragState.current.active = false
     if (scroller?.hasPointerCapture(event.pointerId)) scroller.releasePointerCapture(event.pointerId)
   }
@@ -160,8 +171,8 @@ function TodaysPick() {
           onWheel={scrollRecommendationsWithWheel}
           className="absolute top-[79px] right-0 left-[-1px] flex cursor-grab touch-pan-x items-start overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
-          {recommendations.map((recommendationWine, index) => (
-            <div key={recommendationWine.id} className={index === 0 ? '' : '-ml-4'}>
+          {recommendations.map((recommendationWine) => (
+            <div key={recommendationWine.id}>
               <RecommendationItem
                 wine={recommendationWine}
                 onClick={() => {
