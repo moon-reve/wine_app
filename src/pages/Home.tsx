@@ -102,6 +102,7 @@ const noScrollbar = '[scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
 function Home() {
   const [heroIndex, setHeroIndex] = useState(0)
   const [bestFeedIndex, setBestFeedIndex] = useState(0)
+  const [magazineIndex, setMagazineIndex] = useState(0)
   const [isWineSheetOpen, setIsWineSheetOpen] = useState(false)
   const heroPointerStart = useRef<number | null>(null)
   const bestFeedScrollRef = useRef<HTMLDivElement>(null)
@@ -111,6 +112,9 @@ function Home() {
   const todayPickDidDrag = useRef(false)
   const challengeScrollRef = useRef<HTMLDivElement>(null)
   const challengeDrag = useRef<{ pointerId: number; x: number; scrollLeft: number } | null>(null)
+  const magazineScrollRef = useRef<HTMLElement>(null)
+  const magazineDrag = useRef<{ pointerId: number; x: number; scrollLeft: number; moved: boolean } | null>(null)
+  const magazineDidDrag = useRef(false)
 
   useEffect(() => {
     if (!isWineSheetOpen) return
@@ -691,16 +695,58 @@ function Home() {
           scroll-snap 컨테이너는 scroll-padding이 없으면 시작 padding을 무시하고
           첫 카드를 화면 맨 왼쪽에 스냅시키는 브라우저 동작이 있어 scroll-pl로 보정 */}
       <section
-        className={`mt-[11.163cqw] flex snap-x snap-mandatory gap-[1.860cqw] overflow-x-auto px-[4.651cqw] pb-[1.860cqw] scroll-pl-[4.651cqw] ${noScrollbar}`}
+        ref={magazineScrollRef}
+        aria-label="메인 매거진 가로 목록"
+        className={`mt-[11.163cqw] flex touch-pan-x snap-x snap-proximity scroll-smooth gap-[1.860cqw] overflow-x-auto overscroll-x-contain px-[4.651cqw] pb-[1.860cqw] scroll-pl-[4.651cqw] scroll-pr-[4.651cqw] select-none [-webkit-overflow-scrolling:touch] md:cursor-grab md:active:cursor-grabbing ${noScrollbar}`}
+        onDragStart={(event) => event.preventDefault()}
+        onScroll={(event) => {
+          const carousel = event.currentTarget
+          const firstCard = carousel.firstElementChild as HTMLElement | null
+          if (!firstCard) return
+          const gap = Number.parseFloat(window.getComputedStyle(carousel).columnGap) || 0
+          setMagazineIndex(Math.round(carousel.scrollLeft / (firstCard.offsetWidth + gap)))
+        }}
+        onPointerDown={(event) => {
+          if (event.pointerType !== 'mouse' || !magazineScrollRef.current) return
+          magazineDrag.current = {
+            pointerId: event.pointerId,
+            x: event.clientX,
+            scrollLeft: magazineScrollRef.current.scrollLeft,
+            moved: false,
+          }
+          magazineDidDrag.current = false
+          event.currentTarget.setPointerCapture(event.pointerId)
+        }}
+        onPointerMove={(event) => {
+          const drag = magazineDrag.current
+          if (!drag || drag.pointerId !== event.pointerId || !magazineScrollRef.current) return
+          if (Math.abs(event.clientX - drag.x) > 5) {
+            drag.moved = true
+            magazineDidDrag.current = true
+          }
+          magazineScrollRef.current.scrollLeft = drag.scrollLeft - (event.clientX - drag.x)
+        }}
+        onPointerUp={(event) => {
+          if (magazineDrag.current?.pointerId === event.pointerId) magazineDrag.current = null
+        }}
+        onPointerCancel={() => {
+          magazineDrag.current = null
+        }}
       >
         {magazineCards.map((card) => (
           <Link
             key={card.title}
             to="/magazine/k-wine-road"
             aria-label="매거진 자세히 보기"
+            onClick={(event) => {
+              if (magazineDidDrag.current) {
+                event.preventDefault()
+                magazineDidDrag.current = false
+              }
+            }}
             className="relative block h-[114.884cqw] w-[90.698cqw] shrink-0 snap-start overflow-hidden no-underline"
           >
-            <img src={card.image} alt="Magazine" className="absolute inset-0 size-full object-cover" />
+            <img src={card.image} alt="Magazine" draggable={false} className="absolute inset-0 size-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-l from-black/65 from-[14.07%] to-[rgba(102,102,102,0)]" />
             <div className="absolute inset-0 bg-black/[0.14]" />
 
@@ -725,10 +771,14 @@ function Home() {
       <div
         className="mt-[3.721cqw] flex items-center justify-center gap-[3.488cqw]"
         role="img"
-        aria-label="매거진 슬라이드 1 / 2"
+        aria-label={`매거진 슬라이드 ${magazineIndex + 1} / ${magazineCards.length}`}
       >
-        <span className="size-[2.326cqw] shrink-0 rounded-full bg-[#9a0707]" />
-        <span className="size-[2.326cqw] shrink-0 rounded-full bg-[#d9d9d9]" />
+        {magazineCards.map((card, index) => (
+          <span
+            key={card.title}
+            className={`size-[2.326cqw] shrink-0 rounded-full transition-colors ${magazineIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
+          />
+        ))}
       </div>
 
       {/* Collect Corks */}
