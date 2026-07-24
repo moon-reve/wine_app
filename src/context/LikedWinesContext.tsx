@@ -1,7 +1,7 @@
 import { createContext, useContext, useMemo, useState, type ReactNode } from 'react'
 
 // 마이페이지 '좋아요' 탭 데모용 초기 좋아요 목록.
-const INITIAL_LIKED_WINE_IDS = ['wine_041', 'wine_031', 'wine_019', 'wine_023']
+const INITIAL_LIKED_WINE_IDS = ['wine_041', 'wine_031', 'wine_023']
 
 type LikedWinesContextValue = {
   likedWineIds: Set<string>

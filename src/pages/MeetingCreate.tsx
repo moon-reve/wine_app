@@ -7,6 +7,7 @@ import CoverImageUploader from '../components/meeting/CoverImageUploader'
 import MeetingCreateHeader from '../components/meeting/MeetingCreateHeader'
 import MeetingTagEditor from '../components/meeting/MeetingTagEditor'
 import TimeWheelPicker from '../components/meeting/TimeWheelPicker'
+import MeetingDatePicker from '../components/meeting/MeetingDatePicker'
 import AppBottomSheet from '../components/AppBottomSheet'
 
 const FORM_ID = 'meeting-create-form'
@@ -35,6 +36,7 @@ function MeetingCreate() {
   const [isComplete, setIsComplete] = useState(false)
   const [isConfirmOpen, setIsConfirmOpen] = useState(false)
   const [timePickerTarget, setTimePickerTarget] = useState<'start' | 'end' | null>(null)
+  const [isDatePickerOpen, setIsDatePickerOpen] = useState(false)
 
   const canSubmit =
     title.trim().length > 0 &&
@@ -70,6 +72,12 @@ function MeetingCreate() {
   }
 
   const resetCompleteState = () => setIsComplete(false)
+  const handleNavItemClick = (label: string) => {
+    if (label === '홈') navigate('/home')
+    if (label === '리스트') navigate('/list')
+    if (label === '라운지') navigate('/lounge')
+    if (label === 'MY') navigate('/mypage')
+  }
   const inputClassName =
     'h-12 w-full rounded-[10px] border border-[#d6d6d6] bg-white px-3.75 text-[13px] text-[#121212] outline-none placeholder:text-[#949494] focus:border-[#851317]'
 
@@ -112,15 +120,13 @@ function MeetingCreate() {
           <div className="grid grid-cols-2 gap-5">
             <label className="flex min-w-0 flex-col gap-2 text-xs font-bold">
               날짜
-              <input
-                type="date"
-                value={date}
-                className={inputClassName}
-                onChange={(event) => {
-                  setDate(event.target.value)
-                  resetCompleteState()
-                }}
-              />
+              <button
+                type="button"
+                onClick={() => setIsDatePickerOpen(true)}
+                className="flex h-12 w-full items-center rounded-[10px] border border-[#d6d6d6] bg-white px-3.75 text-left text-[13px] outline-none focus:border-[#851317]"
+              >
+                <span className={date ? 'text-[#121212]' : 'text-[#949494]'}>{date || '날짜 선택'}</span>
+              </button>
             </label>
 
             <fieldset className="flex min-w-0 flex-col gap-2">
@@ -236,7 +242,16 @@ function MeetingCreate() {
         </form>
       </main>
 
-      <BottomNav activeItem="라운지" />
+      <BottomNav activeItem="라운지" onItemClick={handleNavItemClick} />
+      <MeetingDatePicker
+        open={isDatePickerOpen}
+        value={date}
+        onClose={() => setIsDatePickerOpen(false)}
+        onChange={(value) => {
+          setDate(value)
+          resetCompleteState()
+        }}
+      />
       <TimeWheelPicker
         open={timePickerTarget !== null}
         title={timePickerTarget === 'end' ? '종료 시간 선택' : '시작 시간 선택'}

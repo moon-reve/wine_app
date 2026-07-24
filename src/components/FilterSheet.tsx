@@ -199,7 +199,7 @@ function FilterSheet({ isOpen, onClose, onApply }: FilterSheetProps) {
           </section>
         </div>
 
-        <div className="flex shrink-0 gap-[10px] border-t border-[#f3f4f6] px-5 py-[16px]">
+        <div className="flex shrink-0 gap-[10px] border-t border-[#f3f4f6] px-5 pt-[16px] pb-[calc(143px+env(safe-area-inset-bottom))]">
           <button
             type="button"
             onClick={handleReset}

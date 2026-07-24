@@ -52,7 +52,7 @@ const navItems: NavItem[] = [
     width: 24.75,
     height: 24.24,
     centerX: 52.5,
-    iconTop: 51,
+    iconTop: 56,
     labelTop: 27,
   },
   {
@@ -61,7 +61,7 @@ const navItems: NavItem[] = [
     width: 24.24,
     height: 24.24,
     centerX: 126,
-    iconTop: 51,
+    iconTop: 56,
     labelTop: 27,
   },
   {
@@ -70,7 +70,7 @@ const navItems: NavItem[] = [
     width: 26.26,
     height: 24.24,
     centerX: 303,
-    iconTop: 54,
+    iconTop: 57.5,
     labelTop: 24,
   },
   {
@@ -79,7 +79,7 @@ const navItems: NavItem[] = [
     width: 18.18,
     height: 24.24,
     centerX: 380,
-    iconTop: 51,
+    iconTop: 56,
     labelTop: 27,
   },
 ]
