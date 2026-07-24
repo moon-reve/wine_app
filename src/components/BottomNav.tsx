@@ -23,6 +23,18 @@ type NavProps = {
   className?: string
 }
 
+const glassGeometry: CSSProperties = {
+  left: '-20.16px',
+  bottom: '-20.16px',
+  width: 'calc(100% + 40.31px)',
+  height: '106.82px',
+}
+
+const glassMaskSvg =
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427 106"><path d="M371.828 20H281.054C267.509 20 254.819 26.4598 247.871 37.2425C240.887 48.0747 228.107 55.3348 213.5 55.3348C198.893 55.3348 186.122 48.083 179.129 37.2425C172.181 26.4598 159.491 20 145.946 20H55.172C35.75 20.4208 20 35.0975 20 53C20 70.9025 35.75 85.5793 55.172 86H371.828C391.25 85.5793 407 70.9025 407 53C407 35.0975 391.25 20.4208 371.828 20Z" fill="#fff"/></svg>'
+
+const glassMaskDataUri = `url("data:image/svg+xml,${encodeURIComponent(glassMaskSvg)}")`
+
 const quickActions: Array<{
   label: QuickAction
   left: number
@@ -89,7 +101,7 @@ function NavButton({
     <button
       type="button"
       aria-current={active ? 'page' : undefined}
-      className={`absolute flex h-[48px] w-16 -translate-x-1/2 flex-col items-center text-[10px] leading-[15.5px] tracking-[-0.2px] transition-colors focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317] ${
+      className={`absolute flex h-[48px] w-16 -translate-x-1/2 flex-col items-center text-[12px] leading-[1.55] tracking-[-0.24px] transition-colors focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317] ${
         active ? 'text-[#831317]' : 'text-[#b2b2b2]'
       }`}
       style={position}
@@ -134,13 +146,32 @@ export default function BottomNav({
     <nav
       aria-label="하단 메뉴"
       data-node-id="1542:1659"
-      className={`fixed inset-x-0 bottom-0 z-50 mx-auto h-28 w-full max-w-[430px] ${className}`}
+      className={`fixed inset-x-0 bottom-[15px] z-50 mx-auto h-28 w-full max-w-[390px] ${className}`}
     >
+      <div aria-hidden="true" className="pointer-events-none absolute" style={glassGeometry}>
+        <div
+          className="absolute inset-0"
+          style={{
+            WebkitMaskImage: glassMaskDataUri,
+            maskImage: glassMaskDataUri,
+            WebkitMaskSize: '100% 100%',
+            maskSize: '100% 100%',
+            WebkitMaskRepeat: 'no-repeat',
+            maskRepeat: 'no-repeat',
+            WebkitMaskPosition: 'center',
+            maskPosition: 'center',
+            backgroundColor: 'rgba(0,0,0,0.01)',
+            WebkitBackdropFilter: 'blur(10px)',
+            backdropFilter: 'blur(10px)',
+          } as CSSProperties}
+        />
+      </div>
       <img
-        src="/nav-assets/bottom-nav-bg.svg"
+        src="/nav-assets/bottom-nav-rim.svg"
         alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-1.5 -left-1.5 h-[92px] w-[calc(100%+12px)] max-w-none"
+        className="pointer-events-none absolute max-w-none"
+        style={glassGeometry}
       />
 
       {navItems.map((item) => (
