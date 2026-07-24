@@ -115,7 +115,7 @@ function LikedWineCard({
   onUnlike: () => void
 }) {
   return (
-    <article
+    <div
       role="button"
       tabIndex={0}
       onClick={onSelect}
@@ -123,19 +123,26 @@ function LikedWineCard({
         if (event.key === 'Enter' || event.key === ' ') onSelect()
       }}
       aria-label={`${wine.name} 상세보기`}
-      className="relative h-[150px] w-full cursor-pointer"
+      className="flex min-h-[159px] w-full cursor-pointer items-center gap-[37px] py-[24px] pl-[24px] text-left"
     >
       <div
-        className="absolute top-0 left-6 flex size-[89.26px] items-center justify-center overflow-hidden rounded-full"
+        className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
         style={{ backgroundColor: wine.bgColor }}
       >
         <img src={wine.image} alt={wine.name} className="h-[85%] w-auto object-contain" />
       </div>
-      <div className="absolute top-1 left-[150px] flex w-[220px] flex-col gap-2">
-        <div className="flex w-full items-start justify-between">
-          <div className="flex min-w-0 flex-col">
-            <h2 className="text-xl leading-[25px] font-semibold whitespace-nowrap text-[#1e1b18]">{wine.name}</h2>
-            <p className="text-xs leading-[25px] font-normal whitespace-nowrap text-[#817f7e]">{wine.region}</p>
+      <div className="flex flex-col gap-[8px] pt-[4px]">
+        <div>
+          <p className="text-[20px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
+          <p className={`${wine.regionTextSize} leading-[25px] text-[#817f7e]`}>{wine.region}</p>
+        </div>
+        <div className="flex w-[220px] items-center justify-between">
+          <div className="flex items-center gap-[10px]">
+            <p className="text-[16px] leading-[24px] font-bold text-[#1e1b18]">{wine.price}</p>
+            <div className="flex items-center gap-[4px]">
+              <img src={ratingStarIcon} alt="" className="h-[14.25px] w-[15px]" aria-hidden="true" />
+              <p className="text-[16px] leading-[24px] font-bold text-[#831317]">{wine.rating}</p>
+            </div>
           </div>
           <button
             type="button"
@@ -144,21 +151,13 @@ function LikedWineCard({
               event.stopPropagation()
               onUnlike()
             }}
-            className="flex h-[17.726px] w-[19.008px] shrink-0 items-center justify-center"
+            className="flex h-[17px] w-[19px] shrink-0 items-center justify-center"
           >
-            <img src={likedHeartIcon} alt="" className="size-full" aria-hidden="true" />
+            <img src={likedHeartIcon} alt="" className="h-full w-full" aria-hidden="true" />
           </button>
         </div>
-        <div className="flex w-full items-center justify-between">
-          <strong className="text-base leading-6 font-bold whitespace-nowrap text-[#1e1b18]">{wine.price}</strong>
-          <span className="flex items-center gap-1 text-base leading-6 font-bold whitespace-nowrap text-[#831317]">
-            <img src={ratingStarIcon} alt="" className="h-[14.25px] w-[15px]" aria-hidden="true" />
-            {wine.rating}
-          </span>
-        </div>
       </div>
-      <div className="absolute top-[119.26px] right-0 left-0 h-px bg-[#e5e5e5]" aria-hidden="true" />
-    </article>
+    </div>
   )
 }
 
@@ -438,13 +437,16 @@ function Mypage() {
               <p className="h-5 text-[11px] leading-5 font-normal text-[#534343]">전체 {likedWines.length}종</p>
               <div className="mt-5">
                 {likedWines.map((wine) => (
-                  <LikedWineCard
-                    key={wine.id}
-                    wine={wine}
-                    onSelect={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
-                    onUnlike={() => unlike(wine.id)}
-                  />
+                  <div key={wine.id}>
+                    <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
+                    <LikedWineCard
+                      wine={wine}
+                      onSelect={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
+                      onUnlike={() => unlike(wine.id)}
+                    />
+                  </div>
                 ))}
+                <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
               </div>
             </div>
           )}
