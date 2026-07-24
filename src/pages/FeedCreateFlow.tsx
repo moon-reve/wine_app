@@ -67,7 +67,7 @@ export default function FeedCreateFlow() {
 
   const intro = step === 'intro'
   return <main className="@container relative mx-auto h-[100dvh] w-full max-w-[430px] overflow-hidden bg-black text-white">
-    <img src={feedCamera} alt="" className="absolute inset-0 size-full object-cover" /><CameraHeader onClose={() => { if (intro) navigate('/'); else setStep('intro') }} />{!intro ? <Ruler /> : null}
+    <img src={feedCamera} alt="" className="absolute inset-0 size-full object-cover" /><CameraHeader onClose={() => { if (intro) navigate(-1); else setStep('intro') }} />{!intro ? <Ruler /> : null}
     {intro ? <section className="absolute inset-x-0 top-[59.44%] bottom-0 rounded-t-[5.814cqw] border-t border-white/50 bg-[#831317]/10 backdrop-blur-[16px]">
       <div className="absolute left-1/2 top-[10.58%] flex w-[61.86%] -translate-x-1/2 text-[min(15px,1.61dvh)] font-medium"><button type="button" onClick={() => navigate('/wine-search')} className="w-1/2 text-center text-white/50">찾기</button><span className="w-1/2 text-center">피드</span></div>
       <div className="absolute left-1/2 top-[19.31%] h-px w-[61.86%] -translate-x-1/2 bg-white/30"><span className="ml-auto block h-px w-1/2 bg-[#9c171d]" /></div>

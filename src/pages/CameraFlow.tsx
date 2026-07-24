@@ -75,7 +75,7 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
 
       {isSearching ? <div role="status" aria-label="와인 분석 중" className="absolute left-1/2 top-[36.375%] z-30 size-[min(56px,6dvh)] -translate-x-1/2 -translate-y-1/2 rounded-full border-[min(5px,0.54dvh)] border-white/25 border-t-white animate-spin" /> : null}
 
-      <button type="button" aria-label="닫기" onClick={() => { if (isSearching) setIsSearching(false); else navigate('/') }} className="absolute left-5 top-7 z-10 size-6">
+      <button type="button" aria-label="닫기" onClick={() => { if (isSearching) setIsSearching(false); else navigate(-1) }} className="absolute left-5 top-7 z-10 size-6">
         <img src={closeIcon} alt="" className="size-full" />
       </button>
       <img src={flashIcon} alt="플래시 끄기" className="absolute left-1/2 top-7 z-10 h-[22px] w-[19px] -translate-x-1/2" />

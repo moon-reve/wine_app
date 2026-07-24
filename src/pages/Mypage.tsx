@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import avatarImage from '../assets/mypage/figma-profile-photo.png'
 import profileStoryRing from '../assets/mypage/profile-story-ring.svg'
@@ -24,13 +24,11 @@ import settingsIcon from '../assets/mypage/settings-outline.svg'
 import wineImage1 from '../assets/mypage/figma-wine-review-01.png'
 import wineImage2 from '../assets/mypage/figma-wine-review-02.png'
 import wineImage3 from '../assets/mypage/figma-wine-review-03.png'
-import likedWineImage1 from '../assets/mypage/figma-liked-wine-01.png'
-import likedWineImage2 from '../assets/mypage/figma-liked-wine-02.png'
-import likedWineImage3 from '../assets/mypage/figma-liked-wine-03.png'
-import likedWineImage4 from '../assets/mypage/figma-liked-wine-04.png'
 import likedHeartIcon from '../assets/mypage/liked-heart.svg'
 import ratingStarIcon from '../assets/mypage/rating-star.svg'
 import Logo from '../components/Logo'
+import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
+import { useLikedWines } from '../context/LikedWinesContext'
 
 const feedImages = [
   feedThumb1,
@@ -89,37 +87,6 @@ const wineReviews = [
   },
 ] as const
 
-const likedWines = [
-  {
-    name: '돔 페리뇽 2012',
-    detail: '프랑스 · 샹파뉴 · 피노누아',
-    price: '₩40,500',
-    rating: '4.8',
-    image: likedWineImage1,
-  },
-  {
-    name: '샤또 몬텔레나',
-    detail: '미국 · 나파 밸리 · 카베르네 소비뇽',
-    price: '₩89,000',
-    rating: '5.0',
-    image: likedWineImage2,
-  },
-  {
-    name: '오퍼스 원 2018',
-    detail: '미국 · 나파밸리 · 카베르네 소비뇽',
-    price: '₩159,000',
-    rating: '4.9',
-    image: likedWineImage3,
-  },
-  {
-    name: '오이스터 베이',
-    detail: '뉴질랜드 · 말보로 · 소비뇽 블랑',
-    price: '₩36,500',
-    rating: '3.0',
-    image: likedWineImage4,
-  },
-] as const
-
 function WineReviewCard({ review }: { review: (typeof wineReviews)[number] }) {
   return (
     <article className="flex h-[166px] w-full items-start gap-[18px] rounded-[14px] border border-[#e3dede] bg-white px-4 py-[18px]">
@@ -138,17 +105,47 @@ function WineReviewCard({ review }: { review: (typeof wineReviews)[number] }) {
   )
 }
 
-function LikedWineCard({ wine }: { wine: (typeof likedWines)[number] }) {
+function LikedWineCard({
+  wine,
+  onSelect,
+  onUnlike,
+}: {
+  wine: Wine
+  onSelect: () => void
+  onUnlike: () => void
+}) {
   return (
-    <article className="relative h-[150px] w-full">
-      <img src={wine.image} alt={wine.name} className="absolute top-0 left-6 size-[89.26px] max-w-none" />
+    <article
+      role="button"
+      tabIndex={0}
+      onClick={onSelect}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') onSelect()
+      }}
+      aria-label={`${wine.name} 상세보기`}
+      className="relative h-[150px] w-full cursor-pointer"
+    >
+      <div
+        className="absolute top-0 left-6 flex size-[89.26px] items-center justify-center overflow-hidden rounded-full"
+        style={{ backgroundColor: wine.bgColor }}
+      >
+        <img src={wine.image} alt={wine.name} className="h-[85%] w-auto object-contain" />
+      </div>
       <div className="absolute top-1 left-[150px] flex w-[220px] flex-col gap-2">
         <div className="flex w-full items-start justify-between">
           <div className="flex min-w-0 flex-col">
             <h2 className="text-xl leading-[25px] font-semibold whitespace-nowrap text-[#1e1b18]">{wine.name}</h2>
-            <p className="text-xs leading-[25px] font-normal whitespace-nowrap text-[#817f7e]">{wine.detail}</p>
+            <p className="text-xs leading-[25px] font-normal whitespace-nowrap text-[#817f7e]">{wine.region}</p>
           </div>
-          <button type="button" aria-label={`${wine.name} 좋아요 취소`} className="flex h-[17.726px] w-[19.008px] shrink-0 items-center justify-center">
+          <button
+            type="button"
+            aria-label={`${wine.name} 좋아요 취소`}
+            onClick={(event) => {
+              event.stopPropagation()
+              onUnlike()
+            }}
+            className="flex h-[17.726px] w-[19.008px] shrink-0 items-center justify-center"
+          >
             <img src={likedHeartIcon} alt="" className="size-full" aria-hidden="true" />
           </button>
         </div>
@@ -256,6 +253,16 @@ function Mypage() {
   const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState<'feed' | 'wine' | 'likes'>('feed')
   const [selectedFeedIndex, setSelectedFeedIndex] = useState<number | null>(null)
+  const { likedWineIds, unlike } = useLikedWines()
+
+  const likedWines = useMemo<Wine[]>(
+    () =>
+      Array.from(likedWineIds)
+        .map((id) => dummyWineData.find((wine) => wine.id === id))
+        .filter((wine): wine is DummyWine => Boolean(wine))
+        .map(toListWine),
+    [likedWineIds],
+  )
 
   const showPreviousFeed = () => {
     setSelectedFeedIndex((current) => current === null ? null : (current - 1 + feedImages.length) % feedImages.length)
@@ -342,7 +349,12 @@ function Mypage() {
               <img src={badgesCircleImage} alt="" className="size-[78px] rounded-full object-cover" aria-hidden="true" />
               <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Badges</span>
             </div>
-            <div className="flex w-[86px] flex-col items-center gap-[4px]">
+            <button
+              type="button"
+              onClick={() => navigate('/challenge/continents')}
+              aria-label="챌린지 보기"
+              className="flex w-[86px] flex-col items-center gap-[4px]"
+            >
               <div className="relative -top-1 h-[85px] w-[86px] shrink-0" data-node-id="1546:5406">
                 <img src={challengeRingImage} alt="" className="absolute inset-0 h-[85px] w-[86px] max-w-none" aria-hidden="true" />
                 <div className="absolute top-1 left-1 h-[77px] w-[78px] overflow-hidden rounded-[50px]" data-node-id="1546:5407">
@@ -355,7 +367,7 @@ function Mypage() {
                 </div>
               </div>
               <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Challenges</span>
-            </div>
+            </button>
             <div className="flex w-[78px] flex-col items-center gap-[7px]">
               <img src={highlightsCircleImage} alt="" className="size-[78px] rounded-full object-cover" aria-hidden="true" />
               <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Highlights</span>
@@ -423,9 +435,16 @@ function Mypage() {
             </div>
           ) : (
             <div className="mt-[23px]">
-              <p className="h-5 text-[11px] leading-5 font-normal text-[#534343]">전체 24종</p>
+              <p className="h-5 text-[11px] leading-5 font-normal text-[#534343]">전체 {likedWines.length}종</p>
               <div className="mt-5">
-                {likedWines.map((wine) => <LikedWineCard key={wine.name} wine={wine} />)}
+                {likedWines.map((wine) => (
+                  <LikedWineCard
+                    key={wine.id}
+                    wine={wine}
+                    onSelect={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
+                    onUnlike={() => unlike(wine.id)}
+                  />
+                ))}
               </div>
             </div>
           )}

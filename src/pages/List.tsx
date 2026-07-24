@@ -3,77 +3,18 @@ import { useNavigate } from 'react-router-dom'
 import Header from '../components/Header'
 import filterIcon from '../assets/list/filter-icon.svg'
 import starIcon from '../assets/list/container-star.svg'
-import dummyWines from '../../dummy data/wines.json'
+import heartEmptyIcon from '../assets/list/heart-empty.svg'
+import heartFilledIcon from '../assets/list/heart-filled.svg'
 import FilterSheet, { type WineFilters } from '../components/FilterSheet'
 import WineMap from '../components/WineMap'
-import { WINE_TYPE_BG_COLOR, type WineType } from '../data/todayPickData'
-
-const wineImages = import.meta.glob('../assets/images/wines/*.png', {
-  eager: true,
-  import: 'default',
-}) as Record<string, string>
-
-type DummyWine = {
-  id: string
-  nameKo: string
-  type: WineType
-  country: string
-  region: string
-  grape: string
-  price: number
-  rating: number
-  imageUrl: string
-}
-
-type Wine = {
-  id: string
-  name: string
-  region: string
-  regionTextSize: string
-  price: string
-  priceValue: number
-  rating: string
-  image: string
-  bgColor: string
-  type: WineType
-  country: string
-  grape: string
-}
+import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
+import { useLikedWines } from '../context/LikedWinesContext'
 
 // 상단 큐레이션 와인은 더미데이터의 ID로 직접 연결하고, 일반 목록에서는 중복 노출하지 않는다.
 const CURATED_WINE_IDS = ['wine_106', 'wine_033', 'wine_023'] as const
 const DUPLICATE_DUMMY_IDS = new Set<string>(CURATED_WINE_IDS)
 // 아래 와인들은 리스트에서만 숨기며, 더미데이터 자체는 다른 화면에서도 사용하므로 유지한다.
 const HIDDEN_FROM_LIST_IDS = new Set(['wine_003', 'wine_018', 'wine_019', 'wine_068'])
-
-function getRegionText(wine: DummyWine): string {
-  const subRegion = wine.region.startsWith(wine.country)
-    ? wine.region.slice(wine.country.length).trim()
-    : wine.region
-  return subRegion ? `${wine.country} · ${subRegion} · ${wine.grape}` : `${wine.country} · ${wine.grape}`
-}
-
-const dummyWineData = dummyWines as DummyWine[]
-
-function toListWine(wine: DummyWine): Wine {
-  const regionText = getRegionText(wine)
-  const fileName = wine.imageUrl.split('/').pop() ?? ''
-
-  return {
-    id: wine.id,
-    name: wine.nameKo,
-    region: regionText,
-    regionTextSize: regionText.length > 18 ? 'text-[11px]' : 'text-[12px]',
-    price: `₩${wine.price.toLocaleString()}`,
-    priceValue: wine.price,
-    rating: wine.rating.toFixed(1),
-    image: wineImages[`../assets/images/wines/${fileName}`] ?? '',
-    bgColor: WINE_TYPE_BG_COLOR[wine.type],
-    type: wine.type,
-    country: wine.country,
-    grape: wine.grape,
-  }
-}
 
 const curatedWines: Wine[] = CURATED_WINE_IDS
   .map((id) => dummyWineData.find((wine) => wine.id === id))
@@ -110,6 +51,7 @@ function List() {
   const [view, setView] = useState<ListView>('list')
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [appliedFilters, setAppliedFilters] = useState<WineFilters | null>(null)
+  const { isLiked, toggleLike } = useLikedWines()
 
   const visibleWines = useMemo(
     () => (appliedFilters ? wines.filter((wine) => matchesFilters(wine, appliedFilters)) : wines),
@@ -166,10 +108,14 @@ function List() {
               {visibleWines.map((wine) => (
                 <div key={wine.id}>
                   <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
-                  <button
-                    type="button"
+                  <div
+                    role="button"
+                    tabIndex={0}
                     onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
-                    className="flex min-h-[159px] w-full items-center gap-[37px] py-[24px] pl-[24px] text-left"
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') navigate(`/wine_detail/${wine.type}/${wine.id}`)
+                    }}
+                    className="flex min-h-[159px] w-full cursor-pointer items-center gap-[37px] py-[24px] pl-[24px] text-left"
                   >
                     <div
                       className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
@@ -183,14 +129,27 @@ function List() {
                         <p className={`${wine.regionTextSize} leading-[25px] text-[#817f7e]`}>{wine.region}</p>
                       </div>
                       <div className="flex w-[220px] items-center justify-between">
-                        <p className="text-[16px] leading-[24px] font-bold text-[#1e1b18]">{wine.price}</p>
-                        <div className="flex items-center gap-[4px]">
-                          <img src={starIcon} alt="" className="h-[14.25px] w-[15px]" />
-                          <p className="text-[16px] leading-[24px] font-bold text-[#561922]">{wine.rating}</p>
+                        <div className="flex items-center gap-[10px]">
+                          <p className="text-[16px] leading-[24px] font-bold text-[#1e1b18]">{wine.price}</p>
+                          <div className="flex items-center gap-[4px]">
+                            <img src={starIcon} alt="" className="h-[14.25px] w-[15px]" />
+                            <p className="text-[16px] leading-[24px] font-bold text-[#561922]">{wine.rating}</p>
+                          </div>
                         </div>
+                        <button
+                          type="button"
+                          aria-label={isLiked(wine.id) ? `${wine.name} 좋아요 취소` : `${wine.name} 좋아요`}
+                          onClick={(event) => {
+                            event.stopPropagation()
+                            toggleLike(wine.id)
+                          }}
+                          className="flex h-[17px] w-[19px] shrink-0 items-center justify-center"
+                        >
+                          <img src={isLiked(wine.id) ? heartFilledIcon : heartEmptyIcon} alt="" className="h-full w-full" />
+                        </button>
                       </div>
                     </div>
-                  </button>
+                  </div>
                 </div>
               ))}
               <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
