@@ -35,6 +35,11 @@ const glassMaskSvg =
 
 const glassMaskDataUri = `url("data:image/svg+xml,${encodeURIComponent(glassMaskSvg)}")`
 
+const ringMaskSvg =
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427 106"><path d="M371.828 20H281.054C267.509 20 254.819 26.4598 247.871 37.2425C240.887 48.0747 228.107 55.3348 213.5 55.3348C198.893 55.3348 186.122 48.083 179.129 37.2425C172.181 26.4598 159.491 20 145.946 20H55.172C35.75 20.4208 20 35.0975 20 53C20 70.9025 35.75 85.5793 55.172 86H371.828C391.25 85.5793 407 70.9025 407 53C407 35.0975 391.25 20.4208 371.828 20Z" fill="none" stroke="#fff" stroke-width="0.8"/></svg>'
+
+const ringMaskDataUri = `url("data:image/svg+xml,${encodeURIComponent(ringMaskSvg)}")`
+
 const quickActions: Array<{
   label: QuickAction
   left: number
@@ -49,38 +54,38 @@ const navItems: NavItem[] = [
   {
     label: '홈',
     icon: '/nav-assets/home-figma.svg',
-    width: 24.75,
-    height: 24.24,
+    width: 20.42,
+    height: 20,
     centerX: 52.5,
-    iconTop: 56,
-    labelTop: 27,
+    iconTop: 62.63,
+    labelTop: 26.02,
   },
   {
     label: '리스트',
     icon: '/nav-assets/list-figma.svg',
-    width: 24.24,
-    height: 24.24,
+    width: 20,
+    height: 20,
     centerX: 126,
-    iconTop: 56,
-    labelTop: 27,
+    iconTop: 62.63,
+    labelTop: 26.02,
   },
   {
     label: '라운지',
     icon: '/nav-assets/lounge-figma.svg',
-    width: 26.26,
-    height: 24.24,
+    width: 22.22,
+    height: 20,
     centerX: 303,
-    iconTop: 57.5,
-    labelTop: 24,
+    iconTop: 65.65,
+    labelTop: 23,
   },
   {
     label: '마이',
     icon: '/nav-assets/person-figma.svg',
-    width: 18.18,
-    height: 24.24,
+    width: 15,
+    height: 20,
     centerX: 380,
-    iconTop: 56,
-    labelTop: 27,
+    iconTop: 65.65,
+    labelTop: 23,
   },
 ]
 
@@ -124,7 +129,7 @@ function NavButton({
         }}
       />
       <span
-        className="absolute whitespace-nowrap font-medium"
+        className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-medium"
         style={{ top: item.labelTop }}
       >
         {item.label}
@@ -149,6 +154,11 @@ export default function BottomNav({
       className={`fixed inset-x-0 bottom-[15px] z-50 mx-auto h-28 w-full max-w-[390px] ${className}`}
     >
       <div aria-hidden="true" className="pointer-events-none absolute" style={glassGeometry}>
+        <img
+          src="/nav-assets/bottom-nav-glow.svg"
+          alt=""
+          className="absolute inset-0 size-full max-w-none"
+        />
         <div
           className="absolute inset-0"
           style={{
@@ -161,18 +171,26 @@ export default function BottomNav({
             WebkitMaskPosition: 'center',
             maskPosition: 'center',
             backgroundColor: 'rgba(0,0,0,0.01)',
-            WebkitBackdropFilter: 'blur(10px)',
-            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(1px)',
+            backdropFilter: 'blur(1px)',
+          } as CSSProperties}
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            WebkitMaskImage: ringMaskDataUri,
+            maskImage: ringMaskDataUri,
+            WebkitMaskSize: '100% 100%',
+            maskSize: '100% 100%',
+            WebkitMaskRepeat: 'no-repeat',
+            maskRepeat: 'no-repeat',
+            WebkitMaskPosition: 'center',
+            maskPosition: 'center',
+            background:
+              'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.25) 100%)',
           } as CSSProperties}
         />
       </div>
-      <img
-        src="/nav-assets/bottom-nav-rim.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute max-w-none"
-        style={glassGeometry}
-      />
 
       {navItems.map((item) => (
         <NavButton
@@ -212,7 +230,7 @@ export default function BottomNav({
           else onAddClick?.()
         }}
         className={`absolute left-1/2 -translate-x-1/2 select-none rounded-full transition-[transform,filter] duration-100 ease-out hover:scale-105 active:scale-[0.95] active:brightness-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317] ${
-          expanded ? '-top-3 size-[88px] touch-manipulation' : 'top-0 size-16 touch-manipulation'
+          expanded ? '-top-3 size-[88px] touch-manipulation' : 'top-[7.2px] size-16 touch-manipulation'
         }`}
       >
         {expanded ? (
