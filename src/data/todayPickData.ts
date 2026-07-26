@@ -8,8 +8,8 @@ export const TODAY_PICK_WINE_IDS: Record<WineType, readonly string[]> = {
 }
 
 export const WINE_TYPE_BG_COLOR: Record<WineType, string> = {
-  red: '#831317',
+  red: '#800020',
   white: '#ece4a2',
-  rose: '#E8A9A0',
+  rose: '#F3D6D0',
   sparkling: '#F2E9C9',
 }

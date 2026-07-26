@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import Header from '../components/Header'
 import filterIcon from '../assets/list/filter-icon.svg'
 import starIcon from '../assets/list/container-star.svg'
@@ -48,7 +48,16 @@ type ListView = 'list' | 'map'
 
 function List() {
   const navigate = useNavigate()
-  const [view, setView] = useState<ListView>('list')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [view, setViewState] = useState<ListView>(() => (searchParams.get('view') === 'map' ? 'map' : 'list'))
+  const setView = (next: ListView) => {
+    setViewState(next)
+    setSearchParams((params) => {
+      if (next === 'map') params.set('view', 'map')
+      else params.delete('view')
+      return params
+    }, { replace: true })
+  }
   const [isFilterOpen, setIsFilterOpen] = useState(false)
   const [appliedFilters, setAppliedFilters] = useState<WineFilters | null>(null)
   const { isLiked, toggleLike } = useLikedWines()
@@ -63,7 +72,7 @@ function List() {
       className={`${view === 'map' ? 'flex h-dvh min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
       data-node-id="690:403"
     >
-      <Header tone="light" titleColorClassName="text-black" />
+      <Header tone="light" titleColorClassName="text-[#831317]" wineIcons />
 
       <main className={`px-5 pt-5 ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
         <div className="flex items-center justify-between">
@@ -77,7 +86,7 @@ function List() {
           )}
         </div>
 
-        <div className="relative mt-[27px] flex border-b border-[#7b7b7b]">
+        <div className="relative my-[10px] flex border-b border-[#7b7b7b]">
           <button
             type="button"
             onClick={() => setView('list')}
@@ -102,57 +111,54 @@ function List() {
 
         {view === 'list' ? (
           <>
-            <p className="mt-[22px] text-[14px] leading-[20px] text-[#534343]">전체 {visibleWines.length}종</p>
+            <p className="mt-[15px] text-[12px] leading-[20px] text-[#6c5757]">전체 {visibleWines.length}종</p>
 
-            <div className="mt-[18px]">
-              {visibleWines.map((wine) => (
-                <div key={wine.id}>
-                  <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
-                  <div
-                    role="button"
-                    tabIndex={0}
-                    onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
-                    onKeyDown={(event) => {
-                      if (event.key === 'Enter' || event.key === ' ') navigate(`/wine_detail/${wine.type}/${wine.id}`)
-                    }}
-                    className="flex min-h-[159px] w-full cursor-pointer items-center gap-[37px] py-[24px] pl-[24px] text-left"
-                  >
-                    <div
-                      className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
-                      style={{ backgroundColor: wine.bgColor }}
-                    >
-                      <img src={wine.image} alt={wine.name} className="h-[85%] w-auto object-contain" />
+            <div className="mt-[18px] mb-[30px]">
+              {visibleWines.map((wine, index) => (
+                <div
+                  key={wine.id}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') navigate(`/wine_detail/${wine.type}/${wine.id}`)
+                  }}
+                  className={`flex w-full cursor-pointer items-center gap-[37px] border-[#dcdcdc] py-[15px] pl-[24px] text-left ${
+                    index === 0 ? '' : 'border-t-[0.5px]'
+                  }`}
+                >
+                  <div className="relative flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full">
+                    <div className="absolute inset-0 opacity-40" style={{ backgroundColor: wine.bgColor }} />
+                    <img src={wine.image} alt={wine.name} className="relative h-[85%] w-auto object-contain" />
+                  </div>
+                  <div className="flex flex-col gap-[8px] pt-[4px]">
+                    <div>
+                      <p className="text-[20px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
+                      <p className={`${wine.regionTextSize} leading-[25px] text-[#817f7e]`}>{wine.region}</p>
                     </div>
-                    <div className="flex flex-col gap-[8px] pt-[4px]">
-                      <div>
-                        <p className="text-[20px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
-                        <p className={`${wine.regionTextSize} leading-[25px] text-[#817f7e]`}>{wine.region}</p>
-                      </div>
-                      <div className="flex w-[220px] items-center justify-between">
-                        <div className="flex items-center gap-[10px]">
-                          <p className="text-[16px] leading-[24px] font-bold text-[#1e1b18]">{wine.price}</p>
-                          <div className="flex items-center gap-[4px]">
-                            <img src={starIcon} alt="" className="h-[14.25px] w-[15px]" />
-                            <p className="text-[16px] leading-[24px] font-bold text-[#561922]">{wine.rating}</p>
-                          </div>
+                    <div className="flex w-[220px] items-center justify-between">
+                      <div className="flex items-center gap-[10px]">
+                        <p className="text-[16px] leading-[24px] font-bold text-[#1e1b18]">{wine.price}</p>
+                        <div className="flex items-center gap-[4px]">
+                          <img src={starIcon} alt="" className="h-[14.25px] w-[15px]" />
+                          <p className="text-[16px] leading-[24px] font-bold text-[#561922]">{wine.rating}</p>
                         </div>
-                        <button
-                          type="button"
-                          aria-label={isLiked(wine.id) ? `${wine.name} 좋아요 취소` : `${wine.name} 좋아요`}
-                          onClick={(event) => {
-                            event.stopPropagation()
-                            toggleLike(wine.id)
-                          }}
-                          className="flex h-[17px] w-[19px] shrink-0 items-center justify-center"
-                        >
-                          <img src={isLiked(wine.id) ? heartFilledIcon : heartEmptyIcon} alt="" className="h-full w-full" />
-                        </button>
                       </div>
+                      <button
+                        type="button"
+                        aria-label={isLiked(wine.id) ? `${wine.name} 좋아요 취소` : `${wine.name} 좋아요`}
+                        onClick={(event) => {
+                          event.stopPropagation()
+                          toggleLike(wine.id)
+                        }}
+                        className="flex h-[17px] w-[19px] shrink-0 items-center justify-center"
+                      >
+                        <img src={isLiked(wine.id) ? heartFilledIcon : heartEmptyIcon} alt="" className="h-full w-full" />
+                      </button>
                     </div>
                   </div>
                 </div>
               ))}
-              <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
             </div>
           </>
         ) : (

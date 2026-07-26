@@ -144,9 +144,6 @@ function WineMap() {
 
         const showPlaces = (results: KakaoPlace[]) => {
           if (disposed) return
-          // 카드가 열려 있는 동안 마커 목록을 갈아치우면, 방금 선택한 장소가 새
-          // 검색 결과(가까운 7곳)에서 빠져 카드가 곧바로 닫혀버릴 수 있다.
-          if (selectedPlaceRef.current) return
 
           const visiblePlaces = results.slice(0, 7)
           clearMarkers()
@@ -164,11 +161,9 @@ function WineMap() {
         }
 
         const searchNearbyWinePlaces = () => {
-          if (selectedPlaceRef.current) return
-
           const options = {
             location: map.getCenter(),
-            radius: 10000,
+            radius: 20000,
             sort: kakaoMaps.services.SortBy.DISTANCE,
           }
 
