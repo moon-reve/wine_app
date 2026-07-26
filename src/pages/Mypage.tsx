@@ -21,15 +21,12 @@ import feedThumb11 from '../assets/mypage/figma-feed-11.png'
 import feedThumb12 from '../assets/mypage/figma-feed-12.png'
 import multipleFeedIcon from '../assets/mypage/multiple-feed-icon.svg'
 import settingsIcon from '../assets/mypage/settings-outline.svg'
-import wineImage1 from '../assets/mypage/figma-wine-review-01.png'
-import wineImage2 from '../assets/mypage/figma-wine-review-02.png'
-import wineImage3 from '../assets/mypage/figma-wine-review-03.png'
 import likedHeartIcon from '../assets/mypage/liked-heart.svg'
 import ratingStarIcon from '../assets/mypage/rating-star.svg'
 import Logo from '../components/Logo'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
 import { useLikedWines } from '../context/LikedWinesContext'
-import { useWineRecords } from '../context/WineRecordsContext'
+import { DEMO_WINE_RECORDS, useWineRecords } from '../context/WineRecordsContext'
 
 const feedImages = [
   feedThumb1,
@@ -61,34 +58,8 @@ const feedItems = [
   { image: feedThumb12, crop: 'absolute top-[-8.05%] left-[-0.26%] h-[111.98%] w-[100.26%] max-w-none', multiple: false },
 ] as const
 
-const wineReviews = [
-  {
-    name: '샤토 라퐁 로셰 2015',
-    date: '2026.07.01',
-    rating: '5.0',
-    review: '친구들과 저녁을 먹으며 천천히 마셨다. 묵직한 가죽 향 뒤로 잘 익은 베리 향이 올라와 마지막 잔까지 편안하게 즐겼다.',
-    image: wineImage1,
-    crop: 'absolute top-[-9.47%] left-[-9.01%] h-[116.41%] w-[116.46%] max-w-none',
-  },
-  {
-    name: '클라우디 베이 소비뇽 블랑',
-    date: '2026.06.25',
-    rating: '4.0',
-    review: '더운 날 차갑게 식혀 마시니 시트러스한 산미가 무척 상쾌했다. 은은한 열대 과실 향이 오래 남아 해산물 요리와 잘 어울렸다.',
-    image: wineImage2,
-    crop: 'absolute top-[-21.09%] left-[-14.79%] h-[136.83%] w-[129.44%] max-w-none',
-  },
-  {
-    name: '투 핸즈 엔젤스 쉐어 쉬라즈',
-    date: '2026.06.10',
-    rating: '4.5',
-    review: '집에서 음악을 들으며 마셨다. 진한 자두와 블랙베리 풍미가 풍성했고 탄닌도 부드러웠다. 다음에는 스테이크와 다시 마시고 싶다.',
-    image: wineImage3,
-    crop: 'absolute top-[-29.28%] left-[-20.38%] h-[149.77%] w-[141.59%] max-w-none',
-  },
-] as const
-
 type WineReviewCardData = {
+  id: string
   name: string
   date: string
   rating: string | number
@@ -97,14 +68,22 @@ type WineReviewCardData = {
   crop?: string
 }
 
-function WineReviewCard({ review }: { review: WineReviewCardData }) {
+function WineReviewCard({ review, onDelete }: { review: WineReviewCardData; onDelete: () => void }) {
   return (
-    <article className="flex h-[166px] w-full items-start gap-[18px] rounded-[14px] border border-[#e3dede] bg-white px-4 py-[18px]">
+    <article className="relative flex h-[166px] w-full items-start gap-[18px] rounded-[14px] border border-[#e3dede] bg-white px-4 py-[18px]">
+      <button
+        type="button"
+        aria-label={`${review.name} 기록 삭제`}
+        onClick={onDelete}
+        className="absolute top-2 right-2 flex size-6 items-center justify-center rounded-full bg-black/5 text-sm text-[#9e9e9e] hover:bg-black/10 hover:text-[#831317]"
+      >
+        ×
+      </button>
       <div className="relative h-[130px] w-[94px] shrink-0 overflow-hidden rounded-lg bg-[#f3f1ed]">
         {review.image && <img src={review.image} alt={review.name} className={review.crop ?? 'absolute inset-0 size-full object-cover'} />}
       </div>
       <div className="flex min-w-0 flex-1 flex-col">
-        <div className="flex w-full items-center justify-between gap-2">
+        <div className="flex w-full items-center justify-between gap-2 pr-5">
           <h2 className="min-w-0 truncate text-xl leading-[25px] font-semibold whitespace-nowrap text-[#1e1b18]">{review.name}</h2>
           <p className="shrink-0 text-base leading-6 font-bold whitespace-nowrap text-[#831317]">★ {review.rating}</p>
         </div>
@@ -265,20 +244,26 @@ function Mypage() {
   const [activeTab, setActiveTab] = useState<'feed' | 'wine' | 'likes'>(initialTab ?? 'feed')
   const [selectedFeedIndex, setSelectedFeedIndex] = useState<number | null>(null)
   const { likedWineIds, unlike } = useLikedWines()
-  const { records } = useWineRecords()
+  const { records, deleteRecord } = useWineRecords()
+  // 데모 기록은 세션 동안만 숨기고, 강제 새로고침하면 다시 나타나야 하므로
+  // localStorage가 아니라 컴포넌트 로컬 state로만 관리한다.
+  const [hiddenDemoIds, setHiddenDemoIds] = useState<Set<string>>(new Set())
+  const hideDemoRecord = (id: string) => setHiddenDemoIds((current) => new Set(current).add(id))
 
-  const allWineReviews = useMemo<WineReviewCardData[]>(
+  const wineReviews = useMemo<WineReviewCardData[]>(
     () => [
       ...records.map((record) => ({
+        id: record.id,
         name: record.name,
         date: record.date,
         rating: record.rating,
         review: record.review,
         image: record.image,
+        crop: record.crop,
       })),
-      ...wineReviews,
+      ...DEMO_WINE_RECORDS.filter((record) => !hiddenDemoIds.has(record.id)),
     ],
-    [records],
+    [records, hiddenDemoIds],
   )
 
   const likedWines = useMemo<Wine[]>(
@@ -454,7 +439,13 @@ function Mypage() {
             </div>
           ) : activeTab === 'wine' ? (
             <div className="mt-5 flex flex-col gap-3.5">
-              {allWineReviews.map((review, index) => <WineReviewCard key={`${review.name}-${review.date}-${index}`} review={review} />)}
+              {wineReviews.map((review) => (
+                <WineReviewCard
+                  key={review.id}
+                  review={review}
+                  onDelete={() => (review.id.startsWith('demo-') ? hideDemoRecord(review.id) : deleteRecord(review.id))}
+                />
+              ))}
               <button type="button" onClick={() => navigate('/record')} className="flex h-[50px] w-full items-center justify-center rounded-xl bg-[#831317] text-base leading-none font-bold text-white">
                 기록쓰기
               </button>
