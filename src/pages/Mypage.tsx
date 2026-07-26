@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import avatarImage from '../assets/mypage/figma-profile-photo.png'
 import profileStoryRing from '../assets/mypage/profile-story-ring.svg'
 import challengeCircleImage from '../assets/mypage/mypage-challenge-circle.png'
@@ -29,6 +29,7 @@ import ratingStarIcon from '../assets/mypage/rating-star.svg'
 import Logo from '../components/Logo'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
 import { useLikedWines } from '../context/LikedWinesContext'
+import { useWineRecords } from '../context/WineRecordsContext'
 
 const feedImages = [
   feedThumb1,
@@ -87,11 +88,20 @@ const wineReviews = [
   },
 ] as const
 
-function WineReviewCard({ review }: { review: (typeof wineReviews)[number] }) {
+type WineReviewCardData = {
+  name: string
+  date: string
+  rating: string | number
+  review: string
+  image: string | null
+  crop?: string
+}
+
+function WineReviewCard({ review }: { review: WineReviewCardData }) {
   return (
     <article className="flex h-[166px] w-full items-start gap-[18px] rounded-[14px] border border-[#e3dede] bg-white px-4 py-[18px]">
-      <div className="relative h-[130px] w-[94px] shrink-0 overflow-hidden rounded-lg">
-        <img src={review.image} alt={review.name} className={review.crop} />
+      <div className="relative h-[130px] w-[94px] shrink-0 overflow-hidden rounded-lg bg-[#f3f1ed]">
+        {review.image && <img src={review.image} alt={review.name} className={review.crop ?? 'absolute inset-0 size-full object-cover'} />}
       </div>
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex w-full items-center justify-between gap-2">
@@ -250,9 +260,26 @@ function FeedLightbox({ selectedIndex, onClose, onPrevious, onNext }: FeedLightb
 
 function Mypage() {
   const navigate = useNavigate()
-  const [activeTab, setActiveTab] = useState<'feed' | 'wine' | 'likes'>('feed')
+  const location = useLocation()
+  const initialTab = (location.state as { activeTab?: 'feed' | 'wine' | 'likes' } | null)?.activeTab
+  const [activeTab, setActiveTab] = useState<'feed' | 'wine' | 'likes'>(initialTab ?? 'feed')
   const [selectedFeedIndex, setSelectedFeedIndex] = useState<number | null>(null)
   const { likedWineIds, unlike } = useLikedWines()
+  const { records } = useWineRecords()
+
+  const allWineReviews = useMemo<WineReviewCardData[]>(
+    () => [
+      ...records.map((record) => ({
+        name: record.name,
+        date: record.date,
+        rating: record.rating,
+        review: record.review,
+        image: record.image,
+      })),
+      ...wineReviews,
+    ],
+    [records],
+  )
 
   const likedWines = useMemo<Wine[]>(
     () =>
@@ -427,7 +454,7 @@ function Mypage() {
             </div>
           ) : activeTab === 'wine' ? (
             <div className="mt-5 flex flex-col gap-3.5">
-              {wineReviews.map((review) => <WineReviewCard key={review.name} review={review} />)}
+              {allWineReviews.map((review, index) => <WineReviewCard key={`${review.name}-${review.date}-${index}`} review={review} />)}
               <button type="button" onClick={() => navigate('/record')} className="flex h-[50px] w-full items-center justify-center rounded-xl bg-[#831317] text-base leading-none font-bold text-white">
                 기록쓰기
               </button>

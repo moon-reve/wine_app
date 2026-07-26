@@ -45,9 +45,9 @@ const quickActions: Array<{
   left: number
   top: number
 }> = [
-  { label: '기록', left: 142, top: -53 },
-  { label: '피드', left: 215, top: -78 },
-  { label: '찾기', left: 288, top: -53 },
+  { label: '기록', left: 133, top: -38 },
+  { label: '피드', left: 215, top: -85 },
+  { label: '찾기', left: 297, top: -38 },
 ]
 
 const navItems: NavItem[] = [

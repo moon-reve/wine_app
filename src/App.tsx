@@ -30,6 +30,7 @@ import WineRecord from './pages/WineRecord'
 import Splash from './pages/Splash'
 import Onboarding from './pages/Onboarding'
 import { LikedWinesProvider } from './context/LikedWinesContext'
+import { WineRecordsProvider } from './context/WineRecordsContext'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -45,6 +46,7 @@ function App() {
   return (
     <BrowserRouter>
       <LikedWinesProvider>
+      <WineRecordsProvider>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Splash />} />
@@ -88,6 +90,7 @@ function App() {
           <Route path="/meeting/:meetingId" element={<MeetingDetail />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
+      </WineRecordsProvider>
       </LikedWinesProvider>
     </BrowserRouter>
   )
