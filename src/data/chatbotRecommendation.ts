@@ -7,9 +7,32 @@ export type WineRecommendationRequest = {
   priceRange: string
 }
 
+export type WineQuestionRequest = {
+  name: string
+  nameEn: string
+  region: string
+  type: string
+  description: string
+}
+
 export type ChatbotLocationState = {
   from?: string
   recommendationRequest?: WineRecommendationRequest
+  wineQuestion?: WineQuestionRequest
+}
+
+export function buildWineQuestion(wine: WineQuestionRequest) {
+  return `${wine.name}에 대해 알려줘`
+}
+
+export function buildWineAnswer(wine: WineQuestionRequest) {
+  return `${wine.name}(${wine.nameEn})에 대해 알려드릴게요.
+
+${wine.region} · ${wine.type}
+
+${wine.description}
+
+페어링이나 비슷한 스타일의 다른 와인이 궁금하면 편하게 물어보세요.`
 }
 
 const wines = winesData as WineDetail[]

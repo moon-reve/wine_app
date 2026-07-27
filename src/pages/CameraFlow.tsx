@@ -12,6 +12,7 @@ import searchCamera from '../assets/quick-flow/search-camera.png'
 import searchThumb from '../assets/quick-flow/search-thumb.png'
 import searchResultWine from '../assets/quick-flow/search-result-wine.png'
 import FeedCreateFlow from './FeedCreateFlow'
+import type { ChatbotLocationState } from '../data/chatbotRecommendation'
 
 type CameraFlowProps = { mode: 'feed' | 'search' }
 
@@ -54,11 +55,31 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
             <div className="mx-auto mt-4 inline-flex items-center gap-1.5 rounded-full border border-[#d9a05b]/40 bg-white/[0.06] px-[14px] py-2 text-[13px]">인식 정확도 <b className="text-[15px] text-[#d9a05b]">96%</b></div>
           </div>
           <div className="mt-6 border-t border-white/20 pt-[22px] text-sm leading-normal text-white/75">
-            <p>마탄자스 크릭은 1977년 설립된 소노마 카운티의 와이너리로, 소비뇽 블랑과 메를로로 명성을 쌓았습니다. 이 샤르도네는 알렉산더 밸리 포도를 중심으로 양조하며, 구운 사과와 브리오슈 향이 특징입니다. 복숭아와 배 풍미에 은은한 바닐라가 더해져 ...</p>
+            <p>마탄자스 크릭은 1977년 설립된 소노마 카운티의 와이너리로, 소비뇽 블랑과 메를로로 명성을 쌓았습니다. 이 샤르도네는 알렉산더 밸리 포도를 중심으로 양조하며, 구운 사과와 브리오슈 향이 특징입니다. 복숭아와 배 풍미에 은은한 바닐라가 더해져 부드럽고 균형 잡힌 맛을 완성합니다. 프렌치 오크통에서 8개월간 숙성하며 크리미한 질감과 은은한 스파이스 향을 더했고, 말로락틱 발효로 산도는 유지하면서도 부드러운 마우스필을 살렸습니다. 마무리는 길고 우아하며, 로스트 치킨이나 랍스터, 버터 소스를 곁들인 해산물 요리와 특히 잘 어울립니다. 서빙 온도는 10~12도가 이상적이고, 구입 후 3~5년 이내에 마시는 것을 권장합니다.</p>
             <button type="button" className="mt-1.5 text-xs text-white/50 underline">더보기</button>
           </div>
           <button type="button" onClick={() => navigate('/record')} className="mt-[22px] h-[52px] w-full rounded-full border border-white/30 bg-white/[0.08] text-base font-bold text-white">와인 기록하기</button>
-          <button type="button" className="mt-[10px] h-[52px] w-full rounded-full border border-white/30 bg-white/[0.08] text-base font-bold text-white">AI에게 물어보기</button>
+          <button
+            type="button"
+            onClick={() =>
+              navigate('/chatbot', {
+                state: {
+                  from: '/wine-search',
+                  wineQuestion: {
+                    name: '마틴자스 크릭 샤도네이',
+                    nameEn: 'Matansas Creek Chardonnay',
+                    region: 'USA · Sonoma',
+                    type: 'White Wine · Chardonnay',
+                    description:
+                      '마탄자스 크릭은 1977년 설립된 소노마 카운티의 와이너리로, 소비뇽 블랑과 메를로로 명성을 쌓았습니다. 이 샤르도네는 알렉산더 밸리 포도를 중심으로 양조하며, 구운 사과와 브리오슈 향이 특징입니다. 복숭아와 배 풍미에 은은한 바닐라가 더해져 부드럽고 균형 잡힌 맛을 완성합니다. 프렌치 오크통에서 8개월간 숙성하며 크리미한 질감과 은은한 스파이스 향을 더했고, 말로락틱 발효로 산도는 유지하면서도 부드러운 마우스필을 살렸습니다. 마무리는 길고 우아하며, 로스트 치킨이나 랍스터, 버터 소스를 곁들인 해산물 요리와 특히 잘 어울립니다. 서빙 온도는 10~12도가 이상적이고, 구입 후 3~5년 이내에 마시는 것을 권장합니다.',
+                  },
+                } satisfies ChatbotLocationState,
+              })
+            }
+            className="mt-[10px] h-[52px] w-full rounded-full border border-white/30 bg-white/[0.08] text-base font-bold text-white"
+          >
+            AI에게 물어보기
+          </button>
         </section>
       </main>
     )

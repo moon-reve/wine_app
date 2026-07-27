@@ -1,6 +1,7 @@
 import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import { VitePWA } from 'vite-plugin-pwa'
 import { fetchPlaceOgImage } from './api/_lib/placeImage.ts'
 
 // Mirrors api/place-image.ts so the endpoint also works under `vite dev`,
@@ -22,5 +23,52 @@ function kakaoPlaceImageDevMiddleware(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), kakaoPlaceImageDevMiddleware()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    kakaoPlaceImageDevMiddleware(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      devOptions: { enabled: true },
+      includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
+      manifest: {
+        name: 'Viner',
+        short_name: 'Viner',
+        description: '와인을 좋아하는 사람들의 팬덤 커뮤니티',
+        lang: 'ko',
+        start_url: '/',
+        scope: '/',
+        display: 'standalone',
+        orientation: 'portrait',
+        theme_color: '#841317',
+        background_color: '#841317',
+        icons: [
+          { src: '/pwa-192x192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: '/pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: '/pwa-maskable-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+        ],
+      },
+      workbox: {
+        navigateFallback: '/index.html',
+        navigateFallbackDenylist: [/^\/api\//],
+        // 앱 셸(JS/CSS/HTML/아이콘)만 미리 캐시한다. 용량이 큰 사진 에셋(png)들은
+        // 아래 runtimeCaching으로 방문한 것만 그때그때 캐시한다.
+        globPatterns: ['**/*.{js,css,html,ico,svg,webmanifest}'],
+        runtimeCaching: [
+          {
+            urlPattern: /^\/api\//,
+            handler: 'NetworkOnly',
+          },
+          {
+            urlPattern: ({ request }) => request.destination === 'image',
+            handler: 'CacheFirst',
+            options: {
+              cacheName: 'images-cache',
+              expiration: { maxEntries: 150, maxAgeSeconds: 30 * 24 * 60 * 60 },
+            },
+          },
+        ],
+      },
+    }),
+  ],
 })
