@@ -109,8 +109,11 @@ function MagazineDetail() {
   }
 
   return (
-    <div className="relative mx-auto min-h-[3139px] w-full max-w-107.5 overflow-hidden bg-white text-black" data-node-id="1546:7825">
-      <img src={heroImage} alt="수확한 오미자를 선별하는 모습" className="absolute top-[-211px] left-0 h-[538px] w-[430px] max-w-none" />
+    <div className="relative mx-auto min-h-[3180px] w-full max-w-107.5 overflow-hidden bg-white text-black" data-node-id="1546:7825">
+      <div className="absolute top-[-211px] left-0 h-[538px] w-[430px]">
+        <img src={heroImage} alt="수확한 오미자를 선별하는 모습" className="absolute inset-0 size-full max-w-none" />
+        <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
+      </div>
       <div className="absolute top-[286px] left-0 h-[360px] w-[431px] bg-[linear-gradient(150.82deg,#6a0a0d_51.022%,#950509_106.82%)]" />
 
       <header className="absolute top-[env(safe-area-inset-top)] left-0 z-10 h-17.5 w-full overflow-hidden">
@@ -120,12 +123,12 @@ function MagazineDetail() {
         <h1 className="absolute top-6.5 left-[190.5px] text-[18px] leading-none font-bold tracking-[-0.54px] whitespace-nowrap text-white">메거진</h1>
       </header>
 
-      <div className="absolute top-[345px] left-5 text-[25px] leading-[1.25] font-semibold tracking-[-0.875px] whitespace-nowrap text-white">
+      <div className="absolute top-[380px] left-1/2 -translate-x-1/2 text-center text-[25px] leading-[1.25] font-semibold tracking-[-0.875px] whitespace-nowrap text-white">
         <p>영동에서 문경까지</p>
         <p>오미자가 만드는</p>
       </div>
-      <p className="absolute top-[408px] left-5 font-['Delmon_Delicate','Playfair_Display',serif] text-[41px] leading-[1.25] font-normal tracking-[-1.435px] whitespace-nowrap text-white">K-Wine Road</p>
-      <div className="absolute top-[475px] left-5 w-[316px] text-[14px] leading-[1.5] font-normal text-white">
+      <p className="absolute top-[443px] left-1/2 -translate-x-1/2 font-['Delmon_Delicate','Playfair_Display',serif] text-[41px] leading-[1.25] font-normal tracking-[-1.435px] whitespace-nowrap text-white">K-Wine Road</p>
+      <div className="absolute top-[507px] left-1/2 w-[390px] -translate-x-1/2 text-center text-[16px] leading-[1.5] font-normal text-white">
         <p>국산 청포도 '청수'와 세계 유일의 오미자</p>
         <p>스파클링 '오미로제'까지</p>
       </div>
