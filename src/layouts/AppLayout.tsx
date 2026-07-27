@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import BottomNav, { type QuickAction } from '../components/BottomNav'
+import InstallPwaBanner from '../components/InstallPwaBanner'
 
 function AppLayout() {
   const location = useLocation()
@@ -59,6 +60,7 @@ function AppLayout() {
           onClick={() => setIsQuickMenuOpen(false)}
         />
       ) : null}
+      <InstallPwaBanner />
       <BottomNav
         activeItem={activeItem}
         expanded={isQuickMenuOpen}
