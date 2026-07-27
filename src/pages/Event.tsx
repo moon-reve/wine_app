@@ -22,7 +22,7 @@ function Divider() {
 
 function InfoCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex w-full flex-col gap-1 rounded-xl bg-[#f9f7f6] px-[18px] py-[14px]">
+    <div className="flex w-full flex-col gap-1 rounded-xl bg-[#f2f2f2] px-[18px] py-[14px]">
       <p className="text-xs leading-[1.2] font-medium text-[#831317]">{label}</p>
       <p className="text-sm leading-[1.3] font-normal tracking-[-0.28px] text-[#0d0d0d]">{value}</p>
     </div>
@@ -32,7 +32,7 @@ function InfoCard({ label, value }: { label: string; value: string }) {
 function RelatedWineCard({ category, name, image }: { category: string; name: string; image: string }) {
   return (
     <div className="flex shrink-0 flex-col gap-2.5">
-      <div className="h-[170px] w-[188px] shrink-0 overflow-hidden rounded-xl bg-[#f8f6f4]">
+      <div className="h-[170px] w-[188px] shrink-0 overflow-hidden rounded-xl bg-[#f2f2f2]">
         <div className="mx-auto h-[150px] w-9 translate-y-2.5 overflow-hidden">
           <img src={image} alt={name} className="size-full object-cover" />
         </div>
@@ -46,7 +46,7 @@ function RelatedWineCard({ category, name, image }: { category: string; name: st
 function RuffinoChiantiCard() {
   return (
     <div className="flex shrink-0 flex-col gap-2.5">
-      <div className="h-[170px] w-[188px] shrink-0 overflow-hidden rounded-xl bg-[#f8f6f4]">
+      <div className="h-[170px] w-[188px] shrink-0 overflow-hidden rounded-xl bg-[#f2f2f2]">
         <div className="mx-auto h-[150px] w-9 translate-y-2.5 overflow-hidden">
           <img src={wine3} alt="Ruffino Chianti" className="size-full object-cover" />
         </div>
@@ -97,7 +97,7 @@ function Event() {
 
         <section className="flex flex-col gap-3">
           <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">행사 소개</h2>
-          <div className="w-full rounded-xl bg-[#f9f7f6] px-[18px] py-4">
+          <div className="w-full rounded-xl bg-[#f2f2f2] px-[18px] py-4">
             <p className="text-sm leading-[1.65] font-normal tracking-[-0.28px] text-[#595959]">
               국내외 다양한 와인을 직접 시음할 수 있는 행사입니다. 와인 전문가들이 큐레이션한 프리미엄 컬렉션과 함께 성수동의
               세련된 감성을 느껴보세요.

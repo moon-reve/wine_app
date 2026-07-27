@@ -244,7 +244,7 @@ function WineMap() {
   const selectedImage = fetchedImage || placeCardPhoto
 
   return (
-    <div className="relative -mx-5 h-full min-h-0 w-[calc(100%+40px)] overflow-hidden bg-[#f3f1ed]" data-node-id="1546:4174">
+    <div className="relative -mx-5 h-full min-h-0 w-[calc(100%+40px)] overflow-hidden bg-[#f2f2f2]" data-node-id="1546:4174">
       <div ref={mapContainerRef} aria-label="주변 와인 매장 지도" className="absolute inset-0 size-full" />
 
       {mapError && (
@@ -266,7 +266,7 @@ function WineMap() {
             type="button"
             onClick={() => setActiveSort(option)}
             className={`shrink-0 rounded-full border px-[16px] py-[8px] text-[12px] leading-4 font-medium tracking-[0.96px] whitespace-nowrap shadow-[0_0_2.5px_rgba(0,0,0,0.25)] ${
-              activeSort === option ? 'border-[#831317] bg-[#831317] text-white' : 'border-white/50 bg-[#f9f7f6] text-[#444141]'
+              activeSort === option ? 'border-[#831317] bg-[#831317] text-white' : 'border-white/50 bg-[#f2f2f2] text-[#444141]'
             }`}
           >
             {option}

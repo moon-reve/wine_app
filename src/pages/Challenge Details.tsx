@@ -51,7 +51,7 @@ function Medal({ item }: { item: (typeof medals)[number] }) {
 
 function StepCard({ index, title, description }: { index: number; title: string; description: string }) {
   return (
-    <div className="flex w-full items-center gap-3.5 overflow-hidden rounded-xl bg-[#f9f7f6] px-4 py-3.5">
+    <div className="flex w-full items-center gap-3.5 overflow-hidden rounded-xl bg-[#f2f2f2] px-4 py-3.5">
       <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-[#831317] text-[15px] leading-none font-bold text-white">{index}</span>
       <div className="flex shrink-0 flex-col items-start gap-[3px] overflow-hidden">
         <h3 className="text-[15px] leading-[1.2] font-bold tracking-[-0.3px] whitespace-nowrap">{title}</h3>
@@ -123,7 +123,7 @@ function ChallengeDetails() {
         {medals.map((item) => <Medal key={item.left} item={item} />)}
       </section>
 
-      <section className="absolute top-[800px] left-5 flex w-[390px] flex-col items-start gap-2 overflow-hidden rounded-xl bg-[#f9f7f6] p-[18px]">
+      <section className="absolute top-[800px] left-5 flex w-[390px] flex-col items-start gap-2 overflow-hidden rounded-xl bg-[#f2f2f2] p-[18px]">
         <h2 className="text-[12px] leading-[1.2] font-normal tracking-[-0.24px] text-[#831317]">INTRODUCTION</h2>
         <p className="w-full text-[14px] leading-[1.6] font-normal tracking-[-0.28px] text-[#595959]">
           이번 주 챌린지는 <strong className="font-bold">오대륙 와인 마셔보기</strong>입니다. 유럽, 북미, 남미, 오세아니아, 아프리카를 대표하는 와인을 경험하며 산지마다 다른 매력과 풍미를 느껴보세요.
@@ -151,7 +151,7 @@ function ChallengeDetails() {
         </p>
       </aside>
 
-      <section className="absolute top-[1498px] left-[91px] h-17.5 w-[319px] rounded-xl border border-[#831317] bg-[#f9f7f6]" aria-label="챌린지 종료 카운트다운">
+      <section className="absolute top-[1498px] left-[91px] h-17.5 w-[319px] rounded-xl border border-[#831317] bg-[#f2f2f2]" aria-label="챌린지 종료 카운트다운">
         {countdownLayout.map((item, index) => (
           <div key={item.unit} className="absolute top-2.5 -translate-x-1/2 text-center text-[#831317]" style={{ left: item.center - 91 }}>
             <p className="text-[25px] leading-none font-normal tracking-[-0.5px]">{countdownValues[index]}</p>

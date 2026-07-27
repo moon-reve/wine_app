@@ -103,7 +103,7 @@ function SectionTitle({ children }: { children: React.ReactNode }) {
 }
 
 function SettingsPanel({ children }: { children: React.ReactNode }) {
-  return <div className="settings-panel overflow-hidden rounded-xl bg-[#f9f7f7] px-4 pt-[15px] pb-[17px]">{children}</div>
+  return <div className="settings-panel overflow-hidden rounded-xl bg-[#f2f2f2] px-4 pt-[15px] pb-[17px]">{children}</div>
 }
 
 type RowProps = {
@@ -161,7 +161,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
 const inputClass = 'h-[50px] w-full rounded-xl border border-[#dcd7d7] bg-white px-4 text-sm outline-none transition focus:border-[#98151b] focus:ring-2 focus:ring-[#98151b]/10'
 
 function DetailCard({ children }: { children: React.ReactNode }) {
-  return <div className="settings-panel rounded-[16px] bg-[#faf8f8] p-5">{children}</div>
+  return <div className="settings-panel rounded-[16px] bg-[#f2f2f2] p-5">{children}</div>
 }
 
 function AccountInfo({ onBack }: { onBack: () => void }) {
@@ -230,7 +230,7 @@ function PasswordChange({ onBack, notify }: { onBack: () => void; notify: (messa
           <Field label="새 비밀번호"><input type="password" value={next} onChange={(e) => setNext(e.target.value)} className={inputClass} autoComplete="new-password" /></Field>
           <Field label="새 비밀번호 확인"><input type="password" value={confirm} onChange={(e) => setConfirm(e.target.value)} className={inputClass} autoComplete="new-password" /></Field>
         </div>
-        <div className="mt-5 grid grid-cols-2 gap-2 rounded-xl bg-[#faf8f8] p-4">
+        <div className="mt-5 grid grid-cols-2 gap-2 rounded-xl bg-[#f2f2f2] p-4">
           {[
             ['영문 포함', rules.english], ['숫자 포함', rules.number], ['특수문자 포함', rules.special], ['8자 이상', rules.length],
           ].map(([label, passed]) => <p key={String(label)} className={`text-[13px] ${passed ? 'font-semibold text-[#14804a]' : 'text-[#8d8888]'}`}>✓ {label}</p>)}
@@ -256,7 +256,7 @@ function EmailChange({ onBack, notify }: { onBack: () => void; notify: (message:
         <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Email</h2>
         <p className="mt-1 text-sm text-[#555]">새 이메일을 인증한 뒤 변경할 수 있습니다.</p>
         <div className="mt-8 space-y-5">
-          <Field label="현재 이메일"><div className={`${inputClass} flex items-center bg-[#f7f5f5] text-[#777]`}>wine.sipper@gmail.com</div></Field>
+          <Field label="현재 이메일"><div className={`${inputClass} flex items-center bg-[#f2f2f2] text-[#777]`}>wine.sipper@gmail.com</div></Field>
           <Field label="새 이메일 입력">
             <div className="flex gap-2">
               <input type="email" value={email} onChange={(e) => { setEmail(e.target.value); setSent(false); setCode('') }} className={inputClass} placeholder="example@email.com" autoComplete="email" />
@@ -285,13 +285,13 @@ function Withdrawal({ onBack, notify, onComplete }: { onBack: () => void; notify
       <main className="px-5 pb-32 pt-7">
         <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Delete Account</h2>
         <p className="mt-1 text-sm text-[#555]">탈퇴 후에는 계정과 활동 기록을 복구할 수 없습니다.</p>
-        <section className="mt-8 rounded-[16px] border border-[#eed9da] bg-[#fff8f8] p-5">
+        <section className="mt-8 rounded-[16px] border border-[#eed9da] bg-[#f2f2f2] p-5">
           <h3 className="text-base font-bold text-[#98151b]">탈퇴 전 확인</h3>
           <ul className="mt-4 space-y-4">
             {notices.map((notice) => <li key={notice} className="flex gap-3 text-sm text-[#464246]"><span className="mt-1 size-1.5 shrink-0 rounded-full bg-[#98151b]" />{notice}</li>)}
           </ul>
         </section>
-        <label className="mt-5 flex cursor-pointer items-center gap-3 rounded-xl bg-[#faf8f8] p-4 text-sm font-medium">
+        <label className="mt-5 flex cursor-pointer items-center gap-3 rounded-xl bg-[#f2f2f2] p-4 text-sm font-medium">
           <input type="checkbox" checked={checked} onChange={(e) => setChecked(e.target.checked)} className="size-5 accent-[#98151b]" />
           위 내용을 확인했습니다.
         </label>
@@ -313,7 +313,7 @@ function Withdrawal({ onBack, notify, onComplete }: { onBack: () => void; notify
             <h3 id="withdraw-title" className="text-lg font-bold">정말 탈퇴하시겠습니까?</h3>
             <p className="mt-2 text-sm leading-6 text-[#6e6e6e]">모든 계정 정보와 활동 기록이 삭제됩니다.</p>
             <div className="mt-6 flex gap-2">
-              <button type="button" onClick={() => setConfirming(false)} className="h-12 flex-1 rounded-xl bg-[#f1eeee] font-semibold">취소</button>
+              <button type="button" onClick={() => setConfirming(false)} className="h-12 flex-1 rounded-xl bg-[#f2f2f2] font-semibold">취소</button>
               <button type="button" onClick={() => { localStorage.removeItem('wine-app-profile-settings'); notify('계정 탈퇴가 완료되었습니다.'); onComplete() }} className="h-12 flex-1 rounded-xl bg-[#98151b] font-semibold text-white">탈퇴</button>
             </div>
           </div>
@@ -690,7 +690,7 @@ function PrivacyPolicy({ onBack }: { onBack: () => void }) {
       <main className="px-5 pb-32 pt-7">
         <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Privacy Policy</h2>
         <p className="mt-2 text-xs font-medium text-[#8b8585]">최종 수정일 2026. 07. 14</p>
-        <article className="settings-panel mt-7 max-h-[620px] overflow-y-auto rounded-[16px] bg-[#faf8f8] p-5 [scrollbar-color:#98151b_transparent]">
+        <article className="settings-panel mt-7 max-h-[620px] overflow-y-auto rounded-[16px] bg-[#f2f2f2] p-5 [scrollbar-color:#98151b_transparent]">
           <h3 className="text-lg font-bold text-[#202024]">개인정보 처리방침</h3>
           <p className="mt-3 text-sm leading-6 text-[#5e5959]">Wine Sippers는 사용자의 개인정보를 소중히 여기며 관련 법령을 준수합니다.</p>
           <div className="mt-7 space-y-7">
@@ -775,7 +775,7 @@ function MainSettings({ setView, onBack, notify, notifications, setNotifications
             <h3 id="logout-title" className="text-lg font-bold">로그아웃 하시겠습니까?</h3>
             <p className="mt-2 text-sm text-[#6e6e6e]">언제든 다시 로그인할 수 있습니다.</p>
             <div className="mt-6 flex gap-2">
-              <button type="button" onClick={() => setShowLogout(false)} className="h-12 flex-1 rounded-xl bg-[#f1eeee] font-semibold text-[#29282b]">취소</button>
+              <button type="button" onClick={() => setShowLogout(false)} className="h-12 flex-1 rounded-xl bg-[#f2f2f2] font-semibold text-[#29282b]">취소</button>
               <button type="button" onClick={() => { setShowLogout(false); notify('로그아웃되었습니다.'); onLogout() }} className="h-12 flex-1 rounded-xl bg-[#98151b] font-semibold text-white">로그아웃</button>
             </div>
           </div>

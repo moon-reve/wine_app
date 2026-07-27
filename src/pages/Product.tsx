@@ -80,7 +80,7 @@ function Review({ rating, children }: { rating: string; children: React.ReactNod
 
 function PurchaseCard({ channel, description, buttonLabel }: { channel: string; description: string; buttonLabel: string }) {
   return (
-    <div className="flex h-32 w-full flex-col gap-3 rounded-xl bg-[#f9f7f6] px-[18px] py-4">
+    <div className="flex h-32 w-full flex-col gap-3 rounded-xl bg-[#f2f2f2] px-[18px] py-4">
       <p className="text-xs leading-[1.2] font-medium text-[#831317]">{channel}</p>
       <p className="text-sm leading-[1.3] font-bold tracking-[-0.28px]">{description}</p>
       <button type="button" className="flex h-10 w-full items-center justify-center rounded-xl border border-[#831317] text-sm leading-none font-bold tracking-[-0.28px] text-[#831317]">
@@ -104,7 +104,7 @@ function Product() {
 
       <main className="flex w-full flex-col gap-[34px] overflow-hidden px-5 pt-3 pb-8">
         <section className="flex h-[477px] w-full flex-col items-center gap-4 overflow-hidden">
-          <div className="relative h-80 w-full shrink-0 overflow-hidden rounded-xl bg-[#f8f6f4]">
+          <div className="relative h-80 w-full shrink-0 overflow-hidden rounded-xl bg-[#f2f2f2]">
             <div className="absolute top-[21px] left-1/2 h-[278px] w-[72px] -translate-x-1/2 overflow-hidden">
               <img src={chateauMargaux} alt="Château Margaux 2018" className="absolute top-[-12.56%] left-[-122.22%] h-[122.91%] w-[344.44%] max-w-none" />
             </div>
@@ -122,7 +122,7 @@ function Product() {
 
         <section className="flex h-[364px] flex-col gap-6">
           <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">기본 정보</h2>
-          <div className="flex h-64 flex-col gap-2.5 rounded-xl bg-[#f9f7f6] p-[18px] text-[14px] leading-[1.45] tracking-[-0.28px]">
+          <div className="flex h-64 flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-[14px] leading-[1.45] tracking-[-0.28px]">
             {basicInformation.map(([label, value]) => (
               <div key={label} className="flex gap-4">
                 <span className="w-[60px] shrink-0 text-[13px] font-medium tracking-normal text-[#737373]">{label}</span>
@@ -172,7 +172,7 @@ function Product() {
 
         <section className="flex h-[211px] flex-col gap-3">
           <h2 className="text-lg leading-[1.3] font-bold tracking-[-0.54px]">서비스 가이드</h2>
-          <div className="flex h-44 flex-col gap-2.5 rounded-xl bg-[#f9f7f6] p-[18px] text-sm leading-[1.45] tracking-[-0.28px]">
+          <div className="flex h-44 flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-sm leading-[1.45] tracking-[-0.28px]">
             {serviceGuide.map(([label, value]) => (
               <div key={label} className="flex gap-4">
                 <span className="w-[86px] shrink-0 font-medium text-[#737373]">{label}</span>
@@ -222,7 +222,7 @@ function Product() {
           <div className={`flex w-full gap-3.5 overflow-x-auto ${noScrollbar}`}>
             {similarWines.map((wine) => (
               <article key={wine.name} className="flex w-[188px] shrink-0 flex-col gap-2">
-                <div className="flex h-[170px] w-[188px] items-center justify-center overflow-hidden rounded-xl bg-[#f8f6f4]">
+                <div className="flex h-[170px] w-[188px] items-center justify-center overflow-hidden rounded-xl bg-[#f2f2f2]">
                   <img src={wine.image} alt={wine.name} className="h-[150px] w-9 object-cover" />
                 </div>
                 <h3 className="font-playfair-sc w-[188px] text-sm leading-[1.25] font-bold tracking-[-0.14px]">{wine.name}</h3>

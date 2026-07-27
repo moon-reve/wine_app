@@ -108,7 +108,7 @@ function ProfileSettings() {
 
           <section className="flex flex-col gap-[10px]">
             <h3 className="text-xs leading-[normal] font-bold tracking-[-0.24px]">공개 설정</h3>
-            <div className="flex h-[82px] items-center justify-between rounded-xl bg-[#f9f7f7] px-4">
+            <div className="flex h-[82px] items-center justify-between rounded-xl bg-[#f2f2f2] px-4">
               <div className="flex flex-col gap-2">
                 <strong className="text-[13px] leading-[normal] font-bold tracking-[-0.26px]">내 프로필 공개</strong>
                 <p className="text-xs leading-[normal] font-normal tracking-[-0.24px] text-[#6e6e6e]">다른 사용자가 내 프로필과 기록을 볼 수 있습니다.</p>

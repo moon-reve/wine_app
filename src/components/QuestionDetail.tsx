@@ -164,7 +164,7 @@ export default function QuestionDetail({
 
           <div className="flex flex-col gap-5" aria-live="polite">
             {sortedAnswers.map((item) => (
-              <article key={item.id} className="flex w-full flex-col gap-2.5 rounded-xl bg-[#f9f7f6] p-4">
+              <article key={item.id} className="flex w-full flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-4">
                 <div className="flex min-w-0 items-center gap-2">
                   <img src={answerAuthorAvatar} alt="" className="size-[30px] shrink-0 rounded-full" />
                   <p className="shrink-0 text-[13px] leading-[1.2] font-bold tracking-[-0.26px]">{item.author}</p>
@@ -186,7 +186,7 @@ export default function QuestionDetail({
           </div>
         </section>
 
-        <form onSubmit={handleSubmit} className="flex min-h-[46px] w-full items-center gap-2.5 rounded-full bg-[#f6f5f4] px-[18px] py-3.5">
+        <form onSubmit={handleSubmit} className="flex min-h-[46px] w-full items-center gap-2.5 rounded-full bg-[#f2f2f2] px-[18px] py-3.5">
           <label htmlFor="question-answer" className="sr-only">답변 입력</label>
           <input
             id="question-answer"

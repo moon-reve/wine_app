@@ -121,7 +121,7 @@ function FilterSheet({ isOpen, onClose, onApply }: FilterSheetProps) {
               </svg>
             </button>
           </div>
-          <div className="h-px w-full bg-[#f3f4f6]" />
+          <div className="h-px w-full bg-[#f2f2f2]" />
         </div>
 
         <div className="flex-1 overflow-y-auto px-5 pb-[20px]">
