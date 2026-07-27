@@ -13,6 +13,14 @@ import toolFilter from '../assets/quick-flow/tool-filter.svg'
 import { useCameraStream } from '../hooks/useCameraStream'
 
 type FeedStep = 'intro' | 'camera' | 'edit' | 'compose'
+type AspectRatio = '3:4' | '9:16' | '1:1' | 'full'
+
+const ASPECT_RATIOS: readonly AspectRatio[] = ['3:4', '9:16', '1:1', 'full']
+const ASPECT_RATIO_CSS: Record<Exclude<AspectRatio, 'full'>, string> = {
+  '3:4': '3 / 4',
+  '9:16': '9 / 16',
+  '1:1': '1 / 1',
+}
 
 const CameraHeader = ({ onClose }: { onClose: () => void }) => <>
   <button type="button" aria-label="닫기" onClick={onClose} className="absolute left-5 top-[max(28px,env(safe-area-inset-top))] z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
@@ -51,6 +59,7 @@ export default function FeedCreateFlow() {
   const navigate = useNavigate()
   const [step, setStep] = useState<FeedStep>('intro')
   const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null)
+  const [aspectRatio, setAspectRatio] = useState<AspectRatio>('1:1')
   const { videoRef, facingMode, switchCamera, capture, hasCamera, retryCamera } = useCameraStream(step === 'intro' || step === 'camera')
 
   if (step === 'compose') return <FeedComposer photo={capturedPhoto ?? feedCamera} onBack={() => setStep('edit')} />
@@ -58,8 +67,27 @@ export default function FeedCreateFlow() {
   if (step === 'edit') return <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-[#170d0d] text-white">
     <button type="button" aria-label="보정 화면 닫기" onClick={() => setStep('camera')} className="absolute left-5 top-[max(28px,env(safe-area-inset-top))] z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
     <button type="button" onClick={() => setStep('compose')} className="absolute right-[18px] top-[max(28px,env(safe-area-inset-top))] z-20 flex h-6 items-center text-[3.488cqw] font-medium">다음</button>
-    <div className="absolute left-1/2 top-[21.5px] flex h-[37px] w-[37.442cqw] -translate-x-1/2 items-center justify-around rounded-full border border-white/20 bg-[#d9d9d9]/20 text-[2.791cqw]"><span className="text-white/50">3:4</span><span className="text-white/50">9:16</span><b>1:1</b><span className="text-white/50">Full</span></div>
-    <div className="absolute inset-x-0 top-[22.64%] h-[46.14%] overflow-hidden"><img src={capturedPhoto ?? feedCamera} alt="보정할 피드 사진" className="size-full object-cover" />
+    <div className="absolute left-1/2 top-[21.5px] flex h-[37px] w-[37.442cqw] -translate-x-1/2 items-center justify-around rounded-full border border-white/20 bg-[#d9d9d9]/20 text-[2.791cqw]">
+      {ASPECT_RATIOS.map((ratio) => (
+        <button
+          key={ratio}
+          type="button"
+          onClick={() => setAspectRatio(ratio)}
+          className={aspectRatio === ratio ? 'font-bold text-white' : 'text-white/50'}
+        >
+          {ratio === 'full' ? 'Full' : ratio}
+        </button>
+      ))}
+    </div>
+    <div className="absolute inset-x-0 top-[22.64%] h-[46.14%] overflow-hidden">
+      <div className="flex size-full items-center justify-center">
+        <img
+          src={capturedPhoto ?? feedCamera}
+          alt="보정할 피드 사진"
+          className={aspectRatio === 'full' ? 'max-h-full max-w-full object-contain' : 'h-full object-cover'}
+          style={aspectRatio === 'full' ? undefined : { aspectRatio: ASPECT_RATIO_CSS[aspectRatio] }}
+        />
+      </div>
       <div className="absolute left-[4.651cqw] top-[25.81%] flex h-[48%] flex-col justify-between">{[[toolWine,'와인라벨'],[toolGrid,'레이아웃']].map(([icon,label]) => <button type="button" key={label} className="flex items-center gap-[2.093cqw] text-[2.791cqw] text-white/80"><img src={icon} alt="" className="size-[6.047cqw]" />{label}</button>)}<button type="button" className="flex items-center gap-[2.093cqw] text-[2.791cqw] text-white/80"><span className="w-[6.047cqw] text-[5.116cqw] font-light">Aa</span>텍스트 추가</button><button type="button" className="flex items-center gap-[2.093cqw] text-[2.791cqw] text-white/80"><img src={toolFilter} alt="" className="h-[6.047cqw] w-[6.512cqw]" />필터</button></div><Ruler editor />
     </div>
     <div className="absolute inset-x-0 top-[86.05%] bottom-0 rounded-t-[5.814cqw] border-t border-white/30 bg-[#831317]/10" />
@@ -94,11 +122,10 @@ export default function FeedCreateFlow() {
       thumbnail={capturedPhoto ?? feedThumb}
       onSwitchCamera={switchCamera}
       onCapture={() => {
-        if (!intro) {
-          const photo = capture()
-          if (photo) setCapturedPhoto(photo)
-        }
-        setStep(intro ? 'camera' : 'edit')
+        const photo = capture()
+        if (photo) setCapturedPhoto(photo)
+        setAspectRatio('1:1')
+        setStep('edit')
       }}
     />
   </main>

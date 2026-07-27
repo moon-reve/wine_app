@@ -16,7 +16,10 @@ export function useCameraStream(enabled: boolean, initialFacingMode: FacingMode 
     }
 
     navigator.mediaDevices
-      .getUserMedia({ video: { facingMode: mode }, audio: false })
+      // Ask for the largest frame the camera can deliver — without this,
+      // browsers default to a low resolution (often 640x480), so captures
+      // come out far smaller than the sensor actually supports.
+      .getUserMedia({ video: { facingMode: mode, width: { ideal: 4096 }, height: { ideal: 4096 } }, audio: false })
       .then((stream) => {
         streamRef.current?.getTracks().forEach((track) => track.stop())
         streamRef.current = stream
