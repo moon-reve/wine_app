@@ -112,7 +112,7 @@ function LikedWineCard({
         if (event.key === 'Enter' || event.key === ' ') onSelect()
       }}
       aria-label={`${wine.name} 상세보기`}
-      className="flex min-h-[159px] w-full cursor-pointer items-center gap-[37px] py-[24px] pl-[24px] text-left"
+      className="flex w-full cursor-pointer items-center gap-[37px] py-[15px] pl-[24px] text-left"
     >
       <div
         className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
@@ -122,7 +122,7 @@ function LikedWineCard({
       </div>
       <div className="flex flex-col gap-[8px] pt-[4px]">
         <div>
-          <p className="text-[20px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
+          <p className="text-[18px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
           <p className={`${wine.regionTextSize} leading-[25px] text-[#817f7e]`}>{wine.region}</p>
         </div>
         <div className="flex w-[220px] items-center justify-between">

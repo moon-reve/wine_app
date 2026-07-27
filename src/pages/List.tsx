@@ -133,7 +133,7 @@ function List() {
                   </div>
                   <div className="flex flex-col gap-[8px] pt-[4px]">
                     <div>
-                      <p className="text-[20px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
+                      <p className="text-[18px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
                       <p className={`${wine.regionTextSize} leading-[25px] text-[#817f7e]`}>{wine.region}</p>
                     </div>
                     <div className="flex w-[220px] items-center justify-between">

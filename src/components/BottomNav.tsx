@@ -171,8 +171,8 @@ export default function BottomNav({
             WebkitMaskPosition: 'center',
             maskPosition: 'center',
             backgroundColor: 'rgba(0,0,0,0.01)',
-            WebkitBackdropFilter: 'blur(1px)',
-            backdropFilter: 'blur(1px)',
+            WebkitBackdropFilter: 'blur(3px)',
+            backdropFilter: 'blur(3px)',
           } as CSSProperties}
         />
         <div
