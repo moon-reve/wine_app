@@ -50,7 +50,7 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
       {chips.map(([title, items]) => <section key={title}><h2 className="mb-[10px] text-sm font-bold">{title}</h2><div className="flex gap-2">{items.map(item => <button type="button" key={item} className="h-12 rounded-full border border-dashed border-[#d6d6d6] px-[10px] text-[13px] text-black/20">{item}</button>)}</div></section>)}
       <fieldset><legend className="mb-4 text-sm font-bold">공개 범위</legend><div className="space-y-4">{['나만보기','전체 공개','팔로워 공개'].map(x => <label key={x} className={`flex items-center gap-2 text-sm ${privacy === x ? 'font-semibold text-[#831317]' : 'text-[#949494]'}`}><input type="radio" checked={privacy === x} onChange={() => setPrivacy(x)} className="size-5 accent-[#831317]" />{x}</label>)}</div></fieldset>
       <div className="flex items-center justify-between"><b className="text-sm">댓글 허용</b><button type="button" aria-pressed={comments} onClick={() => setComments(v => !v)} className={`relative h-7 w-12 rounded-full ${comments ? 'bg-[#831317]' : 'bg-[#bbb]'}`}><span className={`absolute top-[3px] size-[22px] rounded-full bg-white transition-transform ${comments ? 'left-[23px]' : 'left-[3px]'}`} /></button></div>
-      <button type="submit" className="h-12 w-full rounded-[10px] bg-[#841317] text-[13px] font-bold text-white">게시 하기</button>
+      <button type="submit" className="h-12 w-full rounded-[10px] bg-[#831317] text-[13px] font-bold text-white">게시 하기</button>
     </form>
   </main>
 }
@@ -115,7 +115,7 @@ export default function FeedCreateFlow() {
     <CameraHeader onClose={() => { if (intro) navigate(-1); else setStep('intro') }} />{!intro ? <Ruler /> : null}
     {intro ? <section className="absolute inset-x-0 top-[59.44%] bottom-0 rounded-t-[5.814cqw] border-t border-white/50 bg-[#831317]/10 backdrop-blur-[16px]">
       <div className="absolute left-1/2 top-[10.58%] flex w-[61.86%] -translate-x-1/2 text-[min(15px,1.61dvh)] font-medium"><button type="button" onClick={() => navigate('/wine-search')} className="w-1/2 text-center text-white/50">찾기</button><span className="w-1/2 text-center">피드</span></div>
-      <div className="absolute left-1/2 top-[19.31%] h-px w-[61.86%] -translate-x-1/2 bg-white/30"><span className="ml-auto block h-px w-1/2 bg-[#9c171d]" /></div>
+      <div className="absolute left-1/2 top-[19.31%] h-px w-[61.86%] -translate-x-1/2 bg-white/30"><span className="ml-auto block h-px w-1/2 bg-[#831317]" /></div>
       <p className="absolute top-[27.78%] w-full text-center text-[min(15px,1.61dvh)] font-medium leading-[1.47] text-white/80">와인 사진, 플레이팅, 분위기 사진을<br />자유롭게 촬영해보세요.</p><p className="absolute top-[42.33%] w-full text-center text-[min(12px,1.29dvh)] text-white/50">기억하고 싶은 순간을 자유롭게 기록해보세요.</p>
     </section> : <><div className="absolute inset-x-0 top-[86.05%] bottom-0 rounded-t-[5.814cqw] border-t border-white/40 bg-[#831317]/10 backdrop-blur-[12px]" /><div className="absolute top-[94.96%] left-1/2 z-20 flex -translate-x-1/2 gap-[2.791cqw] text-[3.488cqw]"><button type="button" onClick={() => navigate('/wine-search')} className="text-white/30">찾기</button><b className="font-medium">피드</b></div></>}
     <CaptureControls

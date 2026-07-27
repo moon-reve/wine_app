@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom'
-import arrowForwardIcon from '../../icon/Arrow.svg'
 import LoungeHeader from '../components/LoungeHeader'
 import LoungeTabs from '../components/LoungeTabs'
 import {
@@ -16,7 +15,6 @@ function QnA() {
       <LoungeHeader />
 
       <main className="flex w-full flex-col gap-7 overflow-hidden px-5 pt-5 pb-28">
-        <h1 className="font-playfair text-[32px] leading-[1.3] tracking-[-0.64px] text-[#831317]">QnA</h1>
         <LoungeTabs activeTab="Q&A" />
 
         {loungeQuestionDetails.map((question) => {
@@ -30,20 +28,16 @@ function QnA() {
               aria-label={`${question.title} 질문 상세 보기`}
               className="block rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#831317]"
             >
-              <article className="flex w-full flex-col gap-4 font-noto">
-                <div className="flex w-full items-center gap-3">
-                  <div className="flex w-[calc(100%_-_50px)] max-w-[340px] shrink-0 flex-col items-start gap-1.5">
-                    <p className={`text-xs leading-[1.2] font-medium tracking-[-0.24px] ${answerCount === 0 ? 'text-[#737373]' : 'text-[#831317]'}`}>
-                      {answerStatus}
-                    </p>
-                    <h2 className="w-full text-[17px] leading-[1.35] font-bold tracking-[-0.51px] text-[#0d0d0d]">{question.title}</h2>
-                    <p className="w-full text-[13px] leading-[1.45] tracking-[-0.26px] text-[#595959]">{question.summary}</p>
-                    <p className="text-[11px] leading-[1.2] tracking-[-0.22px] whitespace-nowrap text-[#737373]">
-                      {question.author} · {question.time}
-                    </p>
-                  </div>
-                  <span aria-hidden="true" className="h-px min-w-px flex-1" />
-                  <img src={arrowForwardIcon} alt="" aria-hidden="true" className="size-4 shrink-0" />
+              <article className="flex w-full flex-col gap-4">
+                <div className="flex w-full flex-col items-start">
+                  <p className={`text-xs leading-[1.2] font-medium tracking-[-0.24px] ${answerCount === 0 ? 'text-[#737373]' : 'text-[#831317]'}`}>
+                    {answerStatus}
+                  </p>
+                  <h2 className="mt-2.5 w-full text-[17px] leading-[1.35] font-bold tracking-[-0.51px] text-[#0d0d0d]">{question.title}</h2>
+                  <p className="mt-1.5 w-full text-[13px] leading-[1.45] tracking-[-0.26px] text-[#595959]">{question.summary}</p>
+                  <p className="mt-5 text-[11px] leading-[1.2] tracking-[-0.22px] whitespace-nowrap text-[#737373]">
+                    {question.author} · {question.time}
+                  </p>
                 </div>
                 <hr className="m-0 h-px w-full border-0 bg-black/12" />
               </article>
@@ -56,7 +50,7 @@ function QnA() {
         <button
           type="button"
           onClick={() => navigate('/lounge/questions/new')}
-          className="pointer-events-auto absolute right-5 bottom-0 rounded-[28px] bg-[#831317] px-6 py-3.5 font-noto text-[15px] leading-none font-bold whitespace-nowrap text-white shadow-[0_4px_12px_rgba(0,0,0,0.25)]"
+          className="pointer-events-auto absolute right-5 bottom-0 rounded-[28px] bg-[#831317] px-6 py-3.5 text-[15px] leading-none font-bold whitespace-nowrap text-white shadow-[0_4px_12px_rgba(0,0,0,0.25)]"
         >
           + 질문하기
         </button>

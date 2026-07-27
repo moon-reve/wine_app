@@ -181,7 +181,7 @@ function MagazineDetail() {
         <p>영동의 청수 한 잔과</p><p>문경의 오미로제 한 잔,</p><p>&nbsp;</p><p>두 잔 사이 6km는</p><p>한국 와인이 걸어온 거리입니다.</p><p>&nbsp;</p><p>이번 주말, 냉장고 속 소비뇽 블랑 대신</p><p>청수 한 병을 골라보는 건 어떨까요.</p>
       </div>
 
-      <p className="absolute top-[2873px] left-[104px] font-['Delmon_Delicate','Playfair_Display',serif] text-[26px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">Wine in <span className="text-[#841317]">Magazines</span></p>
+      <p className="absolute top-[2873px] left-[104px] font-['Delmon_Delicate','Playfair_Display',serif] text-[26px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">Wine in <span className="text-[#831317]">Magazines</span></p>
       <div
         ref={wineCarouselRef}
         role="region"

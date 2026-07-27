@@ -154,7 +154,7 @@ function Onboarding() {
           type="button"
           className={`absolute right-5 bottom-8 left-5 flex h-[52px] items-center justify-center rounded-full border text-[16px] text-white transition-colors duration-300 ${
             isLastSlide
-              ? 'border-[#841317] bg-[#841317]'
+              ? 'border-[#831317] bg-[#831317]'
               : 'border-white/20 bg-[rgba(220,220,220,0.05)]'
           }`}
           onClick={handleNext}
@@ -221,7 +221,7 @@ function Onboarding() {
           />
           <button
             type="submit"
-            className="absolute top-[55.26%] right-5 left-5 flex h-[52px] items-center justify-center rounded-full bg-[#841317] text-[16px] text-white"
+            className="absolute top-[55.26%] right-5 left-5 flex h-[52px] items-center justify-center rounded-full bg-[#831317] text-[16px] text-white"
           >
             로그인
           </button>

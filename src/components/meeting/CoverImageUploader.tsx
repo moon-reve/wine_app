@@ -42,7 +42,7 @@ function CoverImageUploader({ defaultImage, onChange }: CoverImageUploaderProps)
       />
       <button
         type="button"
-        className="absolute right-4 bottom-4 h-7.5 rounded-full bg-white px-5 text-[11px] font-medium text-[#851317]"
+        className="absolute right-4 bottom-4 h-7.5 rounded-full bg-white px-5 text-[11px] font-medium text-[#831317]"
         onClick={() => inputRef.current?.click()}
       >
         이미지 변경

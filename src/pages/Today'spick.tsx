@@ -162,7 +162,7 @@ function TodaysPick() {
       <div className="absolute top-[659px] left-5 h-px w-[390px] bg-black/12" />
 
       <section className="absolute top-[671px] left-0 h-[249px] w-full overflow-hidden bg-white">
-        <h2 className="absolute top-7 left-6 text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#222]">다른 추천, <span className="text-[#851317]">와인</span></h2>
+        <h2 className="absolute top-7 left-6 text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#222]">다른 추천, <span className="text-[#831317]">와인</span></h2>
         <div
           ref={recommendationScroller}
           onPointerDown={startRecommendationDrag}
@@ -189,7 +189,7 @@ function TodaysPick() {
         </div>
       </section>
 
-      <h2 className="absolute top-[931px] left-6 text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#851317]">
+      <h2 className="absolute top-[931px] left-6 text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#831317]">
         원하는 조건<span className="text-[#222]">으로 다시 추천받기</span>
       </h2>
       <section className="absolute top-[973px] left-5 flex w-[390px] flex-col items-start gap-[18px] overflow-hidden rounded-xl bg-[#f2f2f2] px-[18px] py-5">

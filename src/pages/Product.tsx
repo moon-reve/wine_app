@@ -162,7 +162,7 @@ function Product() {
           <p className="text-xs leading-[1.2] font-medium text-[#737373]">많이 언급된 키워드</p>
           <div className="flex gap-2">
             {['#과실향', '#부드러운탄닌', '#선물용', '#가성비'].map((tag) => (
-              <span key={tag} className="flex h-6 items-center rounded-[25px] bg-[#851317] px-3 text-xs leading-none font-medium tracking-[-0.24px] text-white">{tag}</span>
+              <span key={tag} className="flex h-6 items-center rounded-[25px] bg-[#831317] px-3 text-xs leading-none font-medium tracking-[-0.24px] text-white">{tag}</span>
             ))}
           </div>
           <Review rating="★★★★★">향이 정말 풍부하고 선물용으로도 만족스러웠어요.</Review>
@@ -200,9 +200,9 @@ function Product() {
             <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">AI 소믈리에</h2>
             <p className="text-sm leading-[1.3] tracking-[-0.28px] text-[#737373]">AI 소믈리에가 이 와인을 분석하고 추천해드립니다.</p>
           </div>
-          <div className="flex h-[138px] flex-col gap-3.5 rounded-xl bg-[#851317] p-5">
+          <div className="flex h-[138px] flex-col gap-3.5 rounded-xl bg-[#831317] p-5">
             <p className="w-[310px] text-sm leading-[1.6] tracking-[-0.28px] text-[#f7f0f0]">이 와인은 풍부한 과실향과 은은한 오크향이 특징입니다. 채끝 스테이크, 양갈비와 특히 잘 어울립니다.</p>
-            <button type="button" className="flex h-10 w-full items-center justify-center rounded-[10px] bg-white text-sm leading-none font-bold text-[#851317]">AI에게 질문하기</button>
+            <button type="button" className="flex h-10 w-full items-center justify-center rounded-[10px] bg-white text-sm leading-none font-bold text-[#831317]">AI에게 질문하기</button>
           </div>
         </section>
 

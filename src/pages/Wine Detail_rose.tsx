@@ -10,7 +10,7 @@ function Divider({ top }: { top: number }) {
 }
 
 function Chip({ children, active = false }: { children: React.ReactNode; active?: boolean }) {
-  return <span className={`flex h-6 items-center rounded-[25px] px-3 text-[12px] leading-none font-medium tracking-[-0.24px] whitespace-nowrap ${active ? 'bg-[#851317] text-white' : 'border border-[#d9d9d9] text-[#595959]'}`}>{children}</span>
+  return <span className={`flex h-6 items-center rounded-[25px] px-3 text-[12px] leading-none font-medium tracking-[-0.24px] whitespace-nowrap ${active ? 'bg-[#831317] text-white' : 'border border-[#d9d9d9] text-[#595959]'}`}>{children}</span>
 }
 
 function ReviewAvatar({ src }: { src?: string }) {
@@ -134,9 +134,9 @@ export default function WineDetailRose() {
         <Divider top={1487} />
         <section className="absolute top-[1522px] left-5 flex w-[390px] flex-col gap-3"><h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">푸드 페어링</h2><div className="flex gap-2">{wine.foodPairings.map((food) => <Chip key={food}>{food}</Chip>)}</div></section>
 
-        <section className="absolute top-[1615px] left-5 w-[390px] rounded-xl bg-[#851317] p-5">
+        <section className="absolute top-[1615px] left-5 w-[390px] rounded-xl bg-[#831317] p-5">
           <p className="w-full text-[14px] leading-[1.6] tracking-[-0.28px] text-[#f7f0f0]">{wine.aiRecommendation}</p>
-          <button type="button" className="mt-3.5 flex h-10 w-full items-center justify-center rounded-[10px] bg-white text-[14px] leading-none font-bold text-[#851317]">AI에게 질문하기</button>
+          <button type="button" className="mt-3.5 flex h-10 w-full items-center justify-center rounded-[10px] bg-white text-[14px] leading-none font-bold text-[#831317]">AI에게 질문하기</button>
         </section>
 
         <Divider top={1789} />

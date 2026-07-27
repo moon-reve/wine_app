@@ -23,7 +23,6 @@ import multipleFeedIcon from '../assets/mypage/multiple-feed-icon.svg'
 import settingsIcon from '../assets/mypage/settings-outline.svg'
 import likedHeartIcon from '../assets/mypage/liked-heart.svg'
 import ratingStarIcon from '../assets/mypage/rating-star.svg'
-import Logo from '../components/Logo'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
 import { useLikedWines } from '../context/LikedWinesContext'
 import { DEMO_WINE_RECORDS, useWineRecords } from '../context/WineRecordsContext'
@@ -174,8 +173,8 @@ function Mypage() {
 
   return (
     <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '1546:4825' : activeTab === 'likes' ? '1546:5430' : '1546:5323'}>
-      <header className="flex w-full items-center justify-between px-5 pt-[max(18px,env(safe-area-inset-top))] pb-3 text-[#851317]" data-node-id="577:105">
-        <Logo className="h-5 w-auto shrink-0 text-[#851317]" />
+      <header className="flex w-full items-center justify-between px-5 pt-[max(18px,env(safe-area-inset-top))] pb-3 text-[#831317]" data-node-id="577:105">
+        <h1 className="font-playfair shrink-0 text-[32px] leading-[1.3] font-normal tracking-[-0.64px] text-[#831317]">My Cellar</h1>
 
         <div className="flex shrink-0 items-center gap-1 overflow-hidden" data-node-id="577:107">
           <button
@@ -197,11 +196,7 @@ function Mypage() {
         </div>
       </header>
 
-      <main className="px-5 pt-7">
-        <section>
-          <h1 className="font-playfair text-[32px] leading-[1.3] font-normal tracking-[-0.64px] text-[#851317]">My Cellar</h1>
-        </section>
-
+      <main className="px-5">
         <section className={activeTab === 'feed' ? 'mt-[53px]' : 'mt-[51px]'}>
           <div className="flex items-start gap-[3px]">
             <div className="relative size-[111px] shrink-0" data-node-id="1546:5583">
@@ -219,15 +214,15 @@ function Mypage() {
               <strong className="ml-[14px] text-base leading-[normal] font-bold tracking-[-0.32px] whitespace-nowrap text-[#121212]">Sora Choi</strong>
               <div className="flex items-center justify-between">
                 <div className="flex w-[57px] flex-col items-center gap-[5px]">
-                  <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">12</strong>
+                  <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#831317]">12</strong>
                   <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">피드</span>
                 </div>
                 <div className="flex w-[58px] flex-col items-center gap-[5px]">
-                  <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">128</strong>
+                  <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#831317]">128</strong>
                   <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">팔로워</span>
                 </div>
                 <div className="flex w-[57px] flex-col items-center gap-[5px]">
-                  <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#851317]">96</strong>
+                  <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#831317]">96</strong>
                   <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">팔로잉</span>
                 </div>
               </div>
@@ -281,10 +276,10 @@ function Mypage() {
               type="button"
               onClick={() => setActiveTab('feed')}
               aria-selected={activeTab === 'feed'}
-              className={`relative text-sm leading-[normal] tracking-[-0.28px] ${activeTab === 'feed' ? 'font-bold text-[#851317]' : 'font-normal text-[#6e6e6e]'}`}
+              className={`relative text-sm leading-[normal] tracking-[-0.28px] ${activeTab === 'feed' ? 'font-bold text-[#831317]' : 'font-normal text-[#6e6e6e]'}`}
             >
               내가 쓴 피드
-              {activeTab === 'feed' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#851317]" />}
+              {activeTab === 'feed' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#831317]" />}
             </button>
             <button
               type="button"
@@ -293,16 +288,16 @@ function Mypage() {
               className={`relative text-sm leading-[normal] tracking-[-0.28px] ${activeTab === 'wine' ? 'font-bold text-[#831317]' : 'font-normal text-[#6e6e6e]'}`}
             >
               와인 기록
-              {activeTab === 'wine' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#851317]" />}
+              {activeTab === 'wine' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#831317]" />}
             </button>
             <button
               type="button"
               onClick={() => setActiveTab('likes')}
               aria-selected={activeTab === 'likes'}
-              className={`relative text-sm leading-[normal] tracking-[-0.28px] ${activeTab === 'likes' ? 'font-bold text-[#851317]' : 'font-normal text-[#6e6e6e]'}`}
+              className={`relative text-sm leading-[normal] tracking-[-0.28px] ${activeTab === 'likes' ? 'font-bold text-[#831317]' : 'font-normal text-[#6e6e6e]'}`}
             >
               좋아요
-              {activeTab === 'likes' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#851317]" />}
+              {activeTab === 'likes' && <span className="absolute inset-x-0 -bottom-px h-[3px] bg-[#831317]" />}
             </button>
           </div>
 

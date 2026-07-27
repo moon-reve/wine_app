@@ -91,7 +91,7 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: () =
       aria-checked={checked}
       aria-label={label}
       onClick={onChange}
-      className={`relative h-7 w-12 shrink-0 rounded-[14px] transition-colors ${checked ? 'bg-[#a1121a]' : 'bg-[#dfe3ea]'}`}
+      className={`relative h-7 w-12 shrink-0 rounded-[14px] transition-colors ${checked ? 'bg-[#831317]' : 'bg-[#dfe3ea]'}`}
     >
       <span className={`absolute top-[3px] size-[22px] rounded-full bg-white shadow-sm transition-[left] ${checked ? 'left-[23px]' : 'left-[3px]'}`} />
     </button>
@@ -99,7 +99,7 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: () =
 }
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="mb-[10px] text-sm leading-[normal] font-bold text-[#851317]">{children}</h2>
+  return <h2 className="mb-[10px] text-sm leading-[normal] font-bold text-[#831317]">{children}</h2>
 }
 
 function SettingsPanel({ children }: { children: React.ReactNode }) {
@@ -125,7 +125,7 @@ function SettingsRow({ icon, label, value, onClick, toggle, last = false }: RowP
       {toggle ? (
         <Toggle checked={toggle.checked} onChange={toggle.onChange} label={label} />
       ) : (
-        <span className="flex items-center gap-[6px] text-[#851317]">
+        <span className="flex items-center gap-[6px] text-[#831317]">
           {value && <span className="text-xs leading-[normal] font-normal">{value}</span>}
           <img src={settingsChevronIcon} alt="" className="size-6 max-w-none" aria-hidden="true" />
         </span>
@@ -149,7 +149,7 @@ function PageHeader({ title, onBack }: { title: string; onBack: () => void }) {
       <button type="button" onClick={onBack} aria-label="뒤로가기" className="absolute left-5 flex size-6 items-center justify-center">
         <img src={settingsBackIcon} alt="" className="size-6" aria-hidden="true" />
       </button>
-      <h1 className="text-lg leading-[normal] font-bold text-[#851317]">{title}</h1>
+      <h1 className="text-lg leading-[normal] font-bold text-[#831317]">{title}</h1>
     </header>
   )
 }
@@ -158,7 +158,7 @@ function Field({ label, children }: { label: string; children: React.ReactNode }
   return <label className="block"><span className="mb-2 block text-[13px] font-bold text-[#29282b]">{label}</span>{children}</label>
 }
 
-const inputClass = 'h-[50px] w-full rounded-xl border border-[#dcd7d7] bg-white px-4 text-sm outline-none transition focus:border-[#98151b] focus:ring-2 focus:ring-[#98151b]/10'
+const inputClass = 'h-[50px] w-full rounded-xl border border-[#dcd7d7] bg-white px-4 text-sm outline-none transition focus:border-[#831317] focus:ring-2 focus:ring-[#831317]/10'
 
 function DetailCard({ children }: { children: React.ReactNode }) {
   return <div className="settings-panel rounded-[16px] bg-[#f2f2f2] p-5">{children}</div>
@@ -170,7 +170,7 @@ function AccountInfo({ onBack }: { onBack: () => void }) {
     <>
       <PageHeader title="계정 정보" onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Account</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Account</h2>
         <p className="mt-1 text-sm text-[#555]">가입 정보와 연결된 계정을 확인하세요.</p>
         <DetailCard>
           <dl className="divide-y divide-[#e5dfdf]">
@@ -190,7 +190,7 @@ function AccountInfo({ onBack }: { onBack: () => void }) {
         </DetailCard>
         <div className="mt-3 flex gap-2" aria-label="지원 로그인 방식">
           {['Google', 'Apple', 'Kakao'].map((provider) => (
-            <span key={provider} className={`flex h-9 flex-1 items-center justify-center rounded-full text-xs font-semibold ${provider === 'Kakao' ? 'bg-[#98151b] text-white' : 'border border-[#ddd6d6] bg-white text-[#6e6e6e]'}`}>
+            <span key={provider} className={`flex h-9 flex-1 items-center justify-center rounded-full text-xs font-semibold ${provider === 'Kakao' ? 'bg-[#831317] text-white' : 'border border-[#ddd6d6] bg-white text-[#6e6e6e]'}`}>
               {provider}{provider === 'Kakao' ? ' · 연결됨' : ''}
             </span>
           ))}
@@ -223,7 +223,7 @@ function PasswordChange({ onBack, notify }: { onBack: () => void; notify: (messa
     <>
       <PageHeader title="비밀번호 변경" onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Password</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Password</h2>
         <p className="mt-1 text-sm text-[#555]">안전한 비밀번호로 계정을 보호하세요.</p>
         <div className="mt-8 space-y-5">
           <Field label="현재 비밀번호"><input type="password" value={current} onChange={(e) => setCurrent(e.target.value)} className={inputClass} autoComplete="current-password" /></Field>
@@ -236,7 +236,7 @@ function PasswordChange({ onBack, notify }: { onBack: () => void; notify: (messa
           ].map(([label, passed]) => <p key={String(label)} className={`text-[13px] ${passed ? 'font-semibold text-[#14804a]' : 'text-[#8d8888]'}`}>✓ {label}</p>)}
         </div>
         {confirm && next !== confirm && <p className="mt-3 text-xs text-[#c0262d]">새 비밀번호가 일치하지 않습니다.</p>}
-        <button type="button" disabled={!valid} onClick={() => { notify('비밀번호가 변경되었습니다.'); onBack() }} className="mt-8 h-[52px] w-full rounded-xl bg-[#98151b] text-base font-bold text-white disabled:bg-[#d7bfc0]">변경</button>
+        <button type="button" disabled={!valid} onClick={() => { notify('비밀번호가 변경되었습니다.'); onBack() }} className="mt-8 h-[52px] w-full rounded-xl bg-[#831317] text-base font-bold text-white disabled:bg-[#d7bfc0]">변경</button>
       </main>
     </>
   )
@@ -253,20 +253,20 @@ function EmailChange({ onBack, notify }: { onBack: () => void; notify: (message:
     <>
       <PageHeader title="이메일 변경" onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Email</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Email</h2>
         <p className="mt-1 text-sm text-[#555]">새 이메일을 인증한 뒤 변경할 수 있습니다.</p>
         <div className="mt-8 space-y-5">
           <Field label="현재 이메일"><div className={`${inputClass} flex items-center bg-[#f2f2f2] text-[#777]`}>wine.sipper@gmail.com</div></Field>
           <Field label="새 이메일 입력">
             <div className="flex gap-2">
               <input type="email" value={email} onChange={(e) => { setEmail(e.target.value); setSent(false); setCode('') }} className={inputClass} placeholder="example@email.com" autoComplete="email" />
-              <button type="button" disabled={!emailValid} onClick={() => { setSent(true); notify('인증번호를 보냈습니다. 테스트 번호는 123456입니다.') }} className="w-[112px] shrink-0 rounded-xl border border-[#98151b] text-[13px] font-bold text-[#98151b] disabled:border-[#d8cece] disabled:text-[#aaa]">인증번호 받기</button>
+              <button type="button" disabled={!emailValid} onClick={() => { setSent(true); notify('인증번호를 보냈습니다. 테스트 번호는 123456입니다.') }} className="w-[112px] shrink-0 rounded-xl border border-[#831317] text-[13px] font-bold text-[#831317] disabled:border-[#d8cece] disabled:text-[#aaa]">인증번호 받기</button>
             </div>
           </Field>
           <Field label="인증번호 입력"><input inputMode="numeric" maxLength={6} value={code} disabled={!sent} onChange={(e) => setCode(e.target.value.replace(/\D/g, ''))} className={inputClass} placeholder="6자리 입력" /></Field>
         </div>
         {sent && <p className={`mt-3 text-xs ${verified ? 'text-[#14804a]' : 'text-[#777]'}`}>{verified ? '✓ 이메일 인증이 완료되었습니다.' : '테스트 인증번호: 123456'}</p>}
-        <button type="button" disabled={!verified} onClick={() => { localStorage.setItem('wine-app-account-email', email); notify('이메일이 변경되었습니다.'); onBack() }} className="mt-8 h-[52px] w-full rounded-xl bg-[#98151b] text-base font-bold text-white disabled:bg-[#d7bfc0]">변경</button>
+        <button type="button" disabled={!verified} onClick={() => { localStorage.setItem('wine-app-account-email', email); notify('이메일이 변경되었습니다.'); onBack() }} className="mt-8 h-[52px] w-full rounded-xl bg-[#831317] text-base font-bold text-white disabled:bg-[#d7bfc0]">변경</button>
       </main>
     </>
   )
@@ -283,16 +283,16 @@ function Withdrawal({ onBack, notify, onComplete }: { onBack: () => void; notify
     <>
       <PageHeader title="계정 탈퇴" onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Delete Account</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Delete Account</h2>
         <p className="mt-1 text-sm text-[#555]">탈퇴 후에는 계정과 활동 기록을 복구할 수 없습니다.</p>
         <section className="mt-8 rounded-[16px] border border-[#eed9da] bg-[#f2f2f2] p-5">
-          <h3 className="text-base font-bold text-[#98151b]">탈퇴 전 확인</h3>
+          <h3 className="text-base font-bold text-[#831317]">탈퇴 전 확인</h3>
           <ul className="mt-4 space-y-4">
-            {notices.map((notice) => <li key={notice} className="flex gap-3 text-sm text-[#464246]"><span className="mt-1 size-1.5 shrink-0 rounded-full bg-[#98151b]" />{notice}</li>)}
+            {notices.map((notice) => <li key={notice} className="flex gap-3 text-sm text-[#464246]"><span className="mt-1 size-1.5 shrink-0 rounded-full bg-[#831317]" />{notice}</li>)}
           </ul>
         </section>
         <label className="mt-5 flex cursor-pointer items-center gap-3 rounded-xl bg-[#f2f2f2] p-4 text-sm font-medium">
-          <input type="checkbox" checked={checked} onChange={(e) => setChecked(e.target.checked)} className="size-5 accent-[#98151b]" />
+          <input type="checkbox" checked={checked} onChange={(e) => setChecked(e.target.checked)} className="size-5 accent-[#831317]" />
           위 내용을 확인했습니다.
         </label>
         <Field label="계속하려면 ‘탈퇴하기’를 입력해 주세요.">
@@ -305,7 +305,7 @@ function Withdrawal({ onBack, notify, onComplete }: { onBack: () => void; notify
           />
         </Field>
         {confirmationText && confirmationText.trim() !== '탈퇴하기' && <p className="mt-2 text-xs text-[#c0262d]">‘탈퇴하기’를 정확히 입력해 주세요.</p>}
-        <button type="button" disabled={!canWithdraw} onClick={() => setConfirming(true)} className="mt-8 h-[52px] w-full rounded-xl bg-[#98151b] text-base font-bold text-white disabled:bg-[#d7bfc0]">탈퇴하기</button>
+        <button type="button" disabled={!canWithdraw} onClick={() => setConfirming(true)} className="mt-8 h-[52px] w-full rounded-xl bg-[#831317] text-base font-bold text-white disabled:bg-[#d7bfc0]">탈퇴하기</button>
       </main>
       {confirming && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/45 px-6" role="dialog" aria-modal="true" aria-labelledby="withdraw-title">
@@ -314,7 +314,7 @@ function Withdrawal({ onBack, notify, onComplete }: { onBack: () => void; notify
             <p className="mt-2 text-sm leading-6 text-[#6e6e6e]">모든 계정 정보와 활동 기록이 삭제됩니다.</p>
             <div className="mt-6 flex gap-2">
               <button type="button" onClick={() => setConfirming(false)} className="h-12 flex-1 rounded-xl bg-[#f2f2f2] font-semibold">취소</button>
-              <button type="button" onClick={() => { localStorage.removeItem('wine-app-profile-settings'); notify('계정 탈퇴가 완료되었습니다.'); onComplete() }} className="h-12 flex-1 rounded-xl bg-[#98151b] font-semibold text-white">탈퇴</button>
+              <button type="button" onClick={() => { localStorage.removeItem('wine-app-profile-settings'); notify('계정 탈퇴가 완료되었습니다.'); onComplete() }} className="h-12 flex-1 rounded-xl bg-[#831317] font-semibold text-white">탈퇴</button>
             </div>
           </div>
         </div>
@@ -330,7 +330,7 @@ function PushSettings({ values, onChange, onBack }: { values: NotificationSettin
     <>
       <PageHeader title="푸시 알림" onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Push Notifications</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Push Notifications</h2>
         <p className="mt-1 text-sm text-[#555]">받고 싶은 푸시 알림을 선택하세요.</p>
         <section className="mt-8">
           <SettingsPanel>
@@ -367,7 +367,7 @@ function ChoiceSettings<T extends string>({ title, englishTitle, description, op
     <>
       <PageHeader title={title} onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">{englishTitle}</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">{englishTitle}</h2>
         <p className="mt-1 text-sm text-[#555]">{description}</p>
         <section className="mt-8">
           <SettingsPanel>
@@ -383,8 +383,8 @@ function ChoiceSettings<T extends string>({ title, englishTitle, description, op
                   className={`flex h-[61px] w-full items-center justify-between ${index === options.length - 1 ? '' : 'border-b border-[#e5dfdf]'}`}
                 >
                   <span className="text-[15px] font-medium text-[#29282b]">{option}</span>
-                  <span className={`flex size-6 items-center justify-center rounded-full border-2 ${selected ? 'border-[#98151b]' : 'border-[#bbb]'}`}>
-                    {selected && <span className="size-3 rounded-full bg-[#98151b]" />}
+                  <span className={`flex size-6 items-center justify-center rounded-full border-2 ${selected ? 'border-[#831317]' : 'border-[#bbb]'}`}>
+                    {selected && <span className="size-3 rounded-full bg-[#831317]" />}
                   </span>
                 </button>
               )
@@ -412,7 +412,7 @@ function BlockedUsers({ onBack, notify }: { onBack: () => void; notify: (message
     <>
       <PageHeader title="차단한 사용자" onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Blocked Users</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Blocked Users</h2>
         <p className="mt-1 text-sm text-[#555]">차단한 사용자를 검색하고 차단을 해제할 수 있습니다.</p>
         <label className="relative mt-7 block">
           <span className="sr-only">차단한 사용자 검색</span>
@@ -427,7 +427,7 @@ function BlockedUsers({ onBack, notify }: { onBack: () => void; notify: (message
           <button
             type="button"
             onClick={() => setQuery('')}
-            className="h-9 rounded-lg border border-[#98151b] px-3 text-xs font-bold text-[#98151b]"
+            className="h-9 rounded-lg border border-[#831317] px-3 text-xs font-bold text-[#831317]"
           >
             차단한 사용자 목록 전체 보기
           </button>
@@ -439,10 +439,10 @@ function BlockedUsers({ onBack, notify }: { onBack: () => void; notify: (message
               return (
               <div key={user} className={`flex h-[68px] items-center justify-between ${index === visibleUsers.length - 1 ? '' : 'border-b border-[#e5dfdf]'}`}>
                 <span className="flex items-center gap-3">
-                  <span className="flex size-9 items-center justify-center rounded-full bg-[#eadcdd] text-sm font-bold text-[#98151b]">{user.slice(0, 1)}</span>
+                  <span className="flex size-9 items-center justify-center rounded-full bg-[#eadcdd] text-sm font-bold text-[#831317]">{user.slice(0, 1)}</span>
                   <span>
                     <span className="block text-[15px] font-semibold text-[#29282b]">{user}</span>
-                    {normalizedQuery && <span className={`mt-0.5 block text-[11px] ${isBlocked ? 'text-[#98151b]' : 'text-[#888]'}`}>{isBlocked ? '차단된 사용자' : '검색 결과'}</span>}
+                    {normalizedQuery && <span className={`mt-0.5 block text-[11px] ${isBlocked ? 'text-[#831317]' : 'text-[#888]'}`}>{isBlocked ? '차단된 사용자' : '검색 결과'}</span>}
                   </span>
                 </span>
                 <button
@@ -456,7 +456,7 @@ function BlockedUsers({ onBack, notify }: { onBack: () => void; notify: (message
                       notify(`${user}님을 차단했습니다.`)
                     }
                   }}
-                  className={`h-9 rounded-lg px-3 text-xs font-bold ${isBlocked ? 'border border-[#98151b] text-[#98151b]' : 'bg-[#98151b] text-white'}`}
+                  className={`h-9 rounded-lg px-3 text-xs font-bold ${isBlocked ? 'border border-[#831317] text-[#831317]' : 'bg-[#831317] text-white'}`}
                 >
                   {isBlocked ? '차단 해제' : '차단하기'}
                 </button>
@@ -540,7 +540,7 @@ function SupportCenter({ onBack }: { onBack: () => void }) {
     <>
       <PageHeader title="고객센터" onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Help Center</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Help Center</h2>
         <p className="mt-1 text-sm text-[#555]">도움이 필요한 항목을 선택하세요.</p>
         <section className="mt-8">
           <SettingsPanel>
@@ -548,7 +548,7 @@ function SupportCenter({ onBack }: { onBack: () => void }) {
               <div key={item.title} className={index === items.length - 1 ? '' : 'border-b border-[#e5dfdf]'}>
                 <button type="button" onClick={() => setSelected((value) => value === item.title ? '' : item.title)} className="flex h-[61px] w-full items-center justify-between text-left">
                   <span className="text-[15px] font-medium text-[#29282b]">{item.title}</span>
-                  <span className={`text-[#98151b] transition-transform ${selected === item.title ? 'rotate-90' : ''}`}><Arrow /></span>
+                  <span className={`text-[#831317] transition-transform ${selected === item.title ? 'rotate-90' : ''}`}><Arrow /></span>
                 </button>
                 {selected === item.title && (
                   <div className="pb-6 pr-3">
@@ -556,7 +556,7 @@ function SupportCenter({ onBack }: { onBack: () => void }) {
                     <ul className="mt-4 space-y-3">
                       {item.details.map((detail) => (
                         <li key={detail} className="flex gap-2.5 text-sm leading-6 text-[#666]">
-                          <span className="mt-[9px] size-1.5 shrink-0 rounded-full bg-[#98151b]" />
+                          <span className="mt-[9px] size-1.5 shrink-0 rounded-full bg-[#831317]" />
                           <span>{detail}</span>
                         </li>
                       ))}
@@ -566,7 +566,7 @@ function SupportCenter({ onBack }: { onBack: () => void }) {
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=help%40winesippers.kr&su=Wine%20Sippers%20%EB%AC%B8%EC%9D%98"
                         target="_blank"
                         rel="noreferrer"
-                        className="mt-5 flex h-11 w-full items-center justify-center rounded-xl bg-[#98151b] text-sm font-bold text-white"
+                        className="mt-5 flex h-11 w-full items-center justify-center rounded-xl bg-[#831317] text-sm font-bold text-white"
                       >
                         Gmail로 이메일 보내기
                       </a>
@@ -641,7 +641,7 @@ function TermsPage({ onBack }: { onBack: () => void }) {
     <>
       <PageHeader title="이용약관" onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Terms</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Terms</h2>
         <p className="mt-1 text-sm text-[#555]">서비스 이용에 필요한 정책을 확인하세요.</p>
         <section className="mt-8">
           <SettingsPanel>
@@ -649,7 +649,7 @@ function TermsPage({ onBack }: { onBack: () => void }) {
               <div key={term.title} className={index === terms.length - 1 ? '' : 'border-b border-[#e5dfdf]'}>
                 <button type="button" onClick={() => setSelected((value) => value === term.title ? '' : term.title)} className="flex h-[61px] w-full items-center justify-between text-left">
                   <span className="text-[15px] font-medium text-[#29282b]">{term.title}</span>
-                  <span className={`text-[#98151b] transition-transform ${selected === term.title ? 'rotate-90' : ''}`}><Arrow /></span>
+                  <span className={`text-[#831317] transition-transform ${selected === term.title ? 'rotate-90' : ''}`}><Arrow /></span>
                 </button>
                 {selected === term.title && (
                   <div className="pb-6 pr-3">
@@ -657,7 +657,7 @@ function TermsPage({ onBack }: { onBack: () => void }) {
                     <ul className="mt-4 space-y-3">
                       {term.details.map((detail) => (
                         <li key={detail} className="flex gap-2.5 text-sm leading-6 text-[#666]">
-                          <span className="mt-[9px] size-1.5 shrink-0 rounded-full bg-[#98151b]" />
+                          <span className="mt-[9px] size-1.5 shrink-0 rounded-full bg-[#831317]" />
                           <span>{detail}</span>
                         </li>
                       ))}
@@ -688,13 +688,13 @@ function PrivacyPolicy({ onBack }: { onBack: () => void }) {
     <>
       <PageHeader title="개인정보 처리방침" onBack={onBack} />
       <main className="px-5 pb-32 pt-7">
-        <h2 className="font-playfair-display text-[30px] font-bold text-[#98151b]">Privacy Policy</h2>
+        <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Privacy Policy</h2>
         <p className="mt-2 text-xs font-medium text-[#8b8585]">최종 수정일 2026. 07. 14</p>
-        <article className="settings-panel mt-7 max-h-[620px] overflow-y-auto rounded-[16px] bg-[#f2f2f2] p-5 [scrollbar-color:#98151b_transparent]">
+        <article className="settings-panel mt-7 max-h-[620px] overflow-y-auto rounded-[16px] bg-[#f2f2f2] p-5 [scrollbar-color:#831317_transparent]">
           <h3 className="text-lg font-bold text-[#202024]">개인정보 처리방침</h3>
           <p className="mt-3 text-sm leading-6 text-[#5e5959]">Wine Sippers는 사용자의 개인정보를 소중히 여기며 관련 법령을 준수합니다.</p>
           <div className="mt-7 space-y-7">
-            {sections.map(([title, content]) => <section key={title}><h4 className="text-[15px] font-bold text-[#98151b]">{title}</h4><p className="mt-2 text-sm leading-6 text-[#5e5959]">{content}</p></section>)}
+            {sections.map(([title, content]) => <section key={title}><h4 className="text-[15px] font-bold text-[#831317]">{title}</h4><p className="mt-2 text-sm leading-6 text-[#5e5959]">{content}</p></section>)}
           </div>
         </article>
       </main>
@@ -723,7 +723,7 @@ function MainSettings({ setView, onBack, notify, notifications, setNotifications
       <PageHeader title="설정" onBack={onBack} />
       <main className="px-5 pb-[120px] pt-[26px]">
         <section>
-          <h2 className="font-playfair-display text-[32px] leading-[normal] font-normal text-[#851317]">Settings</h2>
+          <h2 className="font-playfair-display text-[32px] leading-[normal] font-normal text-[#831317]">Settings</h2>
           <p className="mt-[5px] text-sm leading-[normal] font-normal text-[#121212]">계정과 알림, 앱 사용 환경을 관리하세요.</p>
         </section>
 
@@ -776,7 +776,7 @@ function MainSettings({ setView, onBack, notify, notifications, setNotifications
             <p className="mt-2 text-sm text-[#6e6e6e]">언제든 다시 로그인할 수 있습니다.</p>
             <div className="mt-6 flex gap-2">
               <button type="button" onClick={() => setShowLogout(false)} className="h-12 flex-1 rounded-xl bg-[#f2f2f2] font-semibold text-[#29282b]">취소</button>
-              <button type="button" onClick={() => { setShowLogout(false); notify('로그아웃되었습니다.'); onLogout() }} className="h-12 flex-1 rounded-xl bg-[#98151b] font-semibold text-white">로그아웃</button>
+              <button type="button" onClick={() => { setShowLogout(false); notify('로그아웃되었습니다.'); onLogout() }} className="h-12 flex-1 rounded-xl bg-[#831317] font-semibold text-white">로그아웃</button>
             </div>
           </div>
         </div>

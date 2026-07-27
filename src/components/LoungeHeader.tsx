@@ -1,5 +1,4 @@
 import { useNavigate } from 'react-router-dom'
-import feedLogo from '../assets/lounge/figma/feed-logo.svg'
 import feedSearch from '../assets/lounge/figma/feed-search.svg'
 import NotificationBellIcon from './NotificationBellIcon'
 
@@ -8,12 +7,7 @@ export default function LoungeHeader() {
 
   return (
     <header className="flex h-[calc(52px+max(18px,env(safe-area-inset-top)))] w-full items-center justify-between px-5 pt-[max(18px,env(safe-area-inset-top))] pb-3">
-      <div
-        role="img"
-        aria-label="Viner"
-        className="h-5 w-[107px] shrink-0 bg-contain bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${feedLogo})` }}
-      />
+      <h1 className="font-playfair shrink-0 text-[32px] leading-[1.3] tracking-[-0.64px] text-[#831317]">Lounge</h1>
       <div className="flex items-center gap-1">
         <button type="button" aria-label="검색" onClick={() => navigate('/search')} className="flex h-10 w-[34px] items-center justify-center overflow-hidden">
           <span className="relative block size-7 shrink-0 overflow-hidden">

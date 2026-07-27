@@ -72,20 +72,9 @@ function List() {
       className={`${view === 'map' ? 'flex h-dvh-zoomed min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
       data-node-id="690:403"
     >
-      <Header tone="light" titleColorClassName="text-[#831317]" wineIcons />
+      <Header tone="light" titleColorClassName="text-[#831317]" titleText="List" wineIcons />
 
       <main className={`px-5 pt-5 ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
-        <div className="flex items-center justify-between">
-          <h1 className="font-playfair text-[32px] leading-[1.3] font-normal tracking-[-0.64px] text-[#831317]">
-            List
-          </h1>
-          {view === 'list' && (
-            <button type="button" aria-label="필터" onClick={() => setIsFilterOpen(true)}>
-              <img src={filterIcon} alt="" className="h-[18px] w-[19px]" />
-            </button>
-          )}
-        </div>
-
         <div className="relative my-[10px] flex border-b border-[#7b7b7b]">
           <button
             type="button"
@@ -111,7 +100,12 @@ function List() {
 
         {view === 'list' ? (
           <>
-            <p className="mt-[15px] text-[12px] leading-[20px] text-[#6c5757]">전체 {visibleWines.length}종</p>
+            <div className="mt-[15px] flex items-center justify-between">
+              <p className="text-[12px] leading-[20px] text-[#6c5757]">전체 {visibleWines.length}종</p>
+              <button type="button" aria-label="필터" onClick={() => setIsFilterOpen(true)}>
+                <img src={filterIcon} alt="" className="h-[18px] w-[19px]" />
+              </button>
+            </div>
 
             <div className="mt-[18px] mb-[30px]">
               {visibleWines.map((wine, index) => (
@@ -127,9 +121,11 @@ function List() {
                     index === 0 ? '' : 'border-t-[0.5px]'
                   }`}
                 >
-                  <div className="relative flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full">
-                    <div className="absolute inset-0 opacity-40" style={{ backgroundColor: wine.bgColor }} />
-                    <img src={wine.image} alt={wine.name} className="relative h-[85%] w-auto object-contain" />
+                  <div
+                    className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
+                    style={{ backgroundColor: wine.bgColor }}
+                  >
+                    <img src={wine.image} alt={wine.name} className="h-[85%] w-auto object-contain" />
                   </div>
                   <div className="flex flex-col gap-[8px] pt-[4px]">
                     <div>

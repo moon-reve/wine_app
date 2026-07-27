@@ -65,7 +65,6 @@ function Meetings() {
       <LoungeHeader />
 
       <main className="flex w-full flex-col gap-7 overflow-hidden px-5 pt-5 pb-28">
-        <h1 className="font-playfair text-[32px] leading-[1.3] tracking-[-0.64px] text-[#831317]">Meetings</h1>
         <LoungeTabs activeTab="모임" />
 
         {loungeMeetings.map((meeting, index) => {
