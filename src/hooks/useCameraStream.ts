@@ -16,10 +16,12 @@ export function useCameraStream(enabled: boolean, initialFacingMode: FacingMode 
     }
 
     navigator.mediaDevices
-      // Ask for the largest frame the camera can deliver — without this,
-      // browsers default to a low resolution (often 640x480), so captures
-      // come out far smaller than the sensor actually supports.
-      .getUserMedia({ video: { facingMode: mode, width: { ideal: 4096 }, height: { ideal: 4096 } }, audio: false })
+      // Ask for a bigger frame than the browser's low default (often
+      // 640x480), but stop short of the sensor's true max — encoding a
+      // 12MP+ capture to JPEG on the main thread can visibly freeze the UI
+      // for a second or more on real phones. 2048 is still ~4MP, plenty
+      // for a feed photo.
+      .getUserMedia({ video: { facingMode: mode, width: { ideal: 2048 }, height: { ideal: 2048 } }, audio: false })
       .then((stream) => {
         streamRef.current?.getTracks().forEach((track) => track.stop())
         streamRef.current = stream
