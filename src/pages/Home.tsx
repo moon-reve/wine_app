@@ -277,7 +277,7 @@ function Home() {
         {/* 하단 섹션(#151515)과 완전히 같은 색으로 끝나는 페이드를 추가해 경계선이 안 보이게 함 */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[23.256cqw] bg-gradient-to-b from-transparent to-[#151515]" />
         <div
-          className="absolute top-[146.977cqw] left-1/2 z-30 flex h-[2.326cqw] w-[13.953cqw] -translate-x-1/2 items-center gap-[3.488cqw]"
+          className="absolute top-[146.977cqw] left-1/2 z-30 flex h-[1.860cqw] w-[11.163cqw] -translate-x-1/2 items-center gap-[2.791cqw]"
           role="group"
           aria-label={`히어로 슬라이드 ${heroIndex + 1} / 3`}
           data-node-id="610:318"
@@ -289,7 +289,7 @@ function Home() {
               aria-label={`${index + 1}번 히어로 보기`}
               aria-current={heroIndex === index ? 'true' : undefined}
               onClick={() => setHeroIndex(index)}
-              className={`size-[2.326cqw] shrink-0 rounded-full ${heroIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
+              className={`size-[1.860cqw] shrink-0 rounded-full ${heroIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
             />
           ))}
         </div>
@@ -362,6 +362,8 @@ function Home() {
                     </button>
                   </div>
 
+                  <div className="absolute inset-x-0 top-[19.342cqw] h-px bg-white/25" />
+
                   <div className="absolute inset-x-[4.651cqw] bottom-[14.419cqw] flex gap-[1.163cqw]">
                     {feed.tags.map((tag) => (
                       <span key={tag} className="flex h-[5.581cqw] items-center rounded-full bg-white/10 px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium whitespace-nowrap text-white">
@@ -385,7 +387,7 @@ function Home() {
           </div>
 
           <div
-            className="mt-[5.581cqw] flex items-center justify-center gap-[3.488cqw]"
+            className="mt-[5.581cqw] flex items-center justify-center gap-[2.791cqw]"
             role="group"
             aria-label={`베스트 피드 슬라이드 ${bestFeedIndex + 1} / 3`}
           >
@@ -398,7 +400,7 @@ function Home() {
                 onClick={() => {
                   bestFeedScrollRef.current?.scrollTo({ left: bestFeedScrollRef.current.clientWidth * index, behavior: 'smooth' })
                 }}
-                className={`size-[2.326cqw] shrink-0 rounded-full ${bestFeedIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
+                className={`size-[1.860cqw] shrink-0 rounded-full ${bestFeedIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
               />
             ))}
           </div>
@@ -510,7 +512,7 @@ function Home() {
                   {wine.tastingNotes.slice(0, 2).join(', ')}
                 </p>
                 <div className="mt-[1.163cqw] flex items-center justify-between">
-                  <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#831317] px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium text-white">
+                  <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#831317] px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-normal text-white">
                     {index === 0 ? '#오늘의 와인' : '#AI 소믈리에 추천'}
                   </span>
                   <span className="flex items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline">
@@ -611,14 +613,11 @@ function Home() {
             <p className="absolute top-[16.512cqw] left-[5.581cqw] whitespace-nowrap text-[3.256cqw] leading-[1.45] tracking-[-0.065cqw] text-white/80">
               대륙별 와인을 경험하고 나만의 와인 취향 찾기
             </p>
-            <div className="absolute top-[62.326cqw] left-[4.884cqw] h-[3.953cqw] w-[62.791cqw] overflow-hidden rounded-[14.884cqw] border border-white/15 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_2px_10px_rgba(0,0,0,0.12)] backdrop-blur-[12px]">
+            <p className="font-delmon absolute top-[65.581cqw] left-[5.116cqw] text-[2.326cqw] leading-[1.55] font-normal tracking-[-0.047cqw] text-white">
+              In Progress
+            </p>
+            <div className="absolute top-[69.302cqw] left-[4.884cqw] h-[1.163cqw] w-[62.791cqw] overflow-hidden rounded-[14.884cqw] border border-white/15 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_2px_10px_rgba(0,0,0,0.12)] backdrop-blur-[12px]">
               <div className="h-full w-[27.209cqw] rounded-[14.884cqw] bg-[#831317]/90 shadow-[inset_0_1px_0_rgba(255,255,255,0.16)]" />
-            </div>
-            <div className="absolute top-[62.326cqw] left-[4.884cqw] flex h-[3.953cqw] w-[62.791cqw] items-center justify-between pr-[1.395cqw] pl-[2.093cqw] text-[2.791cqw] leading-none font-normal tracking-[-0.056cqw] text-white">
-              <span className="font-playfair font-normal" style={playfairOpsz}>
-                In Progress
-              </span>
-              <span>45%</span>
             </div>
           </button>
 
@@ -675,7 +674,7 @@ function Home() {
 
       {/* Promo banner — Figma 원본은 좌우 패딩 없이 화면 전체 폭에 꽉 채움 */}
       <section className="pt-[14.884cqw]">
-        <div className="relative h-[29.767cqw] w-full overflow-hidden">
+        <div className="relative h-[32.558cqw] w-full overflow-hidden">
           <img
             src={foodPairingImage}
             alt="페어링하기 좋은 음식찾기"
@@ -802,14 +801,14 @@ function Home() {
       </section>
 
       <div
-        className="mt-[3.721cqw] flex items-center justify-center gap-[3.488cqw]"
+        className="mt-[3.721cqw] flex items-center justify-center gap-[2.791cqw]"
         role="img"
         aria-label={`매거진 슬라이드 ${magazineIndex + 1} / ${magazineCards.length}`}
       >
         {magazineCards.map((card, index) => (
           <span
             key={card.title}
-            className={`size-[2.326cqw] shrink-0 rounded-full transition-colors ${magazineIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
+            className={`size-[1.860cqw] shrink-0 rounded-full transition-colors ${magazineIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
           />
         ))}
       </div>

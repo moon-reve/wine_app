@@ -43,7 +43,7 @@ export default function TimeWheelPicker({ open, title, value, onChange, onClose 
     onClose()
   }
 
-  const wheelClass = 'h-44 snap-y snap-mandatory overflow-y-auto rounded-[14px] bg-[#f8f7f6] py-[66px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+  const wheelClass = 'h-44 snap-y snap-mandatory overflow-y-auto rounded-[14px] bg-[#f2f2f2] py-[66px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
   const itemClass = (selected: boolean) => `flex h-11 w-full snap-center items-center justify-center rounded-[10px] text-[16px] ${selected ? 'bg-white font-bold text-[#831317] shadow-sm' : 'text-[#9a9a9a]'}`
 
   return (

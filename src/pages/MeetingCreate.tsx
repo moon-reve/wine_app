@@ -231,7 +231,7 @@ function MeetingCreate() {
             <MeetingTagEditor selectedTags={tags} suggestedTags={SUGGESTED_TAGS} onChange={setTags} />
           </section>
 
-          <aside className="mt-3 rounded-[12px] bg-[#f9f7f7] px-4 py-3.75">
+          <aside className="mt-3 rounded-[12px] bg-[#f2f2f2] px-4 py-3.75">
             <h3 className="text-xs font-bold text-[#851317]">호스트 안내</h3>
             <p className="mt-2 text-xs text-[#6e6e6e]">일정과 장소가 확정되었는지 한 번 더 확인해 주세요.</p>
           </aside>

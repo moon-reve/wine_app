@@ -95,7 +95,7 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
           >
             {isFull ? '마감' : '모집중'}
           </span>
-          <span className="flex h-[21px] items-center rounded-full bg-[#f2eded] px-3 text-[11px] leading-none font-medium text-[#831317]">
+          <span className="flex h-[21px] items-center rounded-full bg-[#f2f2f2] px-3 text-[11px] leading-none font-medium text-[#831317]">
             D-11
           </span>
         </div>
@@ -104,7 +104,7 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
           {meeting.title}
         </h2>
 
-        <dl className="flex w-full flex-col gap-2.5 rounded-xl bg-[#f9f7f6] p-[18px]">
+        <dl className="flex w-full flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px]">
           {meetingDetails.map((item) => (
             <div key={item.label} className="grid grid-cols-[52px_1fr] items-start gap-4 leading-[1.45]">
               <dt className="text-[13px] font-medium text-[#737373]">{item.label}</dt>

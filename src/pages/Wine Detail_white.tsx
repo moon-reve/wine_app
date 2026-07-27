@@ -42,7 +42,7 @@ function Review({ rating, children, avatarSrc }: { rating: number; children: Rea
 
 function PurchaseCard({ type, text, button }: { type: string; text: string; button: string }) {
   return (
-    <div className="flex w-full flex-col gap-3 rounded-xl bg-[#f9f7f6] px-[18px] py-4">
+    <div className="flex w-full flex-col gap-3 rounded-xl bg-[#f2f2f2] px-[18px] py-4">
       <p className="text-[12px] leading-[1.2] font-medium text-[#831317]">{type}</p>
       <p className="text-[14px] leading-[1.3] font-bold tracking-[-0.28px]">{text}</p>
       <button type="button" className="flex h-10 items-center justify-center rounded-xl border border-[#831317] text-[14px] leading-none font-bold tracking-[-0.28px] text-[#831317]">{button}</button>
@@ -103,7 +103,7 @@ export default function WineDetailWhite() {
             </div>
           </div>
           <p className="absolute top-[54px] left-0 text-[12px] leading-[1.2] tracking-[-0.24px] text-black/60">{typeLabel} &gt; {wine.country} &gt; {wine.region}</p>
-          <div className="absolute top-[84px] left-0 flex w-full flex-col gap-2.5 rounded-xl bg-[#f9f7f6] p-[18px] text-[14px] leading-[1.45]">
+          <div className="absolute top-[84px] left-0 flex w-full flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-[14px] leading-[1.45]">
             {info.map(([label, value]) => <div key={label} className="flex gap-4"><span className="w-[60px] shrink-0 font-medium text-[#737373]">{label}</span><span className="w-[278px] tracking-[-0.28px]">{value}</span></div>)}
           </div>
           <div className="absolute top-[364px] left-0 flex h-[38px] items-center gap-3"><span className="h-full w-[3px] bg-[#831317]" /><p className="w-[360px] text-[12px] leading-[1.6] tracking-[-0.24px] text-[#595959]">{wine.description}</p></div>
@@ -133,7 +133,7 @@ export default function WineDetailWhite() {
         <Divider top={1186} />
         <section className="absolute top-[1221px] left-5 flex w-[390px] flex-col gap-3">
           <h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">서비스 가이드</h2>
-          <div className="flex flex-col gap-2.5 rounded-xl bg-[#f9f7f6] p-[18px] text-[14px] leading-[1.45] tracking-[-0.28px]">{service.map(([label, value]) => <div key={label} className="flex gap-4"><span className="w-[86px] shrink-0 font-medium text-[#737373]">{label}</span><span>{value}</span></div>)}</div>
+          <div className="flex flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-[14px] leading-[1.45] tracking-[-0.28px]">{service.map(([label, value]) => <div key={label} className="flex gap-4"><span className="w-[86px] shrink-0 font-medium text-[#737373]">{label}</span><span>{value}</span></div>)}</div>
         </section>
 
         <Divider top={1466} />
@@ -158,7 +158,7 @@ export default function WineDetailWhite() {
                 onClick={() => navigate(`/wine_detail/${item.type}/${item.id}`)}
                 className="flex w-[188px] shrink-0 flex-col gap-2 text-left"
               >
-                <div className="flex h-[170px] w-[188px] items-center justify-center overflow-hidden rounded-xl bg-[#f8f6f4]">
+                <div className="flex h-[170px] w-[188px] items-center justify-center overflow-hidden rounded-xl bg-[#f2f2f2]">
                   <img src={resolveWineImage(item)} alt={item.nameKo} className="h-[150px] max-w-[80px] object-contain" />
                 </div>
                 <h3 className="w-[188px] text-[14px] leading-[1.25] font-semibold tracking-[-0.14px]">{item.nameKo}</h3>

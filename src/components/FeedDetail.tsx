@@ -216,7 +216,7 @@ function FeedDetailContent({
 
         <form
           onSubmit={handleSubmit}
-          className="flex min-h-[46px] w-full items-center gap-2.5 rounded-full bg-[#f6f5f4] px-[18px] py-3.5"
+          className="flex min-h-[46px] w-full items-center gap-2.5 rounded-full bg-[#f2f2f2] px-[18px] py-3.5"
         >
           <label htmlFor="feed-comment" className="sr-only">
             댓글 입력

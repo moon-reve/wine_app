@@ -79,7 +79,7 @@ function WineReviewCard({ review, onDelete }: { review: WineReviewCardData; onDe
       >
         ×
       </button>
-      <div className="relative h-[130px] w-[94px] shrink-0 overflow-hidden rounded-lg bg-[#f3f1ed]">
+      <div className="relative h-[130px] w-[94px] shrink-0 overflow-hidden rounded-lg bg-[#f2f2f2]">
         {review.image && <img src={review.image} alt={review.name} className={review.crop ?? 'absolute inset-0 size-full object-cover'} />}
       </div>
       <div className="flex min-w-0 flex-1 flex-col">
@@ -351,8 +351,8 @@ function Mypage() {
           </div>
 
           <div className="mt-[19px] grid grid-cols-2 gap-[4px]">
-            <button type="button" onClick={() => navigate('/profile/settings')} className="h-[34px] rounded-lg bg-[#f9f7f6] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 편집</button>
-            <button type="button" className="h-[34px] rounded-lg bg-[#f9f7f6] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 공유</button>
+            <button type="button" onClick={() => navigate('/profile/settings')} className="h-[34px] rounded-lg bg-[#f2f2f2] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 편집</button>
+            <button type="button" className="h-[34px] rounded-lg bg-[#f2f2f2] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 공유</button>
           </div>
 
           <div className="mt-[25px] flex gap-[15px]">

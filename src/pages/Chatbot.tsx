@@ -6,6 +6,8 @@ import type {
 } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { chatbotBack, chatbotSend } from "../assets/chatbotAssets";
+import chatbotIconCopy from "../assets/chatbot/icon-copy.svg";
+import chatbotIconShare from "../assets/chatbot/icon-share.svg";
 import ChatbotOrb from "../components/ChatbotOrb";
 import {
   buildRecommendationAnswer,
@@ -468,19 +470,10 @@ export default function Chatbot() {
 
   return (
     <main
-      className="@container relative mx-auto h-[100dvh] min-h-[700px] w-full max-w-[430px] overflow-hidden bg-white text-black"
+      className="@container relative mx-auto h-[100dvh] min-h-[700px] w-full max-w-[430px] overflow-hidden bg-[#f2f2f2] text-black"
       data-node-id="1546:3232"
     >
-      <div
-        aria-hidden="true"
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 274.767cqw 100% at 50% 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 44.74%, rgba(187,136,158,0.2) 72.37%, rgba(152,76,109,0.3) 86.19%, rgba(118,16,60,0.4) 100%)",
-        }}
-      />
-
-      <header className="absolute inset-x-0 top-[env(safe-area-inset-top)] z-30 h-[70px] bg-white/90 backdrop-blur-sm">
+      <header className="absolute inset-x-0 top-[env(safe-area-inset-top)] z-30 h-[70px] bg-[#f2f2f2]/90 backdrop-blur-sm">
         <button
           type="button"
           aria-label="뒤로 가기"
@@ -532,7 +525,7 @@ export default function Chatbot() {
                 key={suggestion}
                 type="button"
                 onClick={() => chooseSuggestion(suggestion)}
-                className="h-[57px] w-[126px] shrink-0 whitespace-pre-line rounded-xl border-[0.5px] border-white/80 bg-white/20 px-3 text-left text-xs leading-[1.3] tracking-[-0.28px] text-black/80 shadow-[0_4px_14px_rgba(0,0,0,0.08)] backdrop-blur-sm"
+                className="h-[57px] w-[126px] shrink-0 whitespace-pre-line rounded-xl bg-white px-3 text-left text-xs leading-[1.3] tracking-[-0.28px] text-black/80 shadow-[0_2px_6px_rgba(0,0,0,0.08)]"
               >
                 {suggestion}
               </button>
@@ -554,7 +547,7 @@ export default function Chatbot() {
             return (
               <section key={turn.id} className="pt-6">
                 <div className="flex justify-end">
-                  <p className="max-w-[84%] rounded-[29px] bg-[#acacac]/15 px-5 py-3.5 text-[16px] leading-[1.3] tracking-[-0.32px]">
+                  <p className="max-w-[84%] rounded-[29px] bg-[#831317] px-5 py-3.5 text-[16px] leading-[1.3] tracking-[-0.32px] text-white">
                     {turn.question || conversationQuestions[turn.kind]}
                   </p>
                 </div>
@@ -573,8 +566,14 @@ export default function Chatbot() {
                 </article>
                 {isComplete && (
                   <div className="mb-5 flex gap-5 text-[12px] text-black/50">
-                    <button type="button">▣ 복사</button>
-                    <button type="button">↗ 공유</button>
+                    <button type="button" className="flex items-center gap-1.5">
+                      <img src={chatbotIconCopy} alt="" className="size-[18px]" />
+                      복사
+                    </button>
+                    <button type="button" className="flex items-center gap-1.5">
+                      <img src={chatbotIconShare} alt="" className="size-4" />
+                      공유
+                    </button>
                   </div>
                 )}
                 {isLatest && isComplete && !turn.mapPlace && (
@@ -596,7 +595,7 @@ export default function Chatbot() {
                         key={suggestion}
                         type="button"
                         onClick={() => chooseSuggestion(suggestion)}
-                        className="h-[57px] w-[146px] shrink-0 whitespace-pre-line rounded-xl border-[0.5px] border-white/80 bg-white/20 px-3 text-left text-xs leading-[1.3] tracking-[-0.28px] text-black/80 shadow-[0_4px_14px_rgba(0,0,0,0.08)] backdrop-blur-sm"
+                        className="h-[57px] w-[146px] shrink-0 whitespace-pre-line rounded-xl bg-white px-3 text-left text-xs leading-[1.3] tracking-[-0.28px] text-black/80 shadow-[0_2px_6px_rgba(0,0,0,0.08)]"
                       >
                         {suggestion}
                       </button>

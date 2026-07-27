@@ -499,7 +499,7 @@ function FeedPost({
               </p>
             ))}
           </div>
-          <form onSubmit={handleCommentSubmit} className={`${comments.length ? 'mt-3' : ''} flex h-10 items-center gap-2 rounded-full bg-[#f6f5f4] px-4`}>
+          <form onSubmit={handleCommentSubmit} className={`${comments.length ? 'mt-3' : ''} flex h-10 items-center gap-2 rounded-full bg-[#f2f2f2] px-4`}>
             <label htmlFor={`feed-comment-${index}`} className="sr-only">댓글 입력</label>
             <input
               id={`feed-comment-${index}`}

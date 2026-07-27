@@ -82,14 +82,14 @@ function NotificationIcon({ type, isRead }: { type: NotificationItem['icon']; is
 
   if (type === 'bell') {
     return (
-      <span className={`flex size-11 shrink-0 items-center justify-center rounded-full ${isRead ? 'bg-white/55' : 'bg-[#f9f7f6]'}`}>
+      <span className={`flex size-11 shrink-0 items-center justify-center rounded-full ${isRead ? 'bg-white/55' : 'bg-[#f2f2f2]'}`}>
         <img src={bellIcon} alt="" className={`size-5 ${isRead ? 'grayscale opacity-60' : ''}`} />
       </span>
     )
   }
 
   return (
-    <span className={`font-playfair-sc flex size-11 shrink-0 items-center justify-center rounded-full text-[18px] leading-none font-bold ${isRead ? 'bg-white/55 text-[#737373]' : 'bg-[#f9f7f6] text-[#831317]'}`}>
+    <span className={`font-playfair-sc flex size-11 shrink-0 items-center justify-center rounded-full text-[18px] leading-none font-bold ${isRead ? 'bg-white/55 text-[#737373]' : 'bg-[#f2f2f2] text-[#831317]'}`}>
       {type === 'qa' ? 'Q' : 'M'}
     </span>
   )
@@ -101,7 +101,7 @@ function NotificationCard({ item, isRead, onRead }: { item: NotificationItem; is
       type="button"
       aria-label={`${item.category} 알림${isRead ? ', 읽음' : ', 읽지 않음'}`}
       onClick={onRead}
-      className={`flex w-full items-start gap-3 overflow-hidden rounded-xl p-4 text-left transition-colors ${isRead ? 'bg-[#eeeeee]' : 'bg-[#f9f7f6]'}`}
+      className={`flex w-full items-start gap-3 overflow-hidden rounded-xl p-4 text-left transition-colors ${isRead ? 'bg-[#eeeeee]' : 'bg-[#f2f2f2]'}`}
     >
       <NotificationIcon type={item.icon} isRead={isRead} />
       <div className="min-w-0 flex-1 overflow-hidden">

@@ -192,7 +192,7 @@ function TodaysPick() {
       <h2 className="absolute top-[931px] left-6 text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#851317]">
         원하는 조건<span className="text-[#222]">으로 다시 추천받기</span>
       </h2>
-      <section className="absolute top-[973px] left-5 flex w-[390px] flex-col items-start gap-[18px] overflow-hidden rounded-xl bg-[#f9f7f6] px-[18px] py-5">
+      <section className="absolute top-[973px] left-5 flex w-[390px] flex-col items-start gap-[18px] overflow-hidden rounded-xl bg-[#f2f2f2] px-[18px] py-5">
         {filters.map((group) => (
           <FilterGroup
             key={group.title}

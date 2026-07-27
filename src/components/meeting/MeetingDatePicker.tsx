@@ -47,7 +47,7 @@ export default function MeetingDatePicker({ open, value, onChange, onClose }: Me
               type="button"
               aria-label="이전 달"
               onClick={() => setCalendarMonth(new Date(year, monthIndex - 1, 1))}
-              className="flex size-9 items-center justify-center rounded-full bg-[#f6f3f3] text-lg text-[#831317]"
+              className="flex size-9 items-center justify-center rounded-full bg-[#f2f2f2] text-lg text-[#831317]"
             >
               ‹
             </button>
@@ -55,7 +55,7 @@ export default function MeetingDatePicker({ open, value, onChange, onClose }: Me
               type="button"
               aria-label="다음 달"
               onClick={() => setCalendarMonth(new Date(year, monthIndex + 1, 1))}
-              className="flex size-9 items-center justify-center rounded-full bg-[#f6f3f3] text-lg text-[#831317]"
+              className="flex size-9 items-center justify-center rounded-full bg-[#f2f2f2] text-lg text-[#831317]"
             >
               ›
             </button>
@@ -78,7 +78,7 @@ export default function MeetingDatePicker({ open, value, onChange, onClose }: Me
                   onClose()
                 }}
                 className={`mx-auto flex size-10 items-center justify-center rounded-full text-[14px] ${
-                  value === dayValue ? 'bg-[#831317] font-semibold text-white' : 'hover:bg-[#f6f3f3]'
+                  value === dayValue ? 'bg-[#831317] font-semibold text-white' : 'hover:bg-[#f2f2f2]'
                 }`}
               >
                 {day}

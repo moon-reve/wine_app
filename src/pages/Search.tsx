@@ -183,7 +183,7 @@ function Search() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-[#f9f7f7] text-[#0d0d0d]">
+    <div className="min-h-screen w-full bg-[#f2f2f2] text-[#0d0d0d]">
       <Header tone="light" wineIcons />
 
       <main className="px-5 pt-[21px] pb-8">

@@ -100,7 +100,7 @@ function ImageUploader() {
               type="button"
               aria-label="사진 첨부"
               disabled={images.length >= MAX_IMAGES}
-              className="flex aspect-square w-22.5 max-w-[30%] flex-col items-center justify-center rounded-[10px] border border-dashed border-[#d9d9d9] bg-[#f7f6f5] text-[#737373] disabled:cursor-default"
+              className="flex aspect-square w-22.5 max-w-[30%] flex-col items-center justify-center rounded-[10px] border border-dashed border-[#d9d9d9] bg-[#f2f2f2] text-[#737373] disabled:cursor-default"
               onClick={() => setIsSourceMenuOpen(true)}
             >
               {index === images.length && (

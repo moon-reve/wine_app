@@ -4,7 +4,7 @@ import backIcon from '../assets/event/detail-back.svg'
 import heroImage from '../assets/event/detail-hero.png'
 import wine1 from '../assets/event/detail-wine-1.png'
 import wine2 from '../assets/event/detail-wine-2.png'
-import wine3 from '../assets/event/detail-wine-3.png'
+import wine3 from '../assets/wine-detail-red/hero-wine.png'
 
 const eventInfo = [
   { label: '날짜', value: '2026. 08. 14 (금) 14:00 - 20:00' },
@@ -23,7 +23,7 @@ function Divider() {
 
 function InfoCard({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex w-full flex-col gap-1 overflow-hidden rounded-xl bg-[#f9f7f6] px-[18px] py-3.5">
+    <div className="flex w-full flex-col gap-1 overflow-hidden rounded-xl bg-[#f2f2f2] px-[18px] py-3.5">
       <p className="text-[12px] leading-[1.2] font-medium text-[#831317]">{label}</p>
       <p className="text-[14px] leading-[1.3] font-normal tracking-[-0.28px] text-[#0d0d0d]">{value}</p>
     </div>
@@ -33,11 +33,11 @@ function InfoCard({ label, value }: { label: string; value: string }) {
 function RelatedWineCard({ category, name, image }: { category: string; name: string; image: string }) {
   return (
     <article className="flex shrink-0 snap-start flex-col gap-2.5 overflow-hidden">
-      <div className="relative h-[170px] w-[188px] shrink-0 overflow-hidden rounded-xl bg-[#f8f6f4]">
-        <img src={image} alt={name} className="absolute top-2.5 left-19 h-[150px] w-9 object-cover" />
+      <div className="flex h-[279px] w-[240px] shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#f2f2f2]">
+        <img src={image} alt={name} className="h-[277px] max-w-[98%] object-contain" />
       </div>
       <p className="text-[12px] leading-[1.2] font-normal tracking-[-0.24px] text-[#737373]">{category}</p>
-      <p className="w-[188px] text-[16px] leading-[1.25] font-semibold tracking-[-0.16px] text-[#0d0d0d]">{name}</p>
+      <p className="w-[240px] text-[16px] leading-[1.25] font-semibold tracking-[-0.16px] text-[#0d0d0d]">{name}</p>
     </article>
   )
 }
@@ -45,11 +45,11 @@ function RelatedWineCard({ category, name, image }: { category: string; name: st
 function RuffinoCard() {
   return (
     <article className="flex shrink-0 snap-start flex-col gap-2.5 overflow-hidden">
-      <div className="relative h-[170px] w-[188px] shrink-0 overflow-hidden rounded-xl bg-[#f8f6f4]">
-        <img src={wine3} alt="Ruffino Chianti" className="absolute top-2.5 left-19 h-[150px] w-9 object-cover" />
+      <div className="flex h-[279px] w-[240px] shrink-0 items-center justify-center overflow-hidden rounded-xl bg-[#f2f2f2]">
+        <img src={wine3} alt="Ruffino Chianti" className="h-[277px] max-w-[98%] object-contain" />
       </div>
       <p className="font-noto text-[10px] leading-[1.2] font-medium tracking-[0.6px] text-[#737373]">RED WINE</p>
-      <p className="font-playfair-sc w-[188px] text-[14px] leading-[1.25] font-bold tracking-[-0.14px] text-[#0d0d0d]">Ruffino Chianti</p>
+      <p className="font-playfair-sc w-[240px] text-[14px] leading-[1.25] font-bold tracking-[-0.14px] text-[#0d0d0d]">Ruffino Chianti</p>
     </article>
   )
 }
@@ -97,7 +97,7 @@ function EventDetails() {
       <main className="flex w-full flex-col items-start gap-7 overflow-hidden px-5 pt-6 pb-8">
         <section className="flex w-full flex-col gap-3 overflow-hidden">
           <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">행사 소개</h2>
-          <div className="w-full overflow-hidden rounded-xl bg-[#f9f7f6] px-[18px] py-4">
+          <div className="w-full overflow-hidden rounded-xl bg-[#f2f2f2] px-[18px] py-4">
             <p className="w-[318px] text-[14px] leading-[1.6] font-normal tracking-[-0.28px] text-[#595959]">
               국내외 다양한 와인을 직접 시음할 수 있는 행사입니다. 와인 전문가들이 큐레이션한 프리미엄 컬렉션과 함께 성수동의 세련된 감성을 느껴보세요.
             </p>
@@ -146,7 +146,7 @@ function EventDetails() {
             }}
             onPointerUp={stopRelatedWineDrag}
             onPointerCancel={stopRelatedWineDrag}
-            className="-mx-5 flex w-[calc(100%+40px)] shrink-0 snap-x snap-mandatory cursor-grab gap-3.5 overflow-x-auto overscroll-x-contain px-5 pb-1 select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="-mx-5 flex w-[calc(100%+40px)] shrink-0 snap-x snap-mandatory cursor-grab gap-3.5 overflow-x-auto overscroll-x-contain px-5 pb-1 select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden scroll-pl-5 scroll-pr-5"
           >
             {relatedWines.map((wine) => <RelatedWineCard key={wine.name} {...wine} />)}
             <RuffinoCard />
