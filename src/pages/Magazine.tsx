@@ -63,7 +63,7 @@ function MagazineWineCard({ wine }: { wine: (typeof magazineWines)[number] }) {
       </div>
       <button
         type="button"
-        className="absolute bottom-[15px] left-3 flex h-8 w-[141px] items-center justify-center rounded-[9px] bg-[#851317] text-[10px] leading-[normal] font-medium tracking-[-0.2px] text-white"
+        className="absolute bottom-[15px] left-3 flex h-8 w-[141px] items-center justify-center rounded-[9px] bg-[#831317] text-[10px] leading-[normal] font-medium tracking-[-0.2px] text-white"
       >
         판매 사이트로 이동하기
       </button>
@@ -144,7 +144,7 @@ function Magazine() {
           <SectionDivider />
         </div>
         <h2 className="font-playfair mt-[31px] text-[28px] leading-[35.308px] font-bold text-[#8c2131]" style={{ fontVariationSettings: '"opsz" 12, "wdth" 100' }}>
-          Wine in <span className="text-[#841317]">Magazines</span>
+          Wine in <span className="text-[#831317]">Magazines</span>
         </h2>
 
         <div className={`mt-[44px] -mx-5 flex snap-x snap-mandatory gap-[9px] overflow-x-auto px-5 pb-1 scroll-pl-5 ${noScrollbar}`}>

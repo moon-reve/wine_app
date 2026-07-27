@@ -2,12 +2,15 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import dummyWines from '../../dummy data/wines.json'
 import starIcon from '../assets/list/container-star.svg'
+import heartEmptyIcon from '../assets/list/heart-empty.svg'
+import heartFilledIcon from '../assets/list/heart-filled.svg'
 import searchBackIcon from '../assets/search/search-back-button.svg'
 import searchSubmitIcon from '../assets/search/search-submit-button.svg'
 import chipCloseIcon from '../assets/search/search-chip-close.svg'
 import shopWinePairing from '../assets/search/shop-wine-pairing.jpg'
 import shopWineTerrace from '../assets/search/shop-wine-terrace.jpg'
 import Header from '../components/Header'
+import { useLikedWines } from '../context/LikedWinesContext'
 import { TODAY_PICK_WINE_IDS, WINE_TYPE_BG_COLOR, type WineType } from '../data/todayPickData'
 import { getWineDetailData, resolveWineImage, type WineDetail } from '../data/wineDetailData'
 
@@ -107,7 +110,8 @@ function TodayPickItem({ wine, onClick }: { wine: WineDetail; onClick: () => voi
   )
 }
 
-function WineResultCard({ wine, onClick }: { wine: SearchWine; onClick: () => void }) {
+function WineResultCard({ wine, index, onClick }: { wine: SearchWine; index: number; onClick: () => void }) {
+  const { isLiked, toggleLike } = useLikedWines()
   const fileName = wine.imageUrl.split('/').pop() ?? ''
   const image = wineImages[`../assets/images/wines/${fileName}`] ?? ''
   const subRegion = wine.region.startsWith(wine.country)
@@ -118,33 +122,49 @@ function WineResultCard({ wine, onClick }: { wine: SearchWine; onClick: () => vo
     : `${wine.country} · ${wine.grape}`
 
   return (
-    <div>
-      <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
-      <button
-        type="button"
-        onClick={onClick}
-        className="flex min-h-[159px] w-full items-center gap-[37px] py-6 pl-6 text-left"
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={onClick}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') onClick()
+      }}
+      className={`flex w-full cursor-pointer items-center gap-[37px] border-[#dcdcdc] py-[15px] pl-[24px] text-left ${
+        index === 0 ? '' : 'border-t-[0.5px]'
+      }`}
+    >
+      <div
+        className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
+        style={{ backgroundColor: WINE_TYPE_BG_COLOR[wine.type] }}
       >
-        <div
-          className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
-          style={{ backgroundColor: WINE_TYPE_BG_COLOR[wine.type] }}
-        >
-          <img src={image} alt={wine.nameKo} className="h-[85%] w-auto object-contain" />
+        <img src={image} alt={wine.nameKo} className="h-[85%] w-auto object-contain" />
+      </div>
+      <div className="flex flex-col gap-[8px] pt-[4px]">
+        <div>
+          <p className="text-[18px] leading-[25px] font-semibold text-[#1e1b18]">{wine.nameKo}</p>
+          <p className={`${region.length > 18 ? 'text-[11px]' : 'text-[12px]'} leading-[25px] text-[#817f7e]`}>{region}</p>
         </div>
-        <div className="flex min-w-0 flex-1 flex-col gap-2 pt-1">
-          <div>
-            <p className="text-[20px] leading-[25px] font-semibold text-[#1e1b18]">{wine.nameKo}</p>
-            <p className={`${region.length > 18 ? 'text-[11px]' : 'text-[12px]'} leading-[25px] text-[#817f7e]`}>{region}</p>
-          </div>
-          <div className="flex w-full items-center justify-between">
-            <p className="text-[16px] leading-6 font-bold text-[#1e1b18]">₩{wine.price.toLocaleString()}</p>
-            <div className="flex items-center gap-1">
+        <div className="flex w-[220px] items-center justify-between">
+          <div className="flex items-center gap-[10px]">
+            <p className="text-[16px] leading-[24px] font-bold text-[#1e1b18]">₩{wine.price.toLocaleString()}</p>
+            <div className="flex items-center gap-[4px]">
               <img src={starIcon} alt="" className="h-[14.25px] w-[15px]" />
-              <p className="text-[16px] leading-6 font-bold text-[#561922]">{wine.rating.toFixed(1)}</p>
+              <p className="text-[16px] leading-[24px] font-bold text-[#561922]">{wine.rating.toFixed(1)}</p>
             </div>
           </div>
+          <button
+            type="button"
+            aria-label={isLiked(wine.id) ? `${wine.nameKo} 좋아요 취소` : `${wine.nameKo} 좋아요`}
+            onClick={(event) => {
+              event.stopPropagation()
+              toggleLike(wine.id)
+            }}
+            className="flex h-[17px] w-[19px] shrink-0 items-center justify-center"
+          >
+            <img src={isLiked(wine.id) ? heartFilledIcon : heartEmptyIcon} alt="" className="h-full w-full" />
+          </button>
         </div>
-      </button>
+      </div>
     </div>
   )
 }
@@ -276,7 +296,7 @@ function Search() {
             event.preventDefault()
             executeSearch(query)
           }}
-          className="relative ml-1.5 h-[51px] w-[377px] rounded-[32px] border-2 border-[#851317] bg-white"
+          className="flex h-[51px] items-center gap-2.5 rounded-[32px] border-2 border-[#831317] bg-white pr-3.5 pl-2.5"
         >
           <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-2 left-[9px] flex h-8 w-6.5 items-center justify-center">
             <img src={searchBackIcon} alt="" className="h-8 w-6.5" />
@@ -303,14 +323,14 @@ function Search() {
             </p>
             {searchResults.length > 0 ? (
               <div className="mt-[18px]">
-                {searchResults.map((wine) => (
+                {searchResults.map((wine, index) => (
                   <WineResultCard
                     key={wine.id}
                     wine={wine}
+                    index={index}
                     onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
                   />
                 ))}
-                <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
               </div>
             ) : (
               <div className="flex min-h-60 flex-col items-center justify-center text-center">
@@ -376,7 +396,7 @@ function Search() {
 
             <section className="-mx-5 mt-6 bg-white px-5 pt-7 pb-[30px]">
               <h2 className="text-[20px] font-medium tracking-[-0.53px]">
-                오늘 추천, <span className="text-[#851317]">와인</span>
+                오늘 추천, <span className="text-[#831317]">와인</span>
               </h2>
               <div
                 ref={todayPickScrollRef}
@@ -404,9 +424,9 @@ function Search() {
               </div>
             </section>
 
-            <section className="-mx-5 mt-3 bg-white px-[25px] pt-7 pb-[30px]">
-              <h2 className="ml-[5px] text-[20px] leading-none font-medium tracking-[-0.5348px]">
-                <span className="text-[#851317]">내 주변</span> 와인숍
+            <section className="-mx-5 mt-3 bg-white px-5 pt-7 pb-[30px]">
+              <h2 className="text-[20px] font-medium tracking-[-0.53px]">
+                <span className="text-[#831317]">내 주변</span> 와인숍
               </h2>
               <div className="mt-8 flex flex-col gap-[29px]">
                 {NEARBY_SHOPS.map((shop) => (

@@ -63,7 +63,7 @@ function ProfileSettings() {
 
       <main className="px-5">
         <section className="mt-[26px]">
-          <h2 className="font-playfair-display text-[32px] leading-[normal] font-normal whitespace-nowrap text-[#851317]">Profile Settings</h2>
+          <h2 className="font-playfair-display text-[32px] leading-[normal] font-normal whitespace-nowrap text-[#831317]">Profile Settings</h2>
           <p className="mt-[5px] text-sm leading-[normal] font-normal tracking-[-0.28px] whitespace-nowrap">나를 표현하는 프로필과 와인 취향을 관리하세요.</p>
         </section>
 
@@ -72,7 +72,7 @@ function ProfileSettings() {
             <img src={image} alt="프로필 사진" className="absolute top-[0.47%] left-[-6.93%] h-[146.46%] w-[119.59%] max-w-none" />
           </div>
           <input ref={photoInputRef} type="file" accept="image/*" className="hidden" onChange={handlePhotoChange} />
-          <button type="button" onClick={() => photoInputRef.current?.click()} className="mt-3 text-xs leading-[normal] font-medium tracking-[-0.24px] text-[#851317]">프로필 사진 변경</button>
+          <button type="button" onClick={() => photoInputRef.current?.click()} className="mt-3 text-xs leading-[normal] font-medium tracking-[-0.24px] text-[#831317]">프로필 사진 변경</button>
         </section>
 
         <div className="mt-[56px] flex flex-col gap-[26px]">

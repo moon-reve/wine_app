@@ -436,7 +436,7 @@ export function FeedPost({
                 aria-label={`${imageIndex + 1}번째 사진 보기`}
                 aria-current={imageIndex === activeImageIndex ? 'true' : undefined}
                 onClick={() => moveToImage(imageIndex)}
-                className={`size-1.5 shrink-0 rounded-full ${imageIndex === activeImageIndex ? 'bg-[#98151b]' : 'bg-[#dedede]'}`}
+                className={`size-1.5 shrink-0 rounded-full ${imageIndex === activeImageIndex ? 'bg-[#831317]' : 'bg-[#dedede]'}`}
               />
             ))}
           </div>
@@ -538,49 +538,54 @@ function Feed() {
     <div className="min-h-screen w-full bg-white text-[#0d0d0d]" data-node-id={isGridView ? '1546:4105' : '1546:3969'}>
       <LoungeHeader />
       <main className="w-full px-5 pt-5 pb-8">
-        <div className="flex w-full flex-col gap-7">
-          <h1 className="font-playfair text-[32px] leading-[1.3] tracking-[-0.64px] text-[#831317]">Lounge</h1>
-          <LoungeTabs activeTab="피드" />
-        </div>
+        <LoungeTabs activeTab="피드" />
 
-        <div className="mt-5">
-          <FeedPostHeader
-            feed={figmaFeeds[0]}
-            action={
-              <button
-                type="button"
-                aria-label={isGridView ? '피드 목록으로 보기' : '피드 모아 보기'}
-                aria-pressed={isGridView}
-                onClick={() => setIsGridView((current) => !current)}
-                className="h-[19px] w-[18px] shrink-0"
-              >
-                <img src={feedViewToggleIcon} alt="" className={`h-[19px] w-[18px] ${isGridView ? 'rotate-90' : ''}`} />
-              </button>
-            }
-          />
-        </div>
+        <div className={`relative ${isGridView ? 'pt-16' : 'pt-3'}`}>
+          <button
+            type="button"
+            aria-label={isGridView ? '피드 목록으로 보기' : '피드 모아 보기'}
+            aria-pressed={isGridView}
+            onClick={() => setIsGridView((current) => !current)}
+            className={`absolute top-5 right-0 z-10 h-[19px] w-[18px] shrink-0 ${isGridView ? 'text-[#831317]' : 'text-[#c7c7c7]'}`}
+          >
+            <span
+              aria-hidden="true"
+              className={`block size-full bg-current ${isGridView ? 'rotate-90' : ''}`}
+              style={{
+                WebkitMaskImage: `url("${feedViewToggleIcon}")`,
+                maskImage: `url("${feedViewToggleIcon}")`,
+                WebkitMaskRepeat: 'no-repeat',
+                maskRepeat: 'no-repeat',
+                WebkitMaskSize: 'contain',
+                maskSize: 'contain',
+                WebkitMaskPosition: 'center',
+                maskPosition: 'center',
+              }}
+            />
+          </button>
 
-        {isGridView ? (
-          <div className="mt-7 grid grid-cols-2 gap-[3px]">
-            {feedGridImages.map((image, index) => (
-              <button
-                key={image}
-                type="button"
-                aria-label={`피드 모아보기 ${index + 1} 크게 보기`}
-                onClick={() => setImagePreview({ images: feedGridImages, index, label: '피드 모아보기' })}
-                className="h-[268px] w-full overflow-hidden"
-              >
-                <img src={image} alt={`피드 모아보기 ${index + 1}`} className="size-full object-cover" />
-              </button>
-            ))}
-          </div>
-        ) : (
-          <div className="mt-7">
-            {figmaFeeds.map((feed, index) => (
-              <FeedPost key={feed.author} feed={feed} index={index} onOpenImage={setImagePreview} showHeader={index !== 0} />
-            ))}
-          </div>
-        )}
+          {isGridView ? (
+            <div className="grid grid-cols-2 gap-[3px]">
+              {feedGridImages.map((image, index) => (
+                <button
+                  key={image}
+                  type="button"
+                  aria-label={`피드 모아보기 ${index + 1} 크게 보기`}
+                  onClick={() => setImagePreview({ images: feedGridImages, index, label: '피드 모아보기' })}
+                  className="h-[268px] w-full overflow-hidden"
+                >
+                  <img src={image} alt={`피드 모아보기 ${index + 1}`} className="size-full object-cover" />
+                </button>
+              ))}
+            </div>
+          ) : (
+            <div>
+              {figmaFeeds.map((feed, index) => (
+                <FeedPost key={feed.author} feed={feed} index={index} onOpenImage={setImagePreview} />
+              ))}
+            </div>
+          )}
+        </div>
       </main>
       {imagePreview ? (
         <ImageLightbox

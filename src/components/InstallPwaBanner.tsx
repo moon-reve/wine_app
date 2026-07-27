@@ -38,7 +38,7 @@ export default function InstallPwaBanner() {
             const accepted = await promptInstall()
             if (accepted) dismiss()
           }}
-          className="shrink-0 rounded-lg bg-[#98151b] px-3.5 py-2 text-[13px] font-bold text-white"
+          className="shrink-0 rounded-lg bg-[#831317] px-3.5 py-2 text-[13px] font-bold text-white"
         >
           설치
         </button>

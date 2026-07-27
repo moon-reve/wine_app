@@ -40,7 +40,7 @@ function MeetingTagEditor({ selectedTags, suggestedTags, onChange }: MeetingTagE
             aria-pressed={isSelected}
             className={`h-7.5 rounded-full border px-4 text-[11px] transition-colors ${
               isSelected
-                ? 'border-[#851317] bg-[#851317] font-medium text-white'
+                ? 'border-[#831317] bg-[#831317] font-medium text-white'
                 : 'border-[#d6d6d6] bg-white text-[#6e6e6e]'
             }`}
             onClick={() => toggleTag(tag)}
@@ -55,7 +55,7 @@ function MeetingTagEditor({ selectedTags, suggestedTags, onChange }: MeetingTagE
           autoFocus
           value={newTag}
           aria-label="새 태그"
-          className="h-7.5 w-24 rounded-full border border-[#851317] px-3 text-[11px] text-[#121212] outline-none"
+          className="h-7.5 w-24 rounded-full border border-[#831317] px-3 text-[11px] text-[#121212] outline-none"
           placeholder="#태그"
           onChange={(event) => setNewTag(event.target.value)}
           onBlur={addTag}
@@ -74,7 +74,7 @@ function MeetingTagEditor({ selectedTags, suggestedTags, onChange }: MeetingTagE
         <button
           type="button"
           aria-label="태그 추가"
-          className="flex size-7.5 items-center justify-center rounded-full border border-[#d6d6d6] bg-white text-[15px] font-medium text-[#851317]"
+          className="flex size-7.5 items-center justify-center rounded-full border border-[#d6d6d6] bg-white text-[15px] font-medium text-[#831317]"
           onClick={() => setIsAdding(true)}
         >
           ＋

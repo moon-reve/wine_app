@@ -289,7 +289,7 @@ function Home() {
               aria-label={`${index + 1}번 히어로 보기`}
               aria-current={heroIndex === index ? 'true' : undefined}
               onClick={() => setHeroIndex(index)}
-              className={`size-[1.860cqw] shrink-0 rounded-full ${heroIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
+              className={`size-[1.860cqw] shrink-0 rounded-full ${heroIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
             />
           ))}
         </div>
@@ -400,7 +400,7 @@ function Home() {
                 onClick={() => {
                   bestFeedScrollRef.current?.scrollTo({ left: bestFeedScrollRef.current.clientWidth * index, behavior: 'smooth' })
                 }}
-                className={`size-[1.860cqw] shrink-0 rounded-full ${bestFeedIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
+                className={`size-[1.860cqw] shrink-0 rounded-full ${bestFeedIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
               />
             ))}
           </div>
@@ -808,7 +808,7 @@ function Home() {
         {magazineCards.map((card, index) => (
           <span
             key={card.title}
-            className={`size-[1.860cqw] shrink-0 rounded-full transition-colors ${magazineIndex === index ? 'bg-[#9a0707]' : 'bg-[#d9d9d9]'}`}
+            className={`size-[1.860cqw] shrink-0 rounded-full transition-colors ${magazineIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
           />
         ))}
       </div>

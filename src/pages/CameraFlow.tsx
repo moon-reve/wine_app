@@ -131,7 +131,7 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
             <div className="absolute left-1/2 top-[10.58%] flex w-[61.86%] -translate-x-1/2 text-[min(15px,1.61dvh)] font-medium">
               <span className="w-1/2 text-center">찾기</span><button type="button" onClick={() => navigate('/feed/create')} className="w-1/2 text-center text-white/50">피드</button>
             </div>
-            <div className="absolute left-1/2 top-[19.31%] h-px w-[61.86%] -translate-x-1/2 bg-white/30"><span className="block h-px w-1/2 bg-[#9c171d]" /></div>
+            <div className="absolute left-1/2 top-[19.31%] h-px w-[61.86%] -translate-x-1/2 bg-white/30"><span className="block h-px w-1/2 bg-[#831317]" /></div>
             <p className="absolute top-[31.48%] w-full text-center text-[min(15px,1.61dvh)] font-medium leading-[1.47] text-white/80">라벨을 프레임 안에 맞춰주세요.<br />AI가 자동으로 와인을 분석합니다.</p>
           </>
         ) : (

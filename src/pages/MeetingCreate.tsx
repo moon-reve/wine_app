@@ -93,14 +93,14 @@ function MeetingCreate() {
     if (label === 'MY') navigate('/mypage')
   }
   const inputClassName =
-    'h-12 w-full rounded-[10px] border border-[#d6d6d6] bg-white px-3.75 text-[13px] text-[#121212] outline-none placeholder:text-[#949494] focus:border-[#851317]'
+    'h-12 w-full rounded-[10px] border border-[#d6d6d6] bg-white px-3.75 text-[13px] text-[#121212] outline-none placeholder:text-[#949494] focus:border-[#831317]'
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-107.5 bg-white pb-28 text-[#121212]">
       <MeetingCreateHeader />
 
       <main className="px-5 pt-2.5">
-        <h2 className="font-playfair-display text-[29px] leading-normal font-bold text-[#851317]">
+        <h2 className="font-playfair-display text-[29px] leading-normal font-bold text-[#831317]">
           Make a Meeting
         </h2>
         <p className="mt-0.5 text-[13px]">취향이 통하는 와인 모임을 직접 열어보세요.</p>
@@ -137,7 +137,7 @@ function MeetingCreate() {
               <button
                 type="button"
                 onClick={() => setIsDatePickerOpen(true)}
-                className="flex h-12 w-full items-center rounded-[10px] border border-[#d6d6d6] bg-white px-3.75 text-left text-[13px] outline-none focus:border-[#851317]"
+                className="flex h-12 w-full items-center rounded-[10px] border border-[#d6d6d6] bg-white px-3.75 text-left text-[13px] outline-none focus:border-[#831317]"
               >
                 <span className={date ? 'text-[#121212]' : 'text-[#949494]'}>{date || '날짜 선택'}</span>
               </button>
@@ -145,7 +145,7 @@ function MeetingCreate() {
 
             <fieldset className="flex min-w-0 flex-col gap-2">
               <legend className="text-xs font-bold">시간</legend>
-              <div className="mt-2 flex h-12 items-center rounded-[10px] border border-[#d6d6d6] px-2 focus-within:border-[#851317]">
+              <div className="mt-2 flex h-12 items-center rounded-[10px] border border-[#d6d6d6] px-2 focus-within:border-[#831317]">
                 <button
                   type="button"
                   aria-label="시작 시간 선택"
@@ -217,7 +217,7 @@ function MeetingCreate() {
             <textarea
               value={description}
               maxLength={1200}
-              className="h-36.5 resize-none rounded-[10px] border border-[#d6d6d6] bg-white px-3.75 py-4 text-[13px] leading-normal font-normal text-[#121212] outline-none placeholder:text-[#949494] focus:border-[#851317]"
+              className="h-36.5 resize-none rounded-[10px] border border-[#d6d6d6] bg-white px-3.75 py-4 text-[13px] leading-normal font-normal text-[#121212] outline-none placeholder:text-[#949494] focus:border-[#831317]"
               placeholder="테이스팅 주제, 제공 와인, 준비물과 진행 방식을 상세히 알려주세요."
               onChange={(event) => {
                 setDescription(event.target.value)
@@ -232,14 +232,14 @@ function MeetingCreate() {
           </section>
 
           <aside className="mt-3 rounded-[12px] bg-[#f2f2f2] px-4 py-3.75">
-            <h3 className="text-xs font-bold text-[#851317]">호스트 안내</h3>
+            <h3 className="text-xs font-bold text-[#831317]">호스트 안내</h3>
             <p className="mt-2 text-xs text-[#6e6e6e]">일정과 장소가 확정되었는지 한 번 더 확인해 주세요.</p>
           </aside>
 
           <button
             type="submit"
             disabled={isComplete}
-            className={`mt-4 h-14 w-full rounded-[12px] bg-[#851317] text-[15px] font-bold text-white disabled:cursor-not-allowed disabled:opacity-40 ${canSubmit ? '' : 'opacity-60'}`}
+            className={`mt-4 h-14 w-full rounded-[12px] bg-[#831317] text-[15px] font-bold text-white disabled:cursor-not-allowed disabled:opacity-40 ${canSubmit ? '' : 'opacity-60'}`}
           >
             모임 등록
           </button>
@@ -251,7 +251,7 @@ function MeetingCreate() {
           )}
 
           {isComplete && (
-            <p role="status" className="text-center text-sm font-medium text-[#851317]">
+            <p role="status" className="text-center text-sm font-medium text-[#831317]">
               모임이 등록되었습니다.
             </p>
           )}

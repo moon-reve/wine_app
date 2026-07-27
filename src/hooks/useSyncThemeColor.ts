@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const DEFAULT_THEME_COLOR = '#841317'
+const DEFAULT_THEME_COLOR = '#831317'
 
 // 상태표시줄이 항상 와인색으로 고정되어 있으면 화면 배경과 어긋나 보인다.
 // 현재 페이지의 실제 배경색(흰/검)에 맞춰 상태표시줄 색을 같이 바꿔
