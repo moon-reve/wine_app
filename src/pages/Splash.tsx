@@ -1,23 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import wineSippersLogo from '../assets/splash/wine-sippers-logo.png'
-
-const DESIGN_WIDTH = 430
+import { useDesignFrameHeight } from '../utils/useDesignFrameHeight'
 
 function Splash() {
   const navigate = useNavigate()
-  const [containerHeight, setContainerHeight] = useState<number | null>(null)
-
-  useEffect(() => {
-    const updateContainerHeight = () => {
-      const zoom = Math.min(1, window.innerWidth / DESIGN_WIDTH)
-      setContainerHeight(window.innerHeight / zoom)
-    }
-
-    updateContainerHeight()
-    window.addEventListener('resize', updateContainerHeight)
-    return () => window.removeEventListener('resize', updateContainerHeight)
-  }, [])
+  const containerHeight = useDesignFrameHeight()
 
   useEffect(() => {
     if (!document.querySelector('#onboarding-video-prefetch')) {
@@ -40,7 +28,7 @@ function Splash() {
   return (
     <main
       className="relative mx-auto w-full max-w-[430px] overflow-hidden bg-[#f3f0e7] text-black"
-      style={{ height: containerHeight ? `${containerHeight}px` : '100svh' }}
+      style={{ height: `${containerHeight}px` }}
       aria-label="Wine Sippers 스플래시 화면"
       data-node-id="1546:7747"
     >

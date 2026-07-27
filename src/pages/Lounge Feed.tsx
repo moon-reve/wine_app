@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type FormEvent, type PointerEvent as ReactPointerEvent, type UIEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent, type PointerEvent as ReactPointerEvent, type ReactNode, type UIEvent } from 'react'
 import { createPortal } from 'react-dom'
 import feedActions from '../assets/lounge/figma/feed-actions.svg'
 import heartOutline from '../../icon/Heart.svg'
@@ -238,7 +238,32 @@ function ImageLightbox({
   )
 }
 
-function FeedPost({ feed, index, onOpenImage }: { feed: FigmaFeed; index: number; onOpenImage: (preview: ImagePreview) => void }) {
+function FeedPostHeader({ feed, action }: { feed: FigmaFeed; action?: ReactNode }) {
+  return (
+    <div className="flex h-9 items-center justify-between gap-2.5">
+      <div className="flex items-center gap-2.5">
+        <img src={feed.avatar} alt="" className="size-9 shrink-0 rounded-full object-cover" />
+        <div className="flex flex-col gap-0.5 leading-[1.2]">
+          <p className="text-sm font-medium tracking-[-0.28px] text-[#0d0d0d]">{feed.author}</p>
+          <p className="text-xs tracking-[-0.24px] text-[#737373]">{feed.time}</p>
+        </div>
+      </div>
+      {action}
+    </div>
+  )
+}
+
+function FeedPost({
+  feed,
+  index,
+  onOpenImage,
+  showHeader = true,
+}: {
+  feed: FigmaFeed
+  index: number
+  onOpenImage: (preview: ImagePreview) => void
+  showHeader?: boolean
+}) {
   const [isWineOpen, setIsWineOpen] = useState(false)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
   const [liked, setLiked] = useState(index === 0)
@@ -338,13 +363,7 @@ function FeedPost({ feed, index, onOpenImage }: { feed: FigmaFeed; index: number
 
   return (
     <article className="font-sans">
-      <div className="flex h-9 items-center gap-2.5">
-        <img src={feed.avatar} alt="" className="size-9 shrink-0 rounded-full object-cover" />
-        <div className="flex flex-col gap-0.5 leading-[1.2]">
-          <p className="text-sm font-medium tracking-[-0.28px] text-[#0d0d0d]">{feed.author}</p>
-          <p className="text-xs tracking-[-0.24px] text-[#737373]">{feed.time}</p>
-        </div>
-      </div>
+      {showHeader ? <FeedPostHeader feed={feed} /> : null}
 
       <div className="relative mt-4 h-[534px] w-full overflow-hidden">
         <div
@@ -520,10 +539,21 @@ function Feed() {
           <LoungeTabs activeTab="피드" />
         </div>
 
-        <div className="mt-5 flex justify-end">
-          <button type="button" aria-label={isGridView ? '피드 목록으로 보기' : '피드 모아 보기'} aria-pressed={isGridView} onClick={() => setIsGridView((current) => !current)} className="h-[19px] w-[18px]">
-            <img src={feedViewToggleIcon} alt="" className={`h-[19px] w-[18px] ${isGridView ? 'rotate-90' : ''}`} />
-          </button>
+        <div className="mt-5">
+          <FeedPostHeader
+            feed={figmaFeeds[0]}
+            action={
+              <button
+                type="button"
+                aria-label={isGridView ? '피드 목록으로 보기' : '피드 모아 보기'}
+                aria-pressed={isGridView}
+                onClick={() => setIsGridView((current) => !current)}
+                className="h-[19px] w-[18px] shrink-0"
+              >
+                <img src={feedViewToggleIcon} alt="" className={`h-[19px] w-[18px] ${isGridView ? 'rotate-90' : ''}`} />
+              </button>
+            }
+          />
         </div>
 
         {isGridView ? (
@@ -542,7 +572,9 @@ function Feed() {
           </div>
         ) : (
           <div className="mt-7">
-            {figmaFeeds.map((feed, index) => <FeedPost key={feed.author} feed={feed} index={index} onOpenImage={setImagePreview} />)}
+            {figmaFeeds.map((feed, index) => (
+              <FeedPost key={feed.author} feed={feed} index={index} onOpenImage={setImagePreview} showHeader={index !== 0} />
+            ))}
           </div>
         )}
       </main>

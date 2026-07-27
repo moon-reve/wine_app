@@ -4,6 +4,7 @@ import googleIcon from '../assets/login/google.png'
 import kakaoIcon from '../assets/login/kakao.png'
 import naverIcon from '../assets/login/naver.png'
 import wineSippersLogo from '../assets/onboarding/wine-sippers-logo-white.svg'
+import { useDesignFrameHeight } from '../utils/useDesignFrameHeight'
 
 const slides = [
   {
@@ -38,6 +39,7 @@ function Onboarding() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [isLogin, setIsLogin] = useState(false)
   const isLastSlide = activeSlide === slides.length - 1
+  const containerHeight = useDesignFrameHeight()
 
   useEffect(() => {
     if (!videoRef.current) return
@@ -55,7 +57,10 @@ function Onboarding() {
   }
 
   return (
-    <main className="relative mx-auto h-[100svh] w-full max-w-[430px] overflow-hidden bg-black text-white">
+    <main
+      className="relative mx-auto w-full max-w-[430px] overflow-hidden bg-black text-white"
+      style={{ height: `${containerHeight}px` }}
+    >
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
