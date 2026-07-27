@@ -51,7 +51,7 @@ export default function FeedCreateFlow() {
   const navigate = useNavigate()
   const [step, setStep] = useState<FeedStep>('intro')
   const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null)
-  const { videoRef, facingMode, switchCamera, capture, hasCamera } = useCameraStream(step === 'intro' || step === 'camera')
+  const { videoRef, facingMode, switchCamera, capture, hasCamera, retryCamera } = useCameraStream(step === 'intro' || step === 'camera')
 
   if (step === 'compose') return <FeedComposer photo={capturedPhoto ?? feedCamera} onBack={() => setStep('edit')} />
 
@@ -71,16 +71,18 @@ export default function FeedCreateFlow() {
 
   const intro = step === 'intro'
   return <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-black text-white">
-    {hasCamera ? (
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        playsInline
-        className={`absolute inset-0 size-full object-cover ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
-      />
-    ) : (
-      <img src={feedCamera} alt="" className="absolute inset-0 size-full object-cover" />
+    <video
+      ref={videoRef}
+      autoPlay
+      muted
+      playsInline
+      className={`absolute inset-0 size-full object-cover ${hasCamera ? '' : 'hidden'} ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
+    />
+    {!hasCamera && (
+      <button type="button" onClick={retryCamera} className="absolute inset-0 size-full">
+        <img src={feedCamera} alt="" className="absolute inset-0 size-full object-cover" />
+        <span className="absolute inset-0 flex items-center justify-center bg-black/40 px-10 text-center text-sm font-medium text-white">탭해서 카메라 켜기</span>
+      </button>
     )}
     <CameraHeader onClose={() => { if (intro) navigate(-1); else setStep('intro') }} />{!intro ? <Ruler /> : null}
     {intro ? <section className="absolute inset-x-0 top-[59.44%] bottom-0 rounded-t-[5.814cqw] border-t border-white/50 bg-[#831317]/10 backdrop-blur-[16px]">

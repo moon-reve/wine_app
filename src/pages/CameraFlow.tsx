@@ -21,7 +21,7 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
   const [isSearching, setIsSearching] = useState(false)
   const [isResult, setIsResult] = useState(false)
   const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null)
-  const { videoRef, facingMode, switchCamera, capture, hasCamera } = useCameraStream(isSearch)
+  const { videoRef, facingMode, switchCamera, capture, hasCamera, retryCamera } = useCameraStream(isSearch)
 
   useEffect(() => {
     if (!isSearching || !isSearch) return
@@ -88,16 +88,18 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
 
   return (
     <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-black text-white">
-      {hasCamera ? (
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          playsInline
-          className={`absolute inset-0 size-full object-cover ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
-        />
-      ) : (
-        <img src={searchCamera} alt="" className="absolute inset-0 size-full object-cover" />
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        playsInline
+        className={`absolute inset-0 size-full object-cover ${hasCamera ? '' : 'hidden'} ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
+      />
+      {!hasCamera && (
+        <button type="button" onClick={retryCamera} className="absolute inset-0 size-full">
+          <img src={searchCamera} alt="" className="absolute inset-0 size-full object-cover" />
+          <span className="absolute inset-0 flex items-center justify-center bg-black/40 px-10 text-center text-sm font-medium text-white">탭해서 카메라 켜기</span>
+        </button>
       )}
       <div className="absolute inset-0 bg-black/[0.04]" />
 

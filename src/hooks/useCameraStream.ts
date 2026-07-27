@@ -7,41 +7,53 @@ export function useCameraStream(enabled: boolean, initialFacingMode: FacingMode 
   const streamRef = useRef<MediaStream | null>(null)
   const [facingMode, setFacingMode] = useState<FacingMode>(initialFacingMode)
   const [error, setError] = useState<string | null>(null)
+  const [hasStream, setHasStream] = useState(false)
 
-  useEffect(() => {
-    let cancelled = false
-
-    if (!enabled) return
+  const requestCamera = useCallback((mode: FacingMode) => {
     if (!navigator.mediaDevices?.getUserMedia) {
       setError('이 브라우저에서는 카메라를 사용할 수 없습니다.')
       return
     }
 
     navigator.mediaDevices
-      .getUserMedia({ video: { facingMode }, audio: false })
+      .getUserMedia({ video: { facingMode: mode }, audio: false })
       .then((stream) => {
-        if (cancelled) {
-          stream.getTracks().forEach((track) => track.stop())
-          return
-        }
+        streamRef.current?.getTracks().forEach((track) => track.stop())
         streamRef.current = stream
         if (videoRef.current) videoRef.current.srcObject = stream
         setError(null)
+        setHasStream(true)
       })
       .catch(() => {
-        if (!cancelled) setError('카메라를 사용할 수 없어요. 권한을 확인해주세요.')
+        setError('카메라를 사용할 수 없어요. 아래를 탭해서 권한을 허용해주세요.')
+        setHasStream(false)
       })
+  }, [])
+
+  useEffect(() => {
+    if (!enabled) return
+
+    // Calling getUserMedia automatically on mount works on Android/desktop,
+    // but iOS Safari often silently refuses to show the permission prompt
+    // unless the call happens inside a real user-gesture handler — so this
+    // is a best-effort first try; retryCamera (wired to a tap) is the
+    // reliable fallback for iOS.
+    requestCamera(facingMode)
 
     return () => {
-      cancelled = true
       streamRef.current?.getTracks().forEach((track) => track.stop())
       streamRef.current = null
+      setHasStream(false)
     }
-  }, [enabled, facingMode])
+  }, [enabled, facingMode, requestCamera])
 
   const switchCamera = useCallback(() => {
     setFacingMode((mode) => (mode === 'environment' ? 'user' : 'environment'))
   }, [])
+
+  const retryCamera = useCallback(() => {
+    requestCamera(facingMode)
+  }, [requestCamera, facingMode])
 
   const capture = useCallback(() => {
     const video = videoRef.current
@@ -57,5 +69,5 @@ export function useCameraStream(enabled: boolean, initialFacingMode: FacingMode 
     return canvas.toDataURL('image/jpeg', 0.92)
   }, [])
 
-  return { videoRef, facingMode, switchCamera, capture, error, hasCamera: !error }
+  return { videoRef, facingMode, switchCamera, capture, error, hasCamera: hasStream, retryCamera }
 }
