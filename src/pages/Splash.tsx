@@ -52,7 +52,7 @@ function Splash() {
     >
       <video
         ref={videoRef}
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute left-1/2 top-1/2 h-full w-auto min-w-full max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
         autoPlay
         muted
         playsInline
