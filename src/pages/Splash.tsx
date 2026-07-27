@@ -1,11 +1,29 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import wineSippersLogo from '../assets/splash/wine-sippers-logo.png'
 import { useDesignFrameHeight } from '../utils/useDesignFrameHeight'
 
 function Splash() {
   const navigate = useNavigate()
+  const videoRef = useRef<HTMLVideoElement>(null)
   const containerHeight = useDesignFrameHeight()
+
+  useEffect(() => {
+    // iOS Safari doesn't reliably honor the `autoplay` attribute on a
+    // React-mounted <video> — it sometimes needs an explicit play() call,
+    // retried once the video actually has data to play.
+    const video = videoRef.current
+    if (!video) return
+
+    // React doesn't reliably sync the `muted` JSX attribute to the DOM
+    // property, and WebKit checks the property for its no-gesture
+    // autoplay policy — so set it directly as well.
+    video.muted = true
+    const tryPlay = () => void video.play().catch(() => {})
+    tryPlay()
+    video.addEventListener('loadeddata', tryPlay)
+    return () => video.removeEventListener('loadeddata', tryPlay)
+  }, [])
 
   useEffect(() => {
     if (!document.querySelector('#onboarding-video-prefetch')) {
@@ -33,6 +51,7 @@ function Splash() {
       data-node-id="1546:7747"
     >
       <video
+        ref={videoRef}
         className="absolute inset-0 h-full w-full object-cover"
         autoPlay
         muted

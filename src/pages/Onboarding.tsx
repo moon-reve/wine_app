@@ -47,6 +47,23 @@ function Onboarding() {
     videoRef.current.playbackRate = isLogin ? 0.5 : 1
   }, [isLogin])
 
+  useEffect(() => {
+    // iOS Safari doesn't reliably honor the `autoplay` attribute on a
+    // React-mounted <video> — it sometimes needs an explicit play() call,
+    // retried once the video actually has data to play.
+    const video = videoRef.current
+    if (!video) return
+
+    // React doesn't reliably sync the `muted` JSX attribute to the DOM
+    // property, and WebKit checks the property for its no-gesture
+    // autoplay policy — so set it directly as well.
+    video.muted = true
+    const tryPlay = () => void video.play().catch(() => {})
+    tryPlay()
+    video.addEventListener('loadeddata', tryPlay)
+    return () => video.removeEventListener('loadeddata', tryPlay)
+  }, [])
+
   const handleNext = () => {
     if (isLastSlide) {
       setIsLogin(true)
