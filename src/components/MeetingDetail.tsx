@@ -68,17 +68,19 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
     >
       <header
         data-node-id="624:127"
-        className="relative flex h-[70px] w-full shrink-0 items-center justify-center"
+        className="relative h-[calc(70px+env(safe-area-inset-top))] w-full shrink-0"
       >
-        <button
-          type="button"
-          aria-label="뒤로 가기"
-          onClick={handleBack}
-          className="absolute left-5 top-5 flex size-6 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317]"
-        >
-          <img src={backIcon} alt="" aria-hidden="true" className="size-6 rotate-180" />
-        </button>
-        <h1 className="text-[18px] leading-none font-bold tracking-[-0.54px]">모임</h1>
+        <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-center">
+          <button
+            type="button"
+            aria-label="뒤로 가기"
+            onClick={handleBack}
+            className="absolute left-5 top-5 flex size-6 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317]"
+          >
+            <img src={backIcon} alt="" aria-hidden="true" className="size-6 rotate-180" />
+          </button>
+          <h1 className="text-[18px] leading-none font-bold tracking-[-0.54px]">모임</h1>
+        </div>
       </header>
 
       <img

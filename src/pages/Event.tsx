@@ -64,18 +64,20 @@ function Event() {
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-[430px] bg-white text-[#0d0d0d]" data-node-id="1147:3445">
-      <header className="relative flex h-[70px] w-full items-center justify-center bg-white">
-        <button
-          type="button"
-          aria-label="뒤로 가기"
-          onClick={() => navigate(-1)}
-          className="absolute top-5 left-[18px] flex size-6 rotate-180 items-center justify-center"
-        >
-          <img src={backIcon} alt="" className="size-6" aria-hidden="true" />
-        </button>
-        <h1 className="font-playfair text-xl leading-none font-bold tracking-[-0.4px] whitespace-nowrap text-[#831317]" style={{ fontVariationSettings: '"opsz" 12, "wdth" 100' }}>
-          Wine Festival
-        </h1>
+      <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full bg-white">
+        <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-center">
+          <button
+            type="button"
+            aria-label="뒤로 가기"
+            onClick={() => navigate(-1)}
+            className="absolute top-5 left-[18px] flex size-6 rotate-180 items-center justify-center"
+          >
+            <img src={backIcon} alt="" className="size-6" aria-hidden="true" />
+          </button>
+          <h1 className="font-playfair text-xl leading-none font-bold tracking-[-0.4px] whitespace-nowrap text-[#831317]" style={{ fontVariationSettings: '"opsz" 12, "wdth" 100' }}>
+            Wine Festival
+          </h1>
+        </div>
       </header>
 
       <div className="h-[280px] w-full shrink-0">

@@ -74,13 +74,15 @@ function EventDetails() {
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-107.5 bg-white text-[#0d0d0d]" data-node-id="1546:6475">
-      <header className="relative h-17.5 w-full overflow-hidden bg-white" data-node-id="1546:6476">
-        <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
-          <img src={backIcon} alt="" className="size-6 rotate-180" />
-        </button>
-        <h1 className="absolute top-[25px] left-[calc(50%+1px)] -translate-x-1/2 text-center text-[20px] leading-none font-bold tracking-[-0.4px] whitespace-nowrap text-[#831317]">
-          이벤트
-        </h1>
+      <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full overflow-hidden bg-white" data-node-id="1546:6476">
+        <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] h-17.5">
+          <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
+            <img src={backIcon} alt="" className="size-6 rotate-180" />
+          </button>
+          <h1 className="absolute top-[25px] left-[calc(50%+1px)] -translate-x-1/2 text-center text-[20px] leading-none font-bold tracking-[-0.4px] whitespace-nowrap text-[#831317]">
+            이벤트
+          </h1>
+        </div>
       </header>
 
       <section className="relative h-[363px] w-full overflow-hidden" aria-label="Summer Wine Festival">

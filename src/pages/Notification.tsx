@@ -167,19 +167,21 @@ function Notification() {
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-107.5 bg-white text-[#0d0d0d]" data-node-id="1546:5601">
-      <header className="relative h-17.5 w-full overflow-hidden bg-white" data-node-id="1546:5602">
-        <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
-          <img src={backIcon} alt="" className="size-6 rotate-180" />
-        </button>
-        <h1 className="absolute top-6.5 left-1/2 -translate-x-1/2 text-[18px] leading-none font-bold tracking-[-0.54px] text-[#831317]">알림</h1>
-        <button
-          type="button"
-          disabled={isAllRead}
-          onClick={markAllAsRead}
-          className={`absolute top-[28.5px] right-6 text-[13px] leading-none font-bold ${isAllRead ? 'text-[#aaa]' : 'text-[#831317]'}`}
-        >
-          모두 읽음
-        </button>
+      <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full overflow-hidden bg-white" data-node-id="1546:5602">
+        <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] h-17.5">
+          <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
+            <img src={backIcon} alt="" className="size-6 rotate-180" />
+          </button>
+          <h1 className="absolute top-6.5 left-1/2 -translate-x-1/2 text-[18px] leading-none font-bold tracking-[-0.54px] text-[#831317]">알림</h1>
+          <button
+            type="button"
+            disabled={isAllRead}
+            onClick={markAllAsRead}
+            className={`absolute top-[28.5px] right-6 text-[13px] leading-none font-bold ${isAllRead ? 'text-[#aaa]' : 'text-[#831317]'}`}
+          >
+            모두 읽음
+          </button>
+        </div>
       </header>
 
       <main className="flex w-full flex-col gap-7 overflow-hidden px-5 pt-4 pb-8">

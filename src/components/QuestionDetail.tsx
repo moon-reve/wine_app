@@ -99,16 +99,18 @@ export default function QuestionDetail({
 
   return (
     <article data-node-id="1546:3725" className={`mx-auto min-h-screen w-full max-w-[430px] bg-white text-[#0d0d0d] ${className}`}>
-      <header className="relative flex h-[70px] w-full shrink-0 items-center justify-center">
-        <button
-          type="button"
-          aria-label="뒤로 가기"
-          onClick={handleBack}
-          className="absolute top-5 left-5 flex size-6 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317]"
-        >
-          <img src={backIcon} alt="" aria-hidden="true" className="size-6 rotate-180" />
-        </button>
-        <h1 className="text-[18px] leading-none font-bold tracking-[-0.54px] text-[#831317]">Q&amp;A</h1>
+      <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full shrink-0">
+        <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-center">
+          <button
+            type="button"
+            aria-label="뒤로 가기"
+            onClick={handleBack}
+            className="absolute top-5 left-5 flex size-6 items-center justify-center rounded-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317]"
+          >
+            <img src={backIcon} alt="" aria-hidden="true" className="size-6 rotate-180" />
+          </button>
+          <h1 className="text-[18px] leading-none font-bold tracking-[-0.54px] text-[#831317]">Q&amp;A</h1>
+        </div>
       </header>
 
       <div className="flex w-full flex-col gap-5 px-5 pt-3 pb-8">

@@ -145,7 +145,7 @@ function SettingsRow({ icon, label, value, onClick, toggle, last = false }: RowP
 
 function PageHeader({ title, onBack }: { title: string; onBack: () => void }) {
   return (
-    <header className="sticky top-0 z-20 flex h-14 items-center justify-center bg-white px-5">
+    <header className="sticky top-[env(safe-area-inset-top)] z-20 flex h-14 items-center justify-center bg-white px-5">
       <button type="button" onClick={onBack} aria-label="뒤로가기" className="absolute left-5 flex size-6 items-center justify-center">
         <img src={settingsBackIcon} alt="" className="size-6" aria-hidden="true" />
       </button>
