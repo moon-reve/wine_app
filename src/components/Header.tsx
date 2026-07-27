@@ -13,9 +13,10 @@ type HeaderProps = {
   wineIcons?: boolean
   showBackButton?: boolean
   titleText?: string
+  fixedFigmaTop?: boolean
 }
 
-function Header({ tone = 'dark', titleColorClassName, wineIcons = false, showBackButton = false, titleText }: HeaderProps) {
+function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, showBackButton = false, titleText, fixedFigmaTop = false }: HeaderProps) {
   const navigate = useNavigate()
   const isLight = tone === 'light'
   const titleColor = titleColorClassName ?? (isLight ? 'text-[#831317]' : 'text-white')
