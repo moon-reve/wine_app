@@ -13,6 +13,7 @@ import QuestionWrite from './pages/QuestionWrite'
 import ProfileSettings from './components/ProfileSettings'
 import MypageSettings from './components/mypage-Settings'
 import Mypage from './pages/Mypage'
+import MyFeed from './pages/MyFeed'
 import Search from './pages/Search'
 import WineDetailRed from './pages/Wine Detail_red'
 import WineDetailWhite from './pages/Wine Detail_white'
@@ -86,6 +87,7 @@ function App() {
             <Route path="/magazine/k-wine-road" element={<MagazineDetail />} />
             <Route path="*" element={<Navigate to="/home" replace />} />
           </Route>
+          <Route path="/mypage/feed" element={<MyFeed />} />
           <Route path="/question/:questionId" element={<QuestionDetail />} />
           <Route path="/meeting/:meetingId" element={<MeetingDetail />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
