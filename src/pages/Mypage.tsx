@@ -6,7 +6,7 @@ import challengeCircleImage from '../assets/mypage/mypage-challenge-circle.png'
 import challengeRingImage from '../assets/mypage/challenge-ring.png'
 import badgesCircleImage from '../assets/mypage/badges-circle.png'
 import highlightsCircleImage from '../assets/mypage/highlights-circle.png'
-import lightSearchIcon from '../assets/lounge/search.svg'
+import mypageSearchIcon from '../assets/mypage/search.svg'
 import feedThumb1 from '../assets/mypage/figma-feed-01.png'
 import feedThumb2 from '../assets/mypage/figma-feed-02.png'
 import feedThumb3 from '../assets/mypage/figma-feed-03.png'
@@ -295,7 +295,7 @@ function Mypage() {
             onClick={() => navigate('/search')}
             className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
           >
-            <img src={lightSearchIcon} alt="" className="size-7 shrink-0" />
+            <img src={mypageSearchIcon} alt="" className="size-7 shrink-0" />
           </button>
           <button
             type="button"
