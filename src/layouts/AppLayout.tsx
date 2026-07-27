@@ -13,8 +13,9 @@ function AppLayout() {
   const isMypage = location.pathname.startsWith('/mypage')
   const isSearch = location.pathname.startsWith('/search')
   const isMagazine = location.pathname.startsWith('/magazine')
+  const isMapView = isList && new URLSearchParams(location.search).get('view') === 'map'
   const isLightPage = isLounge || isList || isMypage || isSearch || isMagazine
-  const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList ? '리스트' : '홈'
+  const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList && !isMapView ? '리스트' : '홈'
 
   useSyncThemeColor(isLightPage ? '#ffffff' : '#000000')
 

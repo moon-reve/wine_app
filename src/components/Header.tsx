@@ -8,12 +8,14 @@ import NotificationBellIcon from './NotificationBellIcon'
 
 type HeaderProps = {
   tone?: 'dark' | 'light'
+  title?: string
   titleColorClassName?: string
   wineIcons?: boolean
   showBackButton?: boolean
+  fixedFigmaTop?: boolean
 }
 
-function Header({ tone = 'dark', titleColorClassName, wineIcons = false, showBackButton = false }: HeaderProps) {
+function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, showBackButton = false, fixedFigmaTop = false }: HeaderProps) {
   const navigate = useNavigate()
   const isLight = tone === 'light'
   const titleColor = titleColorClassName ?? (isLight ? 'text-[#831317]' : 'text-white')
@@ -22,7 +24,7 @@ function Header({ tone = 'dark', titleColorClassName, wineIcons = false, showBac
 
   return (
     <header
-      className="flex w-full items-center justify-between px-5 pt-[max(18px,env(safe-area-inset-top))] pb-3"
+      className={`flex w-full items-center justify-between px-5 pb-3 ${fixedFigmaTop ? 'pt-[18px]' : 'pt-[max(18px,env(safe-area-inset-top))]'}`}
       data-node-id="577:105"
     >
       {showBackButton ? (
@@ -35,7 +37,13 @@ function Header({ tone = 'dark', titleColorClassName, wineIcons = false, showBac
           <img src={backIcon} alt="" className="size-6 rotate-180" />
         </button>
       ) : (
-        <Logo className={`h-5 w-auto shrink-0 ${titleColor}`} />
+        title ? (
+          <p className={`h-10 shrink-0 font-delmon text-[32px] leading-[1.6] font-normal ${titleColor}`}>
+            {title}
+          </p>
+        ) : (
+          <Logo className={`h-5 w-auto shrink-0 ${titleColor}`} />
+        )
       )}
 
       <div className="flex shrink-0 items-center gap-1 overflow-hidden" data-node-id="577:107">
