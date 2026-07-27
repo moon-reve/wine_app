@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import dummyWines from '../../dummy data/wines.json'
 import starIcon from '../assets/list/container-star.svg'
@@ -18,6 +18,7 @@ const TODAY_PICK_TYPES: WineType[] = ['red', 'white', 'rose', 'sparkling']
 
 const RECENT_SEARCH_STORAGE_KEY = 'wine-app:recent-searches'
 const MAX_RECENT_SEARCHES = 8
+const DEFAULT_RECENT_SEARCHES = ['Yellow Tail Shiraz', '19 Crimes', 'Oyster Bay', '푸칭 푸딩']
 const wineImages = import.meta.glob('../assets/images/wines/*.png', {
   eager: true,
   import: 'default',
@@ -44,18 +45,39 @@ const searchWineData = dummyWines as SearchWine[]
 
 function loadRecentSearches() {
   try {
-    const storedSearches = JSON.parse(localStorage.getItem(RECENT_SEARCH_STORAGE_KEY) ?? '[]')
-    return Array.isArray(storedSearches)
+    const storedValue = localStorage.getItem(RECENT_SEARCH_STORAGE_KEY)
+    if (!storedValue) return DEFAULT_RECENT_SEARCHES
+
+    const storedSearches = JSON.parse(storedValue)
+    const validSearches = Array.isArray(storedSearches)
       ? storedSearches.filter((term): term is string => typeof term === 'string').slice(0, MAX_RECENT_SEARCHES)
       : []
+
+    return validSearches.length > 0 ? validSearches : DEFAULT_RECENT_SEARCHES
   } catch {
-    return []
+    return DEFAULT_RECENT_SEARCHES
   }
 }
 
 const NEARBY_SHOPS = [
-  { id: 'wine-pairing', name: '와인 페어링', address: '서울 강남구 서초동', distance: '480m', rating: '★★★★☆ 4.7', image: shopWinePairing },
-  { id: 'wine-terrace', name: '와인 테라스', address: '서울 강남구 역삼동', distance: '320m', rating: '★★★★☆ 4.5', image: shopWineTerrace },
+  {
+    id: 'wine-pairing',
+    name: '와인 페어링',
+    address: '서울 강남구 서초동',
+    distance: '약 + 4.3 m',
+    rating: '★★★★☆ 4.7',
+    image: shopWinePairing,
+    imageClassName: 'left-[-29.91%] w-[129.94%]',
+  },
+  {
+    id: 'wine-terrace',
+    name: '와인 테라스',
+    address: '서울 강남구 역삼동',
+    distance: '약 + 10.6 m',
+    rating: '★★★★☆ 4.7',
+    image: shopWineTerrace,
+    imageClassName: 'left-[-18.32%] w-[136.72%]',
+  },
 ]
 
 type Trend = 'up' | 'down' | 'flat'
@@ -149,6 +171,10 @@ function WineResultCard({ wine, index, onClick }: { wine: SearchWine; index: num
 
 function Search() {
   const navigate = useNavigate()
+  const recentSearchScrollRef = useRef<HTMLDivElement>(null)
+  const recentSearchDragRef = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false })
+  const todayPickScrollRef = useRef<HTMLDivElement>(null)
+  const todayPickDragRef = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false })
   const [query, setQuery] = useState('')
   const [searchedQuery, setSearchedQuery] = useState<string | null>(null)
   const [recentSearches, setRecentSearches] = useState<string[]>(loadRecentSearches)
@@ -202,11 +228,69 @@ function Search() {
     setRecentSearches((current) => current.filter((recentTerm) => recentTerm !== term))
   }
 
+  const startRecentSearchDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== 'mouse' || event.button !== 0 || !recentSearchScrollRef.current) return
+
+    recentSearchDragRef.current = {
+      active: true,
+      startX: event.clientX,
+      scrollLeft: recentSearchScrollRef.current.scrollLeft,
+      moved: false,
+    }
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }
+
+  const moveRecentSearchDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    const drag = recentSearchDragRef.current
+    if (!drag.active || !recentSearchScrollRef.current) return
+
+    const distance = event.clientX - drag.startX
+    if (Math.abs(distance) > 4) drag.moved = true
+    recentSearchScrollRef.current.scrollLeft = drag.scrollLeft - distance
+  }
+
+  const endRecentSearchDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!recentSearchDragRef.current.active) return
+    recentSearchDragRef.current.active = false
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
+  }
+
+  const startTodayPickDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== 'mouse' || event.button !== 0 || !todayPickScrollRef.current) return
+
+    todayPickDragRef.current = {
+      active: true,
+      startX: event.clientX,
+      scrollLeft: todayPickScrollRef.current.scrollLeft,
+      moved: false,
+    }
+    event.currentTarget.setPointerCapture(event.pointerId)
+  }
+
+  const moveTodayPickDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    const drag = todayPickDragRef.current
+    if (!drag.active || !todayPickScrollRef.current) return
+
+    const distance = event.clientX - drag.startX
+    if (Math.abs(distance) > 4) drag.moved = true
+    todayPickScrollRef.current.scrollLeft = drag.scrollLeft - distance
+  }
+
+  const endTodayPickDrag = (event: React.PointerEvent<HTMLDivElement>) => {
+    if (!todayPickDragRef.current.active) return
+    todayPickDragRef.current.active = false
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
+      event.currentTarget.releasePointerCapture(event.pointerId)
+    }
+  }
+
   return (
-    <div className="min-h-screen w-full bg-[#f2f2f2] text-[#0d0d0d]">
+    <div className="min-h-screen w-full bg-[#f9f7f7] text-[#0d0d0d]">
       <Header tone="light" wineIcons />
 
-      <main className="px-5 pt-[21px] pb-8">
+      <main className="px-5 pt-1.5 pb-8">
         <form
           onSubmit={(event) => {
             event.preventDefault()
@@ -214,7 +298,7 @@ function Search() {
           }}
           className="flex h-[51px] items-center gap-2.5 rounded-[32px] border-2 border-[#831317] bg-white pr-3.5 pl-2.5"
         >
-          <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="flex h-8 w-6.5 shrink-0 items-center justify-center">
+          <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-2 left-[9px] flex h-8 w-6.5 items-center justify-center">
             <img src={searchBackIcon} alt="" className="h-8 w-6.5" />
           </button>
           <input
@@ -225,9 +309,9 @@ function Search() {
               if (!event.target.value.trim()) setSearchedQuery(null)
             }}
             placeholder="상품명을 입력하세요."
-            className="min-w-0 flex-1 text-[15px] text-black placeholder:text-black/20 focus:outline-none"
+            className="absolute top-0 right-[51px] left-8 h-full min-w-0 bg-transparent text-[18px] leading-[25px] font-normal tracking-[0.3px] text-black placeholder:text-black/20 focus:outline-none"
           />
-          <button type="submit" aria-label="검색" className="flex h-[39px] w-[38px] shrink-0 items-center justify-center">
+          <button type="submit" aria-label="검색" className="absolute top-1 left-[330px] flex h-[39px] w-[38px] items-center justify-center">
             <img src={searchSubmitIcon} alt="" className="h-[39px] w-[38px]" />
           </button>
         </form>
@@ -257,37 +341,47 @@ function Search() {
           </section>
         ) : (
           <>
-            <section className="pt-[26px]">
-              <div className="flex items-center justify-between">
-                <h2 className="text-[15px] font-medium text-[#6b6b6b]">최근 검색 기록</h2>
-                {recentSearches.length > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => setRecentSearches([])}
-                    className="text-[12px] font-medium text-[#737373]"
-                  >
-                    전체 삭제
-                  </button>
-                )}
-              </div>
+            <section className="pt-[13px]">
+              <h2 className="ml-1 text-[15px] leading-[163.65%] font-medium text-[#6b6b6b]">최근 검색 기록</h2>
               {recentSearches.length > 0 ? (
-                <div className="mt-[18px] flex gap-2.5 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                <div
+                  ref={recentSearchScrollRef}
+                  onPointerDown={startRecentSearchDrag}
+                  onPointerMove={moveRecentSearchDrag}
+                  onPointerUp={endRecentSearchDrag}
+                  onPointerCancel={endRecentSearchDrag}
+                  className="mt-3 flex cursor-grab touch-pan-x gap-2.5 overflow-x-scroll overscroll-x-contain pb-1 select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                >
                   {recentSearches.map((term) => (
                     <div
                       key={term}
-                      className="flex shrink-0 items-center justify-center gap-1.5 rounded-[28px] bg-white py-1.5 pr-3.5 pl-[19px] shadow-[0_1px_4px_rgba(0,0,0,0.08)]"
+                      className="flex shrink-0 items-center justify-center gap-[7px] rounded-[28px] bg-white py-1.5 pr-[13px] pl-[19px]"
                     >
                       <button
                         type="button"
-                        onClick={() => executeSearch(term)}
-                        className="text-[15px] font-semibold tracking-[0.25px] whitespace-nowrap text-[#333]"
+                        onClick={() => {
+                          if (recentSearchDragRef.current.moved) {
+                            recentSearchDragRef.current.moved = false
+                            return
+                          }
+                          executeSearch(term)
+                        }}
+                        className={`text-[15px] leading-[21.393px] font-semibold tracking-[0.25px] whitespace-nowrap ${
+                          term === '푸칭 푸딩' ? 'text-[#6b6b6b]' : 'text-[#333]'
+                        }`}
                       >
                         {term}
                       </button>
                       <button
                         type="button"
                         aria-label={`${term} 최근 검색어 삭제`}
-                        onClick={() => removeRecentSearch(term)}
+                        onClick={() => {
+                          if (recentSearchDragRef.current.moved) {
+                            recentSearchDragRef.current.moved = false
+                            return
+                          }
+                          removeRecentSearch(term)
+                        }}
                         className="flex size-[18px] shrink-0 items-center justify-center"
                       >
                         <img src={chipCloseIcon} alt="" className="size-full" />
@@ -304,14 +398,29 @@ function Search() {
               <h2 className="text-[20px] font-medium tracking-[-0.53px]">
                 오늘 추천, <span className="text-[#831317]">와인</span>
               </h2>
-              <div className="mt-5 flex gap-4 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-                {todayPickWines.map((wine) => (
-                  <TodayPickItem
-                    key={wine.id}
-                    wine={wine}
-                    onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
-                  />
-                ))}
+              <div
+                ref={todayPickScrollRef}
+                onPointerDown={startTodayPickDrag}
+                onPointerMove={moveTodayPickDrag}
+                onPointerUp={endTodayPickDrag}
+                onPointerCancel={endTodayPickDrag}
+                className="mt-5 w-full cursor-grab touch-pan-x overflow-x-scroll overscroll-x-contain pb-1 select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              >
+                <div className="flex w-max min-w-full gap-4 pr-5">
+                  {todayPickWines.map((wine) => (
+                    <TodayPickItem
+                      key={wine.id}
+                      wine={wine}
+                      onClick={() => {
+                        if (todayPickDragRef.current.moved) {
+                          todayPickDragRef.current.moved = false
+                          return
+                        }
+                        navigate(`/wine_detail/${wine.type}/${wine.id}`)
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
             </section>
 
@@ -319,18 +428,24 @@ function Search() {
               <h2 className="text-[20px] font-medium tracking-[-0.53px]">
                 <span className="text-[#831317]">내 주변</span> 와인숍
               </h2>
-              <div className="mt-5 flex flex-col gap-7">
+              <div className="mt-8 flex flex-col gap-[29px]">
                 {NEARBY_SHOPS.map((shop) => (
-                  <div key={shop.id} className="flex items-center gap-[27px]">
-                    <img src={shop.image} alt={shop.name} className="size-[110px] shrink-0 rounded-[13px] object-cover" />
-                    <div className="flex min-w-0 flex-1 flex-col justify-between gap-1.5">
+                  <div key={shop.id} className="flex h-[110px] items-center gap-[17px]">
+                    <div className="relative size-[110px] shrink-0 overflow-hidden rounded-[13px]">
+                      <img
+                        src={shop.image}
+                        alt={shop.name}
+                        className={`absolute top-0 h-full max-w-none ${shop.imageClassName}`}
+                      />
+                    </div>
+                    <div className="flex h-[93px] min-w-0 flex-1 flex-col justify-between">
                       <div className="flex flex-col gap-1.5">
-                        <p className="text-[20px] font-medium tracking-[-0.53px] text-[#222]">{shop.name}</p>
-                        <p className="text-[13px] text-[#d9d9d9]">{shop.address}</p>
+                        <p className="text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#222]">{shop.name}</p>
+                        <p className="text-[13px] leading-[115.045%] font-medium text-[#d9d9d9]">{shop.address}</p>
                       </div>
                       <div className="flex items-center justify-between">
                         <p className="text-[13px] text-[#666]">{shop.rating}</p>
-                        <p className="text-[16px] font-medium tracking-[-0.53px] text-[#6b6b6b]">{shop.distance}</p>
+                        <p className="text-[16px] leading-none font-medium tracking-[-0.5348px] whitespace-nowrap text-[#6b6b6b]">{shop.distance}</p>
                       </div>
                     </div>
                   </div>

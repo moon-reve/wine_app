@@ -8,6 +8,7 @@ import NotificationBellIcon from './NotificationBellIcon'
 
 type HeaderProps = {
   tone?: 'dark' | 'light'
+  title?: string
   titleColorClassName?: string
   wineIcons?: boolean
   showBackButton?: boolean
@@ -23,7 +24,7 @@ function Header({ tone = 'dark', titleColorClassName, wineIcons = false, showBac
 
   return (
     <header
-      className="flex w-full items-center justify-between px-5 pt-[max(18px,env(safe-area-inset-top))] pb-3"
+      className={`flex w-full items-center justify-between px-5 pb-3 ${fixedFigmaTop ? 'pt-[18px]' : 'pt-[max(18px,env(safe-area-inset-top))]'}`}
       data-node-id="577:105"
     >
       {showBackButton ? (
@@ -38,7 +39,13 @@ function Header({ tone = 'dark', titleColorClassName, wineIcons = false, showBac
       ) : titleText ? (
         <h1 className={`font-playfair shrink-0 text-[32px] leading-[1.3] tracking-[-0.64px] ${titleColor}`}>{titleText}</h1>
       ) : (
-        <Logo className={`h-5 w-auto shrink-0 ${titleColor}`} />
+        title ? (
+          <p className={`h-10 shrink-0 font-delmon text-[32px] leading-[1.6] font-normal ${titleColor}`}>
+            {title}
+          </p>
+        ) : (
+          <Logo className={`h-5 w-auto shrink-0 ${titleColor}`} />
+        )
       )}
 
       <div className="flex shrink-0 items-center gap-1 overflow-hidden" data-node-id="577:107">
