@@ -37,17 +37,22 @@ function MeetingCreate() {
   const [isConfirmOpen, setIsConfirmOpen] = useState(false)
   const [timePickerTarget, setTimePickerTarget] = useState<'start' | 'end' | null>(null)
   const [isDatePickerOpen, setIsDatePickerOpen] = useState(false)
+  const [missingFields, setMissingFields] = useState<string[]>([])
 
-  const canSubmit =
-    title.trim().length > 0 &&
-    date.length > 0 &&
-    startTime.length > 0 &&
-    endTime.length > 0 &&
-    location.trim().length > 0 &&
-    Number(maxParticipants) > 0 &&
-    fee.length > 0 &&
-    Number(fee) >= 0 &&
-    description.trim().length > 0
+  const getMissingFields = () => {
+    const missing: string[] = []
+    if (!title.trim()) missing.push('모임 제목')
+    if (!date) missing.push('날짜')
+    if (!startTime) missing.push('시작 시간')
+    if (!endTime) missing.push('종료 시간')
+    if (!location.trim()) missing.push('장소')
+    if (!(Number(maxParticipants) > 0)) missing.push('모집 인원')
+    if (!fee || Number(fee) < 0) missing.push('참가비')
+    if (!description.trim()) missing.push('모임 소개')
+    return missing
+  }
+
+  const canSubmit = getMissingFields().length === 0
 
   useEffect(() => {
     if (!isComplete) return
@@ -65,13 +70,22 @@ function MeetingCreate() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    if (!canSubmit) return
+    const missing = getMissingFields()
+    if (missing.length > 0) {
+      setMissingFields(missing)
+      return
+    }
+
+    setMissingFields([])
     setIsConfirmOpen(true)
 
     // coverImage와 폼 상태는 향후 API 연동 시 등록 데이터로 전달합니다.
   }
 
-  const resetCompleteState = () => setIsComplete(false)
+  const resetCompleteState = () => {
+    setIsComplete(false)
+    setMissingFields([])
+  }
   const handleNavItemClick = (label: string) => {
     if (label === '홈') navigate('/home')
     if (label === '리스트') navigate('/list')
@@ -170,13 +184,13 @@ function MeetingCreate() {
             <label className="flex min-w-0 flex-col gap-2 text-xs font-bold">
               모집 인원
               <input
-                type="number"
-                min="1"
+                type="text"
+                inputMode="numeric"
                 value={maxParticipants}
                 className={inputClassName}
                 placeholder="최대 10명"
                 onChange={(event) => {
-                  setMaxParticipants(event.target.value)
+                  setMaxParticipants(event.target.value.replace(/\D/g, ''))
                   resetCompleteState()
                 }}
               />
@@ -185,13 +199,13 @@ function MeetingCreate() {
             <label className="flex min-w-0 flex-col gap-2 text-xs font-bold">
               참가비
               <input
-                type="number"
-                min="0"
+                type="text"
+                inputMode="numeric"
                 value={fee}
                 className={inputClassName}
                 placeholder="₩ 55,000"
                 onChange={(event) => {
-                  setFee(event.target.value)
+                  setFee(event.target.value.replace(/\D/g, ''))
                   resetCompleteState()
                 }}
               />
@@ -224,11 +238,17 @@ function MeetingCreate() {
 
           <button
             type="submit"
-            disabled={!canSubmit || isComplete}
-            className="mt-4 h-14 w-full rounded-[12px] bg-[#851317] text-[15px] font-bold text-white disabled:cursor-not-allowed disabled:opacity-40"
+            disabled={isComplete}
+            className={`mt-4 h-14 w-full rounded-[12px] bg-[#851317] text-[15px] font-bold text-white disabled:cursor-not-allowed disabled:opacity-40 ${canSubmit ? '' : 'opacity-60'}`}
           >
             모임 등록
           </button>
+
+          {missingFields.length > 0 && (
+            <p role="alert" className="text-center text-xs leading-[1.6] font-medium text-[#c0392b]">
+              {missingFields.join(', ')} 항목을 입력해 주세요.
+            </p>
+          )}
 
           {isComplete && (
             <p role="status" className="text-center text-sm font-medium text-[#851317]">

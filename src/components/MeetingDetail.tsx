@@ -1,8 +1,14 @@
 import { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import backIcon from '../assets/images/icon-chevron-forward.svg'
 import hostAvatar from '../assets/lounge/figma/meeting-host.svg'
 import meetingPhoto from '../assets/lounge/figma/meeting-detail.png'
 import AppBottomSheet from './AppBottomSheet'
+import {
+  getLoungeMeeting,
+  getLoungeMeetingParticipantCount,
+  writeStoredExtraParticipants,
+} from '../data/loungeMeetings'
 
 type MeetingDetailProps = {
   onBack?: () => void
@@ -10,18 +16,22 @@ type MeetingDetailProps = {
   className?: string
 }
 
-const meetingDetails = [
-  { label: '일시', value: '2026년 10월 24일 (토) 19:00 - 21:30' },
-  { label: '장소', value: '한남동 프라이빗 셀러' },
-  { label: '인원', value: '8/12명 참여 중' },
-  { label: '회비', value: '55,000원 (와인 6종 시음 포함)' },
-]
-
 const tags = ['보르도', '버티컬', '희귀 와인']
 
 export default function MeetingDetail({ onBack, onApply, className = '' }: MeetingDetailProps) {
-  const [applied, setApplied] = useState(false)
-  const [dialog, setDialog] = useState<'confirm' | 'complete' | null>(null)
+  const { meetingId } = useParams()
+  const meeting = getLoungeMeeting(meetingId)
+  const [participantCount, setParticipantCount] = useState(() => getLoungeMeetingParticipantCount(meeting))
+  const [dialog, setDialog] = useState<'confirm' | 'complete' | 'full' | null>(null)
+
+  const isFull = participantCount >= meeting.maxParticipants
+
+  const meetingDetails = [
+    { label: '일시', value: '2026년 10월 24일 (토) 19:00 - 21:30' },
+    { label: '장소', value: '한남동 프라이빗 셀러' },
+    { label: '인원', value: `${participantCount}/${meeting.maxParticipants}명 참여 중` },
+    { label: '회비', value: '55,000원 (와인 6종 시음 포함)' },
+  ]
 
   const handleBack = () => {
     if (onBack) {
@@ -33,11 +43,20 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
   }
 
   const handleApply = () => {
-    setDialog('confirm')
+    setDialog(isFull ? 'full' : 'confirm')
   }
 
   const confirmApply = () => {
-    setApplied(true)
+    if (participantCount >= meeting.maxParticipants) {
+      setDialog('full')
+      return
+    }
+
+    setParticipantCount((count) => {
+      const nextCount = Math.min(count + 1, meeting.maxParticipants)
+      writeStoredExtraParticipants(meeting.id, nextCount - meeting.participants)
+      return nextCount
+    })
     onApply?.()
     setDialog('complete')
   }
@@ -71,8 +90,10 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
 
       <div data-node-id="624:133" className="flex w-full flex-col gap-5 px-5 pt-6 pb-8">
         <div className="flex gap-2" aria-label="모임 상태">
-          <span className="flex h-[21px] items-center rounded-full bg-[#831317] px-3 text-[11px] leading-none font-medium text-white">
-            모집중
+          <span
+            className={`flex h-[21px] items-center rounded-full px-3 text-[11px] leading-none font-medium ${isFull ? 'bg-[#ebebeb] text-[#737373]' : 'bg-[#831317] text-white'}`}
+          >
+            {isFull ? '마감' : '모집중'}
           </span>
           <span className="flex h-[21px] items-center rounded-full bg-[#f2eded] px-3 text-[11px] leading-none font-medium text-[#831317]">
             D-11
@@ -80,7 +101,7 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
         </div>
 
         <h2 className="w-full text-2xl leading-[1.35] font-bold tracking-[-0.72px]">
-          보르도 버티컬 마스터클래스
+          {meeting.title}
         </h2>
 
         <dl className="flex w-full flex-col gap-2.5 rounded-xl bg-[#f9f7f6] p-[18px]">
@@ -95,17 +116,22 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
         <section aria-label="참여 현황" className="flex w-full flex-col gap-2">
           <div className="flex w-full items-center justify-between text-xs leading-[1.2]">
             <span className="font-medium text-[#737373]">참여 현황</span>
-            <strong className="font-bold text-[#831317]">8/12</strong>
+            <strong className="font-bold text-[#831317]">
+              {participantCount}/{meeting.maxParticipants}
+            </strong>
           </div>
           <div
             role="progressbar"
             aria-label="모임 참여율"
             aria-valuemin={0}
-            aria-valuemax={12}
-            aria-valuenow={8}
+            aria-valuemax={meeting.maxParticipants}
+            aria-valuenow={participantCount}
             className="h-2 w-full overflow-hidden rounded-full bg-[#e2e2e2]"
           >
-            <div className="h-full w-2/3 rounded-full bg-[#831317]" />
+            <div
+              className="h-full rounded-full bg-[#831317] transition-[width] duration-300"
+              style={{ width: `${(participantCount / meeting.maxParticipants) * 100}%` }}
+            />
           </div>
         </section>
 
@@ -147,17 +173,28 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
         <button
           type="button"
           onClick={handleApply}
-          disabled={applied}
-          className="flex h-[50px] w-full items-center justify-center rounded-xl bg-[#831317] text-base leading-none font-bold text-white transition-colors hover:bg-[#670e10] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317]"
+          className={`flex h-[50px] w-full items-center justify-center rounded-xl text-base leading-none font-bold text-white transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317] ${isFull ? 'bg-[#a3a3a3]' : 'bg-[#831317] hover:bg-[#670e10]'}`}
         >
-          {applied ? '참여 신청 완료' : '참여 신청하기'}
+          {isFull ? '모집 마감' : '참여 신청하기'}
         </button>
       </div>
       <AppBottomSheet
         open={dialog !== null}
-        title={dialog === 'complete' ? '참여 신청이 완료되었습니다' : '참여 신청하시겠습니까?'}
-        message={dialog === 'confirm' ? '신청 후에는 호스트가 참여 정보를 확인할 수 있습니다.' : undefined}
-        confirmLabel={dialog === 'complete' ? '확인' : '신청'}
+        title={
+          dialog === 'complete'
+            ? '참여 신청이 완료되었습니다'
+            : dialog === 'full'
+              ? '참여 인원이 마감되었습니다'
+              : '참여 신청하시겠습니까?'
+        }
+        message={
+          dialog === 'confirm'
+            ? '신청 후에는 호스트가 참여 정보를 확인할 수 있습니다.'
+            : dialog === 'full'
+              ? `정원 ${meeting.maxParticipants}명이 모두 채워져 더 이상 신청할 수 없습니다.`
+              : undefined
+        }
+        confirmLabel={dialog === 'confirm' ? '신청' : '확인'}
         cancelLabel={dialog === 'confirm' ? '취소' : undefined}
         onClose={() => setDialog(null)}
         onConfirm={dialog === 'confirm' ? confirmApply : () => setDialog(null)}

@@ -1,19 +1,18 @@
-import { useMemo, useState, type FormEvent } from 'react'
+import { useEffect, useMemo, useState, type FormEvent } from 'react'
+import { useParams } from 'react-router-dom'
 import backIcon from '../assets/images/icon-chevron-forward.svg'
 import questionAuthorAvatar from '../assets/lounge/figma/question-author.svg'
 import answerAuthorAvatar from '../assets/lounge/figma/question-answer.svg'
+import {
+  TEMP_ANSWER_PREFIX,
+  formatLoungeAnswerStatus,
+  getLoungeQuestionDetail,
+  readStoredAnswers,
+  writeStoredAnswers,
+  type LoungeQuestionAnswer,
+} from '../data/loungeQuestionDetails'
 
 type SortMode = 'latest' | 'popular'
-
-type QuestionAnswer = {
-  id: string
-  author: string
-  time: string
-  content: string
-  helpfulCount: number
-  order: number
-  accepted: boolean
-}
 
 type QuestionDetailProps = {
   onBack?: () => void
@@ -23,38 +22,6 @@ type QuestionDetailProps = {
   className?: string
 }
 
-const figmaQuestion = {
-  title: '1982년산 보르도 와인 라벨 식별을 도와주실 수 있나요?',
-  author: '소믈리에_엔투지스트',
-  meta: '2시간 전 · 프랑스 보르도',
-  content:
-    '어제 할아버지의 셀러에서 발견했습니다. 라벨이 약간 찢어졌지만 1982라고 선명하게 적혀 있고 생테밀리옹 지역 제품인 것 같습니다. 생산자를 찾는 데 도움을 주실 수 있을까요?',
-  tags: ['1982빈티지', '보르도', '와인식별'],
-} as const
-
-const figmaAnswers: QuestionAnswer[] = [
-  {
-    id: 'figma-answer-wine-expert',
-    author: '와인전문가88',
-    time: '45분 전',
-    content:
-      "이건 샤토 피작과 매우 흡사해 보입니다. 그해 '1982'의 폰트 스타일이 매우 독특했습니다. 메를로와 카베르네 프랑이 주로 섞인 훌륭한 빈티지입니다.",
-    helpfulCount: 12,
-    order: 2,
-    accepted: true,
-  },
-  {
-    id: 'figma-answer-master-cellar',
-    author: '마스터_셀러',
-    time: '1시간 전',
-    content:
-      '와인전문가님 의견에 동의합니다. 캡슐을 확인해보세요. 오리지널이라면 샤토를 확인해주는 양각 문장이 있을 겁니다.',
-    helpfulCount: 4,
-    order: 1,
-    accepted: false,
-  },
-]
-
 export default function QuestionDetail({
   onBack,
   onFollow,
@@ -62,19 +29,32 @@ export default function QuestionDetail({
   onHelpful,
   className = '',
 }: QuestionDetailProps) {
+  const { questionId } = useParams()
+  const question = getLoungeQuestionDetail(questionId)
   const [answer, setAnswer] = useState('')
-  const [answerItems, setAnswerItems] = useState<QuestionAnswer[]>(figmaAnswers)
+  const [answerItems, setAnswerItems] = useState<LoungeQuestionAnswer[]>(() => [
+    ...readStoredAnswers(question.id),
+    ...question.answers,
+  ])
   const [sortMode, setSortMode] = useState<SortMode>('latest')
   const [following, setFollowing] = useState(false)
 
   const sortedAnswers = useMemo(() => {
     return [...answerItems].sort((a, b) => {
-      if (sortMode === 'popular') return b.helpfulCount - a.helpfulCount || b.order - a.order
-      return b.order - a.order
+      if (sortMode === 'popular') return b.helpfulCount - a.helpfulCount
+      return 0
     })
   }, [answerItems, sortMode])
 
-  const displayAnswerCount = 3 + Math.max(0, answerItems.length - figmaAnswers.length)
+  const displayAnswerCount = answerItems.length
+  const displayAnswerStatus = formatLoungeAnswerStatus(displayAnswerCount)
+
+  useEffect(() => {
+    setAnswer('')
+    setAnswerItems([...readStoredAnswers(question.id), ...question.answers])
+    setSortMode('latest')
+    setFollowing(false)
+  }, [question])
 
   const handleBack = () => {
     if (onBack) return onBack()
@@ -87,9 +67,11 @@ export default function QuestionDetail({
   }
 
   const handleHelpful = (answerId: string) => {
-    setAnswerItems((items) =>
-      items.map((item) => (item.id === answerId ? { ...item, helpfulCount: item.helpfulCount + 1 } : item)),
-    )
+    setAnswerItems((items) => {
+      const nextItems = items.map((item) => (item.id === answerId ? { ...item, helpfulCount: item.helpfulCount + 1 } : item))
+      writeStoredAnswers(question.id, nextItems.filter((item) => item.id.startsWith(TEMP_ANSWER_PREFIX)))
+      return nextItems
+    })
     onHelpful?.(answerId)
   }
 
@@ -98,18 +80,19 @@ export default function QuestionDetail({
     const value = answer.trim()
     if (!value) return
 
-    setAnswerItems((items) => [
-      {
-        id: `answer-${Date.now()}`,
+    const nextAnswer = {
+        id: `${TEMP_ANSWER_PREFIX}${Date.now()}`,
         author: '나',
         time: '방금 전',
         content: value,
         helpfulCount: 0,
-        order: Date.now(),
-        accepted: false,
-      },
-      ...items,
-    ])
+      }
+
+    setAnswerItems((items) => {
+      const nextItems = [nextAnswer, ...items]
+      writeStoredAnswers(question.id, nextItems.filter((item) => item.id.startsWith(TEMP_ANSWER_PREFIX)))
+      return nextItems
+    })
     setAnswer('')
     onSubmitAnswer?.(value)
   }
@@ -130,16 +113,18 @@ export default function QuestionDetail({
 
       <div className="flex w-full flex-col gap-5 px-5 pt-3 pb-8">
         <span className="flex h-6 w-fit items-center rounded-full bg-[#831317] px-3 text-xs leading-none font-medium text-white">
-          답변 {displayAnswerCount}
+          {displayAnswerStatus}
         </span>
 
-        <h2 className="w-full text-[22px] leading-[1.4] font-bold tracking-[-0.66px]">{figmaQuestion.title}</h2>
+        <h2 className="w-full text-[22px] leading-[1.4] font-bold tracking-[-0.66px]">{question.title}</h2>
 
         <section className="flex w-full items-center gap-2.5" aria-label="질문 작성자 정보">
           <img src={questionAuthorAvatar} alt="" className="size-10 shrink-0 rounded-full" />
           <div className="flex min-w-0 flex-col gap-0.5 leading-[1.2]">
-            <p className="text-sm font-bold tracking-[-0.28px]">{figmaQuestion.author}</p>
-            <p className="text-xs tracking-[-0.24px] text-[#737373]">{figmaQuestion.meta}</p>
+            <p className="text-sm font-bold tracking-[-0.28px]">{question.author}</p>
+            <p className="text-xs tracking-[-0.24px] text-[#737373]">
+              {question.time} · {question.location}
+            </p>
           </div>
           <button
             type="button"
@@ -151,10 +136,10 @@ export default function QuestionDetail({
           </button>
         </section>
 
-        <p className="text-sm leading-[1.6] tracking-[-0.28px] text-[#595959]">{figmaQuestion.content}</p>
+        <p className="text-sm leading-[1.6] tracking-[-0.28px] text-[#595959]">{question.content}</p>
 
         <div className="flex flex-wrap gap-2" aria-label="질문 태그">
-          {figmaQuestion.tags.map((tag) => (
+          {question.tags.map((tag) => (
             <span key={tag} className="flex h-6 items-center rounded-full bg-[#831317] px-3 text-xs leading-none font-medium text-white">
               #{tag}
             </span>

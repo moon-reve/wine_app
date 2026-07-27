@@ -1,56 +1,11 @@
 import { Link, useNavigate } from 'react-router-dom'
-import meetingImage1 from '../assets/lounge/figma/meeting-1.png'
-import meetingImage2 from '../assets/lounge/figma/meeting-2-overlay.png'
-import meetingImage3 from '../assets/lounge/figma/meeting-3-overlay.png'
 import LoungeHeader from '../components/LoungeHeader'
 import LoungeTabs from '../components/LoungeTabs'
+import { getLoungeMeetingParticipantCount, loungeMeetings, type LoungeMeeting } from '../data/loungeMeetings'
 
-const meetingCards = [
-  {
-    id: 'figma-meeting-bordeaux',
-    statusLabel: '모집중',
-    isFull: false,
-    participants: 8,
-    maxParticipants: 12,
-    title: '보르도 버티컬 마스터클래스',
-    description: '좌안의 1990-2010 빈티지를 연대순으로 탐구합니다.',
-    schedule: '2026.10.24 (토) 19:00-21:30 · 서래마을 프라이빗 다이닝',
-    tags: ['보르도', '버티컬', '소규모 모임'],
-    image: meetingImage1,
-    imagePosition: 'center 63%',
-    imageHeight: 'h-[222px]',
-  },
-  {
-    id: 'figma-meeting-chardonnay',
-    statusLabel: '모집중',
-    isFull: false,
-    participants: 4,
-    maxParticipants: 10,
-    title: '샤르도네 vs 뫼르소',
-    description: '테루아의 차이가 맛에 어떻게 반영되는지 비교 분석합니다.',
-    schedule: '2026.11.02 (월) 20:00-22:00 · 그레이프 앤 그레인 와인바',
-    tags: ['버건디', '화이트 와인', '테루아'],
-    image: meetingImage2,
-    imagePosition: 'center 85%',
-    imageHeight: 'h-[200px]',
-  },
-  {
-    id: 'figma-meeting-blind-tasting',
-    statusLabel: '대기접수',
-    isFull: true,
-    participants: 15,
-    maxParticipants: 15,
-    title: '소믈리에 블라인드 테이스팅 시리즈',
-    description: '공개되지 않은 6종의 와인으로 미각을 테스트합니다.',
-    schedule: '2026.10.26 (월) 18:30-20:30 · 성수동 와인랩',
-    tags: ['교육', '블라인드 테이스팅'],
-    image: meetingImage3,
-    imagePosition: 'center 40%',
-    imageHeight: 'h-[200px]',
-  },
-] as const
-
-type MeetingCardProps = (typeof meetingCards)[number]
+type MeetingCardProps = LoungeMeeting & {
+  isFull: boolean
+}
 
 function MeetingCard({
   statusLabel,
@@ -113,18 +68,24 @@ function Meetings() {
         <h1 className="font-playfair text-[32px] leading-[1.3] tracking-[-0.64px] text-[#831317]">Meetings</h1>
         <LoungeTabs activeTab="모임" />
 
-        {meetingCards.map((meeting, index) => (
-          <div key={meeting.id} className="contents">
-            <Link
-              to={`/meeting/${meeting.id}`}
-              aria-label={`${meeting.title} 모임 상세 보기`}
-              className="block rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#831317]"
-            >
-              <MeetingCard {...meeting} />
-            </Link>
-            {index < meetingCards.length - 1 ? <hr className="m-0 h-px w-full border-0 bg-black/12" /> : null}
-          </div>
-        ))}
+        {loungeMeetings.map((meeting, index) => {
+          const participants = getLoungeMeetingParticipantCount(meeting)
+          const isFull = participants >= meeting.maxParticipants
+          const statusLabel = isFull && meeting.statusLabel === '모집중' ? '마감' : meeting.statusLabel
+
+          return (
+            <div key={meeting.id} className="contents">
+              <Link
+                to={`/meeting/${meeting.id}`}
+                aria-label={`${meeting.title} 모임 상세 보기`}
+                className="block rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#831317]"
+              >
+                <MeetingCard {...meeting} participants={participants} isFull={isFull} statusLabel={statusLabel} />
+              </Link>
+              {index < loungeMeetings.length - 1 ? <hr className="m-0 h-px w-full border-0 bg-black/12" /> : null}
+            </div>
+          )
+        })}
       </main>
 
       <div className="pointer-events-none fixed inset-x-0 bottom-28 z-40 mx-auto w-full max-w-107.5">
