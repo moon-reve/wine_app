@@ -113,7 +113,7 @@ function MagazineDetail() {
       <img src={heroImage} alt="수확한 오미자를 선별하는 모습" className="absolute top-[-211px] left-0 h-[538px] w-[430px] max-w-none" />
       <div className="absolute top-[286px] left-0 h-[360px] w-[431px] bg-[linear-gradient(150.82deg,#6a0a0d_51.022%,#950509_106.82%)]" />
 
-      <header className="absolute top-0 left-0 z-10 h-17.5 w-full overflow-hidden">
+      <header className="absolute top-[env(safe-area-inset-top)] left-0 z-10 h-17.5 w-full overflow-hidden">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
           <img src={backIcon} alt="" className="size-6 rotate-180" />
         </button>

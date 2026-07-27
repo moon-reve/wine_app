@@ -83,7 +83,7 @@ function Onboarding() {
         }`}
         aria-hidden={isLogin}
       >
-        <header className="absolute inset-x-0 top-0 flex h-[70px] items-center justify-between px-5 pb-3 pt-[18px]">
+        <header className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-between px-5 pb-3 pt-[18px]">
           <div className="flex h-[49px] w-[110px] items-center justify-center">
             <img
               className="h-auto w-[102px]"
@@ -155,7 +155,7 @@ function Onboarding() {
       >
         <div className="pointer-events-none absolute inset-0 bg-[rgba(80,80,80,0.5)] backdrop-blur-[2px]" />
 
-        <header className="absolute inset-x-0 top-0 z-10 flex h-[70px] items-center px-5 pb-3 pt-[18px]">
+        <header className="absolute inset-x-0 top-[env(safe-area-inset-top)] z-10 flex h-[70px] items-center px-5 pb-3 pt-[18px]">
           <button
             type="button"
             className="flex size-6 items-center justify-center"

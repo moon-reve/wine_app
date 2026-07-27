@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import BottomNav, { type QuickAction } from '../components/BottomNav'
 import InstallPwaBanner from '../components/InstallPwaBanner'
+import { useSyncThemeColor } from '../hooks/useSyncThemeColor'
 
 function AppLayout() {
   const location = useLocation()
@@ -14,6 +15,8 @@ function AppLayout() {
   const isMagazine = location.pathname.startsWith('/magazine')
   const isLightPage = isLounge || isList || isMypage || isSearch || isMagazine
   const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList ? '리스트' : '홈'
+
+  useSyncThemeColor(isLightPage ? '#ffffff' : '#000000')
 
   const handleNavItemClick = (label: string) => {
     setIsQuickMenuOpen(false)

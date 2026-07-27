@@ -22,7 +22,7 @@ function Header({ tone = 'dark', titleColorClassName, wineIcons = false, showBac
 
   return (
     <header
-      className="flex w-full items-center justify-between px-5 pt-4.5 pb-3"
+      className="flex w-full items-center justify-between px-5 pt-[calc(18px+env(safe-area-inset-top))] pb-3"
       data-node-id="577:105"
     >
       {showBackButton ? (

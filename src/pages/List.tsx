@@ -69,7 +69,7 @@ function List() {
 
   return (
     <div
-      className={`${view === 'map' ? 'flex h-dvh min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
+      className={`${view === 'map' ? 'flex h-dvh-zoomed min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
       data-node-id="690:403"
     >
       <Header tone="light" titleColorClassName="text-[#831317]" wineIcons />

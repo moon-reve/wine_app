@@ -285,7 +285,7 @@ function Mypage() {
 
   return (
     <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '1546:4825' : activeTab === 'likes' ? '1546:5430' : '1546:5323'}>
-      <header className="flex w-full items-center justify-between px-5 pt-4.5 pb-3 text-[#851317]" data-node-id="577:105">
+      <header className="flex w-full items-center justify-between px-5 pt-[calc(18px+env(safe-area-inset-top))] pb-3 text-[#851317]" data-node-id="577:105">
         <Logo className="h-5 w-auto shrink-0 text-[#851317]" />
 
         <div className="flex shrink-0 items-center gap-1 overflow-hidden" data-node-id="577:107">

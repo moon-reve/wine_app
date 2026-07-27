@@ -7,7 +7,7 @@ export default function LoungeHeader() {
   const navigate = useNavigate()
 
   return (
-    <header className="flex h-[70px] w-full items-center justify-between px-5 pt-[18px] pb-3">
+    <header className="flex h-[calc(70px+env(safe-area-inset-top))] w-full items-center justify-between px-5 pt-[calc(18px+env(safe-area-inset-top))] pb-3">
       <div
         role="img"
         aria-label="Viner"

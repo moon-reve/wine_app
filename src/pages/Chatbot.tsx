@@ -480,7 +480,7 @@ export default function Chatbot() {
         }}
       />
 
-      <header className="absolute inset-x-0 top-0 z-30 h-[70px] bg-white/90 backdrop-blur-sm">
+      <header className="absolute inset-x-0 top-[env(safe-area-inset-top)] z-30 h-[70px] bg-white/90 backdrop-blur-sm">
         <button
           type="button"
           aria-label="뒤로 가기"

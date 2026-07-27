@@ -118,7 +118,7 @@ function TodaysPick() {
 
   return (
     <div className="relative mx-auto min-h-[1307px] w-full max-w-107.5 overflow-hidden bg-white text-[#0d0d0d]" data-node-id="1546:6383">
-      <header className="absolute top-0 left-0 h-17.5 w-full overflow-hidden bg-white">
+      <header className="absolute top-[env(safe-area-inset-top)] left-0 h-17.5 w-full overflow-hidden bg-white">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-[23px] left-4.5 flex size-6 items-center justify-center">
           <img src={backIcon} alt="" className="size-6 rotate-180" />
         </button>
