@@ -15,9 +15,9 @@ import { useCameraStream } from '../hooks/useCameraStream'
 type FeedStep = 'intro' | 'camera' | 'edit' | 'compose'
 
 const CameraHeader = ({ onClose }: { onClose: () => void }) => <>
-  <button type="button" aria-label="닫기" onClick={onClose} className="absolute left-5 top-7 z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
-  <img src={flashIcon} alt="플래시 끄기" className="absolute left-1/2 top-7 z-20 h-[22px] w-[19px] -translate-x-1/2" />
-  <img src={settingsIcon} alt="설정" className="absolute right-[18px] top-7 z-20 size-6" />
+  <button type="button" aria-label="닫기" onClick={onClose} className="absolute left-5 top-[max(28px,env(safe-area-inset-top))] z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
+  <img src={flashIcon} alt="플래시 끄기" className="absolute left-1/2 top-[max(28px,env(safe-area-inset-top))] z-20 h-[22px] w-[19px] -translate-x-1/2" />
+  <img src={settingsIcon} alt="설정" className="absolute right-[18px] top-[max(28px,env(safe-area-inset-top))] z-20 size-6" />
 </>
 
 const Ruler = ({ editor = false }: { editor?: boolean }) => <div aria-hidden="true" className={`absolute right-[4.651cqw] z-10 w-[7.442cqw] opacity-80 ${editor ? 'top-[17.67%] h-[64.19%]' : 'top-[30.79%] h-[29.61%]'}`}><span className="absolute inset-y-0 right-0 w-1/2 bg-[repeating-linear-gradient(to_bottom,white_0_1px,transparent_1px_1.395cqw)]" /><span className="absolute right-0 top-1/2 h-px w-full bg-white" /></div>
@@ -56,8 +56,8 @@ export default function FeedCreateFlow() {
   if (step === 'compose') return <FeedComposer photo={capturedPhoto ?? feedCamera} onBack={() => setStep('edit')} />
 
   if (step === 'edit') return <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-[#170d0d] text-white">
-    <button type="button" aria-label="보정 화면 닫기" onClick={() => setStep('camera')} className="absolute left-5 top-7 z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
-    <button type="button" onClick={() => setStep('compose')} className="absolute right-[18px] top-7 z-20 flex h-6 items-center text-[3.488cqw] font-medium">다음</button>
+    <button type="button" aria-label="보정 화면 닫기" onClick={() => setStep('camera')} className="absolute left-5 top-[max(28px,env(safe-area-inset-top))] z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
+    <button type="button" onClick={() => setStep('compose')} className="absolute right-[18px] top-[max(28px,env(safe-area-inset-top))] z-20 flex h-6 items-center text-[3.488cqw] font-medium">다음</button>
     <div className="absolute left-1/2 top-[21.5px] flex h-[37px] w-[37.442cqw] -translate-x-1/2 items-center justify-around rounded-full border border-white/20 bg-[#d9d9d9]/20 text-[2.791cqw]"><span className="text-white/50">3:4</span><span className="text-white/50">9:16</span><b>1:1</b><span className="text-white/50">Full</span></div>
     <div className="absolute inset-x-0 top-[22.64%] h-[46.14%] overflow-hidden"><img src={capturedPhoto ?? feedCamera} alt="보정할 피드 사진" className="size-full object-cover" />
       <div className="absolute left-[4.651cqw] top-[25.81%] flex h-[48%] flex-col justify-between">{[[toolWine,'와인라벨'],[toolGrid,'레이아웃']].map(([icon,label]) => <button type="button" key={label} className="flex items-center gap-[2.093cqw] text-[2.791cqw] text-white/80"><img src={icon} alt="" className="size-[6.047cqw]" />{label}</button>)}<button type="button" className="flex items-center gap-[2.093cqw] text-[2.791cqw] text-white/80"><span className="w-[6.047cqw] text-[5.116cqw] font-light">Aa</span>텍스트 추가</button><button type="button" className="flex items-center gap-[2.093cqw] text-[2.791cqw] text-white/80"><img src={toolFilter} alt="" className="h-[6.047cqw] w-[6.512cqw]" />필터</button></div><Ruler editor />
