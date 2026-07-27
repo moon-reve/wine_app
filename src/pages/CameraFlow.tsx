@@ -6,13 +6,12 @@ import settingsIcon from '../assets/quick-flow/settings.svg'
 import shutterIcon from '../assets/quick-flow/shutter.svg'
 import switchIcon from '../assets/quick-flow/switch.svg'
 import scanFrame from '../assets/quick-flow/scan-frame.svg'
-import feedCamera from '../assets/quick-flow/feed-camera.png'
-import feedThumb from '../assets/quick-flow/feed-thumb.png'
 import searchCamera from '../assets/quick-flow/search-camera.png'
 import searchThumb from '../assets/quick-flow/search-thumb.png'
 import searchResultWine from '../assets/quick-flow/search-result-wine.png'
 import FeedCreateFlow from './FeedCreateFlow'
 import type { ChatbotLocationState } from '../data/chatbotRecommendation'
+import { useCameraStream } from '../hooks/useCameraStream'
 
 type CameraFlowProps = { mode: 'feed' | 'search' }
 
@@ -21,6 +20,8 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
   const isSearch = mode === 'search'
   const [isSearching, setIsSearching] = useState(false)
   const [isResult, setIsResult] = useState(false)
+  const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null)
+  const { videoRef, facingMode, switchCamera, capture, hasCamera } = useCameraStream(isSearch)
 
   useEffect(() => {
     if (!isSearching || !isSearch) return
@@ -32,8 +33,8 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
 
   if (isResult) {
     return (
-      <main className="@container relative mx-auto h-[100dvh] w-full max-w-[430px] overflow-hidden bg-black text-white">
-        <img src={searchCamera} alt="" className="absolute -inset-2 h-[calc(100%+16px)] w-[calc(100%+16px)] object-cover blur-[6px]" />
+      <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-black text-white">
+        <img src={capturedPhoto ?? searchCamera} alt="" className="absolute -inset-2 h-[calc(100%+16px)] w-[calc(100%+16px)] object-cover blur-[6px]" />
         <div className="absolute inset-0 bg-black/20" />
         <button type="button" aria-label="인식 결과 닫기" onClick={() => { setIsResult(false); setIsSearching(false) }} className="absolute left-5 top-7 z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
         <img src={flashIcon} alt="플래시 끄기" className="absolute left-1/2 top-7 z-20 h-[22px] w-[19px] -translate-x-1/2" />
@@ -86,12 +87,18 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
   }
 
   return (
-    <main className="@container relative mx-auto h-[100dvh] w-full max-w-[430px] overflow-hidden bg-black text-white">
-      <img
-        src={isSearch ? searchCamera : feedCamera}
-        alt=""
-        className="absolute inset-0 size-full object-cover"
-      />
+    <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-black text-white">
+      {hasCamera ? (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          className={`absolute inset-0 size-full object-cover ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
+        />
+      ) : (
+        <img src={searchCamera} alt="" className="absolute inset-0 size-full object-cover" />
+      )}
       <div className="absolute inset-0 bg-black/[0.04]" />
 
       {isSearching ? <div role="status" aria-label="와인 분석 중" className="absolute left-1/2 top-[36.375%] z-30 size-[min(56px,6dvh)] -translate-x-1/2 -translate-y-1/2 rounded-full border-[min(5px,0.54dvh)] border-white/25 border-t-white animate-spin" /> : null}
@@ -127,11 +134,21 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
 
       </section>
 
-        {!isSearching ? <img src={isSearch ? searchThumb : feedThumb} alt="최근 사진" className="absolute top-[83.37%] left-[13.953cqw] z-20 size-[13.488cqw] rounded-[2.791cqw] border-2 border-white/90 object-cover" /> : null}
-        <button type="button" aria-label={isSearching ? '와인 분석 중' : '촬영'} onClick={() => { if (isSearch) setIsSearching(true) }} className="absolute top-[82.53%] left-1/2 z-20 size-[16.279cqw] -translate-x-1/2">
+        {!isSearching ? <img src={capturedPhoto ?? searchThumb} alt="최근 사진" className="absolute top-[83.37%] left-[13.953cqw] z-20 size-[13.488cqw] rounded-[2.791cqw] border-2 border-white/90 object-cover" /> : null}
+        <button
+          type="button"
+          aria-label={isSearching ? '와인 분석 중' : '촬영'}
+          onClick={() => {
+            if (!isSearch) return
+            const photo = capture()
+            if (photo) setCapturedPhoto(photo)
+            setIsSearching(true)
+          }}
+          className="absolute top-[82.53%] left-1/2 z-20 size-[16.279cqw] -translate-x-1/2"
+        >
           <img src={shutterIcon} alt="" className="absolute -inset-[7.14%] size-[114.28%] max-w-none" />
         </button>
-        {!isSearching ? <button type="button" aria-label="카메라 전환" className="absolute top-[84.01%] right-[14.419cqw] z-20 size-[12.558cqw]">
+        {!isSearching ? <button type="button" aria-label="카메라 전환" onClick={switchCamera} className="absolute top-[84.01%] right-[14.419cqw] z-20 size-[12.558cqw]">
           <img src={switchIcon} alt="" className="size-full" />
         </button> : null}
     </main>
