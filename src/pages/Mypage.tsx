@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import avatarImage from '../assets/mypage/figma-profile-photo.png'
 import profileStoryRing from '../assets/mypage/profile-story-ring.svg'
@@ -28,21 +28,6 @@ import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wi
 import { useLikedWines } from '../context/LikedWinesContext'
 import { DEMO_WINE_RECORDS, useWineRecords } from '../context/WineRecordsContext'
 
-const feedImages = [
-  feedThumb1,
-  feedThumb2,
-  feedThumb3,
-  feedThumb4,
-  feedThumb5,
-  feedThumb6,
-  feedThumb7,
-  feedThumb8,
-  feedThumb9,
-  feedThumb10,
-  feedThumb11,
-  feedThumb12,
-]
-
 const feedItems = [
   { image: feedThumb1, crop: 'absolute top-[-21.13%] left-[-7.75%] h-[204.57%] w-[115.11%] max-w-none', multiple: true },
   { image: feedThumb2, crop: 'absolute inset-0 size-full object-cover', multiple: false },
@@ -52,7 +37,7 @@ const feedItems = [
   { image: feedThumb6, crop: 'absolute top-0 left-[-0.34%] h-[111.69%] w-[100.16%] max-w-none', multiple: true },
   { image: feedThumb7, crop: 'absolute top-[-3.62%] left-[-1.91%] h-[117.42%] w-[105.26%] max-w-none', multiple: false },
   { image: feedThumb8, crop: 'absolute top-[0.17%] left-[-12.03%] h-[125.08%] w-[112.13%] max-w-none', multiple: true },
-  { image: feedThumb9, crop: 'absolute inset-0 size-full object-cover object-bottom', multiple: false },
+  { image: feedThumb9, crop: 'absolute inset-0 size-full object-fill', multiple: false },
   { image: feedThumb10, crop: 'absolute top-[-0.09%] left-[-0.52%] h-[121.6%] w-full max-w-none', multiple: true },
   { image: feedThumb11, crop: 'absolute top-[-0.22%] left-[-0.26%] h-[104.98%] w-[100.26%] max-w-none', multiple: false },
   { image: feedThumb12, crop: 'absolute top-[-8.05%] left-[-0.26%] h-[111.98%] w-[100.26%] max-w-none', multiple: false },
@@ -150,99 +135,11 @@ function LikedWineCard({
   )
 }
 
-type FeedLightboxProps = {
-  selectedIndex: number
-  onClose: () => void
-  onPrevious: () => void
-  onNext: () => void
-}
-
-function FeedLightbox({ selectedIndex, onClose, onPrevious, onNext }: FeedLightboxProps) {
-  useEffect(() => {
-    const previousOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose()
-      if (event.key === 'ArrowLeft') onPrevious()
-      if (event.key === 'ArrowRight') onNext()
-    }
-
-    window.addEventListener('keydown', handleKeyDown)
-
-    return () => {
-      document.body.style.overflow = previousOverflow
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [onClose, onNext, onPrevious])
-
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label={`내 피드 ${selectedIndex + 1} 확대 보기`}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 px-5 py-20"
-      onClick={onClose}
-    >
-      <button
-        type="button"
-        aria-label="확대 화면 닫기"
-        onClick={onClose}
-        className="absolute top-[calc(20px+env(safe-area-inset-top))] right-5 flex size-11 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-sm"
-      >
-        <svg viewBox="0 0 24 24" className="size-7" fill="none" aria-hidden="true">
-          <path d="M5 5 19 19M19 5 5 19" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-        </svg>
-      </button>
-
-      <button
-        type="button"
-        aria-label="이전 피드 보기"
-        onClick={(event) => {
-          event.stopPropagation()
-          onPrevious()
-        }}
-        className="absolute top-1/2 left-3 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-sm"
-      >
-        <svg viewBox="0 0 24 24" className="size-7" fill="none" aria-hidden="true">
-          <path d="m15 5-7 7 7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-
-      <img
-        src={feedImages[selectedIndex]}
-        alt={`내 피드 ${selectedIndex + 1}`}
-        className="max-h-full max-w-full rounded-lg object-contain"
-        onClick={(event) => event.stopPropagation()}
-      />
-
-      <button
-        type="button"
-        aria-label="다음 피드 보기"
-        onClick={(event) => {
-          event.stopPropagation()
-          onNext()
-        }}
-        className="absolute top-1/2 right-3 flex size-11 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-white backdrop-blur-sm"
-      >
-        <svg viewBox="0 0 24 24" className="size-7" fill="none" aria-hidden="true">
-          <path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </button>
-
-      <p className="absolute bottom-[calc(24px+env(safe-area-inset-bottom))] left-1/2 -translate-x-1/2 text-sm font-medium tracking-[-0.28px] text-white">
-        {selectedIndex + 1} / {feedImages.length}
-      </p>
-    </div>
-  )
-}
-
 function Mypage() {
   const navigate = useNavigate()
   const location = useLocation()
   const initialTab = (location.state as { activeTab?: 'feed' | 'wine' | 'likes' } | null)?.activeTab
   const [activeTab, setActiveTab] = useState<'feed' | 'wine' | 'likes'>(initialTab ?? 'feed')
-  const [selectedFeedIndex, setSelectedFeedIndex] = useState<number | null>(null)
   const { likedWineIds, unlike } = useLikedWines()
   const { records, deleteRecord } = useWineRecords()
   // 데모 기록은 세션 동안만 숨기고, 강제 새로고침하면 다시 나타나야 하므로
@@ -274,14 +171,6 @@ function Mypage() {
         .map(toListWine),
     [likedWineIds],
   )
-
-  const showPreviousFeed = () => {
-    setSelectedFeedIndex((current) => current === null ? null : (current - 1 + feedImages.length) % feedImages.length)
-  }
-
-  const showNextFeed = () => {
-    setSelectedFeedIndex((current) => current === null ? null : (current + 1) % feedImages.length)
-  }
 
   return (
     <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '1546:4825' : activeTab === 'likes' ? '1546:5430' : '1546:5323'}>
@@ -424,7 +313,7 @@ function Mypage() {
                   key={`${item.image}-${index}`}
                   type="button"
                   aria-label={`내 피드 ${index + 1} 확대 보기`}
-                  onClick={() => setSelectedFeedIndex(index)}
+                  onClick={() => navigate('/mypage/feed', { state: { index } })}
                   className="relative h-[154.333px] overflow-hidden"
                 >
                   <img src={item.image} alt={`내 피드 ${index + 1}`} className={item.crop} />
@@ -470,15 +359,6 @@ function Mypage() {
           )}
         </section>
       </main>
-
-      {selectedFeedIndex !== null && (
-        <FeedLightbox
-          selectedIndex={selectedFeedIndex}
-          onClose={() => setSelectedFeedIndex(null)}
-          onPrevious={showPreviousFeed}
-          onNext={showNextFeed}
-        />
-      )}
     </div>
   )
 }

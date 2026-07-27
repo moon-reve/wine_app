@@ -42,7 +42,7 @@ type WinePin = {
   calloutSide: 'left' | 'right'
 }
 
-type FigmaFeed = {
+export type FigmaFeed = {
   author: string
   time: string
   avatar: string
@@ -53,7 +53,7 @@ type FigmaFeed = {
   wine?: WinePin
 }
 
-type ImagePreview = {
+export type ImagePreview = {
   images: string[]
   index: number
   label: string
@@ -148,7 +148,7 @@ async function loadKakaoSdk() {
   return kakaoWindow.Kakao
 }
 
-function ImageLightbox({
+export function ImageLightbox({
   preview,
   onClose,
   onIndexChange,
@@ -238,7 +238,7 @@ function ImageLightbox({
   )
 }
 
-function FeedPostHeader({ feed, action }: { feed: FigmaFeed; action?: ReactNode }) {
+export function FeedPostHeader({ feed, action }: { feed: FigmaFeed; action?: ReactNode }) {
   return (
     <div className="flex h-9 items-center justify-between gap-2.5">
       <div className="flex items-center gap-2.5">
@@ -253,16 +253,20 @@ function FeedPostHeader({ feed, action }: { feed: FigmaFeed; action?: ReactNode 
   )
 }
 
-function FeedPost({
+export function FeedPost({
   feed,
   index,
   onOpenImage,
   showHeader = true,
+  imageBoxClassName,
+  imageClassName,
 }: {
   feed: FigmaFeed
   index: number
   onOpenImage: (preview: ImagePreview) => void
   showHeader?: boolean
+  imageBoxClassName?: string
+  imageClassName?: string
 }) {
   const [isWineOpen, setIsWineOpen] = useState(false)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
@@ -365,7 +369,7 @@ function FeedPost({
     <article className="font-sans">
       {showHeader ? <FeedPostHeader feed={feed} /> : null}
 
-      <div className="relative mt-4 h-[534px] w-full overflow-hidden">
+      <div className={`relative mt-4 w-full overflow-hidden ${imageBoxClassName ?? 'h-[534px]'}`}>
         <div
           ref={carouselRef}
           onScroll={handleCarouselScroll}
@@ -388,14 +392,14 @@ function FeedPost({
                 }
                 onOpenImage({ images: feed.images, index: imageIndex, label: `${feed.author}의 피드` })
               }}
-              className="size-full shrink-0 snap-center overflow-hidden"
+              className="relative size-full shrink-0 snap-center overflow-hidden"
             >
               <img
                 src={image}
                 alt={`${feed.author}의 피드 사진 ${imageIndex + 1}`}
                 draggable={false}
-                className="size-full object-cover"
-                style={{ objectPosition: imageIndex === 0 ? feed.imagePosition : 'center' }}
+                className={imageClassName ?? 'size-full object-cover'}
+                style={imageClassName ? undefined : { objectPosition: imageIndex === 0 ? feed.imagePosition : 'center' }}
               />
             </button>
           ))}
