@@ -478,7 +478,7 @@ export default function Chatbot() {
 
   return (
     <main
-      className="@container relative mx-auto h-[100dvh] min-h-[700px] w-full max-w-[430px] overflow-hidden bg-[#f2f2f2] text-black"
+      className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-[#f2f2f2] text-black"
       data-node-id="1546:3232"
     >
       <header className="absolute inset-x-0 top-[env(safe-area-inset-top)] z-30 h-[70px] bg-[#f2f2f2]/90 backdrop-blur-sm">
@@ -503,10 +503,10 @@ export default function Chatbot() {
 
       <div
         ref={conversationScrollRef}
-        className={`absolute inset-x-0 top-[70px] bottom-0 z-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${turns.length ? "overflow-y-auto pb-[180px]" : "overflow-hidden"}`}
+        className={`absolute inset-x-0 top-[calc(70px+env(safe-area-inset-top))] bottom-0 z-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${turns.length ? "overflow-y-auto pb-[180px]" : "overflow-hidden"}`}
       >
         <section
-          className="relative min-h-[calc(100dvh-70px)]"
+          className="relative min-h-full"
           aria-label="챗봇 시작 화면"
         >
           <div className="absolute top-[185px] left-1/2 -translate-x-1/2">

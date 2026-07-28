@@ -129,7 +129,13 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
   }
 
   return <main className="mx-auto min-h-screen w-full max-w-[430px] bg-white pb-6 text-[#121212] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-    <header className="sticky top-[env(safe-area-inset-top)] z-20 flex h-[70px] items-center justify-between bg-white px-5"><button type="button" onClick={onBack} aria-label="뒤로 가기" className="text-2xl text-[#831317]">‹</button><h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-[#831317]">새 피드</h1><button type="button" className="text-[13px] text-black/60">임시저장</button></header>
+    <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full bg-white">
+      <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-between px-5">
+        <button type="button" onClick={onBack} aria-label="뒤로 가기" className="text-2xl text-[#831317]">‹</button>
+        <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-[#831317]">새 피드</h1>
+        <button type="button" className="text-[13px] text-black/60">임시저장</button>
+      </div>
+    </header>
     <form className="space-y-6 px-5 pt-[11px]" onSubmit={handleSubmit}>
       <section><h2 className="mb-[10px] text-sm font-bold">사진 첨부</h2><div className="flex gap-3"><img src={photo} alt="첨부된 사진" className="size-[90px] rounded-[10px] object-cover" /><button type="button" className="size-[90px] rounded-[10px] border border-dashed border-[#d9d9d9] bg-[#f2f2f2] text-[26px] text-[#737373]">+</button></div></section>
       <label className="block"><span className="mb-[10px] block text-sm font-bold">피드 내용</span><textarea value={content} onChange={(event) => setContent(event.target.value)} className="h-[130px] w-full resize-none rounded-[10px] border border-[#d6d6d6] px-[10px] py-4 text-[13px] outline-[#831317] placeholder:text-black/20" placeholder="오늘 마신 와인과 순간을 공유해보세요." /></label>
@@ -260,7 +266,7 @@ export default function FeedCreateFlow() {
   if (step === 'edit') return <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-[#170d0d] text-white">
     <button type="button" aria-label="보정 화면 닫기" onClick={() => setStep('camera')} className="absolute left-5 top-[max(28px,env(safe-area-inset-top))] z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
     <button type="button" onClick={() => setStep('compose')} className="absolute right-[18px] top-[max(28px,env(safe-area-inset-top))] z-20 flex h-6 items-center text-[3.488cqw] font-medium">다음</button>
-    <div className="absolute left-1/2 top-[21.5px] flex h-[37px] w-[37.442cqw] -translate-x-1/2 items-center justify-around rounded-full border border-white/20 bg-[#d9d9d9]/20 text-[2.791cqw]">
+    <div className="absolute top-[calc(21.5px+env(safe-area-inset-top))] left-1/2 flex h-[37px] w-[37.442cqw] -translate-x-1/2 items-center justify-around rounded-full border border-white/20 bg-[#d9d9d9]/20 text-[2.791cqw]">
       {ASPECT_RATIOS.map((ratio) => (
         <button
           key={ratio}
