@@ -1,11 +1,11 @@
-import { fetchPlaceImageAsset, fetchPlaceOgImage } from './_lib/placeImage'
+import { fetchPlaceImageAsset, fetchPlaceOgImage } from './_lib/placeImage.js'
 
 type ApiRequest = { query: Record<string, string | string[] | undefined> }
 type ApiResponse = {
   status: (code: number) => ApiResponse
   setHeader: (name: string, value: string) => void
   json: (body: unknown) => void
-  send: (body: Uint8Array) => void
+  end: (body: Uint8Array) => void
 }
 
 export default async function handler(req: ApiRequest, res: ApiResponse) {
@@ -27,7 +27,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
 
     res.setHeader('Content-Type', asset.contentType)
     res.setHeader('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800')
-    res.status(200).send(Buffer.from(asset.body))
+    res.status(200).end(asset.body)
     return
   }
 
