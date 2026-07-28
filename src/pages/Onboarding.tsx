@@ -9,6 +9,7 @@ import { useDesignFrameHeight } from '../utils/useDesignFrameHeight'
 const slides = [
   {
     nodeId: '1546:7756',
+    video: '/videos/onboarding-01.mp4',
     title: ['Find Your', 'Wine People'],
     description: [
       '나와 같은 취향을 가진 사람들과 와인 이야기와',
@@ -17,6 +18,7 @@ const slides = [
   },
   {
     nodeId: '1546:7811',
+    video: '/videos/onboarding-02.mp4',
     title: ['Share your', 'Taste'],
     description: [
       '당신만의 와인 경험을 나누고 다른 사람들의',
@@ -25,6 +27,7 @@ const slides = [
   },
   {
     nodeId: '1546:7770',
+    video: '/videos/onboarding-03.mp4',
     title: ['Sip. Share.', 'Connect'],
     description: [
       '한 잔의 와인에서 시작된 대화가 새로운 경험과 인연으로',
@@ -35,34 +38,34 @@ const slides = [
 
 function Onboarding() {
   const navigate = useNavigate()
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const videoRefs = useRef<Array<HTMLVideoElement | null>>([])
   const [activeSlide, setActiveSlide] = useState(0)
   const [isLogin, setIsLogin] = useState(false)
   const isLastSlide = activeSlide === slides.length - 1
   const containerHeight = useDesignFrameHeight()
 
   useEffect(() => {
-    if (!videoRef.current) return
+    const cleanups = videoRefs.current.map((video, index) => {
+      if (!video) return undefined
 
-    videoRef.current.playbackRate = isLogin ? 0.5 : 1
-  }, [isLogin])
+      // WebKit checks the DOM property when deciding whether autoplay is
+      // allowed, so set it directly in addition to the JSX attribute.
+      video.muted = true
+      video.playbackRate = isLogin && index === activeSlide ? 0.5 : 1
 
-  useEffect(() => {
-    // iOS Safari doesn't reliably honor the `autoplay` attribute on a
-    // React-mounted <video> — it sometimes needs an explicit play() call,
-    // retried once the video actually has data to play.
-    const video = videoRef.current
-    if (!video) return
+      if (index !== activeSlide) {
+        video.pause()
+        return undefined
+      }
 
-    // React doesn't reliably sync the `muted` JSX attribute to the DOM
-    // property, and WebKit checks the property for its no-gesture
-    // autoplay policy — so set it directly as well.
-    video.muted = true
-    const tryPlay = () => void video.play().catch(() => {})
-    tryPlay()
-    video.addEventListener('loadeddata', tryPlay)
-    return () => video.removeEventListener('loadeddata', tryPlay)
-  }, [])
+      const tryPlay = () => void video.play().catch(() => {})
+      tryPlay()
+      video.addEventListener('loadeddata', tryPlay)
+      return () => video.removeEventListener('loadeddata', tryPlay)
+    })
+
+    return () => cleanups.forEach((cleanup) => cleanup?.())
+  }, [activeSlide, isLogin])
 
   const handleNext = () => {
     if (isLastSlide) {
@@ -78,21 +81,33 @@ function Onboarding() {
       className="relative mx-auto w-full max-w-[430px] overflow-hidden bg-black text-white"
       style={{ height: `${containerHeight}px` }}
     >
-      <video
-        ref={videoRef}
-        className="absolute left-1/2 top-1/2 h-full w-auto min-w-full max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        aria-hidden="true"
-        onLoadedMetadata={(event) => {
-          event.currentTarget.playbackRate = isLogin ? 0.5 : 1
-        }}
-      >
-        <source src="/videos/onboarding.mp4" type="video/mp4" />
-      </video>
+      <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+        <div
+          className="flex h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
+          style={{ transform: `translate3d(-${activeSlide * 100}%, 0, 0)` }}
+        >
+          {slides.map((slide, index) => (
+            <div key={slide.video} className="relative h-full min-w-full overflow-hidden">
+              <video
+                ref={(video) => {
+                  videoRefs.current[index] = video
+                }}
+                className="absolute left-1/2 top-1/2 h-full w-auto min-w-full max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+                autoPlay={index === 0}
+                loop
+                muted
+                playsInline
+                preload="auto"
+                onLoadedMetadata={(event) => {
+                  event.currentTarget.playbackRate = isLogin && index === activeSlide ? 0.5 : 1
+                }}
+              >
+                <source src={slide.video} type="video/mp4" />
+              </video>
+            </div>
+          ))}
+        </div>
+      </div>
 
       <div
         className={`absolute inset-0 z-20 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none ${
@@ -119,7 +134,7 @@ function Onboarding() {
           </button>
         </header>
 
-        <section className="absolute inset-x-0 top-[12.66%] overflow-hidden" aria-live="polite">
+        <section className="absolute inset-x-0 bottom-[164px] overflow-hidden" aria-live="polite">
           <div
             className="flex w-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
             style={{ transform: `translate3d(-${activeSlide * 100}%, 0, 0)` }}
@@ -152,10 +167,10 @@ function Onboarding() {
 
         <button
           type="button"
-          className={`absolute right-5 bottom-8 left-5 flex h-[52px] items-center justify-center rounded-full border text-[16px] text-white transition-colors duration-300 ${
+          className={`absolute right-5 bottom-8 left-5 flex h-[52px] items-center justify-center rounded-full text-[16px] text-white transition-colors duration-300 ${
             isLastSlide
-              ? 'border-[#831317] bg-[#831317]'
-              : 'border-white/20 bg-[rgba(220,220,220,0.05)]'
+              ? 'border border-[#831317] bg-[#831317]'
+              : 'glass-tab'
           }`}
           onClick={handleNext}
         >

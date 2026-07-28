@@ -277,7 +277,7 @@ function Home() {
         {/* 하단 섹션(#151515)과 완전히 같은 색으로 끝나는 페이드를 추가해 경계선이 안 보이게 함 */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[23.256cqw] bg-gradient-to-b from-transparent to-[#151515]" />
         <div
-          className="absolute top-[146.977cqw] left-1/2 z-30 flex h-[1.860cqw] w-[11.163cqw] -translate-x-1/2 items-center gap-[2.791cqw]"
+          className="absolute top-[146.977cqw] left-1/2 z-30 flex h-[1.395cqw] w-[9.767cqw] -translate-x-1/2 items-center gap-[2.791cqw]"
           role="group"
           aria-label={`히어로 슬라이드 ${heroIndex + 1} / 3`}
           data-node-id="610:318"
@@ -289,7 +289,7 @@ function Home() {
               aria-label={`${index + 1}번 히어로 보기`}
               aria-current={heroIndex === index ? 'true' : undefined}
               onClick={() => setHeroIndex(index)}
-              className={`size-[1.860cqw] shrink-0 rounded-full ${heroIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
+              className={`size-[1.395cqw] shrink-0 rounded-full ${heroIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
             />
           ))}
         </div>
@@ -400,7 +400,7 @@ function Home() {
                 onClick={() => {
                   bestFeedScrollRef.current?.scrollTo({ left: bestFeedScrollRef.current.clientWidth * index, behavior: 'smooth' })
                 }}
-                className={`size-[1.860cqw] shrink-0 rounded-full ${bestFeedIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
+                className={`size-[1.395cqw] shrink-0 rounded-full ${bestFeedIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
               />
             ))}
           </div>
@@ -808,7 +808,7 @@ function Home() {
         {magazineCards.map((card, index) => (
           <span
             key={card.title}
-            className={`size-[1.860cqw] shrink-0 rounded-full transition-colors ${magazineIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
+            className={`size-[1.395cqw] shrink-0 rounded-full transition-colors ${magazineIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
           />
         ))}
       </div>

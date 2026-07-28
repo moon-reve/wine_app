@@ -39,7 +39,7 @@ function Splash() {
       onboardingVideoPrefetch.id = 'onboarding-video-prefetch'
       onboardingVideoPrefetch.rel = 'prefetch'
       onboardingVideoPrefetch.as = 'video'
-      onboardingVideoPrefetch.href = '/videos/onboarding.mp4'
+      onboardingVideoPrefetch.href = '/videos/onboarding-01.mp4'
       onboardingVideoPrefetch.type = 'video/mp4'
       document.head.append(onboardingVideoPrefetch)
     }

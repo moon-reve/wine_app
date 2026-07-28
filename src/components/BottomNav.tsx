@@ -37,7 +37,7 @@ const glassMaskSvg =
 const glassMaskDataUri = `url("data:image/svg+xml,${encodeURIComponent(glassMaskSvg)}")`
 
 const ringMaskSvg =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427 106"><path d="M371.828 20H281.054C267.509 20 254.819 26.4598 247.871 37.2425C240.887 48.0747 228.107 55.3348 213.5 55.3348C198.893 55.3348 186.122 48.083 179.129 37.2425C172.181 26.4598 159.491 20 145.946 20H55.172C35.75 20.4208 20 35.0975 20 53C20 70.9025 35.75 85.5793 55.172 86H371.828C391.25 85.5793 407 70.9025 407 53C407 35.0975 391.25 20.4208 371.828 20Z" fill="none" stroke="#fff" stroke-width="0.8"/></svg>'
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427 106"><path d="M371.828 20H281.054C267.509 20 254.819 26.4598 247.871 37.2425C240.887 48.0747 228.107 55.3348 213.5 55.3348C198.893 55.3348 186.122 48.083 179.129 37.2425C172.181 26.4598 159.491 20 145.946 20H55.172C35.75 20.4208 20 35.0975 20 53C20 70.9025 35.75 85.5793 55.172 86H371.828C391.25 85.5793 407 70.9025 407 53C407 35.0975 391.25 20.4208 371.828 20Z" fill="none" stroke="#fff" stroke-width="0.7"/></svg>'
 
 const ringMaskDataUri = `url("data:image/svg+xml,${encodeURIComponent(ringMaskSvg)}")`
 
@@ -237,7 +237,7 @@ export default function BottomNav({
             WebkitMaskPosition: 'center',
             maskPosition: 'center',
             background:
-              'linear-gradient(135deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.08) 45%, rgba(255,255,255,0.06) 60%, rgba(255,255,255,0.25) 100%)',
+              'conic-gradient(from 0deg, rgb(255 255 255 / 12%) 0deg, rgb(255 255 255 / 8%) 60deg, rgb(255 255 255 / 100%) 120deg, rgb(255 255 255 / 20%) 180deg, rgb(255 255 255 / 8%) 240deg, rgb(255 255 255 / 100%) 300deg, rgb(255 255 255 / 12%) 360deg)',
           } as CSSProperties}
         />
       </div>
