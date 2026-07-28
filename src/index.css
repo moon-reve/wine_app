@@ -146,6 +146,61 @@
 }
 
 @layer components {
+  .wine-list-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 89px minmax(0, 1fr);
+    column-gap: clamp(20px, 8.6vw, 37px);
+    width: 100%;
+    min-height: 149.26px;
+    padding: 15px 20px 15px 24px;
+    align-items: start;
+    cursor: pointer;
+    text-align: left;
+  }
+
+  .wine-list-card__details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) max-content;
+    grid-template-areas:
+      'copy heart'
+      'price rating';
+    column-gap: 8px;
+    row-gap: 8px;
+    min-width: 0;
+    padding-top: 4px;
+  }
+
+  .wine-list-card__copy {
+    grid-area: copy;
+    min-width: 0;
+  }
+
+  .wine-list-card__heart {
+    grid-area: heart;
+    justify-self: end;
+    margin-top: 3px;
+  }
+
+  .wine-list-card__price {
+    grid-area: price;
+    min-width: 0;
+  }
+
+  .wine-list-card__rating {
+    grid-area: rating;
+    justify-self: end;
+  }
+
+  .wine-list-card__text {
+    min-width: 0;
+    max-width: 100%;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+    text-wrap: pretty;
+  }
+
   .wine-detail-name-en {
     min-height: 131px;
     font-family: "Delmon Delicate", "Playfair Display", serif;
