@@ -4,7 +4,6 @@ import googleIcon from '../assets/login/google.png'
 import kakaoIcon from '../assets/login/kakao.png'
 import naverIcon from '../assets/login/naver.png'
 import wineSippersLogo from '../assets/onboarding/wine-sippers-logo-white.svg'
-import { useDesignFrameHeight } from '../utils/useDesignFrameHeight'
 
 const slides = [
   {
@@ -42,7 +41,6 @@ function Onboarding() {
   const [activeSlide, setActiveSlide] = useState(0)
   const [isLogin, setIsLogin] = useState(false)
   const isLastSlide = activeSlide === slides.length - 1
-  const containerHeight = useDesignFrameHeight()
 
   useEffect(() => {
     const cleanups = videoRefs.current.map((video, index) => {
@@ -77,10 +75,7 @@ function Onboarding() {
   }
 
   return (
-    <main
-      className="relative mx-auto w-full max-w-[430px] overflow-hidden bg-black text-white"
-      style={{ height: `${containerHeight}px` }}
-    >
+    <main className="relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-black text-white">
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
         <div
           className="flex h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
@@ -92,7 +87,7 @@ function Onboarding() {
                 ref={(video) => {
                   videoRefs.current[index] = video
                 }}
-                className="absolute left-1/2 top-1/2 h-full w-auto min-w-full max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+                className="absolute inset-0 size-full object-cover"
                 autoPlay={index === 0}
                 loop
                 muted
