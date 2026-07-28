@@ -2,10 +2,8 @@ import { useMemo, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import Header from '../components/Header'
 import filterIcon from '../assets/list/filter-icon.svg'
-import starIcon from '../assets/list/container-star.svg'
-import heartEmptyIcon from '../assets/list/heart-empty.svg'
-import heartFilledIcon from '../assets/list/heart-filled.svg'
 import FilterSheet, { type WineFilters } from '../components/FilterSheet'
+import WineListCard from '../components/WineListCard'
 import WineMap from '../components/WineMap'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
 import { useLikedWines } from '../context/LikedWinesContext'
@@ -152,48 +150,14 @@ function List() {
 
             <div className="mt-[34px] mb-[30px]">
               {visibleWines.map((wine, index) => (
-                <div
+                <WineListCard
                   key={wine.id}
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
-                  onKeyDown={(event) => {
-                    if (event.key === 'Enter' || event.key === ' ') navigate(`/wine_detail/${wine.type}/${wine.id}`)
-                  }}
-                  className="relative flex h-[149.26px] w-full cursor-pointer items-start gap-[37px] pl-[24px] pt-[15px] text-left"
-                >
-                  <div
-                    className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
-                    style={{ backgroundColor: wine.bgColor }}
-                  >
-                    <img src={wine.image} alt={wine.name} className="h-[85%] w-auto object-contain" />
-                  </div>
-                  <div className="relative flex w-[220px] flex-col gap-[8px] pt-[4px]">
-                    <div>
-                      <p className="text-[20px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
-                      <p className="text-[12px] leading-[25px] font-normal text-[#817f7e]">{wine.region}</p>
-                    </div>
-                    <div className="flex w-[220px] items-center justify-between">
-                      <p className="text-[16px] leading-[24px] font-bold text-[#1e1b18]">{wine.price}</p>
-                      <div className="flex items-center gap-[4px]">
-                        <img src={starIcon} alt="" className="h-[14.25px] w-[15px]" />
-                        <p className="text-[16px] leading-[24px] font-bold text-[#831317]">{wine.rating}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    type="button"
-                    aria-label={isLiked(wine.id) ? `${wine.name} 좋아요 취소` : `${wine.name} 좋아요`}
-                    onClick={(event) => {
-                      event.stopPropagation()
-                      toggleLike(wine.id)
-                    }}
-                    className="absolute top-[22px] left-[351px] flex h-[19px] w-[19px] items-center justify-center"
-                  >
-                    <img src={isLiked(wine.id) ? heartFilledIcon : heartEmptyIcon} alt="" className="h-full w-full" />
-                  </button>
-                  {index < visibleWines.length - 1 && <div className="absolute inset-x-0 top-[134.26px] h-px bg-[#d9d9d9]" />}
-                </div>
+                  wine={wine}
+                  isLiked={isLiked(wine.id)}
+                  showDivider={index < visibleWines.length - 1}
+                  onOpen={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
+                  onToggleLike={() => toggleLike(wine.id)}
+                />
               ))}
             </div>
           </>
