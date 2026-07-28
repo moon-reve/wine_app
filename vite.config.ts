@@ -50,7 +50,7 @@ export default defineConfig({
     kakaoPlaceImageDevMiddleware(),
     VitePWA({
       registerType: 'autoUpdate',
-      devOptions: { enabled: true },
+      devOptions: { enabled: false },
       includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
         name: 'Viner',

@@ -4,8 +4,8 @@ import dummyWines from '../../dummy data/wines.json'
 import starIcon from '../assets/list/container-star.svg'
 import heartEmptyIcon from '../assets/list/heart-empty.svg'
 import heartFilledIcon from '../assets/list/heart-filled.svg'
-import searchSubmitIcon from '../assets/search/search-submit-button.svg'
 import chipCloseIcon from '../assets/search/search-chip-close.svg'
+import searchSubmitIcon from '../assets/search/search-submit-figma-original.svg'
 import Header from '../components/Header'
 import { useLikedWines } from '../context/LikedWinesContext'
 import { TODAY_PICK_WINE_IDS, WINE_TYPE_BG_COLOR, type WineType } from '../data/todayPickData'
@@ -13,6 +13,10 @@ import { getWineDetailData, resolveWineImage, type WineDetail } from '../data/wi
 import { loadKakaoMaps, type KakaoPlace } from '../lib/kakaoMaps'
 
 const TODAY_PICK_TYPES: WineType[] = ['red', 'white', 'rose', 'sparkling']
+
+function SearchSubmitIcon() {
+  return <img src={searchSubmitIcon} alt="" className="h-[39px] w-[38px]" />
+}
 
 const RECENT_SEARCH_STORAGE_KEY = 'wine-app:recent-searches'
 const MAX_RECENT_SEARCHES = 8
@@ -338,10 +342,10 @@ function Search() {
               if (!event.target.value.trim()) setSearchedQuery(null)
             }}
             placeholder="상품명을 입력하세요."
-            className="absolute top-0 right-[68px] left-3.5 h-full min-w-0 bg-transparent text-[18px] leading-[25px] font-normal tracking-[0.3px] text-black placeholder:text-black/20 focus:outline-none"
+            className="absolute top-0 right-[68px] left-3.5 h-full min-w-0 bg-transparent text-[16px] leading-[25px] font-normal tracking-[0.3px] text-black placeholder:text-[16px] placeholder:text-black/20 focus:outline-none"
           />
           <button type="submit" aria-label="검색" className="absolute top-1 right-5 flex h-[39px] w-[38px] items-center justify-center">
-            <img src={searchSubmitIcon} alt="" className="h-[39px] w-[38px]" />
+            <SearchSubmitIcon />
           </button>
         </form>
 
@@ -395,7 +399,7 @@ function Search() {
                           }
                           executeSearch(term)
                         }}
-                        className={`text-[15px] leading-[21.393px] font-semibold tracking-[0.25px] whitespace-nowrap ${
+                        className={`text-[14px] leading-[21.393px] font-normal tracking-[0.25px] whitespace-nowrap ${
                           term === '푸칭 푸딩' ? 'text-[#6b6b6b]' : 'text-[#333]'
                         }`}
                       >
