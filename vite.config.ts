@@ -2,7 +2,7 @@ import { defineConfig, type Plugin } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
-import { fetchPlaceOgImage } from './api/_lib/placeImage.ts'
+import { fetchPlaceImageAsset, fetchPlaceOgImage } from './api/_lib/placeImage.ts'
 
 // Mirrors api/place-image.ts so the endpoint also works under `vite dev`,
 // since Vercel's /api serverless functions aren't served locally without `vercel dev`.
@@ -12,10 +12,31 @@ function kakaoPlaceImageDevMiddleware(): Plugin {
     configureServer(server) {
       server.middlewares.use('/api/place-image', async (req, res) => {
         const placeUrl = new URL(req.url ?? '', 'http://localhost').searchParams.get('url')
+        const rawMode = new URL(req.url ?? '', 'http://localhost').searchParams.get('raw') === '1'
+
+        if (rawMode && placeUrl) {
+          const asset = await fetchPlaceImageAsset(placeUrl)
+          if (!asset) {
+            res.statusCode = 404
+            res.setHeader('Content-Type', 'application/json')
+            res.end(JSON.stringify({ image: null }))
+            return
+          }
+
+          res.setHeader('Content-Type', asset.contentType)
+          res.setHeader('Cache-Control', 'public, max-age=86400')
+          res.end(asset.body)
+          return
+        }
+
         const image = placeUrl ? await fetchPlaceOgImage(placeUrl) : null
         res.setHeader('Content-Type', 'application/json')
         res.setHeader('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800')
-        res.end(JSON.stringify({ image }))
+        res.end(JSON.stringify({
+          image: image && placeUrl
+            ? `/api/place-image?raw=1&v=2&url=${encodeURIComponent(placeUrl)}`
+            : null,
+        }))
       })
     },
   }

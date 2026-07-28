@@ -219,7 +219,7 @@ function WineMap() {
     let cancelled = false
     const placeId = selectedPlace.id
 
-    fetch(`/api/place-image?url=${encodeURIComponent(selectedPlace.place_url)}`)
+    fetch(`/api/place-image?v=2&url=${encodeURIComponent(selectedPlace.place_url)}`)
       .then((response) => (response.ok ? response.json() : { image: null }))
       .then((data: { image: string | null }) => {
         if (!cancelled) setPlaceImages((current) => ({ ...current, [placeId]: data.image }))
@@ -298,6 +298,7 @@ function WineMap() {
           </button>
           <div className="absolute top-[15px] right-4 left-[18px] h-[208px] overflow-hidden rounded-[20px]" data-node-id="1829:9612">
             <img
+              key={selectedPlace.id}
               src={selectedImage}
               alt=""
               className={
