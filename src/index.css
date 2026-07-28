@@ -93,6 +93,11 @@
     scrollbar-width: none;
   }
 
+  html.splash-page,
+  html.splash-page body {
+    background: #f3f0e7;
+  }
+
   html::-webkit-scrollbar,
   body::-webkit-scrollbar {
     display: none;

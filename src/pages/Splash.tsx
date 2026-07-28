@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import wineSippersLogo from '../assets/splash/wine-sippers-logo.png'
 import { useDesignFrameHeight } from '../utils/useDesignFrameHeight'
@@ -7,6 +7,14 @@ function Splash() {
   const navigate = useNavigate()
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerHeight = useDesignFrameHeight()
+
+  useLayoutEffect(() => {
+    document.documentElement.classList.add('splash-page')
+
+    return () => {
+      document.documentElement.classList.remove('splash-page')
+    }
+  }, [])
 
   useEffect(() => {
     // iOS Safari doesn't reliably honor the `autoplay` attribute on a
