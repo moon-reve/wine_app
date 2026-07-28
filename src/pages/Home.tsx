@@ -624,10 +624,10 @@ function Home() {
           <div className="relative h-[73.953cqw] w-[71.860cqw] shrink-0 snap-start overflow-hidden">
             <img src={aiSommelierImage} alt="AI 소믈리에랑 대결하기" className="absolute inset-0 size-full object-cover" />
             <div className="absolute top-[10.000cqw] right-0 bottom-0 left-0 bg-gradient-to-b from-white/0 from-0% via-transparent via-50% to-[#0c0c0c] to-100%" />
-            <p className="absolute top-[6.977cqw] left-[4.651cqw] w-[52.326cqw] text-[5.581cqw] leading-[1.3] font-medium tracking-[-0.112cqw] text-white">
+            <p className="absolute top-[6.977cqw] right-[4.651cqw] left-[4.651cqw] whitespace-nowrap text-[5.581cqw] leading-[1.3] font-medium tracking-[-0.112cqw] text-white">
               AI 소믈리에랑 대결하기
             </p>
-            <div className="absolute top-[16.279cqw] left-[4.651cqw] w-[52.326cqw] text-[3.256cqw] leading-[1.45] tracking-[-0.065cqw] text-white/85">
+            <div className="absolute top-[16.279cqw] right-[4.651cqw] left-[4.651cqw] whitespace-nowrap text-[3.256cqw] leading-[1.45] tracking-[-0.065cqw] text-white/85">
               <p>내가 고른 와인과 AI 추천을 비교해서</p>
               <p>공유해보세요</p>
             </div>
