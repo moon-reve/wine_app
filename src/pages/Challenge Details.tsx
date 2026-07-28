@@ -81,7 +81,7 @@ function ChallengeDetails() {
   ].map((value) => value.toString().padStart(2, '0'))
 
   return (
-    <div className="relative mx-auto h-[100vh] w-full max-w-107.5 overflow-x-hidden overflow-y-auto bg-white text-[#0d0d0d]" data-node-id="1542:1678">
+    <div className="relative mx-auto h-dvh-zoomed w-full max-w-107.5 overflow-x-hidden overflow-y-auto bg-white text-[#0d0d0d]" data-node-id="1542:1678">
       <header className="fixed inset-x-0 top-[env(safe-area-inset-top)] z-10 mx-auto h-17.5 w-full max-w-107.5 overflow-hidden bg-white">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
           <img src={backIcon} alt="" className="size-6 rotate-180" />
@@ -92,7 +92,7 @@ function ChallengeDetails() {
       <section className="absolute top-17.5 left-0 h-[319px] w-[431px] overflow-hidden" aria-label="오대륙 와인 챌린지">
         <img src={heroImage} alt="다섯 종류의 와인잔과 와인병" className="absolute top-[0.25px] left-0 h-[538.6px] w-[431px] max-w-none" />
         <span
-          className="absolute top-[15px] left-5 rounded-[25px] bg-black/[0.004] px-3 py-[5px] text-[12px] leading-none font-medium tracking-[-0.24px] text-white backdrop-blur-[4px]"
+          className="absolute top-[15px] left-5 rounded-[25px] bg-black/40 px-3 py-[5px] text-[12px] leading-none font-medium tracking-[-0.24px] text-white backdrop-blur-[4px]"
           style={{
             boxShadow: 'inset 1px 1px 1px rgba(255,255,255,0.55), inset -1px -1px 1px rgba(0,0,0,0.22), 0 2px 4px rgba(0,0,0,0.12)',
           }}

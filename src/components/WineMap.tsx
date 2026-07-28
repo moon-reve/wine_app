@@ -285,7 +285,7 @@ function WineMap() {
 
       {selectedPlace && (
         <article
-          className="wine-map-card-rise fixed bottom-[92px] left-1/2 z-40 h-[342px] w-[calc(100%-69px)] max-w-[361px] -translate-x-1/2 overflow-hidden rounded-[33px] bg-white shadow-[0_0_6px_rgba(0,0,0,0.05)]"
+          className="wine-map-card-rise absolute bottom-[137px] left-1/2 z-20 h-[342px] w-[361px] max-w-[calc(100%-69px)] -translate-x-1/2 overflow-hidden rounded-[33px] bg-white shadow-[0_0_6px_rgba(0,0,0,0.05)]"
           data-node-id="1829:9601"
         >
           <button
