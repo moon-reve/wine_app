@@ -55,7 +55,7 @@ function loadRecentSearches() {
       ? storedSearches.filter((term): term is string => typeof term === 'string').slice(0, MAX_RECENT_SEARCHES)
       : []
 
-    return validSearches.length > 0 ? validSearches : DEFAULT_RECENT_SEARCHES
+    return validSearches
   } catch {
     return DEFAULT_RECENT_SEARCHES
   }
@@ -295,6 +295,7 @@ function Search() {
 
   const startRecentSearchDrag = (event: React.PointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== 'mouse' || event.button !== 0 || !recentSearchScrollRef.current) return
+    if ((event.target as HTMLElement).closest('button')) return
 
     recentSearchDragRef.current = {
       active: true,
@@ -408,11 +409,9 @@ function Search() {
                       <button
                         type="button"
                         aria-label={`${term} 최근 검색어 삭제`}
-                        onClick={() => {
-                          if (recentSearchDragRef.current.moved) {
-                            recentSearchDragRef.current.moved = false
-                            return
-                          }
+                        onPointerDown={(event) => event.stopPropagation()}
+                        onClick={(event) => {
+                          event.stopPropagation()
                           removeRecentSearch(term)
                         }}
                         className="flex size-[18px] shrink-0 items-center justify-center"
