@@ -97,8 +97,8 @@ export default function WineDetailRose() {
           <div className="absolute top-[18px] left-0 flex h-6 w-full items-center justify-between">
             <h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">기본 정보</h2>
             <div className="flex items-center gap-3">
-              <button type="button" aria-label="찜하기" className="flex size-6 items-center justify-center"><img src={heartIcon} alt="" className="size-[19px]" /></button>
               <button type="button" aria-label="공유하기" className="flex size-6 items-center justify-center"><img src={bookmarkIcon} alt="" className="h-[19px] w-[17px]" /></button>
+              <button type="button" aria-label="찜하기" className="flex size-6 items-center justify-center"><img src={heartIcon} alt="" className="size-[19px]" /></button>
             </div>
           </div>
           <p className="absolute top-[54px] left-0 text-[12px] leading-[1.2] tracking-[-0.24px] text-black/60">{typeLabel} &gt; {wine.country} &gt; {wine.region}</p>

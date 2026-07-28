@@ -91,9 +91,30 @@ export function getWineDetailData(wineId: string) {
   const wine = wines.find((item) => item.id === wineId)
   if (!wine) throw new Error(`와인 상세 데이터를 찾을 수 없습니다: ${wineId}`)
 
-  const wineReviews = reviews
+  const matchedReviews = reviews
     .filter((review) => review.wineId === wineId)
     .sort((a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt))
+  const wineReviews = matchedReviews.length > 0
+    ? matchedReviews
+    : [
+        {
+          id: `${wineId}_detail_fallback_1`,
+          wineId,
+          userId: 'detail_guest_1',
+          rating: 5,
+          content: '향이 정말 풍부하고 선물용으로도 만족스러웠어요.',
+          createdAt: '2026-07-28T00:00:00.000Z',
+        },
+        {
+          id: `${wineId}_detail_fallback_2`,
+          wineId,
+          userId: 'detail_guest_2',
+          rating: 4,
+          content: '음식과 함께 즐기기 좋고 밸런스가 인상적이었습니다.',
+          createdAt: '2026-07-27T00:00:00.000Z',
+        },
+      ]
+  const frequentReviewKeywords = getFrequentReviewKeywords(reviews, wineId)
 
   const similarWines = wines
     .filter((item) => item.id !== wineId && item.type === wine.type)
@@ -108,7 +129,9 @@ export function getWineDetailData(wineId: string) {
     wine,
     wineReviews,
     similarWines,
-    reviewKeywords: getFrequentReviewKeywords(reviews, wineId),
+    reviewKeywords: frequentReviewKeywords.length > 0
+      ? frequentReviewKeywords
+      : wine.tags.slice(0, 4),
     typeLabel: typeLabels[wine.type],
   }
 }
