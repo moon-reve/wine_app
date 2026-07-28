@@ -15,7 +15,7 @@ function AppLayout() {
   const isMagazine = location.pathname.startsWith('/magazine')
   const isMapView = isList && new URLSearchParams(location.search).get('view') === 'map'
   const isLightPage = isLounge || isList || isMypage || isSearch || isMagazine
-  const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList && !isMapView ? '리스트' : '홈'
+  const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList ? '리스트' : '홈'
 
   useSyncThemeColor(isLightPage ? '#ffffff' : '#000000')
 
@@ -67,6 +67,7 @@ function AppLayout() {
       <InstallPwaBanner />
       <BottomNav
         activeItem={activeItem}
+        className={isMapView ? '!bottom-[7px]' : ''}
         expanded={isQuickMenuOpen}
         onAddClick={() => setIsQuickMenuOpen((open) => !open)}
         onItemClick={handleNavItemClick}
