@@ -69,8 +69,9 @@ export default function WineDetailWhite() {
   ] as const
 
   return (
-    <div className="relative mx-auto h-[3301px] w-full max-w-[430px] overflow-hidden bg-white font-pretendard text-[#0d0d0d]" data-node-id="1546:5963">
-      <header className="fixed inset-x-0 top-[env(safe-area-inset-top)] z-10 mx-auto h-[70px] w-full max-w-[430px] bg-white">
+    <div className="mx-auto w-full max-w-[430px] overflow-hidden bg-white pt-[env(safe-area-inset-top)] font-pretendard text-[#0d0d0d]" data-node-id="1546:5963">
+      <div className="relative h-[3301px] w-full">
+      <header className="absolute inset-x-0 top-0 z-10 h-[70px] w-full bg-white">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-[18px] flex size-6 rotate-180 items-center justify-center">
           <img src={backIcon} alt="" className="size-6" />
         </button>
@@ -168,6 +169,7 @@ export default function WineDetailWhite() {
           </div>
         </section>
       </main>
+      </div>
     </div>
   )
 }

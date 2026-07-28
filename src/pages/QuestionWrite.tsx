@@ -50,7 +50,7 @@ function QuestionWrite() {
   }
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-107.5 bg-white text-[#0d0d0d]">
+    <div className="mx-auto min-h-[calc(100dvh/var(--app-zoom))] w-full max-w-107.5 bg-white text-[#0d0d0d]">
       <QuestionWriteHeader />
 
       <form
