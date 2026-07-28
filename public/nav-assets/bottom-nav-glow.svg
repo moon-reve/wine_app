@@ -1,9 +1,9 @@
 <svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 427 106" fill="none" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <filter id="ringOnly" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
-<feGaussianBlur in="SourceAlpha" stdDeviation="10" result="blur"/>
+<feGaussianBlur in="SourceAlpha" stdDeviation="6" result="blur"/>
 <feComposite in="blur" in2="SourceAlpha" operator="out" result="ring"/>
-<feFlood flood-color="#3D3D3D" flood-opacity="0.55" result="color"/>
+<feFlood flood-color="#3D3D3D" flood-opacity="0.28" result="color"/>
 <feComposite in="color" in2="ring" operator="in"/>
 </filter>
 </defs>
