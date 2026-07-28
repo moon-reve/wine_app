@@ -111,7 +111,20 @@ function MagazineDetail() {
         <img src={heroImage} alt="수확한 오미자를 선별하는 모습" className="absolute inset-0 size-full max-w-none" />
         <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
       </div>
-      <div className="absolute top-[286px] left-0 h-[360px] w-[431px] bg-[#831317]" />
+      <div className="absolute top-[286px] left-0 h-[360px] w-[431px] bg-[#831317]" data-node-id="1982:201">
+        <div className="absolute top-[110px] left-[79.5px] h-[140px] w-[272px] text-center whitespace-nowrap text-white" data-node-id="1982:196">
+          <p className="absolute top-0 left-[18px] text-[18px] leading-[1.25] font-medium tracking-[-0.63px]" data-node-id="1982:197">
+            영동에서 문경까지 오미자가 만드는
+          </p>
+          <p className="absolute top-[26px] left-[14px] font-['Delmon_Delicate','Playfair_Display',serif] text-[41px] leading-[1.25] font-normal tracking-[-1.435px]" data-node-id="1982:198">
+            K-Wine Road
+          </p>
+          <div className="absolute top-[92px] left-0 w-full text-[16px] leading-[1.5] font-normal" data-node-id="1982:199">
+            <p>국산 청포도 '청수'와</p>
+            <p>세계 유일의 오미자 스파클링 '오미로제'까지</p>
+          </div>
+        </div>
+      </div>
 
       <header className="absolute top-0 left-0 z-10 h-17.5 w-full overflow-hidden">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
@@ -119,16 +132,6 @@ function MagazineDetail() {
         </button>
         <h1 className="absolute top-6.5 left-[190.5px] text-[18px] leading-none font-bold tracking-[-0.54px] whitespace-nowrap text-white">메거진</h1>
       </header>
-
-      <div className="absolute top-[380px] left-1/2 -translate-x-1/2 text-center text-[25px] leading-[1.25] font-semibold tracking-[-0.875px] whitespace-nowrap text-white">
-        <p>영동에서 문경까지</p>
-        <p>오미자가 만드는</p>
-      </div>
-      <p className="absolute top-[443px] left-1/2 -translate-x-1/2 font-['Delmon_Delicate','Playfair_Display',serif] text-[41px] leading-[1.25] font-normal tracking-[-1.435px] whitespace-nowrap text-white">K-Wine Road</p>
-      <div className="absolute top-[507px] left-1/2 w-[390px] -translate-x-1/2 text-center text-[16px] leading-[1.5] font-normal text-white">
-        <p>국산 청포도 '청수'와 세계 유일의 오미자</p>
-        <p>스파클링 '오미로제'까지</p>
-      </div>
 
       <p className="absolute top-[739px] left-5 font-['Delmon_Delicate','Playfair_Display',serif] text-[18px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">Chapter 01</p>
       <div className="absolute top-[774px] left-[22px] text-[24px] leading-[1.3] font-medium whitespace-nowrap text-[#1a1a1a]">
