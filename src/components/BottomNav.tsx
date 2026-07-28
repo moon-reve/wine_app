@@ -5,9 +5,12 @@ export type QuickAction = '기록' | '피드' | '찾기'
 
 type NavItem = {
   label: string
-  icon: string
-  width: number
-  height: number
+  iconOutline: string
+  iconFilled: string
+  outlineWidth: number
+  outlineHeight: number
+  filledWidth: number
+  filledHeight: number
   centerX: number
   iconTop: number
   labelTop: number
@@ -53,36 +56,48 @@ const quickActions: Array<{
 const navItems: NavItem[] = [
   {
     label: '홈',
-    icon: '/nav-assets/home-figma.svg',
-    width: 20.42,
-    height: 20,
+    iconOutline: '/nav-assets/home-outline.svg',
+    iconFilled: '/nav-assets/home-filled.svg',
+    outlineWidth: 20,
+    outlineHeight: 20,
+    filledWidth: 20.6,
+    filledHeight: 20.19,
     centerX: 52.5,
     iconTop: 62.63,
     labelTop: 26.02,
   },
   {
     label: '리스트',
-    icon: '/nav-assets/list-figma.svg',
-    width: 20,
-    height: 20,
+    iconOutline: '/nav-assets/list-outline.svg',
+    iconFilled: '/nav-assets/list-filled.svg',
+    outlineWidth: 12,
+    outlineHeight: 20,
+    filledWidth: 12.6,
+    filledHeight: 20.6,
     centerX: 126,
     iconTop: 62.63,
     labelTop: 26.02,
   },
   {
     label: '라운지',
-    icon: '/nav-assets/lounge-figma.svg',
-    width: 22.22,
-    height: 20,
+    iconOutline: '/nav-assets/lounge-outline.svg',
+    iconFilled: '/nav-assets/lounge-filled.svg',
+    outlineWidth: 20,
+    outlineHeight: 18,
+    filledWidth: 20.6,
+    filledHeight: 19.6,
     centerX: 303,
     iconTop: 65.65,
     labelTop: 23,
   },
   {
     label: '마이',
-    icon: '/nav-assets/person-figma.svg',
-    width: 15,
-    height: 20,
+    iconOutline: '/nav-assets/person-outline.svg',
+    iconFilled: '/nav-assets/person-filled.svg',
+    outlineWidth: 15,
+    outlineHeight: 20,
+    filledWidth: 15.6,
+    filledHeight: 20.6,
     centerX: 380,
     iconTop: 65.65,
     labelTop: 23,
@@ -106,26 +121,20 @@ function NavButton({
     <button
       type="button"
       aria-current={active ? 'page' : undefined}
-      className={`absolute flex h-[48px] w-16 -translate-x-1/2 flex-col items-center text-[12px] leading-[1.55] tracking-[-0.24px] transition-colors focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#831317] ${
-        active ? 'text-[#831317]' : 'text-[#b2b2b2]'
+      className={`absolute flex h-[48px] w-16 -translate-x-1/2 flex-col items-center text-[12px] leading-[1.55] tracking-[-0.24px] transition-colors focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4e000e] ${
+        active ? 'text-[#4e000e]' : 'text-[#b2b2b2]'
       }`}
       style={position}
       {...props}
     >
-      <span
+      <img
         aria-hidden="true"
-        className="block shrink-0 bg-current"
+        alt=""
+        src={active ? item.iconFilled : item.iconOutline}
+        className="block shrink-0"
         style={{
-          width: item.width,
-          height: item.height,
-          WebkitMaskImage: `url(${item.icon})`,
-          maskImage: `url(${item.icon})`,
-          WebkitMaskPosition: 'center',
-          maskPosition: 'center',
-          WebkitMaskRepeat: 'no-repeat',
-          maskRepeat: 'no-repeat',
-          WebkitMaskSize: 'contain',
-          maskSize: 'contain',
+          width: active ? item.filledWidth : item.outlineWidth,
+          height: active ? item.filledHeight : item.outlineHeight,
         }}
       />
       <span
