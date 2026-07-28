@@ -4174,5 +4174,85 @@
     "rating": 4,
     "content": "훈제 연어와 너무 잘 어울려요! 부담 없이 마실 수 있고 부드러운 기포와 과일향도 좋았습니다.",
     "createdAt": "2026-07-18T19:10:00"
+  },
+  {
+    "id": "review_524",
+    "wineId": "wine_108",
+    "userId": "user_011",
+    "rating": 4.1,
+    "content": "블랙베리와 자두 향이 풍부하고 탄닌이 부드러워 천천히 마시기 좋았습니다.",
+    "createdAt": "2026-07-15T18:42:00"
+  },
+  {
+    "id": "review_525",
+    "wineId": "wine_108",
+    "userId": "user_018",
+    "rating": 3.8,
+    "content": "가격 대비 풍미가 깊고 과일향이 선명해서 레드 와인 입문자에게도 추천하고 싶어요.",
+    "createdAt": "2026-06-27T20:16:00"
+  },
+  {
+    "id": "review_526",
+    "wineId": "wine_108",
+    "userId": "user_005",
+    "rating": 4,
+    "content": "한식과 페어링하기 좋고 부드러운 질감과 좋은 밸런스가 인상적이에요.",
+    "createdAt": "2026-06-08T19:24:00"
+  },
+  {
+    "id": "review_527",
+    "wineId": "wine_108",
+    "userId": "user_023",
+    "rating": 3.9,
+    "content": "개성 있는 향과 긴 여운이 매력적이라 선물용으로도 추천하고 싶습니다.",
+    "createdAt": "2026-05-19T21:03:00"
+  },
+  {
+    "id": "review_528",
+    "wineId": "wine_108",
+    "userId": "user_014",
+    "rating": 4.2,
+    "content": "오픈하고 조금 두니 부드러운 탄닌과 오크향이 살아났고 끝맛도 깔끔했습니다.",
+    "createdAt": "2026-04-25T17:51:00"
+  },
+  {
+    "id": "review_529",
+    "wineId": "wine_109",
+    "userId": "user_020",
+    "rating": 3.9,
+    "content": "채끝 스테이크와 함께 마셨는데 부드러운 탄닌과 진한 과일향이 음식에 잘 어울렸어요.",
+    "createdAt": "2026-07-19T19:35:00"
+  },
+  {
+    "id": "review_530",
+    "wineId": "wine_109",
+    "userId": "user_008",
+    "rating": 3.7,
+    "content": "블랙체리와 블랙커런트 향이 풍부하고 드라이한 끝맛이 깔끔했습니다.",
+    "createdAt": "2026-07-02T20:48:00"
+  },
+  {
+    "id": "review_531",
+    "wineId": "wine_109",
+    "userId": "user_026",
+    "rating": 4,
+    "content": "스테이크 페어링으로 골랐는데 밸런스가 좋고 여운이 길어서 만족스러웠어요.",
+    "createdAt": "2026-06-14T18:27:00"
+  },
+  {
+    "id": "review_532",
+    "wineId": "wine_109",
+    "userId": "user_013",
+    "rating": 3.8,
+    "content": "향이 풍부하고 부드러워 홈파티에서 누구나 편하게 마시기 좋았어요.",
+    "createdAt": "2026-05-23T21:12:00"
+  },
+  {
+    "id": "review_533",
+    "wineId": "wine_109",
+    "userId": "user_002",
+    "rating": 4.1,
+    "content": "가격 대비 완성도가 좋고 부담 없이 즐길 수 있어 레드 와인 입문자에게 좋아요.",
+    "createdAt": "2026-04-17T16:39:00"
   }
 ]
