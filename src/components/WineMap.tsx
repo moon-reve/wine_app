@@ -306,7 +306,7 @@ function WineMap() {
                   : 'absolute top-[-118.02%] left-[-0.05%] h-[236.06%] w-[100.1%] max-w-none object-cover'
               }
             />
-            <span className="absolute top-[11px] left-[6px] flex h-[27px] items-center justify-center rounded-full bg-[#e1dfdb]/10 px-4 text-[12px] leading-4 font-medium tracking-[0.96px] text-white backdrop-blur-[2px]">
+            <span className="glass-tab absolute top-[11px] left-[6px] flex h-[27px] items-center justify-center rounded-full px-4 text-[12px] leading-4 font-medium tracking-[0.96px] text-white">
               Nearby
             </span>
           </div>

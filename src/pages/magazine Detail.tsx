@@ -50,7 +50,7 @@ function WineCard({ wine, onClick }: { wine: (typeof wines)[number]; onClick: ()
     <button type="button" data-wine-card onClick={onClick} className="relative h-[175px] w-44 shrink-0 snap-start overflow-hidden rounded-xl text-left">
       <img src={wine.image} alt={wine.name} draggable={false} className={`absolute max-w-none ${wine.imageClassName}`} />
       <div className="absolute inset-x-0 bottom-0 h-[88px] rounded-xl bg-gradient-to-b from-transparent to-black/50" />
-      <span className="absolute top-3.5 left-3.5 flex h-[22px] w-[69px] items-center justify-center rounded-full bg-white/50 text-center text-[12px] leading-4 font-medium text-black backdrop-blur-[2px]">Korea</span>
+      <span className="glass-tab absolute top-3.5 left-3.5 flex h-[22px] w-[69px] items-center justify-center rounded-full text-center text-[12px] leading-4 font-medium text-white">Korea</span>
       <div className="absolute top-[133px] left-3.5 flex w-[145px] flex-col items-start gap-[3px] leading-normal whitespace-nowrap text-white">
         <p className="text-[12px] font-semibold">{wine.name}</p>
         <p className="text-[10px] font-normal">{wine.price}</p>

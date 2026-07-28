@@ -31,6 +31,13 @@ type ChatTurn = {
   mapPlace?: string;
 };
 
+function formatChatDate(date: Date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}. ${month}. ${day}`;
+}
+
 const suggestions = [
   "근처 와인바가 어디인지 알려줘",
   "화이트 와인에 어울리는 음식 추천해줘",
@@ -378,6 +385,7 @@ export default function Chatbot() {
   const initialSuggestionsScroll = useHorizontalScroll<HTMLDivElement>();
   const followUpSuggestionsScroll = useHorizontalScroll<HTMLDivElement>();
   const locationState = location.state as ChatbotLocationState | null;
+  const todayLabel = formatChatDate(new Date());
 
   useEffect(() => {
     const request = locationState?.recommendationRequest;
@@ -518,14 +526,14 @@ export default function Chatbot() {
             onMouseMove={initialSuggestionsScroll.onMouseMove}
             onWheel={initialSuggestionsScroll.onWheel}
             onClickCapture={initialSuggestionsScroll.onClickCapture}
-            className="absolute right-5 bottom-[119px] left-5 flex cursor-grab gap-1.5 overflow-x-auto active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="absolute right-2 bottom-[107px] left-2 flex cursor-grab gap-1.5 overflow-x-auto px-3 py-3 active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {suggestions.map((suggestion) => (
               <button
                 key={suggestion}
                 type="button"
                 onClick={() => chooseSuggestion(suggestion)}
-                className="h-[57px] w-[126px] shrink-0 whitespace-pre-line rounded-xl bg-white px-3 text-left text-xs leading-[1.3] tracking-[-0.28px] text-black/80 shadow-[0_2px_6px_rgba(0,0,0,0.08)]"
+                className="glass-tab h-[57px] w-[126px] shrink-0 whitespace-pre-line rounded-xl px-3 text-left text-xs leading-[1.3] tracking-[-0.28px] text-black/80"
               >
                 {suggestion}
               </button>
@@ -535,7 +543,7 @@ export default function Chatbot() {
 
         {turns.length > 0 && (
           <p className="px-5 text-center text-[14px] leading-[23px] tracking-[-0.28px] text-black/50">
-            2026. 07. 21
+            {todayLabel}
           </p>
         )}
         <div className="px-5">
@@ -585,7 +593,7 @@ export default function Chatbot() {
                     onMouseMove={followUpSuggestionsScroll.onMouseMove}
                     onWheel={followUpSuggestionsScroll.onWheel}
                     onClickCapture={followUpSuggestionsScroll.onClickCapture}
-                    className="mb-3 flex cursor-grab gap-1.5 overflow-x-auto active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                    className="-mx-3 -mt-3 flex cursor-grab gap-1.5 overflow-x-auto px-3 py-3 active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
                   >
                     {(Object.values(foodRecipes).includes(turn.answer)
                       ? recipeFollowUps
@@ -595,7 +603,7 @@ export default function Chatbot() {
                         key={suggestion}
                         type="button"
                         onClick={() => chooseSuggestion(suggestion)}
-                        className="h-[57px] w-[146px] shrink-0 whitespace-pre-line rounded-xl bg-white px-3 text-left text-xs leading-[1.3] tracking-[-0.28px] text-black/80 shadow-[0_2px_6px_rgba(0,0,0,0.08)]"
+                        className="glass-tab h-[57px] w-[146px] shrink-0 whitespace-pre-line rounded-xl px-3 text-left text-xs leading-[1.3] tracking-[-0.28px] text-black/80"
                       >
                         {suggestion}
                       </button>

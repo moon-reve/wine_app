@@ -366,7 +366,7 @@ function Home() {
 
                   <div className="absolute inset-x-[4.651cqw] bottom-[14.419cqw] flex gap-[1.163cqw]">
                     {feed.tags.map((tag) => (
-                      <span key={tag} className="flex h-[5.581cqw] items-center rounded-full border border-white/20 bg-white/10 px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium whitespace-nowrap text-white shadow-[inset_1px_1px_0_rgba(255,255,255,0.22),inset_-1px_-1px_0_rgba(255,255,255,0.06),0_4px_14px_rgba(0,0,0,0.08)] backdrop-blur-[12px] backdrop-saturate-150">
+                      <span key={tag} className="glass-tab flex h-[5.581cqw] items-center rounded-full px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium whitespace-nowrap text-white">
                         {tag}
                       </span>
                     ))}

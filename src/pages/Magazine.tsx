@@ -51,7 +51,7 @@ function MagazineWineCard({ wine }: { wine: (typeof magazineWines)[number] }) {
     <div className="relative h-[263px] w-[167px] shrink-0 snap-start overflow-hidden rounded-[20px] bg-white/10 shadow-[0px_0px_4px_0px_rgba(0,0,0,0.1)]">
       <div className={`relative w-full ${wine.imageClassName}`}>
         <img src={wine.image} alt={wine.name} className="absolute inset-0 size-full rounded-t-[20px] object-cover" />
-        <span className="absolute bottom-0 left-2 flex h-[22px] -translate-y-1/2 items-center justify-center rounded-full bg-[#e1dfdb]/10 px-4 py-2 backdrop-blur-sm">
+        <span className="glass-tab absolute bottom-0 left-2 flex h-[22px] -translate-y-1/2 items-center justify-center rounded-full px-4 py-2">
           <span className="font-playfair text-[12px] leading-4 font-bold tracking-[0.96px] whitespace-nowrap text-white" style={{ fontVariationSettings: '"opsz" 12, "wdth" 100' }}>
             Korea
           </span>

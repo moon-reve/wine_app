@@ -217,7 +217,7 @@ export default function BottomNav({
               key={action.label}
               type="button"
               onClick={() => onQuickActionClick?.(action.label)}
-              className="absolute z-10 flex size-[69px] -translate-x-1/2 items-center justify-center rounded-full border border-white/20 bg-white/10 text-xs font-medium tracking-[-0.24px] text-white shadow-[inset_1px_1px_0_rgba(255,255,255,0.22),inset_-1px_-1px_0_rgba(255,255,255,0.06),0_4px_14px_rgba(0,0,0,0.08)] backdrop-blur-[12px] backdrop-saturate-150 transition-[transform,filter,background-color,border-color,box-shadow] duration-100 ease-out hover:scale-105 active:scale-[0.94] active:border-white/30 active:bg-white/[0.04] active:brightness-90 active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.18),inset_1px_1px_0_rgba(255,255,255,0.12)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className="glass-tab absolute z-10 flex size-[69px] -translate-x-1/2 items-center justify-center rounded-full text-xs font-medium tracking-[-0.24px] text-white transition-[transform,filter,background-color,border-color,box-shadow] duration-100 ease-out hover:scale-105 active:scale-[0.94] active:border-white/30 active:bg-white/[0.04] active:brightness-90 active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.18),inset_1px_1px_0_rgba(255,255,255,0.12)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               style={{
                 left: `${(action.left / 430) * 100}%`,
                 top: action.top,

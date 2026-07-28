@@ -146,6 +146,17 @@
 }
 
 @layer components {
+  .glass-tab {
+    border: 1px solid rgb(255 255 255 / 20%);
+    background-color: transparent;
+    box-shadow:
+      inset 1px 1px 0 rgb(255 255 255 / 22%),
+      inset -1px -1px 0 rgb(255 255 255 / 6%),
+      0 4px 14px rgb(0 0 0 / 8%);
+    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    backdrop-filter: blur(12px) saturate(150%);
+  }
+
   .wine-list-card {
     position: relative;
     display: grid;
