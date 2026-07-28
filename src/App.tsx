@@ -32,6 +32,8 @@ import Splash from './pages/Splash'
 import Onboarding from './pages/Onboarding'
 import { LikedWinesProvider } from './context/LikedWinesContext'
 import { WineRecordsProvider } from './context/WineRecordsContext'
+import { ProfileProvider } from './context/ProfileContext'
+import { FeedLikesProvider } from './context/FeedLikesContext'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -48,6 +50,8 @@ function App() {
     <BrowserRouter>
       <LikedWinesProvider>
       <WineRecordsProvider>
+      <ProfileProvider>
+      <FeedLikesProvider>
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Splash />} />
@@ -92,6 +96,8 @@ function App() {
           <Route path="/meeting/:meetingId" element={<MeetingDetail />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Routes>
+      </FeedLikesProvider>
+      </ProfileProvider>
       </WineRecordsProvider>
       </LikedWinesProvider>
     </BrowserRouter>

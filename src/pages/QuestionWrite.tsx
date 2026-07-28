@@ -5,12 +5,15 @@ import ImageUploader from '../components/question/ImageUploader'
 import QuestionWriteHeader from '../components/question/QuestionWriteHeader'
 import TagSelector from '../components/question/TagSelector'
 import AppBottomSheet from '../components/AppBottomSheet'
+import { addUserQuestion, type LoungeQuestionDetail } from '../data/loungeQuestionDetails'
+import { useProfile } from '../context/ProfileContext'
 
 const FORM_ID = 'question-write-form'
 const TAGS = ['빈티지확인', '가격문의', '페어링', '보관법'] as const
 
 function QuestionWrite() {
   const navigate = useNavigate()
+  const { profile } = useProfile()
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
   const [selectedTags, setSelectedTags] = useState<string[]>(['빈티지확인'])
@@ -118,6 +121,18 @@ function QuestionWrite() {
         onClose={() => setIsConfirmOpen(false)}
         onConfirm={() => {
           setIsConfirmOpen(false)
+          const question: LoungeQuestionDetail = {
+            id: `user-question-${Date.now()}`,
+            title: title.trim(),
+            summary: content.trim().slice(0, 60),
+            author: profile.nickname,
+            time: '방금 전',
+            location: '',
+            content: content.trim(),
+            tags: selectedTags,
+            answers: [],
+          }
+          addUserQuestion(question)
           handleRegistrationComplete()
         }}
       />

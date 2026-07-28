@@ -24,6 +24,8 @@ import LoungeTabs from '../components/LoungeTabs'
 import LoungeHeader from '../components/LoungeHeader'
 import AppBottomSheet from '../components/AppBottomSheet'
 import WineHotspot from '../components/WineHotspot'
+import { getUserFeeds } from '../data/userFeeds'
+import { useFeedLikes } from '../context/FeedLikesContext'
 import carouselPhoto01 from '../assets/images/feeds/feed_021_1.jpg'
 import carouselPhoto02 from '../assets/images/feeds/feed_021_2.jpg'
 import carouselPhoto03 from '../assets/images/feeds/feed_021_3.jpg'
@@ -43,6 +45,7 @@ type WinePin = {
 }
 
 export type FigmaFeed = {
+  id?: string
   author: string
   time: string
   avatar: string
@@ -270,7 +273,9 @@ export function FeedPost({
 }) {
   const [isWineOpen, setIsWineOpen] = useState(false)
   const [activeImageIndex, setActiveImageIndex] = useState(0)
-  const [liked, setLiked] = useState(index === 0)
+  const feedKey = feed.id ?? feed.author
+  const { isLiked, toggleLike } = useFeedLikes()
+  const liked = isLiked(feedKey)
   const [saved, setSaved] = useState(false)
   const [commentsOpen, setCommentsOpen] = useState(false)
   const [comment, setComment] = useState('')
@@ -454,7 +459,7 @@ export function FeedPost({
           type="button"
           aria-label={liked ? '좋아요 취소' : '좋아요'}
           aria-pressed={liked}
-          onClick={() => setLiked((current) => !current)}
+          onClick={() => toggleLike(feedKey)}
           className="absolute top-0 left-0 flex size-[30px] items-center justify-center bg-white"
         >
           <img src={liked ? heartFilled : heartOutline} alt="" aria-hidden="true" className="size-6 object-contain" />
@@ -533,6 +538,7 @@ export function FeedPost({
 function Feed() {
   const [isGridView, setIsGridView] = useState(false)
   const [imagePreview, setImagePreview] = useState<ImagePreview | null>(null)
+  const [feeds] = useState<FigmaFeed[]>(() => [...getUserFeeds(), ...figmaFeeds])
 
   return (
     <div className="min-h-screen w-full bg-white text-[#0d0d0d]" data-node-id={isGridView ? '1546:4105' : '1546:3969'}>
@@ -580,8 +586,8 @@ function Feed() {
             </div>
           ) : (
             <div>
-              {figmaFeeds.map((feed, index) => (
-                <FeedPost key={feed.author} feed={feed} index={index} onOpenImage={setImagePreview} />
+              {feeds.map((feed, index) => (
+                <FeedPost key={feed.id ?? feed.author} feed={feed} index={index} onOpenImage={setImagePreview} />
               ))}
             </div>
           )}

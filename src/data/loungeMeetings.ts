@@ -58,8 +58,36 @@ export const loungeMeetings: LoungeMeeting[] = [
   },
 ]
 
+const USER_MEETINGS_STORAGE_KEY = 'wine-app-user-meetings'
+
+function loadUserMeetings(): LoungeMeeting[] {
+  if (typeof window === 'undefined') return []
+
+  try {
+    const raw = window.localStorage.getItem(USER_MEETINGS_STORAGE_KEY)
+    return raw ? (JSON.parse(raw) as LoungeMeeting[]) : []
+  } catch {
+    return []
+  }
+}
+
+export function getUserMeetings() {
+  return loadUserMeetings()
+}
+
+export function addUserMeeting(meeting: LoungeMeeting) {
+  if (typeof window === 'undefined') return
+
+  const next = [meeting, ...loadUserMeetings()]
+  window.localStorage.setItem(USER_MEETINGS_STORAGE_KEY, JSON.stringify(next))
+}
+
+export function getAllLoungeMeetings() {
+  return [...loadUserMeetings(), ...loungeMeetings]
+}
+
 export function getLoungeMeeting(meetingId?: string) {
-  return loungeMeetings.find((meeting) => meeting.id === meetingId) ?? loungeMeetings[0]
+  return getAllLoungeMeetings().find((meeting) => meeting.id === meetingId) ?? loungeMeetings[0]
 }
 
 const SESSION_PARTICIPANT_PREFIX = 'lounge-meeting-extra-participants:'

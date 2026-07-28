@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import closeIcon from '../assets/quick-flow/close.svg'
 import flashIcon from '../assets/quick-flow/flash.svg'
@@ -11,6 +11,9 @@ import toolWine from '../assets/quick-flow/tool-wine.svg'
 import toolGrid from '../assets/quick-flow/tool-grid.svg'
 import toolFilter from '../assets/quick-flow/tool-filter.svg'
 import { useCameraStream } from '../hooks/useCameraStream'
+import { addUserFeed } from '../data/userFeeds'
+import { useProfile } from '../context/ProfileContext'
+import { DEMO_WINE_RECORDS, useWineRecords } from '../context/WineRecordsContext'
 
 type FeedStep = 'intro' | 'camera' | 'edit' | 'compose'
 type AspectRatio = '3:4' | '9:16' | '1:1' | 'full'
@@ -38,20 +41,210 @@ function CaptureControls({ thumbnail, onCapture, onSwitchCamera }: { thumbnail: 
   </>
 }
 
+function RemovableChip({ label, onRemove }: { label: string; onRemove: () => void }) {
+  return (
+    <span className="flex h-12 items-center gap-2 rounded-full border border-[#831317] bg-[#831317]/5 px-[14px] text-[13px] font-medium text-[#831317]">
+      {label}
+      <button type="button" aria-label={`${label} 삭제`} onClick={onRemove} className="text-black/40">
+        ×
+      </button>
+    </span>
+  )
+}
+
+function ChipTextInput({
+  placeholder,
+  onAdd,
+  onCancel,
+}: {
+  placeholder: string
+  onAdd: (value: string) => void
+  onCancel: () => void
+}) {
+  const [value, setValue] = useState('')
+  return (
+    <span className="flex h-12 items-center gap-2 rounded-full border border-[#831317] bg-white px-[14px]">
+      <input
+        autoFocus
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        onKeyDown={(event) => {
+          if (event.key !== 'Enter') return
+          event.preventDefault()
+          if (value.trim()) onAdd(value.trim())
+          setValue('')
+        }}
+        placeholder={placeholder}
+        className="w-24 text-[13px] outline-none placeholder:text-black/30"
+      />
+      <button
+        type="button"
+        aria-label="추가"
+        onClick={() => {
+          if (value.trim()) onAdd(value.trim())
+          setValue('')
+        }}
+        className="text-sm font-bold text-[#831317]"
+      >
+        추가
+      </button>
+      <button type="button" aria-label="취소" onClick={onCancel} className="text-sm text-black/40">
+        ×
+      </button>
+    </span>
+  )
+}
+
 function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) {
+  const navigate = useNavigate()
+  const { profile } = useProfile()
+  const { records } = useWineRecords()
   const [privacy, setPrivacy] = useState('나만보기')
   const [comments, setComments] = useState(true)
-  const chips = [['와인 태그', ['와인추가', '내 기록에서 가져오기']], ['사람 태그', ['이름']], ['해시태그', ['#']], ['위치', ['위치 추가']]] as const
+  const [content, setContent] = useState('')
+  const [wineTags, setWineTags] = useState<string[]>([])
+  const [personTags, setPersonTags] = useState<string[]>([])
+  const [hashtags, setHashtags] = useState<string[]>([])
+  const [locationTag, setLocationTag] = useState('')
+  const [openInput, setOpenInput] = useState<'wine' | 'person' | 'hashtag' | 'location' | null>(null)
+  const [isWinePickerOpen, setIsWinePickerOpen] = useState(false)
+
+  const wineChoices = [...records, ...DEMO_WINE_RECORDS]
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    if (!content.trim()) return
+
+    addUserFeed({
+      id: `user-feed-${Date.now()}`,
+      author: profile.nickname,
+      time: '방금 전',
+      avatar: profile.image,
+      images: [photo],
+      imagePosition: 'center',
+      content: content.trim(),
+      tags: [...wineTags, ...personTags, ...hashtags, ...(locationTag ? [locationTag] : [])],
+    })
+    navigate('/lounge')
+  }
+
   return <main className="mx-auto min-h-screen w-full max-w-[430px] bg-white pb-6 text-[#121212] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
     <header className="sticky top-[env(safe-area-inset-top)] z-20 flex h-[70px] items-center justify-between bg-white px-5"><button type="button" onClick={onBack} aria-label="뒤로 가기" className="text-2xl text-[#831317]">‹</button><h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-[#831317]">새 피드</h1><button type="button" className="text-[13px] text-black/60">임시저장</button></header>
-    <form className="space-y-6 px-5 pt-[11px]" onSubmit={(e) => e.preventDefault()}>
+    <form className="space-y-6 px-5 pt-[11px]" onSubmit={handleSubmit}>
       <section><h2 className="mb-[10px] text-sm font-bold">사진 첨부</h2><div className="flex gap-3"><img src={photo} alt="첨부된 사진" className="size-[90px] rounded-[10px] object-cover" /><button type="button" className="size-[90px] rounded-[10px] border border-dashed border-[#d9d9d9] bg-[#f2f2f2] text-[26px] text-[#737373]">+</button></div></section>
-      <label className="block"><span className="mb-[10px] block text-sm font-bold">피드 내용</span><textarea className="h-[130px] w-full resize-none rounded-[10px] border border-[#d6d6d6] px-[10px] py-4 text-[13px] outline-[#831317] placeholder:text-black/20" placeholder="오늘 마신 와인과 순간을 공유해보세요." /></label>
-      {chips.map(([title, items]) => <section key={title}><h2 className="mb-[10px] text-sm font-bold">{title}</h2><div className="flex gap-2">{items.map(item => <button type="button" key={item} className="h-12 rounded-full border border-dashed border-[#d6d6d6] px-[10px] text-[13px] text-black/20">{item}</button>)}</div></section>)}
+      <label className="block"><span className="mb-[10px] block text-sm font-bold">피드 내용</span><textarea value={content} onChange={(event) => setContent(event.target.value)} className="h-[130px] w-full resize-none rounded-[10px] border border-[#d6d6d6] px-[10px] py-4 text-[13px] outline-[#831317] placeholder:text-black/20" placeholder="오늘 마신 와인과 순간을 공유해보세요." /></label>
+      <section>
+        <h2 className="mb-[10px] text-sm font-bold">와인 태그</h2>
+        <div className="flex flex-wrap gap-2">
+          {wineTags.map((tag) => (
+            <RemovableChip key={tag} label={tag} onRemove={() => setWineTags((current) => current.filter((item) => item !== tag))} />
+          ))}
+          {openInput === 'wine' ? (
+            <ChipTextInput
+              placeholder="와인 이름"
+              onCancel={() => setOpenInput(null)}
+              onAdd={(value) => {
+                setWineTags((current) => [...current, value])
+                setOpenInput(null)
+              }}
+            />
+          ) : (
+            <button type="button" onClick={() => setOpenInput('wine')} className="h-12 rounded-full border border-dashed border-[#d6d6d6] px-[10px] text-[13px] text-[#595959]">와인추가</button>
+          )}
+          <button type="button" onClick={() => setIsWinePickerOpen(true)} className="h-12 rounded-full border border-dashed border-[#d6d6d6] px-[10px] text-[13px] text-[#595959]">내 기록에서 가져오기</button>
+        </div>
+      </section>
+      <section>
+        <h2 className="mb-[10px] text-sm font-bold">사람 태그</h2>
+        <div className="flex flex-wrap gap-2">
+          {personTags.map((tag) => (
+            <RemovableChip key={tag} label={tag} onRemove={() => setPersonTags((current) => current.filter((item) => item !== tag))} />
+          ))}
+          {openInput === 'person' ? (
+            <ChipTextInput
+              placeholder="이름"
+              onCancel={() => setOpenInput(null)}
+              onAdd={(value) => {
+                setPersonTags((current) => [...current, value])
+                setOpenInput(null)
+              }}
+            />
+          ) : (
+            <button type="button" onClick={() => setOpenInput('person')} className="h-12 rounded-full border border-dashed border-[#d6d6d6] px-[10px] text-[13px] text-[#595959]">이름</button>
+          )}
+        </div>
+      </section>
+      <section>
+        <h2 className="mb-[10px] text-sm font-bold">해시태그</h2>
+        <div className="flex flex-wrap gap-2">
+          {hashtags.map((tag) => (
+            <RemovableChip key={tag} label={`#${tag}`} onRemove={() => setHashtags((current) => current.filter((item) => item !== tag))} />
+          ))}
+          {openInput === 'hashtag' ? (
+            <ChipTextInput
+              placeholder="해시태그"
+              onCancel={() => setOpenInput(null)}
+              onAdd={(value) => {
+                setHashtags((current) => [...current, value.replace(/^#+/, '')])
+                setOpenInput(null)
+              }}
+            />
+          ) : (
+            <button type="button" onClick={() => setOpenInput('hashtag')} className="h-12 rounded-full border border-dashed border-[#d6d6d6] px-[10px] text-[13px] text-[#595959]">#</button>
+          )}
+        </div>
+      </section>
+      <section>
+        <h2 className="mb-[10px] text-sm font-bold">위치</h2>
+        <div className="flex flex-wrap gap-2">
+          {locationTag ? (
+            <RemovableChip label={locationTag} onRemove={() => setLocationTag('')} />
+          ) : openInput === 'location' ? (
+            <ChipTextInput
+              placeholder="위치"
+              onCancel={() => setOpenInput(null)}
+              onAdd={(value) => {
+                setLocationTag(value)
+                setOpenInput(null)
+              }}
+            />
+          ) : (
+            <button type="button" onClick={() => setOpenInput('location')} className="h-12 rounded-full border border-dashed border-[#d6d6d6] px-[10px] text-[13px] text-[#595959]">위치 추가</button>
+          )}
+        </div>
+      </section>
       <fieldset><legend className="mb-4 text-sm font-bold">공개 범위</legend><div className="space-y-4">{['나만보기','전체 공개','팔로워 공개'].map(x => <label key={x} className={`flex items-center gap-2 text-sm ${privacy === x ? 'font-semibold text-[#831317]' : 'text-[#949494]'}`}><input type="radio" checked={privacy === x} onChange={() => setPrivacy(x)} className="size-5 accent-[#831317]" />{x}</label>)}</div></fieldset>
       <div className="flex items-center justify-between"><b className="text-sm">댓글 허용</b><button type="button" aria-pressed={comments} onClick={() => setComments(v => !v)} className={`relative h-7 w-12 rounded-full ${comments ? 'bg-[#831317]' : 'bg-[#bbb]'}`}><span className={`absolute top-[3px] size-[22px] rounded-full bg-white transition-transform ${comments ? 'left-[23px]' : 'left-[3px]'}`} /></button></div>
       <button type="submit" className="h-12 w-full rounded-[10px] bg-[#831317] text-[13px] font-bold text-white">게시 하기</button>
     </form>
+
+    {isWinePickerOpen ? (
+      <div role="presentation" className="fixed inset-0 z-50 flex items-center justify-center bg-black/25 px-3" onClick={() => setIsWinePickerOpen(false)}>
+        <section role="dialog" aria-modal="true" aria-label="내 기록에서 와인 가져오기" onClick={(event) => event.stopPropagation()} className="w-full max-w-[406px] rounded-[20px] bg-white px-5 pb-5 pt-4 text-[#121212] shadow-[0_16px_50px_rgba(0,0,0,0.22)]">
+          <strong className="mb-3 block text-[15px]">내 기록에서 가져오기</strong>
+          {wineChoices.length === 0 ? (
+            <p className="py-6 text-center text-sm text-black/40">저장된 와인 기록이 없어요.</p>
+          ) : (
+            <ul className="max-h-[320px] overflow-y-auto">
+              {wineChoices.map((wine) => (
+                <li key={wine.id}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setWineTags((current) => (current.includes(wine.name) ? current : [...current, wine.name]))
+                      setIsWinePickerOpen(false)
+                    }}
+                    className="flex h-11 w-full items-center rounded-[10px] px-2 text-left text-sm hover:bg-[#f2f2f2]"
+                  >
+                    {wine.name}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      </div>
+    ) : null}
   </main>
 }
 

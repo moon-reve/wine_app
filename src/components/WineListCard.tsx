@@ -43,10 +43,10 @@ function WineListCard({
 
       <div className="wine-list-card__details">
         <div className="wine-list-card__copy">
-          <p className="wine-list-card__text text-[20px] leading-[25px] font-semibold text-[#1e1b18]">
+          <p className="wine-list-card__text text-[18px] leading-[25px] font-semibold text-[#1e1b18]">
             {wine.name}
           </p>
-          <p className="wine-list-card__text text-[12px] leading-[25px] font-normal text-[#817f7e]">
+          <p className={`wine-list-card__text ${wine.regionTextSize} leading-[25px] font-normal text-[#817f7e]`}>
             {wine.region}
           </p>
         </div>

@@ -110,6 +110,7 @@ function List() {
         <div className="relative z-20 h-[34px] border-b border-[#7b7b7b] bg-white">
           <button
             type="button"
+            aria-current={view === 'list' ? 'page' : undefined}
             onClick={() => setView('list')}
             className={`absolute top-0 w-[47px] text-center text-[18px] leading-[1.3] tracking-[-0.36px] ${
               view === 'map' ? 'left-[81px]' : 'left-[64.5px]'
@@ -121,6 +122,7 @@ function List() {
           </button>
           <button
             type="button"
+            aria-current={view === 'map' ? 'page' : undefined}
             onClick={() => setView('map')}
             className={`absolute top-0 text-center text-[18px] leading-[1.3] tracking-[-0.36px] ${
               view === 'map' ? 'left-[268px] w-[47px]' : 'left-[259px] w-[48px]'
