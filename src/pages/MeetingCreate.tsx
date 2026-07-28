@@ -9,6 +9,7 @@ import MeetingTagEditor from '../components/meeting/MeetingTagEditor'
 import TimeWheelPicker from '../components/meeting/TimeWheelPicker'
 import MeetingDatePicker from '../components/meeting/MeetingDatePicker'
 import AppBottomSheet from '../components/AppBottomSheet'
+import { addUserMeeting, type LoungeMeeting } from '../data/loungeMeetings'
 
 const FORM_ID = 'meeting-create-form'
 function formatMeetingTime(value: string) {
@@ -292,7 +293,20 @@ function MeetingCreate() {
         onClose={() => setIsConfirmOpen(false)}
         onConfirm={() => {
           setIsConfirmOpen(false)
-          void coverImage
+          const meeting: LoungeMeeting = {
+            id: `user-meeting-${Date.now()}`,
+            statusLabel: '모집중',
+            participants: 1,
+            maxParticipants: Number(maxParticipants) || 1,
+            title: title.trim(),
+            description: description.trim(),
+            schedule: `${date.replaceAll('-', '.')} ${formatMeetingTime(startTime)}-${formatMeetingTime(endTime)} · ${location.trim()}`,
+            tags,
+            image: coverImage ? URL.createObjectURL(coverImage) : meetingCover,
+            imagePosition: 'center',
+            imageHeight: 'h-[222px]',
+          }
+          addUserMeeting(meeting)
           handleRegistrationComplete()
         }}
       />

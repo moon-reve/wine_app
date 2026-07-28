@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import avatarImage from '../assets/mypage/figma-profile-photo.png'
 import profileStoryRing from '../assets/mypage/profile-story-ring.svg'
 import challengeCircleImage from '../assets/mypage/mypage-challenge-circle.png'
 import challengeRingImage from '../assets/mypage/challenge-ring.png'
@@ -26,8 +25,10 @@ import ratingStarIcon from '../assets/mypage/rating-star.svg'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
 import { useLikedWines } from '../context/LikedWinesContext'
 import { DEMO_WINE_RECORDS, useWineRecords } from '../context/WineRecordsContext'
+import { useProfile } from '../context/ProfileContext'
+import { getUserFeeds } from '../data/userFeeds'
 
-const feedItems = [
+const demoFeedItems = [
   { image: feedThumb1, crop: 'absolute top-[-21.13%] left-[-7.75%] h-[204.57%] w-[115.11%] max-w-none', multiple: true },
   { image: feedThumb2, crop: 'absolute inset-0 size-full object-cover', multiple: false },
   { image: feedThumb3, crop: 'absolute top-[-2.01%] left-0 h-[111.98%] w-[100.26%] max-w-none', multiple: true },
@@ -141,6 +142,15 @@ function Mypage() {
   const [activeTab, setActiveTab] = useState<'feed' | 'wine' | 'likes'>(initialTab ?? 'feed')
   const { likedWineIds, unlike } = useLikedWines()
   const { records, deleteRecord } = useWineRecords()
+  const { profile } = useProfile()
+  const [feedItems] = useState(() => [
+    ...getUserFeeds().map((feed) => ({
+      image: feed.images[0],
+      crop: 'absolute inset-0 size-full object-cover',
+      multiple: feed.images.length > 1,
+    })),
+    ...demoFeedItems,
+  ])
   // 데모 기록은 세션 동안만 숨기고, 강제 새로고침하면 다시 나타나야 하므로
   // localStorage가 아니라 컴포넌트 로컬 state로만 관리한다.
   const [hiddenDemoIds, setHiddenDemoIds] = useState<Set<string>>(new Set())
@@ -203,15 +213,15 @@ function Mypage() {
               <img src={profileStoryRing} alt="" className="absolute inset-0 size-[111px] max-w-none" aria-hidden="true" />
               <div className="absolute top-1.5 left-[7px] h-[99px] w-[97px] overflow-hidden rounded-[50px]" data-node-id="1546:5566">
                 <img
-                  src={avatarImage}
-                  alt="Sora Choi"
+                  src={profile.image}
+                  alt={profile.nickname}
                   className="absolute top-[0.47%] left-[-6.93%] h-[146.46%] w-[119.59%] max-w-none"
                 />
               </div>
             </div>
 
             <div className="mt-[21px] flex flex-1 flex-col gap-[11px]">
-              <strong className="ml-[14px] text-base leading-[normal] font-bold tracking-[-0.32px] whitespace-nowrap text-[#121212]">Sora Choi</strong>
+              <strong className="ml-[14px] text-base leading-[normal] font-bold tracking-[-0.32px] whitespace-nowrap text-[#121212]">{profile.nickname}</strong>
               <div className="flex items-center justify-between">
                 <div className="flex w-[57px] flex-col items-center gap-[5px]">
                   <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#831317]">12</strong>
@@ -230,8 +240,8 @@ function Mypage() {
           </div>
 
           <div className="mt-[21px] flex flex-col">
-            <p className="text-[12px] leading-[normal] font-normal tracking-[-0.24px] whitespace-pre text-[#a8a8a8]">{`#레드와인  #소비뇽  #과일안주러버`}</p>
-            <p className="mt-[4px] text-sm leading-[normal] font-normal tracking-[-0.28px] text-[#717171]">“Good wine, Good mood”</p>
+            <p className="text-[12px] leading-[normal] font-normal tracking-[-0.24px] whitespace-pre text-[#a8a8a8]">{profile.wineStyles.join('  ')}</p>
+            <p className="mt-[4px] text-sm leading-[normal] font-normal tracking-[-0.28px] text-[#717171]">{profile.bio}</p>
           </div>
 
           <div className="mt-[19px] grid grid-cols-2 gap-[4px]">
@@ -340,7 +350,7 @@ function Mypage() {
               <div className="mt-5">
                 {likedWines.map((wine) => (
                   <div key={wine.id}>
-                    <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
+                    <hr className="m-0 h-0 border-0 border-t-[0.5px] border-[#dcdcdc]" />
                     <LikedWineCard
                       wine={wine}
                       onSelect={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
@@ -348,7 +358,7 @@ function Mypage() {
                     />
                   </div>
                 ))}
-                <hr className="m-0 h-0 border-0 border-t border-[#c3c3c3]" />
+                <hr className="m-0 h-0 border-0 border-t-[0.5px] border-[#dcdcdc]" />
               </div>
             </div>
           )}

@@ -75,28 +75,30 @@ function List() {
       <Header tone="light" titleColorClassName="text-[#831317]" titleText="List" wineIcons />
 
       <main className={`px-5 pt-5 ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
-        <div className="relative my-[10px] flex border-b border-[#7b7b7b]">
+        <nav aria-label="리스트 보기 방식" className="relative z-20 grid h-[34px] w-full grid-cols-2 border-b border-black/15 font-noto">
           <button
             type="button"
+            aria-current={view === 'list' ? 'page' : undefined}
             onClick={() => setView('list')}
-            className={`absolute top-0 left-[81px] w-[47px] text-center text-[18px] leading-[1.3] tracking-[-0.36px] ${
-              view === 'list' ? 'font-bold text-[#831317]' : 'font-medium text-[#7b7b7b]'
+            className={`relative pb-[11px] text-center text-base leading-[1.3] font-bold tracking-[-0.48px] ${
+              view === 'list' ? 'text-[#831317]' : 'text-[#737373]'
             }`}
           >
             리스트
+            {view === 'list' && <span className="absolute -bottom-px left-0 h-[3px] w-full bg-[#831317]" />}
           </button>
           <button
             type="button"
+            aria-current={view === 'map' ? 'page' : undefined}
             onClick={() => setView('map')}
-            className={`absolute top-0 left-[268px] w-[47px] text-center text-[18px] leading-[1.3] tracking-[-0.36px] ${
-              view === 'map' ? 'font-bold text-[#831317]' : 'font-medium text-[#7b7b7b]'
+            className={`relative pb-[11px] text-center text-base leading-[1.3] font-bold tracking-[-0.48px] ${
+              view === 'map' ? 'text-[#831317]' : 'text-[#737373]'
             }`}
           >
             지도
+            {view === 'map' && <span className="absolute -bottom-px left-0 h-[3px] w-full bg-[#831317]" />}
           </button>
-          {view === 'list' && <span className="absolute bottom-[-1px] left-0 h-[3px] w-[195px] bg-[#831317]" />}
-          {view === 'map' && <span className="absolute right-0 bottom-[-1px] h-[3px] w-[195px] bg-[#831317]" />}
-        </div>
+        </nav>
 
         {view === 'list' ? (
           <>
@@ -108,7 +110,7 @@ function List() {
             </div>
 
             <div className="mt-[34px] mb-[30px]">
-              {visibleWines.map((wine, index) => (
+              {visibleWines.map((wine) => (
                 <div
                   key={wine.id}
                   role="button"
@@ -117,7 +119,7 @@ function List() {
                   onKeyDown={(event) => {
                     if (event.key === 'Enter' || event.key === ' ') navigate(`/wine_detail/${wine.type}/${wine.id}`)
                   }}
-                  className="relative flex h-[149.26px] w-full cursor-pointer items-start gap-[37px] pl-[24px] pt-[15px] text-left"
+                  className="flex w-full cursor-pointer items-center gap-[37px] border-t-[0.5px] border-[#dcdcdc] py-[15px] pl-[24px] text-left"
                 >
                   <div
                     className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
@@ -127,8 +129,8 @@ function List() {
                   </div>
                   <div className="flex flex-col gap-[8px] pt-[4px]">
                     <div>
-                      <p className="text-[20px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
-                      <p className="text-[12px] leading-[25px] font-normal text-[#817f7e]">{wine.region}</p>
+                      <p className="text-[18px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
+                      <p className={`${wine.regionTextSize} leading-[25px] font-normal text-[#817f7e]`}>{wine.region}</p>
                     </div>
                     <div className="flex w-[220px] items-center justify-between">
                       <div className="flex items-center gap-[10px]">
@@ -151,7 +153,6 @@ function List() {
                       </button>
                     </div>
                   </div>
-                  {index < visibleWines.length - 1 && <div className="absolute inset-x-0 top-[134.26px] h-px bg-[#dcdcdc]" />}
                 </div>
               ))}
             </div>

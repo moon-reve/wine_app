@@ -1,7 +1,8 @@
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import LoungeHeader from '../components/LoungeHeader'
 import LoungeTabs from '../components/LoungeTabs'
-import { getLoungeMeetingParticipantCount, loungeMeetings, type LoungeMeeting } from '../data/loungeMeetings'
+import { getAllLoungeMeetings, getLoungeMeetingParticipantCount, type LoungeMeeting } from '../data/loungeMeetings'
 
 type MeetingCardProps = LoungeMeeting & {
   isFull: boolean
@@ -59,6 +60,7 @@ function MeetingCard({
 
 function Meetings() {
   const navigate = useNavigate()
+  const [loungeMeetings] = useState(() => getAllLoungeMeetings())
 
   return (
     <div className="min-h-screen w-full bg-white text-[#0d0d0d]" data-node-id="1546:3506">

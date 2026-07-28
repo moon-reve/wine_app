@@ -73,7 +73,7 @@ export default function WineDetailSparkling() {
 
   return (
     <div className="relative mx-auto h-[3313px] w-full max-w-[430px] overflow-hidden bg-white font-pretendard text-[#0d0d0d]" data-node-id="1714:21">
-      <header className="absolute top-[env(safe-area-inset-top)] left-0 z-10 h-[70px] w-full bg-white">
+      <header className="fixed inset-x-0 top-[env(safe-area-inset-top)] z-10 mx-auto h-[70px] w-full max-w-[430px] bg-white">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-[18px] flex size-6 rotate-180 items-center justify-center">
           <img src={backIcon} alt="" className="size-6" />
         </button>
@@ -111,7 +111,7 @@ export default function WineDetailSparkling() {
           <div className="absolute top-[84px] left-0 flex w-full flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-[14px] leading-[1.45]">
             {info.map(([label, value]) => <div key={label} className="flex gap-4"><span className="w-[60px] shrink-0 font-medium text-[#737373]">{label}</span><span className="w-[278px] tracking-[-0.28px]">{value}</span></div>)}
           </div>
-          <div className="absolute top-[364px] left-0 flex h-[38px] items-center gap-3"><span className="h-full w-[3px] bg-[#831317]" /><p className="w-[360px] text-[12px] leading-[1.6] tracking-[-0.24px] text-[#595959]">{wine.description}</p></div>
+          <div className="absolute top-[364px] left-0 flex h-[38px] items-center gap-3"><span className="h-full w-[3px] bg-[#831317]" /><p className="w-[360px] text-[14px] leading-[1.6] tracking-[-0.24px] text-[#595959]">{wine.description}</p></div>
         </section>
 
         <Divider top={448} />
@@ -157,12 +157,12 @@ export default function WineDetailSparkling() {
                 key={item.id}
                 type="button"
                 onClick={() => navigate(`/wine_detail/${item.type}/${item.id}`)}
-                className="flex w-[188px] shrink-0 flex-col gap-2 text-left"
+                className="flex w-[240px] shrink-0 flex-col gap-2 text-left"
               >
-                <div className="flex h-[170px] w-[188px] items-center justify-center overflow-hidden rounded-xl bg-[#f2f2f2]">
-                  <img src={resolveWineImage(item)} alt={item.nameKo} className="h-[150px] max-w-[80px] object-contain" />
+                <div className="flex h-[279px] w-[240px] items-center justify-center overflow-hidden rounded-xl bg-[#f2f2f2]">
+                  <img src={resolveWineImage(item)} alt={item.nameKo} className="h-[220px] max-w-[65%] object-contain" />
                 </div>
-                <h3 className="w-[188px] text-[14px] leading-[1.25] font-semibold tracking-[-0.14px]">{item.nameKo}</h3>
+                <h3 className="w-[240px] text-[14px] leading-[1.25] font-semibold tracking-[-0.14px]">{item.nameKo}</h3>
                 <p className="text-[12px] leading-[1.2] font-medium whitespace-nowrap text-[#737373]">★ {item.rating.toFixed(1)} · {formatPrice(item.price)}</p>
               </button>
             ))}
