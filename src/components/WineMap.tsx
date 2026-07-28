@@ -98,6 +98,7 @@ function WineMap() {
   const [selectedPlace, setSelectedPlace] = useState<KakaoPlace | null>(null)
   const [mapError, setMapError] = useState('')
   const [placeImages, setPlaceImages] = useState<Record<string, string | null>>({})
+  const [failedPlaceImages, setFailedPlaceImages] = useState<Record<string, boolean>>({})
 
   useEffect(() => {
     const container = mapContainerRef.current
@@ -219,7 +220,7 @@ function WineMap() {
     let cancelled = false
     const placeId = selectedPlace.id
 
-    fetch(`/api/place-image?v=2&url=${encodeURIComponent(selectedPlace.place_url)}`)
+    fetch(`/api/place-image?v=4&url=${encodeURIComponent(selectedPlace.place_url)}`)
       .then((response) => (response.ok ? response.json() : { image: null }))
       .then((data: { image: string | null }) => {
         if (!cancelled) setPlaceImages((current) => ({ ...current, [placeId]: data.image }))
@@ -240,7 +241,10 @@ function WineMap() {
   }
 
   const selectedAddress = selectedPlace?.road_address_name || selectedPlace?.address_name
-  const fetchedImage = selectedPlace && placeImages[selectedPlace.id]
+  const fetchedImage =
+    selectedPlace && !failedPlaceImages[selectedPlace.id]
+      ? placeImages[selectedPlace.id]
+      : null
   const selectedImage = fetchedImage || placeCardPhoto
 
   return (
@@ -301,6 +305,14 @@ function WineMap() {
               key={selectedPlace.id}
               src={selectedImage}
               alt=""
+              onError={() => {
+                if (fetchedImage) {
+                  setFailedPlaceImages((current) => ({
+                    ...current,
+                    [selectedPlace.id]: true,
+                  }))
+                }
+              }}
               className={
                 fetchedImage
                   ? 'absolute inset-0 size-full object-cover'

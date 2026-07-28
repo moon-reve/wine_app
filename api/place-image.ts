@@ -35,7 +35,7 @@ export default async function handler(req: ApiRequest, res: ApiResponse) {
   res.setHeader('Cache-Control', 'public, s-maxage=86400, stale-while-revalidate=604800')
   res.status(200).json({
     image: image
-      ? `/api/place-image?raw=1&v=2&url=${encodeURIComponent(placeUrl)}`
+      ? `/api/place-image?raw=1&v=4&url=${encodeURIComponent(placeUrl)}`
       : null,
   })
 }

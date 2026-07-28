@@ -21,6 +21,7 @@ export async function fetchPlaceOgImage(placeUrl: string): Promise<string | null
   }
 
   if (!ALLOWED_HOSTNAMES.has(target.hostname)) return null
+  target.protocol = 'https:'
 
   const controller = new AbortController()
   const timeout = setTimeout(() => controller.abort(), 4000)
@@ -37,10 +38,10 @@ export async function fetchPlaceOgImage(placeUrl: string): Promise<string | null
     const imageUrl = match?.[1] ?? match?.[2] ?? null
     if (!imageUrl) return null
 
-    const imageHostname = new URL(imageUrl, target).hostname
-    if (imageHostname === STATIC_MAP_HOSTNAME) return null
+    const resolvedImageUrl = new URL(imageUrl, target)
+    if (resolvedImageUrl.hostname === STATIC_MAP_HOSTNAME) return null
 
-    return imageUrl
+    return resolvedImageUrl.href
   } catch {
     return null
   } finally {
