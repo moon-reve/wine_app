@@ -86,7 +86,7 @@ const magazineCards = [
   {
     image: magazineCard2,
     title: '샤르도네,',
-    subtitle: ['하나의 품종이 다양한 맛을', '만드는 이유'],
+    subtitle: ['하나의 품종이 다양한 맛을 만드는 이유'],
     body: '샤르도네는 재배 지역과 숙성 방식에 따라 전혀 다른 매력을 보여주는 대표적인 화이트 와인 품종입니다. 서늘한 지역에서는 상큼한 시트러스와 사과 향이, 오크 숙성을 거치면 바닐라와 버터 같은 부드러운 풍미가 더해집니다. 같은 품종이라도 색다른 맛을 경험하는 재미가 있습니다.',
   },
 ] as const
@@ -788,12 +788,12 @@ function Home() {
             <p className="absolute inset-x-[4.651cqw] top-[59.302cqw] text-[6.512cqw] leading-[1.18] font-bold tracking-[-0.228cqw] text-white">
               {card.title}
             </p>
-            <div className="absolute inset-x-[4.651cqw] top-[66.977cqw] text-[5.581cqw] leading-[1.55] tracking-[-0.112cqw] text-white">
+            <div className="absolute inset-x-[4.651cqw] top-[66.977cqw] text-[3.721cqw] leading-[1.55] tracking-[-0.074cqw] text-white">
               {card.subtitle.map((line) => (
                 <p key={line}>{line}</p>
               ))}
             </div>
-            <p className="absolute inset-x-[4.651cqw] top-[86.047cqw] w-[79.302cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-white">
+            <p className="absolute inset-x-[4.651cqw] top-[76.047cqw] w-[79.302cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-white">
               {card.body}
             </p>
           </Link>

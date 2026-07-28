@@ -15,6 +15,7 @@ import feedThumb10 from '../assets/mypage/figma-feed-10.png'
 import feedThumb11 from '../assets/mypage/figma-feed-11.png'
 import feedThumb12 from '../assets/mypage/figma-feed-12.png'
 import { FeedPost, ImageLightbox, type FigmaFeed, type ImagePreview } from './Lounge Feed'
+import { getUserFeeds } from '../data/userFeeds'
 
 // 마이페이지 그리드 썸네일과 정확히 같은 크롭으로 보이도록, 그리드 셀 비율(129.3:154.3)과
 // 크롭 클래스를 그대로 재사용한다 — 비율이 다르면 같은 퍼센트 크롭이라도 다른 부분이 보인다.
@@ -35,7 +36,7 @@ const feedThumbItems = [
   { image: feedThumb12, crop: 'absolute top-[-8.05%] left-[-0.26%] h-[111.98%] w-[100.26%] max-w-none' },
 ] as const
 
-const myFeeds: Array<{ feed: FigmaFeed; crop: string }> = feedThumbItems.map(({ image, crop }) => ({
+const demoFeeds: Array<{ feed: FigmaFeed; crop: string }> = feedThumbItems.map(({ image, crop }) => ({
   feed: {
     author: 'Sora Choi',
     time: '2시간 전',
@@ -54,6 +55,10 @@ function MyFeed() {
   const location = useLocation()
   const targetIndex = (location.state as { index?: number } | null)?.index ?? 0
   const [imagePreview, setImagePreview] = useState<ImagePreview | null>(null)
+  const [myFeeds] = useState(() => [
+    ...getUserFeeds().map((feed) => ({ feed, crop: 'absolute inset-0 size-full object-cover' })),
+    ...demoFeeds,
+  ])
   const postRefs = useRef<Array<HTMLDivElement | null>>([])
 
   useLayoutEffect(() => {
@@ -62,7 +67,7 @@ function MyFeed() {
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-[430px] bg-white text-[#0d0d0d]">
-      <header className="relative flex h-[70px] w-full shrink-0 items-center justify-center">
+      <header className="sticky top-0 z-10 flex h-[70px] w-full shrink-0 items-center justify-center bg-white">
         <button
           type="button"
           aria-label="뒤로 가기"

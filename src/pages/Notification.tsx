@@ -167,7 +167,7 @@ function Notification() {
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-107.5 bg-white text-[#0d0d0d]" data-node-id="1546:5601">
-      <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full overflow-hidden bg-white" data-node-id="1546:5602">
+      <header className="sticky top-0 z-10 h-[calc(70px+env(safe-area-inset-top))] w-full overflow-hidden bg-white" data-node-id="1546:5602">
         <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] h-17.5">
           <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
             <img src={backIcon} alt="" className="size-6 rotate-180" />

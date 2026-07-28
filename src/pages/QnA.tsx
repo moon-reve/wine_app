@@ -1,14 +1,16 @@
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import LoungeHeader from '../components/LoungeHeader'
 import LoungeTabs from '../components/LoungeTabs'
 import {
+  getAllLoungeQuestionDetails,
   getLoungeQuestionAnswerCount,
   getLoungeQuestionAnswerStatus,
-  loungeQuestionDetails,
 } from '../data/loungeQuestionDetails'
 
 function QnA() {
   const navigate = useNavigate()
+  const [loungeQuestionDetails] = useState(() => getAllLoungeQuestionDetails())
 
   return (
     <div className="min-h-screen w-full bg-white text-[#0d0d0d]" data-node-id="1546:3610">

@@ -116,8 +116,36 @@ export const loungeQuestionDetails: LoungeQuestionDetail[] = [
   },
 ]
 
+const USER_QUESTIONS_STORAGE_KEY = 'wine-app-user-questions'
+
+function loadUserQuestions(): LoungeQuestionDetail[] {
+  if (typeof window === 'undefined') return []
+
+  try {
+    const raw = window.localStorage.getItem(USER_QUESTIONS_STORAGE_KEY)
+    return raw ? (JSON.parse(raw) as LoungeQuestionDetail[]) : []
+  } catch {
+    return []
+  }
+}
+
+export function getUserQuestions() {
+  return loadUserQuestions()
+}
+
+export function addUserQuestion(question: LoungeQuestionDetail) {
+  if (typeof window === 'undefined') return
+
+  const next = [question, ...loadUserQuestions()]
+  window.localStorage.setItem(USER_QUESTIONS_STORAGE_KEY, JSON.stringify(next))
+}
+
+export function getAllLoungeQuestionDetails() {
+  return [...loadUserQuestions(), ...loungeQuestionDetails]
+}
+
 export function getLoungeQuestionDetail(questionId?: string) {
-  return loungeQuestionDetails.find((question) => question.id === questionId) ?? loungeQuestionDetails[0]
+  return getAllLoungeQuestionDetails().find((question) => question.id === questionId) ?? loungeQuestionDetails[0]
 }
 
 export const TEMP_ANSWER_PREFIX = 'temp-answer-'

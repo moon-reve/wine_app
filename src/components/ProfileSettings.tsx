@@ -1,40 +1,46 @@
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import BottomNav from './BottomNav'
-import profilePhoto from '../assets/mypage/figma-profile-photo.png'
 import backIcon from '../assets/mypage/profile-back.svg'
 import selectArrowIcon from '../assets/mypage/profile-select-arrow.svg'
 import toggleKnobIcon from '../assets/mypage/profile-toggle-knob.svg'
+import { useProfile } from '../context/ProfileContext'
 
-const STORAGE_KEY = 'wine-app-profile-settings'
+const REGION_OPTIONS = [
+  '서울특별시 강남구',
+  '서울특별시 마포구',
+  '서울특별시 성동구',
+  '서울특별시 용산구',
+  '경기도 성남시 분당구',
+  '인천광역시 연수구',
+  '부산광역시 해운대구',
+  '대구광역시 수성구',
+  '대전광역시 유성구',
+  '광주광역시 서구',
+  '제주특별자치도 제주시',
+] as const
 
 function ProfileSettings() {
   const navigate = useNavigate()
   const photoInputRef = useRef<HTMLInputElement>(null)
-  const [nickname, setNickname] = useState('Sora Choi')
-  const [styles, setStyles] = useState('#레드와인  #소비뇽  #과일안주러버')
-  const [bio, setBio] = useState('“Good wine, Good mood”')
-  const [region, setRegion] = useState('서울특별시 강남구')
-  const [isPublic, setIsPublic] = useState(true)
-  const [image, setImage] = useState(profilePhoto)
+  const { profile, updateProfile } = useProfile()
+  const [nickname, setNickname] = useState(profile.nickname)
+  const [styles, setStyles] = useState(profile.wineStyles.join('  '))
+  const [bio, setBio] = useState(profile.bio)
+  const [region, setRegion] = useState(profile.region)
+  const [isRegionPickerOpen, setIsRegionPickerOpen] = useState(false)
+  const [isPublic, setIsPublic] = useState(profile.isPublic)
+  const [image, setImage] = useState(profile.image)
 
   const handleSave = () => {
-    let previous: Record<string, unknown> = {}
-    try {
-      previous = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}') as Record<string, unknown>
-    } catch {
-      previous = {}
-    }
-
-    localStorage.setItem(STORAGE_KEY, JSON.stringify({
-      ...previous,
+    updateProfile({
       nickname,
       bio,
       region,
       wineStyles: styles.split(/\s+/).filter(Boolean),
       isPublic,
-      visibility: isPublic ? 'public' : 'private',
-    }))
+      image,
+    })
     navigate('/mypage')
   }
 
@@ -53,7 +59,7 @@ function ProfileSettings() {
 
   return (
     <div className="relative mx-auto min-h-[1013px] w-full max-w-[430px] bg-white pb-[120px] text-[#121212]" data-node-id="1546:4956">
-      <header className="flex h-[calc(56px+env(safe-area-inset-top))] w-full items-center justify-between px-5 pt-[env(safe-area-inset-top)]" data-node-id="1546:4957">
+      <header className="sticky top-0 z-10 flex h-[calc(56px+env(safe-area-inset-top))] w-full items-center justify-between bg-white px-5 pt-[env(safe-area-inset-top)]" data-node-id="1546:4957">
         <button type="button" aria-label="뒤로가기" onClick={() => navigate(-1)} className="flex size-6 items-center justify-center">
           <img src={backIcon} alt="" className="size-6" aria-hidden="true" />
         </button>
@@ -86,7 +92,7 @@ function ProfileSettings() {
 
             <Field label="관심 스타일">
               <div className="relative h-[50px] rounded-[10px] border border-[#d6d6d6] bg-white">
-                <input value={styles} maxLength={40} onChange={(event) => setStyles(event.target.value)} className="h-full w-full rounded-[10px] bg-transparent px-[15px] pr-16 text-xs leading-[normal] font-normal tracking-[-0.24px] text-black/20 outline-none" />
+                <input value={styles} maxLength={40} onChange={(event) => setStyles(event.target.value)} className="h-full w-full rounded-[10px] bg-transparent px-[15px] pr-16 text-xs leading-[normal] font-normal tracking-[-0.24px] text-black outline-none" />
                 <span className="absolute top-1/2 right-[15px] -translate-y-1/2 text-xs leading-[normal] tracking-[-0.24px] text-[#949494]">{styles.length}/40</span>
               </div>
             </Field>
@@ -99,7 +105,7 @@ function ProfileSettings() {
             </Field>
 
             <Field label="지역">
-              <button type="button" onClick={() => setRegion((current) => current === '서울특별시 강남구' ? '서울특별시 성동구' : '서울특별시 강남구')} className="relative flex h-[50px] w-full items-center rounded-[10px] border border-[#d6d6d6] bg-white px-[15px] text-left text-sm leading-[normal] tracking-[-0.28px]">
+              <button type="button" onClick={() => setIsRegionPickerOpen(true)} className="relative flex h-[50px] w-full items-center rounded-[10px] border border-[#d6d6d6] bg-white px-[15px] text-left text-sm leading-[normal] tracking-[-0.28px]">
                 {region}
                 <img src={selectArrowIcon} alt="" className="absolute top-[13px] right-[15px] size-6" aria-hidden="true" />
               </button>
@@ -120,6 +126,32 @@ function ProfileSettings() {
           </section>
         </div>
       </main>
+
+      {isRegionPickerOpen ? (
+        <div role="presentation" className="fixed inset-0 z-50 flex items-center justify-center bg-black/25 px-3" onClick={() => setIsRegionPickerOpen(false)}>
+          <section role="dialog" aria-modal="true" aria-label="지역 선택" onClick={(event) => event.stopPropagation()} className="w-full max-w-[406px] rounded-[20px] bg-white px-5 pb-5 pt-4 text-[#121212] shadow-[0_16px_50px_rgba(0,0,0,0.22)]">
+            <strong className="mb-3 block text-[15px]">지역 선택</strong>
+            <ul className="max-h-[320px] overflow-y-auto">
+              {REGION_OPTIONS.map((option) => (
+                <li key={option}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setRegion(option)
+                      setIsRegionPickerOpen(false)
+                    }}
+                    className={`flex h-11 w-full items-center rounded-[10px] px-2 text-left text-sm ${
+                      region === option ? 'font-semibold text-[#831317]' : 'text-[#121212] hover:bg-[#f2f2f2]'
+                    }`}
+                  >
+                    {option}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
+      ) : null}
 
       <BottomNav activeItem="홈" onItemClick={handleNavigation} />
     </div>
