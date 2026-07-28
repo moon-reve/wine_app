@@ -4,7 +4,14 @@ import bookmarkIcon from '../assets/wine-detail-red/bookmark.svg'
 import grapes from '../assets/wine-detail-red/grapes.png'
 import heartIcon from '../assets/wine-detail-red/heart.svg'
 import chateauMargauxHero from '../assets/wine-detail-red/hero-wine-upright.png'
+import cabernetSauvignon from '../assets/product/cabernet-sauvignon.png'
+import merlot from '../assets/product/merlot.png'
 import { formatPrice, formatStars, getWineDetailData, resolveWineImage } from '../data/wineDetailData'
+
+const similarRecommendations = [
+  { name: '카베르네 소비뇽', rating: '4.6', price: 'KRW 120,000', image: cabernetSauvignon },
+  { name: '메를로', rating: '4.5', price: 'KRW 95,000', image: merlot },
+] as const
 
 function Divider({ top }: { top: number }) {
   return <div className="absolute left-5 h-px w-[390px] bg-black/12" style={{ top }} />
@@ -100,15 +107,15 @@ export default function WineDetailRed() {
           <div className="absolute top-[18px] left-0 flex h-6 w-full items-center justify-between">
             <h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">기본 정보</h2>
             <div className="flex items-center gap-3">
-              <button type="button" aria-label="찜하기" className="flex size-6 items-center justify-center"><img src={heartIcon} alt="" className="size-[19px]" /></button>
               <button type="button" aria-label="공유하기" className="flex size-6 items-center justify-center"><img src={bookmarkIcon} alt="" className="h-[19px] w-[17px]" /></button>
+              <button type="button" aria-label="찜하기" className="flex size-6 items-center justify-center"><img src={heartIcon} alt="" className="size-[19px]" /></button>
             </div>
           </div>
           <p className="absolute top-[54px] left-0 text-[12px] leading-[1.2] tracking-[-0.24px] text-black/60">{typeLabel} &gt; {wine.country} &gt; {wine.region}</p>
           <div className="absolute top-[84px] left-0 flex w-full flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-[14px] leading-[1.45]">
             {info.map(([label, value]) => <div key={label} className="flex gap-4"><span className="w-[60px] shrink-0 font-medium text-[#737373]">{label}</span><span className="w-[278px] tracking-[-0.28px]">{value}</span></div>)}
           </div>
-          <div className="absolute top-[364px] left-0 flex h-[38px] items-center gap-3"><span className="h-full w-[3px] bg-[#831317]" /><p className="w-[360px] text-[14px] leading-[1.6] tracking-[-0.24px] text-[#595959]">{wine.description}</p></div>
+          <div className="absolute top-[364px] left-0 flex h-[38px] items-center gap-3"><span className="h-full w-[3px] bg-[#831317]" /><p className="w-[360px] text-[12px] leading-[1.6] tracking-[-0.24px] text-[#595959]">{wine.description}</p></div>
         </section>
 
         <Divider top={448} />
@@ -153,7 +160,9 @@ export default function WineDetailRed() {
         <section className="absolute top-[2173px] left-5 flex w-[390px] flex-col gap-3.5 overflow-visible">
           <div className="flex flex-col gap-1"><h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">비슷한 와인 추천</h2><p className="text-[14px] leading-[1.3] tracking-[-0.28px] text-[#737373]">이 와인과 비슷한 스타일의 와인을 추천해드려요.</p></div>
           <div className="flex gap-3.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-            {similarWines.map((item) => (
+            {similarWines.map((item, index) => {
+              const replacement = similarRecommendations[index]
+              return (
               <button
                 key={item.id}
                 type="button"
@@ -161,12 +170,15 @@ export default function WineDetailRed() {
                 className="flex w-[240px] shrink-0 flex-col gap-2 text-left"
               >
                 <div className="flex h-[279px] w-[240px] items-center justify-center overflow-hidden rounded-xl bg-[#f2f2f2]">
-                  <img src={resolveWineImage(item)} alt={item.nameKo} className="h-[220px] max-w-[65%] object-contain" />
+                  <img src={replacement?.image ?? resolveWineImage(item)} alt={replacement?.name ?? item.nameKo} className="h-[220px] max-w-[65%] object-contain" />
                 </div>
-                <h3 className="w-[240px] text-[14px] leading-[1.25] font-semibold tracking-[-0.14px]">{item.nameKo}</h3>
-                <p className="text-[12px] leading-[1.2] font-medium whitespace-nowrap text-[#737373]">★ {item.rating.toFixed(1)} · {formatPrice(item.price)}</p>
+                <h3 className="w-[240px] text-[14px] leading-[1.25] font-semibold tracking-[-0.14px]">{replacement?.name ?? item.nameKo}</h3>
+                <p className="text-[12px] leading-[1.2] font-medium whitespace-nowrap text-[#737373]">
+                  ★ {replacement?.rating ?? item.rating.toFixed(1)} · {replacement?.price ?? formatPrice(item.price)}
+                </p>
               </button>
-            ))}
+              )
+            })}
           </div>
         </section>
       </main>

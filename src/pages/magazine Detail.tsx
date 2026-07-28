@@ -6,12 +6,11 @@ import berriesRight from '../assets/magazine-detail/berries-right.png'
 import epilogueBackground from '../assets/magazine-detail/epilogue-bg.png'
 import heroImage from '../assets/magazine-detail/hero.png'
 import illustrationMask from '../assets/magazine-detail/illustration-mask.svg'
-import illustration from '../assets/magazine-detail/illustration.png'
-import omynaraWinery from '../assets/magazine-detail/omynara-winery.jpg'
+import illustration from '../assets/magazine-detail/illustration-original-hq-clean.png'
+import wineryPlaceholder from '../assets/magazine-detail/placeholder.svg'
 import product1 from '../assets/magazine-detail/product-1.png'
 import product2 from '../assets/magazine-detail/product-2.png'
 import product3 from '../assets/magazine-detail/product-3.png'
-import sinabroWinery from '../assets/magazine-detail/sinabro-winery.jpg'
 import { getWineDetailData } from '../data/wineDetailData'
 
 const wineCardVisuals = [
@@ -30,10 +29,13 @@ const wines = wineCardVisuals.map((visual) => {
   }
 })
 
-function WineryInfo({ top, left, name, address, description, image }: { top: number; left: number; name: string; address: string; description: string; image: string }) {
+function WineryInfo({ top, left, name, address, description }: { top: number; left: number; name: string; address: string; description: string }) {
   return (
     <div className="absolute flex flex-col items-start gap-3" style={{ top, left }}>
-      <img src={image} alt={`${name} 전경`} className="size-[76px] shrink-0 rounded object-cover" />
+      <div className="relative size-[76px] shrink-0">
+        <img src={wineryPlaceholder} alt="" className="absolute inset-0 size-full" />
+        <span className="absolute inset-0 flex items-center justify-center font-[Arial] text-[11px] text-[#999]">IMG</span>
+      </div>
       <div className="flex flex-col items-start gap-3.5">
         <h3 className="text-[18px] leading-normal font-bold whitespace-nowrap text-[#111]">{name}</h3>
         <div className="flex flex-col gap-1 text-[14px] leading-normal font-normal tracking-[-0.28px] whitespace-nowrap text-[#666]">
@@ -109,14 +111,14 @@ function MagazineDetail() {
   }
 
   return (
-    <div className="relative mx-auto min-h-[3180px] w-full max-w-107.5 overflow-hidden bg-white text-black" data-node-id="1546:7825">
+    <div className="relative mx-auto min-h-[3180px] w-full max-w-107.5 overflow-hidden bg-white text-black" data-node-id="1829:12118">
       <div className="absolute top-[-211px] left-0 h-[538px] w-[430px]">
         <img src={heroImage} alt="수확한 오미자를 선별하는 모습" className="absolute inset-0 size-full max-w-none" />
         <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
       </div>
       <div className="absolute top-[286px] left-0 h-[360px] w-[431px] bg-[linear-gradient(150.82deg,#6a0a0d_51.022%,#950509_106.82%)]" />
 
-      <header className="absolute top-[env(safe-area-inset-top)] left-0 z-10 h-17.5 w-full overflow-hidden">
+      <header className="absolute top-0 left-0 z-10 h-17.5 w-full overflow-hidden">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
           <img src={backIcon} alt="" className="size-6 rotate-180" />
         </button>
@@ -143,12 +145,14 @@ function MagazineDetail() {
         <p>영동은 40여 개의 농가형</p><p>와이너리가 모인 국내 최대</p><p>포도 산지입니다. 주인공은</p><p>국산 청포도 품종 '청수(淸水)'.</p><p>시나브로 와이너리의 '청수</p><p>화이트'는 시트러스와 흰 꽃</p><p>향이 겹겹이 피어나는 드라이</p><p>화이트로, 아시아 와인트로피 금상</p><p>을 여러 해 수상하며 국산 화이트의</p><p>기준이 됐습니다.</p>
       </div>
       <div
-        className="absolute top-[806px] left-[193px] h-[416px] w-[443.524px] overflow-hidden"
+        className="absolute top-[804.859px] left-[193.365px] h-[410.141px] w-[307.606px] overflow-hidden bg-white"
         style={{
           WebkitMaskImage: `url(${illustrationMask})`,
           maskImage: `url(${illustrationMask})`,
           WebkitMaskSize: '443.524px 416px',
           maskSize: '443.524px 416px',
+          WebkitMaskPosition: '-0.365px 1.141px',
+          maskPosition: '-0.365px 1.141px',
           WebkitMaskRepeat: 'no-repeat',
           maskRepeat: 'no-repeat',
         }}
@@ -156,10 +160,10 @@ function MagazineDetail() {
         <img
           src={illustration}
           alt="충청북도 영동군 와인 지도"
-          className="absolute top-[-1.141px] left-[0.365px] h-[410.141px] w-[240.5px] max-w-none object-cover"
+          className="absolute inset-0 size-full max-w-none object-cover"
         />
       </div>
-      <WineryInfo top={1271} left={22} name="시나브로 와이너리" address="충북 영동군 심천면 약목2길 26" description="농가형 와이너리 최초 HACCP 인증 · 가족 소믈리에" image={sinabroWinery} />
+      <WineryInfo top={1271} left={22} name="시나브로 와이너리" address="충북 영동군 심천면 약목2길 26" description="농가형 와이너리 최초 HACCP 인증 · 가족 소믈리에" />
 
       <p className="font-delmon-script absolute top-[1482px] left-[calc(50%+30px)] -translate-x-1/2 text-center text-[100px] leading-[1.3] font-normal tracking-[-2px] whitespace-nowrap text-black/5">Chapter 02</p>
       <img src={berriesLeft} alt="" className="absolute top-[1561px] left-[-104px] h-[273px] w-[205px] object-cover opacity-90" />
@@ -170,8 +174,13 @@ function MagazineDetail() {
       <div className="absolute top-[1765px] right-5 w-[397px] text-right text-[16px] leading-[1.6] font-normal tracking-[-0.32px] text-black">
         <p>추풍령을 넘으면 문경새재 초입의 오미나라.</p><p>위스키 마스터 블렌더 출신 이종기 박사가</p><p>다섯 가지 맛의 오미자를 정통 샴페인 공법으로 발효시켜</p><p>세계 최초의 오미자 스파클링 '오미로제'를 빚었습니다.</p><p>2012년 서울 핵안보정상회의 만찬주에 올랐고,</p><p>올해 한·불 수교 140주년 국빈 만찬주로도 선정됐습니다.</p>
       </div>
-      <img src={berriesRight} alt="" className="absolute top-[1964px] left-[299px] h-[280px] w-[200px] max-w-none object-cover" />
-      <WineryInfo top={2035} left={20} name="오미나라" address="경북 문경시 문경읍 새재로 609" description="세계 최초 오미자 스파클링 · 증류소 병설" image={omynaraWinery} />
+      <div className="absolute top-[1995px] left-[275px] h-[249px] w-[162px] overflow-hidden">
+        <img src={berriesRight} alt="" className="absolute top-[-15.54%] left-0 h-[115.6%] w-[123.36%] max-w-none" />
+      </div>
+      <div className="absolute top-[1964px] left-[275px] h-[280px] w-[124px] overflow-hidden">
+        <img src={berriesRight} alt="" className="absolute top-[-2.75%] left-0 h-[102.8%] w-[161.16%] max-w-none" />
+      </div>
+      <WineryInfo top={2035} left={20} name="오미나라" address="경북 문경시 문경읍 새재로 609" description="세계 최초 오미자 스파클링 · 증류소 병설" />
 
       <p className="font-delmon-script absolute top-[2266px] left-[calc(50%-0.5px)] -translate-x-1/2 text-center text-[100px] leading-[1.3] font-normal tracking-[-2px] whitespace-nowrap text-black/5">Epilogue</p>
       <p className="absolute top-[2339px] left-[calc(50%-36px)] font-['Delmon_Delicate','Playfair_Display',serif] text-[18px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">Epilogue</p>
