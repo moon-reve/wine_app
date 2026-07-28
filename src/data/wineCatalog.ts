@@ -50,7 +50,7 @@ export function toListWine(wine: DummyWine): Wine {
     id: wine.id,
     name: wine.nameKo,
     region: regionText,
-    regionTextSize: regionText.length > 18 ? 'text-[11px]' : 'text-[12px]',
+    regionTextSize: 'text-[11px]',
     price: `₩${wine.price.toLocaleString()}`,
     priceValue: wine.price,
     rating: wine.rating.toFixed(1),

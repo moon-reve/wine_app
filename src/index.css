@@ -188,6 +188,9 @@
 
   .wine-list-card__copy {
     grid-area: copy;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     min-width: 0;
   }
 
@@ -213,7 +216,6 @@
     white-space: normal;
     word-break: keep-all;
     overflow-wrap: break-word;
-    text-wrap: pretty;
   }
 
   .wine-detail-name-en {

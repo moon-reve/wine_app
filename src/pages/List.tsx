@@ -145,7 +145,7 @@ function List() {
                 <img src={filterIcon} alt="" className="h-[18px] w-[19px]" />
               </button>
             </div>
-            <div className="mt-5 border-t border-[#dcdcdc]" />
+            <div className="mt-5 h-px" />
 
             <div className="mt-[34px] mb-[30px]">
               {visibleWines.map((wine, index) => (
