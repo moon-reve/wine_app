@@ -42,11 +42,11 @@ function WineMap() {
       </div>
 
       <article
-        className="absolute top-[399px] left-7 z-20 h-[342px] w-[361px] max-w-[calc(100%-50px)] overflow-hidden rounded-[33px] bg-white shadow-[0_0_6px_rgba(0,0,0,0.05)]"
+        className="absolute bottom-[137px] left-1/2 z-20 h-[342px] w-[361px] max-w-[calc(100%-69px)] -translate-x-1/2 overflow-hidden rounded-[33px] bg-white shadow-[0_0_6px_rgba(0,0,0,0.05)]"
         data-node-id="1829:9601"
       >
         <div
-          className="absolute top-[15px] left-[25px] h-[208px] w-[327px] overflow-hidden rounded-[20px]"
+          className="absolute top-[15px] left-[18px] h-[208px] w-[327px] overflow-hidden rounded-[20px]"
           data-node-id="1829:9612"
         >
           <img
@@ -59,7 +59,7 @@ function WineMap() {
           </span>
         </div>
 
-        <div className="absolute top-[238px] left-[29px] w-[314px]">
+        <div className="absolute top-[238px] left-[22px] w-[314px]">
           <h2 className="text-[20px] leading-[25px] font-semibold whitespace-nowrap text-[#1e1b18]">
             나라셀라 리저브
           </h2>
