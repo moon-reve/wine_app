@@ -503,7 +503,7 @@ export default function Chatbot() {
 
       <div
         ref={conversationScrollRef}
-        className={`absolute inset-x-0 top-[calc(70px+env(safe-area-inset-top))] bottom-0 z-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${turns.length ? "overflow-y-auto pb-[180px]" : "overflow-hidden"}`}
+        className={`absolute inset-x-0 top-[calc(70px+env(safe-area-inset-top))] bottom-0 z-10 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${turns.length ? "overflow-y-auto pb-[calc(180px+env(safe-area-inset-bottom))]" : "overflow-hidden"}`}
       >
         <section
           className="relative min-h-full"
@@ -526,7 +526,7 @@ export default function Chatbot() {
             onMouseMove={initialSuggestionsScroll.onMouseMove}
             onWheel={initialSuggestionsScroll.onWheel}
             onClickCapture={initialSuggestionsScroll.onClickCapture}
-            className="absolute right-2 bottom-[107px] left-2 flex cursor-grab gap-1.5 overflow-x-auto px-3 py-3 active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            className="absolute right-2 bottom-[calc(107px+env(safe-area-inset-bottom))] left-2 flex cursor-grab gap-1.5 overflow-x-auto px-3 py-3 active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           >
             {suggestions.map((suggestion) => (
               <button
@@ -618,7 +618,7 @@ export default function Chatbot() {
 
       <form
         onSubmit={handleSubmit}
-        className="absolute right-5 bottom-[53px] left-5 z-20 h-[52px] rounded-[26px] border border-white/80 bg-white/20 backdrop-blur-sm"
+        className="absolute right-5 bottom-[calc(53px+env(safe-area-inset-bottom))] left-5 z-20 h-[52px] rounded-[26px] border border-white/80 bg-white/20 backdrop-blur-sm"
       >
         <input
           value={message}
