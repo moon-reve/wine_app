@@ -152,9 +152,8 @@
     grid-template-columns: 89px minmax(0, 1fr);
     column-gap: clamp(20px, 8.6vw, 37px);
     width: 100%;
-    min-height: 149.26px;
     padding: 15px 20px 15px 24px;
-    align-items: start;
+    align-items: center;
     cursor: pointer;
     text-align: left;
   }

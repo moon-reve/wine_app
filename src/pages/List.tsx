@@ -107,39 +107,35 @@ function List() {
       <Header tone="light" title="LIST" titleColorClassName="text-[#831317]" wineIcons fixedFigmaTop />
 
       <main className={`px-5 pt-[46px] ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
-        <div className="relative z-20 h-[34px] border-b border-[#7b7b7b] bg-white">
+        <nav aria-label="리스트 보기 방식" className="relative z-20 grid h-[34px] w-full grid-cols-2 border-b border-black/15 bg-white font-noto">
           <button
             type="button"
             aria-current={view === 'list' ? 'page' : undefined}
             onClick={() => setView('list')}
-            className={`absolute top-0 w-[47px] text-center text-[18px] leading-[1.3] tracking-[-0.36px] ${
-              view === 'map' ? 'left-[81px]' : 'left-[64.5px]'
-            } ${
-              view === 'list' ? 'font-bold text-[#831317]' : 'font-medium text-[#7b7b7b]'
+            className={`relative pb-[11px] text-center text-base leading-[1.3] font-bold tracking-[-0.48px] ${
+              view === 'list' ? 'text-[#831317]' : 'text-[#737373]'
             }`}
           >
             리스트
+            {view === 'list' && <span className="absolute -bottom-px left-0 h-[3px] w-full bg-[#831317]" />}
           </button>
           <button
             type="button"
             aria-current={view === 'map' ? 'page' : undefined}
             onClick={() => setView('map')}
-            className={`absolute top-0 text-center text-[18px] leading-[1.3] tracking-[-0.36px] ${
-              view === 'map' ? 'left-[268px] w-[47px]' : 'left-[259px] w-[48px]'
-            } ${
-              view === 'map' ? 'font-bold text-[#831317]' : 'font-medium text-[#aaa]'
+            className={`relative pb-[11px] text-center text-base leading-[1.3] font-bold tracking-[-0.48px] ${
+              view === 'map' ? 'text-[#831317]' : 'text-[#737373]'
             }`}
           >
             지도
+            {view === 'map' && <span className="absolute -bottom-px left-0 h-[3px] w-full bg-[#831317]" />}
           </button>
-          {view === 'list' && <span className="absolute bottom-[-1px] left-0 z-10 h-[3px] w-[195px] bg-[#831317]" />}
-          {view === 'map' && <span className="absolute right-0 bottom-[-1px] z-10 h-[3px] w-[195px] bg-[#831317]" />}
-        </div>
+        </nav>
 
         {view === 'list' ? (
           <>
             <div className="relative mt-5 h-5">
-              <p className="text-[14px] leading-5 font-normal text-[#534343]">전체 128종</p>
+              <p className="text-[14px] leading-5 font-normal text-[#534343]">전체 {visibleWines.length}종</p>
               <button
                 type="button"
                 aria-label="필터"
@@ -149,6 +145,7 @@ function List() {
                 <img src={filterIcon} alt="" className="h-[18px] w-[19px]" />
               </button>
             </div>
+            <div className="mt-5 border-t border-[#dcdcdc]" />
 
             <div className="mt-[34px] mb-[30px]">
               {visibleWines.map((wine, index) => (
