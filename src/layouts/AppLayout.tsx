@@ -13,6 +13,7 @@ function AppLayout() {
   const isMypage = location.pathname.startsWith('/mypage')
   const isSearch = location.pathname.startsWith('/search')
   const isMagazine = location.pathname.startsWith('/magazine')
+  const isMagazineDetail = location.pathname.startsWith('/magazine/')
   const isMapView = isList && new URLSearchParams(location.search).get('view') === 'map'
   const isLightPage = isLounge || isList || isMypage || isSearch || isMagazine
   const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList ? '리스트' : '홈'
@@ -53,7 +54,7 @@ function AppLayout() {
   }, [isQuickMenuOpen])
 
   return (
-    <div className={`mx-auto min-h-screen w-full max-w-107.5 ${isList ? '' : 'pb-20'} ${isLightPage ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
+    <div className={`mx-auto min-h-screen w-full max-w-107.5 ${isList || isMagazineDetail ? '' : 'pb-20'} ${isLightPage ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
       <Outlet />
       {isQuickMenuOpen ? (
         <button
