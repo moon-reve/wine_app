@@ -4,15 +4,13 @@ import dummyWines from '../../dummy data/wines.json'
 import starIcon from '../assets/list/container-star.svg'
 import heartEmptyIcon from '../assets/list/heart-empty.svg'
 import heartFilledIcon from '../assets/list/heart-filled.svg'
-import searchBackIcon from '../assets/search/search-back-button.svg'
 import searchSubmitIcon from '../assets/search/search-submit-button.svg'
 import chipCloseIcon from '../assets/search/search-chip-close.svg'
-import shopWinePairing from '../assets/search/shop-wine-pairing.jpg'
-import shopWineTerrace from '../assets/search/shop-wine-terrace.jpg'
 import Header from '../components/Header'
 import { useLikedWines } from '../context/LikedWinesContext'
 import { TODAY_PICK_WINE_IDS, WINE_TYPE_BG_COLOR, type WineType } from '../data/todayPickData'
 import { getWineDetailData, resolveWineImage, type WineDetail } from '../data/wineDetailData'
+import { loadKakaoMaps, type KakaoPlace } from '../lib/kakaoMaps'
 
 const TODAY_PICK_TYPES: WineType[] = ['red', 'white', 'rose', 'sparkling']
 
@@ -59,26 +57,18 @@ function loadRecentSearches() {
   }
 }
 
-const NEARBY_SHOPS = [
-  {
-    id: 'wine-pairing',
-    name: '와인 페어링',
-    address: '서울 강남구 서초동',
-    distance: '약 + 4.3 m',
-    rating: '★★★★☆ 4.7',
-    image: shopWinePairing,
-    imageClassName: 'left-[-29.91%] w-[129.94%]',
-  },
-  {
-    id: 'wine-terrace',
-    name: '와인 테라스',
-    address: '서울 강남구 역삼동',
-    distance: '약 + 10.6 m',
-    rating: '★★★★☆ 4.7',
-    image: shopWineTerrace,
-    imageClassName: 'left-[-18.32%] w-[136.72%]',
-  },
-]
+type NearbyShop = KakaoPlace & { image: string | null }
+
+function formatDistance(distance: string) {
+  const distanceInMeters = Number(distance)
+  if (!Number.isFinite(distanceInMeters)) return ''
+  if (distanceInMeters < 1000) return `약 ${Math.round(distanceInMeters)}m`
+  return `약 ${(distanceInMeters / 1000).toFixed(1)}km`
+}
+
+function formatCategory(categoryName: string) {
+  return categoryName.split('>').map((category) => category.trim()).filter(Boolean).at(-1) || '와인숍'
+}
 
 type Trend = 'up' | 'down' | 'flat'
 
@@ -98,14 +88,14 @@ const TRENDING_SEARCHES: { text: string; trend: Trend }[] = [
 
 function TodayPickItem({ wine, onClick }: { wine: WineDetail; onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className="flex w-[89px] shrink-0 flex-col items-center gap-3">
+    <button type="button" onClick={onClick} className="flex min-w-0 flex-col items-center gap-3">
       <div
-        className="flex size-[89.26px] shrink-0 items-center justify-center overflow-hidden rounded-full"
+        className="flex aspect-square w-full shrink-0 items-center justify-center overflow-hidden rounded-full"
         style={{ backgroundColor: WINE_TYPE_BG_COLOR[wine.type] }}
       >
         <img src={resolveWineImage(wine)} alt={wine.nameKo} className="h-[85%] w-auto max-w-[75%] object-contain" />
       </div>
-      <p className="line-clamp-2 w-[89px] text-center text-[14px] leading-[18px] font-medium tracking-[-0.5px] text-[#6b6b6b]">{wine.nameKo}</p>
+      <p className="line-clamp-2 w-full text-center text-[12px] leading-[16px] font-medium tracking-[-0.5px] text-[#6b6b6b]">{wine.nameKo}</p>
     </button>
   )
 }
@@ -173,15 +163,86 @@ function Search() {
   const navigate = useNavigate()
   const recentSearchScrollRef = useRef<HTMLDivElement>(null)
   const recentSearchDragRef = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false })
-  const todayPickScrollRef = useRef<HTMLDivElement>(null)
-  const todayPickDragRef = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false })
   const [query, setQuery] = useState('')
   const [searchedQuery, setSearchedQuery] = useState<string | null>(null)
   const [recentSearches, setRecentSearches] = useState<string[]>(loadRecentSearches)
+  const [nearbyShops, setNearbyShops] = useState<NearbyShop[]>([])
+  const [nearbyShopStatus, setNearbyShopStatus] = useState('현재 위치 주변의 와인숍을 찾고 있어요.')
 
   useEffect(() => {
     localStorage.setItem(RECENT_SEARCH_STORAGE_KEY, JSON.stringify(recentSearches))
   }, [recentSearches])
+
+  useEffect(() => {
+    const appKey = import.meta.env.VITE_KAKAO_MAP_KEY?.trim()
+    let cancelled = false
+
+    if (!appKey) {
+      setNearbyShopStatus('카카오 지도 키가 설정되지 않았습니다.')
+      return
+    }
+
+    if (!navigator.geolocation) {
+      setNearbyShopStatus('현재 위치를 확인할 수 없는 기기입니다.')
+      return
+    }
+
+    const getCurrentPosition = () => new Promise<GeolocationPosition>((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject, {
+        enableHighAccuracy: false,
+        timeout: 5000,
+        maximumAge: 300000,
+      })
+    })
+
+    void Promise.all([loadKakaoMaps(appKey), getCurrentPosition()])
+      .then(([kakaoMaps, position]) => {
+        if (cancelled) return
+
+        const placeService = new kakaoMaps.services.Places()
+        const options = {
+          location: new kakaoMaps.LatLng(position.coords.latitude, position.coords.longitude),
+          radius: 20000,
+          sort: kakaoMaps.services.SortBy.DISTANCE,
+        }
+
+        const searchPlaces = (keyword: string) => new Promise<KakaoPlace[]>((resolve) => {
+          placeService.keywordSearch(keyword, (places, status) => {
+            resolve(status === kakaoMaps.services.Status.OK ? places : [])
+          }, options)
+        })
+
+        return searchPlaces('와인샵').then((wineShops) => (
+          wineShops.length > 0 ? wineShops : searchPlaces('와인바')
+        ))
+      })
+      .then((places) => {
+        if (cancelled || !places) return
+
+        const nearestPlaces = places.slice(0, 2)
+        setNearbyShops(nearestPlaces.map((place) => ({ ...place, image: null })))
+        setNearbyShopStatus(nearestPlaces.length > 0 ? '' : '현재 위치 주변에 검색된 와인숍이 없습니다.')
+
+        nearestPlaces.forEach((place) => {
+          void fetch(`/api/place-image?v=4&url=${encodeURIComponent(place.place_url)}`)
+            .then((response) => (response.ok ? response.json() : { image: null }))
+            .then((data: { image: string | null }) => {
+              if (cancelled) return
+              setNearbyShops((current) => current.map((shop) => (
+                shop.id === place.id ? { ...shop, image: data.image } : shop
+              )))
+            })
+            .catch(() => undefined)
+        })
+      })
+      .catch(() => {
+        if (!cancelled) setNearbyShopStatus('주변 와인숍을 보려면 위치 권한을 허용해주세요.')
+      })
+
+    return () => {
+      cancelled = true
+    }
+  }, [])
 
   const searchResults = useMemo(() => {
     if (!searchedQuery) return []
@@ -257,38 +318,9 @@ function Search() {
     }
   }
 
-  const startTodayPickDrag = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== 'mouse' || event.button !== 0 || !todayPickScrollRef.current) return
-
-    todayPickDragRef.current = {
-      active: true,
-      startX: event.clientX,
-      scrollLeft: todayPickScrollRef.current.scrollLeft,
-      moved: false,
-    }
-    event.currentTarget.setPointerCapture(event.pointerId)
-  }
-
-  const moveTodayPickDrag = (event: React.PointerEvent<HTMLDivElement>) => {
-    const drag = todayPickDragRef.current
-    if (!drag.active || !todayPickScrollRef.current) return
-
-    const distance = event.clientX - drag.startX
-    if (Math.abs(distance) > 4) drag.moved = true
-    todayPickScrollRef.current.scrollLeft = drag.scrollLeft - distance
-  }
-
-  const endTodayPickDrag = (event: React.PointerEvent<HTMLDivElement>) => {
-    if (!todayPickDragRef.current.active) return
-    todayPickDragRef.current.active = false
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId)
-    }
-  }
-
   return (
     <div className="min-h-screen w-full bg-[#f9f7f7] text-[#0d0d0d]">
-      <Header tone="light" wineIcons />
+      <Header tone="light" wineIcons showBackButton showSearchButton={false} />
 
       <main className="px-5 pt-1.5 pb-8">
         <form
@@ -296,11 +328,8 @@ function Search() {
             event.preventDefault()
             executeSearch(query)
           }}
-          className="flex h-[51px] items-center gap-2.5 rounded-[32px] border-2 border-[#831317] bg-white pr-3.5 pl-2.5"
+          className="relative flex h-[51px] items-center gap-2.5 rounded-[32px] border-2 border-[#831317] bg-white pr-3.5 pl-2.5"
         >
-          <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-2 left-[9px] flex h-8 w-6.5 items-center justify-center">
-            <img src={searchBackIcon} alt="" className="h-8 w-6.5" />
-          </button>
           <input
             type="text"
             value={query}
@@ -309,9 +338,9 @@ function Search() {
               if (!event.target.value.trim()) setSearchedQuery(null)
             }}
             placeholder="상품명을 입력하세요."
-            className="absolute top-0 right-[51px] left-8 h-full min-w-0 bg-transparent text-[18px] leading-[25px] font-normal tracking-[0.3px] text-black placeholder:text-black/20 focus:outline-none"
+            className="absolute top-0 right-[68px] left-3.5 h-full min-w-0 bg-transparent text-[18px] leading-[25px] font-normal tracking-[0.3px] text-black placeholder:text-black/20 focus:outline-none"
           />
-          <button type="submit" aria-label="검색" className="absolute top-1 left-[330px] flex h-[39px] w-[38px] items-center justify-center">
+          <button type="submit" aria-label="검색" className="absolute top-1 right-5 flex h-[39px] w-[38px] items-center justify-center">
             <img src={searchSubmitIcon} alt="" className="h-[39px] w-[38px]" />
           </button>
         </form>
@@ -398,29 +427,14 @@ function Search() {
               <h2 className="text-[20px] font-medium tracking-[-0.53px]">
                 오늘 추천, <span className="text-[#831317]">와인</span>
               </h2>
-              <div
-                ref={todayPickScrollRef}
-                onPointerDown={startTodayPickDrag}
-                onPointerMove={moveTodayPickDrag}
-                onPointerUp={endTodayPickDrag}
-                onPointerCancel={endTodayPickDrag}
-                className="mt-5 w-full cursor-grab touch-pan-x overflow-x-scroll overscroll-x-contain pb-1 select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-              >
-                <div className="flex w-max min-w-full gap-4 pr-5">
-                  {todayPickWines.map((wine) => (
-                    <TodayPickItem
-                      key={wine.id}
-                      wine={wine}
-                      onClick={() => {
-                        if (todayPickDragRef.current.moved) {
-                          todayPickDragRef.current.moved = false
-                          return
-                        }
-                        navigate(`/wine_detail/${wine.type}/${wine.id}`)
-                      }}
-                    />
-                  ))}
-                </div>
+              <div className="mt-5 grid w-full grid-cols-4 gap-4">
+                {todayPickWines.map((wine) => (
+                  <TodayPickItem
+                    key={wine.id}
+                    wine={wine}
+                    onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
+                  />
+                ))}
               </div>
             </section>
 
@@ -428,29 +442,44 @@ function Search() {
               <h2 className="text-[20px] font-medium tracking-[-0.53px]">
                 <span className="text-[#831317]">내 주변</span> 와인숍
               </h2>
-              <div className="mt-8 flex flex-col gap-[29px]">
-                {NEARBY_SHOPS.map((shop) => (
-                  <div key={shop.id} className="flex h-[110px] items-center gap-[17px]">
-                    <div className="relative size-[110px] shrink-0 overflow-hidden rounded-[13px]">
-                      <img
-                        src={shop.image}
-                        alt={shop.name}
-                        className={`absolute top-0 h-full max-w-none ${shop.imageClassName}`}
-                      />
-                    </div>
-                    <div className="flex h-[93px] min-w-0 flex-1 flex-col justify-between">
-                      <div className="flex flex-col gap-1.5">
-                        <p className="text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#222]">{shop.name}</p>
-                        <p className="text-[13px] leading-[115.045%] font-medium text-[#d9d9d9]">{shop.address}</p>
-                      </div>
-                      <div className="flex items-center justify-between">
-                        <p className="text-[13px] text-[#666]">{shop.rating}</p>
-                        <p className="text-[16px] leading-none font-medium tracking-[-0.5348px] whitespace-nowrap text-[#6b6b6b]">{shop.distance}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              {nearbyShops.length > 0 ? (
+                <div className="mt-8 flex flex-col gap-[29px]">
+                  {nearbyShops.map((shop) => {
+                    const address = shop.road_address_name || shop.address_name
+                    return (
+                      <a
+                        key={shop.id}
+                        href={shop.place_url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="flex h-[110px] items-center gap-[17px]"
+                      >
+                        <div className="relative size-[110px] shrink-0 overflow-hidden rounded-[13px] bg-[#f2f2f2]">
+                          {shop.image ? (
+                            <img src={shop.image} alt={shop.place_name} className="size-full object-cover" />
+                          ) : (
+                            <span className="absolute inset-0 flex items-center justify-center text-[12px] text-[#aaa]">사진 없음</span>
+                          )}
+                        </div>
+                        <div className="flex h-[93px] min-w-0 flex-1 flex-col justify-between">
+                          <div className="flex min-w-0 flex-col gap-1.5">
+                            <p className="truncate text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#222]">{shop.place_name}</p>
+                            <p className="line-clamp-2 text-[13px] leading-[115.045%] font-medium text-[#aaa]">{address}</p>
+                          </div>
+                          <div className="flex min-w-0 items-center justify-between gap-2">
+                            <p className="truncate text-[13px] text-[#666]">{formatCategory(shop.category_name)}</p>
+                            <p className="shrink-0 text-[16px] leading-none font-medium tracking-[-0.5348px] whitespace-nowrap text-[#6b6b6b]">
+                              {formatDistance(shop.distance)}
+                            </p>
+                          </div>
+                        </div>
+                      </a>
+                    )
+                  })}
+                </div>
+              ) : (
+                <p className="mt-8 py-8 text-center text-[13px] text-[#999]">{nearbyShopStatus}</p>
+              )}
             </section>
 
             <section className="-mx-5 mt-3 bg-white px-5 pt-7 pb-[30px]">

@@ -12,11 +12,12 @@ type HeaderProps = {
   titleColorClassName?: string
   wineIcons?: boolean
   showBackButton?: boolean
+  showSearchButton?: boolean
   titleText?: string
   fixedFigmaTop?: boolean
 }
 
-function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, showBackButton = false, titleText, fixedFigmaTop = false }: HeaderProps) {
+function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, showBackButton = false, showSearchButton = true, titleText, fixedFigmaTop = false }: HeaderProps) {
   const navigate = useNavigate()
   const isLight = tone === 'light'
   const titleColor = titleColorClassName ?? (isLight ? 'text-[#831317]' : 'text-white')
@@ -50,15 +51,17 @@ function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, 
       )}
 
       <div className="flex shrink-0 items-center gap-1 overflow-hidden" data-node-id="577:107">
-        <button
-          type="button"
-          aria-label="Search"
-          onClick={() => navigate('/search')}
-          className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
-          data-node-id="577:108"
-        >
-          <img src={searchIconSource} alt="" className="size-7 shrink-0" data-node-id="577:109" />
-        </button>
+        {showSearchButton ? (
+          <button
+            type="button"
+            aria-label="Search"
+            onClick={() => navigate('/search')}
+            className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
+            data-node-id="577:108"
+          >
+            <img src={searchIconSource} alt="" className="size-7 shrink-0" data-node-id="577:109" />
+          </button>
+        ) : null}
 
         <button
           type="button"

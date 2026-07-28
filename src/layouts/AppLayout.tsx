@@ -54,7 +54,7 @@ function AppLayout() {
   }, [isQuickMenuOpen])
 
   return (
-    <div className={`mx-auto min-h-screen w-full max-w-107.5 ${isList || isMagazineDetail ? '' : 'pb-20'} ${isLightPage ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
+    <div className={`mx-auto min-h-screen w-full max-w-107.5 ${isList || isSearch || isMagazineDetail ? '' : 'pb-20'} ${isLightPage ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
       <Outlet />
       {isQuickMenuOpen ? (
         <button
@@ -66,18 +66,20 @@ function AppLayout() {
         />
       ) : null}
       <InstallPwaBanner />
-      <BottomNav
-        activeItem={activeItem}
-        className={isMapView ? '!bottom-[7px]' : ''}
-        expanded={isQuickMenuOpen}
-        onAddClick={() => setIsQuickMenuOpen((open) => !open)}
-        onItemClick={handleNavItemClick}
-        onQuickActionClick={handleQuickActionClick}
-        onChatbotOpen={() => {
-          setIsQuickMenuOpen(false)
-          navigate('/chatbot', { state: { from: location.pathname } })
-        }}
-      />
+      {!isSearch ? (
+        <BottomNav
+          activeItem={activeItem}
+          className={isMapView ? '!bottom-[7px]' : ''}
+          expanded={isQuickMenuOpen}
+          onAddClick={() => setIsQuickMenuOpen((open) => !open)}
+          onItemClick={handleNavItemClick}
+          onQuickActionClick={handleQuickActionClick}
+          onChatbotOpen={() => {
+            setIsQuickMenuOpen(false)
+            navigate('/chatbot', { state: { from: location.pathname } })
+          }}
+        />
+      ) : null}
     </div>
   )
 }
