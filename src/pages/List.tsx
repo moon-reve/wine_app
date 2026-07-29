@@ -6,7 +6,7 @@ import FilterSheet, { type WineFilters } from '../components/FilterSheet'
 import WineListCard from '../components/WineListCard'
 import WineMap from '../components/WineMap'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
-import { useLikedWines } from '../context/LikedWinesContext'
+import { useLikedWines } from '../context/likedWinesContextValue'
 
 // 상단 큐레이션 와인은 더미데이터의 ID로 직접 연결하고, 일반 목록에서는 중복 노출하지 않는다.
 const CURATED_WINE_IDS = ['wine_106', 'wine_031', 'wine_033', 'wine_023'] as const
@@ -101,7 +101,7 @@ function List() {
 
   return (
     <div
-      className={`${view === 'map' ? 'flex h-dvh-zoomed min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
+      className={`${view === 'map' ? 'flex h-dvh min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
       data-node-id="690:403"
     >
       <Header tone="light" title="LIST" titleColorClassName="text-[#831317]" wineIcons />

@@ -6,7 +6,7 @@ import QuestionWriteHeader from '../components/question/QuestionWriteHeader'
 import TagSelector from '../components/question/TagSelector'
 import AppBottomSheet from '../components/AppBottomSheet'
 import { addUserQuestion, type LoungeQuestionDetail } from '../data/loungeQuestionDetails'
-import { useProfile } from '../context/ProfileContext'
+import { useProfile } from '../context/profileContextValue'
 
 const FORM_ID = 'question-write-form'
 const TAGS = ['빈티지확인', '가격문의', '페어링', '보관법'] as const
@@ -50,7 +50,7 @@ function QuestionWrite() {
   }
 
   return (
-    <div className="mx-auto min-h-[calc(100dvh/var(--app-zoom))] w-full max-w-107.5 bg-white text-[#0d0d0d]">
+    <div className="mx-auto min-h-dvh w-full max-w-107.5 bg-white text-[#0d0d0d]">
       <QuestionWriteHeader />
 
       <form

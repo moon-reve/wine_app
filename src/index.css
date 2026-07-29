@@ -102,13 +102,6 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
 
   html {
     background: #000;
-    /* zoom shrinks the whole 430px-designed layout to fit narrower phones,
-       but vh/dvh units keep measuring the real, unshrunk viewport — so a
-       height:100dvh box renders zoom% of the screen and leaves a gap at
-       the bottom. --app-zoom exposes the same factor so full-height
-       elements (see .h-dvh-zoomed below) can size themselves against it. */
-    --app-zoom: min(1, calc(100vw / 430px));
-    zoom: var(--app-zoom);
     scrollbar-width: none;
   }
 
@@ -120,13 +113,6 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
   html::-webkit-scrollbar,
   body::-webkit-scrollbar {
     display: none;
-  }
-
-  /* Use instead of h-dvh/h-screen wherever a box must reach the true bottom
-     of the viewport — compensates for --app-zoom so it renders at exactly
-     100dvh on screen instead of shrinking with the rest of the page. */
-  .h-dvh-zoomed {
-    height: calc(100dvh / var(--app-zoom));
   }
 
   body {
@@ -464,7 +450,6 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
 
   .settings-shell main {
     width: 100%;
-    zoom: 1;
   }
 
   .settings-shell:not([data-node-id="1546:5054"]) main .font-playfair-display {

@@ -12,8 +12,8 @@ import toolGrid from '../assets/quick-flow/tool-grid.svg'
 import toolFilter from '../assets/quick-flow/tool-filter.svg'
 import { useCameraStream } from '../hooks/useCameraStream'
 import { addUserFeed } from '../data/userFeeds'
-import { useProfile } from '../context/ProfileContext'
-import { DEMO_WINE_RECORDS, useWineRecords } from '../context/WineRecordsContext'
+import { useProfile } from '../context/profileContextValue'
+import { DEMO_WINE_RECORDS, useWineRecords } from '../context/wineRecordsContextValue'
 
 type FeedStep = 'intro' | 'camera' | 'edit' | 'compose'
 type AspectRatio = '3:4' | '9:16' | '1:1' | 'full'
@@ -259,11 +259,20 @@ export default function FeedCreateFlow() {
   const [step, setStep] = useState<FeedStep>('intro')
   const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null)
   const [aspectRatio, setAspectRatio] = useState<AspectRatio>('1:1')
-  const { videoRef, facingMode, switchCamera, capture, hasCamera, retryCamera } = useCameraStream(step === 'intro' || step === 'camera')
+  const {
+    videoRef,
+    facingMode,
+    switchCamera,
+    capture,
+    hasCamera,
+    retryCamera,
+    zoom,
+    cameraGestureProps,
+  } = useCameraStream(step === 'intro' || step === 'camera')
 
   if (step === 'compose') return <FeedComposer photo={capturedPhoto ?? feedCamera} onBack={() => setStep('edit')} />
 
-  if (step === 'edit') return <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-[#170d0d] text-white">
+  if (step === 'edit') return <main className="@container relative mx-auto h-dvh w-full max-w-[430px] overflow-hidden bg-[#170d0d] text-white">
     <button type="button" aria-label="보정 화면 닫기" onClick={() => setStep('camera')} className="absolute left-5 top-[max(28px,env(safe-area-inset-top))] z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
     <button type="button" onClick={() => setStep('compose')} className="absolute right-[18px] top-[max(28px,env(safe-area-inset-top))] z-20 flex h-6 items-center text-[3.488cqw] font-medium">다음</button>
     <div className="absolute top-[calc(21.5px+env(safe-area-inset-top))] left-1/2 flex h-[37px] w-[37.442cqw] -translate-x-1/2 items-center justify-around rounded-full border border-white/20 bg-[#d9d9d9]/20 text-[2.791cqw]">
@@ -297,20 +306,22 @@ export default function FeedCreateFlow() {
   </main>
 
   const intro = step === 'intro'
-  return <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-black text-white">
-    <video
-      ref={videoRef}
-      autoPlay
-      muted
-      playsInline
-      className={`absolute inset-0 size-full object-cover ${hasCamera ? '' : 'hidden'} ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
-    />
-    {!hasCamera && (
-      <button type="button" onClick={retryCamera} className="absolute inset-0 size-full">
-        <img src={feedCamera} alt="" className="absolute inset-0 size-full object-cover" />
-        <span className="absolute inset-0 flex items-center justify-center bg-black/40 px-10 text-center text-sm font-medium text-white">탭해서 카메라 켜기</span>
-      </button>
-    )}
+  return <main {...cameraGestureProps} className="@container relative mx-auto h-dvh w-full max-w-[430px] touch-none overflow-hidden bg-black text-white">
+    <div className="absolute inset-0 origin-center" style={{ transform: `scale(${zoom})` }}>
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        playsInline
+        className={`absolute inset-0 size-full object-cover ${hasCamera ? '' : 'hidden'} ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
+      />
+      {!hasCamera && (
+        <button type="button" onClick={retryCamera} className="absolute inset-0 size-full">
+          <img src={feedCamera} alt="" className="absolute inset-0 size-full object-cover" />
+          <span className="absolute inset-0 flex items-center justify-center bg-black/40 px-10 text-center text-sm font-medium text-white">탭해서 카메라 켜기</span>
+        </button>
+      )}
+    </div>
     <CameraHeader onClose={() => { if (intro) navigate(-1); else setStep('intro') }} />{!intro ? <Ruler /> : null}
     {intro ? <section className="absolute inset-x-0 top-[59.44%] bottom-0 rounded-t-[5.814cqw] border-t border-white/50 bg-[#831317]/10 backdrop-blur-[16px]">
       <div className="absolute left-1/2 top-[10.58%] flex w-[61.86%] -translate-x-1/2 text-[min(15px,1.61dvh)] font-medium"><button type="button" onClick={() => navigate('/wine-search')} className="w-1/2 text-center text-white/50">찾기</button><span className="w-1/2 text-center">피드</span></div>

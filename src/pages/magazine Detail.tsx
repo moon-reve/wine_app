@@ -107,11 +107,11 @@ function MagazineDetail() {
 
   return (
     <div className="relative mx-auto w-full max-w-107.5 overflow-hidden bg-white text-black" data-node-id="1829:6187">
-      <div className="absolute top-[-211px] left-0 h-[538px] w-[430px]">
+      <div className="absolute top-[-211px] left-0 h-[538px] w-full">
         <img src={heroImage} alt="수확한 오미자를 선별하는 모습" className="absolute inset-0 size-full max-w-none" />
         <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
       </div>
-      <div className="absolute top-[286px] left-0 h-[360px] w-[431px] bg-[#831317]" data-node-id="1982:201">
+      <div className="absolute top-[286px] left-0 h-[360px] w-full bg-[#831317]" data-node-id="1982:201">
         <div className="absolute top-[110px] left-[79.5px] h-[140px] w-[272px] text-center whitespace-nowrap text-white" data-node-id="1982:196">
           <p className="absolute top-0 left-[18px] text-[18px] leading-[1.25] font-medium tracking-[-0.63px]" data-node-id="1982:197">
             영동에서 문경까지 오미자가 만드는

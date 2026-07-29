@@ -21,7 +21,16 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
   const [isSearching, setIsSearching] = useState(false)
   const [isResult, setIsResult] = useState(false)
   const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null)
-  const { videoRef, facingMode, switchCamera, capture, hasCamera, retryCamera } = useCameraStream(isSearch)
+  const {
+    videoRef,
+    facingMode,
+    switchCamera,
+    capture,
+    hasCamera,
+    retryCamera,
+    zoom,
+    cameraGestureProps,
+  } = useCameraStream(isSearch)
 
   useEffect(() => {
     if (!isSearching || !isSearch) return
@@ -33,7 +42,7 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
 
   if (isResult) {
     return (
-      <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-black text-white">
+      <main className="@container relative mx-auto h-dvh w-full max-w-[430px] overflow-hidden bg-black text-white">
         <img src={capturedPhoto ?? searchCamera} alt="" className="absolute -inset-2 h-[calc(100%+16px)] w-[calc(100%+16px)] object-cover blur-[6px]" />
         <div className="absolute inset-0 bg-black/20" />
         <header className="absolute inset-x-0 top-[max(28px,env(safe-area-inset-top))] z-20">
@@ -89,21 +98,29 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
   }
 
   return (
-    <main className="@container relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-black text-white">
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        playsInline
-        className={`absolute inset-0 size-full object-cover ${hasCamera ? '' : 'hidden'} ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
-      />
-      {!hasCamera && (
-        <button type="button" onClick={retryCamera} className="absolute inset-0 size-full">
-          <img src={searchCamera} alt="" className="absolute inset-0 size-full object-cover" />
-          <span className="absolute inset-0 flex items-center justify-center bg-black/40 px-10 text-center text-sm font-medium text-white">탭해서 카메라 켜기</span>
-        </button>
-      )}
-      <div className="absolute inset-0 bg-black/[0.04]" />
+    <main
+      {...cameraGestureProps}
+      className="@container relative mx-auto h-dvh w-full max-w-[430px] touch-none overflow-hidden bg-black text-white"
+    >
+      <div
+        className="absolute inset-0 origin-center"
+        style={{ transform: `scale(${zoom})` }}
+      >
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          playsInline
+          className={`absolute inset-0 size-full object-cover ${hasCamera ? '' : 'hidden'} ${facingMode === 'user' ? 'scale-x-[-1]' : ''}`}
+        />
+        {!hasCamera && (
+          <button type="button" onClick={retryCamera} className="absolute inset-0 size-full">
+            <img src={searchCamera} alt="" className="absolute inset-0 size-full object-cover" />
+            <span className="absolute inset-0 flex items-center justify-center bg-black/40 px-10 text-center text-sm font-medium text-white">탭해서 카메라 켜기</span>
+          </button>
+        )}
+      </div>
+      <div className="pointer-events-none absolute inset-0 bg-black/[0.04]" />
 
       {isSearching ? <div role="status" aria-label="와인 분석 중" className="absolute left-1/2 top-[36.375%] z-30 size-[min(56px,6dvh)] -translate-x-1/2 -translate-y-1/2 rounded-full border-[min(5px,0.54dvh)] border-white/25 border-t-white animate-spin" /> : null}
 
@@ -115,7 +132,7 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
         <img src={settingsIcon} alt="설정" className="absolute right-[18px] size-6" />
       </header>
 
-      {isSearch ? <img src={scanFrame} alt="와인 라벨 인식 영역" className="absolute left-1/2 top-[21.46%] z-10 h-[29.83%] w-[54.884cqw] -translate-x-1/2" /> : (
+      {isSearch ? <img src={scanFrame} alt="와인 라벨 인식 영역" className="pointer-events-none absolute left-1/2 top-[21.46%] z-10 h-[29.83%] w-[54.884cqw] -translate-x-1/2" /> : (
         <div aria-hidden="true" className="absolute right-5 top-[30.8%] h-[29.6%] w-8 bg-[repeating-linear-gradient(to_bottom,white_0_1px,transparent_1px_6px)] opacity-80 after:absolute after:right-0 after:top-1/2 after:h-px after:w-8 after:bg-white" />
       )}
 

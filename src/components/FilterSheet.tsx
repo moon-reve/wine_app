@@ -96,7 +96,7 @@ function FilterSheet({ isOpen, onClose, onApply }: FilterSheetProps) {
       />
 
       <div
-        className={`absolute inset-x-0 bottom-0 mx-auto h-[min(724px,calc(100dvh/var(--app-zoom)))] w-full max-w-107.5 overflow-hidden rounded-t-[30px] bg-white/70 transition-transform duration-300 ease-out ${
+        className={`absolute inset-x-0 bottom-0 mx-auto h-[min(724px,100dvh)] w-full max-w-107.5 overflow-hidden rounded-t-[30px] bg-white/70 transition-transform duration-300 ease-out ${
           isOpen ? 'translate-y-0' : 'translate-y-full'
         }`}
       >

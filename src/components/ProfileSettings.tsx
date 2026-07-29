@@ -4,7 +4,7 @@ import BottomNav from './BottomNav'
 import backIcon from '../assets/mypage/profile-back.svg'
 import selectArrowIcon from '../assets/mypage/profile-select-arrow.svg'
 import toggleKnobIcon from '../assets/mypage/profile-toggle-knob.svg'
-import { useProfile } from '../context/ProfileContext'
+import { useProfile } from '../context/profileContextValue'
 
 const REGION_OPTIONS = [
   '서울특별시 강남구',

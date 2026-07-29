@@ -23,9 +23,9 @@ import settingsIcon from '../assets/mypage/settings-outline.svg'
 import likedHeartIcon from '../assets/mypage/liked-heart.svg'
 import ratingStarIcon from '../assets/mypage/rating-star.svg'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
-import { useLikedWines } from '../context/LikedWinesContext'
-import { DEMO_WINE_RECORDS, useWineRecords } from '../context/WineRecordsContext'
-import { useProfile } from '../context/ProfileContext'
+import { useLikedWines } from '../context/likedWinesContextValue'
+import { DEMO_WINE_RECORDS, useWineRecords } from '../context/wineRecordsContextValue'
+import { useProfile } from '../context/profileContextValue'
 import { getUserFeeds } from '../data/userFeeds'
 
 const demoFeedItems = [

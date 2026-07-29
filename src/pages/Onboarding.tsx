@@ -76,7 +76,7 @@ function Onboarding() {
 
   return (
     <main
-      className="h-dvh-zoomed relative mx-auto w-full max-w-[430px] overflow-hidden bg-black text-white"
+      className="relative mx-auto h-dvh w-full max-w-[430px] overflow-hidden bg-black text-white"
     >
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
         <div
@@ -89,7 +89,7 @@ function Onboarding() {
                 ref={(video) => {
                   videoRefs.current[index] = video
                 }}
-                className="absolute inset-0 size-full object-cover"
+                className="absolute top-0 left-1/2 h-full w-auto max-w-none -translate-x-1/2"
                 autoPlay={index === 0}
                 loop
                 muted
@@ -252,13 +252,13 @@ function Onboarding() {
           <button type="button" className="text-white">아이디/비밀번호 찾기</button>
         </div>
 
-        <div className="absolute top-[84.87%] right-5 left-5 flex items-center gap-[10px]">
+        <div className="absolute right-5 bottom-[calc(113px+env(safe-area-inset-bottom))] left-5 flex items-center gap-[10px]">
           <span className="h-px flex-1 bg-white" />
           <span className="text-[16px] leading-[1.3]">간편로그인</span>
           <span className="h-px flex-1 bg-white" />
         </div>
 
-        <div className="absolute top-[89.27%] left-1/2 flex w-[250px] -translate-x-1/2 items-center justify-between">
+        <div className="absolute bottom-[calc(24px+env(safe-area-inset-bottom))] left-1/2 flex w-[250px] -translate-x-1/2 items-center justify-between">
           <button type="button" className="flex size-[50px] items-center justify-center bg-transparent" aria-label="카카오로 로그인">
             <img className="size-[50px] object-contain" src={kakaoIcon} alt="" />
           </button>

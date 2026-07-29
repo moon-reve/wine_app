@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import wineImage from '../assets/quick-flow/record-wine.png'
 import aiIcon from '../assets/quick-flow/ai.svg'
 import profileModalClose from '../assets/quick-flow/profile-modal-close.svg'
-import { useWineRecords, type WineRecordEntry } from '../context/WineRecordsContext'
+import { useWineRecords, type WineRecordEntry } from '../context/wineRecordsContextValue'
 
 const MAX_WINE_IMAGES = 3
 
@@ -193,7 +193,7 @@ export default function WineRecord() {
     navigate('/mypage', { state: { activeTab: 'wine' } })
   }
 
-  return <main className="mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-y-auto overscroll-y-contain bg-white pb-6 text-[#121212] [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden">
+  return <main className="mx-auto h-dvh w-full max-w-[430px] overflow-y-auto overscroll-y-contain bg-white pb-6 text-[#121212] [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden">
     <header className="relative z-20 flex h-[calc(70px+env(safe-area-inset-top))] items-center justify-between bg-white px-5 pt-[env(safe-area-inset-top)]">
       <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="text-2xl text-[#831317]">‹</button>
       <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold tracking-[-0.54px] text-[#831317]">기록하기</h1>

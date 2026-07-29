@@ -166,7 +166,7 @@ function Notification() {
   }
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-107.5 bg-white text-[#0d0d0d]" data-node-id="1546:5601">
+    <div className="mx-auto min-h-dvh w-full max-w-107.5 bg-white text-[#0d0d0d]" data-node-id="1546:5601">
       <header className="relative z-10 h-[calc(70px+env(safe-area-inset-top))] w-full overflow-hidden bg-white" data-node-id="1546:5602">
         <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] h-17.5">
           <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
@@ -184,7 +184,7 @@ function Notification() {
         </div>
       </header>
 
-      <main className="flex w-full flex-col gap-7 overflow-hidden px-5 pt-4 pb-8">
+      <main className="flex w-full flex-col gap-7 overflow-hidden px-5 pt-4 pb-[calc(32px+env(safe-area-inset-bottom))]">
         <NotificationSection title="오늘" items={todayNotifications} readNotificationIds={readNotificationIds} onRead={markAsRead} />
         <NotificationSection title="이번 주" items={weeklyNotifications} readNotificationIds={readNotificationIds} onRead={markAsRead} noto />
       </main>

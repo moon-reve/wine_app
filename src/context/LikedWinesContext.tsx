@@ -1,16 +1,9 @@
-import { createContext, useContext, useMemo, useState, type ReactNode } from 'react'
-
-// 마이페이지 '좋아요' 탭 데모용 초기 좋아요 목록.
-const INITIAL_LIKED_WINE_IDS = ['wine_041', 'wine_031', 'wine_023']
-
-type LikedWinesContextValue = {
-  likedWineIds: Set<string>
-  isLiked: (wineId: string) => boolean
-  toggleLike: (wineId: string) => void
-  unlike: (wineId: string) => void
-}
-
-const LikedWinesContext = createContext<LikedWinesContextValue | null>(null)
+import { useMemo, useState, type ReactNode } from 'react'
+import {
+  INITIAL_LIKED_WINE_IDS,
+  LikedWinesContext,
+  type LikedWinesContextValue,
+} from './likedWinesContextValue'
 
 export function LikedWinesProvider({ children }: { children: ReactNode }) {
   const [likedWineIds, setLikedWineIds] = useState<Set<string>>(() => new Set(INITIAL_LIKED_WINE_IDS))
@@ -36,10 +29,4 @@ export function LikedWinesProvider({ children }: { children: ReactNode }) {
   }), [likedWineIds])
 
   return <LikedWinesContext.Provider value={value}>{children}</LikedWinesContext.Provider>
-}
-
-export function useLikedWines() {
-  const context = useContext(LikedWinesContext)
-  if (!context) throw new Error('useLikedWines must be used within a LikedWinesProvider')
-  return context
 }
