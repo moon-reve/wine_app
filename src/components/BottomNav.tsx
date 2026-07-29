@@ -25,10 +25,11 @@ type NavProps = {
 }
 
 const glassGeometry: CSSProperties = {
-  left: '-20.16px',
+  left: '50%',
   bottom: '-20.16px',
-  width: 'calc(100% + 40.31px)',
+  width: '110.336%',
   height: '106.82px',
+  transform: 'translateX(-50%)',
 }
 
 const glassMaskSvg =
@@ -50,6 +51,13 @@ const quickActions: Array<{
   { label: '피드', left: 215, top: -85 },
   { label: '찾기', left: 297, top: -38 },
 ]
+
+const NAV_REFERENCE_WIDTH = 430
+const NAV_SIDE_PADDING = 20
+const NAV_CONTENT_WIDTH = NAV_REFERENCE_WIDTH - NAV_SIDE_PADDING * 2
+
+const toNavPosition = (referenceX: number) =>
+  `${((referenceX - NAV_SIDE_PADDING) / NAV_CONTENT_WIDTH) * 100}%`
 
 const navItems: NavItem[] = [
   {
@@ -154,7 +162,7 @@ function NavButton({
   active: boolean
 } & ButtonHTMLAttributes<HTMLButtonElement>) {
   const position = {
-    left: `${(item.centerX / 430) * 100}%`,
+    left: toNavPosition(item.centerX),
     top: item.iconTop,
   } satisfies CSSProperties
 
@@ -202,7 +210,7 @@ export default function BottomNav({
     <nav
       aria-label="하단 메뉴"
       data-node-id="1542:1659"
-      className={`fixed inset-x-0 bottom-[15px] z-50 mx-auto h-28 w-full max-w-[390px] ${className}`}
+      className={`fixed inset-x-0 bottom-[15px] z-50 mx-auto h-28 w-[calc(100%_-_40px)] max-w-[390px] ${className}`}
     >
       <div aria-hidden="true" className="pointer-events-none absolute" style={glassGeometry}>
         <img
@@ -262,7 +270,7 @@ export default function BottomNav({
               onClick={() => onQuickActionClick?.(action.label)}
               className="glass-tab absolute z-10 flex size-[69px] -translate-x-1/2 items-center justify-center rounded-full text-xs font-medium tracking-[-0.24px] text-white transition-[transform,filter,background-color,border-color,box-shadow] duration-100 ease-out hover:scale-105 active:scale-[0.94] active:border-white/30 active:bg-white/[0.04] active:brightness-90 active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.18),inset_1px_1px_0_rgba(255,255,255,0.12)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               style={{
-                left: `${(action.left / 430) * 100}%`,
+                left: toNavPosition(action.left),
                 top: action.top,
               }}
             >
