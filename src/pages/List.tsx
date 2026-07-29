@@ -106,7 +106,7 @@ function List() {
     >
       <Header tone="light" title="LIST" titleColorClassName="text-[#831317]" wineIcons />
 
-      <main className={`px-5 pt-[46px] ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
+      <main className={`px-5 pt-5 ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
         <nav aria-label="리스트 보기 방식" className="relative z-20 grid h-[34px] w-full grid-cols-2 border-b border-black/15 bg-white font-noto">
           <button
             type="button"

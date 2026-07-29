@@ -21,7 +21,20 @@ export function useDesignFrameHeight() {
     const update = () => setHeight(computeHeight())
 
     window.addEventListener('resize', update)
-    return () => window.removeEventListener('resize', update)
+    window.addEventListener('orientationchange', update)
+    // iOS reports a stale window.innerHeight for a moment right after a
+    // home-screen PWA launches (before its chrome/safe areas settle), and
+    // never fires `resize` once it corrects itself — so re-measure a few
+    // times just after mount to pick up the corrected value.
+    window.visualViewport?.addEventListener('resize', update)
+    const settleTimers = [50, 300, 1000].map((delay) => window.setTimeout(update, delay))
+
+    return () => {
+      window.removeEventListener('resize', update)
+      window.removeEventListener('orientationchange', update)
+      window.visualViewport?.removeEventListener('resize', update)
+      settleTimers.forEach((timer) => window.clearTimeout(timer))
+    }
   }, [])
 
   return height

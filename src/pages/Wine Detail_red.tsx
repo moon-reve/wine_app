@@ -78,7 +78,7 @@ export default function WineDetailRed() {
 
   return (
     <div className="mx-auto w-full max-w-[430px] overflow-hidden bg-white pt-[env(safe-area-inset-top)] font-pretendard text-[#0d0d0d]" data-node-id="1546:5755">
-      <div className="relative h-[3301px] w-full">
+      <div className="relative h-[3357px] w-full">
       <header className="relative z-10 h-[70px] w-full bg-white">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-[18px] flex size-6 rotate-180 items-center justify-center">
           <img src={backIcon} alt="" className="size-6" />
@@ -103,7 +103,7 @@ export default function WineDetailRed() {
         </div>
       </div>
 
-      <main className="absolute top-[746px] left-0 h-[2571px] w-full overflow-hidden">
+      <main className="absolute top-[746px] left-0 h-[2611px] w-full overflow-hidden">
         <section className="absolute top-3 left-5 h-[402px] w-[390px]">
           <div className="absolute top-[18px] left-0 flex h-6 w-full items-center justify-between">
             <h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">기본 정보</h2>
@@ -171,7 +171,7 @@ export default function WineDetailRed() {
                 className="flex w-[240px] shrink-0 flex-col gap-2 text-left"
               >
                 <div className="flex h-[279px] w-[240px] items-center justify-center overflow-hidden rounded-xl bg-[#f2f2f2]">
-                  <img src={replacement?.image ?? resolveWineImage(item)} alt={replacement?.name ?? item.nameKo} className="h-[220px] max-w-[65%] object-contain" />
+                  <img src={replacement?.image ?? resolveWineImage(item)} alt={replacement?.name ?? item.nameKo} className="h-[250px] max-w-[72%] object-contain" />
                 </div>
                 <h3 className="w-[240px] text-[14px] leading-[1.25] font-semibold tracking-[-0.14px]">{replacement?.name ?? item.nameKo}</h3>
                 <p className="text-[12px] leading-[1.2] font-medium whitespace-nowrap text-[#737373]">
