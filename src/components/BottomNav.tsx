@@ -146,7 +146,6 @@ function NavButton({
   return (
     <button
       type="button"
-      data-guide-target
       aria-current={active ? 'page' : undefined}
       className={`relative z-10 flex h-[48px] min-w-0 flex-col items-center justify-start gap-[5px] text-[12px] leading-[1.55] tracking-[-0.24px] transition-colors focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4e000e] ${
         active ? 'text-[#4e000e]' : 'text-[#b2b2b2]'
@@ -154,6 +153,8 @@ function NavButton({
       {...props}
     >
       <span
+        data-guide-target
+        data-guide-marker="nav-icon"
         aria-hidden="true"
         className="block shrink-0"
         style={{
@@ -253,6 +254,7 @@ export default function BottomNav({
 
       <button
         type="button"
+        data-guide-target
         aria-label={expanded ? 'AI 챗봇 열기' : '빠른 메뉴 열기'}
         aria-expanded={expanded}
         aria-controls="bottom-nav-quick-actions"

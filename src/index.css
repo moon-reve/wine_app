@@ -20,6 +20,16 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
   pointer-events: none;
 }
 
+html[data-guide-mode] span[data-guide-target][data-guide-marker="nav-icon"]::after {
+  top: -3px;
+  right: -9px;
+}
+
+html[data-guide-mode] article[data-guide-target][data-guide-marker="wine-record-card"]::after {
+  top: 6px;
+  right: 38px;
+}
+
 @font-face {
   font-family: "Delmon Delicate Script";
   src: url("./assets/fonts/Delmon Delicate Script.otf") format("opentype");

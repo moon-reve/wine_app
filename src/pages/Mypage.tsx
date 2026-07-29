@@ -56,6 +56,8 @@ type WineReviewCardData = {
 function WineReviewCard({ review, onOpen, onDelete }: { review: WineReviewCardData; onOpen: () => void; onDelete: () => void }) {
   return (
     <article
+      data-guide-target
+      data-guide-marker="wine-record-card"
       role="button"
       tabIndex={0}
       aria-label={`${review.name} 기록 상세보기`}
@@ -105,6 +107,7 @@ function LikedWineCard({
 }) {
   return (
     <div
+      data-guide-target
       role="button"
       tabIndex={0}
       onClick={onSelect}
@@ -338,6 +341,7 @@ function Mypage() {
                 <button
                   key={`${item.image}-${index}`}
                   type="button"
+                  data-guide-target
                   aria-label={`내 피드 ${index + 1} 확대 보기`}
                   onClick={() => navigate('/mypage/feed', { state: { index } })}
                   className="relative aspect-[129.333/154.333] overflow-hidden"
