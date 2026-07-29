@@ -5,6 +5,7 @@ import heroImage from '../assets/event/detail-hero.webp'
 import wine1 from '../assets/event/detail-wine-1.webp'
 import wine2 from '../assets/event/detail-wine-2.webp'
 import wine3 from '../assets/wine-detail-red/hero-wine.webp'
+import AppBottomSheet from '../components/AppBottomSheet'
 
 const eventInfo = [
   { label: '날짜', value: '2026. 08. 14 (금) 14:00 - 20:00' },
@@ -56,12 +57,16 @@ function RuffinoCard() {
 
 function EventDetails() {
   const navigate = useNavigate()
-  const [applicationComplete, setApplicationComplete] = useState(false)
+  const [applicationDialog, setApplicationDialog] = useState<'confirm' | 'complete' | null>(null)
   const relatedWineScrollRef = useRef<HTMLDivElement>(null)
   const relatedWineDrag = useRef<{ pointerId: number; startX: number; scrollLeft: number; moved: boolean } | null>(null)
 
   const applyForEvent = () => {
-    setApplicationComplete(true)
+    setApplicationDialog('confirm')
+  }
+
+  const confirmApplication = () => {
+    setApplicationDialog('complete')
   }
 
   const stopRelatedWineDrag = (event: ReactPointerEvent<HTMLDivElement>) => {
@@ -160,18 +165,14 @@ function EventDetails() {
         </button>
       </main>
 
-      {applicationComplete && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/35 px-5">
-          <div role="dialog" aria-modal="true" aria-labelledby="application-complete-title" className="flex w-full max-w-[320px] flex-col items-center overflow-hidden rounded-xl bg-white px-6 pt-7 pb-5 shadow-xl">
-            <p id="application-complete-title" className="text-center text-[16px] leading-[1.4] font-bold tracking-[-0.32px] text-[#0d0d0d]">
-              신청이 완료되었습니다.
-            </p>
-            <button type="button" onClick={() => setApplicationComplete(false)} className="mt-6 flex w-full items-center justify-center rounded-xl bg-[#831317] py-3.5 text-[14px] leading-none font-bold text-white">
-              닫기
-            </button>
-          </div>
-        </div>
-      )}
+      <AppBottomSheet
+        open={applicationDialog !== null}
+        title={applicationDialog === 'complete' ? '참여 신청이 완료되었습니다' : '참여 신청하시겠습니까?'}
+        confirmLabel={applicationDialog === 'confirm' ? '신청' : '확인'}
+        cancelLabel={applicationDialog === 'confirm' ? '취소' : undefined}
+        onClose={() => setApplicationDialog(null)}
+        onConfirm={applicationDialog === 'confirm' ? confirmApplication : () => setApplicationDialog(null)}
+      />
     </div>
   )
 }
