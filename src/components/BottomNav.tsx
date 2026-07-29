@@ -25,11 +25,10 @@ type NavProps = {
 }
 
 const glassGeometry: CSSProperties = {
-  left: '50%',
+  left: 0,
   bottom: '-20.16px',
-  width: '110.336%',
+  width: '100%',
   height: '106.82px',
-  transform: 'translateX(-50%)',
 }
 
 const glassMaskSvg =
@@ -53,11 +52,9 @@ const quickActions: Array<{
 ]
 
 const NAV_REFERENCE_WIDTH = 430
-const NAV_SIDE_PADDING = 20
-const NAV_CONTENT_WIDTH = NAV_REFERENCE_WIDTH - NAV_SIDE_PADDING * 2
 
 const toNavPosition = (referenceX: number) =>
-  `${((referenceX - NAV_SIDE_PADDING) / NAV_CONTENT_WIDTH) * 100}%`
+  `${(referenceX / NAV_REFERENCE_WIDTH) * 100}%`
 
 const navItems: NavItem[] = [
   {
@@ -210,7 +207,7 @@ export default function BottomNav({
     <nav
       aria-label="하단 메뉴"
       data-node-id="1542:1659"
-      className={`fixed inset-x-0 bottom-[15px] z-50 mx-auto h-28 w-[calc(100%_-_40px)] max-w-[390px] ${className}`}
+      className={`fixed inset-x-0 bottom-[15px] z-50 mx-auto h-28 w-full max-w-[430px] ${className}`}
     >
       <div aria-hidden="true" className="pointer-events-none absolute" style={glassGeometry}>
         <img

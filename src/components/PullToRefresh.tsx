@@ -113,14 +113,20 @@ export default function PullToRefresh() {
     <div
       role="status"
       aria-label={refreshing ? '새로고침 중' : '아래로 당겨 새로고침'}
-      className="pointer-events-none fixed top-[calc(env(safe-area-inset-top)+8px)] left-1/2 z-[200] flex size-10 -translate-x-1/2 items-center justify-center rounded-full bg-white/95 text-xl text-[#831317] shadow-[0_3px_14px_rgba(0,0,0,0.18)]"
+      className="pointer-events-none fixed inset-x-0 top-[calc(env(safe-area-inset-top)+8px)] z-[200] flex justify-center"
       style={{
         opacity: Math.min(distance / 28, 1),
-        transform: `translate(-50%, ${distance - 48}px) rotate(${refreshing ? 0 : distance * 3}deg)`,
       }}
     >
-      <span aria-hidden="true" className={refreshing ? 'animate-spin' : ''}>
-        ↻
+      <span
+        className="flex size-10 items-center justify-center rounded-full bg-white/95 text-xl text-[#831317] shadow-[0_3px_14px_rgba(0,0,0,0.18)]"
+        style={{
+          transform: `translateY(${distance - 48}px) rotate(${refreshing ? 0 : distance * 3}deg)`,
+        }}
+      >
+        <span aria-hidden="true" className={refreshing ? 'animate-spin' : ''}>
+          ↻
+        </span>
       </span>
     </div>
   )
