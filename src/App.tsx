@@ -31,6 +31,7 @@ import WineRecord from './pages/WineRecord'
 import Splash from './pages/Splash'
 import Onboarding from './pages/Onboarding'
 import DesktopGuide from './pages/DesktopGuide'
+import ResponsiveEntry from './pages/ResponsiveEntry'
 import { LikedWinesProvider } from './context/LikedWinesContext'
 import { WineRecordsProvider } from './context/WineRecordsContext'
 import { ProfileProvider } from './context/ProfileContext'
@@ -55,7 +56,7 @@ function App() {
       <FeedLikesProvider>
         <ScrollToTop />
         <Routes>
-          <Route path="/" element={<Splash />} />
+          <Route path="/" element={<ResponsiveEntry />} />
           <Route path="/splash" element={<Splash />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/guide" element={<DesktopGuide />} />

@@ -1,27 +1,9 @@
-import { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import guideWineBackground from '../assets/web/guide-wine-background.png'
-
-const DESKTOP_QUERY = '(min-width: 1280px)'
-
-function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(() => window.matchMedia(DESKTOP_QUERY).matches)
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia(DESKTOP_QUERY)
-    const handleChange = (event: MediaQueryListEvent) => setIsDesktop(event.matches)
-
-    setIsDesktop(mediaQuery.matches)
-    mediaQuery.addEventListener('change', handleChange)
-
-    return () => mediaQuery.removeEventListener('change', handleChange)
-  }, [])
-
-  return isDesktop
-}
+import { useDesktopViewport } from '../hooks/useDesktopViewport'
 
 function DesktopGuide() {
-  const isDesktop = useIsDesktop()
+  const isDesktop = useDesktopViewport()
 
   if (!isDesktop) return <Navigate to="/home" replace />
 
