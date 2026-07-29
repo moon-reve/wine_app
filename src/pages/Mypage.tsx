@@ -172,8 +172,10 @@ function Mypage() {
   const hideDemoRecord = (id: string) => setHiddenDemoIds((current) => new Set(current).add(id))
 
   const wineReviews = useMemo<WineReviewCardData[]>(
-    () => [
-      ...records.map((record) => ({
+    () => {
+      const savedRecordIds = new Set(records.map((record) => record.id))
+      return [
+        ...records.map((record) => ({
         id: record.id,
         name: record.name,
         date: record.date,
@@ -181,9 +183,10 @@ function Mypage() {
         review: record.review,
         image: record.image,
         crop: record.crop,
-      })),
-      ...DEMO_WINE_RECORDS.filter((record) => !hiddenDemoIds.has(record.id)),
-    ],
+        })),
+        ...DEMO_WINE_RECORDS.filter((record) => !hiddenDemoIds.has(record.id) && !savedRecordIds.has(record.id)),
+      ]
+    },
     [records, hiddenDemoIds],
   )
 

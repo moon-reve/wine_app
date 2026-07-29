@@ -98,6 +98,7 @@ export function storeRecords(records: WineRecordEntry[]) {
 export type WineRecordsContextValue = {
   records: WineRecordEntry[]
   addRecord: (record: WineRecordEntry) => void
+  updateRecord: (record: WineRecordEntry) => void
   deleteRecord: (id: string) => void
 }
 

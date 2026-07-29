@@ -21,9 +21,18 @@ export function WineRecordsProvider({ children }: { children: ReactNode }) {
     setRecords((current) => [record, ...current])
   }
 
+  const updateRecord = (record: WineRecordEntry) => {
+    setRecords((current) => {
+      const hasRecord = current.some((item) => item.id === record.id)
+      return hasRecord
+        ? current.map((item) => item.id === record.id ? record : item)
+        : [record, ...current]
+    })
+  }
+
   const deleteRecord = (id: string) => {
     setRecords((current) => current.filter((record) => record.id !== id))
   }
 
-  return <WineRecordsContext.Provider value={{ records, addRecord, deleteRecord }}>{children}</WineRecordsContext.Provider>
+  return <WineRecordsContext.Provider value={{ records, addRecord, updateRecord, deleteRecord }}>{children}</WineRecordsContext.Provider>
 }

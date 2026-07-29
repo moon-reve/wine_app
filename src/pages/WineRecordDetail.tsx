@@ -166,7 +166,9 @@ export default function WineRecordDetail() {
           <img src={backIcon} alt="" className="size-6 rotate-180" />
         </button>
         <h1 className="text-center text-[18px] leading-none font-bold tracking-[-0.54px] text-[#831317]">와인 기록</h1>
-        <span className="text-center text-[13px] leading-none font-medium tracking-[-0.39px] text-black/60">수정</span>
+        <button type="button" onClick={() => navigate(`/record/${record.id}/edit`)} className="flex h-10 items-center justify-center text-[13px] leading-none font-medium tracking-[-0.39px] text-black/60">
+          수정
+        </button>
       </header>
 
       <section className="grid w-full grid-cols-[minmax(0,1fr)_min(38vw,160px)] grid-rows-[auto_auto] gap-x-4 gap-y-3 px-5 pt-10">

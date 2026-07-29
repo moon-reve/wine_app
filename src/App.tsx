@@ -89,6 +89,7 @@ function AppRoutes() {
         <Route path="/challenge/continents" element={<ChallengeDetails />} />
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/record" element={<WineRecord />} />
+        <Route path="/record/:recordId/edit" element={<WineRecord />} />
         <Route path="/record/:recordId" element={<WineRecordDetail />} />
         <Route path="/feed/create" element={<CameraFlow mode="feed" />} />
         <Route path="/wine-search" element={<CameraFlow mode="search" />} />

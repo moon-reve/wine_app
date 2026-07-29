@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import wineImage from '../assets/quick-flow/record-wine.webp'
 import aiIcon from '../assets/quick-flow/ai.svg'
 import profileModalClose from '../assets/quick-flow/profile-modal-close.svg'
-import { useWineRecords, type WineRecordEntry } from '../context/wineRecordsContextValue'
+import { DEMO_WINE_RECORDS, useWineRecords, type WineRecordEntry } from '../context/wineRecordsContextValue'
 
 const MAX_WINE_IMAGES = 3
 
@@ -72,8 +72,25 @@ function Field({
 
 export default function WineRecord() {
   const navigate = useNavigate()
-  const { addRecord } = useWineRecords()
-  const [initialDraft] = useState(loadDraft)
+  const { recordId } = useParams()
+  const { records, addRecord, updateRecord } = useWineRecords()
+  const editingRecord = recordId
+    ? [...records, ...DEMO_WINE_RECORDS].find((record) => record.id === recordId)
+    : undefined
+  const isEditing = Boolean(recordId && editingRecord)
+  const [initialDraft] = useState<DraftFields>(() => editingRecord ? {
+    wineName: editingRecord.name,
+    drankDate: editingRecord.date.replaceAll('.', '-'),
+    location: editingRecord.location,
+    companions: editingRecord.companions,
+    profileValues: { ...DEFAULT_PROFILE_VALUES, ...editingRecord.profileValues },
+    tastingNotes: { ...DEFAULT_TASTING_NOTES, ...editingRecord.tastingNotes },
+    pairing: editingRecord.pairing,
+    oneLineNote: editingRecord.summary ?? editingRecord.review,
+    detailNote: editingRecord.detailNote ?? '',
+    rating: Number(editingRecord.rating) || 0,
+    privacy: editingRecord.privacy,
+  } : loadDraft())
   const [wineName, setWineName] = useState(initialDraft.wineName)
   const [isGeneratingImage, setIsGeneratingImage] = useState(false)
   const [generateError, setGenerateError] = useState('')
@@ -87,7 +104,9 @@ export default function WineRecord() {
   const [detailNote, setDetailNote] = useState(initialDraft.detailNote)
   const [isDraftSaved, setIsDraftSaved] = useState(false)
   const [isProfileHelpOpen, setIsProfileHelpOpen] = useState(false)
-  const [wineImages, setWineImages] = useState<{ id: string; url: string }[]>([{ id: 'default', url: wineImage }])
+  const [wineImages, setWineImages] = useState<{ id: string; url: string }[]>(() => editingRecord
+    ? editingRecord.image ? [{ id: 'existing', url: editingRecord.image }] : []
+    : [{ id: 'default', url: wineImage }])
   const [isPhotoSourceOpen, setIsPhotoSourceOpen] = useState(false)
   const cameraInputRef = useRef<HTMLInputElement>(null)
   const galleryInputRef = useRef<HTMLInputElement>(null)
@@ -175,7 +194,7 @@ export default function WineRecord() {
     // 업로드/생성된 사진은 blob URL이라 새로고침하면 깨진다. 기본 이미지(정적 asset)만
     // 새로고침 후에도 안전하게 남으므로, 그 외에는 첫 장을 그대로 대표 이미지로 쓴다.
     const record: WineRecordEntry = {
-      id: `record-${Date.now()}`,
+      id: editingRecord?.id ?? `record-${Date.now()}`,
       name: wineName.trim() || '이름 없는 와인',
       date: (drankDate || new Date().toISOString().slice(0, 10)).replaceAll('-', '.'),
       rating,
@@ -183,6 +202,7 @@ export default function WineRecord() {
       summary: oneLineNote.trim(),
       detailNote: detailNote.trim(),
       image: wineImages[0]?.url ?? null,
+      crop: editingRecord?.crop,
       location,
       companions,
       pairing,
@@ -190,16 +210,22 @@ export default function WineRecord() {
       profileValues,
       privacy,
     }
-    addRecord(record)
+    if (isEditing) updateRecord(record)
+    else addRecord(record)
     localStorage.removeItem(DRAFT_STORAGE_KEY)
-    navigate('/mypage', { state: { activeTab: 'wine' } })
+    navigate(isEditing ? `/record/${record.id}` : '/mypage', {
+      replace: isEditing,
+      state: isEditing ? undefined : { activeTab: 'wine' },
+    })
   }
 
   return <main className="h-dvh w-screen overflow-y-auto overscroll-y-contain bg-white pb-6 text-[#121212] [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden">
     <header className="relative z-20 flex h-[calc(70px+env(safe-area-inset-top))] items-center justify-between bg-white px-5 pt-[env(safe-area-inset-top)]">
       <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="text-2xl text-[#831317]">‹</button>
-      <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold tracking-[-0.54px] text-[#831317]">기록하기</h1>
-      <button type="button" onClick={handleSaveDraft} className="text-[13px] font-medium text-black/60">{isDraftSaved ? '저장됨 ✓' : '임시저장'}</button>
+      <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold tracking-[-0.54px] text-[#831317]">{isEditing ? '기록 수정' : '기록하기'}</h1>
+      {isEditing
+        ? <span className="w-12" aria-hidden="true" />
+        : <button type="button" onClick={handleSaveDraft} className="text-[13px] font-medium text-black/60">{isDraftSaved ? '저장됨 ✓' : '임시저장'}</button>}
     </header>
     <form className="space-y-[17px] px-5 pt-6" onSubmit={handleSubmit}>
       <Field label="내가 마신 와인" placeholder="마틴자스 크릭 샤도네이" value={wineName} onChange={setWineName} />
@@ -237,7 +263,7 @@ export default function WineRecord() {
       <section><h2 className="mb-[10px] text-sm font-bold">평점</h2><div role="radiogroup" aria-label="와인 평점" className="flex w-[172px] justify-between">{[1,2,3,4,5].map(score => <button key={score} type="button" role="radio" aria-checked={rating === score} aria-label={`${score}점`} onClick={() => setRating(score)} className={`text-[30px] leading-7 transition-colors ${score <= rating ? 'text-[#831317]' : 'text-[#e1e1e1]'}`}>★</button>)}</div></section>
       <Field label="페어링(선택)" placeholder="선택사항" value={pairing} onChange={setPairing} /><Field label="한줄기록" placeholder="오늘의 와인을 한 문장을 남겨보세요." value={oneLineNote} onChange={setOneLineNote} /><Field label="상세 메모(선택)" placeholder="맛과 향, 음식과의 조합을 자유롭게 기록해주세요." tall value={detailNote} onChange={setDetailNote} />
       <fieldset><legend className="mb-3 text-sm font-bold">공개 범위</legend><div className="space-y-4">{['나만보기','친구 공개','전체 공개'].map(x => <label key={x} className={`flex items-center gap-2 text-sm ${privacy === x ? 'font-semibold text-[#831317]' : 'text-[#949494]'}`}><input type="radio" name="privacy" checked={privacy === x} onChange={() => setPrivacy(x)} className="accent-[#831317]" />{x}</label>)}</div></fieldset>
-      <button type="submit" className="h-12 w-full rounded-[10px] bg-[#831317] text-[13px] font-bold text-white">기록 저장 하기</button>
+      <button type="submit" className="h-12 w-full rounded-[10px] bg-[#831317] text-[13px] font-bold text-white">{isEditing ? '수정하기' : '기록 저장 하기'}</button>
     </form>
     {isProfileHelpOpen ? <div role="presentation" className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overscroll-contain bg-black/35 px-5 py-5 [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden" onClick={() => setIsProfileHelpOpen(false)}>
       <section role="dialog" aria-modal="true" aria-labelledby="profile-help-title" onClick={(event) => event.stopPropagation()} className="relative max-h-[calc(100dvh-40px)] w-full max-w-[390px] overflow-y-auto rounded-[10px] bg-[#251b1b] px-6 pb-6 pt-10 text-white shadow-2xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
