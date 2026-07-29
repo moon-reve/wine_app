@@ -110,6 +110,12 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
     background: #f3f0e7;
   }
 
+  html.chatbot-page,
+  html.chatbot-page body,
+  html.chatbot-page #root {
+    background: #f2f2f2;
+  }
+
   html::-webkit-scrollbar,
   body::-webkit-scrollbar {
     display: none;
@@ -271,20 +277,11 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
     user-select: none;
   }
 
-  .chatbot-orb-frame-1 {
-    opacity: 1;
-  }
-
   .chatbot-orb-frame.is-spinning {
     animation-duration: 3500ms;
     animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1);
     animation-iteration-count: infinite;
     animation-fill-mode: both;
-    mix-blend-mode: plus-lighter;
-  }
-
-  .chatbot-orb-frame-1.is-spinning {
-    animation-name: chatbot-orb-frame-1;
   }
 
   .chatbot-orb-frame-2.is-spinning {
@@ -301,11 +298,6 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
 
   .chatbot-orb-frame-5.is-spinning {
     animation-name: chatbot-orb-frame-5;
-  }
-
-  @keyframes chatbot-orb-frame-1 {
-    0%, 48.571%, 100% { opacity: 1; }
-    9.714%, 38.857% { opacity: 0; }
   }
 
   @keyframes chatbot-orb-frame-2 {

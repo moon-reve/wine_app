@@ -44,6 +44,12 @@ function kakaoPlaceImageDevMiddleware(): Plugin {
 
 // https://vite.dev/config/
 export default defineConfig({
+  build: {
+    assetsInlineLimit(filePath) {
+      if (filePath.endsWith('chatbot-orb-frame-1.webp')) return true
+      return undefined
+    },
+  },
   plugins: [
     react(),
     tailwindcss(),

@@ -37,6 +37,7 @@ import { WineRecordsProvider } from './context/WineRecordsContext'
 import { ProfileProvider } from './context/ProfileContext'
 import { FeedLikesProvider } from './context/FeedLikesContext'
 import GuideModeBridge from './components/GuideModeBridge'
+import PullToRefresh from './components/PullToRefresh'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -60,6 +61,7 @@ function AppRoutes() {
   return (
     <>
       <GuideModeBridge />
+      <PullToRefresh />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Splash />} />

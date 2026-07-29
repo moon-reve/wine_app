@@ -32,18 +32,25 @@ export default function ChatbotOrb({
       data-node-id={dataNodeId}
     >
       <span className="absolute inset-0 isolate overflow-hidden rounded-full">
-        {chatbotOrbFrames.map((frame, index) => (
-          <img
-            key={frame}
-            src={frame}
-            alt=""
-            aria-hidden="true"
-            draggable={false}
-            className={`chatbot-orb-frame chatbot-orb-frame-${index + 1} absolute inset-0 size-full object-cover ${
-              spinFrames ? 'is-spinning' : ''
-            }`}
-          />
-        ))}
+        <img
+          src={chatbotOrbFrame1}
+          alt=""
+          aria-hidden="true"
+          draggable={false}
+          className="absolute inset-0 size-full object-cover"
+        />
+        {spinFrames
+          ? chatbotOrbFrames.slice(1).map((frame, index) => (
+              <img
+                key={frame}
+                src={frame}
+                alt=""
+                aria-hidden="true"
+                draggable={false}
+                className={`chatbot-orb-frame chatbot-orb-frame-${index + 2} is-spinning absolute inset-0 size-full object-cover`}
+              />
+            ))
+          : null}
       </span>
       {edgeSweep && <span aria-hidden="true" className="chatbot-edge-sweep" />}
     </span>

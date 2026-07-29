@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type {
   FormEvent,
   MouseEvent as ReactMouseEvent,
@@ -9,6 +9,7 @@ import { chatbotBack, chatbotSend } from "../assets/chatbotAssets";
 import chatbotIconCopy from "../assets/chatbot/icon-copy.svg";
 import chatbotIconShare from "../assets/chatbot/icon-share.svg";
 import ChatbotOrb from "../components/ChatbotOrb";
+import { useSyncThemeColor } from "../hooks/useSyncThemeColor";
 import {
   buildRecommendationAnswer,
   buildRecommendationQuestion,
@@ -386,6 +387,16 @@ export default function Chatbot() {
   const followUpSuggestionsScroll = useHorizontalScroll<HTMLDivElement>();
   const locationState = location.state as ChatbotLocationState | null;
   const todayLabel = formatChatDate(new Date());
+
+  useSyncThemeColor("#f2f2f2");
+
+  useLayoutEffect(() => {
+    document.documentElement.classList.add("chatbot-page");
+
+    return () => {
+      document.documentElement.classList.remove("chatbot-page");
+    };
+  }, []);
 
   useEffect(() => {
     const request = locationState?.recommendationRequest;
