@@ -33,9 +33,32 @@ import carouselPhoto04 from '../assets/images/feeds/feed_022_1.jpg'
 import carouselPhoto05 from '../assets/images/feeds/feed_022_2.jpg'
 import carouselPhoto06 from '../assets/images/feeds/feed_022_3.jpg'
 import carouselPhoto07 from '../assets/images/feeds/feed_022_4.jpg'
+
 import carouselPhoto08 from '../assets/images/feeds/feed_023_1.jpg'
 import carouselPhoto09 from '../assets/images/feeds/feed_024_1.jpg'
 import carouselPhoto10 from '../assets/images/feeds/feed_024_2.jpg'
+
+const feedActionSpriteOffsets = {
+  share: '-31.47px',
+  comment: '-64.44px',
+  save: '-262.84px',
+} as const
+
+function FeedActionSpriteIcon({ type, active = false }: { type: keyof typeof feedActionSpriteOffsets; active?: boolean }) {
+  return (
+    <span className="relative block size-[18px] overflow-hidden" aria-hidden="true">
+      <img
+        src={feedActions}
+        alt=""
+        className="absolute top-0 h-[18px] w-[280.1px] max-w-none transition-[filter]"
+        style={{
+          left: feedActionSpriteOffsets[type],
+          filter: active ? 'brightness(0) saturate(100%) invert(12%) sepia(48%) saturate(3658%) hue-rotate(341deg) brightness(87%) contrast(95%)' : 'none',
+        }}
+      />
+    </span>
+  )
+}
 
 type WinePin = {
   name: string
@@ -448,44 +471,41 @@ export function FeedPost({
         ) : null}
       </div>
 
-      <div className="relative h-[30px] w-full">
-        <img
-          src={feedActions}
-          alt=""
-          aria-hidden="true"
-          className="absolute top-1/2 left-0 h-[25.125px] w-[391px] max-w-none -translate-y-1/2"
-        />
+      <div className="relative h-6 w-full">
         <button
           type="button"
           aria-label={liked ? '좋아요 취소' : '좋아요'}
           aria-pressed={liked}
           onClick={() => toggleLike(feedKey)}
-          className="absolute top-0 left-0 flex size-[30px] items-center justify-center bg-white"
+          className="absolute top-0 left-0 flex size-6 items-center justify-center bg-white"
         >
-          <img src={liked ? heartFilled : heartOutline} alt="" aria-hidden="true" className="size-6 object-contain" />
+          <img src={liked ? heartFilled : heartOutline} alt="" aria-hidden="true" className="size-[18px] object-contain" />
         </button>
-        <button type="button" aria-label="카카오톡으로 공유" onClick={() => void handleShare()} className="absolute top-0 left-[42px] h-[30px] w-[31px]" />
+        <button
+          type="button"
+          aria-label="카카오톡으로 공유"
+          onClick={() => void handleShare()}
+          className="absolute top-0 left-8 flex size-6 items-center justify-center"
+        >
+          <FeedActionSpriteIcon type="share" />
+        </button>
         <button
           type="button"
           aria-label={commentsOpen ? '댓글 닫기' : '댓글 보기'}
           aria-expanded={commentsOpen}
           onClick={() => setCommentsOpen((current) => !current)}
-          className="absolute top-0 left-[88px] h-[30px] w-[34px]"
-        />
+          className="absolute top-0 left-16 flex size-6 items-center justify-center"
+        >
+          <FeedActionSpriteIcon type="comment" />
+        </button>
         <button
           type="button"
           aria-label={saved ? '저장 취소' : '저장'}
           aria-pressed={saved}
           onClick={() => setSaved((current) => !current)}
-          className="absolute top-0 right-0 h-[30px] w-[30px] overflow-hidden bg-white"
+          className="absolute top-0 right-0 flex size-6 items-center justify-center bg-white"
         >
-          <img
-            src={feedActions}
-            alt=""
-            aria-hidden="true"
-            className="absolute top-[2px] right-0 h-[25px] w-[391px] max-w-none transition-[filter]"
-            style={{ filter: saved ? 'brightness(0) saturate(100%) invert(12%) sepia(48%) saturate(3658%) hue-rotate(341deg) brightness(87%) contrast(95%)' : 'none' }}
-          />
+          <FeedActionSpriteIcon type="save" active={saved} />
           <span className="sr-only">{saved ? '저장됨' : '저장 안 됨'}</span>
         </button>
       </div>
