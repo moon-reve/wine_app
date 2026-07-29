@@ -1,180 +1,356 @@
-import { useRef, type PointerEvent as ReactPointerEvent } from 'react'
-import { useNavigate } from 'react-router-dom'
-import backIcon from '../assets/magazine-detail/back.svg'
-import berriesLeft from '../assets/magazine-detail/berries-left.png'
-import berriesRight from '../assets/magazine-detail/berries-right.png'
-import epilogueBackground from '../assets/magazine-detail/epilogue-bg.png'
-import heroImage from '../assets/magazine-detail/hero.png'
-import illustration from '../assets/magazine-detail/illustration-original-hq-clean.png'
-import omynaraWinery from '../assets/magazine-detail/omynara-winery.jpg'
-import product1 from '../assets/magazine-detail/product-1.png'
-import product2 from '../assets/magazine-detail/product-2.png'
-import product3 from '../assets/magazine-detail/product-3.png'
-import sinabroWinery from '../assets/magazine-detail/sinabro-winery.jpg'
-import { getWineDetailData } from '../data/wineDetailData'
+import { useRef, type PointerEvent as ReactPointerEvent } from "react";
+import { useNavigate } from "react-router-dom";
+import backIcon from "../assets/magazine-detail/back.svg";
+import berriesLeft from "../assets/magazine-detail/berries-left.png";
+import berriesRight from "../assets/magazine-detail/berries-right.png";
+import epilogueBackground from "../assets/magazine-detail/epilogue-bg.png";
+import heroImage from "../assets/magazine-detail/hero.png";
+import illustration from "../assets/magazine-detail/illustration-original-hq-clean.png";
+import omynaraWinery from "../assets/magazine-detail/omynara-winery.jpg";
+import product1 from "../assets/magazine-detail/product-1.png";
+import product2 from "../assets/magazine-detail/product-2.png";
+import product3 from "../assets/magazine-detail/product-3.png";
+import sinabroWinery from "../assets/magazine-detail/sinabro-winery.jpg";
+import { getWineDetailData } from "../data/wineDetailData";
 
 const wineCardVisuals = [
-  { id: 'wine_091', image: product1, imageClassName: 'h-[100.34%] left-[-3.02%] top-0 w-[110.27%]', name: '시나브로 청수 화이트 와인', price: '₩ 40,000원' },
-  { id: 'wine_081', image: product2, imageClassName: 'h-[105.81%] left-[-39.96%] top-[-2.95%] w-[139.96%]', name: '오미로제, 결', price: '₩ 150,000원' },
-  { id: 'wine_082', image: product3, imageClassName: 'h-full left-[-28.79%] top-[0.15%] w-[132.35%]', name: '오미로제 프리미엄', price: '₩ 43,000원' },
-] as const
+  {
+    id: "wine_091",
+    image: product1,
+    imageClassName: "h-[100.34%] left-[-3.02%] top-0 w-[110.27%]",
+    name: "시나브로 청수 화이트 와인",
+    price: "₩ 40,000원",
+  },
+  {
+    id: "wine_081",
+    image: product2,
+    imageClassName: "h-[105.81%] left-[-39.96%] top-[-2.95%] w-[139.96%]",
+    name: "오미로제, 결",
+    price: "₩ 150,000원",
+  },
+  {
+    id: "wine_082",
+    image: product3,
+    imageClassName: "h-full left-[-28.79%] top-[0.15%] w-[132.35%]",
+    name: "오미로제 프리미엄",
+    price: "₩ 43,000원",
+  },
+] as const;
 
 const wines = wineCardVisuals.map((visual) => {
-  const { wine } = getWineDetailData(visual.id)
+  const { wine } = getWineDetailData(visual.id);
   return {
     ...visual,
     type: wine.type,
-  }
-})
+  };
+});
 
-function WineryInfo({ top, left, name, address, description, image }: { top: number; left: number; name: string; address: string; description: string; image: string }) {
+function WineryInfo({
+  top,
+  left,
+  name,
+  address,
+  description,
+  image,
+}: {
+  top: number;
+  left: number;
+  name: string;
+  address: string;
+  description: string;
+  image: string;
+}) {
   return (
-    <div className="absolute flex flex-col items-start gap-3" style={{ top, left }}>
-      <img src={image} alt={`${name} 전경`} className="size-[76px] shrink-0 rounded object-cover" />
+    <div
+      className="absolute flex flex-col items-start gap-3"
+      style={{ top, left }}
+    >
+      <img
+        src={image}
+        alt={`${name} 전경`}
+        className="size-[76px] shrink-0 rounded object-cover"
+      />
       <div className="flex flex-col items-start gap-3.5">
-        <h3 className="text-[18px] leading-normal font-bold whitespace-nowrap text-[#111]">{name}</h3>
+        <h3 className="text-[18px] leading-normal font-bold whitespace-nowrap text-[#111]">
+          {name}
+        </h3>
         <div className="flex flex-col gap-1 text-[14px] leading-normal font-normal tracking-[-0.28px] whitespace-nowrap text-[#666]">
           <p>{address}</p>
           <p>{description}</p>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-function WineCard({ wine, onClick }: { wine: (typeof wines)[number]; onClick: () => void }) {
+function WineCard({
+  wine,
+  onClick,
+}: {
+  wine: (typeof wines)[number];
+  onClick: () => void;
+}) {
   return (
-    <button type="button" data-wine-card onClick={onClick} className="relative h-[250px] w-[215.111px] shrink-0 snap-start overflow-hidden rounded-xl text-left">
-      <img src={wine.image} alt={wine.name} draggable={false} className={`absolute max-w-none ${wine.imageClassName}`} />
+    <button
+      type="button"
+      data-wine-card
+      onClick={onClick}
+      className="relative h-[250px] w-[215.111px] shrink-0 snap-start overflow-hidden rounded-xl text-left"
+    >
+      <img
+        src={wine.image}
+        alt={wine.name}
+        draggable={false}
+        className={`absolute max-w-none ${wine.imageClassName}`}
+      />
       <div className="absolute inset-x-0 bottom-0 h-[125.714px] rounded-xl bg-gradient-to-b from-transparent to-black/50" />
-      <span className="glass-tab absolute top-5 left-[17.111px] flex h-[31.429px] w-[84.333px] items-center justify-center rounded-full text-center text-[12px] leading-4 font-medium text-white">Korea</span>
+      <span className="glass-tab absolute top-5 left-[17.111px] flex h-[31.429px] w-[84.333px] items-center justify-center rounded-full text-center text-[12px] leading-4 font-medium text-white">
+        Korea
+      </span>
       <div className="absolute top-[190px] left-[17.111px] flex w-[152.778px] flex-col items-start gap-[3px] leading-normal whitespace-nowrap text-white">
         <p className="text-[12px] font-semibold">{wine.name}</p>
         <p className="text-[10px] font-normal">{wine.price}</p>
       </div>
     </button>
-  )
+  );
 }
 
 function MagazineDetail() {
-  const navigate = useNavigate()
-  const wineCarouselRef = useRef<HTMLDivElement>(null)
-  const wineCarouselDragRef = useRef<{ pointerId: number; clientX: number; scrollLeft: number; moved: boolean } | null>(null)
-  const wineCarouselDidDragRef = useRef(false)
+  const navigate = useNavigate();
+  const wineCarouselRef = useRef<HTMLDivElement>(null);
+  const wineCarouselDragRef = useRef<{
+    pointerId: number;
+    clientX: number;
+    scrollLeft: number;
+    moved: boolean;
+  } | null>(null);
+  const wineCarouselDidDragRef = useRef(false);
 
-  const handleCarouselPointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== 'mouse' || event.button !== 0) return
+  const handleCarouselPointerDown = (
+    event: ReactPointerEvent<HTMLDivElement>,
+  ) => {
+    if (event.pointerType !== "mouse" || event.button !== 0) return;
     wineCarouselDragRef.current = {
       pointerId: event.pointerId,
       clientX: event.clientX,
       scrollLeft: event.currentTarget.scrollLeft,
       moved: false,
-    }
-    wineCarouselDidDragRef.current = false
-  }
+    };
+    wineCarouselDidDragRef.current = false;
+  };
 
-  const handleCarouselPointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    const drag = wineCarouselDragRef.current
-    if (!drag || drag.pointerId !== event.pointerId) return
-    const distance = event.clientX - drag.clientX
+  const handleCarouselPointerMove = (
+    event: ReactPointerEvent<HTMLDivElement>,
+  ) => {
+    const drag = wineCarouselDragRef.current;
+    if (!drag || drag.pointerId !== event.pointerId) return;
+    const distance = event.clientX - drag.clientX;
     if (!drag.moved && Math.abs(distance) > 8) {
-      drag.moved = true
-      wineCarouselDidDragRef.current = true
-      event.currentTarget.setPointerCapture(event.pointerId)
-      event.currentTarget.style.cursor = 'grabbing'
+      drag.moved = true;
+      wineCarouselDidDragRef.current = true;
+      event.currentTarget.setPointerCapture(event.pointerId);
+      event.currentTarget.style.cursor = "grabbing";
     }
-    if (!drag.moved) return
-    event.preventDefault()
-    event.currentTarget.scrollLeft = drag.scrollLeft - distance
-  }
+    if (!drag.moved) return;
+    event.preventDefault();
+    event.currentTarget.scrollLeft = drag.scrollLeft - distance;
+  };
 
-  const handleCarouselPointerEnd = (event: ReactPointerEvent<HTMLDivElement>) => {
-    const drag = wineCarouselDragRef.current
-    if (!drag || drag.pointerId !== event.pointerId) return
-    wineCarouselDragRef.current = null
-    event.currentTarget.style.cursor = 'grab'
+  const handleCarouselPointerEnd = (
+    event: ReactPointerEvent<HTMLDivElement>,
+  ) => {
+    const drag = wineCarouselDragRef.current;
+    if (!drag || drag.pointerId !== event.pointerId) return;
+    wineCarouselDragRef.current = null;
+    event.currentTarget.style.cursor = "grab";
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
-      event.currentTarget.releasePointerCapture(event.pointerId)
+      event.currentTarget.releasePointerCapture(event.pointerId);
     }
 
-    const card = event.currentTarget.querySelector<HTMLElement>('[data-wine-card]')
-    if (!card) return
-    const gap = Number.parseFloat(window.getComputedStyle(event.currentTarget).columnGap) || 0
-    const cardStep = card.offsetWidth + gap
-    const targetIndex = Math.round(event.currentTarget.scrollLeft / cardStep)
-    event.currentTarget.scrollTo({ left: targetIndex * cardStep, behavior: 'smooth' })
-  }
+    const card =
+      event.currentTarget.querySelector<HTMLElement>("[data-wine-card]");
+    if (!card) return;
+    const gap =
+      Number.parseFloat(
+        window.getComputedStyle(event.currentTarget).columnGap,
+      ) || 0;
+    const cardStep = card.offsetWidth + gap;
+    const targetIndex = Math.round(event.currentTarget.scrollLeft / cardStep);
+    event.currentTarget.scrollTo({
+      left: targetIndex * cardStep,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <div className="relative mx-auto w-full max-w-107.5 overflow-hidden bg-white text-black" data-node-id="1829:6187">
+    <div
+      className="relative mx-auto w-full max-w-107.5 overflow-hidden bg-white text-black"
+      data-node-id="1829:6187"
+    >
       <div className="absolute top-[-211px] left-0 h-[538px] w-full">
-        <img src={heroImage} alt="수확한 오미자를 선별하는 모습" className="absolute inset-0 size-full max-w-none" />
+        <img
+          src={heroImage}
+          alt="수확한 오미자를 선별하는 모습"
+          className="absolute inset-0 size-full max-w-none"
+        />
         <div className="absolute inset-0 bg-black/40" aria-hidden="true" />
       </div>
-      <div className="absolute top-[286px] left-0 h-[360px] w-full bg-[#831317]" data-node-id="1982:201">
-        <div className="absolute top-[110px] left-[79.5px] h-[140px] w-[272px] text-center whitespace-nowrap text-white" data-node-id="1982:196">
-          <p className="absolute top-0 left-[18px] text-[18px] leading-[1.25] font-medium tracking-[-0.63px]" data-node-id="1982:197">
+      <div
+        className="absolute top-[286px] left-0 h-[360px] w-full bg-[#831317]"
+        data-node-id="1982:201"
+      >
+        <div
+          className="absolute top-[110px] left-[79.5px] h-[140px] w-[272px] text-center whitespace-nowrap text-white"
+          data-node-id="1982:196"
+        >
+          <p
+            className="absolute top-0 left-[18px] text-[18px] leading-[1.25] font-medium tracking-[-0.63px]"
+            data-node-id="1982:197"
+          >
             영동에서 문경까지 오미자가 만드는
           </p>
-          <p className="absolute top-[26px] left-[14px] font-['Delmon_Delicate','Playfair_Display',serif] text-[41px] leading-[1.25] font-normal tracking-[-1.435px]" data-node-id="1982:198">
+          <p
+            className="absolute top-[26px] left-[14px] font-['Delmon_Delicate','Playfair_Display',serif] text-[41px] leading-[1.25] font-normal tracking-[-1.435px]"
+            data-node-id="1982:198"
+          >
             K-Wine Road
           </p>
-          <div className="absolute top-[92px] left-0 w-full text-[16px] leading-[1.5] font-normal" data-node-id="1982:199">
+          <div
+            className="absolute top-[92px] left-0 w-full text-[16px] leading-[1.5] font-normal"
+            data-node-id="1982:199"
+          >
             <p>국산 청포도 '청수'와</p>
             <p>세계 유일의 오미자 스파클링 '오미로제'까지</p>
           </div>
         </div>
       </div>
 
-      <header className="absolute top-0 left-0 z-10 h-17.5 w-full overflow-hidden">
-        <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
-          <img src={backIcon} alt="" className="size-6 rotate-180" />
-        </button>
-        <h1 className="absolute top-6.5 left-[190.5px] text-[18px] leading-none font-bold tracking-[-0.54px] whitespace-nowrap text-white">메거진</h1>
+      <header className="absolute top-0 left-0 z-10 h-[calc(70px+env(safe-area-inset-top))] w-full overflow-hidden">
+        <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] h-17.5">
+          <button
+            type="button"
+            aria-label="뒤로 가기"
+            onClick={() => navigate(-1)}
+            className="absolute top-5 left-4.5 flex size-6 items-center justify-center"
+          >
+            <img src={backIcon} alt="" className="size-6 rotate-180" />
+          </button>
+          <h1 className="absolute top-6.5 left-[190.5px] text-[18px] leading-none font-bold tracking-[-0.54px] whitespace-nowrap text-white">
+            매거진
+          </h1>
+        </div>
       </header>
 
-      <p className="absolute top-[739px] left-5 font-['Delmon_Delicate','Playfair_Display',serif] text-[18px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">Chapter 01</p>
+      <p className="absolute top-[739px] left-5 font-['Delmon_Delicate','Playfair_Display',serif] text-[18px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">
+        Chapter 01
+      </p>
       <div className="absolute top-[774px] left-[22px] text-[24px] leading-[1.3] font-medium whitespace-nowrap text-[#1a1a1a]">
         <p>영동, '청수'라는 이름의</p>
         <p>소비뇽 블랑</p>
       </div>
       <div className="absolute top-[897px] left-[18px] w-[393px] text-[16px] leading-[1.6] font-normal tracking-[-0.32px] text-black">
-        <p>영동은 40여 개의 농가형</p><p>와이너리가 모인 국내 최대</p><p>포도 산지입니다. 주인공은</p><p>국산 청포도 품종 '청수(淸水)'.</p><p>시나브로 와이너리의 '청수</p><p>화이트'는 시트러스와 흰 꽃</p><p>향이 겹겹이 피어나는 드라이</p><p>화이트로, 아시아 와인트로피 금상</p><p>을 여러 해 수상하며 국산 화이트의</p><p>기준이 됐습니다.</p>
+        <p>영동은 40여 개의 농가형</p>
+        <p>와이너리가 모인 국내 최대</p>
+        <p>포도 산지입니다. 주인공은</p>
+        <p>국산 청포도 품종 '청수(淸水)'.</p>
+        <p>시나브로 와이너리의 '청수</p>
+        <p>화이트'는 시트러스와 흰 꽃</p>
+        <p>향이 겹겹이 피어나는 드라이</p>
+        <p>화이트로, 아시아 와인트로피 금상</p>
+        <p>을 여러 해 수상하며 국산 화이트의</p>
+        <p>기준이 됐습니다.</p>
       </div>
       <img
         src={illustration}
         alt="충청북도 영동군 와인 지도"
         className="absolute top-[773px] left-[193px] h-[416px] w-[237px] max-w-none"
       />
-      <WineryInfo top={1189} left={18} name="시나브로 와이너리" address="충북 영동군 심천면 약목2길 26" description="농가형 와이너리 최초 HACCP 인증 · 가족 소믈리에" image={sinabroWinery} />
-      <div className="absolute top-[1381px] left-1/2 h-px w-[390px] -translate-x-1/2 bg-black/12" aria-hidden="true" />
+      <WineryInfo
+        top={1189}
+        left={18}
+        name="시나브로 와이너리"
+        address="충북 영동군 심천면 약목2길 26"
+        description="농가형 와이너리 최초 HACCP 인증 · 가족 소믈리에"
+        image={sinabroWinery}
+      />
+      <div
+        className="absolute top-[1381px] left-1/2 h-px w-[390px] -translate-x-1/2 bg-black/12"
+        aria-hidden="true"
+      />
 
-      <img src={berriesLeft} alt="" className="absolute top-[1412px] left-[-104px] h-[273px] w-[205px] object-cover opacity-90" />
-      <p className="absolute top-[1456px] left-[318px] font-['Delmon_Delicate','Playfair_Display',serif] text-[18px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">Chapter 02</p>
+      <img
+        src={berriesLeft}
+        alt=""
+        className="absolute top-[1412px] left-[-104px] h-[273px] w-[205px] object-cover opacity-90"
+      />
+      <p className="absolute top-[1456px] left-[318px] font-['Delmon_Delicate','Playfair_Display',serif] text-[18px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">
+        Chapter 02
+      </p>
       <div className="absolute top-[1492px] right-5 text-right font-noto text-[24px] leading-[1.3] font-medium whitespace-nowrap text-[#1a1a1a]">
-        <p>문경, 다섯 가지 맛으로</p><p>빚은 스파클링</p>
+        <p>문경, 다섯 가지 맛으로</p>
+        <p>빚은 스파클링</p>
       </div>
       <div className="absolute top-[1615px] right-5 w-[397px] text-right text-[16px] leading-[1.6] font-normal tracking-[-0.32px] text-black">
-        <p>추풍령을 넘으면 문경새재 초입의 오미나라.</p><p>위스키 마스터 블렌더 출신 이종기 박사가</p><p>다섯 가지 맛의 오미자를 정통 샴페인 공법으로 발효시켜</p><p>세계 최초의 오미자 스파클링 '오미로제'를 빚었습니다.</p><p>2012년 서울 핵안보정상회의 만찬주에 올랐고,</p><p>올해 한·불 수교 140주년 국빈 만찬주로도 선정됐습니다.</p>
+        <p>추풍령을 넘으면 문경새재 초입의 오미나라.</p>
+        <p>위스키 마스터 블렌더 출신 이종기 박사가</p>
+        <p>다섯 가지 맛의 오미자를 정통 샴페인 공법으로 발효시켜</p>
+        <p>세계 최초의 오미자 스파클링 '오미로제'를 빚었습니다.</p>
+        <p>2012년 서울 핵안보정상회의 만찬주에 올랐고,</p>
+        <p>올해 한·불 수교 140주년 국빈 만찬주로도 선정됐습니다.</p>
       </div>
       <div className="absolute top-[1807.021px] left-[303px] h-[200.979px] w-[130.757px] overflow-hidden">
-        <img src={berriesRight} alt="" className="absolute top-[-15.54%] left-0 h-[115.6%] w-[123.36%] max-w-none" />
+        <img
+          src={berriesRight}
+          alt=""
+          className="absolute top-[-15.54%] left-0 h-[115.6%] w-[123.36%] max-w-none"
+        />
       </div>
       <div className="absolute top-[1782px] left-[303px] h-[226px] w-[100.086px] overflow-hidden">
-        <img src={berriesRight} alt="" className="absolute top-[-2.75%] left-0 h-[102.8%] w-[161.16%] max-w-none" />
+        <img
+          src={berriesRight}
+          alt=""
+          className="absolute top-[-2.75%] left-0 h-[102.8%] w-[161.16%] max-w-none"
+        />
       </div>
-      <WineryInfo top={1811} left={20} name="오미나라" address="경북 문경시 문경읍 새재로 609" description="세계 최초 오미자 스파클링 · 증류소 병설" image={omynaraWinery} />
-      <div className="absolute top-[2002px] left-1/2 h-px w-[390px] -translate-x-1/2 bg-black/12" aria-hidden="true" />
+      <WineryInfo
+        top={1811}
+        left={20}
+        name="오미나라"
+        address="경북 문경시 문경읍 새재로 609"
+        description="세계 최초 오미자 스파클링 · 증류소 병설"
+        image={omynaraWinery}
+      />
+      <div
+        className="absolute top-[2002px] left-1/2 h-px w-[390px] -translate-x-1/2 bg-black/12"
+        aria-hidden="true"
+      />
 
-      <p className="absolute top-[2061px] left-[calc(50%-36px)] font-['Delmon_Delicate','Playfair_Display',serif] text-[18px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">Epilogue</p>
-      <p className="absolute top-[2097px] left-[calc(50%-119px)] font-noto text-[24px] leading-[30.895px] font-medium whitespace-nowrap text-[#1a1a1a]">한국 와인을 마신다는 것</p>
-      <img src={epilogueBackground} alt="" className="absolute top-[2193px] left-[-3px] h-[291px] w-[436px] object-cover opacity-10" />
+      <p className="absolute top-[2061px] left-[calc(50%-36px)] font-['Delmon_Delicate','Playfair_Display',serif] text-[18px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">
+        Epilogue
+      </p>
+      <p className="absolute top-[2097px] left-[calc(50%-119px)] font-noto text-[24px] leading-[30.895px] font-medium whitespace-nowrap text-[#1a1a1a]">
+        한국 와인을 마신다는 것
+      </p>
+      <img
+        src={epilogueBackground}
+        alt=""
+        className="absolute top-[2193px] left-[-3px] h-[291px] w-[436px] object-cover opacity-10"
+      />
       <div className="absolute top-[2158px] left-1/2 w-[377px] -translate-x-1/2 text-center text-[16px] leading-[1.6] font-normal tracking-[-0.32px] text-black">
-        <p>영동의 청수 한 잔과</p><p>문경의 오미로제 한 잔,</p><p>&nbsp;</p><p>두 잔 사이 6km는</p><p>한국 와인이 걸어온 거리입니다.</p><p>&nbsp;</p><p>이번 주말, 냉장고 속 소비뇽 블랑 대신</p><p>청수 한 병을 골라보는 건 어떨까요.</p>
+        <p>영동의 청수 한 잔과</p>
+        <p>문경의 오미로제 한 잔,</p>
+        <p>&nbsp;</p>
+        <p>두 잔 사이 6km는</p>
+        <p>한국 와인이 걸어온 거리입니다.</p>
+        <p>&nbsp;</p>
+        <p>이번 주말, 냉장고 속 소비뇽 블랑 대신</p>
+        <p>청수 한 병을 골라보는 건 어떨까요.</p>
       </div>
 
       <section className="pt-[2524px] pb-[137px]">
-        <p className="ml-[104px] font-['Delmon_Delicate','Playfair_Display',serif] text-[26px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">Wine in <span className="text-[#831317]">Magazines</span></p>
+        <p className="ml-[104px] font-['Delmon_Delicate','Playfair_Display',serif] text-[26px] leading-[1.3] font-normal whitespace-nowrap text-[#8c2131]">
+          Wine in <span className="text-[#831317]">Magazines</span>
+        </p>
         <div
           ref={wineCarouselRef}
           role="region"
@@ -191,17 +367,17 @@ function MagazineDetail() {
               wine={wine}
               onClick={() => {
                 if (wineCarouselDidDragRef.current) {
-                  wineCarouselDidDragRef.current = false
-                  return
+                  wineCarouselDidDragRef.current = false;
+                  return;
                 }
-                navigate(`/wine_detail/${wine.type}/${wine.id}`)
+                navigate(`/wine_detail/${wine.type}/${wine.id}`);
               }}
             />
           ))}
         </div>
       </section>
     </div>
-  )
+  );
 }
 
-export default MagazineDetail
+export default MagazineDetail;
