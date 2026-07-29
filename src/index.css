@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display+SC:wght@400;700&display=swap");
 @import "tailwindcss";
 
-html[data-guide-mode] :is(a[href], [data-guide-target]):not(.absolute):not(.fixed) {
+html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore]):not(.absolute):not(.fixed) {
   position: relative;
 }
 
-html[data-guide-mode] :is(a[href], [data-guide-target])::after {
+html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])::after {
   position: absolute;
   z-index: 100;
   top: 4px;

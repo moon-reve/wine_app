@@ -29,6 +29,7 @@ function WineListCard({
   return (
     <article
       role="button"
+      data-guide-target
       tabIndex={0}
       onClick={onOpen}
       onKeyDown={handleKeyDown}

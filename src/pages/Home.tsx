@@ -432,6 +432,7 @@ function Home() {
               <button
                 key={tab.type}
                 type="button"
+                data-guide-target
                 aria-pressed={isActive}
                 onClick={() => {
                   setTodayPickType(tab.type)
@@ -550,7 +551,7 @@ function Home() {
           <h2 className="font-delmon text-[8.837cqw] leading-[1.3] font-normal tracking-[-0.177cqw] text-[#831317]">
             Challenge
           </h2>
-          <Link to="/challenge/continents" aria-label="챌린지 상세보기">
+          <Link to="/challenge/continents" aria-label="챌린지 상세보기" data-guide-ignore>
             <img src={iconArrowForward} alt="" className="size-[3.721cqw]" />
           </Link>
         </div>
@@ -767,26 +768,18 @@ function Home() {
           }
         }}
       >
-        {magazineCards.map((card) => (
-          <Link
-            key={card.title}
-            to="/magazine/k-wine-road"
-            aria-label="매거진 자세히 보기"
-            onClick={(event) => {
-              if (magazineDidDrag.current) {
-                event.preventDefault()
-                magazineDidDrag.current = false
-              }
-            }}
-            className="relative block h-[114.884cqw] w-[90.698cqw] shrink-0 snap-start overflow-hidden no-underline"
-          >
+        {magazineCards.map((card, index) => {
+          const cardContent = (
+            <>
             <img src={card.image} alt="Magazine" draggable={false} className="absolute inset-0 size-full object-cover" />
             <div className="absolute inset-0 bg-gradient-to-l from-black/65 from-[14.07%] to-[rgba(102,102,102,0)]" />
             <div className="absolute inset-0 bg-black/[0.14]" />
 
-            <span aria-hidden="true" className="absolute top-[36.512cqw] right-[4.651cqw] size-[5.581cqw]">
-              <img src={iconArrowForward} alt="" className="size-full" />
-            </span>
+            {index === 0 ? (
+              <span aria-hidden="true" className="absolute top-[36.512cqw] right-[4.651cqw] size-[5.581cqw]">
+                <img src={iconArrowForward} alt="" className="size-full" />
+              </span>
+            ) : null}
             <p className="absolute inset-x-[4.651cqw] top-[59.302cqw] text-[6.512cqw] leading-[1.18] font-bold tracking-[-0.228cqw] text-white">
               {card.title}
             </p>
@@ -798,8 +791,31 @@ function Home() {
             <p className="absolute inset-x-[4.651cqw] top-[76.047cqw] w-[79.302cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-white">
               {card.body}
             </p>
-          </Link>
-        ))}
+            </>
+          )
+          const cardClassName = 'relative block h-[114.884cqw] w-[90.698cqw] shrink-0 snap-start overflow-hidden no-underline'
+
+          return index === 0 ? (
+            <Link
+              key={card.title}
+              to="/magazine/k-wine-road"
+              aria-label="매거진 자세히 보기"
+              onClick={(event) => {
+                if (magazineDidDrag.current) {
+                  event.preventDefault()
+                  magazineDidDrag.current = false
+                }
+              }}
+              className={cardClassName}
+            >
+              {cardContent}
+            </Link>
+          ) : (
+            <div key={card.title} className={cardClassName}>
+              {cardContent}
+            </div>
+          )
+        })}
       </section>
 
       <div

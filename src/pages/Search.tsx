@@ -13,6 +13,12 @@ import { getWineDetailData, resolveWineImage, type WineDetail } from '../data/wi
 import { loadKakaoMaps, type KakaoPlace } from '../lib/kakaoMaps'
 
 const TODAY_PICK_TYPES: WineType[] = ['red', 'white', 'rose', 'sparkling']
+const WINE_TYPE_SEARCH_LABELS: Record<WineType, string> = {
+  red: '레드',
+  white: '화이트',
+  rose: '로제',
+  sparkling: '스파클링',
+}
 
 function SearchSubmitIcon() {
   return <img src={searchSubmitIcon} alt="" className="h-[39px] w-[38px]" />
@@ -256,9 +262,12 @@ function Search() {
       const searchableText = [
         wine.nameKo,
         wine.nameEn,
+        wine.type,
+        WINE_TYPE_SEARCH_LABELS[wine.type],
         wine.grape,
         wine.country,
         wine.region,
+        wine.region.includes('샹파뉴') ? '샴페인 champagne' : '',
         wine.winery,
         wine.vintage,
         ...wine.tastingNotes,

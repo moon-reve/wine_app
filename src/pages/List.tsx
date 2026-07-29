@@ -110,6 +110,7 @@ function List() {
         <nav aria-label="리스트 보기 방식" className="relative z-20 grid h-[34px] w-full grid-cols-2 border-b border-black/15 bg-white font-noto">
           <button
             type="button"
+            data-guide-target
             aria-current={view === 'list' ? 'page' : undefined}
             onClick={() => setView('list')}
             className={`relative pb-[11px] text-center text-base leading-[1.3] font-bold tracking-[-0.48px] ${
@@ -121,6 +122,7 @@ function List() {
           </button>
           <button
             type="button"
+            data-guide-target
             aria-current={view === 'map' ? 'page' : undefined}
             onClick={() => setView('map')}
             className={`relative pb-[11px] text-center text-base leading-[1.3] font-bold tracking-[-0.48px] ${
