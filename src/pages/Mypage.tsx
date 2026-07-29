@@ -97,7 +97,7 @@ function LikedWineCard({
         if (event.key === 'Enter' || event.key === ' ') onSelect()
       }}
       aria-label={`${wine.name} 상세보기`}
-      className="flex w-full cursor-pointer items-center gap-[37px] py-[15px] pl-[24px] text-left"
+      className="flex w-full cursor-pointer items-center gap-3 py-[15px] text-left min-[390px]:gap-[37px] min-[390px]:pl-[24px]"
     >
       <div
         className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
@@ -105,13 +105,13 @@ function LikedWineCard({
       >
         <img src={wine.image} alt={wine.name} className="h-[85%] w-auto object-contain" />
       </div>
-      <div className="flex flex-col gap-[8px] pt-[4px]">
+      <div className="flex min-w-0 flex-1 flex-col gap-[8px] pt-[4px]">
         <div>
           <p className="text-[18px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
           <p className={`${wine.regionTextSize} leading-[25px] text-[#817f7e]`}>{wine.region}</p>
         </div>
-        <div className="flex w-[220px] items-center justify-between">
-          <div className="flex items-center gap-[10px]">
+        <div className="flex w-full min-w-0 items-center justify-between gap-2">
+          <div className="flex min-w-0 items-center gap-[10px]">
             <p className="text-[16px] leading-[24px] font-bold text-[#1e1b18]">{wine.price}</p>
             <div className="flex items-center gap-[4px]">
               <img src={ratingStarIcon} alt="" className="h-[14.25px] w-[15px]" aria-hidden="true" />
@@ -209,9 +209,9 @@ function Mypage() {
       <main className="px-5">
         <section className={activeTab === 'feed' ? 'mt-[53px]' : 'mt-[51px]'}>
           <div className="flex items-start gap-[3px]">
-            <div className="relative size-[111px] shrink-0" data-node-id="1546:5583">
-              <img src={profileStoryRing} alt="" className="absolute inset-0 size-[111px] max-w-none" aria-hidden="true" />
-              <div className="absolute top-1.5 left-[7px] h-[99px] w-[97px] overflow-hidden rounded-[50px]" data-node-id="1546:5566">
+            <div className="relative size-[clamp(92px,25.82vw,111px)] shrink-0" data-node-id="1546:5583">
+              <img src={profileStoryRing} alt="" className="absolute inset-0 size-full max-w-none" aria-hidden="true" />
+              <div className="absolute top-[5.4%] left-[6.3%] h-[89.2%] w-[87.4%] overflow-hidden rounded-full" data-node-id="1546:5566">
                 <img
                   src={profile.image}
                   alt={profile.nickname}
@@ -225,7 +225,7 @@ function Mypage() {
 
             <div className="mt-[21px] flex flex-1 flex-col gap-[11px]">
               <strong className="ml-[14px] text-base leading-[normal] font-bold tracking-[-0.32px] whitespace-nowrap text-[#121212]">{profile.nickname}</strong>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between gap-0">
                 <div className="flex w-[57px] flex-col items-center gap-[5px]">
                   <strong className="text-base leading-[normal] font-semibold tracking-[-0.32px] text-[#831317]">12</strong>
                   <span className="text-[11px] leading-[normal] font-normal tracking-[-0.22px] text-[#6e6e6e]">피드</span>
@@ -252,7 +252,7 @@ function Mypage() {
             <button type="button" className="h-[34px] rounded-lg bg-[#f2f2f2] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 공유</button>
           </div>
 
-          <div className="mt-[25px] flex gap-[15px]">
+          <div className="mt-[25px] flex justify-between gap-0 min-[390px]:justify-start min-[390px]:gap-[15px]">
             <div className="flex w-[78px] flex-col items-center gap-[7px]">
               <img src={badgesCircleImage} alt="" className="size-[78px] rounded-full object-cover" aria-hidden="true" />
               <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Badges</span>
@@ -322,7 +322,7 @@ function Mypage() {
                   type="button"
                   aria-label={`내 피드 ${index + 1} 확대 보기`}
                   onClick={() => navigate('/mypage/feed', { state: { index } })}
-                  className="relative h-[154.333px] overflow-hidden"
+                  className="relative aspect-[129.333/154.333] overflow-hidden"
                 >
                   <img src={item.image} alt={`내 피드 ${index + 1}`} className={item.crop} />
                   {item.multiple && (
