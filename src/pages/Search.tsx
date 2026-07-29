@@ -124,6 +124,7 @@ function WineResultCard({ wine, index, onClick }: { wine: SearchWine; index: num
   return (
     <div
       role="button"
+      data-guide-target
       tabIndex={0}
       onClick={onClick}
       onKeyDown={(event) => {
