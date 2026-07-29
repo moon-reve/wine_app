@@ -73,6 +73,8 @@ export type FigmaFeed = {
   time: string
   avatar: string
   images: string[]
+  imageAspectRatios?: number[]
+  preserveImageAspectRatio?: boolean
   imagePosition: string
   content: string
   tags: string[]
@@ -304,11 +306,14 @@ export function FeedPost({
   const [comment, setComment] = useState('')
   const [comments, setComments] = useState<Array<{ id: number; author: string; content: string }>>([])
   const [shareNotice, setShareNotice] = useState<string | null>(null)
+  const [imageAspectRatios, setImageAspectRatios] = useState<Array<number | undefined>>(() => feed.imageAspectRatios ?? [])
   const carouselRef = useRef<HTMLDivElement>(null)
   const isDraggingRef = useRef(false)
   const dragStartXRef = useRef(0)
   const dragStartScrollLeftRef = useRef(0)
   const didDragRef = useRef(false)
+  const preserveImageAspectRatio = feed.preserveImageAspectRatio ?? feed.id?.startsWith('user-feed-') ?? false
+  const activeImageAspectRatio = imageAspectRatios[activeImageIndex]
 
   const handleCarouselScroll = (event: UIEvent<HTMLDivElement>) => {
     const carousel = event.currentTarget
@@ -397,7 +402,10 @@ export function FeedPost({
     <article className="font-sans">
       {showHeader ? <FeedPostHeader feed={feed} /> : null}
 
-      <div className={`relative mt-4 w-full overflow-hidden ${imageBoxClassName ?? 'h-[534px]'}`}>
+      <div
+        className={`relative mt-4 w-full overflow-hidden ${imageBoxClassName ?? (preserveImageAspectRatio ? '' : 'h-[534px]')}`}
+        style={preserveImageAspectRatio ? { aspectRatio: activeImageAspectRatio ?? 1 } : undefined}
+      >
         <div
           ref={carouselRef}
           onScroll={handleCarouselScroll}
@@ -426,7 +434,17 @@ export function FeedPost({
                 src={image}
                 alt={`${feed.author}의 피드 사진 ${imageIndex + 1}`}
                 draggable={false}
-                className={imageClassName ?? 'size-full object-cover'}
+                onLoad={(event) => {
+                  if (!preserveImageAspectRatio) return
+                  const ratio = event.currentTarget.naturalWidth / event.currentTarget.naturalHeight
+                  setImageAspectRatios((current) => {
+                    if (current[imageIndex] === ratio) return current
+                    const next = [...current]
+                    next[imageIndex] = ratio
+                    return next
+                  })
+                }}
+                className={imageClassName ?? `size-full ${preserveImageAspectRatio ? 'object-contain' : 'object-cover'}`}
                 style={imageClassName ? undefined : { objectPosition: imageIndex === 0 ? feed.imagePosition : 'center' }}
               />
             </button>

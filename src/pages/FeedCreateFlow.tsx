@@ -111,9 +111,16 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
 
   const wineChoices = [...records, ...DEMO_WINE_RECORDS]
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (!content.trim()) return
+
+    const imageAspectRatio = await new Promise<number | undefined>((resolve) => {
+      const image = new Image()
+      image.onload = () => resolve(image.naturalWidth / image.naturalHeight)
+      image.onerror = () => resolve(undefined)
+      image.src = photo
+    })
 
     addUserFeed({
       id: `user-feed-${Date.now()}`,
@@ -121,6 +128,8 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
       time: '방금 전',
       avatar: profile.image,
       images: [photo],
+      imageAspectRatios: imageAspectRatio ? [imageAspectRatio] : undefined,
+      preserveImageAspectRatio: true,
       imagePosition: 'center',
       content: content.trim(),
       tags: [...wineTags, ...personTags, ...hashtags, ...(locationTag ? [locationTag] : [])],

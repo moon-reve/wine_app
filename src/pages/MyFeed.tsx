@@ -88,7 +88,7 @@ function MyFeed() {
               feed={feed}
               index={index}
               onOpenImage={setImagePreview}
-              imageBoxClassName={IMAGE_BOX_CLASS_NAME}
+              imageBoxClassName={feed.preserveImageAspectRatio || feed.id?.startsWith('user-feed-') ? undefined : IMAGE_BOX_CLASS_NAME}
               imageClassName={crop}
             />
           </div>
