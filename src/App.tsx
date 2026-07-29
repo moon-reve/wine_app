@@ -31,11 +31,12 @@ import WineRecord from './pages/WineRecord'
 import Splash from './pages/Splash'
 import Onboarding from './pages/Onboarding'
 import DesktopGuide from './pages/DesktopGuide'
-import ResponsiveEntry from './pages/ResponsiveEntry'
+import { useDesktopViewport } from './hooks/useDesktopViewport'
 import { LikedWinesProvider } from './context/LikedWinesContext'
 import { WineRecordsProvider } from './context/WineRecordsContext'
 import { ProfileProvider } from './context/ProfileContext'
 import { FeedLikesProvider } from './context/FeedLikesContext'
+import GuideModeBridge from './components/GuideModeBridge'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -47,6 +48,67 @@ function ScrollToTop() {
   return null
 }
 
+function AppRoutes() {
+  const location = useLocation()
+  const isDesktop = useDesktopViewport()
+  const isEmbeddedDesktop = new URLSearchParams(location.search).get('embed') === 'desktop'
+
+  if (isDesktop && !isEmbeddedDesktop) {
+    return location.pathname === '/' ? <DesktopGuide /> : <Navigate to="/" replace />
+  }
+
+  return (
+    <>
+      <GuideModeBridge />
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Splash />} />
+        <Route path="/splash" element={<Splash />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/guide" element={<Navigate to="/" replace />} />
+        <Route path="/lounge/questions/new" element={<QuestionWrite />} />
+        <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
+        <Route path="/profile/settings" element={<ProfileSettings />} />
+        <Route path="/product/chateau-margaux-2018" element={<WineDetailRed />} />
+        <Route path="/product/chardonnay-2019" element={<WineDetailWhite />} />
+        <Route path="/product/pasqua-sweet-rose" element={<WineDetailRose />} />
+        <Route path="/product/red/:wineId" element={<WineDetailRed />} />
+        <Route path="/product/white/:wineId" element={<WineDetailWhite />} />
+        <Route path="/product/rose/:wineId" element={<WineDetailRose />} />
+        <Route path="/wine_detail/red/:wineId" element={<WineDetailRed />} />
+        <Route path="/wine_detail/white/:wineId" element={<WineDetailWhite />} />
+        <Route path="/wine_detail/rose/:wineId" element={<WineDetailRose />} />
+        <Route path="/wine_detail/sparkling/:wineId" element={<WineDetailSparkling />} />
+        <Route path="/event/summer-wine-festival" element={<EventDetails />} />
+        <Route path="/notifications" element={<Notification />} />
+        <Route path="/todays-pick" element={<TodaysPick />} />
+        <Route path="/challenge/continents" element={<ChallengeDetails />} />
+        <Route path="/chatbot" element={<Chatbot />} />
+        <Route path="/record" element={<WineRecord />} />
+        <Route path="/feed/create" element={<CameraFlow mode="feed" />} />
+        <Route path="/wine-search" element={<CameraFlow mode="search" />} />
+        <Route element={<AppLayout />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/list" element={<List />} />
+          <Route path="/lounge" element={<Feed />} />
+          <Route path="/lounge/qna" element={<QnA />} />
+          <Route path="/lounge/meetings" element={<Meetings />} />
+          <Route path="/mypage" element={<Mypage />} />
+          <Route path="/mypage/settings" element={<MypageSettings />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/magazine" element={<Magazine />} />
+          <Route path="/magazine/k-wine-road" element={<MagazineDetail />} />
+          <Route path="*" element={<Navigate to="/home" replace />} />
+        </Route>
+        <Route path="/mypage/feed" element={<MyFeed />} />
+        <Route path="/question/:questionId" element={<QuestionDetail />} />
+        <Route path="/meeting/:meetingId" element={<MeetingDetail />} />
+        <Route path="*" element={<Navigate to="/home" replace />} />
+      </Routes>
+    </>
+  )
+}
+
 function App() {
   return (
     <BrowserRouter>
@@ -54,51 +116,7 @@ function App() {
       <WineRecordsProvider>
       <ProfileProvider>
       <FeedLikesProvider>
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<ResponsiveEntry />} />
-          <Route path="/splash" element={<Splash />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-          <Route path="/guide" element={<DesktopGuide />} />
-          <Route path="/lounge/questions/new" element={<QuestionWrite />} />
-          <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
-          <Route path="/profile/settings" element={<ProfileSettings />} />
-          <Route path="/product/chateau-margaux-2018" element={<WineDetailRed />} />
-          <Route path="/product/chardonnay-2019" element={<WineDetailWhite />} />
-          <Route path="/product/pasqua-sweet-rose" element={<WineDetailRose />} />
-          <Route path="/product/red/:wineId" element={<WineDetailRed />} />
-          <Route path="/product/white/:wineId" element={<WineDetailWhite />} />
-          <Route path="/product/rose/:wineId" element={<WineDetailRose />} />
-          <Route path="/wine_detail/red/:wineId" element={<WineDetailRed />} />
-          <Route path="/wine_detail/white/:wineId" element={<WineDetailWhite />} />
-          <Route path="/wine_detail/rose/:wineId" element={<WineDetailRose />} />
-          <Route path="/wine_detail/sparkling/:wineId" element={<WineDetailSparkling />} />
-          <Route path="/event/summer-wine-festival" element={<EventDetails />} />
-          <Route path="/notifications" element={<Notification />} />
-          <Route path="/todays-pick" element={<TodaysPick />} />
-          <Route path="/challenge/continents" element={<ChallengeDetails />} />
-          <Route path="/chatbot" element={<Chatbot />} />
-          <Route path="/record" element={<WineRecord />} />
-          <Route path="/feed/create" element={<CameraFlow mode="feed" />} />
-          <Route path="/wine-search" element={<CameraFlow mode="search" />} />
-          <Route element={<AppLayout />}>
-            <Route path="/home" element={<Home />} />
-            <Route path="/list" element={<List />} />
-            <Route path="/lounge" element={<Feed />} />
-            <Route path="/lounge/qna" element={<QnA />} />
-            <Route path="/lounge/meetings" element={<Meetings />} />
-            <Route path="/mypage" element={<Mypage />} />
-            <Route path="/mypage/settings" element={<MypageSettings />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/magazine" element={<Magazine />} />
-            <Route path="/magazine/k-wine-road" element={<MagazineDetail />} />
-            <Route path="*" element={<Navigate to="/home" replace />} />
-          </Route>
-          <Route path="/mypage/feed" element={<MyFeed />} />
-          <Route path="/question/:questionId" element={<QuestionDetail />} />
-          <Route path="/meeting/:meetingId" element={<MeetingDetail />} />
-          <Route path="*" element={<Navigate to="/home" replace />} />
-        </Routes>
+        <AppRoutes />
       </FeedLikesProvider>
       </ProfileProvider>
       </WineRecordsProvider>

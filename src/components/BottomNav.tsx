@@ -161,6 +161,7 @@ function NavButton({
   return (
     <button
       type="button"
+      data-guide-target
       aria-current={active ? 'page' : undefined}
       className={`absolute z-10 flex h-[48px] w-16 -translate-x-1/2 flex-col items-center text-[12px] leading-[1.55] tracking-[-0.24px] transition-colors focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4e000e] ${
         active ? 'text-[#4e000e]' : 'text-[#b2b2b2]'
@@ -257,6 +258,7 @@ export default function BottomNav({
             <button
               key={action.label}
               type="button"
+              data-guide-target
               onClick={() => onQuickActionClick?.(action.label)}
               className="glass-tab absolute z-10 flex size-[69px] -translate-x-1/2 items-center justify-center rounded-full text-xs font-medium tracking-[-0.24px] text-white transition-[transform,filter,background-color,border-color,box-shadow] duration-100 ease-out hover:scale-105 active:scale-[0.94] active:border-white/30 active:bg-white/[0.04] active:brightness-90 active:shadow-[inset_0_4px_10px_rgba(0,0,0,0.18),inset_1px_1px_0_rgba(255,255,255,0.12)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               style={{

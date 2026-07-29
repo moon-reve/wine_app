@@ -527,6 +527,7 @@ function Home() {
               <button
                 key={wine.id}
                 type="button"
+                data-guide-target
                 onClick={() => {
                   if (todayPickDidDrag.current) {
                     todayPickDidDrag.current = false
@@ -597,6 +598,7 @@ function Home() {
         >
           <button
             type="button"
+            data-guide-target
             onClick={() => {
               if (challengeDidDrag.current) {
                 challengeDidDrag.current = false

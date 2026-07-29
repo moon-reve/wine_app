@@ -1,6 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Playfair:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Playfair+Display+SC:wght@400;700&display=swap");
 @import "tailwindcss";
 
+html[data-guide-mode] :is(a[href], [data-guide-target]):not(.absolute):not(.fixed) {
+  position: relative;
+}
+
+html[data-guide-mode] :is(a[href], [data-guide-target])::after {
+  position: absolute;
+  z-index: 100;
+  top: 4px;
+  right: 4px;
+  width: 6px;
+  height: 6px;
+  box-sizing: content-box;
+  border: 1px solid #fff;
+  border-radius: 9999px;
+  background: #831317;
+  content: "";
+  pointer-events: none;
+}
+
 @font-face {
   font-family: "Delmon Delicate Script";
   src: url("./assets/fonts/Delmon Delicate Script.otf") format("opentype");

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-const DESKTOP_QUERY = '(min-width: 1280px)'
+const DESKTOP_QUERY = '(min-width: 768px)'
 
 export function useDesktopViewport() {
   const [isDesktop, setIsDesktop] = useState(() => window.matchMedia(DESKTOP_QUERY).matches)

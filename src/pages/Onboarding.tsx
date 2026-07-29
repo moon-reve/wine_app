@@ -4,7 +4,6 @@ import googleIcon from '../assets/login/google.png'
 import kakaoIcon from '../assets/login/kakao.png'
 import naverIcon from '../assets/login/naver.png'
 import wineSippersLogo from '../assets/onboarding/wine-sippers-logo-white.svg'
-import { useDesignFrameHeight } from '../utils/useDesignFrameHeight'
 
 const slides = [
   {
@@ -38,7 +37,6 @@ const slides = [
 
 function Onboarding() {
   const navigate = useNavigate()
-  const containerHeight = useDesignFrameHeight()
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([])
   const [activeSlide, setActiveSlide] = useState(0)
   const [isLogin, setIsLogin] = useState(false)
@@ -78,8 +76,7 @@ function Onboarding() {
 
   return (
     <main
-      className="relative mx-auto w-full max-w-[430px] overflow-hidden bg-black text-white"
-      style={{ height: `${containerHeight}px` }}
+      className="h-dvh-zoomed relative mx-auto w-full max-w-[430px] overflow-hidden bg-black text-white"
     >
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
         <div
@@ -127,6 +124,7 @@ function Onboarding() {
           </div>
           <button
             type="button"
+            data-guide-target
             className="text-[14px] font-medium leading-normal tracking-[-0.28px] text-white"
             onClick={() => setIsLogin(true)}
           >
@@ -170,6 +168,7 @@ function Onboarding() {
 
         <button
           type="button"
+          data-guide-target
           className={`absolute right-5 bottom-[calc(32px+env(safe-area-inset-bottom))] left-5 flex h-[52px] items-center justify-center rounded-full text-[16px] text-white transition-colors duration-300 ${
             isLastSlide
               ? 'border border-[#831317] bg-[#831317]'
@@ -193,6 +192,7 @@ function Onboarding() {
         <header className="absolute inset-x-0 top-[env(safe-area-inset-top)] z-10 flex h-[70px] items-center px-5 pb-3 pt-[18px]">
           <button
             type="button"
+            data-guide-target
             className="flex size-6 items-center justify-center"
             aria-label="온보딩으로 돌아가기"
             onClick={() => setIsLogin(false)}
@@ -239,6 +239,7 @@ function Onboarding() {
           />
           <button
             type="submit"
+            data-guide-target
             className="absolute top-[55.26%] right-5 left-5 flex h-[52px] items-center justify-center rounded-full bg-[#831317] text-[16px] text-white"
           >
             로그인

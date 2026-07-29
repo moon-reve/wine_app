@@ -31,6 +31,7 @@ function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, 
       {showBackButton ? (
         <button
           type="button"
+          data-guide-target
           aria-label="뒤로 가기"
           onClick={() => navigate(-1)}
           className="-mt-[3px] -ml-0.5 flex size-6 shrink-0 items-center justify-center"
@@ -53,6 +54,7 @@ function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, 
         {showSearchButton ? (
           <button
             type="button"
+            data-guide-target
             aria-label="Search"
             onClick={() => navigate('/search')}
             className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
@@ -64,6 +66,7 @@ function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, 
 
         <button
           type="button"
+          data-guide-target
           aria-label="Notifications"
           onClick={() => navigate('/notifications')}
           className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
