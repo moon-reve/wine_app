@@ -1,4 +1,4 @@
-import { useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
+import { useCallback, useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import heroImage from '../assets/images/hero.webp'
 import heroTasteImage from '../assets/images/hero-taste.webp'
@@ -24,10 +24,13 @@ import iconEllipse9 from '../assets/images/icon-ellipse-9.svg'
 import iconHeart from '../assets/images/icon-heart.svg'
 import iconShare from '../assets/images/icon-share.svg'
 import iconMusicNote2 from '../assets/images/icon-music-note-2.svg'
+import heartOutline from '../../icon/Heart.svg'
 import Header from '../components/Header'
+import ShareActionSheet from '../components/ShareActionSheet'
 import WineHotspot from '../components/WineHotspot'
 import winesData from '../../dummy data/wines.json'
 import { TODAY_PICK_WINE_IDS, type WineType as TodayPickType } from '../data/todayPickData'
+import { useFeedLikes } from '../context/feedLikesContextValue'
 
 const playfairOpsz = { fontVariationSettings: '"opsz" 12' }
 
@@ -119,6 +122,21 @@ const bestFeeds = [
 ] as const
 
 const noScrollbar = '[scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
+const followingStorageKey = 'wine-app-home-best-feed-following'
+
+function loadFollowingFeedKeys() {
+  try {
+    const stored = localStorage.getItem(followingStorageKey)
+    return new Set<string>(stored ? JSON.parse(stored) : [])
+  } catch {
+    return new Set<string>()
+  }
+}
+
+function formatFeedCount(value: string, active: boolean) {
+  const count = Number(value.replaceAll(',', '')) + (active ? 1 : 0)
+  return count.toLocaleString('en-US')
+}
 
 const heroWineHotspots = [
   {
@@ -132,8 +150,11 @@ const heroWineHotspots = [
 
 function Home() {
   const navigate = useNavigate()
+  const { isLiked, toggleLike } = useFeedLikes()
   const [heroIndex, setHeroIndex] = useState(0)
   const [bestFeedIndex, setBestFeedIndex] = useState(0)
+  const [followingFeedKeys, setFollowingFeedKeys] = useState(loadFollowingFeedKeys)
+  const [shareFeedIndex, setShareFeedIndex] = useState<number | null>(null)
   const [magazineIndex, setMagazineIndex] = useState(0)
   const [todayPickType, setTodayPickType] = useState<TodayPickType>('red')
   const [openHeroWineIndex, setOpenHeroWineIndex] = useState<number | null>(null)
@@ -152,6 +173,27 @@ function Home() {
   const todayPickWines = TODAY_PICK_WINE_IDS[todayPickType]
     .map((id) => todayPickWineData.find((wine) => wine.id === id))
     .filter((wine): wine is TodayPickWine => Boolean(wine))
+  const closeShareSheet = useCallback(() => setShareFeedIndex(null), [])
+
+  const toggleFollowing = (feedKey: string) => {
+    setFollowingFeedKeys((current) => {
+      const next = new Set(current)
+      if (next.has(feedKey)) next.delete(feedKey)
+      else next.add(feedKey)
+      try {
+        localStorage.setItem(followingStorageKey, JSON.stringify([...next]))
+      } catch {
+        // 저장 공간 접근이 제한된 환경에서는 현재 화면의 상태만 유지한다.
+      }
+      return next
+    })
+  }
+
+  const getShareUrl = () => {
+    const url = new URL(window.location.href)
+    url.searchParams.delete('embed')
+    return url.toString()
+  }
 
   const finishHeroSwipe = (clientX: number) => {
     if (heroPointerStart.current === null) return
@@ -358,12 +400,36 @@ function Home() {
                         낭만적인 여름밤 당신의 눈동자에 치얼쓰~
                       </p>
                     </div>
-                    <button
-                      type="button"
-                      className="shrink-0 rounded-[2.326cqw] border-[0.5px] border-white px-[1.512cqw] py-[0.814cqw] text-[12px] leading-[1.2] font-medium text-white"
-                    >
-                      팔로우
-                    </button>
+                    {followingFeedKeys.has(feed.username) ? (
+                      <button
+                        type="button"
+                        aria-label={`${feed.username} 팔로우 취소`}
+                        aria-pressed="true"
+                        onClick={() => toggleFollowing(feed.username)}
+                        className="h-[26px] w-[58px] shrink-0"
+                      >
+                        <svg viewBox="0 0 58 26" className="size-full" aria-hidden="true">
+                          <defs>
+                            <mask id={`following-cutout-${index}`}>
+                              <rect width="58" height="26" rx="10" fill="white" />
+                              <text x="29" y="13" dominantBaseline="middle" textAnchor="middle" fill="black" fontFamily="Pretendard, sans-serif" fontSize="12" fontWeight="500">팔로잉</text>
+                            </mask>
+                          </defs>
+                          <rect width="58" height="26" rx="10" fill="white" mask={`url(#following-cutout-${index})`} />
+                          <rect x="0.5" y="0.5" width="57" height="25" rx="9.5" fill="none" stroke="white" />
+                        </svg>
+                      </button>
+                    ) : (
+                      <button
+                        type="button"
+                        aria-label={`${feed.username} 팔로우`}
+                        aria-pressed="false"
+                        onClick={() => toggleFollowing(feed.username)}
+                        className="flex h-[26px] w-[58px] shrink-0 items-center justify-center rounded-[10px] border-[0.5px] border-white text-[12px] leading-none font-medium text-white"
+                      >
+                        팔로우
+                      </button>
+                    )}
                   </div>
 
                   <div className="absolute inset-x-0 top-[19.342cqw] h-px bg-white/25" />
@@ -377,18 +443,43 @@ function Home() {
                   </div>
 
                   <div className="absolute inset-x-[4.651cqw] bottom-[4.651cqw] flex items-center gap-[3.721cqw] text-white">
-                    <span className="flex items-center gap-[0.930cqw] text-[12px] leading-[9px] font-medium">
-                      <img src={iconHeart} alt="" className="size-[4.651cqw]" />
-                      {feed.likes}
-                    </span>
-                    <span className="flex items-center gap-[0.930cqw] text-[12px] leading-[9px] font-medium">
+                    <button
+                      type="button"
+                      aria-label={isLiked(`home-best-${feed.username}`) ? `${feed.username} 좋아요 취소` : `${feed.username} 좋아요`}
+                      aria-pressed={isLiked(`home-best-${feed.username}`)}
+                      onClick={() => toggleLike(`home-best-${feed.username}`)}
+                      className="flex h-6 items-center gap-[0.930cqw] text-[12px] leading-[9px] font-medium"
+                    >
+                      <img
+                        src={isLiked(`home-best-${feed.username}`) ? iconHeart : heartOutline}
+                        alt=""
+                        className={`size-[4.651cqw] ${isLiked(`home-best-${feed.username}`) ? '' : 'brightness-0 invert'}`}
+                      />
+                      {formatFeedCount(feed.likes, isLiked(`home-best-${feed.username}`))}
+                    </button>
+                    <button
+                      type="button"
+                      aria-label={`${feed.username} 피드 공유하기`}
+                      onClick={() => setShareFeedIndex(index)}
+                      className="flex h-6 items-center gap-[0.930cqw] text-[12px] leading-[9px] font-medium"
+                    >
                       <img src={iconShare} alt="" className="size-[4.651cqw]" />
                       {feed.shares}
-                    </span>
+                    </button>
                   </div>
                 </article>
               ))}
           </div>
+          {shareFeedIndex !== null ? (
+            <ShareActionSheet
+              open
+              onClose={closeShareSheet}
+              title={`${bestFeeds[shareFeedIndex].username}님의 베스트 피드`}
+              description={bestFeeds[shareFeedIndex].tags.join(' ')}
+              url={getShareUrl()}
+              heading="피드 공유하기"
+            />
+          ) : null}
 
           <div
             className="mt-[5.581cqw] flex items-center justify-center gap-[2.791cqw]"

@@ -1,8 +1,9 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import backIcon from '../assets/wine-detail-white/back.svg'
 import bookmarkIcon from '../assets/wine-detail-white/bookmark.svg'
-import heartIcon from '../assets/wine-detail-white/heart.svg'
 import roseGrapes from '../assets/wine-detail-rose/rose-podo.webp'
+import WineLikeButton from '../components/WineLikeButton'
+import WineShareButton from '../components/WineShareButton'
 import { formatPrice, formatStars, getWineDetailData, resolveWineImage } from '../data/wineDetailData'
 
 function Divider() {
@@ -98,8 +99,8 @@ export default function WineDetailRose() {
           <div className="flex h-6 w-full items-center justify-between">
             <h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">기본 정보</h2>
             <div className="flex items-center gap-3">
-              <button type="button" aria-label="공유하기" className="flex size-6 items-center justify-center"><img src={bookmarkIcon} alt="" className="h-[19px] w-[17px]" /></button>
-              <button type="button" aria-label="찜하기" className="flex size-6 items-center justify-center"><img src={heartIcon} alt="" className="size-[19px]" /></button>
+              <WineShareButton iconSrc={bookmarkIcon} wineName={wine.nameKo} description={wine.description} />
+              <WineLikeButton wineId={wine.id} wineName={wine.nameKo} />
             </div>
           </div>
           <p className="mt-3 text-[12px] leading-[1.2] tracking-[-0.24px] text-black/60">{typeLabel} &gt; {wine.country} &gt; {wine.region}</p>
