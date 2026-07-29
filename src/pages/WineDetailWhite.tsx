@@ -89,13 +89,13 @@ export default function WineDetailWhite() {
       <div className="absolute top-[169px] left-0 z-0 h-[129.302vw] max-h-[556px] w-[40%]">
         <img src={heroWineImage} alt={wine.nameKo} className="size-full object-contain" />
       </div>
-      <div className="absolute top-[474px] left-[7.209%] z-[1] flex aspect-[412.388/305.537] h-auto w-[95.904%] items-center justify-center">
+      <div className="absolute top-[calc(169px+min(70.93vw,305px))] left-[7.209%] z-[1] flex aspect-[412.388/305.537] h-auto w-[95.904%] items-center justify-center">
         <div className="aspect-[379.394/252.518] h-auto w-[92%] -rotate-[8.45deg]">
           <img src={grapes} alt="" className="size-full max-w-none object-cover" />
         </div>
       </div>
 
-      <main className="relative mt-[660px] w-full overflow-hidden px-5 pb-10">
+      <main className="relative mt-[calc(99px+min(130.465vw,561px))] w-full overflow-hidden px-5 pb-10">
         <section className="wine-detail-basic flex w-full flex-col">
           <div className="flex h-6 w-full items-center justify-between">
             <h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">기본 정보</h2>

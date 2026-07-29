@@ -257,8 +257,8 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
   .wine-detail-name-en {
     min-height: 131px;
     font-family: "Delmon Delicate", "Playfair Display", serif;
-    font-size: 42px;
-    line-height: 1.3;
+    font-size: 40px;
+    line-height: 1.1;
     letter-spacing: -0.03em;
     padding-bottom: 20px;
     text-align: right;

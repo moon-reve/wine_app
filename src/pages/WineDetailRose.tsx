@@ -90,11 +90,11 @@ export default function WineDetailRose() {
       <div className="absolute top-[152px] left-0 z-0 h-[134.651vw] max-h-[579px] w-[40%]">
         <img src={heroWineImage} alt={wine.nameKo} className="size-full object-contain" />
       </div>
-      <div className="absolute top-[540px] left-[19.07%] z-[1] aspect-[348/235] h-auto w-[80.93%]" aria-hidden="true">
+      <div className="absolute top-[calc(152px+min(90.233vw,388px))] left-[19.07%] z-[1] aspect-[348/235] h-auto w-[80.93%]" aria-hidden="true">
         <img src={roseGrapes} alt="" className="size-full object-cover" />
       </div>
 
-      <main className="relative mt-[672px] w-full overflow-hidden px-5 pb-10">
+      <main className="relative mt-[calc(82px+min(137.209vw,590px))] w-full overflow-hidden px-5 pb-10">
         <section className="wine-detail-basic flex w-full flex-col">
           <div className="flex h-6 w-full items-center justify-between">
             <h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">기본 정보</h2>
