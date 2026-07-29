@@ -20,13 +20,12 @@ import feedThumb11 from '../assets/mypage/figma-feed-11.webp'
 import feedThumb12 from '../assets/mypage/figma-feed-12.webp'
 import multipleFeedIcon from '../assets/mypage/multiple-feed-icon.svg'
 import settingsIcon from '../assets/mypage/settings-outline.svg'
-import likedHeartIcon from '../assets/mypage/liked-heart.svg'
-import ratingStarIcon from '../assets/mypage/rating-star.svg'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
 import { useLikedWines } from '../context/likedWinesContextValue'
 import { DEMO_WINE_RECORDS, useWineRecords } from '../context/wineRecordsContextValue'
 import { DEFAULT_PROFILE_IMAGE, useProfile } from '../context/profileContextValue'
 import { getUserFeeds } from '../data/userFeeds'
+import WineListCard from '../components/WineListCard'
 
 const demoFeedItems = [
   { image: feedThumb1, crop: 'absolute top-[-21.13%] left-[-7.75%] h-[204.57%] w-[115.11%] max-w-none', multiple: true },
@@ -96,63 +95,6 @@ function WineReviewCard({ review, onOpen, onDelete }: { review: WineReviewCardDa
   )
 }
 
-function LikedWineCard({
-  wine,
-  onSelect,
-  onUnlike,
-}: {
-  wine: Wine
-  onSelect: () => void
-  onUnlike: () => void
-}) {
-  return (
-    <div
-      data-guide-target
-      role="button"
-      tabIndex={0}
-      onClick={onSelect}
-      onKeyDown={(event) => {
-        if (event.key === 'Enter' || event.key === ' ') onSelect()
-      }}
-      aria-label={`${wine.name} 상세보기`}
-      className="flex w-full cursor-pointer items-center gap-3 py-[15px] text-left min-[390px]:gap-[37px] min-[390px]:pl-[24px]"
-    >
-      <div
-        className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
-        style={{ backgroundColor: wine.bgColor }}
-      >
-        <img src={wine.image} alt={wine.name} className="h-[85%] w-auto object-contain" />
-      </div>
-      <div className="flex min-w-0 flex-1 flex-col gap-[8px] pt-[4px]">
-        <div>
-          <p className="text-[18px] leading-[25px] font-semibold text-[#1e1b18]">{wine.name}</p>
-          <p className={`${wine.regionTextSize} leading-[25px] text-[#817f7e]`}>{wine.region}</p>
-        </div>
-        <div className="flex w-full min-w-0 items-center justify-between gap-2">
-          <div className="flex min-w-0 items-center gap-[10px]">
-            <p className="text-[16px] leading-[24px] font-bold text-[#1e1b18]">{wine.price}</p>
-            <div className="flex items-center gap-[4px]">
-              <img src={ratingStarIcon} alt="" className="h-[14.25px] w-[15px]" aria-hidden="true" />
-              <p className="text-[16px] leading-[24px] font-bold text-[#831317]">{wine.rating}</p>
-            </div>
-          </div>
-          <button
-            type="button"
-            aria-label={`${wine.name} 좋아요 취소`}
-            onClick={(event) => {
-              event.stopPropagation()
-              onUnlike()
-            }}
-            className="flex h-[17px] w-[19px] shrink-0 items-center justify-center"
-          >
-            <img src={likedHeartIcon} alt="" className="h-full w-full" aria-hidden="true" />
-          </button>
-        </div>
-      </div>
-    </div>
-  )
-}
-
 function Mypage() {
   const navigate = useNavigate()
   const location = useLocation()
@@ -210,6 +152,7 @@ function Mypage() {
         <div className="flex shrink-0 items-center gap-1 overflow-hidden" data-node-id="577:107">
           <button
             type="button"
+            data-guide-target
             aria-label="Search"
             onClick={() => navigate('/search')}
             className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
@@ -218,6 +161,7 @@ function Mypage() {
           </button>
           <button
             type="button"
+            data-guide-target
             aria-label="설정"
             onClick={() => navigate('/mypage/settings')}
             className="flex h-10 w-8.5 shrink-0 items-center justify-center overflow-hidden"
@@ -269,7 +213,7 @@ function Mypage() {
           </div>
 
           <div className="mt-[19px] grid grid-cols-2 gap-[4px]">
-            <button type="button" onClick={() => navigate('/profile/settings')} className="h-[34px] rounded-lg bg-[#f2f2f2] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 편집</button>
+            <button type="button" data-guide-target onClick={() => navigate('/profile/settings')} className="h-[34px] rounded-lg bg-[#f2f2f2] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 편집</button>
             <button type="button" className="h-[34px] rounded-lg bg-[#f2f2f2] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 공유</button>
           </div>
 
@@ -280,6 +224,7 @@ function Mypage() {
             </div>
             <button
               type="button"
+              data-guide-target
               onClick={() => navigate('/challenge/continents')}
               aria-label="챌린지 보기"
               className="flex w-[86px] flex-col items-center gap-[4px]"
@@ -371,21 +316,20 @@ function Mypage() {
               </button>
             </div>
           ) : (
-            <div className="mt-[23px]">
-              <p className="h-5 text-[11px] leading-5 font-normal text-[#534343]">전체 {likedWines.length}종</p>
-              <div className="mt-5">
-                {likedWines.map((wine) => (
-                  <div key={wine.id}>
-                    <hr className="m-0 h-0 border-0 border-t-[0.5px] border-[#dcdcdc]" />
-                    <LikedWineCard
-                      wine={wine}
-                      onSelect={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
-                      onUnlike={() => unlike(wine.id)}
-                    />
-                  </div>
+            <div className="mt-5">
+              <p className="flex min-h-6 items-center text-[14px] leading-5 font-normal text-[#534343]">전체 {likedWines.length}종</p>
+              <ul className="mt-[30px] mb-[40px] list-none p-0">
+                {likedWines.map((wine, index) => (
+                  <WineListCard
+                    key={wine.id}
+                    wine={wine}
+                    isLiked
+                    showDivider={index < likedWines.length - 1}
+                    onOpen={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)}
+                    onToggleLike={() => unlike(wine.id)}
+                  />
                 ))}
-                <hr className="m-0 h-0 border-0 border-t-[0.5px] border-[#dcdcdc]" />
-              </div>
+              </ul>
             </div>
           )}
         </section>

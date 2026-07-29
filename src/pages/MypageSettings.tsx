@@ -87,6 +87,8 @@ function Toggle({ checked, onChange, label }: { checked: boolean; onChange: () =
   return (
     <button
       type="button"
+      data-guide-target
+      data-guide-marker="settings-toggle"
       role="switch"
       aria-checked={checked}
       aria-label={label}
@@ -136,7 +138,7 @@ function SettingsRow({ icon, label, value, onClick, toggle, last = false }: RowP
   return (
     <div className={last ? 'h-6' : 'flex h-[57px] flex-col gap-4'}>
       <div className="flex h-6 w-full items-center justify-between">
-        {onClick ? <button type="button" onClick={onClick} className="flex size-full items-center justify-between text-left">{content}</button> : content}
+        {onClick ? <button type="button" data-guide-target onClick={onClick} className="flex size-full items-center justify-between text-left">{content}</button> : content}
       </div>
       {!last && <div className="h-px w-full shrink-0 bg-[#e5e0e0]" />}
     </div>
@@ -146,7 +148,7 @@ function SettingsRow({ icon, label, value, onClick, toggle, last = false }: RowP
 function PageHeader({ title, onBack }: { title: string; onBack: () => void }) {
   return (
     <header className="relative z-20 flex h-[calc(56px+env(safe-area-inset-top))] items-center justify-center bg-white px-5 pt-[env(safe-area-inset-top)]">
-      <button type="button" onClick={onBack} aria-label="뒤로가기" className="absolute left-5 flex size-6 items-center justify-center">
+      <button type="button" data-guide-target onClick={onBack} aria-label="뒤로가기" className="absolute left-5 flex size-6 items-center justify-center">
         <img src={settingsBackIcon} alt="" className="size-6" aria-hidden="true" />
       </button>
       <h1 className="text-lg leading-[normal] font-bold text-[#831317]">{title}</h1>
@@ -172,22 +174,24 @@ function AccountInfo({ onBack }: { onBack: () => void }) {
       <main className="px-5 pb-32 pt-7">
         <h2 className="font-playfair-display text-[30px] font-bold text-[#831317]">Account</h2>
         <p className="mt-1 text-sm text-[#555]">가입 정보와 연결된 계정을 확인하세요.</p>
-        <DetailCard>
-          <dl className="divide-y divide-[#e5dfdf]">
-            {[
-              ['이메일', 'wine.sipper@gmail.com'],
-              ['전화번호 (선택)', '010-1234-5678'],
-              ['가입일', '2026. 07. 01'],
-              ['로그인 방식', 'Kakao'],
-              ['계정 상태', '정상'],
-            ].map(([term, value]) => (
-              <div key={term} className="flex min-h-[62px] items-center justify-between gap-4 py-3">
-                <dt className="text-sm font-medium text-[#6e6e6e]">{term}</dt>
-                <dd className={`text-right text-sm font-semibold ${term === '계정 상태' ? 'text-[#14804a]' : 'text-[#202024]'}`}>{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </DetailCard>
+        <div className="mt-[30px]">
+          <DetailCard>
+            <dl className="divide-y divide-[#e5dfdf]">
+              {[
+                ['이메일', 'wine.sipper@gmail.com'],
+                ['전화번호 (선택)', '010-1234-5678'],
+                ['가입일', '2026. 07. 01'],
+                ['로그인 방식', 'Kakao'],
+                ['계정 상태', '정상'],
+              ].map(([term, value]) => (
+                <div key={term} className="flex min-h-[62px] items-center justify-between gap-4 py-3">
+                  <dt className="text-sm font-medium text-[#6e6e6e]">{term}</dt>
+                  <dd className={`text-right text-sm font-semibold ${term === '계정 상태' ? 'text-[#14804a]' : 'text-[#202024]'}`}>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </DetailCard>
+        </div>
         <div className="mt-3 flex gap-2" aria-label="지원 로그인 방식">
           {['Google', 'Apple', 'Kakao'].map((provider) => (
             <span key={provider} className={`flex h-9 flex-1 items-center justify-center rounded-full text-xs font-semibold ${provider === 'Kakao' ? 'bg-[#831317] text-white' : 'border border-[#ddd6d6] bg-white text-[#6e6e6e]'}`}>
@@ -531,7 +535,7 @@ function SupportCenter({ onBack }: { onBack: () => void }) {
     {
       title: '이메일 문의',
       intro: '이메일로 자세한 문의 내용을 보내 주세요.',
-      details: ['수신 주소: help@winesippers.kr', '문의 제목과 답변받을 이메일 주소를 함께 적어 주세요.'],
+      details: ['수신 주소: team.palette2026@gmail.com', '문의 제목과 답변받을 이메일 주소를 함께 적어 주세요.'],
       email: true,
     },
   ] as const
@@ -563,7 +567,7 @@ function SupportCenter({ onBack }: { onBack: () => void }) {
                     </ul>
                     {'email' in item && item.email && (
                       <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=help%40winesippers.kr&su=Wine%20Sippers%20%EB%AC%B8%EC%9D%98"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=team.palette2026%40gmail.com&su=Wine%20Sippers%20%EB%AC%B8%EC%9D%98"
                         target="_blank"
                         rel="noreferrer"
                         className="mt-5 flex h-11 w-full items-center justify-center rounded-xl bg-[#831317] text-sm font-bold text-white"
@@ -682,7 +686,7 @@ function PrivacyPolicy({ onBack }: { onBack: () => void }) {
     ['4. 개인정보의 제3자 제공', '사용자의 동의 없이 개인정보를 외부에 제공하지 않습니다. 법령에 근거가 있거나 사용자가 사전에 동의한 경우에는 예외로 합니다.'],
     ['5. 이용자의 권리', '사용자는 언제든 자신의 개인정보를 조회·수정하거나 처리 정지 및 삭제를 요청할 수 있습니다. 설정 또는 고객센터를 통해 요청할 수 있습니다.'],
     ['6. 안전성 확보 조치', '개인정보 접근 권한 관리, 암호화, 접속 기록 보관 등 개인정보 보호를 위한 기술적·관리적 조치를 적용합니다.'],
-    ['7. 문의처', '개인정보 관련 문의는 help@winesippers.kr로 보내 주세요. 확인 후 신속하게 답변드리겠습니다.'],
+    ['7. 문의처', '개인정보 관련 문의는 team.palette2026@gmail.com으로 보내 주세요. 확인 후 신속하게 답변드리겠습니다.'],
   ] as const
   return (
     <>
@@ -767,7 +771,7 @@ function MainSettings({ setView, onBack, notify, notifications, setNotifications
           </SettingsPanel>
         </section>
 
-        <button type="button" onClick={() => setShowLogout(true)} className="mt-[25px] h-[52px] w-full text-sm leading-[normal] font-medium text-[#828282]">로그아웃</button>
+        <button type="button" data-guide-target onClick={() => setShowLogout(true)} className="mt-[25px] h-[52px] w-full text-sm leading-[normal] font-medium text-[#828282]">로그아웃</button>
       </main>
       {showLogout && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/45 px-6" role="dialog" aria-modal="true" aria-labelledby="logout-title">

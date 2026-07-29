@@ -30,6 +30,11 @@ html[data-guide-mode] article[data-guide-target][data-guide-marker="wine-record-
   right: 38px;
 }
 
+html[data-guide-mode] button[data-guide-target][data-guide-marker="settings-toggle"]::after {
+  top: -3px;
+  right: -9px;
+}
+
 @font-face {
   font-family: "Delmon Delicate Script";
   src: url("./assets/fonts/Delmon Delicate Script.otf") format("opentype");
