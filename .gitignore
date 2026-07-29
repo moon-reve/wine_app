@@ -25,3 +25,6 @@ dev-dist
 *.sw?
 .vercel
 .env*
+
+# Local archive for unused page source files
+/src/unused-pages-local/

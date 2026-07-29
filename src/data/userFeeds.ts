@@ -1,4 +1,4 @@
-import type { FigmaFeed } from '../pages/Lounge Feed'
+import type { FigmaFeed } from '../pages/LoungeFeed'
 
 const STORAGE_KEY = 'wine-app-user-feeds'
 

@@ -14,7 +14,7 @@ import feedThumb9 from '../assets/mypage/figma-feed-09.png'
 import feedThumb10 from '../assets/mypage/figma-feed-10.png'
 import feedThumb11 from '../assets/mypage/figma-feed-11.png'
 import feedThumb12 from '../assets/mypage/figma-feed-12.png'
-import { FeedPost, ImageLightbox, type FigmaFeed, type ImagePreview } from './Lounge Feed'
+import { FeedPost, ImageLightbox, type FigmaFeed, type ImagePreview } from './LoungeFeed'
 import { getUserFeeds } from '../data/userFeeds'
 
 // 마이페이지 그리드 썸네일과 정확히 같은 크롭으로 보이도록, 그리드 셀 비율(129.3:154.3)과

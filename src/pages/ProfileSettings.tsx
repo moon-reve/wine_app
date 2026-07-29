@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import BottomNav from './BottomNav'
+import BottomNav from '../components/BottomNav'
 import backIcon from '../assets/mypage/profile-back.svg'
 import selectArrowIcon from '../assets/mypage/profile-select-arrow.svg'
 import toggleKnobIcon from '../assets/mypage/profile-toggle-knob.svg'

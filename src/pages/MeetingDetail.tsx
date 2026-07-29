@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import backIcon from '../assets/images/icon-chevron-forward.svg'
 import hostAvatar from '../assets/lounge/figma/meeting-host.svg'
 import meetingPhoto from '../assets/lounge/figma/meeting-detail.png'
-import AppBottomSheet from './AppBottomSheet'
+import AppBottomSheet from '../components/AppBottomSheet'
 import {
   getLoungeMeeting,
   getLoungeMeetingParticipantCount,
