@@ -9,9 +9,6 @@ type NavItem = {
   outlineHeight: number
   filledWidth: number
   filledHeight: number
-  centerX: number
-  iconTop: number
-  labelTop: number
 }
 
 type NavProps = {
@@ -32,12 +29,12 @@ const glassGeometry: CSSProperties = {
 }
 
 const glassMaskSvg =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427 106"><path d="M371.828 20H281.054C267.509 20 254.819 26.4598 247.871 37.2425C240.887 48.0747 228.107 55.3348 213.5 55.3348C198.893 55.3348 186.122 48.083 179.129 37.2425C172.181 26.4598 159.491 20 145.946 20H55.172C35.75 20.4208 20 35.0975 20 53C20 70.9025 35.75 85.5793 55.172 86H371.828C391.25 85.5793 407 70.9025 407 53C407 35.0975 391.25 20.4208 371.828 20Z" fill="#fff"/></svg>'
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427 106" preserveAspectRatio="none"><path d="M371.828 20H281.054C267.509 20 254.819 26.4598 247.871 37.2425C240.887 48.0747 228.107 55.3348 213.5 55.3348C198.893 55.3348 186.122 48.083 179.129 37.2425C172.181 26.4598 159.491 20 145.946 20H55.172C35.75 20.4208 20 35.0975 20 53C20 70.9025 35.75 85.5793 55.172 86H371.828C391.25 85.5793 407 70.9025 407 53C407 35.0975 391.25 20.4208 371.828 20Z" fill="#fff"/></svg>'
 
 const glassMaskDataUri = `url("data:image/svg+xml,${encodeURIComponent(glassMaskSvg)}")`
 
 const ringMaskSvg =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427 106"><path d="M371.828 20H281.054C267.509 20 254.819 26.4598 247.871 37.2425C240.887 48.0747 228.107 55.3348 213.5 55.3348C198.893 55.3348 186.122 48.083 179.129 37.2425C172.181 26.4598 159.491 20 145.946 20H55.172C35.75 20.4208 20 35.0975 20 53C20 70.9025 35.75 85.5793 55.172 86H371.828C391.25 85.5793 407 70.9025 407 53C407 35.0975 391.25 20.4208 371.828 20Z" fill="none" stroke="#fff" stroke-width="0.7"/></svg>'
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 427 106" preserveAspectRatio="none"><path d="M371.828 20H281.054C267.509 20 254.819 26.4598 247.871 37.2425C240.887 48.0747 228.107 55.3348 213.5 55.3348C198.893 55.3348 186.122 48.083 179.129 37.2425C172.181 26.4598 159.491 20 145.946 20H55.172C35.75 20.4208 20 35.0975 20 53C20 70.9025 35.75 85.5793 55.172 86H371.828C391.25 85.5793 407 70.9025 407 53C407 35.0975 391.25 20.4208 371.828 20Z" fill="none" stroke="#fff" stroke-width="0.7"/></svg>'
 
 const ringMaskDataUri = `url("data:image/svg+xml,${encodeURIComponent(ringMaskSvg)}")`
 
@@ -63,9 +60,6 @@ const navItems: NavItem[] = [
     outlineHeight: 20,
     filledWidth: 20.6,
     filledHeight: 20.19,
-    centerX: 52.5,
-    iconTop: 62.63,
-    labelTop: 26.02,
   },
   {
     label: '리스트',
@@ -73,9 +67,6 @@ const navItems: NavItem[] = [
     outlineHeight: 20,
     filledWidth: 12.6,
     filledHeight: 20.6,
-    centerX: 126,
-    iconTop: 62.63,
-    labelTop: 26.02,
   },
   {
     label: '라운지',
@@ -83,9 +74,6 @@ const navItems: NavItem[] = [
     outlineHeight: 18,
     filledWidth: 20.6,
     filledHeight: 19.6,
-    centerX: 303,
-    iconTop: 65.65,
-    labelTop: 23,
   },
   {
     label: '마이',
@@ -93,9 +81,6 @@ const navItems: NavItem[] = [
     outlineHeight: 20,
     filledWidth: 15.6,
     filledHeight: 20.6,
-    centerX: 380,
-    iconTop: 65.65,
-    labelTop: 23,
   },
 ]
 
@@ -158,20 +143,14 @@ function NavButton({
   item: NavItem
   active: boolean
 } & ButtonHTMLAttributes<HTMLButtonElement>) {
-  const position = {
-    left: toNavPosition(item.centerX),
-    top: item.iconTop,
-  } satisfies CSSProperties
-
   return (
     <button
       type="button"
       data-guide-target
       aria-current={active ? 'page' : undefined}
-      className={`absolute z-10 flex h-[48px] w-16 -translate-x-1/2 flex-col items-center text-[12px] leading-[1.55] tracking-[-0.24px] transition-colors focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4e000e] ${
+      className={`relative z-10 flex h-[48px] min-w-0 flex-col items-center justify-start gap-[5px] text-[12px] leading-[1.55] tracking-[-0.24px] transition-colors focus-visible:rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4e000e] ${
         active ? 'text-[#4e000e]' : 'text-[#b2b2b2]'
       }`}
-      style={position}
       {...props}
     >
       <span
@@ -184,10 +163,7 @@ function NavButton({
       >
         <NavIcon label={item.label} active={active} />
       </span>
-      <span
-        className="absolute left-1/2 -translate-x-1/2 whitespace-nowrap font-medium"
-        style={{ top: item.labelTop }}
-      >
+      <span className="whitespace-nowrap font-medium">
         {item.label}
       </span>
     </button>
@@ -210,11 +186,6 @@ export default function BottomNav({
       className={`fixed inset-x-0 bottom-[15px] z-50 mx-auto h-28 w-full max-w-[430px] ${className}`}
     >
       <div aria-hidden="true" className="pointer-events-none absolute" style={glassGeometry}>
-        <img
-          src="/nav-assets/bottom-nav-glow.svg?v=20260728-2"
-          alt=""
-          className="absolute inset-0 size-full max-w-none"
-        />
         <div
           className="absolute inset-0"
           style={{
@@ -248,14 +219,17 @@ export default function BottomNav({
         />
       </div>
 
-      {navItems.map((item) => (
-        <NavButton
-          key={item.label}
-          item={item}
-          active={activeItem === item.label || (item.label === '마이' && activeItem === 'MY')}
-          onClick={() => onItemClick?.(item.label === '마이' ? 'MY' : item.label)}
-        />
-      ))}
+      <div className="absolute inset-x-[10px] top-[62.63px] grid h-[48px] grid-cols-[minmax(0,1fr)_minmax(0,1fr)_20%_minmax(0,1fr)_minmax(0,1fr)]">
+        {navItems.map((item, index) => (
+          <NavButton
+            key={item.label}
+            item={item}
+            active={activeItem === item.label || (item.label === '마이' && activeItem === 'MY')}
+            onClick={() => onItemClick?.(item.label === '마이' ? 'MY' : item.label)}
+            style={{ gridColumn: index < 2 ? index + 1 : index + 2 }}
+          />
+        ))}
+      </div>
 
       {expanded ? (
         <div id="bottom-nav-quick-actions" aria-label="빠른 메뉴">
