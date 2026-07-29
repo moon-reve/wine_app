@@ -15,7 +15,8 @@ import feedThumb10 from '../assets/mypage/figma-feed-10.webp'
 import feedThumb11 from '../assets/mypage/figma-feed-11.webp'
 import feedThumb12 from '../assets/mypage/figma-feed-12.webp'
 import { FeedPost, ImageLightbox, type FigmaFeed, type ImagePreview } from './LoungeFeed'
-import { getUserFeeds } from '../data/userFeeds'
+import { getFeedEdit, getUserFeeds } from '../data/userFeeds'
+import AppBottomSheet from '../components/AppBottomSheet'
 
 // 마이페이지 그리드 썸네일과 정확히 같은 크롭으로 보이도록, 그리드 셀 비율(129.3:154.3)과
 // 크롭 클래스를 그대로 재사용한다 — 비율이 다르면 같은 퍼센트 크롭이라도 다른 부분이 보인다.
@@ -36,8 +37,9 @@ const feedThumbItems = [
   { image: feedThumb12, crop: 'absolute top-[-8.05%] left-[-0.26%] h-[111.98%] w-[100.26%] max-w-none' },
 ] as const
 
-const demoFeeds: Array<{ feed: FigmaFeed; crop: string }> = feedThumbItems.map(({ image, crop }) => ({
+const demoFeeds: Array<{ feed: FigmaFeed; crop: string }> = feedThumbItems.map(({ image, crop }, index) => ({
   feed: {
+    id: `demo-feed-${index + 1}`,
     author: 'Sora Choi',
     time: '2시간 전',
     avatar: avatarImage,
@@ -46,6 +48,8 @@ const demoFeeds: Array<{ feed: FigmaFeed; crop: string }> = feedThumbItems.map((
     content:
       '어제는 와인 한 잔과 함께 향과 이야기를 천천히 음미했던 시간. 잔에 담긴 작은 취향을 발견하며, 와인을 조금 더 깊이 알아갈 수 있었어요.',
     tags: ['마스 풀라키에, 로랑주 아 라 메르 2021', '프랑스_파리', '페어링_굴'],
+    wineTags: ['마스 풀라키에, 로랑주 아 라 메르 2021'],
+    hashtags: ['프랑스_파리', '페어링_굴'],
   },
   crop,
 }))
@@ -53,12 +57,15 @@ const demoFeeds: Array<{ feed: FigmaFeed; crop: string }> = feedThumbItems.map((
 function MyFeed() {
   const navigate = useNavigate()
   const location = useLocation()
-  const targetIndex = (location.state as { index?: number } | null)?.index ?? 0
   const [imagePreview, setImagePreview] = useState<ImagePreview | null>(null)
+  const [feedToEdit, setFeedToEdit] = useState<FigmaFeed | null>(null)
   const [myFeeds] = useState(() => [
     ...getUserFeeds().map((feed) => ({ feed, crop: 'absolute inset-0 size-full object-cover' })),
-    ...demoFeeds,
+    ...demoFeeds.map(({ feed, crop }) => ({ feed: { ...feed, ...getFeedEdit(feed.id ?? '') }, crop })),
   ])
+  const targetState = location.state as { index?: number; feedId?: string } | null
+  const targetIndex =
+    (targetState?.feedId ? myFeeds.findIndex(({ feed }) => feed.id === targetState.feedId) : targetState?.index) ?? 0
   const postRefs = useRef<Array<HTMLDivElement | null>>([])
 
   useLayoutEffect(() => {
@@ -83,11 +90,23 @@ function MyFeed() {
 
       <div className="px-5 pb-8">
         {myFeeds.map(({ feed, crop }, index) => (
-          <div key={index} ref={(element) => { postRefs.current[index] = element }}>
+          <div key={feed.id ?? index} ref={(element) => { postRefs.current[index] = element }}>
             <FeedPost
               feed={feed}
               index={index}
               onOpenImage={setImagePreview}
+              headerAction={
+                <button
+                  type="button"
+                  aria-label={`${feed.author} 피드 메뉴`}
+                  onClick={() => setFeedToEdit(feed)}
+                  className="flex size-9 shrink-0 flex-col items-center justify-center gap-[3px] rounded-full"
+                >
+                  <span className="size-[3px] rounded-full bg-[#737373]" />
+                  <span className="size-[3px] rounded-full bg-[#737373]" />
+                  <span className="size-[3px] rounded-full bg-[#737373]" />
+                </button>
+              }
               imageBoxClassName={feed.preserveImageAspectRatio || feed.id?.startsWith('user-feed-') ? undefined : IMAGE_BOX_CLASS_NAME}
               imageClassName={crop}
             />
@@ -102,6 +121,21 @@ function MyFeed() {
           onIndexChange={(index) => setImagePreview((current) => (current ? { ...current, index } : current))}
         />
       ) : null}
+
+      <AppBottomSheet
+        open={feedToEdit !== null}
+        title="피드를 수정하시겠어요?"
+        message="작성한 내용과 태그를 수정할 수 있어요."
+        confirmLabel="수정하기"
+        cancelLabel="취소"
+        onClose={() => setFeedToEdit(null)}
+        onConfirm={() => {
+          if (!feedToEdit?.id) return
+          const feed = feedToEdit
+          setFeedToEdit(null)
+          navigate(`/mypage/feed/${feed.id}/edit`, { state: { feed } })
+        }}
+      />
     </div>
   )
 }

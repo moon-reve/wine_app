@@ -14,6 +14,7 @@ import ProfileSettings from './pages/ProfileSettings'
 import MypageSettings from './pages/MypageSettings'
 import Mypage from './pages/Mypage'
 import MyFeed from './pages/MyFeed'
+import FeedEdit from './pages/FeedEdit'
 import Search from './pages/Search'
 import WineDetailRed from './pages/WineDetailRed'
 import WineDetailWhite from './pages/WineDetailWhite'
@@ -103,6 +104,7 @@ function AppRoutes() {
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Route>
         <Route path="/mypage/feed" element={<MyFeed />} />
+        <Route path="/mypage/feed/:feedId/edit" element={<FeedEdit />} />
         <Route path="/question/:questionId" element={<QuestionDetail />} />
         <Route path="/meeting/:meetingId" element={<MeetingDetail />} />
         <Route path="*" element={<Navigate to="/home" replace />} />

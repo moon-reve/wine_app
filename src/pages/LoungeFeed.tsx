@@ -79,6 +79,12 @@ export type FigmaFeed = {
   content: string
   tags: string[]
   wine?: WinePin
+  wineTags?: string[]
+  personTags?: string[]
+  hashtags?: string[]
+  locationTag?: string
+  privacy?: string
+  commentsEnabled?: boolean
 }
 
 export type ImagePreview = {
@@ -286,6 +292,7 @@ export function FeedPost({
   index,
   onOpenImage,
   showHeader = true,
+  headerAction,
   imageBoxClassName,
   imageClassName,
 }: {
@@ -293,6 +300,7 @@ export function FeedPost({
   index: number
   onOpenImage: (preview: ImagePreview) => void
   showHeader?: boolean
+  headerAction?: ReactNode
   imageBoxClassName?: string
   imageClassName?: string
 }) {
@@ -400,7 +408,7 @@ export function FeedPost({
 
   return (
     <article className="font-sans">
-      {showHeader ? <FeedPostHeader feed={feed} /> : null}
+      {showHeader ? <FeedPostHeader feed={feed} action={headerAction} /> : null}
 
       <div
         className={`relative mt-4 w-full overflow-hidden ${imageBoxClassName ?? (preserveImageAspectRatio ? '' : 'h-[534px]')}`}

@@ -11,9 +11,10 @@ import toolWine from '../assets/quick-flow/tool-wine.svg'
 import toolGrid from '../assets/quick-flow/tool-grid.svg'
 import toolFilter from '../assets/quick-flow/tool-filter.svg'
 import { useCameraStream } from '../hooks/useCameraStream'
-import { addUserFeed } from '../data/userFeeds'
+import { addUserFeed, updateUserFeed } from '../data/userFeeds'
 import { useProfile } from '../context/profileContextValue'
 import { DEMO_WINE_RECORDS, useWineRecords } from '../context/wineRecordsContextValue'
+import type { FigmaFeed } from './LoungeFeed'
 
 type FeedStep = 'intro' | 'camera' | 'edit' | 'compose'
 type AspectRatio = '3:4' | '9:16' | '1:1' | 'full'
@@ -95,17 +96,26 @@ function ChipTextInput({
   )
 }
 
-function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) {
+export function FeedComposer({
+  photo,
+  onBack,
+  existingFeed,
+}: {
+  photo: string
+  onBack: () => void
+  existingFeed?: FigmaFeed
+}) {
   const navigate = useNavigate()
   const { profile } = useProfile()
   const { records } = useWineRecords()
-  const [privacy, setPrivacy] = useState('나만보기')
-  const [comments, setComments] = useState(true)
-  const [content, setContent] = useState('')
-  const [wineTags, setWineTags] = useState<string[]>([])
-  const [personTags, setPersonTags] = useState<string[]>([])
-  const [hashtags, setHashtags] = useState<string[]>([])
-  const [locationTag, setLocationTag] = useState('')
+  const isEditing = Boolean(existingFeed)
+  const [privacy, setPrivacy] = useState(existingFeed?.privacy ?? '나만보기')
+  const [comments, setComments] = useState(existingFeed?.commentsEnabled ?? true)
+  const [content, setContent] = useState(existingFeed?.content ?? '')
+  const [wineTags, setWineTags] = useState<string[]>(existingFeed?.wineTags ?? existingFeed?.tags ?? [])
+  const [personTags, setPersonTags] = useState<string[]>(existingFeed?.personTags ?? [])
+  const [hashtags, setHashtags] = useState<string[]>(existingFeed?.hashtags ?? [])
+  const [locationTag, setLocationTag] = useState(existingFeed?.locationTag ?? '')
   const [openInput, setOpenInput] = useState<'wine' | 'person' | 'hashtag' | 'location' | null>(null)
   const [isWinePickerOpen, setIsWinePickerOpen] = useState(false)
 
@@ -114,6 +124,23 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     if (!content.trim()) return
+
+    const tags = [...wineTags, ...personTags, ...hashtags, ...(locationTag ? [locationTag] : [])]
+    if (existingFeed) {
+      updateUserFeed({
+        ...existingFeed,
+        content: content.trim(),
+        tags,
+        wineTags,
+        personTags,
+        hashtags,
+        locationTag,
+        privacy,
+        commentsEnabled: comments,
+      })
+      navigate('/mypage/feed', { replace: true, state: { feedId: existingFeed.id } })
+      return
+    }
 
     const imageAspectRatio = await new Promise<number | undefined>((resolve) => {
       const image = new Image()
@@ -132,7 +159,13 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
       preserveImageAspectRatio: true,
       imagePosition: 'center',
       content: content.trim(),
-      tags: [...wineTags, ...personTags, ...hashtags, ...(locationTag ? [locationTag] : [])],
+      tags,
+      wineTags,
+      personTags,
+      hashtags,
+      locationTag,
+      privacy,
+      commentsEnabled: comments,
     })
     navigate('/lounge')
   }
@@ -141,7 +174,7 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
     <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full bg-white">
       <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-between px-5">
         <button type="button" onClick={onBack} aria-label="뒤로 가기" className="text-2xl text-[#831317]">‹</button>
-        <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-[#831317]">새 피드</h1>
+        <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-[#831317]">{isEditing ? '피드 수정' : '새 피드'}</h1>
         <button type="button" className="text-[13px] text-black/60">임시저장</button>
       </div>
     </header>
@@ -230,7 +263,7 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
       </section>
       <fieldset><legend className="mb-4 text-sm font-bold">공개 범위</legend><div className="space-y-4">{['나만보기','전체 공개','팔로워 공개'].map(x => <label key={x} className={`flex items-center gap-2 text-sm ${privacy === x ? 'font-semibold text-[#831317]' : 'text-[#949494]'}`}><input type="radio" checked={privacy === x} onChange={() => setPrivacy(x)} className="size-5 accent-[#831317]" />{x}</label>)}</div></fieldset>
       <div className="flex items-center justify-between"><b className="text-sm">댓글 허용</b><button type="button" aria-pressed={comments} onClick={() => setComments(v => !v)} className={`relative h-7 w-12 rounded-full ${comments ? 'bg-[#831317]' : 'bg-[#bbb]'}`}><span className={`absolute top-[3px] size-[22px] rounded-full bg-white transition-transform ${comments ? 'left-[23px]' : 'left-[3px]'}`} /></button></div>
-      <button type="submit" className="h-12 w-full rounded-[10px] bg-[#831317] text-[13px] font-bold text-white">게시 하기</button>
+      <button type="submit" className="h-12 w-full rounded-[10px] bg-[#831317] text-[13px] font-bold text-white">{isEditing ? '수정하기' : '게시 하기'}</button>
     </form>
 
     {isWinePickerOpen ? (
