@@ -184,7 +184,7 @@ function Mypage() {
   return (
     <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '1546:4825' : activeTab === 'likes' ? '1546:5430' : '1546:5323'}>
       <header className="flex w-full items-center justify-between px-5 pt-[max(18px,env(safe-area-inset-top))] pb-3 text-[#831317]" data-node-id="577:105">
-        <h1 className="font-playfair shrink-0 text-[32px] leading-[1.3] font-normal tracking-[-0.64px] text-[#831317]">My Cellar</h1>
+        <h1 className="h-10 shrink-0 font-delmon text-[32px] leading-[1.6] font-normal text-[#831317]">My Cellar</h1>
 
         <div className="flex shrink-0 items-center gap-1 overflow-hidden" data-node-id="577:107">
           <button
