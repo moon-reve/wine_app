@@ -4,6 +4,7 @@ import googleIcon from '../assets/login/google.png'
 import kakaoIcon from '../assets/login/kakao.png'
 import naverIcon from '../assets/login/naver.png'
 import wineSippersLogo from '../assets/onboarding/wine-sippers-logo-white.svg'
+import { useDesignFrameHeight } from '../utils/useDesignFrameHeight'
 
 const slides = [
   {
@@ -37,6 +38,7 @@ const slides = [
 
 function Onboarding() {
   const navigate = useNavigate()
+  const containerHeight = useDesignFrameHeight()
   const videoRefs = useRef<Array<HTMLVideoElement | null>>([])
   const [activeSlide, setActiveSlide] = useState(0)
   const [isLogin, setIsLogin] = useState(false)
@@ -75,7 +77,10 @@ function Onboarding() {
   }
 
   return (
-    <main className="relative mx-auto h-dvh-zoomed w-full max-w-[430px] overflow-hidden bg-black text-white">
+    <main
+      className="relative mx-auto w-full max-w-[430px] overflow-hidden bg-black text-white"
+      style={{ height: `${containerHeight}px` }}
+    >
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
         <div
           className="flex h-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
@@ -129,7 +134,10 @@ function Onboarding() {
           </button>
         </header>
 
-        <section className="absolute inset-x-0 bottom-[164px] overflow-hidden" aria-live="polite">
+        <section
+          className="absolute inset-x-0 bottom-[calc(164px+env(safe-area-inset-bottom))] overflow-hidden"
+          aria-live="polite"
+        >
           <div
             className="flex w-full transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none"
             style={{ transform: `translate3d(-${activeSlide * 100}%, 0, 0)` }}
@@ -162,7 +170,7 @@ function Onboarding() {
 
         <button
           type="button"
-          className={`absolute right-5 bottom-8 left-5 flex h-[52px] items-center justify-center rounded-full text-[16px] text-white transition-colors duration-300 ${
+          className={`absolute right-5 bottom-[calc(32px+env(safe-area-inset-bottom))] left-5 flex h-[52px] items-center justify-center rounded-full text-[16px] text-white transition-colors duration-300 ${
             isLastSlide
               ? 'border border-[#831317] bg-[#831317]'
               : 'glass-tab'
