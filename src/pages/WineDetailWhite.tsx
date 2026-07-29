@@ -86,10 +86,10 @@ export default function WineDetailWhite() {
         <p className="mt-1.5 text-[22px] leading-[1.2] font-bold whitespace-nowrap text-[#831317]">{formatPrice(wine.price)}</p>
         <div className="mt-5 flex w-full flex-wrap justify-end gap-2">{wine.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}</div>
       </div>
-      <div className="absolute top-[169px] left-0 z-0 h-[129.302vw] max-h-[556px] w-[40%]">
+      <div className="pointer-events-none absolute top-[169px] left-0 z-0 h-[129.302vw] max-h-[556px] w-[40%]">
         <img src={heroWineImage} alt={wine.nameKo} className="size-full object-contain" />
       </div>
-      <div className="absolute top-[calc(169px+min(70.93vw,305px))] left-[7.209%] z-[1] flex aspect-[412.388/305.537] h-auto w-[95.904%] items-center justify-center">
+      <div className="pointer-events-none absolute top-[calc(169px+min(70.93vw,305px))] left-[7.209%] z-[1] flex aspect-[412.388/305.537] h-auto w-[95.904%] items-center justify-center">
         <div className="aspect-[379.394/252.518] h-auto w-[92%] -rotate-[8.45deg]">
           <img src={grapes} alt="" className="size-full max-w-none object-cover" />
         </div>

@@ -87,10 +87,10 @@ export default function WineDetailRose() {
         <div className="mt-5 flex w-full flex-wrap justify-end gap-2">{wine.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}</div>
       </div>
 
-      <div className="absolute top-[152px] left-0 z-0 h-[134.651vw] max-h-[579px] w-[40%]">
+      <div className="pointer-events-none absolute top-[152px] left-0 z-0 h-[134.651vw] max-h-[579px] w-[40%]">
         <img src={heroWineImage} alt={wine.nameKo} className="size-full object-contain" />
       </div>
-      <div className="absolute top-[calc(152px+min(90.233vw,388px))] left-[19.07%] z-[1] aspect-[348/235] h-auto w-[80.93%]" aria-hidden="true">
+      <div className="pointer-events-none absolute top-[calc(152px+min(90.233vw,388px))] left-[19.07%] z-[1] aspect-[348/235] h-auto w-[80.93%]" aria-hidden="true">
         <img src={roseGrapes} alt="" className="size-full object-cover" />
       </div>
 

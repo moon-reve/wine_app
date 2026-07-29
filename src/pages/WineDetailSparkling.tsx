@@ -90,13 +90,13 @@ export default function WineDetailSparkling() {
         <div className="mt-5 flex w-full flex-wrap justify-end gap-2">{wine.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}</div>
       </div>
 
-      <div className="absolute top-[135px] left-[-33.256%] z-0 aspect-square h-auto w-[133.256%] rotate-180 overflow-hidden" aria-hidden="true">
+      <div className="pointer-events-none absolute top-[135px] left-[-33.256%] z-0 aspect-square h-auto w-[133.256%] rotate-180 overflow-hidden" aria-hidden="true">
         <img src={bubbles} alt="" className="size-full object-cover" />
       </div>
-      <div className="absolute top-[169px] left-0 z-[1] h-[129.302vw] max-h-[556px] w-[40%]">
+      <div className="pointer-events-none absolute top-[169px] left-0 z-[1] h-[129.302vw] max-h-[556px] w-[40%]">
         <img src={heroWineImage} alt={wine.nameKo} className="size-full object-contain" />
       </div>
-      <div className="absolute top-[455px] left-[74.419%] z-[1] h-[523px] w-[42.093%] -rotate-[41.74deg] overflow-hidden" aria-hidden="true">
+      <div className="pointer-events-none absolute top-[455px] left-[74.419%] z-[1] h-[523px] w-[42.093%] -rotate-[41.74deg] overflow-hidden" aria-hidden="true">
         <img src={sparklingGlass} alt="" className="absolute top-0 left-[-169px] h-[523px] w-[523px] max-w-none" />
       </div>
 

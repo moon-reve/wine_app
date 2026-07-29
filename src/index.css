@@ -272,6 +272,16 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
     text-align: right;
   }
 
+  @media (max-width: 360px) {
+    .wine-detail-name-en {
+      font-size: 34px;
+    }
+
+    .wine-detail-name-ko {
+      font-size: 20px;
+    }
+  }
+
   .chatbot-orb-frame {
     opacity: 0;
     user-select: none;

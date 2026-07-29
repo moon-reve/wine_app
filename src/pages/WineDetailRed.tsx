@@ -95,10 +95,10 @@ export default function WineDetailRed() {
         <div className="mt-5 flex w-full flex-wrap justify-end gap-2">{wine.tags.map((tag) => <Chip key={tag}>{tag}</Chip>)}</div>
       </div>
 
-      <div className="absolute top-[169px] left-0 z-0 h-[129.302vw] max-h-[556px] w-[40%]">
+      <div className="pointer-events-none absolute top-[169px] left-0 z-0 h-[129.302vw] max-h-[556px] w-[40%]">
         <img src={heroWineImage} alt={`${wine.nameKo} ${wine.vintage}`} className="size-full object-contain" />
       </div>
-      <div className="absolute top-[calc(169px+min(77.991vw,335.36px))] left-[19.302%] z-[1] flex aspect-[373.32/287.943] h-auto w-[86.819%] items-center justify-center">
+      <div className="pointer-events-none absolute top-[calc(169px+min(77.991vw,335.36px))] left-[19.302%] z-[1] flex aspect-[373.32/287.943] h-auto w-[86.819%] items-center justify-center">
         <div className="aspect-[333.981/222.763] h-auto w-[89.462%] rotate-[12.12deg]">
           <img src={grapes} alt="" className="size-full max-w-none object-cover" />
         </div>
