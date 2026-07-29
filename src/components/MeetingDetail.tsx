@@ -68,7 +68,7 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
     >
       <header
         data-node-id="624:127"
-        className="sticky top-0 z-10 h-[calc(70px+env(safe-area-inset-top))] w-full shrink-0 bg-white"
+        className="relative z-10 h-[calc(70px+env(safe-area-inset-top))] w-full shrink-0 bg-white"
       >
         <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-center">
           <button

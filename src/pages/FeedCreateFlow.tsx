@@ -75,7 +75,7 @@ function ChipTextInput({
           setValue('')
         }}
         placeholder={placeholder}
-        className="w-24 text-[13px] outline-none placeholder:text-black/30"
+        className="w-24 text-base outline-none placeholder:text-black/30"
       />
       <button
         type="button"
@@ -138,7 +138,7 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
     </header>
     <form className="space-y-6 px-5 pt-[11px]" onSubmit={handleSubmit}>
       <section><h2 className="mb-[10px] text-sm font-bold">사진 첨부</h2><div className="flex gap-3"><img src={photo} alt="첨부된 사진" className="size-[90px] rounded-[10px] object-cover" /><button type="button" className="size-[90px] rounded-[10px] border border-dashed border-[#d9d9d9] bg-[#f2f2f2] text-[26px] text-[#737373]">+</button></div></section>
-      <label className="block"><span className="mb-[10px] block text-sm font-bold">피드 내용</span><textarea value={content} onChange={(event) => setContent(event.target.value)} className="h-[130px] w-full resize-none rounded-[10px] border border-[#d6d6d6] px-[10px] py-4 text-[13px] outline-[#831317] placeholder:text-black/20" placeholder="오늘 마신 와인과 순간을 공유해보세요." /></label>
+      <label className="block"><span className="mb-[10px] block text-sm font-bold">피드 내용</span><textarea value={content} onChange={(event) => setContent(event.target.value)} className="h-[130px] w-full resize-none rounded-[10px] border border-[#d6d6d6] px-[10px] py-4 text-base outline-[#831317] placeholder:text-black/20" placeholder="오늘 마신 와인과 순간을 공유해보세요." /></label>
       <section>
         <h2 className="mb-[10px] text-sm font-bold">와인 태그</h2>
         <div className="flex flex-wrap gap-2">
