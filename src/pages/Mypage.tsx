@@ -25,7 +25,7 @@ import ratingStarIcon from '../assets/mypage/rating-star.svg'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
 import { useLikedWines } from '../context/likedWinesContextValue'
 import { DEMO_WINE_RECORDS, useWineRecords } from '../context/wineRecordsContextValue'
-import { useProfile } from '../context/profileContextValue'
+import { DEFAULT_PROFILE_IMAGE, useProfile } from '../context/profileContextValue'
 import { getUserFeeds } from '../data/userFeeds'
 
 const demoFeedItems = [
@@ -216,6 +216,9 @@ function Mypage() {
                   src={profile.image}
                   alt={profile.nickname}
                   className="absolute top-[0.47%] left-[-6.93%] h-[146.46%] w-[119.59%] max-w-none"
+                  onError={(event) => {
+                    event.currentTarget.src = DEFAULT_PROFILE_IMAGE
+                  }}
                 />
               </div>
             </div>

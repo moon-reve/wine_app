@@ -1,6 +1,8 @@
 import { createContext, useContext } from 'react'
 import defaultProfilePhoto from '../assets/mypage/figma-profile-photo.webp'
 
+export const DEFAULT_PROFILE_IMAGE = defaultProfilePhoto
+
 export type ProfileInfo = {
   nickname: string
   bio: string
@@ -16,23 +18,48 @@ const DEFAULT_PROFILE: ProfileInfo = {
   region: '서울특별시 강남구',
   wineStyles: ['#레드와인', '#소비뇽', '#과일안주러버'],
   isPublic: true,
-  image: defaultProfilePhoto,
+  image: DEFAULT_PROFILE_IMAGE,
 }
 
 const STORAGE_KEY = 'wine-app-profile-settings'
+
+function resolveStoredProfileImage(image: unknown) {
+  if (typeof image !== 'string' || !image) return DEFAULT_PROFILE_IMAGE
+
+  const isTemporaryImage = image.startsWith('blob:')
+  const isBundledDefaultImage =
+    image.includes('/figma-profile-photo') ||
+    image.includes('/mypage-avatar')
+
+  return isTemporaryImage || isBundledDefaultImage
+    ? DEFAULT_PROFILE_IMAGE
+    : image
+}
 
 export function loadStoredProfile(): ProfileInfo {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
     if (!raw) return DEFAULT_PROFILE
-    return { ...DEFAULT_PROFILE, ...(JSON.parse(raw) as Partial<ProfileInfo>) }
+    const storedProfile = JSON.parse(raw) as Partial<ProfileInfo>
+
+    return {
+      ...DEFAULT_PROFILE,
+      ...storedProfile,
+      image: resolveStoredProfileImage(storedProfile.image),
+    }
   } catch {
     return DEFAULT_PROFILE
   }
 }
 
 export function storeProfile(profile: ProfileInfo) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(profile))
+  const storedProfile: Partial<ProfileInfo> = { ...profile }
+
+  if (profile.image === DEFAULT_PROFILE_IMAGE) {
+    delete storedProfile.image
+  }
+
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(storedProfile))
 }
 
 type ProfileContextValue = {

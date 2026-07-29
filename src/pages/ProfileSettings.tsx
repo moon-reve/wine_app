@@ -4,7 +4,7 @@ import BottomNav from '../components/BottomNav'
 import backIcon from '../assets/mypage/profile-back.svg'
 import selectArrowIcon from '../assets/mypage/profile-select-arrow.svg'
 import toggleKnobIcon from '../assets/mypage/profile-toggle-knob.svg'
-import { useProfile } from '../context/profileContextValue'
+import { DEFAULT_PROFILE_IMAGE, useProfile } from '../context/profileContextValue'
 
 const REGION_OPTIONS = [
   '서울특별시 강남구',
@@ -19,6 +19,39 @@ const REGION_OPTIONS = [
   '광주광역시 서구',
   '제주특별자치도 제주시',
 ] as const
+
+function createPersistentProfileImage(file: File) {
+  return new Promise<string>((resolve, reject) => {
+    const temporaryUrl = URL.createObjectURL(file)
+    const sourceImage = new Image()
+
+    sourceImage.onload = () => {
+      const maxDimension = 720
+      const scale = Math.min(1, maxDimension / Math.max(sourceImage.width, sourceImage.height))
+      const canvas = document.createElement('canvas')
+      canvas.width = Math.max(1, Math.round(sourceImage.width * scale))
+      canvas.height = Math.max(1, Math.round(sourceImage.height * scale))
+
+      const context = canvas.getContext('2d')
+      if (!context) {
+        URL.revokeObjectURL(temporaryUrl)
+        reject(new Error('프로필 이미지를 처리할 수 없습니다.'))
+        return
+      }
+
+      context.drawImage(sourceImage, 0, 0, canvas.width, canvas.height)
+      URL.revokeObjectURL(temporaryUrl)
+      resolve(canvas.toDataURL('image/webp', 0.82))
+    }
+
+    sourceImage.onerror = () => {
+      URL.revokeObjectURL(temporaryUrl)
+      reject(new Error('프로필 이미지를 불러올 수 없습니다.'))
+    }
+
+    sourceImage.src = temporaryUrl
+  })
+}
 
 function ProfileSettings() {
   const navigate = useNavigate()
@@ -44,10 +77,17 @@ function ProfileSettings() {
     navigate('/mypage')
   }
 
-  const handlePhotoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handlePhotoChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0]
     if (!file) return
-    setImage(URL.createObjectURL(file))
+
+    try {
+      setImage(await createPersistentProfileImage(file))
+    } catch {
+      setImage(DEFAULT_PROFILE_IMAGE)
+    } finally {
+      event.target.value = ''
+    }
   }
 
   const handleNavigation = (label: string) => {
@@ -75,7 +115,14 @@ function ProfileSettings() {
 
         <section className="mt-[31px] flex flex-col items-center">
           <div className="relative h-[99px] w-[97px] overflow-hidden rounded-[50px]" data-node-id="1546:5037">
-            <img src={image} alt="프로필 사진" className="absolute top-[0.47%] left-[-6.93%] h-[146.46%] w-[119.59%] max-w-none" />
+            <img
+              src={image}
+              alt="프로필 사진"
+              className="absolute top-[0.47%] left-[-6.93%] h-[146.46%] w-[119.59%] max-w-none"
+              onError={(event) => {
+                event.currentTarget.src = DEFAULT_PROFILE_IMAGE
+              }}
+            />
           </div>
           <input ref={photoInputRef} type="file" accept="image/*" className="hidden" onChange={handlePhotoChange} />
           <button type="button" onClick={() => photoInputRef.current?.click()} className="mt-3 text-xs leading-[normal] font-medium tracking-[-0.24px] text-[#831317]">프로필 사진 변경</button>
