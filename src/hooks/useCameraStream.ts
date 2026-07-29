@@ -73,7 +73,7 @@ export function useCameraStream(enabled: boolean, initialFacingMode: FacingMode 
     requestCamera(facingMode)
   }, [requestCamera, facingMode])
 
-  const capture = useCallback(() => {
+  const capture = useCallback(({ cropToPreview = true }: { cropToPreview?: boolean } = {}) => {
     const video = videoRef.current
     if (!video || video.videoWidth === 0) return null
 
@@ -82,10 +82,12 @@ export function useCameraStream(enabled: boolean, initialFacingMode: FacingMode 
     let coveredWidth = video.videoWidth
     let coveredHeight = video.videoHeight
 
-    if (cameraAspect > previewAspect) {
-      coveredWidth = video.videoHeight * previewAspect
-    } else {
-      coveredHeight = video.videoWidth / previewAspect
+    if (cropToPreview) {
+      if (cameraAspect > previewAspect) {
+        coveredWidth = video.videoHeight * previewAspect
+      } else {
+        coveredHeight = video.videoWidth / previewAspect
+      }
     }
 
     const sourceWidth = coveredWidth / zoom

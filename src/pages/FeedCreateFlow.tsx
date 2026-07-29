@@ -258,7 +258,7 @@ export default function FeedCreateFlow() {
   const navigate = useNavigate()
   const [step, setStep] = useState<FeedStep>('intro')
   const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null)
-  const [aspectRatio, setAspectRatio] = useState<AspectRatio>('1:1')
+  const [aspectRatio, setAspectRatio] = useState<AspectRatio>('full')
   const {
     videoRef,
     facingMode,
@@ -332,9 +332,9 @@ export default function FeedCreateFlow() {
       thumbnail={capturedPhoto ?? feedThumb}
       onSwitchCamera={switchCamera}
       onCapture={() => {
-        const photo = capture()
+        const photo = capture({ cropToPreview: false })
         if (photo) setCapturedPhoto(photo)
-        setAspectRatio('1:1')
+        setAspectRatio('full')
         setStep('edit')
       }}
     />

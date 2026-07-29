@@ -104,7 +104,7 @@ function List() {
       className={`${view === 'map' ? 'flex h-dvh min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
       data-node-id="690:403"
     >
-      <Header tone="light" title="LIST" titleColorClassName="text-[#831317]" wineIcons />
+      <Header tone="light" title="List" titleColorClassName="text-[#831317]" wineIcons />
 
       <main className={`px-5 pt-5 ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
         <nav aria-label="리스트 보기 방식" className="relative z-20 grid h-[34px] w-full grid-cols-2 border-b border-black/15 bg-white font-noto">
