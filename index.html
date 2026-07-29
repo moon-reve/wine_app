@@ -34,6 +34,62 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.webp" />
 
     <title>wine-app-vite</title>
+    <script>
+      (() => {
+        const recoveryKey = 'viner-app-shell-recovery-v1'
+        let isRecovering = false
+
+        const recoverAppShell = async () => {
+          const root = document.querySelector('#root')
+          if (isRecovering || root?.childElementCount || sessionStorage.getItem(recoveryKey)) {
+            return
+          }
+
+          isRecovering = true
+          sessionStorage.setItem(recoveryKey, '1')
+
+          try {
+            if ('serviceWorker' in navigator) {
+              const registrations = await navigator.serviceWorker.getRegistrations()
+              await Promise.allSettled(
+                registrations.map((registration) => registration.unregister()),
+              )
+            }
+          } catch {
+            // Continue with a network reload even if the browser blocks SW access.
+          }
+
+          try {
+            if ('caches' in window) {
+              const cacheNames = await caches.keys()
+              await Promise.allSettled(
+                cacheNames
+                  .filter((cacheName) => cacheName.startsWith('workbox-precache'))
+                  .map((cacheName) => caches.delete(cacheName)),
+              )
+            }
+          } catch {
+            // Cache Storage can be unavailable in restricted browser modes.
+          }
+
+          const recoveryUrl = new URL(window.location.href)
+          recoveryUrl.searchParams.set('app-recovery', Date.now().toString())
+          window.location.replace(recoveryUrl)
+        }
+
+        window.addEventListener(
+          'error',
+          (event) => {
+            if (event.target instanceof HTMLScriptElement && event.target.type === 'module') {
+              void recoverAppShell()
+            }
+          },
+          true,
+        )
+
+        window.setTimeout(() => void recoverAppShell(), 2500)
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -55,7 +55,7 @@ export default defineConfig({
     tailwindcss(),
     kakaoPlaceImageDevMiddleware(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
       devOptions: { enabled: false },
       includeAssets: ['favicon.svg', 'apple-touch-icon.webp'],
       manifest: {
