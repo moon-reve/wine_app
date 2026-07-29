@@ -129,12 +129,20 @@ function MagazineDetail() {
 
       <main className="px-5 pt-[88px] pb-[137px]">
         <section>
-          <ChapterHeading>Chapter 01</ChapterHeading>
-          <h2 className="mt-3 text-[24px] leading-[1.3] font-medium text-[#1a1a1a]">영동, '청수'라는 이름의<br />소비뇽 블랑</h2>
-          <p className="mt-7 text-[16px] leading-[1.6] tracking-[-0.32px]">
-            영동은 40여 개의 농가형 와이너리가 모인 국내 최대 포도 산지입니다. 주인공은 국산 청포도 품종 '청수(淸水)'. 시나브로 와이너리의 '청수 화이트'는 시트러스와 흰 꽃 향이 겹겹이 피어나는 드라이 화이트로, 아시아 와인트로피 금상을 여러 해 수상하며 국산 화이트의 기준이 됐습니다.
-          </p>
-          <img src={illustration} alt="충청북도 영동군 와인 지도" className="mx-auto mt-6 h-auto w-full max-w-[300px]" />
+          <div className="relative min-h-[423px]">
+            <div className="relative z-10">
+              <ChapterHeading>Chapter 01</ChapterHeading>
+              <h2 className="mt-3 text-[24px] leading-[1.3] font-medium text-[#1a1a1a]">영동, '청수'라는 이름의<br />소비뇽 블랑</h2>
+            </div>
+            <p className="relative z-10 mt-7 w-[45vw] max-w-[194px] text-[16px] leading-[1.6] tracking-[-0.32px]">
+              영동은 40여 개의 농가형 와이너리가 모인 국내 최대 포도 산지입니다. 주인공은 국산 청포도 품종 '청수(淸水)'. 시나브로 와이너리의 '청수 화이트'는 시트러스와 흰 꽃 향이 겹겹이 피어나는 드라이 화이트로, 아시아 와인트로피 금상을 여러 해 수상하며 국산 화이트의 기준이 됐습니다.
+            </p>
+            <img
+              src={illustration}
+              alt="충청북도 영동군 와인 지도"
+              className="absolute top-[39px] right-[-20px] z-0 h-auto max-h-[50svh] w-[55vw] max-w-[237px] object-contain object-top max-[360px]:top-[126px]"
+            />
+          </div>
           <WineryInfo name="시나브로 와이너리" address="충북 영동군 심천면 약목2길 26" description="농가형 와이너리 최초 HACCP 인증 · 가족 소믈리에" image={sinabroWinery} />
         </section>
 
