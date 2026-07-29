@@ -9,6 +9,8 @@ export type WineRecordEntry = {
   date: string
   rating: number | string
   review: string
+  summary?: string
+  detailNote?: string
   image: string | null
   crop?: string
   location: string
@@ -31,13 +33,19 @@ export const DEMO_WINE_RECORDS: WineRecordEntry[] = [
     date: '2026.07.01',
     rating: '5.0',
     review: '친구들과 저녁을 먹으며 천천히 마셨다. 묵직한 가죽 향 뒤로 잘 익은 베리 향이 올라와 마지막 잔까지 편안하게 즐겼다.',
+    summary: '묵직하고 가죽 향과 베리 향의 조화가 완벽합니다.',
+    detailNote: '짙은 과실 향과 묵직한 바디감이 인상적인 와인이에요. 처음에는 탄닌이 조금 강하게 느껴지지만 시간이 지나면서 한층 부드럽고 균형 잡힌 맛으로 변해요. 스테이크나 양고기처럼 풍미가 진한 육류 요리와 잘 어울렸고, 특별한 날 천천히 즐기기 좋은 와인이었어요.',
     image: wineImage1,
     crop: 'absolute top-[-9.47%] left-[-9.01%] h-[116.41%] w-[116.46%] max-w-none',
-    location: '',
-    companions: '',
-    pairing: '',
-    tastingNotes: EMPTY_TASTING_NOTES,
-    profileValues: EMPTY_PROFILE_VALUES,
+    location: '집에서',
+    companions: '친구와',
+    pairing: '안심 스테이크',
+    tastingNotes: {
+      향: '블랙체리, 체리, 오크',
+      풍미: '잘 익은 베리의 진한 맛, 바닐라, 초콜릿, 약간의 향신료',
+      여운: '부드러운 타닌, 은은한 오크 향',
+    },
+    profileValues: { 바디: 54, 탄닌: 37, 산도: 72, 단맛: 44 },
     privacy: '나만보기',
   },
   {

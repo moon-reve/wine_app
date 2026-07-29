@@ -29,6 +29,7 @@ import MagazineDetail from './pages/MagazineDetail'
 import Chatbot from './pages/Chatbot'
 import CameraFlow from './pages/CameraFlow'
 import WineRecord from './pages/WineRecord'
+import WineRecordDetail from './pages/WineRecordDetail'
 import Splash from './pages/Splash'
 import Onboarding from './pages/Onboarding'
 import DesktopGuide from './pages/DesktopGuide'
@@ -88,6 +89,7 @@ function AppRoutes() {
         <Route path="/challenge/continents" element={<ChallengeDetails />} />
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/record" element={<WineRecord />} />
+        <Route path="/record/:recordId" element={<WineRecordDetail />} />
         <Route path="/feed/create" element={<CameraFlow mode="feed" />} />
         <Route path="/wine-search" element={<CameraFlow mode="search" />} />
         <Route element={<AppLayout />}>

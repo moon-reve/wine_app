@@ -53,13 +53,28 @@ type WineReviewCardData = {
   crop?: string
 }
 
-function WineReviewCard({ review, onDelete }: { review: WineReviewCardData; onDelete: () => void }) {
+function WineReviewCard({ review, onOpen, onDelete }: { review: WineReviewCardData; onOpen: () => void; onDelete: () => void }) {
   return (
-    <article className="relative flex h-[166px] w-full items-start gap-[18px] rounded-[14px] border border-[#e3dede] bg-white px-4 py-[18px]">
+    <article
+      role="button"
+      tabIndex={0}
+      aria-label={`${review.name} 기록 상세보기`}
+      onClick={onOpen}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          onOpen()
+        }
+      }}
+      className="relative flex h-[166px] w-full cursor-pointer items-start gap-[18px] rounded-[14px] border border-[#e3dede] bg-white px-4 py-[18px]"
+    >
       <button
         type="button"
         aria-label={`${review.name} 기록 삭제`}
-        onClick={onDelete}
+        onClick={(event) => {
+          event.stopPropagation()
+          onDelete()
+        }}
         className="absolute top-2 right-2 flex size-6 items-center justify-center rounded-full bg-black/5 text-sm text-[#9e9e9e] hover:bg-black/10 hover:text-[#831317]"
       >
         ×
@@ -340,6 +355,7 @@ function Mypage() {
                 <WineReviewCard
                   key={review.id}
                   review={review}
+                  onOpen={() => navigate(`/record/${review.id}`)}
                   onDelete={() => (review.id.startsWith('demo-') ? hideDemoRecord(review.id) : deleteRecord(review.id))}
                 />
               ))}

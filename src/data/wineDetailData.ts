@@ -87,6 +87,19 @@ export function resolveWineImage(wine: WineDetail) {
   return wineImages[`../assets/images/wines/${fileName}`] ?? ''
 }
 
+function normalizeWineName(name: string) {
+  return name
+    .replace(/\s+\d{4}$/, '')
+    .replaceAll('쉐어', '셰어')
+    .replace(/\s/g, '')
+    .toLocaleLowerCase('ko-KR')
+}
+
+export function findWineDetailByName(name: string) {
+  const normalizedName = normalizeWineName(name)
+  return wines.find((wine) => normalizeWineName(wine.nameKo) === normalizedName)
+}
+
 export function getWineDetailData(wineId: string) {
   const wine = wines.find((item) => item.id === wineId)
   if (!wine) throw new Error(`와인 상세 데이터를 찾을 수 없습니다: ${wineId}`)

@@ -180,6 +180,8 @@ export default function WineRecord() {
       date: (drankDate || new Date().toISOString().slice(0, 10)).replaceAll('-', '.'),
       rating,
       review: oneLineNote.trim() || detailNote.trim(),
+      summary: oneLineNote.trim(),
+      detailNote: detailNote.trim(),
       image: wineImages[0]?.url ?? null,
       location,
       companions,
