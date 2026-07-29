@@ -273,7 +273,7 @@ function Mypage() {
             <button type="button" className="h-[34px] rounded-lg bg-[#f2f2f2] text-[13px] leading-[normal] font-normal tracking-[-0.26px] text-black">프로필 공유</button>
           </div>
 
-          <div className="mt-[25px] flex justify-between gap-0 min-[390px]:justify-start min-[390px]:gap-[15px]">
+          <div className="mt-[37px] flex justify-between gap-0 min-[390px]:justify-start min-[390px]:gap-[15px]">
             <div className="flex w-[78px] flex-col items-center gap-[7px]">
               <img src={badgesCircleImage} alt="" className="size-[78px] rounded-full object-cover" aria-hidden="true" />
               <span className="text-sm leading-[normal] font-normal tracking-[-0.28px] text-black">Badges</span>
@@ -304,7 +304,7 @@ function Mypage() {
           </div>
         </section>
 
-        <section className="mt-[49px]">
+        <section className="mt-[37px]">
           <div className="grid h-[30px] grid-cols-3 border-b border-black/15">
             <button
               type="button"
