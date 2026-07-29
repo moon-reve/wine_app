@@ -18,14 +18,14 @@ const filters = [
 
 function RecommendationItem({ wine, onClick }: { wine: WineDetail; onClick: () => void }) {
   return (
-    <button type="button" onClick={onClick} className="flex w-[132px] shrink-0 flex-col items-center gap-3">
+    <button type="button" onClick={onClick} className="flex w-[31%] min-w-[112px] max-w-[132px] shrink-0 flex-col items-center gap-3">
       <div
-        className="flex size-[89.26px] shrink-0 items-center justify-center overflow-hidden rounded-full"
+        className="flex aspect-square w-[68%] shrink-0 items-center justify-center overflow-hidden rounded-full"
         style={{ backgroundColor: WINE_TYPE_BG_COLOR[wine.type] }}
       >
         <img src={resolveWineImage(wine)} alt={wine.nameKo} className="h-[85%] w-auto max-w-[75%] object-contain" />
       </div>
-      <p className="line-clamp-2 w-[89.26px] text-center text-[14px] leading-[18px] font-medium tracking-[-0.5px] text-[#6b6b6b]">{wine.nameKo}</p>
+      <p className="line-clamp-2 w-[68%] text-center text-[14px] leading-[18px] font-medium tracking-[-0.5px] text-[#6b6b6b]">{wine.nameKo}</p>
     </button>
   )
 }
@@ -40,9 +40,9 @@ function FilterGroup({
   onSelect: (option: string) => void
 }) {
   return (
-    <div className="flex w-full flex-col gap-2.5 overflow-hidden">
+    <div className="flex w-full flex-col gap-2.5">
       <h3 className="text-[13px] leading-[1.2] font-medium text-[#831317]">{group.title}</h3>
-      <div className="flex w-full flex-wrap items-start gap-2 overflow-hidden">
+      <div className="flex w-full flex-wrap items-start gap-2">
         {group.options.map((option) => {
           const isSelected = option === selected
           return (
@@ -117,53 +117,53 @@ function TodaysPick() {
   }
 
   return (
-    <div className="mx-auto w-full max-w-107.5 overflow-hidden bg-white pt-[env(safe-area-inset-top)] text-[#0d0d0d]" data-node-id="1546:6383">
-      <div className="relative min-h-[1307px] w-full">
-      <header className="absolute inset-x-0 top-0 z-10 h-17.5 w-full overflow-hidden bg-white">
-        <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-[23px] left-4.5 flex size-6 items-center justify-center">
+    <div className="mx-auto min-h-screen w-full max-w-107.5 overflow-x-hidden bg-white pt-[env(safe-area-inset-top)] text-[#0d0d0d]" data-node-id="1546:6383">
+      <header className="grid h-17.5 w-full grid-cols-[40px_1fr_40px] items-center bg-white px-[4.186%]">
+        <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="flex size-6 items-center justify-center">
           <img src={backIcon} alt="" className="size-6 rotate-180" />
         </button>
-        <h1 className="absolute top-6.5 left-43 w-[85px] text-[18px] leading-none font-bold tracking-[-0.54px] text-[#831317]">오늘의 추천</h1>
+        <h1 className="text-center text-[18px] leading-none font-bold tracking-[-0.54px] text-[#831317]">오늘의 추천</h1>
+        <span aria-hidden="true" />
       </header>
 
-      <section className="absolute top-[103px] left-0 h-[395px] w-full" aria-label="오늘의 추천 와인">
-        <p className="absolute top-0 left-[217px] text-[12px] leading-[1.2] font-medium tracking-[-0.24px] whitespace-nowrap text-[#737373]">
+      <section className="relative mt-[33px] h-[395px] w-full" aria-label="오늘의 추천 와인">
+        <p className="absolute top-0 right-[5.814%] text-[12px] leading-[1.2] font-medium tracking-[-0.24px] whitespace-nowrap text-[#737373]">
           <span className="text-[#831317]">{formatStars(wine.rating)} {wine.rating.toFixed(1)}</span> · 리뷰 {wine.reviewCount.toLocaleString()} · 저장 {wine.saveCount.toLocaleString()}
         </p>
-        <p className="absolute top-[19px] right-[25px] w-[255px] text-right font-['Delmon_Delicate','Playfair_Display',serif] text-[42px] leading-[1.3] font-normal tracking-[-1.26px] text-black">
+        <p className="absolute top-[19px] right-[5.814%] w-[59.302%] text-right font-['Delmon_Delicate','Playfair_Display',serif] text-[42px] leading-[1.3] font-normal tracking-[-1.26px] text-black">
           {wine.nameEn}
         </p>
-        <p className="font-delmon-script absolute top-[104px] left-5 w-[255px] text-right text-[100px] leading-[0.87] font-normal tracking-[-3px] text-black/5" data-node-id="1546:6469">
+        <p className="font-delmon-script absolute top-[104px] left-[4.651%] w-[59.302%] text-right text-[100px] leading-[0.87] font-normal tracking-[-3px] text-black/5" data-node-id="1546:6469">
           Chateau<br />Marg<br />aux
         </p>
-        <div className="absolute top-0 left-8 h-[395px] w-[92px] overflow-hidden">
-          <img src={mainWine} alt={`${wine.nameKo} ${wine.vintage}`} className="absolute top-[-49.6px] left-[-112.4px] h-[485.5px] w-[316.9px] max-w-none" />
+        <div className="absolute top-0 left-[7.442%] h-full w-[21.395%] overflow-hidden">
+          <img src={mainWine} alt={`${wine.nameKo} ${wine.vintage}`} className="absolute top-[-12.557%] left-[-122.174%] h-[122.911%] w-[344.457%] max-w-none" />
         </div>
-        <p className="absolute top-[150px] right-[25px] text-right text-[24px] leading-[1.2] font-bold tracking-[-0.48px] whitespace-nowrap">{wine.nameKo} {wine.vintage}</p>
-        <p className="absolute top-[182px] right-[25px] text-right text-[22px] leading-[1.2] font-bold whitespace-nowrap text-[#831317]">{formatPrice(wine.price)}</p>
-        <div className="absolute top-[229px] left-[259px] flex items-start gap-2 overflow-hidden">
+        <p className="absolute top-[150px] right-[5.814%] text-right text-[24px] leading-[1.2] font-bold tracking-[-0.48px] whitespace-nowrap">{wine.nameKo} {wine.vintage}</p>
+        <p className="absolute top-[182px] right-[5.814%] text-right text-[22px] leading-[1.2] font-bold whitespace-nowrap text-[#831317]">{formatPrice(wine.price)}</p>
+        <div className="absolute top-[229px] right-[5.814%] flex items-start gap-2">
           {wine.tags.map((tag) => (
             <span key={tag} className="rounded-[25px] border border-[#d9d9d9] px-3 py-1.5 text-[12px] leading-none font-medium tracking-[-0.24px] whitespace-nowrap text-[#595959]">{tag}</span>
           ))}
         </div>
-        <p className="font-playfair-sc absolute top-[241px] left-[154px] -translate-x-1/2 text-center text-[150px] leading-[1.08] font-bold tracking-[-3px] whitespace-nowrap text-[#831317]">01</p>
-        <button type="button" onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)} className="absolute top-[371px] left-[316px] flex items-center text-[14px] leading-none font-bold whitespace-nowrap text-[#831317]">
+        <p className="font-playfair-sc absolute top-[241px] left-[35.814%] -translate-x-1/2 text-center text-[150px] leading-[1.08] font-bold tracking-[-3px] whitespace-nowrap text-[#831317]">01</p>
+        <button type="button" onClick={() => navigate(`/wine_detail/${wine.type}/${wine.id}`)} className="absolute right-[4.651%] bottom-[10px] flex items-center text-[14px] leading-none font-bold whitespace-nowrap text-[#831317]">
           와인 상세 보기
           <img src={chevronIcon} alt="" className="ml-1 h-3 w-[7px]" />
         </button>
       </section>
 
-      <div className="absolute top-[541px] left-5 h-px w-[390px] bg-black/12" />
-      <section className="absolute top-[570px] left-[26px] w-[362px]">
+      <div className="mx-[4.651%] mt-[43px] h-px bg-black/12" />
+      <section className="mx-[6.047%] py-[27px]">
         <h2 className="text-[14px] leading-[1.2] font-medium text-[#831317]">AI 추천 이유</h2>
         <p className="mt-[5px] text-[14px] leading-[1.6] font-normal tracking-[-0.28px] text-[#595959]">
           최근 저장한 레드와인과 비슷한 스타일이며, 평소 선호하는 부드러운 탄닌을 기반으로 추천드렸어요.
         </p>
       </section>
-      <div className="absolute top-[659px] left-5 h-px w-[390px] bg-black/12" />
+      <div className="mx-[4.651%] h-px bg-black/12" />
 
-      <section className="absolute top-[671px] left-0 h-[249px] w-full overflow-hidden bg-white">
-        <h2 className="absolute top-7 left-6 text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#222]">다른 추천, <span className="text-[#831317]">와인</span></h2>
+      <section className="mt-3 w-full overflow-hidden bg-white pt-7 pb-[28px]">
+        <h2 className="ml-[5.581%] text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#222]">다른 추천, <span className="text-[#831317]">와인</span></h2>
         <div
           ref={recommendationScroller}
           onPointerDown={startRecommendationDrag}
@@ -171,29 +171,28 @@ function TodaysPick() {
           onPointerUp={stopRecommendationDrag}
           onPointerCancel={stopRecommendationDrag}
           onWheel={scrollRecommendationsWithWheel}
-          className="absolute top-[79px] right-0 left-[-1px] flex cursor-grab touch-pan-x items-start overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-[39px] flex w-full cursor-grab touch-pan-x items-start overflow-x-auto overscroll-x-contain select-none active:cursor-grabbing [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {recommendations.map((recommendationWine) => (
-            <div key={recommendationWine.id}>
-              <RecommendationItem
-                wine={recommendationWine}
-                onClick={() => {
-                  if (recommendationDidDrag.current) {
-                    recommendationDidDrag.current = false
-                    return
-                  }
-                  navigate(`/wine_detail/${recommendationWine.type}/${recommendationWine.id}`)
-                }}
-              />
-            </div>
+            <RecommendationItem
+              key={recommendationWine.id}
+              wine={recommendationWine}
+              onClick={() => {
+                if (recommendationDidDrag.current) {
+                  recommendationDidDrag.current = false
+                  return
+                }
+                navigate(`/wine_detail/${recommendationWine.type}/${recommendationWine.id}`)
+              }}
+            />
           ))}
         </div>
       </section>
 
-      <h2 className="absolute top-[931px] left-6 text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#831317]">
+      <h2 className="mx-[5.581%] mt-[11px] text-[20px] leading-none font-medium tracking-[-0.5348px] text-[#831317]">
         원하는 조건<span className="text-[#222]">으로 다시 추천받기</span>
       </h2>
-      <section className="absolute top-[973px] left-5 flex w-[390px] flex-col items-start gap-[18px] overflow-hidden rounded-xl bg-[#f2f2f2] px-[18px] py-5">
+      <section className="mx-[4.651%] mt-[22px] flex flex-col items-start gap-[18px] rounded-xl bg-[#f2f2f2] px-[4.186%] py-5">
         {filters.map((group) => (
           <FilterGroup
             key={group.title}
@@ -217,11 +216,10 @@ function TodaysPick() {
             } satisfies ChatbotLocationState,
           })
         }
-        className="absolute top-[1227px] left-[19px] flex w-[390px] items-center justify-center overflow-hidden rounded-xl bg-[#831317] py-[17px] text-[16px] leading-none font-bold text-white"
+        className="mx-[4.651%] mt-[13px] mb-[30px] flex w-[90.698%] items-center justify-center rounded-xl bg-[#831317] py-[17px] text-[16px] leading-none font-bold text-white"
       >
         AI 추천받기
       </button>
-      </div>
     </div>
   )
 }
