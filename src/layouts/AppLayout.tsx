@@ -15,6 +15,7 @@ function AppLayout() {
   const isMagazine = location.pathname.startsWith('/magazine')
   const isMagazineDetail = location.pathname.startsWith('/magazine/')
   const isMapView = isList && new URLSearchParams(location.search).get('view') === 'map'
+  const isEmbeddedDesktop = new URLSearchParams(location.search).get('embed') === 'desktop'
   const isLightPage = isLounge || isList || isMypage || isSearch || isMagazine
   const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList ? '리스트' : '홈'
 
@@ -65,7 +66,7 @@ function AppLayout() {
           onClick={() => setIsQuickMenuOpen(false)}
         />
       ) : null}
-      <InstallPwaBanner />
+      {!isEmbeddedDesktop ? <InstallPwaBanner /> : null}
       {!isSearch ? (
         <BottomNav
           activeItem={activeItem}

@@ -30,6 +30,7 @@ import CameraFlow from './pages/CameraFlow'
 import WineRecord from './pages/WineRecord'
 import Splash from './pages/Splash'
 import Onboarding from './pages/Onboarding'
+import DesktopGuide from './pages/DesktopGuide'
 import { LikedWinesProvider } from './context/LikedWinesContext'
 import { WineRecordsProvider } from './context/WineRecordsContext'
 import { ProfileProvider } from './context/ProfileContext'
@@ -57,6 +58,7 @@ function App() {
           <Route path="/" element={<Splash />} />
           <Route path="/splash" element={<Splash />} />
           <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/guide" element={<DesktopGuide />} />
           <Route path="/lounge/questions/new" element={<QuestionWrite />} />
           <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
           <Route path="/profile/settings" element={<ProfileSettings />} />
