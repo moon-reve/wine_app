@@ -57,7 +57,7 @@ export default defineConfig({
     VitePWA({
       registerType: 'prompt',
       devOptions: { enabled: false },
-      includeAssets: ['favicon.svg', 'apple-touch-icon.webp'],
+      includeAssets: ['favicon.svg', 'apple-touch-icon.png'],
       manifest: {
         name: 'Viner',
         short_name: 'Viner',
@@ -70,9 +70,9 @@ export default defineConfig({
         theme_color: '#841317',
         background_color: '#841317',
         icons: [
-          { src: '/pwa-192x192.webp', sizes: '192x192', type: 'image/webp', purpose: 'any' },
-          { src: '/pwa-512x512.webp', sizes: '512x512', type: 'image/webp', purpose: 'any' },
-          { src: '/pwa-maskable-512x512.webp', sizes: '512x512', type: 'image/webp', purpose: 'maskable' },
+          { src: '/pwa-192x192.png', sizes: '192x192', type: 'image/png', purpose: 'any' },
+          { src: '/pwa-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'any' },
+          { src: '/pwa-maskable-512x512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
         ],
       },
       workbox: {
