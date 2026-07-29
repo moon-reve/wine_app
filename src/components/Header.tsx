@@ -14,10 +14,9 @@ type HeaderProps = {
   showBackButton?: boolean
   showSearchButton?: boolean
   titleText?: string
-  fixedFigmaTop?: boolean
 }
 
-function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, showBackButton = false, showSearchButton = true, titleText, fixedFigmaTop = false }: HeaderProps) {
+function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, showBackButton = false, showSearchButton = true, titleText }: HeaderProps) {
   const navigate = useNavigate()
   const isLight = tone === 'light'
   const titleColor = titleColorClassName ?? (isLight ? 'text-[#831317]' : 'text-white')
@@ -26,7 +25,7 @@ function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, 
 
   return (
     <header
-      className={`flex w-full items-center justify-between px-5 pb-3 ${fixedFigmaTop ? 'pt-[18px]' : 'pt-[max(18px,env(safe-area-inset-top))]'}`}
+      className="flex w-full items-center justify-between px-5 pt-[max(18px,env(safe-area-inset-top))] pb-3"
       data-node-id="577:105"
     >
       {showBackButton ? (
