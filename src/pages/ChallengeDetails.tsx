@@ -119,7 +119,7 @@ function ChallengeDetails() {
           <img src={bottlesImage} alt="북미 와인" className="absolute top-[-25px] left-[-46.14%] h-auto w-[317.018%] max-w-none" />
         </div>
         {[{ left: 41.281, top: 532 }, { left: 58.481, top: 531 }, { left: 76.091, top: 530 }].map((position, index) => (
-          <img key={position.left} src={ghostBottle} alt={`${index + 3}번째 미완료 대륙`} className="absolute h-auto w-[15.116%] object-bottom opacity-45" style={{ left: `${position.left}%`, top: position.top }} />
+          <img key={position.left} src={ghostBottle} alt={`${index + 3}번째 미완료 대륙`} className="absolute h-[209px] w-[15.116%] object-bottom opacity-45" style={{ left: `${position.left}%`, top: position.top }} />
         ))}
         {medals.map((item) => <Medal key={item.left} item={item} />)}
       </section>
