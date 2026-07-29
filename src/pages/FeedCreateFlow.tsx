@@ -128,7 +128,7 @@ function FeedComposer({ photo, onBack }: { photo: string; onBack: () => void }) 
     navigate('/lounge')
   }
 
-  return <main className="mx-auto min-h-screen w-full max-w-[430px] bg-white pb-6 text-[#121212] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+  return <main className="min-h-screen w-screen bg-white pb-6 text-[#121212] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
     <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full bg-white">
       <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-between px-5">
         <button type="button" onClick={onBack} aria-label="뒤로 가기" className="text-2xl text-[#831317]">‹</button>
@@ -272,10 +272,10 @@ export default function FeedCreateFlow() {
 
   if (step === 'compose') return <FeedComposer photo={capturedPhoto ?? feedCamera} onBack={() => setStep('edit')} />
 
-  if (step === 'edit') return <main className="@container relative mx-auto h-dvh w-full max-w-[430px] overflow-hidden bg-[#170d0d] text-white">
+  if (step === 'edit') return <main className="@container relative h-dvh w-screen overflow-hidden bg-[#170d0d] text-white">
     <button type="button" aria-label="보정 화면 닫기" onClick={() => setStep('camera')} className="absolute left-5 top-[max(28px,env(safe-area-inset-top))] z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
-    <button type="button" onClick={() => setStep('compose')} className="absolute right-[18px] top-[max(28px,env(safe-area-inset-top))] z-20 flex h-6 items-center text-[3.488cqw] font-medium">다음</button>
-    <div className="absolute top-[calc(21.5px+env(safe-area-inset-top))] left-1/2 flex h-[37px] w-[37.442cqw] -translate-x-1/2 items-center justify-around rounded-full border border-white/20 bg-[#d9d9d9]/20 text-[2.791cqw]">
+    <button type="button" onClick={() => setStep('compose')} className="absolute right-[18px] top-[max(28px,env(safe-area-inset-top))] z-20 flex h-6 items-center text-[15px] font-medium">다음</button>
+    <div className="absolute top-[calc(21.5px+env(safe-area-inset-top))] left-1/2 flex h-[37px] w-[37.442cqw] -translate-x-1/2 items-center justify-around rounded-full border border-white/20 bg-[#d9d9d9]/20 text-[12px]">
       {ASPECT_RATIOS.map((ratio) => (
         <button
           key={ratio}
@@ -296,17 +296,17 @@ export default function FeedCreateFlow() {
           style={aspectRatio === 'full' ? undefined : { aspectRatio: ASPECT_RATIO_CSS[aspectRatio] }}
         />
       </div>
-      <div className="absolute left-[4.651cqw] top-[25.81%] flex h-[48%] flex-col justify-between">{[[toolWine,'와인라벨'],[toolGrid,'레이아웃']].map(([icon,label]) => <button type="button" key={label} className="flex items-center gap-[2.093cqw] text-[2.791cqw] text-white/80"><img src={icon} alt="" className="size-[6.047cqw]" />{label}</button>)}<button type="button" className="flex items-center gap-[2.093cqw] text-[2.791cqw] text-white/80"><span className="w-[6.047cqw] text-[5.116cqw] font-light">Aa</span>텍스트 추가</button><button type="button" className="flex items-center gap-[2.093cqw] text-[2.791cqw] text-white/80"><img src={toolFilter} alt="" className="h-[6.047cqw] w-[6.512cqw]" />필터</button></div><Ruler editor />
+      <div className="absolute left-[4.651cqw] top-[25.81%] flex h-[48%] flex-col justify-between">{[[toolWine,'와인라벨'],[toolGrid,'레이아웃']].map(([icon,label]) => <button type="button" key={label} className="flex items-center gap-[2.093cqw] text-[12px] text-white/80"><img src={icon} alt="" className="size-[6.047cqw]" />{label}</button>)}<button type="button" className="flex items-center gap-[2.093cqw] text-[12px] text-white/80"><span className="w-[6.047cqw] text-[22px] font-light">Aa</span>텍스트 추가</button><button type="button" className="flex items-center gap-[2.093cqw] text-[12px] text-white/80"><img src={toolFilter} alt="" className="h-[6.047cqw] w-[6.512cqw]" />필터</button></div><Ruler editor />
     </div>
     <div className="absolute inset-x-0 top-[86.05%] bottom-0 rounded-t-[5.814cqw] border-t border-white/30 bg-[#831317]/10" />
     <img src={capturedPhoto ?? feedThumb} alt="선택한 사진" className="absolute top-[83.37%] left-[13.953cqw] z-20 size-[13.488cqw] rounded-[2.791cqw] border-2 border-white/90 object-cover" />
     <button type="button" aria-label="사진 추가" onClick={() => setStep('camera')} className="absolute top-[82.53%] left-1/2 z-20 size-[16.279cqw] -translate-x-1/2"><img src={shutterIcon} alt="" className="absolute -inset-[1.163cqw] size-[18.605cqw] max-w-none" /></button>
     <button type="button" aria-label="필터" className="absolute top-[84.01%] right-[14.419cqw] z-20 size-[12.558cqw] rounded-full border border-white bg-[#2b2021]/90"><img src={toolFilter} alt="" className="absolute left-1/2 top-1/2 h-[6.047cqw] w-[6.512cqw] -translate-x-[calc(50%+1px)] -translate-y-[calc(50%+1px)]" /></button>
-    <div className="absolute top-[94.96%] left-1/2 z-20 flex -translate-x-1/2 gap-[2.791cqw] text-[3.488cqw]"><span className="text-white/30">찾기</span><b className="font-medium">피드</b></div>
+    <div className="absolute top-[94.96%] left-1/2 z-20 flex -translate-x-1/2 gap-[2.791cqw] text-[15px]"><span className="text-white/30">찾기</span><b className="font-medium">피드</b></div>
   </main>
 
   const intro = step === 'intro'
-  return <main {...cameraGestureProps} className="@container relative mx-auto h-dvh w-full max-w-[430px] touch-none overflow-hidden bg-black text-white">
+  return <main {...cameraGestureProps} className="@container relative h-dvh w-screen touch-none overflow-hidden bg-black text-white">
     <div className="absolute inset-0 origin-center" style={{ transform: `scale(${zoom})` }}>
       <video
         ref={videoRef}
@@ -327,7 +327,7 @@ export default function FeedCreateFlow() {
       <div className="absolute left-1/2 top-[10.58%] flex w-[61.86%] -translate-x-1/2 text-[min(15px,1.61dvh)] font-medium"><button type="button" onClick={() => navigate('/wine-search')} className="w-1/2 text-center text-white/50">찾기</button><span className="w-1/2 text-center">피드</span></div>
       <div className="absolute left-1/2 top-[19.31%] h-px w-[61.86%] -translate-x-1/2 bg-white/30"><span className="ml-auto block h-px w-1/2 bg-[#831317]" /></div>
       <p className="absolute top-[27.78%] w-full text-center text-[min(15px,1.61dvh)] font-medium leading-[1.47] text-white/80">와인 사진, 플레이팅, 분위기 사진을<br />자유롭게 촬영해보세요.</p><p className="absolute top-[42.33%] w-full text-center text-[min(12px,1.29dvh)] text-white/50">기억하고 싶은 순간을 자유롭게 기록해보세요.</p>
-    </section> : <><div className="absolute inset-x-0 top-[86.05%] bottom-0 rounded-t-[5.814cqw] border-t border-white/40 bg-[#831317]/10 backdrop-blur-[12px]" /><div className="absolute top-[94.96%] left-1/2 z-20 flex -translate-x-1/2 gap-[2.791cqw] text-[3.488cqw]"><button type="button" onClick={() => navigate('/wine-search')} className="text-white/30">찾기</button><b className="font-medium">피드</b></div></>}
+    </section> : <><div className="absolute inset-x-0 top-[86.05%] bottom-0 rounded-t-[5.814cqw] border-t border-white/40 bg-[#831317]/10 backdrop-blur-[12px]" /><div className="absolute top-[94.96%] left-1/2 z-20 flex -translate-x-1/2 gap-[2.791cqw] text-[15px]"><button type="button" onClick={() => navigate('/wine-search')} className="text-white/30">찾기</button><b className="font-medium">피드</b></div></>}
     <CaptureControls
       thumbnail={capturedPhoto ?? feedThumb}
       onSwitchCamera={switchCamera}

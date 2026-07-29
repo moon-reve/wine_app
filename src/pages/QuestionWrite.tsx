@@ -50,7 +50,7 @@ function QuestionWrite() {
   }
 
   return (
-    <div className="mx-auto min-h-dvh w-full max-w-107.5 bg-white text-[#0d0d0d]">
+    <div className="min-h-dvh w-screen bg-white text-[#0d0d0d]">
       <QuestionWriteHeader />
 
       <form

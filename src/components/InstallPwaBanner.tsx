@@ -24,7 +24,7 @@ export default function InstallPwaBanner() {
   return (
     <div
       role="status"
-      className="wine-install-banner-drop fixed inset-x-0 top-0 z-50 mx-auto w-full max-w-107.5 px-2.5 pt-[calc(10px+env(safe-area-inset-top))]"
+      className="wine-install-banner-drop fixed inset-x-0 top-0 z-50 w-screen px-2.5 pt-[calc(10px+env(safe-area-inset-top))]"
     >
       <div className="flex items-center gap-3 rounded-2xl bg-white px-3.5 py-3 text-[#202024] shadow-[0_4px_20px_rgba(0,0,0,0.18)] ring-1 ring-black/5">
         <img src="/pwa-192x192.png" alt="" className="size-11 shrink-0 rounded-[12px]" />

@@ -63,7 +63,7 @@ function Event() {
   const navigate = useNavigate()
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-[430px] bg-white text-[#0d0d0d]" data-node-id="1147:3445">
+    <div className="min-h-screen w-screen bg-white text-[#0d0d0d]" data-node-id="1147:3445">
       <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full bg-white">
         <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-center">
           <button

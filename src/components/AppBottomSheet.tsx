@@ -33,7 +33,7 @@ export default function AppBottomSheet({
   return (
     <div className="fixed inset-0 z-100 flex items-end justify-center" role="dialog" aria-modal="true" aria-labelledby="app-bottom-sheet-title">
       <button type="button" aria-label="팝업 닫기" onClick={onClose} className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
-      <section className="relative z-10 w-full max-w-[430px] rounded-t-[24px] bg-white px-5 pt-6 pb-[max(28px,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(0,0,0,0.18)]">
+      <section className="relative z-10 w-screen rounded-t-[24px] bg-white px-5 pt-6 pb-[max(28px,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(0,0,0,0.18)]">
         <div className="mx-auto mb-5 h-1 w-10 rounded-full bg-[#d9d9d9]" />
         <h2 id="app-bottom-sheet-title" className="text-center text-[18px] leading-[1.35] font-bold tracking-[-0.54px] text-[#0d0d0d]">{title}</h2>
         {message ? <p className="mt-2 text-center text-[13px] leading-[1.55] text-[#737373]">{message}</p> : null}

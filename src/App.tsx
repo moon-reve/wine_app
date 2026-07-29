@@ -24,7 +24,7 @@ import EventDetails from './pages/Event Details'
 import Notification from './pages/Notification'
 import TodaysPick from "./pages/Today'spick"
 import ChallengeDetails from './pages/Challenge Details'
-import MagazineDetail from './pages/magazine Detail'
+import MagazineDetail from './pages/MagazineDetail'
 import Chatbot from './pages/Chatbot'
 import CameraFlow from './pages/CameraFlow'
 import WineRecord from './pages/WineRecord'

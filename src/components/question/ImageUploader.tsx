@@ -117,7 +117,7 @@ function ImageUploader() {
       {message && <p className="mt-2 text-xs text-[#831317]">{message}</p>}
 
       {isSourceMenuOpen ? (
-        <div className="fixed inset-0 z-60 mx-auto flex w-full max-w-[430px] items-end bg-black/35" role="dialog" aria-modal="true" aria-label="사진 첨부 방법 선택">
+        <div className="fixed inset-0 z-60 flex w-screen items-end bg-black/35" role="dialog" aria-modal="true" aria-label="사진 첨부 방법 선택">
           <button type="button" className="absolute inset-0" aria-label="사진 첨부 메뉴 닫기" onClick={() => setIsSourceMenuOpen(false)} />
           <div className="relative z-10 w-full rounded-t-[20px] bg-white px-5 pt-5 pb-8 shadow-2xl">
             <p className="mb-4 text-center text-sm font-bold text-[#0d0d0d]">사진 첨부</p>

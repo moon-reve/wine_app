@@ -55,14 +55,14 @@ function AppLayout() {
   }, [isQuickMenuOpen])
 
   return (
-    <div className={`mx-auto min-h-screen w-full max-w-107.5 ${isList || isSearch || isMagazineDetail ? '' : 'pb-20'} ${isLightPage ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
+    <div className={`min-h-screen w-screen ${isList || isSearch || isMagazineDetail ? '' : 'pb-20'} ${isLightPage ? 'bg-white text-[#0d0d0d]' : 'bg-black text-white'}`}>
       <Outlet />
       {isQuickMenuOpen ? (
         <button
           type="button"
           aria-label="빠른 메뉴 닫기"
           data-node-id="1599:1232"
-          className="fixed inset-y-0 left-1/2 z-40 w-full max-w-[430px] -translate-x-1/2 bg-black/30 backdrop-blur-[5px]"
+          className="fixed inset-0 z-40 w-screen bg-black/30 backdrop-blur-[5px]"
           onClick={() => setIsQuickMenuOpen(false)}
         />
       ) : null}

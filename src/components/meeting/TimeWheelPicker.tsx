@@ -49,7 +49,7 @@ export default function TimeWheelPicker({ open, title, value, onChange, onClose 
   return (
     <div className="fixed inset-0 z-110 flex items-end justify-center" role="dialog" aria-modal="true" aria-label={title}>
       <button type="button" aria-label="시간 선택 닫기" onClick={onClose} className="absolute inset-0 bg-black/45 backdrop-blur-[1px]" />
-      <section className="relative z-10 w-full max-w-[430px] rounded-t-[24px] bg-white px-5 pt-6 pb-[max(28px,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(0,0,0,0.18)]">
+      <section className="relative z-10 w-screen rounded-t-[24px] bg-white px-5 pt-6 pb-[max(28px,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(0,0,0,0.18)]">
         <div className="mx-auto mb-5 h-1 w-10 rounded-full bg-[#d9d9d9]" />
         <h2 className="text-center text-[18px] font-bold text-[#0d0d0d]">{title}</h2>
         <div className="relative mt-5 grid grid-cols-[0.8fr_1fr_1fr] gap-2">

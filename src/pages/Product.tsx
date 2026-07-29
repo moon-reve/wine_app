@@ -68,9 +68,9 @@ function TastingGauge({ label, value, width }: (typeof tastingNotes)[number]) {
 
 function Review({ rating, children }: { rating: string; children: React.ReactNode }) {
   return (
-    <div className="flex h-[39px] w-full items-start gap-2.5">
+    <div className="flex w-full items-start gap-2.5">
       <img src={reviewAvatar} alt="" className="size-8 shrink-0 rounded-full" aria-hidden="true" />
-      <div className="flex flex-col gap-1">
+      <div className="flex min-w-0 flex-1 flex-col gap-1">
         <p className="font-noto text-xs leading-[1.2] font-medium text-[#831317]">{rating}</p>
         <p className="text-sm leading-[1.5] tracking-[-0.28px] text-[#595959]">{children}</p>
       </div>
@@ -80,7 +80,7 @@ function Review({ rating, children }: { rating: string; children: React.ReactNod
 
 function PurchaseCard({ channel, description, buttonLabel }: { channel: string; description: string; buttonLabel: string }) {
   return (
-    <div className="flex h-32 w-full flex-col gap-3 rounded-xl bg-[#f2f2f2] px-[18px] py-4">
+    <div className="flex w-full flex-col gap-3 rounded-xl bg-[#f2f2f2] px-[18px] py-4">
       <p className="text-xs leading-[1.2] font-medium text-[#831317]">{channel}</p>
       <p className="text-sm leading-[1.3] font-bold tracking-[-0.28px]">{description}</p>
       <button type="button" className="flex h-10 w-full items-center justify-center rounded-xl border border-[#831317] text-sm leading-none font-bold tracking-[-0.28px] text-[#831317]">
@@ -94,7 +94,7 @@ function Product() {
   const navigate = useNavigate()
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-[430px] bg-white text-[#0d0d0d]" data-node-id="835:4632">
+    <div className="min-h-screen w-screen bg-white text-[#0d0d0d]" data-node-id="835:4632">
       <header className="relative h-[calc(70px+env(safe-area-inset-top))] w-full bg-white">
         <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] h-[70px]">
           <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-[18px] flex size-6 rotate-180 items-center justify-center">
@@ -105,7 +105,7 @@ function Product() {
       </header>
 
       <main className="flex w-full flex-col gap-[34px] overflow-hidden px-5 pt-3 pb-8">
-        <section className="flex h-[477px] w-full flex-col items-center gap-4 overflow-hidden">
+        <section className="flex w-full flex-col items-center gap-4 overflow-hidden">
           <div className="relative h-80 w-full shrink-0 overflow-hidden rounded-xl bg-[#f2f2f2]">
             <div className="absolute top-[21px] left-1/2 h-[278px] w-[72px] -translate-x-1/2 overflow-hidden">
               <img src={chateauMargaux} alt="Château Margaux 2018" className="absolute top-[-12.56%] left-[-122.22%] h-[122.91%] w-[344.44%] max-w-none" />
@@ -122,9 +122,9 @@ function Product() {
 
         <Divider />
 
-        <section className="flex h-[364px] flex-col gap-6">
+        <section className="flex flex-col gap-6">
           <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">기본 정보</h2>
-          <div className="flex h-64 flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-[14px] leading-[1.45] tracking-[-0.28px]">
+          <div className="flex flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-[14px] leading-[1.45] tracking-[-0.28px]">
             {basicInformation.map(([label, value]) => (
               <div key={label} className="flex gap-4">
                 <span className="w-[60px] shrink-0 text-[13px] font-medium tracking-normal text-[#737373]">{label}</span>
@@ -132,35 +132,35 @@ function Product() {
               </div>
             ))}
           </div>
-          <div className="flex h-[38px] gap-3">
-            <span className="h-full w-[3px] shrink-0 bg-[#831317]" />
+          <div className="flex items-stretch gap-3">
+            <span className="w-[3px] shrink-0 bg-[#831317]" />
             <p className="text-xs leading-[1.6] tracking-[-0.24px] text-[#595959]">보르도 1등급 와이너리의 대표 와인. 우아함과 섬세함이 특징이며, 긴 숙성 잠재력을 지니고 있습니다.</p>
           </div>
         </section>
 
         <Divider />
 
-        <section className="flex h-[351px] flex-col gap-4">
-          <div className="flex h-[42px] flex-col gap-1">
+        <section className="flex flex-col gap-4">
+          <div className="flex flex-col gap-1">
             <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">테이스팅 노트</h2>
             <p className="text-xs leading-[1.3] tracking-[-0.24px] text-[#737373]">어떤 맛과 향이 나는지 확인해보세요.</p>
           </div>
           {tastingNotes.map((note) => <TastingGauge key={note.label} {...note} />)}
           <h3 className="text-sm leading-[1.3] font-bold tracking-[-0.28px]">노트</h3>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             {['블랙체리', '바닐라', '초콜릿', '허브'].map((note) => <OutlineChip key={note}>{note}</OutlineChip>)}
           </div>
         </section>
 
         <Divider />
 
-        <section className="flex h-[249px] flex-col gap-3.5">
-          <div className="flex h-[23px] items-center justify-between">
+        <section className="flex flex-col gap-3.5">
+          <div className="flex items-center justify-between">
             <h2 className="text-lg leading-[1.3] font-bold tracking-[-0.54px]">리뷰</h2>
             <strong className="font-noto text-base leading-[1.2] font-bold text-[#831317]">★ 4.8</strong>
           </div>
           <p className="text-xs leading-[1.2] font-medium text-[#737373]">많이 언급된 키워드</p>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             {['#과실향', '#부드러운탄닌', '#선물용', '#가성비'].map((tag) => (
               <span key={tag} className="flex h-6 items-center rounded-[25px] bg-[#831317] px-3 text-xs leading-none font-medium tracking-[-0.24px] text-white">{tag}</span>
             ))}
@@ -172,9 +172,9 @@ function Product() {
 
         <Divider />
 
-        <section className="flex h-[211px] flex-col gap-3">
+        <section className="flex flex-col gap-3">
           <h2 className="text-lg leading-[1.3] font-bold tracking-[-0.54px]">서비스 가이드</h2>
-          <div className="flex h-44 flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-sm leading-[1.45] tracking-[-0.28px]">
+          <div className="flex flex-col gap-2.5 rounded-xl bg-[#f2f2f2] p-[18px] text-sm leading-[1.45] tracking-[-0.28px]">
             {serviceGuide.map(([label, value]) => (
               <div key={label} className="flex gap-4">
                 <span className="w-[86px] shrink-0 font-medium text-[#737373]">{label}</span>
@@ -186,29 +186,29 @@ function Product() {
 
         <Divider />
 
-        <section className="flex h-[58px] flex-col gap-3">
+        <section className="flex flex-col gap-3">
           <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">푸드 페어링</h2>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             {['채끝 스테이크', '양갈비', '숙성 치즈', '다크 초콜릿'].map((food) => <OutlineChip key={food}>{food}</OutlineChip>)}
           </div>
         </section>
 
         <Divider />
 
-        <section className="flex h-[194px] flex-col gap-3">
-          <div className="flex h-11 flex-col gap-1">
+        <section className="flex flex-col gap-3">
+          <div className="flex flex-col gap-1">
             <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">AI 소믈리에</h2>
             <p className="text-sm leading-[1.3] tracking-[-0.28px] text-[#737373]">AI 소믈리에가 이 와인을 분석하고 추천해드립니다.</p>
           </div>
-          <div className="flex h-[138px] flex-col gap-3.5 rounded-xl bg-[#831317] p-5">
-            <p className="w-[310px] text-sm leading-[1.6] tracking-[-0.28px] text-[#f7f0f0]">이 와인은 풍부한 과실향과 은은한 오크향이 특징입니다. 채끝 스테이크, 양갈비와 특히 잘 어울립니다.</p>
+          <div className="flex flex-col gap-3.5 rounded-xl bg-[#831317] p-5">
+            <p className="w-full text-sm leading-[1.6] tracking-[-0.28px] text-[#f7f0f0]">이 와인은 풍부한 과실향과 은은한 오크향이 특징입니다. 채끝 스테이크, 양갈비와 특히 잘 어울립니다.</p>
             <button type="button" className="flex h-10 w-full items-center justify-center rounded-[10px] bg-white text-sm leading-none font-bold text-[#831317]">AI에게 질문하기</button>
           </div>
         </section>
 
         <Divider />
 
-        <section className="flex h-[302px] flex-col gap-3">
+        <section className="flex flex-col gap-3">
           <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">구매 정보</h2>
           <PurchaseCard channel="온라인" description="KRW 298,000 ~" buttonLabel="판매처 보기" />
           <PurchaseCard channel="오프라인" description="가까운 매장에서 구매 가능" buttonLabel="지도 보기" />
@@ -216,8 +216,8 @@ function Product() {
 
         <Divider />
 
-        <section className="flex h-[277px] flex-col gap-3.5 overflow-hidden">
-          <div className="flex h-[45px] flex-col gap-1">
+        <section className="flex flex-col gap-3.5 overflow-hidden">
+          <div className="flex flex-col gap-1">
             <h2 className="text-lg leading-[1.3] font-bold tracking-[-0.54px]">비슷한 와인 추천</h2>
             <p className="text-sm leading-[1.3] tracking-[-0.28px] text-[#737373]">이 와인과 비슷한 스타일의 와인을 추천해드려요.</p>
           </div>

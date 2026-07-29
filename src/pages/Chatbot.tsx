@@ -478,7 +478,7 @@ export default function Chatbot() {
 
   return (
     <main
-      className="@container relative mx-auto h-dvh w-full max-w-[430px] overflow-hidden bg-[#f2f2f2] text-black"
+      className="@container relative h-dvh w-screen overflow-hidden bg-[#f2f2f2] text-black"
       data-node-id="1546:3232"
     >
       <header className="absolute inset-x-0 top-[env(safe-area-inset-top)] z-30 h-[70px] bg-[#f2f2f2]/90 backdrop-blur-sm">

@@ -110,11 +110,11 @@ function NotificationCard({ item, isRead, onRead }: { item: NotificationItem; is
           <span className="flex-1" />
           <time className="shrink-0 text-[11px] font-normal text-[#737373]">{item.time}</time>
         </div>
-        <p className={`mt-1.5 w-[302px] text-[14px] leading-[1.5] font-normal tracking-[-0.28px] ${isRead ? 'text-[#595959]' : 'text-[#0d0d0d]'}`}>
+        <p className={`mt-1.5 w-full text-[14px] leading-[1.5] font-normal tracking-[-0.28px] ${isRead ? 'text-[#595959]' : 'text-[#0d0d0d]'}`}>
           {item.message}
         </p>
         {item.detail && (
-          <p className={`mt-1.5 w-[302px] text-[13px] leading-[1.45] tracking-[-0.26px] ${item.accentDetail && !isRead ? 'font-medium text-[#831317]' : 'font-normal text-[#737373]'}`}>
+          <p className={`mt-1.5 w-full text-[13px] leading-[1.45] tracking-[-0.26px] ${item.accentDetail && !isRead ? 'font-medium text-[#831317]' : 'font-normal text-[#737373]'}`}>
             {item.detail}
           </p>
         )}
@@ -166,7 +166,7 @@ function Notification() {
   }
 
   return (
-    <div className="mx-auto min-h-dvh w-full max-w-107.5 bg-white text-[#0d0d0d]" data-node-id="1546:5601">
+    <div className="min-h-dvh w-screen bg-white text-[#0d0d0d]" data-node-id="1546:5601">
       <header className="relative z-10 h-[calc(70px+env(safe-area-inset-top))] w-full overflow-hidden bg-white" data-node-id="1546:5602">
         <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] h-17.5">
           <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">

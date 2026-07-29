@@ -58,7 +58,7 @@ function ProfileSettings() {
   }
 
   return (
-    <div className="relative mx-auto min-h-[1013px] w-full max-w-[430px] bg-white pb-[120px] text-[#121212]" data-node-id="1546:4956">
+    <div className="relative min-h-[1013px] w-screen bg-white pb-[120px] text-[#121212]" data-node-id="1546:4956">
       <header className="relative z-10 flex h-[calc(56px+env(safe-area-inset-top))] w-full items-center justify-between bg-white px-5 pt-[env(safe-area-inset-top)]" data-node-id="1546:4957">
         <button type="button" aria-label="뒤로가기" onClick={() => navigate(-1)} className="flex size-6 items-center justify-center">
           <img src={backIcon} alt="" className="size-6" aria-hidden="true" />

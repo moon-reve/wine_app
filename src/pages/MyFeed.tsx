@@ -19,7 +19,7 @@ import { getUserFeeds } from '../data/userFeeds'
 
 // 마이페이지 그리드 썸네일과 정확히 같은 크롭으로 보이도록, 그리드 셀 비율(129.3:154.3)과
 // 크롭 클래스를 그대로 재사용한다 — 비율이 다르면 같은 퍼센트 크롭이라도 다른 부분이 보인다.
-const IMAGE_BOX_CLASS_NAME = 'h-[465px]'
+const IMAGE_BOX_CLASS_NAME = 'aspect-[390/465] h-auto'
 
 const feedThumbItems = [
   { image: feedThumb1, crop: 'absolute top-[-21.13%] left-[-7.75%] h-[204.57%] w-[115.11%] max-w-none' },
@@ -66,7 +66,7 @@ function MyFeed() {
   }, [targetIndex])
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-[430px] bg-white text-[#0d0d0d]">
+    <div className="min-h-screen w-screen bg-white text-[#0d0d0d]">
       <header className="relative z-10 h-[calc(70px+env(safe-area-inset-top))] w-full shrink-0 bg-white">
         <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-center">
           <button

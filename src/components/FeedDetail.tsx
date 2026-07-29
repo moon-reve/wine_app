@@ -91,7 +91,7 @@ function FeedDetailContent({
 
   if (!feed) {
     return (
-      <main className={`mx-auto flex min-h-screen w-full max-w-[430px] flex-col items-center justify-center gap-4 bg-white px-5 text-[#0d0d0d] ${className}`}>
+      <main className={`flex min-h-screen w-screen flex-col items-center justify-center gap-4 bg-white px-5 text-[#0d0d0d] ${className}`}>
         <p className="text-base font-bold">피드를 찾을 수 없어요.</p>
         <button type="button" onClick={handleBack} className="rounded-full bg-[#831317] px-4 py-2 text-sm font-medium text-white">
           뒤로 가기
@@ -103,7 +103,7 @@ function FeedDetailContent({
   return (
     <article
       data-node-id="618:50"
-      className={`mx-auto min-h-screen w-full max-w-[430px] bg-white text-[#0d0d0d] ${className}`}
+      className={`min-h-screen w-screen bg-white text-[#0d0d0d] ${className}`}
     >
       <header
         data-node-id="618:51"

@@ -117,7 +117,7 @@ function TodaysPick() {
   }
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-107.5 overflow-x-hidden bg-white pt-[env(safe-area-inset-top)] text-[#0d0d0d]" data-node-id="1546:6383">
+    <div className="min-h-screen w-screen overflow-x-hidden bg-white pt-[env(safe-area-inset-top)] text-[#0d0d0d]" data-node-id="1546:6383">
       <header className="grid h-17.5 w-full grid-cols-[40px_1fr_40px] items-center bg-white px-[4.186%]">
         <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="flex size-6 items-center justify-center">
           <img src={backIcon} alt="" className="size-6 rotate-180" />

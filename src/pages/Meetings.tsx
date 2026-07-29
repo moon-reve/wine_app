@@ -89,7 +89,7 @@ function Meetings() {
         })}
       </main>
 
-      <div className="pointer-events-none fixed inset-x-0 bottom-28 z-40 mx-auto w-full max-w-107.5">
+      <div className="pointer-events-none fixed inset-x-0 bottom-28 z-40 w-screen">
         <button
           type="button"
           onClick={() => navigate('/lounge/meetings/new')}

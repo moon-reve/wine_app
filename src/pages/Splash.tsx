@@ -51,11 +51,11 @@ function Splash() {
 
   return (
     <main
-      className="relative mx-auto h-dvh w-full max-w-[430px] overflow-hidden bg-[#f3f0e7] text-black"
+      className="relative h-dvh w-screen overflow-hidden bg-[#f3f0e7] text-black"
       aria-label="Wine Sippers 스플래시 화면"
       data-node-id="1546:7747"
     >
-      <div className="absolute top-1/2 left-1/2 aspect-[430/932] w-[min(430px,100vw,calc(100dvh*430/932))] -translate-x-1/2 -translate-y-1/2">
+      <div className="absolute top-1/2 left-1/2 aspect-[430/932] w-[min(100vw,calc(100dvh*430/932))] -translate-x-1/2 -translate-y-1/2">
         <video
           ref={videoRef}
           className="absolute inset-0 size-full max-w-none object-contain"

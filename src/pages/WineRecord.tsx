@@ -193,7 +193,7 @@ export default function WineRecord() {
     navigate('/mypage', { state: { activeTab: 'wine' } })
   }
 
-  return <main className="mx-auto h-dvh w-full max-w-[430px] overflow-y-auto overscroll-y-contain bg-white pb-6 text-[#121212] [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden">
+  return <main className="h-dvh w-screen overflow-y-auto overscroll-y-contain bg-white pb-6 text-[#121212] [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden">
     <header className="relative z-20 flex h-[calc(70px+env(safe-area-inset-top))] items-center justify-between bg-white px-5 pt-[env(safe-area-inset-top)]">
       <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="text-2xl text-[#831317]">‹</button>
       <h1 className="absolute left-1/2 -translate-x-1/2 text-lg font-bold tracking-[-0.54px] text-[#831317]">기록하기</h1>
@@ -260,7 +260,7 @@ export default function WineRecord() {
     <input ref={cameraInputRef} type="file" accept="image/*" capture="environment" className="sr-only" onChange={(event) => addWineImages(event.target.files)} />
     <input ref={galleryInputRef} type="file" accept="image/*" multiple className="sr-only" onChange={(event) => addWineImages(event.target.files)} />
 
-    {isPhotoSourceOpen ? <div className="fixed inset-0 z-60 mx-auto flex w-full max-w-[430px] items-end bg-black/35" role="dialog" aria-modal="true" aria-label="사진 첨부 방법 선택">
+    {isPhotoSourceOpen ? <div className="fixed inset-0 z-60 flex w-screen items-end bg-black/35" role="dialog" aria-modal="true" aria-label="사진 첨부 방법 선택">
       <button type="button" className="absolute inset-0" aria-label="사진 첨부 메뉴 닫기" onClick={() => setIsPhotoSourceOpen(false)} />
       <div className="relative z-10 w-full rounded-t-[20px] bg-white px-5 pt-5 pb-8 shadow-2xl">
         <p className="mb-4 text-center text-sm font-bold text-[#0d0d0d]">사진 첨부</p>

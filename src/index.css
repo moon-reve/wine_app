@@ -505,4 +505,10 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
   .settings-dark input::placeholder {
     color: rgb(255 255 255 / 55%);
   }
+
+  @media (max-height: 600px) {
+    .home-hero-copy {
+      bottom: 220px !important;
+    }
+  }
 }

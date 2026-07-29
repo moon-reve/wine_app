@@ -97,7 +97,7 @@ function MeetingCreate() {
     'h-12 w-full rounded-[10px] border border-[#d6d6d6] bg-white px-3.75 text-[13px] text-[#121212] outline-none placeholder:text-[#949494] focus:border-[#831317]'
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-107.5 bg-white pb-28 text-[#121212]">
+    <div className="min-h-screen w-screen bg-white pb-28 text-[#121212]">
       <MeetingCreateHeader />
 
       <main className="px-5 pt-2.5">

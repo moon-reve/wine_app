@@ -64,7 +64,7 @@ export default function MeetingDetail({ onBack, onApply, className = '' }: Meeti
   return (
     <article
       data-node-id="624:126"
-      className={`mx-auto min-h-screen w-full max-w-[430px] bg-white text-[#0d0d0d] ${className}`}
+      className={`min-h-screen w-screen bg-white text-[#0d0d0d] ${className}`}
     >
       <header
         data-node-id="624:127"

@@ -73,7 +73,7 @@ function EventDetails() {
   }
 
   return (
-    <div className="mx-auto min-h-screen w-full max-w-107.5 bg-white text-[#0d0d0d]" data-node-id="1546:6475">
+    <div className="min-h-screen w-screen bg-white text-[#0d0d0d]" data-node-id="1546:6475">
       <header className="relative z-10 h-[calc(70px+env(safe-area-inset-top))] w-full overflow-hidden bg-white" data-node-id="1546:6476">
         <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] h-17.5">
           <button type="button" aria-label="뒤로 가기" onClick={() => navigate(-1)} className="absolute top-5 left-4.5 flex size-6 items-center justify-center">
@@ -86,11 +86,11 @@ function EventDetails() {
       </header>
 
       <section className="relative h-[363px] w-full overflow-hidden" aria-label="Summer Wine Festival">
-        <img src={heroImage} alt="와인 잔을 들고 건배하는 Summer Wine Festival 참가자들" className="absolute top-[-160px] left-0 h-[645px] w-full max-w-none" />
+        <img src={heroImage} alt="와인 잔을 들고 건배하는 Summer Wine Festival 참가자들" className="absolute top-[-160px] left-0 h-auto w-full max-w-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-[32.645%] from-transparent to-black/30" aria-hidden="true" />
-        <div className="absolute top-[267px] left-5 flex flex-col items-start gap-3 overflow-hidden">
+        <div className="absolute right-5 bottom-5 left-5 flex flex-col items-start gap-3 overflow-hidden">
           <span className="rounded-[25px] bg-[#831317] px-3 py-[5px] text-[12px] leading-none font-medium tracking-[-0.24px] text-white">FESTIVAL</span>
-          <h2 className="w-[390px] font-['Delmon_Delicate','Playfair_Display',serif] text-[32px] leading-[1.25] font-normal tracking-[-0.64px] text-white">
+          <h2 className="w-full font-['Delmon_Delicate','Playfair_Display',serif] text-[32px] leading-[1.25] font-normal tracking-[-0.64px] text-white">
             Summer Wine Festival
           </h2>
         </div>
@@ -100,7 +100,7 @@ function EventDetails() {
         <section className="flex w-full flex-col gap-3 overflow-hidden">
           <h2 className="text-[17px] leading-[1.3] font-bold tracking-[-0.51px]">행사 소개</h2>
           <div className="w-full overflow-hidden rounded-xl bg-[#f2f2f2] px-[18px] py-4">
-            <p className="w-[318px] text-[14px] leading-[1.6] font-normal tracking-[-0.28px] text-[#595959]">
+            <p className="w-full text-[14px] leading-[1.6] font-normal tracking-[-0.28px] text-[#595959]">
               국내외 다양한 와인을 직접 시음할 수 있는 행사입니다. 와인 전문가들이 큐레이션한 프리미엄 컬렉션과 함께 성수동의 세련된 감성을 느껴보세요.
             </p>
           </div>

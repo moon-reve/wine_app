@@ -192,7 +192,7 @@ function Home() {
     <div className="@container mx-auto w-full overflow-hidden bg-white">
       {/* Hero */}
       <section
-        className="relative h-[159.767cqw] w-full touch-pan-y overflow-hidden select-none"
+        className="relative h-[max(159.767cqw,650px)] w-full touch-pan-y overflow-hidden select-none"
         aria-roledescription="carousel"
         aria-label="홈 히어로"
         onPointerDown={(event) => {
@@ -229,45 +229,49 @@ function Home() {
               />
             ))}
 
-            <p className="absolute top-[88.837cqw] left-[calc(50%-6.163cqw)] -translate-x-1/2 whitespace-nowrap font-delmon text-[13.023cqw] leading-[1.1] font-normal tracking-[-0.260cqw] text-white">
-              Every Bottle
-            </p>
-            <p className="absolute top-[102.791cqw] left-[calc(50%+7.674cqw)] -translate-x-1/2 whitespace-nowrap font-delmon text-[13.023cqw] leading-[1.1] font-normal tracking-[-0.260cqw] text-white">
-              Has a Story
-            </p>
-            <p className="absolute inset-x-0 top-[122.093cqw] px-[5.581cqw] text-center text-[3.721cqw] leading-[1.3] tracking-[-0.074cqw] text-white">
-              당신의 취향으로 시작되는 와인 이야기
-              <br />
-              좋아하는 맛을 발견하고, 특별한 순간을 나눠보세요.
-            </p>
+            <div className="home-hero-copy absolute right-5 bottom-[105px] left-5 flex flex-col items-center text-center text-white">
+              <div className="font-delmon text-[56px] leading-[1.1] font-normal tracking-[-1.12px]">
+                <p>Every Bottle</p>
+                <p>Has a Story</p>
+              </div>
+              <p className="mt-4 text-[16px] leading-[1.3] tracking-[-0.32px]">
+                당신의 취향으로 시작되는 와인 이야기
+                <br />
+                좋아하는 맛을 발견하고, 특별한 순간을 나눠보세요.
+              </p>
+            </div>
           </div>
 
           <div className="relative h-full w-full shrink-0" aria-hidden={heroIndex !== 1}>
             <img src={heroTasteImage} alt="와인의 향과 맛을 기록하는 모습" draggable={false} className="absolute top-0 left-0 h-[111.21%] w-full max-w-none" />
             <div className="absolute inset-x-0 top-[31.163cqw] h-[128.605cqw] bg-gradient-to-b from-[rgba(102,102,102,0)] from-[40.145%] to-black to-[115.01%]" />
-            <div className="absolute inset-x-0 top-[88.837cqw] text-center font-delmon text-[11.628cqw] leading-[1.1] font-normal tracking-[-0.233cqw] text-white">
-              <p className="relative -left-[6.279cqw]">Taste What</p>
-              <p className="relative left-[7.791cqw] mt-[1.163cqw]">Moves You</p>
+            <div className="home-hero-copy absolute right-5 bottom-[105px] left-5 flex flex-col items-center text-center text-white">
+              <div className="font-delmon text-[50px] leading-[1.1] font-normal tracking-[-1px]">
+                <p>Taste What</p>
+                <p>Moves You</p>
+              </div>
+              <p className="mt-4 text-[16px] leading-[1.3] tracking-[-0.32px]">
+                향과 맛을 기록하고,
+                <br />
+                나만의 와인 취향을 찾아보세요.
+              </p>
             </div>
-            <p className="absolute inset-x-0 top-[122.093cqw] text-center text-[3.721cqw] leading-[1.3] tracking-[-0.074cqw] text-white">
-              향과 맛을 기록하고,
-              <br />
-              나만의 와인 취향을 찾아보세요.
-            </p>
           </div>
 
           <div className="relative h-full w-full shrink-0" aria-hidden={heroIndex !== 2}>
             <img src={heroShareImage} alt="와인 러버들과 특별한 순간을 나누는 모습" draggable={false} className="absolute inset-0 size-full object-cover" />
             <div className="absolute inset-x-0 top-[31.163cqw] h-[128.605cqw] bg-gradient-to-b from-[rgba(102,102,102,0)] from-[40.145%] to-black to-[115.01%]" />
-            <div className="absolute inset-x-0 top-[88.837cqw] text-center font-delmon text-[11.628cqw] leading-[1.1] font-normal tracking-[-0.233cqw] text-white">
-              <p className="relative -left-[5.465cqw]">Share the</p>
-              <p className="relative left-[8.372cqw] mt-[1.163cqw]">Moment</p>
+            <div className="home-hero-copy absolute right-5 bottom-[105px] left-5 flex flex-col items-center text-center text-white">
+              <div className="font-delmon text-[50px] leading-[1.1] font-normal tracking-[-1px]">
+                <p>Share the</p>
+                <p>Moment</p>
+              </div>
+              <p className="mt-4 text-[16px] leading-[1.3] tracking-[-0.32px]">
+                좋아하는 와인을 추천하고,
+                <br />
+                와인 러버들과 특별한 순간을 나눠보세요.
+              </p>
             </div>
-            <p className="absolute inset-x-0 top-[122.093cqw] text-center text-[3.721cqw] leading-[1.3] tracking-[-0.074cqw] text-white">
-              좋아하는 와인을 추천하고,
-              <br />
-              와인 러버들과 특별한 순간을 나눠보세요.
-            </p>
           </div>
         </div>
 
@@ -277,7 +281,7 @@ function Home() {
         {/* 하단 섹션(#151515)과 완전히 같은 색으로 끝나는 페이드를 추가해 경계선이 안 보이게 함 */}
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-[23.256cqw] bg-gradient-to-b from-transparent to-[#151515]" />
         <div
-          className="absolute top-[146.977cqw] left-1/2 z-30 flex h-[1.395cqw] w-[9.767cqw] -translate-x-1/2 items-center gap-[2.791cqw]"
+          className="absolute bottom-[42px] left-1/2 z-30 flex h-[6px] w-[42px] -translate-x-1/2 items-center gap-3"
           role="group"
           aria-label={`히어로 슬라이드 ${heroIndex + 1} / 3`}
           data-node-id="610:318"
@@ -289,7 +293,7 @@ function Home() {
               aria-label={`${index + 1}번 히어로 보기`}
               aria-current={heroIndex === index ? 'true' : undefined}
               onClick={() => setHeroIndex(index)}
-              className={`size-[1.395cqw] shrink-0 rounded-full ${heroIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
+              className={`size-[6px] shrink-0 rounded-full ${heroIndex === index ? 'bg-[#831317]' : 'bg-[#d9d9d9]'}`}
             />
           ))}
         </div>
@@ -299,10 +303,10 @@ function Home() {
       <section className="relative">
         <div className="absolute inset-x-0 top-0 h-[90.930cqw] bg-[#151515]" />
         <div className="relative px-[4.651cqw] pt-[14.884cqw]">
-          <h2 className="font-delmon text-[8.837cqw] leading-[1.3] font-normal tracking-[-0.177cqw] text-white">
+          <h2 className="font-delmon text-[38px] leading-[1.3] font-normal tracking-[-0.76px] text-white">
             Best Feed
           </h2>
-          <p className="mt-[1.860cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-white">
+          <p className="mt-[1.860cqw] text-[14px] leading-[1.3] tracking-[-0.28px] text-white">
             최신 베스트 피드를 확인해보세요!
           </p>
 
@@ -348,15 +352,15 @@ function Home() {
                   <div className="absolute inset-x-[4.651cqw] top-[4.651cqw] flex items-center gap-[2.326cqw]">
                     <img src={feed.avatar} alt="" className="size-[9.302cqw] shrink-0 rounded-full border-[0.5px] border-[#831317] object-cover object-top" />
                     <div className="min-w-0 flex-1">
-                      <p className="font-playfair-display text-[3.721cqw] leading-[1.2] font-semibold text-white">{feed.username}</p>
-                      <p className="flex items-center gap-[0.233cqw] truncate text-[2.791cqw] leading-[1.2] font-medium text-white">
+                      <p className="font-playfair-display text-[16px] leading-[1.2] font-semibold text-white">{feed.username}</p>
+                      <p className="flex items-center gap-[0.233cqw] truncate text-[12px] leading-[1.2] font-medium text-white">
                         <img src={iconMusicNote2} alt="" className="size-[5.581cqw] shrink-0" />
                         낭만적인 여름밤 당신의 눈동자에 치얼쓰~
                       </p>
                     </div>
                     <button
                       type="button"
-                      className="shrink-0 rounded-[2.326cqw] border-[0.5px] border-white px-[1.512cqw] py-[0.814cqw] text-[2.791cqw] leading-[1.2] font-medium text-white"
+                      className="shrink-0 rounded-[2.326cqw] border-[0.5px] border-white px-[1.512cqw] py-[0.814cqw] text-[12px] leading-[1.2] font-medium text-white"
                     >
                       팔로우
                     </button>
@@ -366,18 +370,18 @@ function Home() {
 
                   <div className="absolute inset-x-[4.651cqw] bottom-[14.419cqw] flex gap-[1.163cqw]">
                     {feed.tags.map((tag) => (
-                      <span key={tag} className="glass-tab flex h-[5.581cqw] items-center rounded-full px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-medium whitespace-nowrap text-white">
+                      <span key={tag} className="glass-tab flex h-[5.581cqw] items-center rounded-full px-[1.279cqw] py-[0.465cqw] text-[12px] leading-[9px] font-medium whitespace-nowrap text-white">
                         {tag}
                       </span>
                     ))}
                   </div>
 
                   <div className="absolute inset-x-[4.651cqw] bottom-[4.651cqw] flex items-center gap-[3.721cqw] text-white">
-                    <span className="flex items-center gap-[0.930cqw] text-[2.791cqw] leading-[9px] font-medium">
+                    <span className="flex items-center gap-[0.930cqw] text-[12px] leading-[9px] font-medium">
                       <img src={iconHeart} alt="" className="size-[4.651cqw]" />
                       {feed.likes}
                     </span>
-                    <span className="flex items-center gap-[0.930cqw] text-[2.791cqw] leading-[9px] font-medium">
+                    <span className="flex items-center gap-[0.930cqw] text-[12px] leading-[9px] font-medium">
                       <img src={iconShare} alt="" className="size-[4.651cqw]" />
                       {feed.shares}
                     </span>
@@ -411,10 +415,10 @@ function Home() {
       <section className="pt-[6.977cqw]">
         <div className="flex items-center justify-between px-[4.651cqw]">
           <div>
-            <h2 className="font-delmon text-[8.837cqw] leading-[1.3] font-normal tracking-[-0.177cqw] text-[#831317]">
+            <h2 className="font-delmon text-[38px] leading-[1.3] font-normal tracking-[-0.76px] text-[#831317]">
               Today’s Pick
             </h2>
-            <p className="mt-[1.163cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">
+            <p className="mt-[1.163cqw] text-[14px] leading-[1.3] tracking-[-0.28px] text-black/50">
               오늘의 와인을 추천합니다.
             </p>
           </div>
@@ -439,7 +443,7 @@ function Home() {
                   todayPickDidDrag.current = false
                   todayPickScrollRef.current?.scrollTo({ left: 0, behavior: 'smooth' })
                 }}
-                className={`relative pb-[2.791cqw] text-center font-playfair text-[3.721cqw] leading-[1.3] tracking-[-0.074cqw] ${
+                className={`relative pb-[2.791cqw] text-center font-playfair text-[16px] leading-[1.3] tracking-[-0.32px] ${
                   isActive ? 'font-bold text-[#831317]' : 'font-normal text-[#7b7b7b]'
                 }`}
                 style={playfairOpsz}
@@ -506,17 +510,17 @@ function Home() {
                     className="h-[52.326cqw] max-w-[80%] object-contain"
                   />
                 </div>
-                <p className="font-delmon mt-[3.488cqw] text-[3.488cqw] leading-[1.3] font-normal tracking-[-0.105cqw] text-black">
+                <p className="font-delmon mt-[3.488cqw] text-[15px] leading-[1.3] font-normal tracking-[-0.45px] text-black">
                   {wine.nameEn}
                 </p>
-                <p className="mt-[1.163cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-black/50">
+                <p className="mt-[1.163cqw] text-[14px] leading-[1.3] tracking-[-0.28px] text-black/50">
                   {wine.tastingNotes.slice(0, 2).join(', ')}
                 </p>
                 <div className="mt-[1.163cqw] flex items-center justify-between">
-                  <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#831317] px-[1.279cqw] py-[0.465cqw] text-[2.791cqw] leading-[9px] font-normal text-white">
+                  <span className="flex h-[4.651cqw] w-fit items-center rounded-full bg-[#831317] px-[1.279cqw] py-[0.465cqw] text-[12px] leading-[9px] font-normal text-white">
                     {index === 0 ? '#오늘의 와인' : '#AI 소믈리에 추천'}
                   </span>
-                  <span className="flex items-center gap-[0.233cqw] text-[2.791cqw] leading-[1.08] tracking-[-0.084cqw] text-[#831317] underline">
+                  <span className="flex items-center gap-[0.233cqw] text-[12px] leading-[1.08] tracking-[-0.36px] text-[#831317] underline">
                     자세히보기
                     <img src={iconChevronForward} alt="" className="size-[4.186cqw]" />
                   </span>
@@ -548,7 +552,7 @@ function Home() {
       {/* Challenge */}
       <section className="pt-[11.163cqw]">
         <div className="flex items-center justify-between px-[4.651cqw]">
-          <h2 className="font-delmon text-[8.837cqw] leading-[1.3] font-normal tracking-[-0.177cqw] text-[#831317]">
+          <h2 className="font-delmon text-[38px] leading-[1.3] font-normal tracking-[-0.76px] text-[#831317]">
             Challenge
           </h2>
           <Link to="/challenge/continents" aria-label="챌린지 상세보기" data-guide-ignore>
@@ -610,13 +614,13 @@ function Home() {
             className="relative h-[73.953cqw] w-[72.791cqw] shrink-0 snap-start overflow-hidden text-left"
           >
             <img src={wineContinentsImage} alt="오대륙 와인 마셔보기" className="absolute inset-0 size-full object-cover" />
-            <p className="absolute top-[7.442cqw] left-[5.581cqw] text-[5.581cqw] leading-[1.3] font-medium tracking-[-0.112cqw] text-white">
+            <p className="absolute top-[7.442cqw] left-[5.581cqw] text-[24px] leading-[1.3] font-medium tracking-[-0.48px] text-white">
               오대륙 와인 마셔보기
             </p>
-            <p className="absolute top-[16.512cqw] left-[5.581cqw] whitespace-nowrap text-[3.256cqw] leading-[1.45] tracking-[-0.065cqw] text-white/80">
+            <p className="absolute top-[16.512cqw] left-[5.581cqw] whitespace-nowrap text-[14px] leading-[1.45] tracking-[-0.28px] text-white/80">
               대륙별 와인을 경험하고 나만의 와인 취향 찾기
             </p>
-            <p className="font-delmon absolute top-[65.581cqw] left-[5.116cqw] text-[2.326cqw] leading-[1.55] font-normal tracking-[-0.047cqw] text-white">
+            <p className="font-delmon absolute top-[65.581cqw] left-[5.116cqw] text-[10px] leading-[1.55] font-normal tracking-[-0.2px] text-white">
               In Progress
             </p>
             <div className="absolute top-[69.302cqw] left-[4.884cqw] h-[1.163cqw] w-[62.791cqw] overflow-hidden rounded-[14.884cqw] border border-white/15 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.22),0_2px_10px_rgba(0,0,0,0.12)] backdrop-blur-[12px]">
@@ -627,10 +631,10 @@ function Home() {
           <div className="relative h-[73.953cqw] w-[71.860cqw] shrink-0 snap-start overflow-hidden">
             <img src={aiSommelierImage} alt="AI 소믈리에랑 대결하기" className="absolute inset-0 size-full object-cover" />
             <div className="absolute top-[10.000cqw] right-0 bottom-0 left-0 bg-gradient-to-b from-white/0 from-0% via-transparent via-50% to-[#0c0c0c] to-100%" />
-            <p className="absolute top-[6.977cqw] right-[4.651cqw] left-[4.651cqw] whitespace-nowrap text-[5.581cqw] leading-[1.3] font-medium tracking-[-0.112cqw] text-white">
+            <p className="absolute top-[6.977cqw] right-[4.651cqw] left-[4.651cqw] whitespace-nowrap text-[24px] leading-[1.3] font-medium tracking-[-0.48px] text-white">
               AI 소믈리에랑 대결하기
             </p>
-            <div className="absolute top-[16.279cqw] right-[4.651cqw] left-[4.651cqw] whitespace-nowrap text-[3.256cqw] leading-[1.45] tracking-[-0.065cqw] text-white/85">
+            <div className="absolute top-[16.279cqw] right-[4.651cqw] left-[4.651cqw] whitespace-nowrap text-[14px] leading-[1.45] tracking-[-0.28px] text-white/85">
               <p>내가 고른 와인과 AI 추천을 비교해서</p>
               <p>공유해보세요</p>
             </div>
@@ -640,7 +644,7 @@ function Home() {
 
       {/* Event */}
       <section className="px-[4.651cqw] pt-[11.163cqw]">
-        <h2 className="font-delmon text-[8.837cqw] leading-[1.3] font-normal tracking-[-0.177cqw] text-[#831317]">
+        <h2 className="font-delmon text-[38px] leading-[1.3] font-normal tracking-[-0.76px] text-[#831317]">
           Event
         </h2>
         <div className="mt-[4.651cqw] divide-y divide-black/20">
@@ -648,11 +652,11 @@ function Home() {
             const content = (
               <>
                 <div>
-                  <p className="text-[2.791cqw] leading-[1.55] font-medium tracking-[-0.056cqw] text-[#831317]">{item.label}</p>
-                  <p className="mt-[0.558cqw] text-[4.186cqw] leading-[1.18] font-semibold tracking-[-0.147cqw] text-black">
+                  <p className="text-[12px] leading-[1.55] font-medium tracking-[-0.24px] text-[#831317]">{item.label}</p>
+                  <p className="mt-[0.558cqw] text-[18px] leading-[1.18] font-semibold tracking-[-0.63px] text-black">
                     {item.title}
                   </p>
-                  <p className="mt-[1.572cqw] text-[2.791cqw] leading-[1.55] tracking-[-0.056cqw] text-black">{item.description}</p>
+                  <p className="mt-[1.572cqw] text-[12px] leading-[1.55] tracking-[-0.24px] text-black">{item.description}</p>
                 </div>
                 <img src={iconArrowForward2} alt="" className="size-[3.721cqw] shrink-0" />
               </>
@@ -687,8 +691,8 @@ function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-black from-[24.525%] to-[rgba(29,4,5,0)] to-[79.087%]" />
           <div className="absolute inset-0 bg-[#575757]/20" />
           <div className="relative z-10 flex h-full flex-col justify-center px-[4.651cqw]">
-            <p className="text-[5.581cqw] leading-[1.3] font-bold tracking-[-0.112cqw] text-white">페어링하기 좋은 음식찾기</p>
-            <p className="mt-[0.233cqw] text-[3.256cqw] leading-[1.45] tracking-[-0.065cqw] text-white">
+            <p className="text-[24px] leading-[1.3] font-bold tracking-[-0.48px] text-white">페어링하기 좋은 음식찾기</p>
+            <p className="mt-[0.233cqw] text-[14px] leading-[1.45] tracking-[-0.28px] text-white">
               매주 지정 음식에 어울리는 와인을 추천하고 투표받기
             </p>
           </div>
@@ -698,13 +702,13 @@ function Home() {
       {/* Wine Story */}
       <section className="px-[4.651cqw] pt-[11.163cqw]">
         <div className="relative h-[92.791cqw] w-full">
-          <p className="absolute inset-x-0 top-[2.326cqw] text-center text-[3.256cqw] leading-[9px] tracking-[-0.065cqw] text-black/50">
+          <p className="absolute inset-x-0 top-[2.326cqw] text-center text-[14px] leading-[9px] tracking-[-0.28px] text-black/50">
             2026.07.10
           </p>
-          <h2 className="font-delmon absolute inset-x-0 top-[4.651cqw] text-center text-[8.837cqw] leading-[1.3] font-normal tracking-[-0.177cqw] text-[#831317]">
+          <h2 className="font-delmon absolute inset-x-0 top-[4.651cqw] text-center text-[38px] leading-[1.3] font-normal tracking-[-0.76px] text-[#831317]">
             Wine Story
           </h2>
-          <p className="absolute top-[19.302cqw] left-1/2 w-[64.651cqw] -translate-x-1/2 text-center text-[3.256cqw] leading-[1.3] font-light tracking-[-0.098cqw] text-black">
+          <p className="absolute top-[19.302cqw] left-1/2 w-[64.651cqw] -translate-x-1/2 text-center text-[14px] leading-[1.3] font-light tracking-[-0.42px] text-black">
             많은 사람들이 오래된 와인이 더 맛있다고 생각하지만 사실은 그렇지 않다. 전 세계 와인의 약 90%는 1~3년
             안에 마시는 것이 가장 맛있다. 숙성이 필요한 와인은 극히 일부의 프리미엄 와인뿐이다.
           </p>
@@ -780,15 +784,15 @@ function Home() {
                 <img src={iconArrowForward} alt="" className="size-full" />
               </span>
             ) : null}
-            <p className="absolute inset-x-[4.651cqw] top-[59.302cqw] text-[6.512cqw] leading-[1.18] font-bold tracking-[-0.228cqw] text-white">
+            <p className="absolute inset-x-[4.651cqw] top-[59.302cqw] text-[28px] leading-[1.18] font-bold tracking-[-0.98px] text-white">
               {card.title}
             </p>
-            <div className="absolute inset-x-[4.651cqw] top-[66.977cqw] text-[3.721cqw] leading-[1.55] tracking-[-0.074cqw] text-white">
+            <div className="absolute inset-x-[4.651cqw] top-[66.977cqw] text-[16px] leading-[1.55] tracking-[-0.32px] text-white">
               {card.subtitle.map((line) => (
                 <p key={line}>{line}</p>
               ))}
             </div>
-            <p className="absolute inset-x-[4.651cqw] top-[76.047cqw] w-[79.302cqw] text-[3.256cqw] leading-[1.3] tracking-[-0.065cqw] text-white">
+            <p className="absolute inset-x-[4.651cqw] top-[76.047cqw] w-[79.302cqw] text-[14px] leading-[1.3] tracking-[-0.28px] text-white">
               {card.body}
             </p>
             </>
@@ -858,17 +862,14 @@ function Home() {
           className="absolute top-[68.435cqw] left-[58.179cqw] z-10 h-[12.055cqw] w-[17.433cqw] -scale-y-100 rotate-[-80.67deg] opacity-70"
         />
 
-        <p className="absolute top-[28.837cqw] left-1/2 -translate-x-1/2 whitespace-nowrap font-delmon text-[13.488cqw] leading-none font-normal tracking-[-0.405cqw] text-[#831317]">
-          Collect Corks
-        </p>
-        <p className="absolute top-[65.814cqw] left-1/2 -translate-x-1/2 text-center text-[3.256cqw] leading-[1.3] font-light tracking-[-0.098cqw] text-black">
-          매일매일 출석해 코르크를 모아보세요
-        </p>
-
-        <button
-          type="button"
-          className="absolute top-[50.000cqw] left-1/2 z-20 flex h-[10.930cqw] w-[33.953cqw] -translate-x-1/2 items-center justify-center overflow-hidden rounded-full border border-white/55 bg-white/[0.06] text-[3.721cqw] leading-[1.2] font-semibold tracking-[-0.074cqw] text-[#831317] shadow-[0_8px_24px_rgba(80,45,30,0.12),0_0_20px_4px_rgba(176,176,176,0.22),inset_0_1px_0_rgba(255,255,255,0.85),inset_0_-1px_0_rgba(255,255,255,0.2)] backdrop-blur-[6px] backdrop-saturate-150"
-        >
+        <div className="relative z-20 flex w-full flex-col items-center px-5 pt-[28.837cqw] text-center">
+          <p className="w-full font-delmon text-[58px] leading-none font-normal tracking-[-1.74px] text-[#831317]">
+            Collect Corks
+          </p>
+          <button
+            type="button"
+            className="relative mt-5 flex h-[10.930cqw] min-h-9 w-[33.953cqw] min-w-[120px] items-center justify-center overflow-hidden rounded-full border border-white/55 bg-white/[0.06] text-[16px] leading-[1.2] font-semibold tracking-[-0.32px] text-[#831317] shadow-[0_8px_24px_rgba(80,45,30,0.12),0_0_20px_rgba(176,176,176,0.22),inset_0_1px_0_rgba(255,255,255,0.85),inset_0_-1px_0_rgba(255,255,255,0.2)] backdrop-blur-[6px] backdrop-saturate-150"
+          >
           <span
             aria-hidden
             className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-br from-white/20 via-transparent to-white/[0.08]"
@@ -888,7 +889,11 @@ function Home() {
           <span className="relative z-10 whitespace-nowrap" data-node-id="576:216">
             코르크 하루 추가
           </span>
-        </button>
+          </button>
+          <p className="mt-5 text-[14px] leading-[1.3] font-light tracking-[-0.42px] text-black">
+            매일매일 출석해 코르크를 모아보세요
+          </p>
+        </div>
 
         <div className="absolute inset-x-0 bottom-0 h-[47.209cqw] overflow-hidden">
           <img

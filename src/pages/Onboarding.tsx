@@ -76,7 +76,7 @@ function Onboarding() {
 
   return (
     <main
-      className="relative mx-auto h-dvh w-full max-w-[430px] overflow-hidden bg-black text-white"
+      className="relative h-dvh w-screen overflow-hidden bg-black text-white"
     >
       <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
         <div

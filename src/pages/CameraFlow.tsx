@@ -42,7 +42,7 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
 
   if (isResult) {
     return (
-      <main className="@container relative mx-auto h-dvh w-full max-w-[430px] overflow-hidden bg-black text-white">
+      <main className="@container relative h-dvh w-screen overflow-hidden bg-black text-white">
         <img src={capturedPhoto ?? searchCamera} alt="" className="absolute -inset-2 h-[calc(100%+16px)] w-[calc(100%+16px)] object-cover blur-[6px]" />
         <div className="absolute inset-0 bg-black/20" />
         <header className="absolute inset-x-0 top-[max(28px,env(safe-area-inset-top))] z-20">
@@ -100,7 +100,7 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
   return (
     <main
       {...cameraGestureProps}
-      className="@container relative mx-auto h-dvh w-full max-w-[430px] touch-none overflow-hidden bg-black text-white"
+      className="@container relative h-dvh w-screen touch-none overflow-hidden bg-black text-white"
     >
       <div
         className="absolute inset-0 origin-center"
