@@ -175,7 +175,7 @@ function WineMap() {
 
   return (
     <div
-      className="relative -mx-5 -mt-[2px] h-[calc(100%+2px)] min-h-0 w-[calc(100%+40px)] overflow-hidden bg-[#f2f2f2]"
+      className="relative -mx-[4.651cqw] -mt-[2px] h-[calc(100%+2px)] min-h-0 w-[calc(100%+9.302cqw)] overflow-hidden bg-[#f2f2f2]"
       data-node-id="1829:9571"
     >
       <div ref={mapContainerRef} aria-label="주변 와인 매장 지도" className="absolute inset-0 size-full" />
@@ -193,16 +193,15 @@ function WineMap() {
       )}
 
       <div
-        className="absolute top-0 right-[41px] left-7 z-10 h-[66px] overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="absolute inset-x-0 top-0 z-10 flex h-[66px] items-start gap-[2.558cqw] overflow-x-auto px-[6.512cqw] pt-[17px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         data-node-id="1829:9573"
       >
-        {SORT_OPTIONS.map((option, index) => (
+        {SORT_OPTIONS.map((option) => (
           <button
             key={option}
             type="button"
             onClick={() => setActiveSort(option)}
-            style={{ left: [0, 75, 148, 221][index] }}
-            className={`absolute top-[17px] h-8 w-16 rounded-full border px-4 text-center text-[12px] leading-4 font-medium tracking-[0.96px] whitespace-nowrap shadow-[0_0_2.5px_rgba(0,0,0,0.25)] ${
+            className={`h-8 w-16 shrink-0 rounded-full border px-4 text-center text-[12px] leading-4 font-medium tracking-[0.96px] whitespace-nowrap shadow-[0_0_2.5px_rgba(0,0,0,0.25)] ${
               activeSort === option
                 ? 'border-[#831317] bg-[#831317] text-white'
                 : 'border-white/50 bg-[#f9f7f6] text-[#444141]'
@@ -215,7 +214,7 @@ function WineMap() {
 
       {selectedPlace && (
         <article
-          className="wine-map-card-rise fixed bottom-[92px] left-1/2 z-40 h-[342px] w-[calc(100%-69px)] max-w-[361px] -translate-x-1/2 overflow-hidden rounded-[33px] bg-white shadow-[0_0_6px_rgba(0,0,0,0.05)]"
+          className="wine-map-card-rise fixed bottom-[92px] left-1/2 z-40 flex w-[calc(100%_-_32px)] max-w-[361px] -translate-x-1/2 flex-col overflow-hidden rounded-[33px] bg-white p-[15px_16px_20px_18px] shadow-[0_0_6px_rgba(0,0,0,0.05)]"
           data-node-id="1829:9601"
         >
           <button
@@ -226,7 +225,7 @@ function WineMap() {
           >
             ×
           </button>
-          <div className="absolute top-[15px] right-4 left-[18px] h-[208px] overflow-hidden rounded-[20px]" data-node-id="1829:9612">
+          <div className="relative aspect-[325/208] w-full shrink-0 overflow-hidden rounded-[20px]" data-node-id="1829:9612">
             <img
               key={selectedPlace.id}
               src={selectedImage}
@@ -249,7 +248,7 @@ function WineMap() {
               Nearby
             </span>
           </div>
-          <div className="absolute top-[238px] right-[22px] left-[22px]">
+          <div className="mt-[15px] px-1">
             <a href={selectedPlace.place_url} target="_blank" rel="noreferrer" className="block truncate text-[20px] leading-[25px] font-semibold text-[#1e1b18]">
               {selectedPlace.place_name}
             </a>

@@ -101,12 +101,18 @@ function List() {
 
   return (
     <div
-      className={`${view === 'map' ? 'flex h-dvh min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
+      className={`@container ${view === 'map' ? 'flex h-dvh min-h-0 flex-col overflow-hidden' : 'min-h-screen pb-20'} w-full bg-white text-[#0d0d0d]`}
       data-node-id="690:403"
     >
-      <Header tone="light" title="List" titleColorClassName="text-[#831317]" wineIcons />
+      <Header
+        tone="light"
+        title="List"
+        titleColorClassName="text-[#831317]"
+        horizontalPaddingClassName="px-[4.651cqw]"
+        wineIcons
+      />
 
-      <main className={`px-5 pt-5 ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
+      <main className={`px-[4.651cqw] pt-5 ${view === 'map' ? 'flex min-h-0 flex-1 flex-col' : ''}`}>
         <nav aria-label="리스트 보기 방식" className="relative z-20 grid h-[34px] w-full grid-cols-2 border-b border-black/15 bg-white font-noto">
           <button
             type="button"
@@ -136,20 +142,19 @@ function List() {
 
         {view === 'list' ? (
           <>
-            <div className="relative mt-5 h-5">
+            <div className="mt-5 flex min-h-6 items-center justify-between">
               <p className="text-[14px] leading-5 font-normal text-[#534343]">전체 {visibleWines.length}종</p>
               <button
                 type="button"
                 aria-label="필터"
                 onClick={() => setIsFilterOpen(true)}
-                className="absolute top-px right-[7px] h-[18px] w-[19px]"
+                className="flex size-6 items-center justify-center"
               >
                 <img src={filterIcon} alt="" className="h-[18px] w-[19px]" />
               </button>
             </div>
-            <div className="mt-5 h-px" />
 
-            <div className="mt-[34px] mb-[30px]">
+            <ul className="mt-[30px] mb-[40px] list-none p-0">
               {visibleWines.map((wine, index) => (
                 <WineListCard
                   key={wine.id}
@@ -160,7 +165,7 @@ function List() {
                   onToggleLike={() => toggleLike(wine.id)}
                 />
               ))}
-            </div>
+            </ul>
           </>
         ) : (
           <div className="min-h-0 flex-1">

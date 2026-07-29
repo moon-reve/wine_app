@@ -14,9 +14,19 @@ type HeaderProps = {
   showBackButton?: boolean
   showSearchButton?: boolean
   titleText?: string
+  horizontalPaddingClassName?: string
 }
 
-function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, showBackButton = false, showSearchButton = true, titleText }: HeaderProps) {
+function Header({
+  tone = 'dark',
+  title,
+  titleColorClassName,
+  wineIcons = false,
+  showBackButton = false,
+  showSearchButton = true,
+  titleText,
+  horizontalPaddingClassName = 'px-5',
+}: HeaderProps) {
   const navigate = useNavigate()
   const isLight = tone === 'light'
   const titleColor = titleColorClassName ?? (isLight ? 'text-[#831317]' : 'text-white')
@@ -25,7 +35,7 @@ function Header({ tone = 'dark', title, titleColorClassName, wineIcons = false, 
 
   return (
     <header
-      className="flex w-full items-center justify-between px-5 pt-[max(18px,env(safe-area-inset-top))] pb-3"
+      className={`flex w-full items-center justify-between pt-[max(18px,env(safe-area-inset-top))] pb-3 ${horizontalPaddingClassName}`}
       data-node-id="577:105"
     >
       {showBackButton ? (

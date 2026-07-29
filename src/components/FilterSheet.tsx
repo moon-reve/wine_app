@@ -46,7 +46,7 @@ function Chip({ label, selected, onClick }: { label: string; selected: boolean; 
     <button
       type="button"
       onClick={onClick}
-      className={`flex h-[31px] items-center justify-center rounded-full border px-[21px] text-[14px] leading-5 font-medium whitespace-nowrap shadow-[0_1px_1px_rgba(0,0,0,0.05)] ${
+      className={`flex h-[31px] items-center justify-center rounded-full border px-[4.884cqw] text-[14px] leading-5 font-medium whitespace-nowrap shadow-[0_1px_1px_rgba(0,0,0,0.05)] ${
         selected ? 'border-[#831317] bg-[#831317] text-white' : 'border-[#f3f4f6] bg-white text-[#6b7280]'
       }`}
     >
@@ -96,25 +96,25 @@ function FilterSheet({ isOpen, onClose, onApply }: FilterSheetProps) {
       />
 
       <div
-        className={`absolute inset-x-0 bottom-0 mx-auto h-[min(724px,100dvh)] w-full max-w-107.5 overflow-hidden rounded-t-[30px] bg-white/70 transition-transform duration-300 ease-out ${
+        className={`@container absolute inset-x-0 bottom-0 mx-auto flex h-[min(724px,100dvh)] w-full max-w-107.5 flex-col overflow-hidden rounded-t-[30px] bg-white/70 transition-transform duration-300 ease-out ${
           isOpen ? 'translate-y-0' : 'translate-y-full'
         }`}
       >
-        <div className="absolute inset-x-0 top-0 h-[73px] border-b border-[#f3f4f6]">
-          <div className="absolute top-2 left-[194px] h-[3px] w-9 rounded-full bg-[#d9d9d9]" />
-          <button type="button" aria-label="필터 닫기" onClick={onClose} className="absolute top-1/2 left-[9px] flex size-10 -translate-y-1/2 items-center justify-center">
+        <header className="relative flex h-[73px] shrink-0 items-center justify-between border-b border-[#f3f4f6] px-[4.651cqw]">
+          <div className="absolute top-2 left-1/2 h-[3px] w-9 -translate-x-1/2 rounded-full bg-[#d9d9d9]" />
+          <button type="button" aria-label="필터 닫기" onClick={onClose} className="flex size-10 -ml-[2.558cqw] items-center justify-center">
             <img src={filterBackIcon} alt="" className="size-6" />
           </button>
           <h2 className="absolute top-1/2 left-1/2 -translate-1/2 text-[18px] leading-7 font-bold text-[#831317]">필터</h2>
-          <button type="button" aria-label="필터 닫기" onClick={onClose} className="absolute top-1/2 right-5 flex size-6 -translate-y-1/2 items-center justify-center text-[#831317]">
+          <button type="button" aria-label="필터 닫기" onClick={onClose} className="flex size-6 items-center justify-center text-[#831317]">
             <svg viewBox="0 0 24 24" className="size-[18px]" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <line x1="4" y1="4" x2="20" y2="20" />
               <line x1="20" y1="4" x2="4" y2="20" />
             </svg>
           </button>
-        </div>
+        </header>
 
-        <div className="absolute top-[97px] right-5 left-5">
+        <div className="min-h-0 flex-1 overflow-y-auto px-[4.651cqw] pt-6 pb-5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           <section>
             <h3 className="text-[18px] leading-6 font-bold text-[#831317]">가격</h3>
             <div className="mt-4 flex h-4 items-start justify-between text-[12px] leading-4">
@@ -146,9 +146,9 @@ function FilterSheet({ isOpen, onClose, onApply }: FilterSheetProps) {
             </div>
           </section>
 
-          <section className="mt-4">
+          <section className="mt-5">
             <h3 className="text-[18px] leading-6 font-bold text-[#831317]">와인 종류</h3>
-            <div className="mt-4 flex gap-2.5">
+            <div className="mt-4 flex flex-wrap gap-2.5">
               {WINE_TYPE_OPTIONS.map((option) => (
                 <Chip
                   key={option.value}
@@ -160,7 +160,7 @@ function FilterSheet({ isOpen, onClose, onApply }: FilterSheetProps) {
             </div>
           </section>
 
-          <section className="mt-[37px]">
+          <section className="mt-8">
             <h3 className="text-[18px] leading-6 font-bold text-[#831317]">나라</h3>
             <div className="mt-4 flex flex-wrap gap-2.5">
               {COUNTRY_OPTIONS.map((country) => (
@@ -174,7 +174,7 @@ function FilterSheet({ isOpen, onClose, onApply }: FilterSheetProps) {
             </div>
           </section>
 
-          <section className="mt-[76px]">
+          <section className="mt-8">
             <div className="flex flex-wrap gap-2.5">
               {GRAPE_OPTIONS.map((grape, index) => (
                 <Chip
@@ -188,7 +188,7 @@ function FilterSheet({ isOpen, onClose, onApply }: FilterSheetProps) {
           </section>
         </div>
 
-        <div className="absolute top-[631px] right-5 left-5 flex gap-2.5">
+        <footer className="flex shrink-0 gap-2.5 px-[4.651cqw] pt-3 pb-[max(24px,env(safe-area-inset-bottom))]">
           <button
             type="button"
             onClick={handleApply}
@@ -203,7 +203,7 @@ function FilterSheet({ isOpen, onClose, onApply }: FilterSheetProps) {
           >
             초기화하기
           </button>
-        </div>
+        </footer>
       </div>
     </div>
   )

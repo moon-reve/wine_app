@@ -195,10 +195,10 @@ html[data-guide-mode] :is(a[href], [data-guide-target]):not([data-guide-ignore])
   .wine-list-card {
     position: relative;
     display: grid;
-    grid-template-columns: 89px minmax(0, 1fr);
-    column-gap: clamp(20px, 8.6vw, 37px);
+    grid-template-columns: 20% minmax(0, 1fr);
+    column-gap: 8.605cqw;
     width: 100%;
-    padding: 15px 20px 15px 24px;
+    padding: 15px 0;
     align-items: center;
     cursor: pointer;
     text-align: left;

@@ -1,4 +1,3 @@
-import type { KeyboardEvent } from 'react'
 import starIcon from '../assets/list/container-star.svg'
 import heartEmptyIcon from '../assets/list/heart-empty.svg'
 import heartFilledIcon from '../assets/list/heart-filled.svg'
@@ -19,30 +18,24 @@ function WineListCard({
   onOpen,
   onToggleLike,
 }: WineListCardProps) {
-  const handleKeyDown = (event: KeyboardEvent<HTMLElement>) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault()
-      onOpen()
-    }
-  }
-
   return (
-    <article
-      role="button"
-      data-guide-target
-      tabIndex={0}
-      onClick={onOpen}
-      onKeyDown={handleKeyDown}
-      className="wine-list-card"
-    >
+    <li className={`wine-list-card ${showDivider ? 'border-b border-[#d9d9d9]' : ''}`}>
+      <button
+        type="button"
+        data-guide-target
+        aria-label={`${wine.name} 상세 보기`}
+        onClick={onOpen}
+        className="absolute inset-0 z-0 size-full"
+      />
+
       <div
-        className="flex size-[89px] shrink-0 items-center justify-center overflow-hidden rounded-full"
+        className="pointer-events-none relative z-1 flex aspect-square w-full shrink-0 items-center justify-center overflow-hidden rounded-full"
         style={{ backgroundColor: wine.bgColor }}
       >
         <img src={wine.image} alt={wine.name} className="h-[85%] w-auto object-contain" />
       </div>
 
-      <div className="wine-list-card__details">
+      <div className="wine-list-card__details pointer-events-none relative z-1">
         <div className="wine-list-card__copy">
           <p className="wine-list-card__text text-[18px] leading-[1.2] font-semibold text-[#1e1b18]">
             {wine.name}
@@ -59,7 +52,7 @@ function WineListCard({
             event.stopPropagation()
             onToggleLike()
           }}
-          className="wine-list-card__heart flex h-[19px] w-[19px] items-center justify-center"
+          className="wine-list-card__heart pointer-events-auto relative z-10 flex h-[19px] w-[19px] items-center justify-center"
         >
           <img src={isLiked ? heartFilledIcon : heartEmptyIcon} alt="" className="h-full w-full" />
         </button>
@@ -75,9 +68,7 @@ function WineListCard({
           </p>
         </div>
       </div>
-
-      {showDivider && <div className="absolute inset-x-0 bottom-0 h-px bg-[#d9d9d9]" />}
-    </article>
+    </li>
   )
 }
 
