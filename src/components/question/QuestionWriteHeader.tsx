@@ -5,7 +5,7 @@ function QuestionWriteHeader() {
   const navigate = useNavigate()
 
   return (
-    <header className="sticky top-0 z-10 grid h-[calc(70px+env(safe-area-inset-top))] w-full grid-cols-3 items-center bg-white px-5 pt-[env(safe-area-inset-top)] text-[#0d0d0d]">
+    <header className="relative z-10 grid h-[calc(70px+env(safe-area-inset-top))] w-full grid-cols-3 items-center bg-white px-5 pt-[env(safe-area-inset-top)] text-[#0d0d0d]">
       <button
         type="button"
         aria-label="뒤로가기"

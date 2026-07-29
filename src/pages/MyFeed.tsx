@@ -67,7 +67,7 @@ function MyFeed() {
 
   return (
     <div className="mx-auto min-h-screen w-full max-w-[430px] bg-white text-[#0d0d0d]">
-      <header className="sticky top-0 z-10 h-[calc(70px+env(safe-area-inset-top))] w-full shrink-0 bg-white">
+      <header className="relative z-10 h-[calc(70px+env(safe-area-inset-top))] w-full shrink-0 bg-white">
         <div className="absolute inset-x-0 top-[env(safe-area-inset-top)] flex h-[70px] items-center justify-center">
           <button
             type="button"
