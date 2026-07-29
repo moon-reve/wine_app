@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import backIcon from '../assets/wine-detail-white/back.svg'
 import bookmarkIcon from '../assets/wine-detail-white/bookmark.svg'
-import grapes from '../assets/wine-detail-white/grapes.png'
+import grapes from '../assets/wine-detail-white/grapes.webp'
 import heartIcon from '../assets/wine-detail-white/heart.svg'
 import { formatPrice, formatStars, getWineDetailData, resolveWineImage } from '../data/wineDetailData'
 

@@ -27,7 +27,7 @@ function SearchSubmitIcon() {
 const RECENT_SEARCH_STORAGE_KEY = 'wine-app:recent-searches'
 const MAX_RECENT_SEARCHES = 8
 const DEFAULT_RECENT_SEARCHES = ['Yellow Tail Shiraz', '19 Crimes', 'Oyster Bay', '푸칭 푸딩']
-const wineImages = import.meta.glob('../assets/images/wines/*.png', {
+const wineImages = import.meta.glob('../assets/images/wines/*.webp', {
   eager: true,
   import: 'default',
 }) as Record<string, string>

@@ -1,9 +1,9 @@
-import heroImage from '../assets/magazine/hero.png'
-import decorativeBerries from '../assets/magazine/decorative-berries.png'
-import decorativeTexture from '../assets/magazine/decorative-texture.png'
-import product1 from '../assets/magazine/product-1.png'
-import product2 from '../assets/magazine/product-2.png'
-import product3 from '../assets/magazine/product-3.png'
+import heroImage from '../assets/magazine/hero.webp'
+import decorativeBerries from '../assets/magazine/decorative-berries.webp'
+import decorativeTexture from '../assets/magazine/decorative-texture.webp'
+import product1 from '../assets/magazine/product-1.webp'
+import product2 from '../assets/magazine/product-2.webp'
+import product3 from '../assets/magazine/product-3.webp'
 
 const noScrollbar = '[scrollbar-width:none] [&::-webkit-scrollbar]:hidden'
 

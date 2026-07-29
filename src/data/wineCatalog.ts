@@ -1,7 +1,7 @@
 import dummyWines from '../../dummy data/wines.json'
 import { WINE_TYPE_BG_COLOR, type WineType } from './todayPickData'
 
-const wineImages = import.meta.glob('../assets/images/wines/*.png', {
+const wineImages = import.meta.glob('../assets/images/wines/*.webp', {
   eager: true,
   import: 'default',
 }) as Record<string, string>

@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import backIcon from '../assets/challenge/back.svg'
-import bottlesImage from '../assets/challenge/bottles.png'
-import ghostBottle from '../assets/challenge/ghost-bottle.png'
-import heroImage from '../assets/challenge/hero.png'
-import medal1 from '../assets/challenge/medal-1.png'
-import medal2 from '../assets/challenge/medal-2.png'
-import medal3 from '../assets/challenge/medal-3.png'
-import medal4 from '../assets/challenge/medal-4.png'
-import medal5 from '../assets/challenge/medal-5.png'
+import bottlesImage from '../assets/challenge/bottles.webp'
+import ghostBottle from '../assets/challenge/ghost-bottle.webp'
+import heroImage from '../assets/challenge/hero.webp'
+import medal1 from '../assets/challenge/medal-1.webp'
+import medal2 from '../assets/challenge/medal-2.webp'
+import medal3 from '../assets/challenge/medal-3.webp'
+import medal4 from '../assets/challenge/medal-4.webp'
+import medal5 from '../assets/challenge/medal-5.webp'
 
 const steps = [
   { title: '대륙별 와인 마시기', description: '오대륙 중 한 곳의 와인을 선택해 마셔보세요.' },

@@ -28,3 +28,6 @@ dev-dist
 
 # Local archive for unused page source files
 /src/unused-pages-local/
+
+# Local archive for original JPG/PNG image files
+/original-images-local/

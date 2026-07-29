@@ -1,11 +1,11 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import backIcon from '../assets/wine-detail-red/back.svg'
 import bookmarkIcon from '../assets/wine-detail-red/bookmark.svg'
-import grapes from '../assets/wine-detail-red/grapes.png'
+import grapes from '../assets/wine-detail-red/grapes.webp'
 import heartIcon from '../assets/wine-detail-red/heart.svg'
-import chateauMargauxHero from '../assets/wine-detail-red/hero-wine-upright.png'
-import cabernetSauvignon from '../assets/product/cabernet-sauvignon.png'
-import merlot from '../assets/product/merlot.png'
+import chateauMargauxHero from '../assets/wine-detail-red/hero-wine-upright.webp'
+import cabernetSauvignon from '../assets/product/cabernet-sauvignon.webp'
+import merlot from '../assets/product/merlot.webp'
 import { formatPrice, formatStars, getWineDetailData, resolveWineImage } from '../data/wineDetailData'
 
 const similarRecommendations = [

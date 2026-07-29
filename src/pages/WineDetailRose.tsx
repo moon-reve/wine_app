@@ -2,7 +2,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import backIcon from '../assets/wine-detail-white/back.svg'
 import bookmarkIcon from '../assets/wine-detail-white/bookmark.svg'
 import heartIcon from '../assets/wine-detail-white/heart.svg'
-import roseGrapes from '../assets/wine-detail-rose/rose-podo.png'
+import roseGrapes from '../assets/wine-detail-rose/rose-podo.webp'
 import { formatPrice, formatStars, getWineDetailData, resolveWineImage } from '../data/wineDetailData'
 
 function Divider() {

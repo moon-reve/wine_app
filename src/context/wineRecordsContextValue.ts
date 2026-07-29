@@ -1,7 +1,7 @@
 import { createContext, useContext } from 'react'
-import wineImage1 from '../assets/mypage/figma-wine-review-01.png'
-import wineImage2 from '../assets/mypage/figma-wine-review-02.png'
-import wineImage3 from '../assets/mypage/figma-wine-review-03.png'
+import wineImage1 from '../assets/mypage/figma-wine-review-01.webp'
+import wineImage2 from '../assets/mypage/figma-wine-review-02.webp'
+import wineImage3 from '../assets/mypage/figma-wine-review-03.webp'
 
 export type WineRecordEntry = {
   id: string

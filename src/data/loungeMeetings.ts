@@ -1,6 +1,6 @@
-import meetingImage1 from '../assets/lounge/figma/meeting-1.png'
-import meetingImage2 from '../assets/lounge/figma/meeting-2-overlay.png'
-import meetingImage3 from '../assets/lounge/figma/meeting-3-overlay.png'
+import meetingImage1 from '../assets/lounge/figma/meeting-1.webp'
+import meetingImage2 from '../assets/lounge/figma/meeting-2-overlay.webp'
+import meetingImage3 from '../assets/lounge/figma/meeting-3-overlay.webp'
 
 export type LoungeMeeting = {
   id: string

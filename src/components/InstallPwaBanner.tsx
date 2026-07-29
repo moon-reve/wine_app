@@ -27,7 +27,7 @@ export default function InstallPwaBanner() {
       className="wine-install-banner-drop fixed inset-x-0 top-0 z-50 w-screen px-2.5 pt-[calc(10px+env(safe-area-inset-top))]"
     >
       <div className="flex items-center gap-3 rounded-2xl bg-white px-3.5 py-3 text-[#202024] shadow-[0_4px_20px_rgba(0,0,0,0.18)] ring-1 ring-black/5">
-        <img src="/pwa-192x192.png" alt="" className="size-11 shrink-0 rounded-[12px]" />
+        <img src="/pwa-192x192.webp" alt="" className="size-11 shrink-0 rounded-[12px]" />
         <div className="min-w-0 flex-1">
           <p className="break-keep text-[15px] font-bold leading-[1.3]">Viner 앱 설치</p>
           <p className="mt-0.5 break-keep text-[13px] leading-[1.4] text-[#6e6e6e]">홈 화면에 추가하고 더 빠르게 만나보세요</p>

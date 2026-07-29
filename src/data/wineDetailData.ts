@@ -61,7 +61,7 @@ export type WineReview = {
 
 const wines = winesData as WineDetail[]
 const reviews = reviewsData as WineReview[]
-const wineImages = import.meta.glob('../assets/images/wines/*.png', {
+const wineImages = import.meta.glob('../assets/images/wines/*.webp', {
   eager: true,
   import: 'default',
 }) as Record<string, string>

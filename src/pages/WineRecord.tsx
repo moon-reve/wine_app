@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import wineImage from '../assets/quick-flow/record-wine.png'
+import wineImage from '../assets/quick-flow/record-wine.webp'
 import aiIcon from '../assets/quick-flow/ai.svg'
 import profileModalClose from '../assets/quick-flow/profile-modal-close.svg'
 import { useWineRecords, type WineRecordEntry } from '../context/wineRecordsContextValue'

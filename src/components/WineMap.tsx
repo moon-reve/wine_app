@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import grapeMarker from '../assets/map/grape-marker.png'
-import placeCardPhoto from '../assets/map/place-card-photo.png'
+import grapeMarker from '../assets/map/grape-marker.webp'
+import placeCardPhoto from '../assets/map/place-card-photo.webp'
 import {
   loadKakaoMaps,
   type KakaoMarkerInstance,

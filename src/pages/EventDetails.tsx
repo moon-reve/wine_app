@@ -1,10 +1,10 @@
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import backIcon from '../assets/event/detail-back.svg'
-import heroImage from '../assets/event/detail-hero.png'
-import wine1 from '../assets/event/detail-wine-1.png'
-import wine2 from '../assets/event/detail-wine-2.png'
-import wine3 from '../assets/wine-detail-red/hero-wine.png'
+import heroImage from '../assets/event/detail-hero.webp'
+import wine1 from '../assets/event/detail-wine-1.webp'
+import wine2 from '../assets/event/detail-wine-2.webp'
+import wine3 from '../assets/wine-detail-red/hero-wine.webp'
 
 const eventInfo = [
   { label: '날짜', value: '2026. 08. 14 (금) 14:00 - 20:00' },

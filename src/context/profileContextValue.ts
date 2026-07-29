@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import defaultProfilePhoto from '../assets/mypage/figma-profile-photo.png'
+import defaultProfilePhoto from '../assets/mypage/figma-profile-photo.webp'
 
 export type ProfileInfo = {
   nickname: string

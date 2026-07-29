@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
-import meetingCover from '../assets/lounge/figma/meeting-create-cover.png'
+import meetingCover from '../assets/lounge/figma/meeting-create-cover.webp'
 import BottomNav from '../components/BottomNav'
 import CoverImageUploader from '../components/meeting/CoverImageUploader'
 import MeetingCreateHeader from '../components/meeting/MeetingCreateHeader'

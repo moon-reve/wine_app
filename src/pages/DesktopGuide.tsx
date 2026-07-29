@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import guideWineBackground from '../assets/web/guide-wine-background.png'
+import guideWineBackground from '../assets/web/guide-wine-background.webp'
 
 function DesktopGuide() {
   const [isGuideOn, setIsGuideOn] = useState(false)

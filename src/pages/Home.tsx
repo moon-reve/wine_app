@@ -1,21 +1,21 @@
 import { useRef, useState, type PointerEvent as ReactPointerEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import heroImage from '../assets/images/hero.png'
-import heroTasteImage from '../assets/images/hero-taste.png'
-import heroShareImage from '../assets/images/hero-share.png'
-import foodPairingImage from '../assets/images/food-pairing.png'
-import magazineCard1 from '../assets/images/magazine-card-1.png'
-import magazineCard2 from '../assets/images/magazine-card-2.png'
-import wineContinentsImage from '../assets/images/wine-continents.png'
-import corkIcon from '../assets/images/cork-icon.png'
-import corkPile from '../assets/images/cork-pile.png'
-import wineNoteImage from '../assets/images/wine-note.png'
-import aiSommelierImage from '../assets/images/ai-sommelier-bg.png'
-import bestFeedPhoto from '../assets/images/best-feed-photo.png'
-import bestFeedPhoto2 from '../assets/images/best-feed-photo-2.png'
-import bestFeedPhoto3 from '../assets/images/best-feed-photo-3.png'
-import feedAvatarSora from '../assets/images/feed-avatar-sora.png'
-import feedAvatarAshlyn from '../assets/images/feed-avatar-ashlyn.png'
+import heroImage from '../assets/images/hero.webp'
+import heroTasteImage from '../assets/images/hero-taste.webp'
+import heroShareImage from '../assets/images/hero-share.webp'
+import foodPairingImage from '../assets/images/food-pairing.webp'
+import magazineCard1 from '../assets/images/magazine-card-1.webp'
+import magazineCard2 from '../assets/images/magazine-card-2.webp'
+import wineContinentsImage from '../assets/images/wine-continents.webp'
+import corkIcon from '../assets/images/cork-icon.webp'
+import corkPile from '../assets/images/cork-pile.webp'
+import wineNoteImage from '../assets/images/wine-note.webp'
+import aiSommelierImage from '../assets/images/ai-sommelier-bg.webp'
+import bestFeedPhoto from '../assets/images/best-feed-photo.webp'
+import bestFeedPhoto2 from '../assets/images/best-feed-photo-2.webp'
+import bestFeedPhoto3 from '../assets/images/best-feed-photo-3.webp'
+import feedAvatarSora from '../assets/images/feed-avatar-sora.webp'
+import feedAvatarAshlyn from '../assets/images/feed-avatar-ashlyn.webp'
 import iconArrowForward from '../assets/images/icon-arrow-forward.svg'
 import iconArrowForward2 from '../assets/images/icon-arrow-forward-2.svg'
 import iconArrowForward5 from '../assets/images/icon-arrow-forward-5.svg'
@@ -47,7 +47,7 @@ const tabs: { label: string; type: TodayPickType }[] = [
 ]
 
 const todayPickWineData = winesData as TodayPickWine[]
-const todayPickWineImages = import.meta.glob('../assets/images/wines/*.png', {
+const todayPickWineImages = import.meta.glob('../assets/images/wines/*.webp', {
   eager: true,
   import: 'default',
 }) as Record<string, string>

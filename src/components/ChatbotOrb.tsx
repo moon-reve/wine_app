@@ -1,8 +1,8 @@
-import chatbotOrbFrame1 from '../assets/images/chatbot-orb-frame-1.png'
-import chatbotOrbFrame2 from '../assets/images/chatbot-orb-frame-2.png'
-import chatbotOrbFrame3 from '../assets/images/chatbot-orb-frame-3.png'
-import chatbotOrbFrame4 from '../assets/images/chatbot-orb-frame-4.png'
-import chatbotOrbFrame5 from '../assets/images/chatbot-orb-frame-5.png'
+import chatbotOrbFrame1 from '../assets/images/chatbot-orb-frame-1.webp'
+import chatbotOrbFrame2 from '../assets/images/chatbot-orb-frame-2.webp'
+import chatbotOrbFrame3 from '../assets/images/chatbot-orb-frame-3.webp'
+import chatbotOrbFrame4 from '../assets/images/chatbot-orb-frame-4.webp'
+import chatbotOrbFrame5 from '../assets/images/chatbot-orb-frame-5.webp'
 
 const chatbotOrbFrames = [
   chatbotOrbFrame1,

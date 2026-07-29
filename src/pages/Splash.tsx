@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
-import wineSippersLogo from '../assets/splash/wine-sippers-logo.png'
+import wineSippersLogo from '../assets/splash/wine-sippers-logo.webp'
 
 function Splash() {
   const navigate = useNavigate()

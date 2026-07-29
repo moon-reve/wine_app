@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import googleIcon from '../assets/login/google.png'
-import kakaoIcon from '../assets/login/kakao.png'
-import naverIcon from '../assets/login/naver.png'
+import googleIcon from '../assets/login/google.webp'
+import kakaoIcon from '../assets/login/kakao.webp'
+import naverIcon from '../assets/login/naver.webp'
 import wineSippersLogo from '../assets/onboarding/wine-sippers-logo-white.svg'
 
 const slides = [
