@@ -168,7 +168,7 @@ export default function WineDetailRed() {
               <button
                 key={item.id}
                 type="button"
-                onClick={() => navigate(`/wine_detail/${item.type}/${item.id}`)}
+                onClick={() => navigate(`/wine_detail/${item.type}/${item.id}`, { replace: true })}
                 className="flex w-[240px] shrink-0 flex-col gap-2 text-left"
               >
                 <div className="flex h-[279px] w-[240px] items-center justify-center overflow-hidden rounded-xl bg-[#f2f2f2]">
