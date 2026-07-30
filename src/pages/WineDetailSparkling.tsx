@@ -5,6 +5,7 @@ import bubbles from '../assets/wine-detail-sparkling/bubbles.webp'
 import sparklingGlass from '../assets/wine-detail-sparkling/sparkling-glass.webp'
 import WineLikeButton from '../components/WineLikeButton'
 import WineShareButton from '../components/WineShareButton'
+import HorizontalDragScroller from '../components/HorizontalDragScroller'
 import { formatPrice, formatStars, getWineDetailData, resolveWineImage } from '../data/wineDetailData'
 
 function Divider() {
@@ -153,7 +154,7 @@ export default function WineDetailSparkling() {
         <Divider />
         <section className="flex w-full flex-col gap-3.5 overflow-visible">
           <div className="flex flex-col gap-1"><h2 className="text-[16px] leading-[1.3] font-bold tracking-[-0.48px]">비슷한 와인 추천</h2><p className="text-[14px] leading-[1.3] tracking-[-0.28px] text-[#737373]">이 와인과 비슷한 스타일의 와인을 추천해드려요.</p></div>
-          <div className="flex gap-3.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <HorizontalDragScroller className="flex gap-3.5 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {similarWines.map((item) => (
               <button
                 key={item.id}
@@ -168,7 +169,7 @@ export default function WineDetailSparkling() {
                 <p className="text-[12px] leading-[1.2] font-medium whitespace-nowrap text-[#737373]">★ {item.rating.toFixed(1)} · {formatPrice(item.price)}</p>
               </button>
             ))}
-          </div>
+          </HorizontalDragScroller>
         </section>
       </main>
       </div>
