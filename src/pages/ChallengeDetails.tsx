@@ -118,8 +118,8 @@ function ChallengeDetails() {
         <div className="absolute top-[529px] left-[24.619%] h-[218px] w-[13.256%] overflow-hidden">
           <img src={bottlesImage} alt="북미 와인" className="absolute top-[-25px] left-[-46.14%] h-auto w-[317.018%] max-w-none" />
         </div>
-        {[42.211, 59.411, 77.021].map((left, index) => (
-          <img key={left} src={ghostBottle} alt={`${index + 3}번째 미완료 대륙`} className="absolute top-[529px] h-[218px] w-[13.256%] object-bottom opacity-45" style={{ left: `${left}%` }} />
+        {[41.281, 58.481, 76.091].map((left, index) => (
+          <img key={left} src={ghostBottle} alt={`${index + 3}번째 미완료 대륙`} className="absolute top-[529px] h-[218px] w-[15.116%] object-bottom opacity-45" style={{ left: `${left}%` }} />
         ))}
         {medals.map((item) => <Medal key={item.left} item={item} />)}
       </section>
