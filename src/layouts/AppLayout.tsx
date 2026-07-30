@@ -14,10 +14,11 @@ function AppLayout() {
   const isSearch = location.pathname.startsWith('/search')
   const isMagazine = location.pathname.startsWith('/magazine')
   const isMagazineDetail = location.pathname.startsWith('/magazine/')
+  const isWineDetail = location.pathname.startsWith('/product/') || location.pathname.startsWith('/wine_detail/')
   const isMapView = isList && new URLSearchParams(location.search).get('view') === 'map'
   const isEmbeddedDesktop = new URLSearchParams(location.search).get('embed') === 'desktop'
-  const isLightPage = isLounge || isList || isMypage || isSearch || isMagazine
-  const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList ? '리스트' : '홈'
+  const isLightPage = isLounge || isList || isMypage || isSearch || isMagazine || isWineDetail
+  const activeItem = isMypage ? 'MY' : isLounge ? '라운지' : isList || isWineDetail ? '리스트' : '홈'
 
   useSyncThemeColor(isLightPage ? '#ffffff' : '#000000')
 
@@ -34,7 +35,7 @@ function AppLayout() {
 
     if (action === '기록') navigate('/record')
     if (action === '피드') navigate('/feed/create')
-    if (action === '찾기') navigate('/wine-search')
+    if (action === '찾기') navigate('/wine-search', { state: { from: location.pathname } })
   }
 
   useEffect(() => {

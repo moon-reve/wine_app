@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from 'react'
+import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import backIcon from '../assets/images/icon-chevron-forward.svg'
 import avatarImage from '../assets/mypage/figma-profile-photo.webp'
@@ -15,8 +15,10 @@ import feedThumb10 from '../assets/mypage/figma-feed-10.webp'
 import feedThumb11 from '../assets/mypage/figma-feed-11.webp'
 import feedThumb12 from '../assets/mypage/figma-feed-12.webp'
 import { FeedPost, ImageLightbox, type FigmaFeed, type ImagePreview } from './LoungeFeed'
-import { getFeedEdit, getUserFeeds } from '../data/userFeeds'
+import { deleteUserFeed, getFeedEdit, getUserFeeds, restoreUserFeed } from '../data/userFeeds'
 import AppBottomSheet from '../components/AppBottomSheet'
+import ContentActionSheet from '../components/ContentActionSheet'
+import UndoToast from '../components/UndoToast'
 
 // 마이페이지 그리드 썸네일과 정확히 같은 크롭으로 보이도록, 그리드 셀 비율(129.3:154.3)과
 // 크롭 클래스를 그대로 재사용한다 — 비율이 다르면 같은 퍼센트 크롭이라도 다른 부분이 보인다.
@@ -59,10 +61,17 @@ function MyFeed() {
   const location = useLocation()
   const [imagePreview, setImagePreview] = useState<ImagePreview | null>(null)
   const [feedToEdit, setFeedToEdit] = useState<FigmaFeed | null>(null)
-  const [myFeeds] = useState(() => [
+  const [myFeeds, setMyFeeds] = useState(() => [
     ...getUserFeeds().map((feed) => ({ feed, crop: 'absolute inset-0 size-full object-cover' })),
     ...demoFeeds.map(({ feed, crop }) => ({ feed: { ...feed, ...getFeedEdit(feed.id ?? '') }, crop })),
   ])
+  const [feedToDelete, setFeedToDelete] = useState<FigmaFeed | null>(null)
+  const [deletedFeed, setDeletedFeed] = useState<{
+    item: (typeof myFeeds)[number]
+    index: number
+    storedIndex: number
+    wasStored: boolean
+  } | null>(null)
   const targetState = location.state as { index?: number; feedId?: string } | null
   const targetIndex =
     (targetState?.feedId ? myFeeds.findIndex(({ feed }) => feed.id === targetState.feedId) : targetState?.index) ?? 0
@@ -71,6 +80,35 @@ function MyFeed() {
   useLayoutEffect(() => {
     postRefs.current[targetIndex]?.scrollIntoView({ block: 'start' })
   }, [targetIndex])
+
+  const dismissUndo = useCallback(() => setDeletedFeed(null), [])
+
+  const handleDelete = () => {
+    if (!feedToDelete?.id) return
+    const index = myFeeds.findIndex(({ feed }) => feed.id === feedToDelete.id)
+    if (index < 0) return
+    const item = myFeeds[index]
+    const storedFeeds = getUserFeeds()
+    const storedIndex = storedFeeds.findIndex((feed) => feed.id === feedToDelete.id)
+    const wasStored = storedIndex >= 0
+
+    setMyFeeds((current) => current.filter(({ feed }) => feed.id !== feedToDelete.id))
+    if (wasStored) deleteUserFeed(feedToDelete.id)
+    setDeletedFeed({ item, index, storedIndex, wasStored })
+    setFeedToDelete(null)
+  }
+
+  const handleUndo = () => {
+    if (!deletedFeed) return
+    setMyFeeds((current) => {
+      const safeIndex = Math.max(0, Math.min(deletedFeed.index, current.length))
+      return [...current.slice(0, safeIndex), deletedFeed.item, ...current.slice(safeIndex)]
+    })
+    if (deletedFeed.wasStored) {
+      restoreUserFeed(deletedFeed.item.feed, deletedFeed.storedIndex)
+    }
+    setDeletedFeed(null)
+  }
 
   return (
     <div className="min-h-screen w-screen bg-white text-[#0d0d0d]">
@@ -122,19 +160,37 @@ function MyFeed() {
         />
       ) : null}
 
-      <AppBottomSheet
+      <ContentActionSheet
         open={feedToEdit !== null}
-        title="피드를 수정하시겠어요?"
-        message="작성한 내용과 태그를 수정할 수 있어요."
-        confirmLabel="수정하기"
-        cancelLabel="취소"
+        title="피드 관리"
         onClose={() => setFeedToEdit(null)}
-        onConfirm={() => {
+        onEdit={() => {
           if (!feedToEdit?.id) return
           const feed = feedToEdit
           setFeedToEdit(null)
           navigate(`/mypage/feed/${feed.id}/edit`, { state: { feed } })
         }}
+        onDelete={() => {
+          setFeedToDelete(feedToEdit)
+          setFeedToEdit(null)
+        }}
+      />
+
+      <AppBottomSheet
+        open={feedToDelete !== null}
+        title="피드를 삭제할까요?"
+        message="삭제한 피드는 바로 목록에서 사라져요."
+        confirmLabel="삭제하기"
+        cancelLabel="취소"
+        onClose={() => setFeedToDelete(null)}
+        onConfirm={handleDelete}
+      />
+
+      <UndoToast
+        open={deletedFeed !== null}
+        message="피드가 삭제되었어요."
+        onUndo={handleUndo}
+        onDismiss={dismissUndo}
       />
     </div>
   )

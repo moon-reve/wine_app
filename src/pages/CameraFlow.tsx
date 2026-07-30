@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import closeIcon from '../assets/quick-flow/close.svg'
 import flashIcon from '../assets/quick-flow/flash.svg'
 import settingsIcon from '../assets/quick-flow/settings.svg'
@@ -17,10 +17,15 @@ type CameraFlowProps = { mode: 'feed' | 'search' }
 
 export default function CameraFlow({ mode }: CameraFlowProps) {
   const navigate = useNavigate()
+  const location = useLocation()
   const isSearch = mode === 'search'
   const [isSearching, setIsSearching] = useState(false)
   const [isResult, setIsResult] = useState(false)
   const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null)
+  const routeState = location.state as { from?: string } | null
+  const scanOrigin = routeState?.from?.startsWith('/') && !routeState.from.startsWith('/wine-search')
+    ? routeState.from
+    : '/list'
   const {
     videoRef,
     facingMode,
@@ -38,6 +43,16 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
     return () => window.clearTimeout(timer)
   }, [isSearch, isSearching])
 
+  const handleRescan = () => {
+    setIsResult(false)
+    setIsSearching(false)
+    setCapturedPhoto(null)
+  }
+
+  const handleExitScan = () => {
+    navigate(scanOrigin, { replace: true })
+  }
+
   if (!isSearch) return <FeedCreateFlow />
 
   if (isResult) {
@@ -45,13 +60,19 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
       <main className="@container relative h-dvh w-screen overflow-hidden bg-black text-white">
         <img src={capturedPhoto ?? searchCamera} alt="" className="absolute -inset-2 h-[calc(100%+16px)] w-[calc(100%+16px)] object-cover blur-[6px]" />
         <div className="absolute inset-0 bg-black/20" />
-        <header className="absolute inset-x-0 top-[max(28px,env(safe-area-inset-top))] z-20">
-          <button type="button" aria-label="인식 결과 닫기" onClick={() => { setIsResult(false); setIsSearching(false) }} className="absolute left-5 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
-          <img src={flashIcon} alt="플래시 끄기" className="absolute left-1/2 h-[22px] w-[19px] -translate-x-1/2" />
-          <img src={settingsIcon} alt="설정" className="absolute right-[18px] size-6" />
+        <header className="absolute inset-x-0 top-[max(24px,env(safe-area-inset-top))] z-20 flex h-9 items-center justify-between px-5">
+          <button type="button" onClick={handleRescan} className="flex h-9 items-center gap-1 text-[14px] font-bold">
+            <span aria-hidden="true">‹</span>
+            다시 스캔
+          </button>
+          <h1 className="absolute left-1/2 -translate-x-1/2 text-[16px] font-bold">인식 결과</h1>
+          <button type="button" aria-label="스캔 종료" onClick={handleExitScan} className="flex h-9 items-center gap-1 text-[14px] font-bold">
+            종료
+            <span aria-hidden="true" className="text-[18px]">×</span>
+          </button>
         </header>
 
-        <section className="absolute inset-x-0 bottom-0 top-[12.02%] overflow-y-auto rounded-t-[25px] border-t border-white/50 bg-[#831317]/10 px-5 pb-[30px] [scrollbar-width:none] backdrop-blur-[18px] [&::-webkit-scrollbar]:hidden">
+        <section className="absolute inset-x-0 bottom-0 top-[12.02%] overflow-y-auto rounded-t-[25px] border-t border-white/50 bg-[#831317]/10 px-5 pb-[40px] [scrollbar-width:none] backdrop-blur-[18px] [&::-webkit-scrollbar]:hidden">
           <div className="sticky top-0 z-10 -mx-5 flex items-center justify-between px-5 pt-[22px]">
             <span className="flex h-[25px] items-center gap-1.5 rounded-full bg-[#831317]/90 px-3 text-xs font-medium">✦ 인식 완료</span>
             <button type="button" className="h-[25px] rounded-full bg-white/10 px-2 text-xs font-medium">♥ 리스트 저장</button>
@@ -61,7 +82,7 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
             <img src={searchResultWine} alt="마틴자스 크릭 샤도네이" className="absolute inset-0 size-full object-contain" />
           </div>
           <div className="mt-11 text-center">
-            <h1 className="text-[22px] font-bold leading-normal">마틴자스 크릭 샤도네이</h1>
+            <h2 className="text-[22px] font-bold leading-normal">마틴자스 크릭 샤도네이</h2>
             <p className="font-delmon text-base text-[#d9a05b]">Matansas Creek Chardonnay</p>
             <div className="mt-5 flex items-center justify-center gap-2 text-[13px] text-white/75"><span>USA · Sonoma</span><span className="text-white/35">|</span><span>White Wine</span><span className="text-white/35">|</span><span>Chardonnay</span></div>
             <div className="mx-auto mt-4 inline-flex items-center gap-1.5 rounded-full border border-[#d9a05b]/40 bg-white/[0.06] px-[14px] py-2 text-[13px]">인식 정확도 <b className="text-[15px] text-[#d9a05b]">96%</b></div>
@@ -69,6 +90,14 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
           <div className="mt-6 border-t border-white/20 pt-[22px] text-sm leading-normal text-white/75">
             <p>마탄자스 크릭은 1977년 설립된 소노마 카운티의 와이너리로, 소비뇽 블랑과 메를로로 명성을 쌓았습니다. 이 샤르도네는 알렉산더 밸리 포도를 중심으로 양조하며, 구운 사과와 브리오슈 향이 특징입니다. 복숭아와 배 풍미에 은은한 바닐라가 더해져 부드럽고 균형 잡힌 맛을 완성합니다. 프렌치 오크통에서 8개월간 숙성하며 크리미한 질감과 은은한 스파이스 향을 더했고, 말로락틱 발효로 산도는 유지하면서도 부드러운 마우스필을 살렸습니다. 마무리는 길고 우아하며, 로스트 치킨이나 랍스터, 버터 소스를 곁들인 해산물 요리와 특히 잘 어울립니다. 서빙 온도는 10~12도가 이상적이고, 구입 후 3~5년 이내에 마시는 것을 권장합니다.</p>
             <button type="button" className="mt-1.5 text-xs text-white/50 underline">더보기</button>
+          </div>
+          <div className="mt-[22px] grid grid-cols-2 gap-[10px]">
+            <button type="button" onClick={() => navigate('/list')} className="h-[48px] rounded-full bg-white text-[14px] font-bold text-[#831317]">
+              목록에서 보기
+            </button>
+            <button type="button" onClick={() => navigate('/home')} className="h-[48px] rounded-full border border-white/40 bg-white/[0.08] text-[14px] font-bold text-white">
+              홈으로
+            </button>
           </div>
           <button type="button" onClick={() => navigate('/record')} className="mt-[22px] h-[52px] w-full rounded-full border border-white/30 bg-white/[0.08] text-base font-bold text-white">와인 기록하기</button>
           <button
@@ -125,7 +154,7 @@ export default function CameraFlow({ mode }: CameraFlowProps) {
       {isSearching ? <div role="status" aria-label="와인 분석 중" className="absolute left-1/2 top-[36.375%] z-30 size-[min(56px,6dvh)] -translate-x-1/2 -translate-y-1/2 rounded-full border-[min(5px,0.54dvh)] border-white/25 border-t-white animate-spin" /> : null}
 
       <header className="absolute inset-x-0 top-[max(28px,env(safe-area-inset-top))] z-10">
-        <button type="button" aria-label="닫기" onClick={() => { if (isSearching) setIsSearching(false); else navigate(-1) }} className="absolute left-5 size-6">
+        <button type="button" aria-label="스캔 종료" onClick={handleExitScan} className="absolute left-5 size-6">
           <img src={closeIcon} alt="" className="size-full" />
         </button>
         <img src={flashIcon} alt="플래시 끄기" className="absolute left-1/2 h-[22px] w-[19px] -translate-x-1/2" />

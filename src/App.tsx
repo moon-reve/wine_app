@@ -73,16 +73,6 @@ function AppRoutes() {
         <Route path="/lounge/questions/new" element={<QuestionWrite />} />
         <Route path="/lounge/meetings/new" element={<MeetingCreate />} />
         <Route path="/profile/settings" element={<ProfileSettings />} />
-        <Route path="/product/chateau-margaux-2018" element={<WineDetailRed />} />
-        <Route path="/product/chardonnay-2019" element={<WineDetailWhite />} />
-        <Route path="/product/pasqua-sweet-rose" element={<WineDetailRose />} />
-        <Route path="/product/red/:wineId" element={<WineDetailRed />} />
-        <Route path="/product/white/:wineId" element={<WineDetailWhite />} />
-        <Route path="/product/rose/:wineId" element={<WineDetailRose />} />
-        <Route path="/wine_detail/red/:wineId" element={<WineDetailRed />} />
-        <Route path="/wine_detail/white/:wineId" element={<WineDetailWhite />} />
-        <Route path="/wine_detail/rose/:wineId" element={<WineDetailRose />} />
-        <Route path="/wine_detail/sparkling/:wineId" element={<WineDetailSparkling />} />
         <Route path="/event/summer-wine-festival" element={<EventDetails />} />
         <Route path="/notifications" element={<Notification />} />
         <Route path="/todays-pick" element={<TodaysPick />} />
@@ -104,6 +94,16 @@ function AppRoutes() {
           <Route path="/search" element={<Search />} />
           <Route path="/magazine" element={<Magazine />} />
           <Route path="/magazine/k-wine-road" element={<MagazineDetail />} />
+          <Route path="/product/chateau-margaux-2018" element={<WineDetailRed />} />
+          <Route path="/product/chardonnay-2019" element={<WineDetailWhite />} />
+          <Route path="/product/pasqua-sweet-rose" element={<WineDetailRose />} />
+          <Route path="/product/red/:wineId" element={<WineDetailRed />} />
+          <Route path="/product/white/:wineId" element={<WineDetailWhite />} />
+          <Route path="/product/rose/:wineId" element={<WineDetailRose />} />
+          <Route path="/wine_detail/red/:wineId" element={<WineDetailRed />} />
+          <Route path="/wine_detail/white/:wineId" element={<WineDetailWhite />} />
+          <Route path="/wine_detail/rose/:wineId" element={<WineDetailRose />} />
+          <Route path="/wine_detail/sparkling/:wineId" element={<WineDetailSparkling />} />
           <Route path="*" element={<Navigate to="/home" replace />} />
         </Route>
         <Route path="/mypage/feed" element={<MyFeed />} />

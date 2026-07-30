@@ -25,6 +25,22 @@ export function addUserFeed(feed: FigmaFeed) {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
 }
 
+export function deleteUserFeed(feedId: string) {
+  if (typeof window === 'undefined') return
+
+  const next = loadUserFeeds().filter((feed) => feed.id !== feedId)
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+}
+
+export function restoreUserFeed(feed: FigmaFeed, index = 0) {
+  if (typeof window === 'undefined' || !feed.id) return
+
+  const current = loadUserFeeds().filter((item) => item.id !== feed.id)
+  const safeIndex = Math.max(0, Math.min(index, current.length))
+  const next = [...current.slice(0, safeIndex), feed, ...current.slice(safeIndex)]
+  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+}
+
 function loadFeedEdits(): Record<string, Partial<FigmaFeed>> {
   if (typeof window === 'undefined') return {}
 

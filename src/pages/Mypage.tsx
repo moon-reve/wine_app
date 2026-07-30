@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import profileStoryRing from '../assets/mypage/profile-story-ring.svg'
 import challengeCircleImage from '../assets/mypage/mypage-challenge-circle.webp'
@@ -22,10 +22,13 @@ import multipleFeedIcon from '../assets/mypage/multiple-feed-icon.svg'
 import settingsIcon from '../assets/mypage/settings-outline.svg'
 import { dummyWineData, toListWine, type DummyWine, type Wine } from '../data/wineCatalog'
 import { useLikedWines } from '../context/likedWinesContextValue'
-import { DEMO_WINE_RECORDS, useWineRecords } from '../context/wineRecordsContextValue'
+import { DEMO_WINE_RECORDS, useWineRecords, type WineRecordEntry } from '../context/wineRecordsContextValue'
 import { DEFAULT_PROFILE_IMAGE, useProfile } from '../context/profileContextValue'
 import { getUserFeeds } from '../data/userFeeds'
 import WineListCard from '../components/WineListCard'
+import AppBottomSheet from '../components/AppBottomSheet'
+import ContentActionSheet from '../components/ContentActionSheet'
+import UndoToast from '../components/UndoToast'
 
 const demoFeedItems = [
   { image: feedThumb1, crop: 'absolute top-[-21.13%] left-[-7.75%] h-[204.57%] w-[115.11%] max-w-none', multiple: true },
@@ -52,7 +55,7 @@ type WineReviewCardData = {
   crop?: string
 }
 
-function WineReviewCard({ review, onOpen, onDelete }: { review: WineReviewCardData; onOpen: () => void; onDelete: () => void }) {
+function WineReviewCard({ review, onOpen, onMenu }: { review: WineReviewCardData; onOpen: () => void; onMenu: () => void }) {
   return (
     <article
       data-guide-target
@@ -71,14 +74,16 @@ function WineReviewCard({ review, onOpen, onDelete }: { review: WineReviewCardDa
     >
       <button
         type="button"
-        aria-label={`${review.name} 기록 삭제`}
+        aria-label={`${review.name} 기록 메뉴`}
         onClick={(event) => {
           event.stopPropagation()
-          onDelete()
+          onMenu()
         }}
-        className="absolute top-2 right-2 flex size-6 items-center justify-center rounded-full bg-black/5 text-sm text-[#9e9e9e] hover:bg-black/10 hover:text-[#831317]"
+        className="absolute top-2 right-2 flex size-7 flex-col items-center justify-center gap-[2px] rounded-full text-[#737373] hover:bg-black/5"
       >
-        ×
+        <span className="size-[3px] rounded-full bg-current" />
+        <span className="size-[3px] rounded-full bg-current" />
+        <span className="size-[3px] rounded-full bg-current" />
       </button>
       <div className="relative h-[130px] w-[94px] shrink-0 overflow-hidden rounded-lg bg-[#f2f2f2]">
         {review.image && <img src={review.image} alt={review.name} className={review.crop ?? 'absolute inset-0 size-full object-cover'} />}
@@ -101,7 +106,7 @@ function Mypage() {
   const initialTab = (location.state as { activeTab?: 'feed' | 'wine' | 'likes' } | null)?.activeTab
   const [activeTab, setActiveTab] = useState<'feed' | 'wine' | 'likes'>(initialTab ?? 'feed')
   const { likedWineIds, unlike } = useLikedWines()
-  const { records, deleteRecord } = useWineRecords()
+  const { records, updateRecord, deleteRecord } = useWineRecords()
   const { profile } = useProfile()
   const [feedItems] = useState(() => [
     ...getUserFeeds().map((feed) => ({
@@ -115,6 +120,9 @@ function Mypage() {
   // localStorage가 아니라 컴포넌트 로컬 state로만 관리한다.
   const [hiddenDemoIds, setHiddenDemoIds] = useState<Set<string>>(new Set())
   const hideDemoRecord = (id: string) => setHiddenDemoIds((current) => new Set(current).add(id))
+  const [recordMenu, setRecordMenu] = useState<WineReviewCardData | null>(null)
+  const [recordToDelete, setRecordToDelete] = useState<WineReviewCardData | null>(null)
+  const [deletedRecord, setDeletedRecord] = useState<{ record: WineRecordEntry; isDemo: boolean } | null>(null)
 
   const wineReviews = useMemo<WineReviewCardData[]>(
     () => {
@@ -143,6 +151,34 @@ function Mypage() {
         .map(toListWine),
     [likedWineIds],
   )
+
+  const handleDeleteRecord = () => {
+    if (!recordToDelete) return
+    const isDemo = recordToDelete.id.startsWith('demo-')
+    const fullRecord = (isDemo ? DEMO_WINE_RECORDS : records).find((record) => record.id === recordToDelete.id)
+    if (!fullRecord) return
+
+    if (isDemo) hideDemoRecord(fullRecord.id)
+    else deleteRecord(fullRecord.id)
+    setDeletedRecord({ record: fullRecord, isDemo })
+    setRecordToDelete(null)
+  }
+
+  const handleUndoDelete = () => {
+    if (!deletedRecord) return
+    if (deletedRecord.isDemo) {
+      setHiddenDemoIds((current) => {
+        const next = new Set(current)
+        next.delete(deletedRecord.record.id)
+        return next
+      })
+    } else {
+      updateRecord(deletedRecord.record)
+    }
+    setDeletedRecord(null)
+  }
+
+  const dismissUndo = useCallback(() => setDeletedRecord(null), [])
 
   return (
     <div className="min-h-screen w-full bg-white pb-10 text-[#121212]" data-node-id={activeTab === 'wine' ? '1546:4825' : activeTab === 'likes' ? '1546:5430' : '1546:5323'}>
@@ -308,7 +344,7 @@ function Mypage() {
                   key={review.id}
                   review={review}
                   onOpen={() => navigate(`/record/${review.id}`)}
-                  onDelete={() => (review.id.startsWith('demo-') ? hideDemoRecord(review.id) : deleteRecord(review.id))}
+                  onMenu={() => setRecordMenu(review)}
                 />
               ))}
               <button type="button" onClick={() => navigate('/record')} className="flex h-[50px] w-full items-center justify-center rounded-xl bg-[#831317] text-base leading-none font-bold text-white">
@@ -334,6 +370,40 @@ function Mypage() {
           )}
         </section>
       </main>
+
+      <ContentActionSheet
+        open={recordMenu !== null}
+        title="와인 기록 관리"
+        onClose={() => setRecordMenu(null)}
+        onEdit={() => {
+          if (!recordMenu) return
+          const recordId = recordMenu.id
+          setRecordMenu(null)
+          navigate(`/record/${recordId}/edit`)
+        }}
+        onDelete={() => {
+          setRecordToDelete(recordMenu)
+          setRecordMenu(null)
+        }}
+      />
+
+      <AppBottomSheet
+        open={recordToDelete !== null}
+        title="와인 기록을 삭제할까요?"
+        message="삭제한 기록은 바로 목록에서 사라져요."
+        confirmLabel="삭제하기"
+        cancelLabel="취소"
+        onClose={() => setRecordToDelete(null)}
+        onConfirm={handleDeleteRecord}
+      />
+
+      <UndoToast
+        open={deletedRecord !== null}
+        message="와인 기록이 삭제되었어요."
+        onUndo={handleUndoDelete}
+        onDismiss={dismissUndo}
+        aboveBottomNavigation
+      />
     </div>
   )
 }

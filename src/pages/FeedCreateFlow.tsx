@@ -32,7 +32,33 @@ const CameraHeader = ({ onClose }: { onClose: () => void }) => <>
   <img src={settingsIcon} alt="설정" className="absolute right-[18px] top-[max(28px,env(safe-area-inset-top))] z-20 size-6" />
 </>
 
-const Ruler = ({ editor = false }: { editor?: boolean }) => <div aria-hidden="true" className={`absolute right-[4.651cqw] z-10 w-[7.442cqw] opacity-80 ${editor ? 'top-[17.67%] h-[64.19%]' : 'top-[30.79%] h-[29.61%]'}`}><span className="absolute inset-y-0 right-0 w-1/2 bg-[repeating-linear-gradient(to_bottom,white_0_1px,transparent_1px_1.395cqw)]" /><span className="absolute right-0 top-1/2 h-px w-full bg-white" /></div>
+const Ruler = () => <div aria-hidden="true" className="absolute right-[4.651cqw] top-[30.79%] z-10 h-[29.61%] w-[7.442cqw] opacity-80"><span className="absolute inset-y-0 right-0 w-1/2 bg-[repeating-linear-gradient(to_bottom,white_0_1px,transparent_1px_1.395cqw)]" /><span className="absolute right-0 top-1/2 h-px w-full bg-white" /></div>
+
+function ZoomRuler({ value, onChange }: { value: number; onChange: (value: number) => void }) {
+  const progress = ((value - 1) / 2) * 100
+
+  return (
+    <label className="absolute right-[3.5cqw] top-[37%] z-20 h-[25%] w-[11cqw] max-w-12 touch-none">
+      <span className="sr-only">사진 확대 배율</span>
+      <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 w-[45%] bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,0.9)_0_1px,transparent_1px_8px)]" />
+      <span
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 h-0.5 w-full -translate-y-1/2 rounded-full bg-white shadow-[0_0_4px_rgba(0,0,0,0.55)]"
+        style={{ bottom: `calc(${progress}% - 1px)` }}
+      />
+      <input
+        type="range"
+        min="1"
+        max="3"
+        step="0.05"
+        value={value}
+        aria-label={`사진 확대 ${value.toFixed(1)}배`}
+        onChange={(event) => onChange(Number(event.target.value))}
+        className="absolute inset-0 size-full cursor-ns-resize opacity-0 [direction:rtl] [writing-mode:vertical-lr]"
+      />
+    </label>
+  )
+}
 
 function CaptureControls({ thumbnail, onCapture, onSwitchCamera }: { thumbnail: string; onCapture: () => void; onSwitchCamera: () => void }) {
   return <>
@@ -301,6 +327,7 @@ export default function FeedCreateFlow() {
   const [step, setStep] = useState<FeedStep>('intro')
   const [capturedPhoto, setCapturedPhoto] = useState<string | null>(null)
   const [aspectRatio, setAspectRatio] = useState<AspectRatio>('full')
+  const [editZoom, setEditZoom] = useState(1)
   const {
     videoRef,
     facingMode,
@@ -315,6 +342,20 @@ export default function FeedCreateFlow() {
   if (step === 'compose') return <FeedComposer photo={capturedPhoto ?? feedCamera} onBack={() => setStep('edit')} />
 
   if (step === 'edit') return <main className="@container relative h-dvh w-screen overflow-hidden bg-[#170d0d] text-white">
+    <div className="absolute inset-0 overflow-hidden">
+      <div className="flex size-full items-center justify-center">
+        <img
+          src={capturedPhoto ?? feedCamera}
+          alt="보정할 피드 사진"
+          className={`${aspectRatio === 'full' ? 'size-full object-cover' : 'h-[70%] object-cover'} transition-transform duration-100`}
+          style={{
+            ...(aspectRatio === 'full' ? {} : { aspectRatio: ASPECT_RATIO_CSS[aspectRatio] }),
+            transform: `scale(${editZoom})`,
+          }}
+        />
+      </div>
+      <div className="pointer-events-none absolute inset-0 bg-black/15" />
+    </div>
     <button type="button" aria-label="보정 화면 닫기" onClick={() => setStep('camera')} className="absolute left-5 top-[max(28px,env(safe-area-inset-top))] z-20 size-6"><img src={closeIcon} alt="" className="size-full" /></button>
     <button type="button" onClick={() => setStep('compose')} className="absolute right-[18px] top-[max(28px,env(safe-area-inset-top))] z-20 flex h-6 items-center text-[15px] font-medium">다음</button>
     <div className="absolute top-[calc(21.5px+env(safe-area-inset-top))] left-1/2 flex h-[37px] w-[37.442cqw] -translate-x-1/2 items-center justify-around rounded-full border border-white/20 bg-[#d9d9d9]/20 text-[12px]">
@@ -329,18 +370,9 @@ export default function FeedCreateFlow() {
         </button>
       ))}
     </div>
-    <div className="absolute inset-x-0 top-[22.64%] h-[46.14%] overflow-hidden">
-      <div className="flex size-full items-center justify-center">
-        <img
-          src={capturedPhoto ?? feedCamera}
-          alt="보정할 피드 사진"
-          className={aspectRatio === 'full' ? 'max-h-full max-w-full object-contain' : 'h-full object-cover'}
-          style={aspectRatio === 'full' ? undefined : { aspectRatio: ASPECT_RATIO_CSS[aspectRatio] }}
-        />
-      </div>
-      <div className="absolute left-[4.651cqw] top-[25.81%] flex h-[48%] flex-col justify-between">{[[toolWine,'와인라벨'],[toolGrid,'레이아웃']].map(([icon,label]) => <button type="button" key={label} className="flex items-center gap-[2.093cqw] text-[12px] text-white/80"><img src={icon} alt="" className="size-[6.047cqw]" />{label}</button>)}<button type="button" className="flex items-center gap-[2.093cqw] text-[12px] text-white/80"><span className="w-[6.047cqw] text-[22px] font-light">Aa</span>텍스트 추가</button><button type="button" className="flex items-center gap-[2.093cqw] text-[12px] text-white/80"><img src={toolFilter} alt="" className="h-[6.047cqw] w-[6.512cqw]" />필터</button></div><Ruler editor />
-    </div>
-    <div className="absolute inset-x-0 top-[86.05%] bottom-0 rounded-t-[5.814cqw] border-t border-white/30 bg-[#831317]/10" />
+    <div className="absolute left-[4.651cqw] top-[35%] z-10 flex h-[31%] flex-col justify-between">{[[toolWine,'와인라벨'],[toolGrid,'레이아웃']].map(([icon,label]) => <button type="button" key={label} className="flex items-center gap-[2.093cqw] text-[12px] text-white/90 drop-shadow-md"><img src={icon} alt="" className="size-[6.047cqw]" />{label}</button>)}<button type="button" className="flex items-center gap-[2.093cqw] text-[12px] text-white/90 drop-shadow-md"><span className="w-[6.047cqw] text-[22px] font-light">Aa</span>텍스트 추가</button><button type="button" className="flex items-center gap-[2.093cqw] text-[12px] text-white/90 drop-shadow-md"><img src={toolFilter} alt="" className="h-[6.047cqw] w-[6.512cqw]" />필터</button></div>
+    <ZoomRuler value={editZoom} onChange={setEditZoom} />
+    <div className="absolute inset-x-0 top-[86.05%] bottom-0 rounded-t-[5.814cqw] border-t border-white/30 bg-[#831317]/15 backdrop-blur-[10px]" />
     <img src={capturedPhoto ?? feedThumb} alt="선택한 사진" className="absolute top-[83.37%] left-[13.953cqw] z-20 size-[13.488cqw] rounded-[2.791cqw] border-2 border-white/90 object-cover" />
     <button type="button" aria-label="사진 추가" onClick={() => setStep('camera')} className="absolute top-[82.53%] left-1/2 z-20 size-[16.279cqw] -translate-x-1/2"><img src={shutterIcon} alt="" className="absolute -inset-[1.163cqw] size-[18.605cqw] max-w-none" /></button>
     <button type="button" aria-label="필터" className="absolute top-[84.01%] right-[14.419cqw] z-20 size-[12.558cqw] rounded-full border border-white bg-[#2b2021]/90"><img src={toolFilter} alt="" className="absolute left-1/2 top-1/2 h-[6.047cqw] w-[6.512cqw] -translate-x-[calc(50%+1px)] -translate-y-[calc(50%+1px)]" /></button>
@@ -374,9 +406,10 @@ export default function FeedCreateFlow() {
       thumbnail={capturedPhoto ?? feedThumb}
       onSwitchCamera={switchCamera}
       onCapture={() => {
-        const photo = capture({ cropToPreview: false })
+        const photo = capture()
         if (photo) setCapturedPhoto(photo)
         setAspectRatio('full')
+        setEditZoom(1)
         setStep('edit')
       }}
     />

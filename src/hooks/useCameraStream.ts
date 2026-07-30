@@ -101,6 +101,13 @@ export function useCameraStream(enabled: boolean, initialFacingMode: FacingMode 
     const ctx = canvas.getContext('2d')
     if (!ctx) return null
 
+    // 전면 카메라 미리보기는 거울처럼 좌우 반전되어 있으므로 결과물도
+    // 사용자가 셔터를 누를 때 본 구도와 동일하게 저장한다.
+    if (facingMode === 'user') {
+      ctx.translate(canvas.width, 0)
+      ctx.scale(-1, 1)
+    }
+
     ctx.drawImage(
       video,
       sourceX,
@@ -113,7 +120,7 @@ export function useCameraStream(enabled: boolean, initialFacingMode: FacingMode 
       canvas.height,
     )
     return canvas.toDataURL('image/jpeg', 0.92)
-  }, [zoom])
+  }, [facingMode, zoom])
 
   const handleCameraPointerDown = useCallback((event: ReactPointerEvent<HTMLElement>) => {
     if (event.pointerType !== 'touch') return
